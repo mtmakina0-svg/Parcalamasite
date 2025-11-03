@@ -191,6 +191,23 @@ const translations = {
     single_shaft_similar_products: 'Benzer Ürünler',
     single_shaft_ecatalog_btn: 'E-Katalog',
     
+    // Product Category Page
+    about_our_machines: 'Makinelerimiz Hakkında',
+    key_features: 'Temel Özellikler',
+    our_models: 'Modellerimiz',
+    select_model_description: 'İhtiyacınıza uygun modeli seçin ve detaylı teknik özellikleri inceleyin',
+    need_help_choosing: 'Model Seçiminde Yardıma mı İhtiyacınız Var?',
+    contact_us_for_consultation: 'Uzman ekibimiz size en uygun makineyi seçmenizde yardımcı olacaktır',
+    contact_us: 'Bize Ulaşın',
+    single_shaft_advantage_1_title: 'Esnek Kullanım',
+    single_shaft_advantage_1_desc: 'Farklı atık türleri için optimize edilmiş parçalama',
+    single_shaft_advantage_2_title: 'Yüksek Verimlilik',
+    single_shaft_advantage_2_desc: 'Enerji tasarruflu motor ve güçlü performans',
+    single_shaft_advantage_3_title: 'Güvenli Çalışma',
+    single_shaft_advantage_3_desc: 'Otomatik koruma sistemleri ve acil durdurma',
+    single_shaft_advantage_4_title: 'Kolay Bakım',
+    single_shaft_advantage_4_desc: 'Hızlı bıçak değişimi ve basit servis erişimi',
+    
     // Dual Shaft Product Detail Page
     dual_shaft_main_title: 'Çift Şaftlı Parçalama Makinesi',
     dual_shaft_subtitle: 'Zorlu Endüstriyel Atıklar İçin Güçlü Parçalama Performansı',
@@ -416,6 +433,23 @@ const translations = {
     single_shaft_watch_video: 'Watch Video',
     single_shaft_similar_products: 'Similar Products',
     single_shaft_ecatalog_btn: 'E-Catalog',
+    
+    // Product Category Page
+    about_our_machines: 'About Our Machines',
+    key_features: 'Key Features',
+    our_models: 'Our Models',
+    select_model_description: 'Select the model that suits your needs and review detailed technical specifications',
+    need_help_choosing: 'Need Help Choosing a Model?',
+    contact_us_for_consultation: 'Our expert team will help you select the most suitable machine',
+    contact_us: 'Contact Us',
+    single_shaft_advantage_1_title: 'Flexible Use',
+    single_shaft_advantage_1_desc: 'Optimized shredding for different waste types',
+    single_shaft_advantage_2_title: 'High Efficiency',
+    single_shaft_advantage_2_desc: 'Energy-efficient motor and powerful performance',
+    single_shaft_advantage_3_title: 'Safe Operation',
+    single_shaft_advantage_3_desc: 'Automatic protection systems and emergency stop',
+    single_shaft_advantage_4_title: 'Easy Maintenance',
+    single_shaft_advantage_4_desc: 'Quick blade replacement and simple service access',
     
     // Dual Shaft Product Detail Page
     dual_shaft_main_title: 'Dual Shaft Shredder',
@@ -643,6 +677,23 @@ const translations = {
     single_shaft_similar_products: 'Похожие продукты',
     single_shaft_ecatalog_btn: 'Электронный каталог',
     
+    // Product Category Page
+    about_our_machines: 'О наших машинах',
+    key_features: 'Ключевые особенности',
+    our_models: 'Наши модели',
+    select_model_description: 'Выберите модель, которая соответствует вашим потребностям',
+    need_help_choosing: 'Нужна помощь в выборе модели?',
+    contact_us_for_consultation: 'Наша команда экспертов поможет вам выбрать наиболее подходящую машину',
+    contact_us: 'Свяжитесь с нами',
+    single_shaft_advantage_1_title: 'Гибкое использование',
+    single_shaft_advantage_1_desc: 'Оптимизированное измельчение для различных типов отходов',
+    single_shaft_advantage_2_title: 'Высокая эффективность',
+    single_shaft_advantage_2_desc: 'Энергоэффективный двигатель и мощная производительность',
+    single_shaft_advantage_3_title: 'Безопасная работа',
+    single_shaft_advantage_3_desc: 'Автоматические системы защиты и аварийная остановка',
+    single_shaft_advantage_4_title: 'Легкое обслуживание',
+    single_shaft_advantage_4_desc: 'Быстрая замена лезвий и простой доступ для обслуживания',
+    
     // Dual Shaft Product Detail Page
     dual_shaft_main_title: 'Двухвальный измельчитель',
     dual_shaft_subtitle: 'Мощная производительность измельчения для сложных промышленных отходов',
@@ -868,6 +919,23 @@ const translations = {
     single_shaft_watch_video: 'مشاهدة الفيديو',
     single_shaft_similar_products: 'منتجات مماثلة',
     single_shaft_ecatalog_btn: 'الكتالوج الإلكتروني',
+    
+    // Product Category Page
+    about_our_machines: 'حول آلاتنا',
+    key_features: 'الميزات الرئيسية',
+    our_models: 'نماذجنا',
+    select_model_description: 'اختر النموذج الذي يناسب احتياجاتك',
+    need_help_choosing: 'هل تحتاج مساعدة في اختيار النموذج؟',
+    contact_us_for_consultation: 'سيساعدك فريق الخبراء لدينا في اختيار الآلة الأنسب',
+    contact_us: 'اتصل بنا',
+    single_shaft_advantage_1_title: 'استخدام مرن',
+    single_shaft_advantage_1_desc: 'تمزيق محسّن لأنواع مختلفة من النفايات',
+    single_shaft_advantage_2_title: 'كفاءة عالية',
+    single_shaft_advantage_2_desc: 'محرك موفر للطاقة وأداء قوي',
+    single_shaft_advantage_3_title: 'تشغيل آمن',
+    single_shaft_advantage_3_desc: 'أنظمة حماية تلقائية وإيقاف طوارئ',
+    single_shaft_advantage_4_title: 'صيانة سهلة',
+    single_shaft_advantage_4_desc: 'استبدال سريع للشفرة ووصول بسيط للخدمة',
     
     // Dual Shaft Product Detail Page
     dual_shaft_main_title: 'آلة تمزيق ثنائية العمود',

@@ -14,7 +14,7 @@ export const HeroSection = () => {
     >
       {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] text-center py-20">
-        {/* MT Makina Logo */}
+        {/* MT Makina Logo - Dark variant for white background */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -22,6 +22,7 @@ export const HeroSection = () => {
           className="mb-12 flex justify-center"
         >
           <Logo
+            variant="dark"
             alt="MT Makina Logo"
             className="h-40 w-auto object-contain mx-[1px] my-[18px] p-[0px]"
           />

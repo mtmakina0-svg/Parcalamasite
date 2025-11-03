@@ -18,12 +18,21 @@ import { ReferencesOverviewPage } from './components/ReferencesOverviewPage';
 import { TechnologyPage } from './components/TechnologyPage';
 import { CertificatesPage } from './components/CertificatesPage';
 import { ProductDetailPage } from './components/ProductDetailPage';
+import { ProductCategoryPage } from './components/ProductCategoryPage';
 import { ECatalogPage } from './components/ECatalogPage';
 import { ContactPage } from './components/ContactPage';
 import { IntroLoader } from './components/IntroLoader';
 
-type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-detail' | 'ecatalog' | 'contact';
+type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
 type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'pallet' | 'glass' | 'plastic' | 'organic' | 'tire' | null;
+
+// History stack for browser back button
+interface HistoryState {
+  page: PageView;
+  product?: ProductType;
+  model?: string;
+  wasteCategory?: string;
+}
 
 function AppContent() {
   const { isRTL } = useLanguage();
@@ -32,6 +41,7 @@ function AppContent() {
   const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>(null);
   const [selectedModelName, setSelectedModelName] = useState<string>('TSH-60'); // Default model
+  const [historyStack, setHistoryStack] = useState<HistoryState[]>([{ page: 'main' }]);
 
   useEffect(() => {
     // Update document direction based on language
@@ -43,13 +53,41 @@ function AppContent() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [currentPage, selectedWasteCategory, selectedProduct]);
 
+  // Browser back button handler
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (historyStack.length > 1) {
+        const previousState = historyStack[historyStack.length - 2];
+        setCurrentPage(previousState.page);
+        if (previousState.product) setSelectedProduct(previousState.product);
+        if (previousState.model) setSelectedModelName(previousState.model);
+        if (previousState.wasteCategory) setSelectedWasteCategory(previousState.wasteCategory);
+        setHistoryStack(prev => prev.slice(0, -1));
+      } else {
+        setCurrentPage('main');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [historyStack]);
+
+  // Push to history stack
+  const pushHistory = (state: HistoryState) => {
+    window.history.pushState(state, '');
+    setHistoryStack(prev => [...prev, state]);
+  };
+
   const handleNavigateToWasteCategories = () => {
     setCurrentPage('waste-categories');
+    pushHistory({ page: 'waste-categories' });
   };
 
   const handleNavigateToMain = () => {
     setCurrentPage('main');
     setSelectedWasteCategory(null);
+    setHistoryStack([{ page: 'main' }]);
+    window.history.replaceState({ page: 'main' }, '');
   };
 
   const handleWasteCategorySelect = (categoryId: string) => {
@@ -57,7 +95,7 @@ function AppContent() {
     setCurrentPage('waste-detail');
   };
 
-  const handleBackFromDetail = () => {
+  const handleBackFromWasteDetail = () => {
     setCurrentPage('waste-categories');
     setSelectedWasteCategory(null);
   };
@@ -86,6 +124,14 @@ function AppContent() {
     setCurrentPage('ecatalog');
   };
 
+  // Navigate to product category page (overview with all models)
+  const handleNavigateToProductCategory = (productType: string) => {
+    setSelectedProduct(productType as ProductType);
+    setCurrentPage('product-category');
+    pushHistory({ page: 'product-category', product: productType as ProductType });
+  };
+
+  // Navigate to specific product model detail
   const handleNavigateToProductDetail = (productType: string, modelName?: string) => {
     setSelectedProduct(productType as ProductType);
     // Set model name based on product type if not provided
@@ -104,6 +150,11 @@ function AppContent() {
       }
     }
     setCurrentPage('product-detail');
+    pushHistory({ 
+      page: 'product-detail', 
+      product: productType as ProductType, 
+      model: modelName || 'TSH-60' 
+    });
   };
 
   const handleNavigateToWasteDetail = (wasteType: string) => {
@@ -113,9 +164,55 @@ function AppContent() {
 
   const handleNavigateToContact = () => {
     setCurrentPage('contact');
+    pushHistory({ page: 'contact' });
+  };
+
+  // Back from product category to main (or previous page)
+  const handleBackFromCategory = () => {
+    if (historyStack.length > 1) {
+      window.history.back();
+    } else {
+      handleNavigateToMain();
+    }
+  };
+
+  // Back from product detail to category page
+  const handleBackFromProductDetail = () => {
+    if (selectedProduct) {
+      handleNavigateToProductCategory(selectedProduct);
+    } else {
+      handleNavigateToMain();
+    }
   };
 
   // Render different pages based on current view
+  if (currentPage === 'product-category' && selectedProduct) {
+    return (
+      <>
+        <Header 
+          onWasteClick={handleNavigateToWasteCategories}
+          onWasteDetailClick={handleNavigateToWasteDetail}
+          onMainClick={handleNavigateToMain}
+          onProductsClick={handleNavigateToProducts}
+          onAboutClick={handleNavigateToAbout}
+          onReferencesClick={handleNavigateToReferences}
+          onTechnologyClick={handleNavigateToTechnology}
+          onCertificatesClick={handleNavigateToCertificates}
+          onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
+          onProductDetailClick={handleNavigateToProductDetail}
+          onContactClick={handleNavigateToContact}
+        />
+        <ProductCategoryPage 
+          productType={selectedProduct}
+          onBackToMain={handleBackFromCategory}
+          onModelSelect={(modelName) => handleNavigateToProductDetail(selectedProduct, modelName)}
+        />
+        <ChatWidget />
+      </>
+    );
+  }
+
   if (currentPage === 'contact') {
     return (
       <>
@@ -129,6 +226,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -151,6 +249,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -173,13 +272,14 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
         <ProductDetailPage 
           productType={selectedProduct}
           modelName={selectedModelName}
-          onBackToMain={handleNavigateToMain}
+          onBackToMain={handleBackFromProductDetail}
           onECatalogClick={handleNavigateToECatalog}
           onProductDetailClick={handleNavigateToProductDetail}
         />
@@ -201,6 +301,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -223,6 +324,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -245,6 +347,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -270,6 +373,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -292,6 +396,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -314,6 +419,7 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
@@ -339,12 +445,13 @@ function AppContent() {
           onTechnologyClick={handleNavigateToTechnology}
           onCertificatesClick={handleNavigateToCertificates}
           onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
         <WasteDetailPage
           categoryId={selectedWasteCategory}
-          onBack={handleBackFromDetail}
+          onBack={handleBackFromWasteDetail}
         />
         <ChatWidget />
       </>
@@ -368,13 +475,14 @@ function AppContent() {
             onTechnologyClick={handleNavigateToTechnology}
             onCertificatesClick={handleNavigateToCertificates}
             onECatalogClick={handleNavigateToECatalog}
+            onProductCategoryClick={handleNavigateToProductCategory}
             onProductDetailClick={handleNavigateToProductDetail}
             onContactClick={handleNavigateToContact}
           />
           <main>
             <HeroSection />
             <IntroSection />
-            <ProductsSection onProductClick={handleNavigateToProductDetail} />
+            <ProductsSection onProductClick={handleNavigateToProductCategory} />
             <TechnologySection />
             <ReferencesSection />
             <ContactSection />

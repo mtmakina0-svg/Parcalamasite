@@ -302,7 +302,7 @@ export const ProductDetailPage = ({
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h1 className="text-[#F4CE14] mb-4">{t('single_shaft_main_title')} - {modelName}</h1>
+              <h1 className="text-[#F4CE14] mb-4 text-5xl font-bold">{t('single_shaft_main_title')} - {modelName}</h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
                 {t('single_shaft_subtitle')}
               </p>
@@ -360,7 +360,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16"
+              className="text-center text-[#1E1E1E] mb-16 text-4xl font-bold"
             >
               {t('single_shaft_advantages_title')}
             </motion.h2>
@@ -424,7 +424,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-16"
+              className="text-center text-[#45474B] mb-16 text-4xl font-bold"
             >
               {t('single_shaft_performance_title')}
             </motion.h2>
@@ -509,7 +509,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-4xl font-bold"
             >
               {t('single_shaft_tech_specs_title')}
             </motion.h2>
@@ -524,31 +524,31 @@ export const ProductDetailPage = ({
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Model</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Model</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Motor Gücü</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Motor Gücü</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Rotor Uzunluğu</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Uzunluğu</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Rotor Çapı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Çapı</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Bıçak Sayısı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Bıçak Sayısı</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Ağırlık</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Ağırlık</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
                     </tr>
                     <tr>
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Kapasite</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Kapasite</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>

@@ -1,37 +1,10 @@
 /**
  * Central configuration for all image URLs
- * Uses GitHub raw content URLs for static assets hosted in public folder
+ * Uses ImgBB hosted images with Unsplash fallbacks
  */
 
-// Image hosting configuration
-const IMAGE_CONFIG = {
-  // ✅ PRİORİTY: GitHub'dan çek (public/ klasöründen)
-  // ❌ FALLBACK: Manuel URL'ler (ImgBB, Imgur vs.)
-  useGitHubFirst: true, // GitHub'ı önceliklendir
-  github: {
-    username: 'mtmakina0',
-    repo: 'parcalamasite',
-    branch: 'main', // ⚠️ Eğer 'master' ise değiştirin
-    basePath: 'public'
-  }
-};
-
 /**
- * Test GitHub image URL
- * Tarayıcınızda açarak kontrol edin:
- * https://raw.githubusercontent.com/mtmakina0/parcalamasite/main/public/TEK%20%C5%9EAFTLI%20PAR%C3%87ALAMA%20MAK%C4%B0NES%C4%B0/TSH-60/1.png
- * 
- * Eğer 404 alırsanız:
- * 1. Branch'i kontrol edin (main vs master)
- * 2. Görsellerin GitHub'a push edildiğini kontrol edin
- * 3. Klasör isimlerinin doğru olduğunu kontrol edin
- */
-
-// Base URL for all GitHub-hosted images
-const GITHUB_BASE_URL = `https://raw.githubusercontent.com/${IMAGE_CONFIG.github.username}/${IMAGE_CONFIG.github.repo}/${IMAGE_CONFIG.github.branch}/${IMAGE_CONFIG.github.basePath}`;
-
-/**
- * Product folder name mapping (Turkish uppercase names matching GitHub folder structure)
+ * Product folder name mapping (for reference)
  */
 export const PRODUCT_FOLDER_MAP: { [key: string]: string } = {
   'single-shaft': 'TEK ŞAFTLI PARÇALAMA MAKİNESİ',
@@ -45,30 +18,14 @@ export const PRODUCT_FOLDER_MAP: { [key: string]: string } = {
 };
 
 /**
- * Get product folder name in Turkish (matching GitHub public folder structure)
+ * Get product folder name in Turkish
  */
 export const getProductFolderName = (productType: string): string => {
   return PRODUCT_FOLDER_MAP[productType] || 'TEK ŞAFTLI PARÇALAMA MAKİNESİ';
 };
 
 /**
- * Generate GitHub raw URL for a product model image
- */
-export const getGitHubImageUrl = (
-  productType: string,
-  modelName: string,
-  filename: string
-): string => {
-  const folderName = getProductFolderName(productType);
-  const encodedFolder = encodeURIComponent(folderName);
-  const encodedModel = encodeURIComponent(modelName);
-  const encodedFilename = encodeURIComponent(filename);
-  
-  return `${GITHUB_BASE_URL}/${encodedFolder}/${encodedModel}/${encodedFilename}`;
-};
-
-/**
- * Get all image URLs for a specific product model
+ * Model images interface
  */
 export interface ModelImages {
   main: string;
@@ -79,11 +36,11 @@ export interface ModelImages {
 }
 
 /**
- * MANUEL GÖRSEL URL'LERİ (Geçici Test Çözümü)
- * GitHub'a push etmeden önce test için kullanın
- * ImgBB, Imgur veya benzeri servisten aldığınız URL'leri buraya ekleyin
+ * IMAGE URLS - ImgBB Hosted
+ * Upload your images to ImgBB and paste URLs here
+ * Format: https://i.ibb.co/XXXXX/filename.png
  */
-const MANUAL_IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
+const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   'single-shaft': {
     'TSH-60': {
       main: 'https://i.ibb.co/Hf47H3b1/1-1.png',
@@ -93,7 +50,7 @@ const MANUAL_IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: ''
     },
     'TSH-80': {
-      main: '',
+      main: '', // ⬅️ ImgBB URL'ini buraya yapıştırın
       detail1: '',
       detail2: '',
       detail3: '',
@@ -137,57 +94,53 @@ const MANUAL_IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
     'QS-100': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
     'QS-120': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
     'QS-150': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'metal': {
+    'MP-100': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'MP-150': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'granulator': {
+    'GR-400': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'GR-600': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'GR-800': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'baler': {
+    'BP-60': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'BP-100': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'conveyor': {
+    'CV-3M': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CV-5M': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CV-10M': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'separator': {
+    'MS-1': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'MS-2': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
   }
 };
 
 /**
- * Get model images with fallback support
- * Returns GitHub URLs as primary, manual URLs as fallback
+ * Get model images from ImgBB URLs
  */
 export const getModelImages = (
   productType: string,
   modelName: string
 ): ModelImages => {
-  // ✅ PRİORİTY 1: GitHub'dan çek (public/ klasöründen)
-  if (IMAGE_CONFIG.useGitHubFirst) {
-    return {
-      main: getGitHubImageUrl(productType, modelName, '1.png'),
-      detail1: getGitHubImageUrl(productType, modelName, '2.png'),
-      detail2: getGitHubImageUrl(productType, modelName, '3.png'),
-      detail3: getGitHubImageUrl(productType, modelName, '4.png'),
-      detail4: getGitHubImageUrl(productType, modelName, '5.png')
-    };
+  const urls = IMAGE_URLS[productType]?.[modelName];
+  
+  if (urls && urls.main) {
+    return urls;
   }
   
-  // ❌ FALLBACK: Manuel URL'leri kullan (GitHub devre dışıysa)
-  const manualUrls = MANUAL_IMAGE_URLS[productType]?.[modelName];
-  if (manualUrls && manualUrls.main) {
-    return manualUrls;
-  }
-  
-  // Son çare: GitHub URL'leri
+  // Fallback to Unsplash placeholder
+  const fallback = getFallbackImage(productType);
   return {
-    main: getGitHubImageUrl(productType, modelName, '1.png'),
-    detail1: getGitHubImageUrl(productType, modelName, '2.png'),
-    detail2: getGitHubImageUrl(productType, modelName, '3.png'),
-    detail3: getGitHubImageUrl(productType, modelName, '4.png'),
-    detail4: getGitHubImageUrl(productType, modelName, '5.png')
+    main: fallback,
+    detail1: fallback,
+    detail2: fallback,
+    detail3: fallback,
+    detail4: fallback
   };
-};
-
-/**
- * Get manual fallback URLs for a model (if available)
- * Used as secondary fallback in ImageWithFallback component
- */
-export const getManualFallbackImages = (
-  productType: string,
-  modelName: string
-): ModelImages | null => {
-  const manualUrls = MANUAL_IMAGE_URLS[productType]?.[modelName];
-  if (manualUrls && manualUrls.main) {
-    return manualUrls;
-  }
-  return null;
 };
 
 /**
@@ -210,26 +163,6 @@ export const FALLBACK_IMAGES: { [key: string]: string } = {
  */
 export const getFallbackImage = (productType: string): string => {
   return FALLBACK_IMAGES[productType] || FALLBACK_IMAGES['default'];
-};
-
-/**
- * Static asset URLs (logos, certificates, etc.) hosted on GitHub
- */
-export const STATIC_ASSETS = {
-  // Logo
-  logo: `${GITHUB_BASE_URL}/logo/mt-logo.png`,
-  
-  // Certificates
-  certificates: {
-    cert1: `${GITHUB_BASE_URL}/certificates/cert1.png`,
-    cert2: `${GITHUB_BASE_URL}/certificates/cert2.png`,
-    cert3: `${GITHUB_BASE_URL}/certificates/cert3.png`,
-    cert4: `${GITHUB_BASE_URL}/certificates/cert4.png`,
-    cert5: `${GITHUB_BASE_URL}/certificates/cert5.png`,
-    cert6: `${GITHUB_BASE_URL}/certificates/cert6.png`,
-    cert7: `${GITHUB_BASE_URL}/certificates/cert7.png`,
-    cert8: `${GITHUB_BASE_URL}/certificates/cert8.png`
-  }
 };
 
 /**

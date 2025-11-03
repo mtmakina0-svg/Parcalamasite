@@ -106,6 +106,8 @@
     --text-6xl--line-height: 1;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     --tracking-wide: .025em;
     --leading-tight: 1.25;
     --leading-relaxed: 1.625;
@@ -455,10 +457,6 @@
 
   .relative {
     position: relative;
-  }
-
-  .static {
-    position: static;
   }
 
   .inset-0 {
@@ -1443,6 +1441,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .from-\[\#1E1E1E\]\/80 {
+    --tw-gradient-from: oklab(23.5031% 7.45058e-9 1.49012e-8 / .8);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
   .from-\[\#25D366\] {
     --tw-gradient-from: #25d366;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1746,6 +1749,11 @@
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
 
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -1802,9 +1810,19 @@
     line-height: var(--leading-tight);
   }
 
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
 
   .tracking-wide {
@@ -1850,6 +1868,10 @@
 
   .text-\[\#45474B\]\/40 {
     color: oklab(39.7497% -.000692487 -.00717387 / .4);
+  }
+
+  .text-\[\#45474B\]\/70 {
+    color: oklab(39.7497% -.000692487 -.00717387 / .7);
   }
 
   .text-\[\#45474B\]\/80 {
@@ -1960,6 +1982,10 @@
 
   .underline-offset-4 {
     text-underline-offset: 4px;
+  }
+
+  .opacity-0 {
+    opacity: 0;
   }
 
   .opacity-5 {
@@ -2074,6 +2100,12 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
 
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
   .transition-shadow {
     transition-property: box-shadow;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -2094,6 +2126,11 @@
   .duration-300 {
     --tw-duration: .3s;
     transition-duration: .3s;
+  }
+
+  .duration-500 {
+    --tw-duration: .5s;
+    transition-duration: .5s;
   }
 
   .outline-none {
@@ -2137,6 +2174,12 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:bg-\[\#F4CE14\]:is(:where(.group):hover *) {
+      background-color: #f4ce14;
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:bg-\[\#F4CE14\]\/5:is(:where(.group):hover *) {
       background-color: oklab(85.8664% -.0157918 .172923 / .05);
     }
@@ -2145,6 +2188,12 @@
   @media (hover: hover) {
     .group-hover\:bg-\[\#F4CE14\]\/90:is(:where(.group):hover *) {
       background-color: oklab(85.8664% -.0157918 .172923 / .9);
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:text-\[\#1E1E1E\]:is(:where(.group):hover *) {
+      color: #1e1e1e;
     }
   }
 
@@ -2167,9 +2216,22 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:opacity-100:is(:where(.group):hover *) {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:shadow-\[0_0_30px_rgba\(244\,206\,20\,0\.5\)\]:is(:where(.group):hover *) {
       --tw-shadow: 0 0 30px var(--tw-shadow-color, #f4ce1480);
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\/btn\:translate-x-1:is(:where(.group\/btn):hover *) {
+      --tw-translate-x: calc(var(--spacing) * 1);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
 

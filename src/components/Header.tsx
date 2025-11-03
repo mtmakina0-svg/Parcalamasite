@@ -15,11 +15,12 @@ interface HeaderProps {
   onTechnologyClick?: () => void;
   onCertificatesClick?: () => void;
   onECatalogClick?: () => void;
+  onProductCategoryClick?: (productType: string) => void;
   onProductDetailClick?: (productType: string, modelName?: string) => void;
   onContactClick?: () => void;
 }
 
-export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProductsClick, onAboutClick, onReferencesClick, onTechnologyClick, onCertificatesClick, onECatalogClick, onProductDetailClick, onContactClick }: HeaderProps = {}) => {
+export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProductsClick, onAboutClick, onReferencesClick, onTechnologyClick, onCertificatesClick, onECatalogClick, onProductCategoryClick, onProductDetailClick, onContactClick }: HeaderProps = {}) => {
   const { language, setLanguage, t, isRTL } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -245,7 +246,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                           onMouseEnter={() => subItem.hasModels && setHoveredProduct(subItem.action)}
                           onMouseLeave={() => setHoveredProduct(null)}
                         >
-                          {/* Main Product */}
+                          {/* Main Product - Goes to Category Page */}
                           <motion.a
                             href="#"
                             onClick={(e) => {
@@ -253,8 +254,8 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                               window.scrollTo({ top: 0, behavior: 'smooth' });
                               setOpenDropdown(null);
                               setHoveredProduct(null);
-                              if (subItem.action && onProductDetailClick) {
-                                onProductDetailClick(subItem.action);
+                              if (subItem.action && onProductCategoryClick) {
+                                onProductCategoryClick(subItem.action);
                               }
                             }}
                             whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
