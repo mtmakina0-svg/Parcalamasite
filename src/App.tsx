@@ -129,6 +129,14 @@ function AppContent() {
 
   // Initialize from URL on mount
   useEffect(() => {
+    // Check if there's a saved redirect path from 404 page
+    const savedPath = sessionStorage.getItem('spa_redirect_path');
+    if (savedPath) {
+      sessionStorage.removeItem('spa_redirect_path');
+      // Use pushState to update URL without reloading
+      window.history.pushState({}, '', savedPath);
+    }
+    
     const urlState = parseUrl();
     setCurrentPage(urlState.page);
     if (urlState.product) setSelectedProduct(urlState.product);
