@@ -15,7 +15,7 @@ interface HeaderProps {
   onTechnologyClick?: () => void;
   onCertificatesClick?: () => void;
   onECatalogClick?: () => void;
-  onProductDetailClick?: (productType: string) => void;
+  onProductDetailClick?: (productType: string, modelName?: string) => void;
   onContactClick?: () => void;
 }
 
@@ -26,6 +26,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,17 +47,33 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { key: 'nav_about', action: 'about' },
     { key: 'nav_certificates', action: 'certificates' }
   ];
+
+  // Product models for mega menu
+  const productModels: { [key: string]: { label: string, models: string[] } } = {
+    'single-shaft': {
+      label: 'Tek Şaftlı Parçalama Makinesi',
+      models: ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-120', 'TSH-150']
+    },
+    'dual-shaft': {
+      label: 'Çift Şaftlı Parçalama Makinesi',
+      models: ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200']
+    },
+    'quad-shaft': {
+      label: 'Dört Şaftlı Parçalama Makinesi',
+      models: ['QS-80', 'QS-100', 'QS-120', 'QS-150']
+    }
+  };
   
   const productsDropdown = [
-    { key: 'product_single_shaft', action: 'single-shaft' },
-    { key: 'product_dual_shaft', action: 'dual-shaft' },
-    { key: 'product_quad_shaft', action: 'quad-shaft' },
-    { key: 'product_metal', action: 'metal' },
-    { key: 'product_pallet', action: 'pallet' },
-    { key: 'product_glass', action: 'glass' },
-    { key: 'product_plastic', action: 'plastic' },
-    { key: 'product_organic', action: 'organic' },
-    { key: 'product_tire', action: 'tire' }
+    { key: 'product_single_shaft', action: 'single-shaft', hasModels: true },
+    { key: 'product_dual_shaft', action: 'dual-shaft', hasModels: true },
+    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true },
+    { key: 'product_metal', action: 'metal', hasModels: false },
+    { key: 'product_pallet', action: 'pallet', hasModels: false },
+    { key: 'product_glass', action: 'glass', hasModels: false },
+    { key: 'product_plastic', action: 'plastic', hasModels: false },
+    { key: 'product_organic', action: 'organic', hasModels: false },
+    { key: 'product_tire', action: 'tire', hasModels: false }
   ];
   
   const wastesDropdown = [
@@ -217,39 +234,98 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     onMouseLeave={handleDropdownLeave}
                     className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 overflow-hidden z-[9999] ${
                       item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px]' : 
-                      item.key === 'nav_products' ? 'grid grid-cols-3 gap-1 p-2 min-w-[780px]' : 
+                      item.key === 'nav_products' ? 'grid grid-cols-3 gap-2 p-2 min-w-[780px]' : 
                       'min-w-[240px]'
                     }`}
                   >
-                    {item.dropdown.map((subItem: any) => (
-                      <motion.a
-                        key={subItem.key || subItem}
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                          setOpenDropdown(null);
+                    {/* Products Mega Menu with Dropdown Models */}
+                    {item.key === 'nav_products' ? (
+                      item.dropdown.map((subItem: any) => (
+                        <div
+                          key={subItem.key || subItem}
+                          className="relative"
+                          onMouseEnter={() => subItem.hasModels && setHoveredProduct(subItem.action)}
+                          onMouseLeave={() => setHoveredProduct(null)}
+                        >
+                          {/* Main Product */}
+                          <motion.a
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                              setOpenDropdown(null);
+                              setHoveredProduct(null);
+                              if (subItem.action && onProductDetailClick) {
+                                onProductDetailClick(subItem.action);
+                              }
+                            }}
+                            whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
+                            className="block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors whitespace-normal leading-tight rounded"
+                          >
+                            {subItem.label || t(subItem.key || subItem)}
+                          </motion.a>
                           
-                          if (item.key === 'nav_corporate') {
-                            if (subItem.action === 'about' && onAboutClick) {
-                              onAboutClick();
-                            } else if (subItem.action === 'certificates' && onCertificatesClick) {
-                              onCertificatesClick();
+                          {/* Models Dropdown (appears below product name) */}
+                          {hoveredProduct === subItem.action && productModels[subItem.action] && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              transition={{ duration: 0.2 }}
+                              className="mt-1 ml-2 border-l-2 border-[#F4CE14]/30 pl-3 space-y-1"
+                            >
+                              {productModels[subItem.action].models.map((model) => (
+                                <motion.a
+                                  key={model}
+                                  href="#"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    setOpenDropdown(null);
+                                    setHoveredProduct(null);
+                                    if (onProductDetailClick) {
+                                      onProductDetailClick(subItem.action, model);
+                                    }
+                                  }}
+                                  whileHover={{ backgroundColor: 'rgba(244,206,20,0.15)', x: 3 }}
+                                  className="block px-3 py-1.5 text-xs text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-all rounded"
+                                >
+                                  {model}
+                                </motion.a>
+                              ))}
+                            </motion.div>
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      /* Other Dropdowns (Corporate, Wastes) */
+                      item.dropdown.map((subItem: any) => (
+                        <motion.a
+                          key={subItem.key || subItem}
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            setOpenDropdown(null);
+                            
+                            if (item.key === 'nav_corporate') {
+                              if (subItem.action === 'about' && onAboutClick) {
+                                onAboutClick();
+                              } else if (subItem.action === 'certificates' && onCertificatesClick) {
+                                onCertificatesClick();
+                              }
+                            } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
+                              onWasteDetailClick(subItem.action);
                             }
-                          } else if (item.key === 'nav_products' && subItem.action && onProductDetailClick) {
-                            onProductDetailClick(subItem.action);
-                          } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
-                            onWasteDetailClick(subItem.action);
-                          }
-                        }}
-                        whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
-                        className={`block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors ${
-                          item.key === 'nav_wastes' || item.key === 'nav_products' ? 'whitespace-normal leading-tight' : ''
-                        }`}
-                      >
-                        {subItem.label || t(subItem.key || subItem)}
-                      </motion.a>
-                    ))}
+                          }}
+                          whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
+                          className={`block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors ${
+                            item.key === 'nav_wastes' ? 'whitespace-normal leading-tight' : ''
+                          }`}
+                        >
+                          {subItem.label || t(subItem.key || subItem)}
+                        </motion.a>
+                      ))
+                    )}
                   </motion.div>
                 )}
               </div>

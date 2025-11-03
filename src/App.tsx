@@ -31,6 +31,7 @@ function AppContent() {
   const [currentPage, setCurrentPage] = useState<PageView>('main');
   const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>(null);
+  const [selectedModelName, setSelectedModelName] = useState<string>('TSH-60'); // Default model
 
   useEffect(() => {
     // Update document direction based on language
@@ -85,8 +86,23 @@ function AppContent() {
     setCurrentPage('ecatalog');
   };
 
-  const handleNavigateToProductDetail = (productType: string) => {
+  const handleNavigateToProductDetail = (productType: string, modelName?: string) => {
     setSelectedProduct(productType as ProductType);
+    // Set model name based on product type if not provided
+    if (modelName) {
+      setSelectedModelName(modelName);
+    } else {
+      // Set default model based on product type
+      if (productType === 'single-shaft') {
+        setSelectedModelName('TSH-60');
+      } else if (productType === 'dual-shaft') {
+        setSelectedModelName('CS-20');
+      } else if (productType === 'quad-shaft') {
+        setSelectedModelName('QS-80');
+      } else {
+        setSelectedModelName('TSH-60'); // fallback
+      }
+    }
     setCurrentPage('product-detail');
   };
 
@@ -161,9 +177,11 @@ function AppContent() {
           onContactClick={handleNavigateToContact}
         />
         <ProductDetailPage 
-          productType={selectedProduct} 
+          productType={selectedProduct}
+          modelName={selectedModelName}
           onBackToMain={handleNavigateToMain}
           onECatalogClick={handleNavigateToECatalog}
+          onProductDetailClick={handleNavigateToProductDetail}
         />
         <ChatWidget />
       </>

@@ -10,30 +10,255 @@ import {
   AccordionTrigger,
 } from './ui/accordion';
 
-// Import product images - Single Shaft
-import productImage1 from 'figma:asset/35db235c624f5e626db1cd10c8e71b50bbc7ee57.png';
-import productImage2 from 'figma:asset/4efe444ccda46f683f05552e2cbc00d96f53f4dd.png';
-import productImage3 from 'figma:asset/927e7a027be0c24722e57bcd3107c6b0f70d7725.png';
-
-// Import product images - Dual Shaft
-import dualShaftImage1 from 'figma:asset/8abf2452262b075bacaabb37025e9454d18741ad.png';
-import dualShaftImage2 from 'figma:asset/869d8b67badadc366a27941c16a34669291eee34.png';
-import dualShaftImage3 from 'figma:asset/0bbf61886f9582b367d72ef91f45d5df929dec4e.png';
-
 interface ProductDetailPageProps {
   productType: string;
+  modelName?: string; // Yeni: Model adı (TSH-60, CS-80, vb.)
   onBackToMain: () => void;
   onECatalogClick: () => void;
-  onProductDetailClick?: (productType: string) => void;
+  onProductDetailClick?: (productType: string, modelName?: string) => void;
 }
 
-export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, onProductDetailClick }: ProductDetailPageProps) => {
+// Helper function to get product folder name in Turkish
+const getProductFolderName = (productType: string): string => {
+  const folderMap: { [key: string]: string } = {
+    'single-shaft': 'tek şaftlı parçalama makinesi',
+    'dual-shaft': 'çift şaftlı parçalama makinesi',
+    'quad-shaft': 'dört şaftlı parçalama makinesi',
+    'metal': 'metal parçalama makinesi',
+    'granulator': 'granülatör',
+    'baler': 'balya presi',
+    'conveyor': 'konveyör sistemi',
+    'separator': 'ayırıcı sistem'
+  };
+  return folderMap[productType] || 'tek şaftlı parçalama makinesi';
+};
+
+// Helper function to get image paths for a specific model
+const getModelImages = (productType: string, modelName: string) => {
+  const folderName = getProductFolderName(productType);
+  const basePath = `/${folderName}/${modelName}`;
+  
+  return {
+    main: `${basePath}/main.png`,
+    detail1: `${basePath}/detail-1.png`,
+    detail2: `${basePath}/detail-2.png`,
+    detail3: `${basePath}/detail-3.png`
+  };
+};
+
+// Model technical specifications
+interface ModelSpecs {
+  motorPower: string;
+  rotorLength: string;
+  rotorDiameter: string;
+  bladeCount: string;
+  weight: string;
+  capacity: string;
+  screenSize?: string;
+}
+
+const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } } = {
+  'single-shaft': {
+    'TSH-60': {
+      motorPower: '22 kW',
+      rotorLength: '600 mm',
+      rotorDiameter: '400 mm',
+      bladeCount: '24 adet',
+      weight: '2500 kg',
+      capacity: '500-800 kg/saat'
+    },
+    'TSH-80': {
+      motorPower: '37 kW',
+      rotorLength: '800 mm',
+      rotorDiameter: '450 mm',
+      bladeCount: '32 adet',
+      weight: '3200 kg',
+      capacity: '800-1200 kg/saat'
+    },
+    'TSH-100': {
+      motorPower: '55 kW',
+      rotorLength: '1000 mm',
+      rotorDiameter: '500 mm',
+      bladeCount: '40 adet',
+      weight: '4000 kg',
+      capacity: '1200-1800 kg/saat'
+    },
+    'TSH-120': {
+      motorPower: '75 kW',
+      rotorLength: '1200 mm',
+      rotorDiameter: '550 mm',
+      bladeCount: '48 adet',
+      weight: '5000 kg',
+      capacity: '1800-2500 kg/saat'
+    },
+    'TSH-150': {
+      motorPower: '90 kW',
+      rotorLength: '1500 mm',
+      rotorDiameter: '600 mm',
+      bladeCount: '60 adet',
+      weight: '6500 kg',
+      capacity: '2500-3500 kg/saat'
+    }
+  },
+  'dual-shaft': {
+    'CS-20': {
+      motorPower: '2 x 7.5 kW',
+      rotorLength: '400 mm',
+      rotorDiameter: '200 mm',
+      bladeCount: '32 adet',
+      weight: '1800 kg',
+      capacity: '300-500 kg/saat',
+      screenSize: '30-80 mm'
+    },
+    'CS-40': {
+      motorPower: '2 x 11 kW',
+      rotorLength: '600 mm',
+      rotorDiameter: '250 mm',
+      bladeCount: '48 adet',
+      weight: '2500 kg',
+      capacity: '500-800 kg/saat',
+      screenSize: '30-100 mm'
+    },
+    'CS-60': {
+      motorPower: '2 x 15 kW',
+      rotorLength: '800 mm',
+      rotorDiameter: '300 mm',
+      bladeCount: '64 adet',
+      weight: '3500 kg',
+      capacity: '800-1500 kg/saat',
+      screenSize: '40-120 mm'
+    },
+    'CS-80': {
+      motorPower: '2 x 22 kW',
+      rotorLength: '1000 mm',
+      rotorDiameter: '350 mm',
+      bladeCount: '80 adet',
+      weight: '4800 kg',
+      capacity: '1500-2500 kg/saat',
+      screenSize: '50-150 mm'
+    },
+    'CS-100': {
+      motorPower: '2 x 30 kW',
+      rotorLength: '1200 mm',
+      rotorDiameter: '400 mm',
+      bladeCount: '96 adet',
+      weight: '6000 kg',
+      capacity: '2500-4000 kg/saat',
+      screenSize: '60-180 mm'
+    },
+    'CS-120': {
+      motorPower: '2 x 37 kW',
+      rotorLength: '1400 mm',
+      rotorDiameter: '450 mm',
+      bladeCount: '112 adet',
+      weight: '7500 kg',
+      capacity: '4000-6000 kg/saat',
+      screenSize: '80-200 mm'
+    },
+    'CS-150': {
+      motorPower: '2 x 45 kW',
+      rotorLength: '1600 mm',
+      rotorDiameter: '500 mm',
+      bladeCount: '128 adet',
+      weight: '9000 kg',
+      capacity: '6000-8000 kg/saat',
+      screenSize: '100-250 mm'
+    },
+    'CS-180': {
+      motorPower: '2 x 55 kW',
+      rotorLength: '1800 mm',
+      rotorDiameter: '550 mm',
+      bladeCount: '144 adet',
+      weight: '11000 kg',
+      capacity: '8000-12000 kg/saat',
+      screenSize: '120-300 mm'
+    },
+    'CS-200': {
+      motorPower: '2 x 75 kW',
+      rotorLength: '2000 mm',
+      rotorDiameter: '600 mm',
+      bladeCount: '160 adet',
+      weight: '14000 kg',
+      capacity: '12000-18000 kg/saat',
+      screenSize: '150-350 mm'
+    }
+  },
+  'quad-shaft': {
+    'QS-80': {
+      motorPower: '4 x 15 kW',
+      rotorLength: '800 mm',
+      rotorDiameter: '250 mm',
+      bladeCount: '128 adet',
+      weight: '5500 kg',
+      capacity: '1000-2000 kg/saat',
+      screenSize: '20-60 mm'
+    },
+    'QS-100': {
+      motorPower: '4 x 18.5 kW',
+      rotorLength: '1000 mm',
+      rotorDiameter: '300 mm',
+      bladeCount: '160 adet',
+      weight: '7000 kg',
+      capacity: '2000-3500 kg/saat',
+      screenSize: '25-80 mm'
+    },
+    'QS-120': {
+      motorPower: '4 x 22 kW',
+      rotorLength: '1200 mm',
+      rotorDiameter: '350 mm',
+      bladeCount: '192 adet',
+      weight: '8800 kg',
+      capacity: '3500-5000 kg/saat',
+      screenSize: '30-100 mm'
+    },
+    'QS-150': {
+      motorPower: '4 x 30 kW',
+      rotorLength: '1500 mm',
+      rotorDiameter: '400 mm',
+      bladeCount: '240 adet',
+      weight: '11500 kg',
+      capacity: '5000-8000 kg/saat',
+      screenSize: '40-120 mm'
+    }
+  }
+};
+
+// Available models for each product type
+const availableModels: { [key: string]: string[] } = {
+  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-120', 'TSH-150'],
+  'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
+  'quad-shaft': ['QS-80', 'QS-100', 'QS-120', 'QS-150']
+};
+
+export const ProductDetailPage = ({ 
+  productType, 
+  modelName = 'TSH-60', // Default model
+  onBackToMain, 
+  onECatalogClick, 
+  onProductDetailClick 
+}: ProductDetailPageProps) => {
   const { t, isRTL } = useLanguage();
+
+  // Get dynamic image paths based on model
+  const images = getModelImages(productType, modelName);
+
+  // Get current model specs
+  const currentSpecs = modelSpecifications[productType]?.[modelName];
+  
+  // Get available models for current product type
+  const models = availableModels[productType] || [];
+
+  // Handle model change
+  const handleModelChange = (newModel: string) => {
+    if (onProductDetailClick) {
+      onProductDetailClick(productType, newModel);
+    }
+  };
 
   // Scroll to top when component mounts
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [productType]);
+  }, [productType, modelName]);
 
   // Single Shaft Product Data
   if (productType === 'single-shaft') {
@@ -53,6 +278,34 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
           </div>
         </div>
 
+        {/* Model Selector */}
+        {models.length > 0 && (
+          <section className="bg-[#45474B] py-6 border-t border-[#F4CE14]/20">
+            <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-[#F4CE14] text-sm uppercase tracking-wide">
+                  {t('models')}:
+                </span>
+                {models.map((model) => (
+                  <motion.button
+                    key={model}
+                    onClick={() => handleModelChange(model)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`px-4 py-2 rounded-lg transition-all ${
+                      model === modelName
+                        ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                        : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
+                    }`}
+                  >
+                    {model}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Hero Section with Main Image */}
         <section className="relative py-16 bg-gradient-to-b from-[#45474B] to-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -62,7 +315,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h1 className="text-[#F4CE14] mb-4">{t('single_shaft_main_title')}</h1>
+              <h1 className="text-[#F4CE14] mb-4">{t('single_shaft_main_title')} - {modelName}</h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
                 {t('single_shaft_subtitle')}
               </p>
@@ -76,8 +329,8 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               className="max-w-5xl mx-auto"
             >
               <img
-                src={productImage1}
-                alt={t('single_shaft_main_title')}
+                src={images.main}
+                alt={`${t('single_shaft_main_title')} - ${modelName}`}
                 className="w-full rounded-2xl shadow-2xl"
               />
             </motion.div>
@@ -199,7 +452,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               >
                 <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
                   <motion.img
-                    src={productImage1}
+                    src={images.main}
                     alt={t('single_shaft_perf_1')}
                     className="w-full h-64 object-cover"
                     whileHover={{ scale: 1.05 }}
@@ -219,7 +472,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               >
                 <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
                   <motion.img
-                    src={productImage2}
+                    src={images.detail1}
                     alt={t('single_shaft_perf_2')}
                     className="w-full h-64 object-cover"
                     whileHover={{ scale: 1.05 }}
@@ -239,7 +492,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               >
                 <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
                   <motion.img
-                    src="figma:asset/927e7a027be0c24722e57bcd3107c6b0f70d7725.png"
+                    src={images.detail2}
                     alt={t('single_shaft_perf_3')}
                     className="w-full h-64 object-cover"
                     whileHover={{ scale: 1.05 }}
@@ -264,53 +517,47 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               {t('single_shaft_tech_specs_title')}
             </motion.h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
-            >
-              <table className="w-full">
-                <tbody>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_model')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_model_value')}</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_motor')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_motor_value')}</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_rotor_length')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_rotor_length_value')}</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_rotor_diameter')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_rotor_diameter_value')}</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_blade_count')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_blade_count_value')}</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_weight')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_weight_value')}</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_feed_opening')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_feed_opening_value')}</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_control')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_control_value')}</td>
-                  </tr>
-                  <tr>
-                    <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('single_shaft_tech_capacity')}</td>
-                    <td className="px-8 py-4 text-[#1E1E1E]">{t('single_shaft_tech_capacity_value')}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </motion.div>
+            {currentSpecs && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+              >
+                <table className="w-full">
+                  <tbody>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Model</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Motor Gücü</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Rotor Uzunluğu</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Rotor Çapı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Bıçak Sayısı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Ağırlık</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
+                    </tr>
+                    <tr>
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Kapasite</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </motion.div>
+            )}
 
             {/* E-Catalog Button */}
             <motion.div
@@ -552,6 +799,34 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
           </div>
         </div>
 
+        {/* Model Selector */}
+        {models.length > 0 && (
+          <section className="bg-[#45474B] py-6 border-t border-[#F4CE14]/20">
+            <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-[#F4CE14] text-sm uppercase tracking-wide">
+                  {t('models')}:
+                </span>
+                {models.map((model) => (
+                  <motion.button
+                    key={model}
+                    onClick={() => handleModelChange(model)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`px-4 py-2 rounded-lg transition-all ${
+                      model === modelName
+                        ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                        : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
+                    }`}
+                  >
+                    {model}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Hero Section with Main Image */}
         <section className="relative py-16 bg-gradient-to-b from-[#45474B] to-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -561,7 +836,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h1 className="text-[#F4CE14] mb-4">{t('dual_shaft_main_title')}</h1>
+              <h1 className="text-[#F4CE14] mb-4">{t('dual_shaft_main_title')} - {modelName}</h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
                 {t('dual_shaft_subtitle')}
               </p>
@@ -575,8 +850,8 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               className="max-w-5xl mx-auto"
             >
               <img
-                src={dualShaftImage1}
-                alt={t('dual_shaft_main_title')}
+                src={images.main}
+                alt={`${t('dual_shaft_main_title')} - ${modelName}`}
                 className="w-full rounded-2xl shadow-2xl"
               />
             </motion.div>
@@ -720,7 +995,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               >
                 <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
                   <motion.img
-                    src={dualShaftImage1}
+                    src={images.main}
                     alt={t('dual_shaft_perf_1')}
                     className="w-full h-64 object-cover"
                     whileHover={{ scale: 1.05 }}
@@ -740,7 +1015,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               >
                 <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
                   <motion.img
-                    src={dualShaftImage2}
+                    src={images.detail1}
                     alt={t('dual_shaft_perf_2')}
                     className="w-full h-64 object-cover"
                     whileHover={{ scale: 1.05 }}
@@ -760,7 +1035,7 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               >
                 <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
                   <motion.img
-                    src={dualShaftImage3}
+                    src={images.detail2}
                     alt={t('dual_shaft_perf_3')}
                     className="w-full h-64 object-cover"
                     whileHover={{ scale: 1.05 }}
@@ -785,99 +1060,53 @@ export const ProductDetailPage = ({ productType, onBackToMain, onECatalogClick, 
               {t('dual_shaft_tech_specs_title')}
             </motion.h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl overflow-x-auto"
-            >
-              <table className="w-full min-w-[800px]">
-                <thead>
-                  <tr className="bg-[#F4CE14]">
-                    <th className="px-4 py-4 text-left text-[#1E1E1E]">{t('dual_shaft_tech_motor')}</th>
-                    <th className="px-4 py-4 text-center text-[#1E1E1E]">CS-60</th>
-                    <th className="px-4 py-4 text-center text-[#1E1E1E]">CS-80</th>
-                    <th className="px-4 py-4 text-center text-[#1E1E1E]">CS-100</th>
-                    <th className="px-4 py-4 text-center text-[#1E1E1E]">CS-120</th>
-                    <th className="px-4 py-4 text-center text-[#1E1E1E]">CS-150</th>
-                    <th className="px-4 py-4 text-center text-[#1E1E1E]">CS-170</th>
-                    <th className="px-4 py-4 text-center text-[#1E1E1E]">CS-200</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-4 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('dual_shaft_tech_motor')}</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">22 + 22 kW</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">30 + 30 kW</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">37 + 37 kW</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">45 + 45 kW</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">55 + 55 kW</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">75 + 75 kW</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">90 + 90 kW</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-4 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('dual_shaft_tech_rotor_speed')}</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">22 rpm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">20 rpm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">18 rpm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">17 rpm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">16 rpm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">15 rpm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">14 rpm</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-4 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('dual_shaft_tech_blade_count')}</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">36</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">40</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">44</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">48</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">52</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">56</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">60</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-4 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('dual_shaft_tech_rotor_length')}</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">600 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">800 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">1000 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">1200 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">1500 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">1700 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">2000 mm</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-4 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('dual_shaft_tech_blade_thickness')}</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">25 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">30 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">35 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">40 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">45 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">50 mm</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">55 mm</td>
-                  </tr>
-                  <tr className="border-b border-[#F5F7F8]">
-                    <td className="px-4 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('dual_shaft_tech_capacity')}</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">500 kg/sa</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">800 kg/sa</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">1200 kg/sa</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">1600 kg/sa</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">2000 kg/sa</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">2500 kg/sa</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">3000 kg/sa</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-4 text-[#45474B] bg-[#F4CE14]/10">{t('dual_shaft_tech_weight')}</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">2500 kg</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">3200 kg</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">4000 kg</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">5200 kg</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">6500 kg</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">8200 kg</td>
-                    <td className="px-4 py-4 text-center text-[#1E1E1E]">9500 kg</td>
-                  </tr>
-                </tbody>
-              </table>
-            </motion.div>
+            {currentSpecs && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+              >
+                <table className="w-full">
+                  <tbody>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Model</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Motor Gücü</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Rotor Uzunluğu</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Rotor Çapı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Bıçak Sayısı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Ağırlık</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
+                    </tr>
+                    {currentSpecs.screenSize && (
+                      <tr className="border-b border-[#F5F7F8]">
+                        <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Elek Boyutu</td>
+                        <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.screenSize}</td>
+                      </tr>
+                    )}
+                    <tr>
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Kapasite</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </motion.div>
+            )}
 
             {/* E-Catalog Button */}
             <motion.div

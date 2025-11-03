@@ -1,7 +1,7 @@
 
-  # Multilingual Website Design
+  # Parçalamamakinesi tasarım
 
-  This is a code bundle for Multilingual Website Design. The original project is available at https://www.figma.com/design/55vcVXb3awABS9rvouP1NF/Multilingual-Website-Design.
+  This is a code bundle for Parçalamamakinesi tasarım. The original project is available at https://www.figma.com/design/55vcVXb3awABS9rvouP1NF/Par%C3%A7alamamakinesi-tasar%C4%B1m.
 
   ## Running the code
 
