@@ -190,6 +190,9 @@ const translations = {
     single_shaft_watch_video: 'Videoyu İzle',
     single_shaft_similar_products: 'Benzer Ürünler',
     single_shaft_ecatalog_btn: 'E-Katalog',
+    youtube_channel_title: 'YouTube Kanalımızı İnceleyin',
+    youtube_channel_description: 'Tüm makinelerimizin çalışma videolarını, müşteri referanslarını ve üretim süreçlerimizi YouTube kanalımızda bulabilirsiniz.',
+    visit_youtube: 'YouTube Kanalına Git',
     
     // Product Category Page
     about_our_machines: 'Makinelerimiz Hakkında',
@@ -433,6 +436,9 @@ const translations = {
     single_shaft_watch_video: 'Watch Video',
     single_shaft_similar_products: 'Similar Products',
     single_shaft_ecatalog_btn: 'E-Catalog',
+    youtube_channel_title: 'Check Out Our YouTube Channel',
+    youtube_channel_description: 'Find all our machine operation videos, customer testimonials and production processes on our YouTube channel.',
+    visit_youtube: 'Visit YouTube Channel',
     
     // Product Category Page
     about_our_machines: 'About Our Machines',
@@ -561,7 +567,7 @@ const translations = {
     
     // Products
     products_title: 'Категории продуктов',
-    products_description: 'Высокопроизводительные измельчительные машины MT Makina выделяются в процессах промышленной переработки благодаря прочной конструкции корпуса и эффективным системам лезвий.',
+    products_description: 'Высокопроизводительные измель��ительные машины MT Makina выделяются в процессах промышленной переработки благодаря прочной конструкции корпуса и эффективным системам лезвий.',
     products_subtitle: 'Мощные и эффективные измельчительные машины MT Makina: одновальные, двухвальные, четырехвальные, металлические, поддонные, пластиковые, стеклянные, органические, медицинские и другие.',
     btn_details: 'Подробнее',
     
@@ -676,6 +682,9 @@ const translations = {
     single_shaft_watch_video: 'Смотреть видео',
     single_shaft_similar_products: 'Похожие продукты',
     single_shaft_ecatalog_btn: 'Электронный каталог',
+    youtube_channel_title: 'Посетите наш канал на YouTube',
+    youtube_channel_description: 'Все видео работы наших машин, отзывы клиентов и производственные процессы на нашем канале YouTube.',
+    visit_youtube: 'Перейти на канал YouTube',
     
     // Product Category Page
     about_our_machines: 'О наших машинах',
@@ -919,6 +928,9 @@ const translations = {
     single_shaft_watch_video: 'مشاهدة الفيديو',
     single_shaft_similar_products: 'منتجات مماثلة',
     single_shaft_ecatalog_btn: 'الكتالوج الإلكتروني',
+    youtube_channel_title: 'تحقق من قناتنا على يوتيوب',
+    youtube_channel_description: 'جميع مقاطع فيديو تشغيل آلاتنا وشهادات العملاء وعمليات الإنتاج على قناتنا على يوتيوب.',
+    visit_youtube: 'زيارة قناة يوتيوب',
     
     // Product Category Page
     about_our_machines: 'حول آلاتنا',

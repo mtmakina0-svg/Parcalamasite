@@ -11,6 +11,9 @@ import {
   AccordionTrigger,
 } from './ui/accordion';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
+import { getModelDescription, hasModelDescription } from '../utils/modelDescriptions';
+import { YouTubeChannelSection } from './YouTubeChannelSection';
+import { SimilarProductsSection } from './SimilarProductsSection';
 
 interface ProductDetailPageProps {
   productType: string;
@@ -242,6 +245,10 @@ export const ProductDetailPage = ({
   
   // Get available models for current product type
   const models = availableModels[productType] || [];
+  
+  // Get model-specific description
+  const modelDesc = getModelDescription(productType, modelName);
+  const hasCustomDesc = hasModelDescription(productType, modelName);
 
   // Handle model change
   const handleModelChange = (newModel: string) => {
@@ -312,7 +319,7 @@ export const ProductDetailPage = ({
             >
               <h1 className="text-[#F4CE14] mb-4 text-5xl font-bold">{t('single_shaft_main_title')} - {modelName}</h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
-                {t('single_shaft_subtitle')}
+                {hasCustomDesc && modelDesc ? modelDesc.intro : t('single_shaft_subtitle')}
               </p>
             </motion.div>
 
@@ -343,15 +350,31 @@ export const ProductDetailPage = ({
               transition={{ duration: 0.6 }}
               className="prose prose-lg max-w-none"
             >
-              <p className="text-[#45474B] leading-relaxed mb-6">
-                {t('single_shaft_description_1')}
-              </p>
-              <p className="text-[#45474B] leading-relaxed mb-6">
-                {t('single_shaft_description_2')}
-              </p>
-              <p className="text-[#45474B] leading-relaxed">
-                {t('single_shaft_description_3')}
-              </p>
+              {hasCustomDesc && modelDesc ? (
+                <>
+                  <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
+                    {modelDesc.paragraph1}
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
+                    {modelDesc.paragraph2}
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed text-lg" style={{ lineHeight: '1.8' }}>
+                    {modelDesc.paragraph3}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="text-[#45474B] leading-relaxed mb-6">
+                    {t('single_shaft_description_1')}
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed mb-6">
+                    {t('single_shaft_description_2')}
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed">
+                    {t('single_shaft_description_3')}
+                  </p>
+                </>
+              )}
             </motion.div>
           </div>
         </section>
@@ -753,6 +776,9 @@ export const ProductDetailPage = ({
                 </Button>
               </motion.div>
             </motion.div>
+
+            {/* YouTube Channel Section */}
+            <YouTubeChannelSection className="mt-16" />
           </div>
         </section>
 
@@ -768,79 +794,10 @@ export const ProductDetailPage = ({
               {t('single_shaft_similar_products')}
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Similar Product 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                whileHover={{ y: -10 }}
-                onClick={() => onProductDetailClick?.('dual-shaft')}
-                className="bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
-              >
-                <div className="h-48 bg-[#45474B] flex items-center justify-center">
-                  <Settings size={64} className="text-[#F4CE14]" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-[#45474B] mb-2 group-hover:text-[#F4CE14] transition-colors">
-                    {t('product_dual_shaft')}
-                  </h3>
-                  <div className="flex items-center text-[#F4CE14] group-hover:gap-2 transition-all">
-                    <span className="text-sm">{t('btn_view_details')}</span>
-                    <ChevronRight size={16} className={isRTL ? 'rotate-180' : ''} />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Similar Product 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                whileHover={{ y: -10 }}
-                onClick={() => onProductDetailClick?.('quad-shaft')}
-                className="bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
-              >
-                <div className="h-48 bg-[#45474B] flex items-center justify-center">
-                  <Settings size={64} className="text-[#F4CE14]" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-[#45474B] mb-2 group-hover:text-[#F4CE14] transition-colors">
-                    {t('product_quad_shaft')}
-                  </h3>
-                  <div className="flex items-center text-[#F4CE14] group-hover:gap-2 transition-all">
-                    <span className="text-sm">{t('btn_view_details')}</span>
-                    <ChevronRight size={16} className={isRTL ? 'rotate-180' : ''} />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Similar Product 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                whileHover={{ y: -10 }}
-                onClick={() => onProductDetailClick?.('metal')}
-                className="bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
-              >
-                <div className="h-48 bg-[#45474B] flex items-center justify-center">
-                  <Settings size={64} className="text-[#F4CE14]" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-[#45474B] mb-2 group-hover:text-[#F4CE14] transition-colors">
-                    {t('product_metal')}
-                  </h3>
-                  <div className="flex items-center text-[#F4CE14] group-hover:gap-2 transition-all">
-                    <span className="text-sm">{t('btn_view_details')}</span>
-                    <ChevronRight size={16} className={isRTL ? 'rotate-180' : ''} />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            <SimilarProductsSection 
+              currentProductType="single-shaft"
+              onProductClick={onProductDetailClick}
+            />
           </div>
         </section>
       </div>
@@ -1312,6 +1269,9 @@ export const ProductDetailPage = ({
                 </Button>
               </motion.div>
             </motion.div>
+
+            {/* YouTube Channel Section */}
+            <YouTubeChannelSection className="mt-16" />
           </div>
         </section>
 
@@ -1327,79 +1287,10 @@ export const ProductDetailPage = ({
               {t('dual_shaft_similar_products')}
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Similar Product 1 - Single Shaft */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                whileHover={{ y: -10 }}
-                onClick={() => onProductDetailClick?.('single-shaft')}
-                className="bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
-              >
-                <div className="h-48 bg-[#45474B] flex items-center justify-center">
-                  <Settings size={64} className="text-[#F4CE14]" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-[#45474B] mb-2 group-hover:text-[#F4CE14] transition-colors">
-                    {t('product_single_shaft')}
-                  </h3>
-                  <div className="flex items-center text-[#F4CE14] group-hover:gap-2 transition-all">
-                    <span className="text-sm">{t('btn_view_details')}</span>
-                    <ChevronRight size={16} className={isRTL ? 'rotate-180' : ''} />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Similar Product 2 - Quad Shaft */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                whileHover={{ y: -10 }}
-                onClick={() => onProductDetailClick?.('quad-shaft')}
-                className="bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
-              >
-                <div className="h-48 bg-[#45474B] flex items-center justify-center">
-                  <Settings size={64} className="text-[#F4CE14]" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-[#45474B] mb-2 group-hover:text-[#F4CE14] transition-colors">
-                    {t('product_quad_shaft')}
-                  </h3>
-                  <div className="flex items-center text-[#F4CE14] group-hover:gap-2 transition-all">
-                    <span className="text-sm">{t('btn_view_details')}</span>
-                    <ChevronRight size={16} className={isRTL ? 'rotate-180' : ''} />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Similar Product 3 - Metal */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                whileHover={{ y: -10 }}
-                onClick={() => onProductDetailClick?.('metal')}
-                className="bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
-              >
-                <div className="h-48 bg-[#45474B] flex items-center justify-center">
-                  <Settings size={64} className="text-[#F4CE14]" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-[#45474B] mb-2 group-hover:text-[#F4CE14] transition-colors">
-                    {t('product_metal')}
-                  </h3>
-                  <div className="flex items-center text-[#F4CE14] group-hover:gap-2 transition-all">
-                    <span className="text-sm">{t('btn_view_details')}</span>
-                    <ChevronRight size={16} className={isRTL ? 'rotate-180' : ''} />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            <SimilarProductsSection 
+              currentProductType="dual-shaft"
+              onProductClick={onProductDetailClick}
+            />
           </div>
         </section>
       </div>
