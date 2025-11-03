@@ -41,19 +41,23 @@ type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'gra
 // Parse URL and determine current page
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
   const path = window.location.pathname;
+  console.log('parseUrl - Parsing path:', path);
   
   // Home page
   if (path === '/' || path === '' || path === '/home') {
+    console.log('parseUrl - Detected: main/home page');
     return { page: 'main' };
   }
   
   // Kurumsal (About)
   if (path === '/kurumsal') {
+    console.log('parseUrl - Detected: about page');
     return { page: 'about' };
   }
   
   // Ürünler (Products Overview)
   if (path === '/urunler') {
+    console.log('parseUrl - Detected: products-overview page');
     return { page: 'products-overview' };
   }
   
@@ -72,50 +76,60 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
   // Check if it's a product category page
   for (const [urlPath, productType] of Object.entries(productCategoryMap)) {
     if (path === urlPath) {
+      console.log('parseUrl - Detected: product-category page, product:', productType);
       return { page: 'product-category', product: productType };
     }
     // Check if it's a product detail page (e.g., /tek-shaftli-parcalama-makinesi/tsh-60)
     if (path.startsWith(urlPath + '/')) {
       const model = path.substring(urlPath.length + 1).toUpperCase();
+      console.log('parseUrl - Detected: product-detail page, product:', productType, 'model:', model);
       return { page: 'product-detail', product: productType, model };
     }
   }
   
   // Teknoloji
   if (path === '/teknoloji') {
+    console.log('parseUrl - Detected: technology page');
     return { page: 'technology' };
   }
   
   // Referanslar
   if (path === '/referanslar') {
+    console.log('parseUrl - Detected: references-overview page');
     return { page: 'references-overview' };
   }
   
   // Sertifikalar
   if (path === '/sertifikalar') {
+    console.log('parseUrl - Detected: certificates page');
     return { page: 'certificates' };
   }
   
   // İletişim
   if (path === '/iletisim') {
+    console.log('parseUrl - Detected: contact page');
     return { page: 'contact' };
   }
   
   // E-Katalog
   if (path === '/e-katalog') {
+    console.log('parseUrl - Detected: ecatalog page');
     return { page: 'ecatalog' };
   }
   
   // Atık Türleri
   if (path === '/atik-turleri') {
+    console.log('parseUrl - Detected: waste-categories page');
     return { page: 'waste-categories' };
   }
   if (path.startsWith('/atik-turleri/')) {
     const category = path.substring('/atik-turleri/'.length);
+    console.log('parseUrl - Detected: waste-detail page, category:', category);
     return { page: 'waste-detail', wasteCategory: category };
   }
   
   // Default to main page
+  console.log('parseUrl - No match found, defaulting to main page');
   return { page: 'main' };
 }
 
@@ -129,15 +143,20 @@ function AppContent() {
 
   // Initialize from URL on mount
   useEffect(() => {
+    console.log('App.tsx - Initializing, current pathname:', window.location.pathname);
+    
     // Check if there's a saved redirect path from 404 page
     const savedPath = sessionStorage.getItem('spa_redirect_path');
     if (savedPath) {
+      console.log('App.tsx - Found saved redirect path:', savedPath);
       sessionStorage.removeItem('spa_redirect_path');
-      // Use pushState to update URL without reloading
-      window.history.pushState({}, '', savedPath);
+      // Use replaceState to update URL without reloading and without adding to history
+      window.history.replaceState({}, '', savedPath);
     }
     
     const urlState = parseUrl();
+    console.log('App.tsx - Parsed URL state:', urlState);
+    
     setCurrentPage(urlState.page);
     if (urlState.product) setSelectedProduct(urlState.product);
     if (urlState.model) setSelectedModelName(urlState.model);

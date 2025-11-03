@@ -176,12 +176,16 @@ VITE_CONTACT_EMAIL=info@parcalamamakinesi.com
 
 ### Routing Config
 
-✅ **Otomatik hazır!**
-- Vercel: `vercel.json`
-- Netlify: `netlify.toml` + `public/_redirects`
-- Development: `404.html` fallback
+✅ **Tamamen düzeltildi!**
+- Vercel: `vercel.json` (rewrites → `/index.html`)
+- Netlify: `netlify.toml` + `public/_redirects` (TEXT dosyası)
+- Development: `404.html` fallback (optimize edildi)
+- Debug: Console logs eklendi (geliştirme için)
 
-📖 **Detaylı açıklama:** [ROUTING_FIX.md](./ROUTING_FIX.md)
+📖 **Detaylı açıklama:** 
+- [ROUTING_FIX_SUMMARY.md](./ROUTING_FIX_SUMMARY.md) - Özet + Çözüm
+- [ROUTING_DEBUG_GUIDE.md](./ROUTING_DEBUG_GUIDE.md) - Test + Debug
+- [ROUTING_FIX.md](./ROUTING_FIX.md) - Teknik detaylar
 
 ---
 

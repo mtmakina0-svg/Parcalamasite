@@ -86,21 +86,18 @@
       var path = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
+      var fullPath = path + search + hash;
       
-      // Eğer root path değilse, path'i kaydet ve redirect et
+      console.log('404.html - Redirecting from:', fullPath);
+      
+      // Path'i session storage'a kaydet
       if (path !== '/' && path !== '') {
-        sessionStorage.setItem('spa_redirect_path', path + search + hash);
-        
-        // 1 saniye sonra root'a yönlendir
-        setTimeout(function() {
-          window.location.replace('/' + search + hash);
-        }, 1000);
-      } else {
-        // Root path'de ise direkt ana sayfaya git
-        setTimeout(function() {
-          window.location.replace('/');
-        }, 1000);
+        sessionStorage.setItem('spa_redirect_path', fullPath);
+        console.log('404.html - Saved redirect path:', fullPath);
       }
+      
+      // Hemen root'a yönlendir (bekleme süresi kaldırıldı)
+      window.location.replace('/' + search + hash);
     })();
   </script>
 </body>
