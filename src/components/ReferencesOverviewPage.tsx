@@ -1,27 +1,106 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Award, Globe, ThumbsUp } from 'lucide-react';
+import { Award, Globe, ThumbsUp, Building2, Factory, Briefcase, Landmark } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface ReferencesOverviewPageProps {
   onBackToMain: () => void;
 }
 
-const companyLogos = [
-  'Aselsan', 'Bosch', 'Castrol', 'TAV', 'PepsiCo',
-  'Remondis', 'Orhan Holding', 'BP', 'OSYM', 'Golden Rose'
+interface Partner {
+  name: string;
+  logo: string;
+  category: 'industry' | 'government' | 'defense' | 'global';
+  alt: string;
+}
+
+// Comprehensive partner list with SEO-optimized categorization
+const partners: Partner[] = [
+  // Global Corporations
+  { name: 'BP', logo: 'https://i.ibb.co/84Y2j2yB/bp-logo-png-seeklogo-21836.png', category: 'global', alt: 'BP - British Petroleum Logo' },
+  { name: 'Castrol', logo: 'https://i.ibb.co/XfcXKXVQ/castrollogo.png', category: 'global', alt: 'Castrol Motor Yağları Logo' },
+  { name: 'PepsiCo', logo: 'https://i.ibb.co/PGmvrMtt/Pepsi-Co-logo-svg.png', category: 'global', alt: 'PepsiCo Logo' },
+  { name: 'Mercedes-Benz', logo: 'https://i.ibb.co/W4zzSD4P/1200px-Mercedes-Benz-Logo-11.jpg', category: 'global', alt: 'Mercedes-Benz Logo' },
+  { name: 'Bosch', logo: 'https://i.ibb.co/JWsYZqCK/Bosch-logo-svg.png', category: 'global', alt: 'Bosch Logo' },
+  
+  // Industry & Manufacturing
+  { name: 'Golden Rose', logo: 'https://i.ibb.co/whyptjcT/golden-rose.png', category: 'industry', alt: 'Golden Rose Kozmetik Logo' },
+  { name: 'Betek Boya', logo: 'https://i.ibb.co/FqcdPgpG/betek-boya-logo-brandlogos-net-slepl.png', category: 'industry', alt: 'Betek Boya Logo' },
+  { name: 'Melodi Çikolata', logo: 'https://i.ibb.co/7xYjc2rx/melodi-cikolata-logo-png-seeklogo-223826.png', category: 'industry', alt: 'Melodi Çikolata Logo' },
+  { name: 'Hun Holding', logo: 'https://i.ibb.co/MmD6MPg/hun-holdng.jpg', category: 'industry', alt: 'Hun Holding Logo' },
+  { name: 'Acarsan Holding', logo: 'https://i.ibb.co/k2jDLSJB/Acarsan-Holding-Logo.png', category: 'industry', alt: 'Acarsan Holding Logo' },
+  { name: 'Max Royal', logo: 'https://i.ibb.co/FLSK0Ff6/MAXROYAL.jpg', category: 'industry', alt: 'Max Royal Logo' },
+  { name: 'TAV', logo: 'https://i.ibb.co/FbS339kJ/TAV.jpg', category: 'industry', alt: 'TAV Havalimanları Holding Logo' },
+  { name: 'İGA', logo: 'https://i.ibb.co/JjkZmQry/GA-Havaliman-letmesi-A-logo-svg.png', category: 'industry', alt: 'İstanbul Havalimanı İşletmesi Logo' },
+  { name: 'Türk Hava Yolları', logo: 'https://i.ibb.co/Zp88MHGw/TE-Logo.png', category: 'industry', alt: 'Türk Hava Yolları Logo' },
+  { name: 'SYM', logo: 'https://i.ibb.co/q3pJKw3x/SYM-svg.png', category: 'industry', alt: 'SYM Logo' },
+  { name: 'Artvin', logo: 'https://i.ibb.co/Lz3wyzzZ/ARTV-Nlogo.png', category: 'industry', alt: 'Artvin Logo' },
+  { name: 'Humana', logo: 'https://i.ibb.co/k2H5WRHV/Humana-svg.png', category: 'industry', alt: 'Humana Logo' },
+
+  // Defense & High-Tech
+  { name: 'ASELSAN', logo: 'https://i.ibb.co/jkW22W0n/ASELSAN-logo-svg.png', category: 'defense', alt: 'ASELSAN - Türk Savunma Sanayi Logo' },
+  { name: 'Türk Silahlı Kuvvetleri', logo: 'https://i.ibb.co/JwXgDhdV/Seal-of-the-Turkish-Armed-Forces.png', category: 'defense', alt: 'Türk Silahlı Kuvvetleri Logo' },
+  { name: 'MİT', logo: 'https://i.ibb.co/8Lrdgt3Z/Mitlogo-1.png', category: 'defense', alt: 'Milli İstihbarat Teşkilatı Logo' },
+
+  // Government & Public Institutions
+  { name: 'T.C. Sağlık Bakanlığı', logo: 'https://i.ibb.co/RpvwTLhw/Logo-of-Ministry-of-Health-Turkey.png', category: 'government', alt: 'T.C. Sağlık Bakanlığı Logo' },
+  { name: 'T.C. Adalet Bakanlığı', logo: 'https://i.ibb.co/0v8k8Vt/Logo-of-Ministry-of-Justice-Turkey-svg.png', category: 'government', alt: 'T.C. Adalet Bakanlığı Logo' },
+  { name: 'T.C. İçişleri Bakanlığı', logo: 'https://i.ibb.co/dwy09MJy/turkiye-cumhuriyeti-icisleri-bakanligi-logo-png-seeklogo-345237.png', category: 'government', alt: 'T.C. İçişleri Bakanlığı Logo' },
+  { name: 'T.C. Merkez Bankası', logo: 'https://i.ibb.co/rGqLYbyc/turkiye-cumhuriyet-merkez-bankasi-logo-png-seeklogo-181809.png', category: 'government', alt: 'T.C. Merkez Bankası Logo' },
+  { name: 'Makine ve Kimya Endüstrisi Kurumu', logo: 'https://i.ibb.co/jvPsx5XB/Makine-ve-Kimya-End-strisi-Kurumu-logo-svg.png', category: 'government', alt: 'MESS - Makine ve Kimya Endüstrisi Kurumu Logo' }
+];
+
+const categories = [
+  { 
+    id: 'global', 
+    title: 'Küresel Şirketler', 
+    icon: Globe, 
+    description: 'Dünya çapında tanınan uluslararası şirketler',
+    color: 'from-blue-500 to-blue-600'
+  },
+  { 
+    id: 'industry', 
+    title: 'Endüstri ve Üretim', 
+    icon: Factory, 
+    description: 'Sanayi ve üretim sektöründeki önde gelen firmalar',
+    color: 'from-orange-500 to-orange-600'
+  },
+  { 
+    id: 'defense', 
+    title: 'Savunma ve Yüksek Teknoloji', 
+    icon: Briefcase, 
+    description: 'Savunma sanayi ve ileri teknoloji kuruluşları',
+    color: 'from-red-500 to-red-600'
+  },
+  { 
+    id: 'government', 
+    title: 'Kamu Kurumları', 
+    icon: Landmark, 
+    description: 'Devlet kurumları ve kamu kuruluşları',
+    color: 'from-green-500 to-green-600'
+  }
 ];
 
 export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageProps) => {
+  const [activeCategory, setActiveCategory] = React.useState<string>('all');
+
+  const filteredPartners = activeCategory === 'all' 
+    ? partners 
+    : partners.filter(p => p.category === activeCategory);
+
   return (
     <div className="min-h-screen bg-[#F5F7F8]" style={{ fontFamily: 'Mulish, sans-serif' }}>
       {/* Header Spacer */}
       <div className="h-20"></div>
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#45474B] via-[#3A3C3F] to-[#2F3032]">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#45474B] via-[#3A3C3F] to-[#2F3032]">
+        {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,.05) 40px, rgba(255,255,255,.05) 80px)',
+            backgroundImage: 'radial-gradient(circle at 20% 50%, #F4CE14 2px, transparent 2px), radial-gradient(circle at 80% 80%, #F4CE14 2px, transparent 2px)',
+            backgroundSize: '100px 100px',
+            animation: 'float 20s ease-in-out infinite'
           }}></div>
         </div>
         
@@ -31,136 +110,247 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-24 h-24 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-8"
+            >
+              <Award size={48} className="text-[#1E1E1E]" />
+            </motion.div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#F5F7F8] mb-6">
-              Müşteri Memnuniyeti ve Başarı Öyküleri
+              İş Ortaklarımız
             </h1>
             <p className="text-xl md:text-2xl text-[#F5F7F8]/90 max-w-4xl mx-auto leading-relaxed">
-              MT Makina olarak müşteri memnuniyetini her zaman en ön planda tutuyoruz.
+              Dünya çapında güvenilir iş birliklerimiz ve başarı hikayelerimiz
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-20">
+      {/* Statistics Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          
-          {/* Introduction */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-lg p-12 shadow-md mb-16 max-w-5xl mx-auto"
-          >
-            <div className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-6">
-              <Award size={40} className="text-[#1E1E1E]" />
-            </div>
-            <div className="text-center space-y-6 text-lg text-[#45474B] leading-relaxed">
-              <p>
-                Ürünlerimizin ve hizmetlerimizin kalitesini sürekli artırmak için iş ortaklarımızdan 
-                gelen geri bildirimlerle gelişiyoruz.
-              </p>
-              <p>
-                Yurt içi ve yurt dışındaki referanslarımız, sürdürülebilir üretim anlayışımızın en 
-                büyük göstergesidir.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Statistics Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-gradient-to-br from-[#45474B] to-[#35373A] rounded-lg p-8 text-center shadow-lg"
+              className="text-center"
             >
-              <ThumbsUp size={48} className="text-[#F4CE14] mx-auto mb-4" />
-              <h3 className="text-4xl text-[#F5F7F8] mb-2">500+</h3>
-              <p className="text-lg text-[#F5F7F8]/80">Tamamlanan Proje</p>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-full flex items-center justify-center mx-auto mb-4">
+                <ThumbsUp size={32} className="text-[#1E1E1E]" />
+              </div>
+              <h3 className="text-5xl text-[#45474B] mb-2">500+</h3>
+              <p className="text-lg text-[#45474B]/70">Tamamlanan Proje</p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-[#45474B] to-[#35373A] rounded-lg p-8 text-center shadow-lg"
+              className="text-center"
             >
-              <Globe size={48} className="text-[#F4CE14] mx-auto mb-4" />
-              <h3 className="text-4xl text-[#F5F7F8] mb-2">35+</h3>
-              <p className="text-lg text-[#F5F7F8]/80">İhracat Yapılan Ülke</p>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe size={32} className="text-[#1E1E1E]" />
+              </div>
+              <h3 className="text-5xl text-[#45474B] mb-2">35+</h3>
+              <p className="text-lg text-[#45474B]/70">İhracat Yapılan Ülke</p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-gradient-to-br from-[#45474B] to-[#35373A] rounded-lg p-8 text-center shadow-lg"
+              className="text-center"
             >
-              <Award size={48} className="text-[#F4CE14] mx-auto mb-4" />
-              <h3 className="text-4xl text-[#F5F7F8] mb-2">%98</h3>
-              <p className="text-lg text-[#F5F7F8]/80">Müşteri Memnuniyeti</p>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Building2 size={32} className="text-[#1E1E1E]" />
+              </div>
+              <h3 className="text-5xl text-[#45474B] mb-2">250+</h3>
+              <p className="text-lg text-[#45474B]/70">İş Ortağı</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award size={32} className="text-[#1E1E1E]" />
+              </div>
+              <h3 className="text-5xl text-[#45474B] mb-2">%98</h3>
+              <p className="text-lg text-[#45474B]/70">Müşteri Memnuniyeti</p>
             </motion.div>
           </div>
+        </div>
+      </section>
 
-          {/* Partner Logos Section */}
+      {/* Category Filter */}
+      <section className="py-12 bg-gradient-to-b from-white to-[#F5F7F8]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-12 text-center">
-              İş Ortaklarımız
+            <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-4">
+              Kategorilere Göre Referanslar
             </h2>
-            
-            <div className="bg-white rounded-lg p-12 shadow-md">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                {companyLogos.map((company, index) => (
-                  <motion.div
-                    key={company}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.5 + index * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center justify-center p-6 bg-[#F5F7F8] rounded-lg hover:shadow-md transition-all"
-                  >
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-[#E8E9EA] to-[#D5D6D8] rounded-lg mx-auto mb-3 flex items-center justify-center">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#45474B" strokeWidth="1.5" className="opacity-30">
-                          <rect x="3" y="3" width="18" height="18" rx="2" />
-                          <path d="M3 9h18M9 21V9" />
-                        </svg>
-                      </div>
-                      <p className="text-sm text-[#45474B]">{company}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            <p className="text-lg text-[#45474B]/70 max-w-3xl mx-auto">
+              Farklı sektörlerden önde gelen kurumlarla çalışıyoruz
+            </p>
           </motion.div>
 
-          {/* Testimonial Section */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setActiveCategory('all')}
+              className={`px-6 py-3 rounded-lg transition-all ${
+                activeCategory === 'all'
+                  ? 'bg-[#F4CE14] text-[#1E1E1E] shadow-lg'
+                  : 'bg-white text-[#45474B] hover:bg-[#F4CE14]/20'
+              }`}
+            >
+              Tümü ({partners.length})
+            </motion.button>
+            {categories.map((category) => {
+              const count = partners.filter(p => p.category === category.id).length;
+              return (
+                <motion.button
+                  key={category.id}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`px-6 py-3 rounded-lg transition-all flex items-center gap-2 ${
+                    activeCategory === category.id
+                      ? 'bg-[#F4CE14] text-[#1E1E1E] shadow-lg'
+                      : 'bg-white text-[#45474B] hover:bg-[#F4CE14]/20'
+                  }`}
+                >
+                  <category.icon size={20} />
+                  {category.title} ({count})
+                </motion.button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Grid */}
+      <section className="py-16 bg-[#F5F7F8]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+          {/* Show category description if filtered */}
+          {activeCategory !== 'all' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white rounded-2xl p-8 shadow-lg mb-12 text-center"
+            >
+              {(() => {
+                const cat = categories.find(c => c.id === activeCategory);
+                if (!cat) return null;
+                const Icon = cat.icon;
+                return (
+                  <>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${cat.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <Icon size={32} className="text-white" />
+                    </div>
+                    <h3 className="text-2xl text-[#1E1E1E] mb-2">{cat.title}</h3>
+                    <p className="text-[#45474B]/70">{cat.description}</p>
+                  </>
+                );
+              })()}
+            </motion.div>
+          )}
+
+          {/* Partners Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {filteredPartners.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.03 }}
+                whileHover={{ y: -8, scale: 1.05 }}
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-2xl transition-all group"
+              >
+                <div className="aspect-square flex items-center justify-center p-4 bg-[#F5F7F8] rounded-lg group-hover:bg-white transition-colors mb-3">
+                  <ImageWithFallback
+                    src={partner.logo}
+                    alt={partner.alt}
+                    className="w-full h-full object-contain"
+                    fallbackSrc="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400"
+                  />
+                </div>
+                <h3 className="text-center text-sm text-[#1E1E1E] line-clamp-2">
+                  {partner.name}
+                </h3>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="py-20 bg-gradient-to-br from-[#45474B] to-[#35373A]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-lg p-12 shadow-lg text-center max-w-5xl mx-auto"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
           >
-            <svg width="60" height="60" viewBox="0 0 24 24" fill="#1E1E1E" className="mx-auto mb-6 opacity-20">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="#F4CE14" className="mx-auto mb-6 opacity-50">
               <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
             </svg>
-            <p className="text-2xl md:text-3xl text-[#1E1E1E] mb-6 italic leading-relaxed">
+            <p className="text-2xl md:text-3xl text-[#F5F7F8] mb-6 italic leading-relaxed">
               "MT Makina ile çalışmak, yüksek kaliteli ürünler ve güvenilir hizmet almak demektir. 
-              Projelerimizde her zaman yanımızda oldular."
+              Projelerimizde her zaman yanımızda oldular. Parçalama sistemlerindeki uzmanlıkları sayesinde 
+              üretim verimliliğimizi %40 artırdık."
             </p>
-            <p className="text-lg text-[#1E1E1E]/80">— Değerli İş Ortağımız</p>
+            <div className="h-1 w-24 bg-[#F4CE14] mx-auto mb-4"></div>
+            <p className="text-lg text-[#F5F7F8]/80">— Değerli İş Ortağımız</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-3xl p-12 text-center shadow-2xl"
+          >
+            <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-6">
+              Siz de İş Ortaklarımıza Katılın
+            </h2>
+            <p className="text-xl text-[#1E1E1E]/80 mb-8 max-w-3xl mx-auto">
+              Endüstriyel parçalama sistemleri için güvenilir çözüm ortağınız olmaktan mutluluk duyarız
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#1E1E1E] text-[#F4CE14] px-8 py-4 rounded-xl text-lg hover:bg-[#2F3032] transition-colors"
+            >
+              İletişime Geçin
+            </motion.button>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-[#45474B] to-[#35373A]">
+      <section className="py-20 bg-[#45474B]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">Bize Ulaşın</h2>
           
@@ -171,7 +361,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center"
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center hover:bg-white/15 transition-all"
             >
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="28" height="28" fill="#1E1E1E" viewBox="0 0 24 24">
@@ -190,7 +380,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center"
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center hover:bg-white/15 transition-all"
             >
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="28" height="28" fill="#1E1E1E" viewBox="0 0 24 24">
@@ -207,7 +397,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center"
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center hover:bg-white/15 transition-all"
             >
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="28" height="28" fill="#1E1E1E" viewBox="0 0 24 24">
@@ -220,71 +410,6 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#1E1E1E] py-16">
-        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            {/* Kurumsal */}
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Kurumsal</h3>
-              <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>Ana Sayfa</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Hakkımızda</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Misyonumuz</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Vizyonumuz</li>
-              </ul>
-            </div>
-
-            {/* Ürünler */}
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Ürünler</h3>
-              <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Parçalama Makineleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Ayrıştırma Sistemleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Yakma Fırınları</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Balya Presleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Tesisler</li>
-              </ul>
-            </div>
-
-            {/* Bize Ulaşın */}
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Bize Ulaşın</h3>
-              <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li>E: info@mtmakina.com.tr</li>
-                <li>T: +90 212 613 31 82</li>
-                <li>M: +90 542 310 99 30</li>
-                <li className="pt-2 leading-relaxed">
-                  Cumhuriyet Mah. 1983 Sk. Kent Palas 2 K:7 D:85-86 PK:34512 Esenyurt / İstanbul / TÜRKİYE
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Social Media */}
-          <div className="border-t border-[#F5F7F8]/20 pt-8">
-            <div className="flex justify-center items-center gap-6 mb-6">
-              <a href="https://www.linkedin.com/company/mtmakina" target="_blank" rel="noopener noreferrer" className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-              <a href="https://www.youtube.com/@MTMakinaofficial" target="_blank" rel="noopener noreferrer" className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                </svg>
-              </a>
-              <a href="https://www.instagram.com/mtmakina" target="_blank" rel="noopener noreferrer" className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-            </div>
-            <p className="text-center text-[#F5F7F8]/60">© 2025 MT Makina Ltd. Şti. - Tüm Hakları Saklıdır</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

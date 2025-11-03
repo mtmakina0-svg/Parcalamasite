@@ -1,23 +1,76 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface Product {
   id: string;
   title: string;
+  image: string;
+  alt: string;
 }
 
 const products: Product[] = [
-  { id: 'single-shaft', title: 'Tek Şaftlı Parçalama Makinesi' },
-  { id: 'dual-shaft', title: 'Çift Şaftlı Parçalama Makinesi' },
-  { id: 'quad-shaft', title: 'Dört Şaftlı Parçalama Makinesi' },
-  { id: 'metal', title: 'Metal Parçalama Makinesi' },
-  { id: 'pallet', title: 'Palet Parçalama Makinesi' },
-  { id: 'wood', title: 'Ağaç Parçalama Makinesi' },
-  { id: 'glass', title: 'Cam Şişe Kırma Makinesi' },
-  { id: 'plastic', title: 'Plastik Parçalama Makinesi' },
-  { id: 'organic', title: 'Organik Atık Parçalama Makinesi' },
-  { id: 'tire', title: 'Lastik Parçalama Makinesi' },
+  { 
+    id: 'single-shaft', 
+    title: 'Tek Şaftlı Parçalama Makinesi',
+    image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
+    alt: 'Tek Şaftlı Parçalama Makinesi - MT Makina TSH Serisi'
+  },
+  { 
+    id: 'dual-shaft', 
+    title: 'Çift Şaftlı Parçalama Makinesi',
+    image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
+    alt: 'Çift Şaftlı Parçalama Makinesi - MT Makina CS Serisi'
+  },
+  { 
+    id: 'quad-shaft', 
+    title: 'Dört Şaftlı Parçalama Makinesi',
+    image: 'https://i.ibb.co/SDjBQ9cq/1-9.png',
+    alt: 'Dört Şaftlı Parçalama Makinesi - MT Makina QS Serisi'
+  },
+  { 
+    id: 'metal', 
+    title: 'Metal Parçalama Makinesi',
+    image: 'https://i.ibb.co/m5xLp46J/1-1.png',
+    alt: 'Metal Parçalama Makinesi - MT Makina MP Serisi'
+  },
+  { 
+    id: 'pallet', 
+    title: 'Palet Parçalama Makinesi',
+    image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
+    alt: 'Palet Parçalama Makinesi - Ahşap Geri Dönüşüm'
+  },
+  { 
+    id: 'wood', 
+    title: 'Ağaç Parçalama Makinesi',
+    image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
+    alt: 'Ağaç Parçalama Makinesi - Ahşap Atık İşleme'
+  },
+  { 
+    id: 'glass', 
+    title: 'Cam Şişe Kırma Makinesi',
+    image: 'https://i.ibb.co/4wtQRwBB/1-1.png',
+    alt: 'Cam Şişe Kırma Makinesi - Cam Geri Dönüşüm'
+  },
+  { 
+    id: 'plastic', 
+    title: 'Plastik Parçalama Makinesi',
+    image: 'https://i.ibb.co/5hxMZJ2g/plastic-crusher-machine-4.png',
+    alt: 'Plastik Parçalama Makinesi - Plastik Geri Dönüşüm'
+  },
+  { 
+    id: 'organic', 
+    title: 'Organik Atık Parçalama Makinesi',
+    image: 'https://i.ibb.co/Ndfqm2fm/organic-waste-shredder-2.png',
+    alt: 'Organik Atık Parçalama Makinesi - Kompost İşleme'
+  },
+  { 
+    id: 'tire', 
+    title: 'Lastik Parçalama Makinesi',
+    image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
+    alt: 'Lastik Parçalama Makinesi - Lastik Geri Dönüşüm'
+  },
 ];
 
 interface ProductsOverviewPageProps {
@@ -69,24 +122,15 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
                 onClick={() => onProductClick && onProductClick(product.id)}
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer"
               >
-                {/* Placeholder Image */}
-                <div className="relative h-64 bg-gradient-to-br from-[#E8E9EA] to-[#D5D6D8] flex items-center justify-center">
-                  <div className="text-center">
-                    <svg
-                      width="80"
-                      height="80"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#45474B"
-                      strokeWidth="1.5"
-                      className="mx-auto mb-2 opacity-30"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <path d="M21 15l-5-5L5 21" />
-                    </svg>
-                    <p className="text-sm text-[#45474B]/40">Ürün Görseli</p>
-                  </div>
+                {/* Product Image */}
+                <div className="relative h-64 bg-[#45474B] overflow-hidden group">
+                  <ImageWithFallback
+                    src={product.image}
+                    alt={product.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
                 {/* Card Content */}

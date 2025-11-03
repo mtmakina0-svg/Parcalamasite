@@ -44,7 +44,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     updateMetaTag('meta[name="description"]', 'name', description);
     updateMetaTag('meta[name="keywords"]', 'name', keywords.join(', '));
     updateMetaTag('meta[name="author"]', 'name', 'MT Makina');
-    updateMetaTag('meta[name="robots"]', 'name', 'index, follow');
+    updateMetaTag('meta[name="robots"]', 'name', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    updateMetaTag('meta[name="googlebot"]', 'name', 'index, follow');
+    updateMetaTag('meta[name="google"]', 'name', 'nositelinkssearchbox');
+    updateMetaTag('meta[name="google-site-verification"]', 'name', 'YOUR_GOOGLE_VERIFICATION_CODE');
+    updateMetaTag('meta[name="viewport"]', 'name', 'width=device-width, initial-scale=1, maximum-scale=5');
     
     // Update Open Graph tags
     updateMetaTag('meta[property="og:title"]', 'property', title);

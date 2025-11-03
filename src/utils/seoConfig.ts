@@ -14,7 +14,7 @@ export interface SEOMetadata {
 
 // URL Path Generator
 export const generateUrl = {
-  home: () => '/',
+  home: () => '/home',
   about: () => '/kurumsal',
   products: () => '/urunler',
   productCategory: (type: string) => {
@@ -45,10 +45,10 @@ export const generateUrl = {
 // SEO Metadata for each page
 export const seoMetadata: { [key: string]: SEOMetadata | ((params?: any) => SEOMetadata) } = {
   home: {
-    title: 'MT Makina - Endüstriyel Parçalama Makineleri | Türkiye\'nin Lider Üreticisi',
-    description: 'MT Makina, Türkiye\'nin önde gelen endüstriyel parçalama makinesi üreticisidir. Tek şaftlı, çift şaftlı, dörtlü şaft parçalama sistemleri, metal kırıcılar ve geri dönüşüm ekipmanları.',
-    keywords: ['parçalama makinesi', 'shredder', 'tek şaftlı parçalama', 'çift şaftlı parçalama', 'metal kırıcı', 'geri dönüşüm makinesi', 'endüstriyel parçalama', 'MT Makina'],
-    canonical: 'https://www.parcalamamakinesi.com/'
+    title: 'Parçalama Makinesi | Shredder Machine | MT Makina - Türkiye\'nin 1 Numaralı Üreticisi',
+    description: 'Parçalama makinesi, shredder machine, plastik kırma makinesi, metal parçalama, ahşap kırıcı - MT Makina endüstriyel parçalama sistemleri. Tek şaftlı, çift şaftlı TSH serisi. ✓ CE Belgeli ✓ Garanti ✓ Servis',
+    keywords: ['parçalama makinesi', 'shredder machine', 'shredder', 'plastik kırma makinesi', 'metal parçalama makinesi', 'ahşap kırma makinesi', 'tek şaftlı parçalama', 'çift şaftlı parçalama', 'TSH parçalama', 'endüstriyel shredder', 'geri dönüşüm makinesi', 'atık kırma makinesi', 'hurda parçalama', 'MT Makina', 'parçalama makinesi fiyatları', 'shredder fiyatları'],
+    canonical: 'https://www.parcalamamakinesi.com/home'
   },
   
   about: {
@@ -105,14 +105,14 @@ export const seoMetadata: { [key: string]: SEOMetadata | ((params?: any) => SEOM
 export const getProductCategorySEO = (type: string): SEOMetadata => {
   const categoryData: { [key: string]: Omit<SEOMetadata, 'canonical'> } = {
     'single-shaft': {
-      title: 'Tek Şaftlı Parçalama Makinesi | MT Makina TSH Serisi',
-      description: 'MT Makina tek şaftlı parçalama makineleri (TSH Serisi) 500-3500 kg/saat kapasiteli, yüksek performanslı endüstriyel shredder sistemleri. Plastik, ahşap, kağıt parçalama için ideal.',
-      keywords: ['tek şaftlı parçalama', 'single shaft shredder', 'TSH serisi', 'plastik parçalama', 'ahşap parçalama', 'kağıt parçalama'],
+      title: 'Tek Şaftlı Parçalama Makinesi | Single Shaft Shredder | MT Makina TSH Serisi',
+      description: 'Tek şaftlı parçalama makinesi, single shaft shredder - MT Makina TSH Serisi 500-6000 kg/saat. Plastik kırma, ahşap parçalama, kağıt shredder. ✓ 6 Model ✓ CE Belgeli ✓ Hızlı Teslimat ✓ Garanti',
+      keywords: ['tek şaftlı parçalama makinesi', 'single shaft shredder', 'TSH serisi', 'plastik kırma makinesi', 'ahşap parçalama makinesi', 'kağıt parçalama', 'plastik shredder', 'ahşap kırıcı', 'tek şaft shredder', 'endüstriyel parçalama'],
     },
     'dual-shaft': {
-      title: 'Çift Şaftlı Parçalama Makinesi | MT Makina CS Serisi',
-      description: 'MT Makina çift şaftlı parçalama makineleri (CS Serisi) ağır hizmet tipi, çift motorlu sistem. Metal, otomotiv, endüstriyel atık parçalama için profesyonel çözüm.',
-      keywords: ['çift şaftlı parçalama', 'dual shaft shredder', 'CS serisi', 'ağır hizmet parçalama', 'metal parçalama', 'endüstriyel atık'],
+      title: 'Çift Şaftlı Parçalama Makinesi | Dual Shaft Shredder | MT Makina CS Serisi',
+      description: 'Çift şaftlı parçalama makinesi, dual shaft shredder - MT Makina CS Serisi. Metal parçalama, palet kırıcı, lastik shredder. ✓ Ağır Hizmet Tipi ✓ Çift Motor ✓ Yüksek Tork ✓ CE Belgeli',
+      keywords: ['çift şaftlı parçalama makinesi', 'dual shaft shredder', 'CS serisi', 'metal parçalama makinesi', 'palet kırıcı', 'lastik parçalama', 'çift şaft shredder', 'ağır hizmet parçalama', 'endüstriyel atık kırıcı'],
     },
     'quad-shaft': {
       title: 'Dörtlü Şaft Parçalama Makinesi | MT Makina QS Serisi',
@@ -164,29 +164,34 @@ export const getProductModelSEO = (type: string, model: string): SEOMetadata => 
   const modelDetails: { [key: string]: { [model: string]: Omit<SEOMetadata, 'canonical'> } } = {
     'single-shaft': {
       'TSH-60': {
-        title: 'TSH-60 Tek Şaftlı Parçalama Makinesi | 500-800 kg/saat | MT Makina',
-        description: 'MT Makina TSH-60 model tek şaftlı parçalama makinesi. 22 kW motor gücü, 600 mm rotor uzunluğu, 500-800 kg/saat kapasite. Plastik, ahşap, kağıt için ideal. Fiyat ve teknik özellikler.',
-        keywords: ['TSH-60', 'tek şaftlı 600mm', 'plastik shredder', 'ahşap kırıcı', '500 kg saat', 'küçük ölçekli parçalama'],
+        title: 'TSH-60 Parçalama Makinesi | 15-30 kW | 500-800 kg/saat | Fiyat Teklifi',
+        description: 'TSH-60 tek şaftlı parçalama makinesi - 15-30 kW motor, 600x1100mm parçalama alanı, 500-800 kg/saat. Plastik, ahşap, kağıt için. ✓ Stokta ✓ Hızlı Teslimat ✓ Fiyat Teklifi Al',
+        keywords: ['TSH-60', 'parçalama makinesi fiyat', 'plastik kırma makinesi', 'ahşap kırıcı', '600mm shredder', 'küçük parçalama makinesi', 'tek şaftlı shredder'],
       },
       'TSH-80': {
-        title: 'TSH-80 Tek Şaftlı Parçalama Makinesi | 800-1200 kg/saat | MT Makina',
-        description: 'MT Makina TSH-80 model tek şaftlı parçalama makinesi. 37 kW motor gücü, 800 mm rotor uzunluğu, 800-1200 kg/saat kapasite. Orta ölçekli üretim için profesyonel çözüm.',
-        keywords: ['TSH-80', 'tek şaftlı 800mm', 'orta kapasite shredder', '1000 kg saat', 'endüstriyel parçalama'],
+        title: 'TSH-80 Parçalama Makinesi | 22-45 kW | 800-1200 kg/saat | En İyi Fiyat',
+        description: 'TSH-80 tek şaftlı parçalama makinesi - 22-45 kW motor, 800x1100mm parçalama alanı, 800-1200 kg/saat. Orta ölçekli üretim için. ✓ CE Belgeli ✓ 2 Yıl Garanti ✓ Teklif Al',
+        keywords: ['TSH-80', 'parçalama makinesi fiyat', 'orta kapasite shredder', '800mm parçalama', '1000 kg saat', 'endüstriyel kırıcı'],
       },
       'TSH-100': {
-        title: 'TSH-100 Tek Şaftlı Parçalama Makinesi | 1200-1800 kg/saat | MT Makina',
-        description: 'MT Makina TSH-100 model tek şaftlı parçalama makinesi. 55 kW motor gücü, 1000 mm rotor uzunluğu, 1200-1800 kg/saat kapasite. Yüksek verimli, sürekli üretim.',
-        keywords: ['TSH-100', 'tek şaftlı 1000mm', 'yüksek kapasite', '1500 kg saat', 'sürekli üretim'],
+        title: 'TSH-100 Parçalama Makinesi | 30-75 kW | 1200-1800 kg/saat | Profesyonel',
+        description: 'TSH-100 tek şaftlı parçalama makinesi - 30-75 kW motor, 1000x1300mm parçalama alanı, 1200-1800 kg/saat. Yüksek verimli sürekli üretim. ✓ Güçlü Motor ✓ Dayanıklı',
+        keywords: ['TSH-100', 'yüksek kapasite shredder', '1000mm parçalama', '1500 kg saat', 'sürekli üretim', 'profesyonel shredder'],
       },
-      'TSH-120': {
-        title: 'TSH-120 Tek Şaftlı Parçalama Makinesi | 1800-2500 kg/saat | MT Makina',
-        description: 'MT Makina TSH-120 model tek şaftlı parçalama makinesi. 75 kW motor gücü, 1200 mm rotor uzunluğu, 1800-2500 kg/saat kapasite. Ağır hizmet tipi endüstriyel sistem.',
-        keywords: ['TSH-120', 'tek şaftlı 1200mm', 'ağır hizmet', '2000 kg saat', 'büyük ölçekli'],
+      'TSH-130': {
+        title: 'TSH-130 Parçalama Makinesi | 45-110 kW | 1800-2500 kg/saat | Ağır Hizmet',
+        description: 'TSH-130 tek şaftlı parçalama makinesi - 45-110 kW motor, 1300x1600mm parçalama alanı, 1800-2500 kg/saat. Ağır hizmet tipi. ✓ Yüksek Tork ✓ Dayanıklı Yapı ✓ Fiyat Al',
+        keywords: ['TSH-130', 'ağır hizmet shredder', '1300mm parçalama', '2000 kg saat', 'büyük parçalama makinesi', 'endüstriyel kırıcı'],
       },
-      'TSH-150': {
-        title: 'TSH-150 Tek Şaftlı Parçalama Makinesi | 2500-3500 kg/saat | MT Makina',
-        description: 'MT Makina TSH-150 model tek şaftlı parçalama makinesi. 90 kW motor gücü, 1500 mm rotor uzunluğu, 2500-3500 kg/saat kapasite. En yüksek performans, sanayi tipi.',
-        keywords: ['TSH-150', 'tek şaftlı 1500mm', 'maksimum kapasite', '3000 kg saat', 'sanayi tipi'],
+      'TSH-160': {
+        title: 'TSH-160 Parçalama Makinesi | 55-132 kW (2x) | 3500-4500 kg/saat | Çift Motor',
+        description: 'TSH-160 tek şaftlı parçalama makinesi - Çift motor 55-132 kW, 1600x1800mm parçalama alanı, 3500-4500 kg/saat. Ekstra yüksek kapasite. ✓ Çift Motor ✓ Güçlü Sistem',
+        keywords: ['TSH-160', 'çift motorlu shredder', '1600mm parçalama', '4000 kg saat', 'ekstra kapasite', 'endüstriyel sınıf'],
+      },
+      'TSH-200': {
+        title: 'TSH-200 Parçalama Makinesi | 75-160 kW (2x) | 4500-6000 kg/saat | Maksimum',
+        description: 'TSH-200 tek şaftlı parçalama makinesi - Çift motor 75-160 kW, 2000x2300mm parçalama alanı, 4500-6000 kg/saat. En yüksek kapasite. ✓ Maksimum Performans ✓ Profesyonel',
+        keywords: ['TSH-200', 'maksimum kapasite shredder', '2000mm parçalama', '5000 kg saat', 'profesyonel shredder', 'yüksek performans'],
       }
     },
     'dual-shaft': {
@@ -407,7 +412,7 @@ export const generateProductStructuredData = (type: string, model: string) => {
     "manufacturer": {
       "@type": "Organization",
       "name": "MT Makina",
-      "url": "https://www.parcalamamakinesi.com"
+      "url": "https://www.parcalamamakinesi.com/home"
     },
     "url": modelSEO.canonical,
     "category": "Endüstriyel Parçalama Makineleri"
@@ -441,4 +446,68 @@ export const insertStructuredData = (data: any) => {
   script.type = 'application/ld+json';
   script.text = JSON.stringify(data);
   document.head.appendChild(script);
+};
+
+// Generate Organization structured data for homepage
+export const generateOrganizationStructuredData = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MT Makina",
+    "alternateName": "MT Makina Parçalama Makineleri",
+    "url": "https://www.parcalamamakinesi.com",
+    "logo": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
+    "description": "Türkiye'nin lider parçalama makinesi üreticisi. Tek şaftlı, çift şaftlı, metal parçalama makineleri, shredder sistemleri.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Kat: 7 D: 85 - 86",
+      "addressLocality": "Esenyurt",
+      "addressRegion": "İstanbul",
+      "postalCode": "34512",
+      "addressCountry": "TR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+90-542-310-99-30",
+      "contactType": "Sales",
+      "availableLanguage": ["tr", "en", "ru", "ar"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/mtmakina",
+      "https://www.instagram.com/mtmakina",
+      "https://www.linkedin.com/company/mtmakina"
+    ]
+  };
+};
+
+// Generate LocalBusiness structured data
+export const generateLocalBusinessStructuredData = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MT Makina - Parçalama Makineleri",
+    "image": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
+    "telephone": "+90-542-310-99-30",
+    "email": "info@mtmakina.com.tr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Kat: 7 D: 85 - 86",
+      "addressLocality": "Esenyurt",
+      "addressRegion": "İstanbul",
+      "postalCode": "34512",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.0082,
+      "longitude": 28.9784
+    },
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  };
 };

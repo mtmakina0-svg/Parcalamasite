@@ -14,7 +14,7 @@ interface ProductCategoryPageProps {
 
 // Available models for each product type
 const availableModels: { [key: string]: string[] } = {
-  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-120', 'TSH-150'],
+  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
   'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
   'quad-shaft': ['QS-80', 'QS-100', 'QS-120', 'QS-150'],
   'metal': ['MP-100', 'MP-150'],
@@ -33,11 +33,12 @@ interface ModelCardInfo {
 
 const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
   'single-shaft': {
-    'TSH-60': { capacity: '500-800 kg/saat', power: '22 kW', rotorLength: '600 mm' },
-    'TSH-80': { capacity: '800-1200 kg/saat', power: '37 kW', rotorLength: '800 mm' },
-    'TSH-100': { capacity: '1200-1800 kg/saat', power: '55 kW', rotorLength: '1000 mm' },
-    'TSH-120': { capacity: '1800-2500 kg/saat', power: '75 kW', rotorLength: '1200 mm' },
-    'TSH-150': { capacity: '2500-3500 kg/saat', power: '90 kW', rotorLength: '1500 mm' }
+    'TSH-60': { capacity: '500-800 kg/saat', power: '15–30 kW', rotorLength: '600 mm' },
+    'TSH-80': { capacity: '800-1200 kg/saat', power: '22–45 kW', rotorLength: '800 mm' },
+    'TSH-100': { capacity: '1200-1800 kg/saat', power: '30–75 kW', rotorLength: '1000 mm' },
+    'TSH-130': { capacity: '1800-2500 kg/saat', power: '45–110 kW', rotorLength: '1300 mm' },
+    'TSH-160': { capacity: '3500-4500 kg/saat', power: '55–132 kW (2x)', rotorLength: '1600 mm' },
+    'TSH-200': { capacity: '4500-6000 kg/saat', power: '75–160 kW (2x)', rotorLength: '2000 mm' }
   }
 };
 
@@ -303,12 +304,18 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             <p className="text-[#F5F7F8] text-xl mb-8 max-w-2xl mx-auto">
               {t('contact_us_for_consultation')}
             </p>
-            <Button
-              className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 text-lg"
-              size="lg"
+            <a
+              href="https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20parçalama%20makineleri%20hakkında%20bilgi%20almak%20istiyorum."
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t('contact_us')}
-            </Button>
+              <Button
+                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 text-lg"
+                size="lg"
+              >
+                {t('contact_us')}
+              </Button>
+            </a>
           </motion.div>
         </div>
       </section>

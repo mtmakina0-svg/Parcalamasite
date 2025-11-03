@@ -1,20 +1,17 @@
 /**
- * Certificates configuration for GitHub-hosted certificate images
+ * Certificates configuration for ImgBB-hosted certificate images
  */
 
-// GitHub base URL for certificates
-const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/mtmakina0/parcalamasite/main/public/certificates';
-
-// Certificate image URLs
+// Certificate image URLs from ImgBB
 export const CERTIFICATE_IMAGES = {
-  cert1: `${GITHUB_BASE_URL}/cert1.png`,
-  cert2: `${GITHUB_BASE_URL}/cert2.png`,
-  cert3: `${GITHUB_BASE_URL}/cert3.png`,
-  cert4: `${GITHUB_BASE_URL}/cert4.png`,
-  cert5: `${GITHUB_BASE_URL}/cert5.png`,
-  cert6: `${GITHUB_BASE_URL}/cert6.png`,
-  cert7: `${GITHUB_BASE_URL}/cert7.png`,
-  cert8: `${GITHUB_BASE_URL}/cert8.png`,
+  cert1: 'https://i.ibb.co/wNdQYR6d/SO45001-2018.jpg', // ISO 45001:2018
+  cert2: 'https://i.ibb.co/20gwbGYy/SO14001-2015.jpg', // ISO 14001:2015
+  cert3: 'https://i.ibb.co/HfNjWmnG/SO18001-OHSAS.jpg', // ISO 18001 OHSAS
+  cert4: 'https://i.ibb.co/Gff9mpzP/SO9001-2015.jpg', // ISO 9001:2015
+  cert5: 'https://i.ibb.co/ynT0zSKz/CE-T-bbi-At-k-Yakma-F-r-n.jpg', // CE - Tıbbi Atık Yakma Fırını
+  cert6: 'https://i.ibb.co/whZFTFch/SO5001-2018.jpg', // ISO 50001:2018
+  cert7: 'https://i.ibb.co/rRQhX71m/CE-Dikey-Balya-Presi.jpg', // CE - Dikey Balya Presi
+  cert8: 'https://i.ibb.co/ycgMnT0C/CE-Levha-Par-alama-Makinesi.jpg', // CE - Levha Parçalama
 };
 
 // Fallback placeholder for certificates

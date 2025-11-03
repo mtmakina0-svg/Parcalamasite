@@ -50,72 +50,79 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: ''
     },
     'TSH-80': {
-      main: '', // ⬅️ ImgBB URL'ini buraya yapıştırın
-      detail1: '',
-      detail2: '',
-      detail3: '',
+      main: 'https://i.ibb.co/ZRS67nMB/1-3.png',
+      detail1: 'https://i.ibb.co/G3kFLdfs/1-4.png',
+      detail2: 'https://i.ibb.co/gbTbnNLv/1-1.png',
+      detail3: 'https://i.ibb.co/7dyL6dKv/1-2.png',
       detail4: ''
     },
     'TSH-100': {
-      main: '',
-      detail1: '',
-      detail2: '',
-      detail3: '',
+      main: 'https://i.ibb.co/nsYnVHyD/1-12.png',
+      detail1: 'https://i.ibb.co/67YDMknp/1-2.png',
+      detail2: 'https://i.ibb.co/v4W0yBTc/1-8.png',
+      detail3: 'https://i.ibb.co/6RB2rvBc/1-9.png',
       detail4: ''
     },
-    'TSH-120': {
-      main: '',
-      detail1: '',
-      detail2: '',
-      detail3: '',
+    'TSH-130': {
+      main: 'https://i.ibb.co/q3BqtbZH/1-1.png',
+      detail1: 'https://i.ibb.co/WNVQkSFF/1-13.png',
+      detail2: 'https://i.ibb.co/GfhWX536/1-15.png',
+      detail3: 'https://i.ibb.co/jvG3NGbD/1-16.png',
       detail4: ''
     },
-    'TSH-150': {
-      main: '',
-      detail1: '',
-      detail2: '',
-      detail3: '',
+    'TSH-160': {
+      main: 'https://i.ibb.co/ZRwBZB21/1-1.png',
+      detail1: 'https://i.ibb.co/mrVnwgcX/1-6.png',
+      detail2: 'https://i.ibb.co/JRCdjhfZ/1-7.png',
+      detail3: 'https://i.ibb.co/Hf4Mt89K/1-9.png',
+      detail4: ''
+    },
+    'TSH-200': {
+      main: 'https://i.ibb.co/tTKSpZyS/1-5.png',
+      detail1: 'https://i.ibb.co/cnnX46w/1-6.png',
+      detail2: 'https://i.ibb.co/058K5Nr/1-7.png',
+      detail3: 'https://i.ibb.co/Ng7Cjxz9/1-11.png',
       detail4: ''
     }
   },
   'dual-shaft': {
-    'CS-20': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-40': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-60': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-80': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-100': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-120': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-150': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-180': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-200': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'CS-20': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-40': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-60': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-80': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-100': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-120': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-150': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-180': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CS-200': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'quad-shaft': {
-    'QS-80': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'QS-100': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'QS-120': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'QS-150': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'QS-80': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'QS-100': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'QS-120': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'QS-150': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'metal': {
-    'MP-100': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'MP-150': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'MP-100': { main: 'https://i.ibb.co/m5xLp46J/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'MP-150': { main: 'https://i.ibb.co/m5xLp46J/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'granulator': {
-    'GR-400': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'GR-600': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'GR-800': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'GR-400': { main: 'https://i.ibb.co/5hxMZJ2g/plastic-crusher-machine-4.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'GR-600': { main: 'https://i.ibb.co/5hxMZJ2g/plastic-crusher-machine-4.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'GR-800': { main: 'https://i.ibb.co/5hxMZJ2g/plastic-crusher-machine-4.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'baler': {
-    'BP-60': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'BP-100': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'BP-60': { main: 'https://i.ibb.co/svR9Kdq7/1-7.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'BP-100': { main: 'https://i.ibb.co/svR9Kdq7/1-7.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'conveyor': {
-    'CV-3M': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CV-5M': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CV-10M': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'CV-3M': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CV-5M': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CV-10M': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'separator': {
-    'MS-1': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'MS-2': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'MS-1': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'MS-2': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   }
 };
 

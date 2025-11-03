@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, ChevronRight } from 'lucide-react';
+import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, ChevronRight, Zap, Wind } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
@@ -35,44 +35,52 @@ interface ModelSpecs {
 const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } } = {
   'single-shaft': {
     'TSH-60': {
-      motorPower: '22 kW',
+      motorPower: '15–30 kW',
       rotorLength: '600 mm',
-      rotorDiameter: '400 mm',
+      rotorDiameter: '600 x 1100 mm',
       bladeCount: '24 adet',
       weight: '2500 kg',
       capacity: '500-800 kg/saat'
     },
     'TSH-80': {
-      motorPower: '37 kW',
+      motorPower: '22–45 kW',
       rotorLength: '800 mm',
-      rotorDiameter: '450 mm',
+      rotorDiameter: '800 x 1100 mm',
       bladeCount: '32 adet',
       weight: '3200 kg',
       capacity: '800-1200 kg/saat'
     },
     'TSH-100': {
-      motorPower: '55 kW',
+      motorPower: '30–75 kW',
       rotorLength: '1000 mm',
-      rotorDiameter: '500 mm',
+      rotorDiameter: '1000 x 1300 mm',
       bladeCount: '40 adet',
       weight: '4000 kg',
       capacity: '1200-1800 kg/saat'
     },
-    'TSH-120': {
-      motorPower: '75 kW',
-      rotorLength: '1200 mm',
-      rotorDiameter: '550 mm',
+    'TSH-130': {
+      motorPower: '45–110 kW',
+      rotorLength: '1300 mm',
+      rotorDiameter: '1300 x 1600 mm',
       bladeCount: '48 adet',
       weight: '5000 kg',
       capacity: '1800-2500 kg/saat'
     },
-    'TSH-150': {
-      motorPower: '90 kW',
-      rotorLength: '1500 mm',
-      rotorDiameter: '600 mm',
-      bladeCount: '60 adet',
-      weight: '6500 kg',
-      capacity: '2500-3500 kg/saat'
+    'TSH-160': {
+      motorPower: '55–132 kW (2x)',
+      rotorLength: '1600 mm',
+      rotorDiameter: '1600 x 1800 mm',
+      bladeCount: '64 adet',
+      weight: '7500 kg',
+      capacity: '3500-4500 kg/saat'
+    },
+    'TSH-200': {
+      motorPower: '75–160 kW (2x)',
+      rotorLength: '2000 mm',
+      rotorDiameter: '2000 x 2300 mm',
+      bladeCount: '80 adet',
+      weight: '9000 kg',
+      capacity: '4500-6000 kg/saat'
     }
   },
   'dual-shaft': {
@@ -200,7 +208,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
 
 // Available models for each product type
 const availableModels: { [key: string]: string[] } = {
-  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-120', 'TSH-150'],
+  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
   'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
   'quad-shaft': ['QS-80', 'QS-100', 'QS-120', 'QS-150']
 };
@@ -536,7 +544,7 @@ export const ProductDetailPage = ({
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Çapı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Parçalama Alanı</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
@@ -570,6 +578,67 @@ export const ProductDetailPage = ({
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
                 {t('single_shaft_ecatalog_btn')}
               </Button>
+            </motion.div>
+
+            {/* Optional Features */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto mt-16"
+            >
+              <h3 className="text-center text-[#45474B] mb-8 text-2xl font-bold">
+                Opsiyonel Özellikler
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                      <Settings size={24} className="text-[#1E1E1E]" />
+                    </div>
+                    <p className="text-[#1E1E1E]">Farklı Besleme ve Çıkış Seçenekleri</p>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                      <RotateCcw size={24} className="text-[#1E1E1E]" />
+                    </div>
+                    <p className="text-[#1E1E1E]">Farklı Rotor Tasarımları</p>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                      <Zap size={24} className="text-[#1E1E1E]" />
+                    </div>
+                    <p className="text-[#1E1E1E]">Çift Motorlu Tasarım</p>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                      <Wind size={24} className="text-[#1E1E1E]" />
+                    </div>
+                    <p className="text-[#1E1E1E]">Rotor Soğutma Sistemi</p>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -1089,7 +1158,7 @@ export const ProductDetailPage = ({
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Rotor Çapı</td>
+                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Parçalama Alanı</td>
                       <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">

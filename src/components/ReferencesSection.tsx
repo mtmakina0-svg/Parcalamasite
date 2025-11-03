@@ -2,24 +2,25 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
 import { Globe } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export const ReferencesSection = () => {
   const { t, isRTL } = useLanguage();
 
   const globalCountries = ['Türkiye', 'Almanya', 'Rusya', 'Romanya', 'Mısır', 'Suudi Arabistan'];
 
-  // Company logos with placeholder colors
+  // Featured partner logos for homepage
   const partners = [
-    { name: 'Aselsan', color: '#e74c3c' },
-    { name: 'Bosch', color: '#e74c3c' },
-    { name: 'Castrol', color: '#27ae60' },
-    { name: 'PepsiCo', color: '#3498db' },
-    { name: 'Remondis', color: '#27ae60' },
-    { name: 'TAV', color: '#e74c3c' },
-    { name: 'BP', color: '#27ae60' },
-    { name: 'Golden Rose', color: '#f39c12' },
-    { name: 'ÖSYM', color: '#3498db' },
-    { name: 'Orhan Holding', color: '#34495e' },
+    { name: 'ASELSAN', logo: 'https://i.ibb.co/jkW22W0n/ASELSAN-logo-svg.png', alt: 'ASELSAN Logo' },
+    { name: 'Bosch', logo: 'https://i.ibb.co/JWsYZqCK/Bosch-logo-svg.png', alt: 'Bosch Logo' },
+    { name: 'Castrol', logo: 'https://i.ibb.co/XfcXKXVQ/castrollogo.png', alt: 'Castrol Logo' },
+    { name: 'PepsiCo', logo: 'https://i.ibb.co/PGmvrMtt/Pepsi-Co-logo-svg.png', alt: 'PepsiCo Logo' },
+    { name: 'Mercedes-Benz', logo: 'https://i.ibb.co/W4zzSD4P/1200px-Mercedes-Benz-Logo-11.jpg', alt: 'Mercedes-Benz Logo' },
+    { name: 'TAV', logo: 'https://i.ibb.co/FbS339kJ/TAV.jpg', alt: 'TAV Havalimanları Logo' },
+    { name: 'BP', logo: 'https://i.ibb.co/84Y2j2yB/bp-logo-png-seeklogo-21836.png', alt: 'BP Logo' },
+    { name: 'Golden Rose', logo: 'https://i.ibb.co/whyptjcT/golden-rose.png', alt: 'Golden Rose Logo' },
+    { name: 'İGA', logo: 'https://i.ibb.co/JjkZmQry/GA-Havaliman-letmesi-A-logo-svg.png', alt: 'İGA Logo' },
+    { name: 'Betek Boya', logo: 'https://i.ibb.co/FqcdPgpG/betek-boya-logo-brandlogos-net-slepl.png', alt: 'Betek Boya Logo' },
   ];
 
   return (
@@ -65,23 +66,17 @@ export const ReferencesSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-lg p-6 flex items-center justify-center shadow-md hover:shadow-lg transition-all"
-              style={{ minHeight: '120px' }}
+              whileHover={{ y: -5, scale: 1.05 }}
+              className="bg-white rounded-xl p-6 flex items-center justify-center shadow-md hover:shadow-xl transition-all group"
+              style={{ minHeight: '140px' }}
             >
-              <div className="text-center">
-                <div 
-                  className="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center"
-                  style={{ backgroundColor: partner.color + '20' }}
-                >
-                  <span 
-                    className="text-2xl"
-                    style={{ color: partner.color }}
-                  >
-                    {partner.name.charAt(0)}
-                  </span>
-                </div>
-                <span className="text-sm text-[#1E1E1E]">{partner.name}</span>
+              <div className="w-full h-full flex items-center justify-center p-2">
+                <ImageWithFallback
+                  src={partner.logo}
+                  alt={partner.alt}
+                  className="w-full h-full object-contain max-h-20 group-hover:scale-110 transition-transform duration-300"
+                  fallbackSrc="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400"
+                />
               </div>
             </motion.div>
           ))}

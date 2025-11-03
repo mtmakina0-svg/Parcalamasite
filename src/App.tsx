@@ -30,7 +30,9 @@ import {
   updateSEOMetadata,
   generateProductStructuredData,
   generateBreadcrumbStructuredData,
-  insertStructuredData
+  insertStructuredData,
+  generateOrganizationStructuredData,
+  generateLocalBusinessStructuredData
 } from './utils/seoConfig';
 
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
@@ -41,7 +43,7 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
   const path = window.location.pathname;
   
   // Home page
-  if (path === '/' || path === '') {
+  if (path === '/' || path === '' || path === '/home') {
     return { page: 'main' };
   }
   
@@ -170,19 +172,65 @@ function AppContent() {
     switch (page) {
       case 'main':
         metadata = typeof seoMetadata.home === 'function' ? seoMetadata.home() : seoMetadata.home;
-        // Add organization structured data for home page
+        // Add comprehensive organization structured data for home page
         structuredData = {
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "MT Makina",
-          "url": "https://www.parcalamamakinesi.com",
-          "logo": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
-          "description": metadata.description,
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "TR"
-          }
+          "@graph": [
+            generateOrganizationStructuredData(),
+            generateLocalBusinessStructuredData(),
+            {
+              "@type": "WebSite",
+              "name": "MT Makina - Parçalama Makineleri",
+              "url": "https://www.parcalamamakinesi.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.parcalamamakinesi.com/urunler?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "ItemList",
+              "name": "Parçalama Makinesi Türleri",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Tek Şaftlı Parçalama Makinesi",
+                  "url": "https://www.parcalamamakinesi.com/tek-shaftli-parcalama-makinesi"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Çift Şaftlı Parçalama Makinesi",
+                  "url": "https://www.parcalamamakinesi.com/cift-shaftli-parcalama-makinesi"
+                }
+              ]
+            }
+          ]
         };
+        break;
+      
+      case 'product-category':
+        if (product) {
+          metadata = getProductCategorySEO(product);
+          structuredData = {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": metadata.title,
+            "description": metadata.description,
+            "url": metadata.canonical,
+            "publisher": {
+              "@type": "Organization",
+              "name": "MT Makina",
+              "logo": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png"
+            },
+            "breadcrumb": generateBreadcrumbStructuredData([
+              { name: "Ana Sayfa", url: "https://www.parcalamamakinesi.com/home" },
+              { name: "Ürünler", url: "https://www.parcalamamakinesi.com/urunler" },
+              { name: metadata.title.split('|')[0].trim(), url: metadata.canonical }
+            ])
+          };
+        }
         break;
       
       case 'about':
@@ -197,7 +245,7 @@ function AppContent() {
         if (product) {
           metadata = getProductCategorySEO(product);
           structuredData = generateBreadcrumbStructuredData([
-            { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/' },
+            { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/home' },
             { name: 'Ürünler', url: 'https://www.parcalamamakinesi.com/urunler' },
             { name: metadata.title.split('|')[0].trim(), url: metadata.canonical }
           ]);
@@ -211,7 +259,7 @@ function AppContent() {
           structuredData = {
             ...generateProductStructuredData(product, model),
             breadcrumb: generateBreadcrumbStructuredData([
-              { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/' },
+              { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/home' },
               { name: 'Ürünler', url: 'https://www.parcalamamakinesi.com/urunler' },
               { name: categoryMeta.title.split('|')[0].trim(), url: categoryMeta.canonical },
               { name: model, url: metadata.canonical }
