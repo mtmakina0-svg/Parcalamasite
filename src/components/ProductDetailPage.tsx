@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
 import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
   Accordion,
   AccordionContent,
@@ -18,19 +19,19 @@ interface ProductDetailPageProps {
   onProductDetailClick?: (productType: string, modelName?: string) => void;
 }
 
-// Helper function to get product folder name in Turkish
+// Helper function to get product folder name in Turkish (matching public folder structure)
 const getProductFolderName = (productType: string): string => {
   const folderMap: { [key: string]: string } = {
-    'single-shaft': 'tek şaftlı parçalama makinesi',
-    'dual-shaft': 'çift şaftlı parçalama makinesi',
-    'quad-shaft': 'dört şaftlı parçalama makinesi',
-    'metal': 'metal parçalama makinesi',
-    'granulator': 'granülatör',
-    'baler': 'balya presi',
-    'conveyor': 'konveyör sistemi',
-    'separator': 'ayırıcı sistem'
+    'single-shaft': 'TEK ŞAFTLI PARÇALAMA MAKİNESİ',
+    'dual-shaft': 'ÇİFT ŞAFTLI PARÇALAMA MAKİNESİ',
+    'quad-shaft': 'DÖRT ŞAFTLI PARÇALAMA MAKİNESİ',
+    'metal': 'METAL PARÇALAMA MAKİNESİ',
+    'granulator': 'GRANÜLATÖR',
+    'baler': 'BALYA PRESİ',
+    'conveyor': 'KONVEYÖR SİSTEMİ',
+    'separator': 'AYIRICI SİSTEM'
   };
-  return folderMap[productType] || 'tek şaftlı parçalama makinesi';
+  return folderMap[productType] || 'TEK ŞAFTLI PARÇALAMA MAKİNESİ';
 };
 
 // Helper function to get image paths for a specific model
@@ -38,11 +39,17 @@ const getModelImages = (productType: string, modelName: string) => {
   const folderName = getProductFolderName(productType);
   const basePath = `/${folderName}/${modelName}`;
   
+  // Images are named as "1 (1).png", "1 (2).png", etc.
+  // Encode spaces and special characters in URLs
+  const encodePath = (filename: string) => {
+    return `${basePath}/${encodeURIComponent(filename)}`;
+  };
+  
   return {
-    main: `${basePath}/main.png`,
-    detail1: `${basePath}/detail-1.png`,
-    detail2: `${basePath}/detail-2.png`,
-    detail3: `${basePath}/detail-3.png`
+    main: encodePath('1 (1).png'),
+    detail1: encodePath('1 (2).png'),
+    detail2: encodePath('1 (3).png'),
+    detail3: encodePath('1 (4).png')
   };
 };
 
@@ -241,6 +248,11 @@ export const ProductDetailPage = ({
 
   // Get dynamic image paths based on model
   const images = getModelImages(productType, modelName);
+  
+  // Debug: Log image paths
+  React.useEffect(() => {
+    console.log('Image paths:', images);
+  }, [modelName]);
 
   // Get current model specs
   const currentSpecs = modelSpecifications[productType]?.[modelName];
@@ -328,10 +340,11 @@ export const ProductDetailPage = ({
               transition={{ duration: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <img
+              <ImageWithFallback
                 src={images.main}
                 alt={`${t('single_shaft_main_title')} - ${modelName}`}
                 className="w-full rounded-2xl shadow-2xl"
+                fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwc2hyZWRkZXIlMjBtYWNoaW5lfGVufDF8fHx8MTc2MjE2NzUyOHww&ixlib=rb-4.1.0&q=80&w=1080"
               />
             </motion.div>
           </div>
@@ -450,15 +463,18 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.1 }}
                 className="group"
               >
-                <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
-                  <motion.img
+                <motion.div 
+                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ImageWithFallback
                     src={images.main}
                     alt={t('single_shaft_perf_1')}
                     className="w-full h-64 object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwc2hyZWRkZXIlMjBtYWNoaW5lfGVufDF8fHx8MTc2MjE2NzUyOHww&ixlib=rb-4.1.0&q=80&w=1080"
                   />
-                </div>
+                </motion.div>
                 <p className="text-center text-[#45474B]">{t('single_shaft_perf_1')}</p>
               </motion.div>
 
@@ -470,15 +486,18 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.2 }}
                 className="group"
               >
-                <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
-                  <motion.img
+                <motion.div 
+                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ImageWithFallback
                     src={images.detail1}
                     alt={t('single_shaft_perf_2')}
                     className="w-full h-64 object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   />
-                </div>
+                </motion.div>
                 <p className="text-center text-[#45474B]">{t('single_shaft_perf_2')}</p>
               </motion.div>
 
@@ -490,15 +509,18 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.3 }}
                 className="group"
               >
-                <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
-                  <motion.img
+                <motion.div 
+                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ImageWithFallback
                     src={images.detail2}
                     alt={t('single_shaft_perf_3')}
                     className="w-full h-64 object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    fallbackSrc="https://images.unsplash.com/photo-1721745250100-7d777c1c48ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHNocmVkZGVyJTIwaW5kdXN0cmlhbHxlbnwxfHx8fDE3NjIxNjc1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   />
-                </div>
+                </motion.div>
                 <p className="text-center text-[#45474B]">{t('single_shaft_perf_3')}</p>
               </motion.div>
             </div>
@@ -849,10 +871,11 @@ export const ProductDetailPage = ({
               transition={{ duration: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <img
+              <ImageWithFallback
                 src={images.main}
                 alt={`${t('dual_shaft_main_title')} - ${modelName}`}
                 className="w-full rounded-2xl shadow-2xl"
+                fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
               />
             </motion.div>
           </div>
@@ -993,15 +1016,18 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.1 }}
                 className="group"
               >
-                <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
-                  <motion.img
+                <motion.div 
+                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ImageWithFallback
                     src={images.main}
                     alt={t('dual_shaft_perf_1')}
                     className="w-full h-64 object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   />
-                </div>
+                </motion.div>
                 <p className="text-center text-[#45474B]">{t('dual_shaft_perf_1')}</p>
               </motion.div>
 
@@ -1013,15 +1039,18 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.2 }}
                 className="group"
               >
-                <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
-                  <motion.img
+                <motion.div 
+                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ImageWithFallback
                     src={images.detail1}
                     alt={t('dual_shaft_perf_2')}
                     className="w-full h-64 object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    fallbackSrc="https://images.unsplash.com/photo-1721745250100-7d777c1c48ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHNocmVkZGVyJTIwaW5kdXN0cmlhbHxlbnwxfHx8fDE3NjIxNjc1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   />
-                </div>
+                </motion.div>
                 <p className="text-center text-[#45474B]">{t('dual_shaft_perf_2')}</p>
               </motion.div>
 
@@ -1033,15 +1062,18 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.3 }}
                 className="group"
               >
-                <div className="overflow-hidden rounded-2xl shadow-lg mb-4">
-                  <motion.img
+                <motion.div 
+                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ImageWithFallback
                     src={images.detail2}
                     alt={t('dual_shaft_perf_3')}
                     className="w-full h-64 object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    fallbackSrc="https://images.unsplash.com/photo-1738918929491-3c102ce11c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWF2eSUyMG1hY2hpbmVyeSUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYyMTY3NTI5fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   />
-                </div>
+                </motion.div>
                 <p className="text-center text-[#45474B]">{t('dual_shaft_perf_3')}</p>
               </motion.div>
             </div>
