@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
-import mtLogo from 'figma:asset/bdf06c0f90a7df2b90e10c7d5a1fb0f4c37b8c94.png';
+import { Logo } from './Logo';
 import { useLanguage } from './LanguageContext';
 
 export const HeroSection = () => {
@@ -21,8 +21,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-12 flex justify-center"
         >
-          <img
-            src={mtLogo}
+          <Logo
             alt="MT Makina Logo"
             className="h-40 w-auto object-contain mx-[1px] my-[18px] p-[0px]"
           />

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Globe, Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage, Language } from './LanguageContext';
 import { Button } from './ui/button';
-import logoImage from 'figma:asset/bdf06c0f90a7df2b90e10c7d5a1fb0f4c37b8c94.png';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   onWasteClick?: () => void;
@@ -165,11 +165,9 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
             whileHover={{ scale: 1.05, filter: 'brightness(1.2)' }}
             className="flex items-center cursor-pointer"
           >
-            <img 
-              src={logoImage} 
+            <Logo
               alt="MT Makina" 
               className="h-12 w-auto"
-              style={{ filter: 'drop-shadow(0 0 3px rgba(255,255,255,0.2))' }}
             />
           </motion.a>
 

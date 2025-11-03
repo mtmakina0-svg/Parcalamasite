@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from './ui/accordion';
+import { getModelImages, getFallbackImage } from '../utils/imageConfig';
 
 interface ProductDetailPageProps {
   productType: string;
@@ -18,27 +19,6 @@ interface ProductDetailPageProps {
   onECatalogClick: () => void;
   onProductDetailClick?: (productType: string, modelName?: string) => void;
 }
-
-// Helper function to get product folder name in Turkish (matching public folder structure)
-const getModelImages = (productType: string, modelName: string) => {
-  // Public klasördeki doğru ürün klasörünü bul
-  const folderName = getProductFolderName(productType);
-
-  // URL uyumlu hale getir
-  const encodedFolder = encodeURIComponent(folderName);
-  const encodedModel = encodeURIComponent(modelName);
-
-  // Görsellerin yolu
- const basePath = `/${encodedFolder}/${encodedModel}`;
-
-  // Public klasöründeki görseller 1.png, 2.png, 3.png olarak adlandırılmışsa:
-  return {
-    main: `${basePath}/1.png`,
-    detail1: `${basePath}/2.png`,
-    detail2: `${basePath}/3.png`,
-    detail3: `${basePath}/4.png`
-  };
-};
 
 
 // Model technical specifications
@@ -234,19 +214,19 @@ export const ProductDetailPage = ({
 }: ProductDetailPageProps) => {
   const { t, isRTL } = useLanguage();
 
-  // Get dynamic image paths based on model
+  // Get dynamic image paths based on model from GitHub
   const images = getModelImages(productType, modelName);
   
-  // Debug: Log image paths
+  // Get fallback image for this product type
+  const fallbackImage = getFallbackImage(productType);
+  
+  // Debug: Log image paths (only in development)
   React.useEffect(() => {
-    console.log('Image paths for', modelName, ':', images);
-    console.log('Main image URL:', images.main);
-    // Test if image loads
-    fetch(images.main).then(res => {
-      console.log('Image fetch status:', res.status, res.ok ? '✓' : '✗');
-    }).catch(err => {
-      console.error('Image fetch error:', err);
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.log('🖼️ Image paths for', modelName, ':', images);
+      console.log('📍 Main image URL:', images.main);
+      console.log('🔄 Fallback URL:', fallbackImage);
+    }
   }, [modelName]);
 
   // Get current model specs
@@ -339,7 +319,7 @@ export const ProductDetailPage = ({
                 src={images.main}
                 alt={`${t('single_shaft_main_title')} - ${modelName}`}
                 className="w-full rounded-2xl shadow-2xl"
-                fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwc2hyZWRkZXIlMjBtYWNoaW5lfGVufDF8fHx8MTc2MjE2NzUyOHww&ixlib=rb-4.1.0&q=80&w=1080"
+                fallbackSrc={fallbackImage}
               />
             </motion.div>
           </div>
@@ -490,7 +470,7 @@ export const ProductDetailPage = ({
                     src={images.detail1}
                     alt={t('single_shaft_perf_2')}
                     className="w-full h-64 object-cover"
-                    fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    fallbackSrc={fallbackImage}
                   />
                 </motion.div>
                 <p className="text-center text-[#45474B]">{t('single_shaft_perf_2')}</p>
@@ -513,7 +493,7 @@ export const ProductDetailPage = ({
                     src={images.detail2}
                     alt={t('single_shaft_perf_3')}
                     className="w-full h-64 object-cover"
-                    fallbackSrc="https://images.unsplash.com/photo-1721745250100-7d777c1c48ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHNocmVkZGVyJTIwaW5kdXN0cmlhbHxlbnwxfHx8fDE3NjIxNjc1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    fallbackSrc={fallbackImage}
                   />
                 </motion.div>
                 <p className="text-center text-[#45474B]">{t('single_shaft_perf_3')}</p>

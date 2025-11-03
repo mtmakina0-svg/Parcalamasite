@@ -1,14 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Award } from 'lucide-react';
-import cert1 from 'figma:asset/255fa4d393b49f18325ec0ad5df27ca839f519b6.png';
-import cert2 from 'figma:asset/9f8daa4ae4202c5bc5b0b4114905af7654425363.png';
-import cert3 from 'figma:asset/4fed3a32972e8f2e2f2a0b35d98645d07fe0932b.png';
-import cert4 from 'figma:asset/3fe679bea4691d32b89f235ce8d44ff431c59504.png';
-import cert5 from 'figma:asset/96ad48755bf4e30afa2a3fdec88c88b77b4cb89e.png';
-import cert6 from 'figma:asset/45bc57d4b695ec756acba5adc8f8ffc5e6eaa2db.png';
-import cert7 from 'figma:asset/48af5f913bbfc9949048bf47fdf2bb0ddcb2f27a.png';
-import cert8 from 'figma:asset/041cc787f5aaa1f2efa0f32a2fa1dc6f1f6b0675.png';
+import { CERTIFICATE_IMAGES, CERTIFICATE_FALLBACK } from '../utils/certificatesConfig';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface CertificatesPageProps {
   onBackToMain: () => void;
@@ -16,14 +10,14 @@ interface CertificatesPageProps {
 
 export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
   const certificates = [
-    { image: cert1, caption: 'ISO 45001:2018 İş Sağlığı ve Güvenliği Yönetim Sistemi' },
-    { image: cert2, caption: 'ISO 14001:2015 Çevre Yönetim Sistemi' },
-    { image: cert3, caption: 'ISO 18001 OHSAS İş Sağlığı ve Güvenliği Belgesi' },
-    { image: cert4, caption: 'ISO 9001:2015 Kalite Yönetim Sistemi Belgesi' },
-    { image: cert5, caption: 'CE Uygunluk Beyanı' },
-    { image: cert6, caption: 'ISO 50001:2018 Enerji Yönetim Sistemi Belgesi' },
-    { image: cert7, caption: 'CE Uygunluk Beyanı - Geri Dönüşüm Sistemleri İmalatı' },
-    { image: cert8, caption: 'CE Uygunluk Beyanı - Levha Parçalama Makinesi' },
+    { image: CERTIFICATE_IMAGES.cert1, caption: 'ISO 45001:2018 İş Sağlığı ve Güvenliği Yönetim Sistemi' },
+    { image: CERTIFICATE_IMAGES.cert2, caption: 'ISO 14001:2015 Çevre Yönetim Sistemi' },
+    { image: CERTIFICATE_IMAGES.cert3, caption: 'ISO 18001 OHSAS İş Sağlığı ve Güvenliği Belgesi' },
+    { image: CERTIFICATE_IMAGES.cert4, caption: 'ISO 9001:2015 Kalite Yönetim Sistemi Belgesi' },
+    { image: CERTIFICATE_IMAGES.cert5, caption: 'CE Uygunluk Beyanı' },
+    { image: CERTIFICATE_IMAGES.cert6, caption: 'ISO 50001:2018 Enerji Yönetim Sistemi Belgesi' },
+    { image: CERTIFICATE_IMAGES.cert7, caption: 'CE Uygunluk Beyanı - Geri Dönüşüm Sistemleri İmalatı' },
+    { image: CERTIFICATE_IMAGES.cert8, caption: 'CE Uygunluk Beyanı - Levha Parçalama Makinesi' },
   ];
 
   return (
@@ -72,9 +66,10 @@ export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all"
               >
                 <div className="aspect-[3/4] relative overflow-hidden bg-gray-100">
-                  <img 
+                  <ImageWithFallback
                     src={cert.image} 
                     alt={cert.caption}
+                    fallbackSrc={CERTIFICATE_FALLBACK}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>

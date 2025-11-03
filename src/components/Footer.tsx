@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
 import { Linkedin, Youtube, Instagram, Mail, Phone, MapPin } from 'lucide-react';
-import logoImage from 'figma:asset/bdf06c0f90a7df2b90e10c7d5a1fb0f4c37b8c94.png';
+import { Logo } from './Logo';
 
 export const Footer = () => {
   const { t, isRTL } = useLanguage();
@@ -157,11 +157,9 @@ export const Footer = () => {
               className="mt-8"
               whileHover={{ scale: 1.05, filter: 'brightness(1.2)' }}
             >
-              <img 
-                src={logoImage} 
+              <Logo
                 alt="MT Makina" 
                 className="h-16 w-auto"
-                style={{ filter: 'drop-shadow(0 2px 8px rgba(244,206,20,0.2))' }}
               />
             </motion.div>
 
