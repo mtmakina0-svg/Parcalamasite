@@ -20,38 +20,26 @@ interface ProductDetailPageProps {
 }
 
 // Helper function to get product folder name in Turkish (matching public folder structure)
-const getProductFolderName = (productType: string): string => {
-  const folderMap: { [key: string]: string } = {
-    'single-shaft': 'TEK ŞAFTLI PARÇALAMA MAKİNESİ',
-    'dual-shaft': 'ÇİFT ŞAFTLI PARÇALAMA MAKİNESİ',
-    'quad-shaft': 'DÖRT ŞAFTLI PARÇALAMA MAKİNESİ',
-    'metal': 'METAL PARÇALAMA MAKİNESİ',
-    'granulator': 'GRANÜLATÖR',
-    'baler': 'BALYA PRESİ',
-    'conveyor': 'KONVEYÖR SİSTEMİ',
-    'separator': 'AYIRICI SİSTEM'
+const getModelImages = (productType: string, modelName: string) => {
+  // Public klasördeki doğru ürün klasörünü bul
+  const folderName = getProductFolderName(productType);
+
+  // URL uyumlu hale getir
+  const encodedFolder = encodeURIComponent(folderName);
+  const encodedModel = encodeURIComponent(modelName);
+
+  // Görsellerin yolu
+ const basePath = `/${encodedFolder}/${encodedModel}`;
+
+  // Public klasöründeki görseller 1.png, 2.png, 3.png olarak adlandırılmışsa:
+  return {
+    main: `${basePath}/1.png`,
+    detail1: `${basePath}/2.png`,
+    detail2: `${basePath}/3.png`,
+    detail3: `${basePath}/4.png`
   };
-  return folderMap[productType] || 'TEK ŞAFTLI PARÇALAMA MAKİNESİ';
 };
 
-// Helper function to get image paths for a specific model
-const getModelImages = (productType: string, modelName: string) => {
-  const folderName = getProductFolderName(productType);
-  const basePath = `/${folderName}/${modelName}`;
-  
-  // Images are named as "1 (1).png", "1 (2).png", etc.
-  // Encode spaces and special characters in URLs
-  const encodePath = (filename: string) => {
-    return `${basePath}/${encodeURIComponent(filename)}`;
-  };
-  
-  return {
-    main: encodePath('1 (1).png'),
-    detail1: encodePath('1 (2).png'),
-    detail2: encodePath('1 (3).png'),
-    detail3: encodePath('1 (4).png')
-  };
-};
 
 // Model technical specifications
 interface ModelSpecs {
@@ -251,7 +239,14 @@ export const ProductDetailPage = ({
   
   // Debug: Log image paths
   React.useEffect(() => {
-    console.log('Image paths:', images);
+    console.log('Image paths for', modelName, ':', images);
+    console.log('Main image URL:', images.main);
+    // Test if image loads
+    fetch(images.main).then(res => {
+      console.log('Image fetch status:', res.status, res.ok ? '✓' : '✗');
+    }).catch(err => {
+      console.error('Image fetch error:', err);
+    });
   }, [modelName]);
 
   // Get current model specs
