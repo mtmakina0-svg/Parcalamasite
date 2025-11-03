@@ -1,3 +1,65 @@
+# 🚀 Deployment Guide - MT Makina Website
+
+> **Quick Start:** [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) - Vercel'e 3 dakikada deploy et!
+
+## 📋 Table of Contents
+1. [Vercel Deployment (Recommended)](#vercel-deployment)
+2. [Netlify Deployment](#netlify-deployment)
+3. [GitHub Image Repository Setup](#github-image-repository-setup)
+4. [SEO Configuration](#seo-configuration)
+5. [Environment Variables](#environment-variables)
+
+---
+
+## 🎯 Vercel Deployment (Önerilen)
+
+**En hızlı ve kolay deployment yöntemi!**
+
+### Quick Deploy
+```bash
+# 1. Git repo'ya push et
+git add .
+git commit -m "Production ready"
+git push origin main
+
+# 2. Vercel'e import et
+# → vercel.com → Import Project → Repo seç
+
+# 3. Otomatik deploy! ✅
+```
+
+✅ **SPA Routing otomatik çalışır** (`vercel.json` hazır)  
+✅ **HTTPS otomatik aktif**  
+✅ **Global CDN**  
+✅ **Her push'ta otomatik deploy**
+
+📖 **Detaylı rehber:** [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)
+
+---
+
+## 🔷 Netlify Deployment
+
+### Quick Deploy
+```bash
+# 1. Git repo'ya push et
+git add .
+git commit -m "Production ready"
+git push origin main
+
+# 2. Netlify'a import et
+# → app.netlify.com → Add new site → Import from Git
+
+# 3. Build settings:
+Build command: npm run build
+Publish directory: dist
+```
+
+✅ **SPA Routing otomatik çalışır** (`netlify.toml` + `_redirects` hazır)  
+✅ **HTTPS otomatik aktif**  
+✅ **Continuous deployment**
+
+---
+
 # Deployment Guide - MT Makina Website
 
 ## GitHub Image Repository Setup

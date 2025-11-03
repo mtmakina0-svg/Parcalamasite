@@ -33,15 +33,17 @@ React client-side routing kullanır. Yani:
 ### Çözüm 2: Production Deployment için (Önerilen)
 
 #### Vercel için:
-`vercel.json` dosyası eklendi. Tüm route'lar otomatik olarak `/index.html`'e yönlendirilir.
+`vercel.json` dosyası eklendi. Tüm route'lar otomatik olarak root (`/`) path'e yönlendirilir.
 
 ```json
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
 ```
+
+✅ **Önemli:** Vercel otomatik olarak tüm route'ları SPA'nın index'ine yönlendirir.
 
 #### Netlify için:
 `netlify.toml` ve `public/_redirects` dosyaları eklendi.
