@@ -5,15 +5,27 @@
 
 // Image hosting configuration
 const IMAGE_CONFIG = {
-  // GitHub repository settings
-  useGitHub: true, // ✅ GitHub'dan görselleri çek
+  // ✅ PRİORİTY: GitHub'dan çek (public/ klasöründen)
+  // ❌ FALLBACK: Manuel URL'ler (ImgBB, Imgur vs.)
+  useGitHubFirst: true, // GitHub'ı önceliklendir
   github: {
     username: 'mtmakina0',
     repo: 'parcalamasite',
-    branch: 'main', // ⚠️ Eğer 'git branch' komutu 'master' gösteriyorsa buraya 'master' yazın
+    branch: 'main', // ⚠️ Eğer 'master' ise değiştirin
     basePath: 'public'
   }
 };
+
+/**
+ * Test GitHub image URL
+ * Tarayıcınızda açarak kontrol edin:
+ * https://raw.githubusercontent.com/mtmakina0/parcalamasite/main/public/TEK%20%C5%9EAFTLI%20PAR%C3%87ALAMA%20MAK%C4%B0NES%C4%B0/TSH-60/1.png
+ * 
+ * Eğer 404 alırsanız:
+ * 1. Branch'i kontrol edin (main vs master)
+ * 2. Görsellerin GitHub'a push edildiğini kontrol edin
+ * 3. Klasör isimlerinin doğru olduğunu kontrol edin
+ */
 
 // Base URL for all GitHub-hosted images
 const GITHUB_BASE_URL = `https://raw.githubusercontent.com/${IMAGE_CONFIG.github.username}/${IMAGE_CONFIG.github.repo}/${IMAGE_CONFIG.github.branch}/${IMAGE_CONFIG.github.basePath}`;
@@ -128,17 +140,32 @@ const MANUAL_IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   }
 };
 
+/**
+ * Get model images with fallback support
+ * Returns GitHub URLs as primary, manual URLs as fallback
+ */
 export const getModelImages = (
   productType: string,
   modelName: string
 ): ModelImages => {
-  // Önce manuel URL'leri kontrol et
+  // ✅ PRİORİTY 1: GitHub'dan çek (public/ klasöründen)
+  if (IMAGE_CONFIG.useGitHubFirst) {
+    return {
+      main: getGitHubImageUrl(productType, modelName, '1.png'),
+      detail1: getGitHubImageUrl(productType, modelName, '2.png'),
+      detail2: getGitHubImageUrl(productType, modelName, '3.png'),
+      detail3: getGitHubImageUrl(productType, modelName, '4.png'),
+      detail4: getGitHubImageUrl(productType, modelName, '5.png')
+    };
+  }
+  
+  // ❌ FALLBACK: Manuel URL'leri kullan (GitHub devre dışıysa)
   const manualUrls = MANUAL_IMAGE_URLS[productType]?.[modelName];
   if (manualUrls && manualUrls.main) {
     return manualUrls;
   }
   
-  // Manuel URL yoksa GitHub URL'lerini oluştur
+  // Son çare: GitHub URL'leri
   return {
     main: getGitHubImageUrl(productType, modelName, '1.png'),
     detail1: getGitHubImageUrl(productType, modelName, '2.png'),
@@ -146,6 +173,21 @@ export const getModelImages = (
     detail3: getGitHubImageUrl(productType, modelName, '4.png'),
     detail4: getGitHubImageUrl(productType, modelName, '5.png')
   };
+};
+
+/**
+ * Get manual fallback URLs for a model (if available)
+ * Used as secondary fallback in ImageWithFallback component
+ */
+export const getManualFallbackImages = (
+  productType: string,
+  modelName: string
+): ModelImages | null => {
+  const manualUrls = MANUAL_IMAGE_URLS[productType]?.[modelName];
+  if (manualUrls && manualUrls.main) {
+    return manualUrls;
+  }
+  return null;
 };
 
 /**
