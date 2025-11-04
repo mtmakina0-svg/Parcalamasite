@@ -1,6 +1,7 @@
 {
       "name": "MT Makina - Parçalama Makinesi",
       "version": "0.1.0",
+      "type": "module",
       "private": true,
       "dependencies": {
             "@radix-ui/react-accordion": "^1.2.3",
@@ -51,6 +52,7 @@
       "devDependencies": {
             "@types/node": "^20.10.0",
             "@vitejs/plugin-react-swc": "^3.10.2",
+            "sitemap": "^8.0.2",
             "vite": "6.3.5"
       },
       "scripts": {
