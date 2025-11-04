@@ -1,13 +1,7 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
-import './index.css';
-import { HelmetProvider } from 'react-helmet-async'; // <-- BU EKLENDİ
 
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <HelmetProvider> {/* <-- BU EKLENDİ (Tüm siteyi sarar) */}
-      <App />
-    </HelmetProvider> {/* <-- BU EKLENDİ */}
-  </React.StrictMode>
-);
+  import { createRoot } from "react-dom/client";
+  import App from "./App.tsx";
+  import "./index.css";
+
+  createRoot(document.getElementById("root")!).render(<App />);
+  
