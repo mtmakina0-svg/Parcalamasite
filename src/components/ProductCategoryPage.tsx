@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench } from 'lucide-react'; // ArrowLeft kullanılmıyor ama kalsa da olur
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
+// Not: Bu sayfa için Helmet/SEO etiketleri app.tsx tarafından yönetiliyor.
 
 interface ProductCategoryPageProps {
   productType: string;
-  onBackToMain: () => void;
+  // onBackToMain kaldırıldı, Header'dan yönetiliyor
   onModelSelect: (modelName: string) => void;
 }
 
@@ -44,7 +45,7 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
 
 export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   productType,
-  onBackToMain,
+  // onBackToMain kaldırıldı
   onModelSelect
 }) => {
   const { t, isRTL } = useLanguage();
@@ -58,23 +59,14 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   }, [productType]);
 
   return (
-    <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Back Button */}
-      <div className="bg-[#45474B] py-4">
-        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <motion.button
-            onClick={onBackToMain}
-            whileHover={{ x: isRTL ? 5 : -5 }}
-            className="flex items-center gap-2 text-[#F4CE14] hover:text-[#F5F7F8] transition-colors"
-          >
-            <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
-            <span>{t('nav_home')}</span>
-          </motion.button>
-        </div>
-      </div>
+    // min-h-screen'i kaldırdık, app.tsx'teki ana div'e güvenir
+    <div className="bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
+      
+      {/* Back Button KALDIRILDI - Artık app.tsx'teki Header'ı kullanıyor */}
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-b from-[#45474B] to-[#F5F7F8]">
+      <section className="relative pt-20 pb-20 bg-gradient-to-b from-[#45474B] to-[#F5F7F8]">
+        {/* pt-20 eklendi (Header yüksekliği kadar boşluk) */}
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

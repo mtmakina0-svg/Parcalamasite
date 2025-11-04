@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, Zap, Wind } from 'lucide-react';
+import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, Zap, Wind } from 'lucide-react'; // ArrowLeft kullanılmıyor
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
@@ -24,9 +24,12 @@ const generateSEO = (productType: string, modelName: string) => {
     'quad-shaft': 'Dört Şaftlı Parçalama Makinesi',
   };
 
-  const title = `${modelName} | ${titles[productType] || 'Parçalama Makinesi'} | MT Makina`;
-  const description = `${modelName} modeli ${titles[productType] || ''} teknik özellikleri, kapasitesi ve kullanım alanlarıyla ilgili detaylı bilgi.`;
-  const canonical = `https://www.parcalamamakinesi.com/${productType}/${modelName}`;
+  const title = `${modelName.toUpperCase()} | ${titles[productType] || 'Parçalama Makinesi'} | MT Makina`;
+  const description = `${modelName.toUpperCase()} modeli ${titles[productType] || ''} teknik özellikleri, kapasitesi ve kullanım alanlarıyla ilgili detaylı bilgi.`;
+  // URL'yi dinamik ve küçük harf yap
+  const productPath = productType.toLowerCase();
+  const modelPath = modelName.toLowerCase();
+  const canonical = `https://www.parcalamamakinesi.com/${productPath}/${modelPath}`;
 
   return { title, description, canonical };
 };
@@ -34,24 +37,27 @@ const generateSEO = (productType: string, modelName: string) => {
 interface ProductDetailPageProps {
   productType: string;
   modelName?: string;
-  onBackToMain: () => void;
+  // onBackToMain kaldırıldı
   onECatalogClick: () => void;
   onProductDetailClick?: (productType: string, modelName?: string) => void;
 }
 
 export const ProductDetailPage = ({
   productType,
-  modelName = 'TSH-60',
-  onBackToMain,
+  modelName = 'TSH-60', // Varsayılan model
+  // onBackToMain kaldırıldı
   onECatalogClick,
   onProductDetailClick,
 }: ProductDetailPageProps) => {
   const { t, isRTL } = useLanguage();
 
+  // modelName'in her zaman büyük harf olmasını sağla (veya generateSEO'yu buna göre ayarla)
+  const upperModelName = modelName.toUpperCase();
+  
   // Helmet meta verisi
-  const seo = generateSEO(productType, modelName);
+  const seo = generateSEO(productType, upperModelName);
 
-  const images = getModelImages(productType, modelName);
+  const images = getModelImages(productType, upperModelName);
   const fallbackImage = getFallbackImage(productType);
   const currentSpecs =
     {
@@ -64,16 +70,18 @@ export const ProductDetailPage = ({
           weight: '2500 kg',
           capacity: '500-800 kg/saat',
         },
+        // Diğer single-shaft modeller buraya eklenebilir...
       },
-    }[productType]?.[modelName] || null;
+      // Diğer productType'lar buraya eklenebilir...
+    }[productType]?.[upperModelName] || null;
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [productType, modelName]);
 
   return (
-    <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* 🧠 SEO Metadata */}
+    <div className="bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
+      {/* 🧠 SEO Metadata (Bu sayfaya özel olduğu için kalmalı) */}
       <Helmet>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
@@ -84,28 +92,17 @@ export const ProductDetailPage = ({
         <meta property="og:type" content="product" />
       </Helmet>
 
-      {/* Header Section */}
-      <div className="bg-[#45474B] py-4">
-        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <motion.button
-            onClick={onBackToMain}
-            whileHover={{ x: isRTL ? 5 : -5 }}
-            className="flex items-center gap-2 text-[#F4CE14] hover:text-[#F5F7F8] transition-colors"
-          >
-            <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
-            <span>{t('nav_home')}</span>
-          </motion.button>
-        </div>
-      </div>
+      {/* Header Section KALDIRILDI - Artık app.tsx'teki Header'ı kullanıyor */}
 
       {/* Main Product Content */}
-      <section className="py-16 bg-white">
+      <section className="pt-32 pb-16 bg-white"> 
+        {/* pt-32 eklendi (Header + Başlık boşluğu için) */}
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center text-[#F4CE14] mb-6 text-5xl font-bold"
+            className="text-center text-[#45474B] mb-6 text-5xl font-bold" // Renk #F4CE14'ten #45474B'ye değişti (daha okunaklı)
           >
             {seo.title}
           </motion.h1>
@@ -125,21 +122,31 @@ export const ProductDetailPage = ({
           </motion.div>
 
           {currentSpecs && (
-            <table className="w-full bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg">
+            <motion.table 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="w-full max-w-4xl mx-auto bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg"
+            >
               <tbody>
                 {Object.entries(currentSpecs).map(([key, value]) => (
                   <tr key={key} className="border-b border-gray-200">
-                    <td className="px-8 py-4 bg-[#F4CE14] font-semibold text-[#1E1E1E] capitalize">
+                    <td className="w-1/3 px-8 py-4 bg-[#F4CE14] font-semibold text-[#1E1E1E] capitalize">
                       {key.replace(/([A-Z])/g, ' $1')}
                     </td>
-                    <td className="px-8 py-4 text-[#45474B]">{value}</td>
+                    <td className="w-2/3 px-8 py-4 text-[#45474B]">{value}</td>
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </motion.table>
           )}
 
-          <div className="text-center mt-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-center mt-12"
+          >
             <Button
               onClick={onECatalogClick}
               className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl"
@@ -147,9 +154,13 @@ export const ProductDetailPage = ({
               <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
               {t('single_shaft_ecatalog_btn')}
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
+      
+      {/* TODO: SimilarProductsSection ve YouTubeChannelSection eklenebilir */}
+      {/* <SimilarProductsSection currentProduct={productType} onProductClick={onProductDetailClick} /> */}
+      {/* <YouTubeChannelSection /> */}
     </div>
   );
 };
