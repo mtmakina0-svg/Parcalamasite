@@ -23,15 +23,16 @@ const generateSEO = (productType: string, modelName: string) => {
     'dual-shaft': 'Çift Şaftlı Parçalama Makinesi',
     'quad-shaft': 'Dört Şaftlı Parçalama Makinesi',
   };
-
-  const title = `${modelName.toUpperCase()} | ${titles[productType] || 'Parçalama Makinesi'} | MT Makina`;
-  const description = `${modelName.toUpperCase()} modeli ${titles[productType] || ''} teknik özellikleri, kapasitesi ve kullanım alanlarıyla ilgili detaylı bilgi.`;
+  
+  const productTitle = titles[productType] || 'Parçalama Makinesi';
+  const title = `${modelName.toUpperCase()} | ${productTitle} | MT Makina`;
+  const description = `${modelName.toUpperCase()} modeli ${productTitle} teknik özellikleri, kapasitesi ve kullanım alanlarıyla ilgili detaylı bilgi.`;
   // URL'yi dinamik ve küçük harf yap
   const productPath = productType.toLowerCase();
   const modelPath = modelName.toLowerCase();
   const canonical = `https://www.parcalamamakinesi.com/${productPath}/${modelPath}`;
 
-  return { title, description, canonical };
+  return { title, description, canonical, productTitle };
 };
 
 interface ProductDetailPageProps {
@@ -139,23 +140,40 @@ export const ProductDetailPage = ({
         <meta property="og:type" content="product" />
       </Helmet>
 
-      {/* Main Product Content */}
-      <section className="pt-32 pb-16 bg-white"> 
-        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+      {/* --- 👇 YENİ EKLENEN BAŞLIK (HERO) ALANI --- */}
+      <section className="bg-[#45474B] text-[#F5F7F8] pt-32 pb-12">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center text-[#45474B] mb-6 text-5xl font-bold"
+            className="text-4xl lg:text-5xl font-bold mb-4"
           >
-            {seo.title}
+            {upperModelName}
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg lg:text-xl text-[#F4CE14]"
+          >
+            {seo.productTitle}
+          </motion.p>
+        </div>
+      </section>
+      {/* --- 👆 YENİ EKLENEN BAŞLIK (HERO) ALANI BİTTİ --- */}
 
+
+      {/* Main Product Content */}
+      <section className="py-16 bg-white"> 
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+          {/* pt-32 ve h1 başlığı kaldırıldı, çünkü yukarıdaki hero section'a taşındı */}
+          
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-5xl mx-auto mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-5xl mx-auto mb-12"
           >
             <ImageWithFallback
               src={images.main}
@@ -164,12 +182,21 @@ export const ProductDetailPage = ({
               fallbackSrc={fallbackImage}
             />
           </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-3xl lg:text-4xl font-bold text-[#45474B] text-center mb-10"
+          >
+            Teknik Özellikler
+          </motion.h2>
 
           {currentSpecs && (
             <motion.table 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.4 }}
               className="w-full max-w-4xl mx-auto bg-[#F5F7F8] rounded-2xl overflow-hidden shadow-lg"
             >
               <tbody>
@@ -189,7 +216,7 @@ export const ProductDetailPage = ({
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.5 }}
             className="text-center mt-12"
           >
             <Button
