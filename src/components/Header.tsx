@@ -5,38 +5,22 @@ import { useLanguage, Language } from './LanguageContext';
 import { Button } from './ui/button';
 import { Logo } from './Logo';
 
-// Header'ın artık dışarıdan 'on...Click' fonksiyonlarına ihtiyacı yok.
-// app.tsx'teki global yakalayıcı her şeyi halledecek.
-interface HeaderProps {}
+interface HeaderProps {
+  onWasteClick?: () => void;
+  onWasteDetailClick?: (wasteType: string) => void;
+  onMainClick?: () => void;
+  onProductsClick?: () => void;
+  onAboutClick?: () => void;
+  onReferencesClick?: () => void;
+  onTechnologyClick?: () => void;
+  onCertificatesClick?: () => void;
+  onECatalogClick?: () => void;
+  onProductCategoryClick?: (productType: string) => void;
+  onProductDetailClick?: (productType: string, modelName?: string) => void;
+  onContactClick?: () => void;
+}
 
-// Hangi 'action' adının hangi URL yoluna karşılık geldiğini belirten haritalar
-// Bunlar app.tsx'teki 'parseUrl' fonksiyonu ile eşleşmelidir.
-const corporatePathMap = {
-  'about': '/kurumsal',
-  'certificates': '/sertifikalar'
-};
-
-const productPathMap: { [key: string]: string } = {
-  'single-shaft': '/tek-shaftli-parcalama-makinesi',
-  'dual-shaft': '/cift-shaftli-parcalama-makinesi',
-  'quad-shaft': '/dort-shaftli-parcalama-makinesi',
-  'metal': '/metal-parcalama-makinesi',
-  'granulator': '/granulator-makinesi',
-  'baler': '/balyalama-makinesi',
-  'conveyor': '/konveyor-sistemi',
-  'separator': '/ayristirma-makinesi',
-  // Henüz app.tsx'te olmayan ama burada olanlar için varsayılan:
-  'pallet': '/urunler',
-  'glass': '/urunler',
-  'plastic': '/urunler',
-  'organic': '/urunler',
-  'tire': '/urunler'
-};
-
-const wastePathMap = (action: string) => `/atik-turleri/${action}`;
-
-
-export const Header = (props: HeaderProps = {}) => {
+export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProductsClick, onAboutClick, onReferencesClick, onTechnologyClick, onCertificatesClick, onECatalogClick, onProductCategoryClick, onProductDetailClick, onContactClick }: HeaderProps = {}) => {
   const { language, setLanguage, t, isRTL } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -62,10 +46,11 @@ export const Header = (props: HeaderProps = {}) => {
   ];
 
   const corporateDropdown = [
-    { key: 'nav_about', action: 'about', href: corporatePathMap['about'] },
-    { key: 'nav_certificates', action: 'certificates', href: corporatePathMap['certificates'] }
+    { key: 'nav_about', action: 'about' },
+    { key: 'nav_certificates', action: 'certificates' }
   ];
 
+  // Product models for mega menu
   const productModels: { [key: string]: { label: string, models: string[] } } = {
     'single-shaft': {
       label: 'Tek Şaftlı Parçalama Makinesi',
@@ -82,43 +67,51 @@ export const Header = (props: HeaderProps = {}) => {
   };
   
   const productsDropdown = [
-    { key: 'product_single_shaft', action: 'single-shaft', href: productPathMap['single-shaft'], hasModels: true },
-    { key: 'product_dual_shaft', action: 'dual-shaft', href: productPathMap['dual-shaft'], hasModels: true },
-    { key: 'product_quad_shaft', action: 'quad-shaft', href: productPathMap['quad-shaft'], hasModels: true },
-    { key: 'product_metal', action: 'metal', href: productPathMap['metal'], hasModels: false },
-    { key: 'product_pallet', action: 'pallet', href: productPathMap['pallet'], hasModels: false },
-    { key: 'product_glass', action: 'glass', href: productPathMap['glass'], hasModels: false },
-    { key: 'product_plastic', action: 'plastic', href: productPathMap['plastic'], hasModels: false },
-    { key: 'product_organic', action: 'organic', href: productPathMap['organic'], hasModels: false },
-    { key: 'product_tire', action: 'tire', href: productPathMap['tire'], hasModels: false }
+    { key: 'product_single_shaft', action: 'single-shaft', hasModels: true },
+    { key: 'product_dual_shaft', action: 'dual-shaft', hasModels: true },
+    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true },
+    { key: 'product_metal', action: 'metal', hasModels: false },
+    { key: 'product_granulator', action: 'granulator', hasModels: false },
+    { key: 'product_baler', action: 'baler', hasModels: false },
+    { key: 'product_conveyor', action: 'conveyor', hasModels: false },
+    { key: 'product_separator', action: 'separator', hasModels: false }
   ];
   
   const wastesDropdown = [
-    { key: 'waste_household', action: 'evsel-atiklar', href: wastePathMap('evsel-atiklar') },
-    { key: 'waste_tire', action: 'lastik-atiklari', href: wastePathMap('lastik-atiklari') },
-    { key: 'waste_glass', action: 'cam-atiklar', href: wastePathMap('cam-atiklar') },
-    { key: 'waste_plastic', action: 'plastik-atiklar', href: wastePathMap('plastik-atiklar') },
-    { key: 'waste_medical', action: 'tibbi-atiklar', href: wastePathMap('tibbi-atiklar') },
-    { key: 'waste_electronic', action: 'elektronik-atiklar', href: wastePathMap('elektronik-atiklar') },
-    { key: 'waste_metal', action: 'metal-atiklar', href: wastePathMap('metal-atiklar') },
-    { key: 'waste_paper', action: 'kagit-karton-atiklar', href: wastePathMap('kagit-karton-atiklar') },
-    { key: 'waste_organic', action: 'organik-atiklar', href: wastePathMap('organik-atiklar') },
-    { key: 'waste_animal', action: 'hayvan-atiklari', href: wastePathMap('hayvan-atiklari') }
+    { key: 'waste_household', action: 'evsel-atiklar' },
+    { key: 'waste_tire', action: 'lastik-atiklari' },
+    { key: 'waste_glass', action: 'cam-atiklar' },
+    { key: 'waste_plastic', action: 'plastik-atiklar' },
+    { key: 'waste_medical', action: 'tibbi-atiklar' },
+    { key: 'waste_electronic', action: 'elektronik-atiklar' },
+    { key: 'waste_metal', action: 'metal-atiklar' },
+    { key: 'waste_paper', action: 'kagit-karton-atiklar' },
+    { key: 'waste_organic', action: 'organik-atiklar' },
+    { key: 'waste_animal', action: 'hayvan-atiklari' }
   ];
 
   const navItems = [
-    { key: 'nav_home', href: '/', action: 'home' },
-    { key: 'nav_corporate', href: '/kurumsal', dropdown: corporateDropdown, noPointerEvents: true },
-    { key: 'nav_products', href: '/urunler', dropdown: productsDropdown, action: 'products' },
-    { key: 'nav_wastes', href: '/atik-turleri', dropdown: wastesDropdown, action: 'wastes' },
-    { key: 'nav_technology', href: '/teknoloji', action: 'technology' },
-    { key: 'nav_references', href: '/referanslar', action: 'references' },
-    { key: 'nav_contact', href: '/iletisim', action: 'contact' },
-    { key: 'nav_ecatalog', label: 'E-Katalog', href: '/e-katalog', action: 'ecatalog' },
+    { key: 'nav_home', href: '#hero', action: 'home' },
+    { key: 'nav_corporate', href: '#', dropdown: corporateDropdown, noPointerEvents: true },
+    { key: 'nav_products', href: '#', dropdown: productsDropdown, action: 'products' },
+    { key: 'nav_wastes', href: '#', dropdown: wastesDropdown, action: 'wastes' },
+    { key: 'nav_technology', href: '#technology', action: 'technology' },
+    { key: 'nav_references', href: '#references', action: 'references' },
+    { key: 'nav_contact', href: '#contact', action: 'contact' },
+    { key: 'nav_ecatalog', label: 'E-Katalog', href: '#', action: 'ecatalog' },
   ];
 
-  // handleContactLinkClick gibi özel fonksiyonlara artık gerek yok.
-  // app.tsx'teki global handler, href="/iletisim" linkini yakalayacak.
+  const handleContactLinkClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onContactClick) {
+      onContactClick();
+    } else {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   const handleMouseEnter = (itemKey: string) => {
     if (dropdownTimeout) {
@@ -129,6 +122,7 @@ export const Header = (props: HeaderProps = {}) => {
   };
 
   const handleMouseLeave = () => {
+    // Delay closing to allow smooth cursor movement to dropdown
     const timeout = setTimeout(() => {
       setOpenDropdown(null);
     }, 200);
@@ -161,13 +155,19 @@ export const Header = (props: HeaderProps = {}) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.a
-            href="/" // <-- DÜZELTİLDİ
-            // onClick'i kaldırdık, app.tsx'teki global handler halledecek
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              if (onMainClick) {
+                onMainClick();
+              }
+            }}
             whileHover={{ scale: 1.05, filter: 'brightness(1.2)' }}
             className="flex items-center cursor-pointer"
           >
             <Logo
-              alt="MT Makina"
+              alt="MT Makina" 
               className="h-12 w-auto"
             />
           </motion.a>
@@ -182,9 +182,36 @@ export const Header = (props: HeaderProps = {}) => {
                 onMouseLeave={handleMouseLeave}
               >
                 <motion.a
-                  href={item.href} // <-- TÜM LİNKLER DÜZELTİLDİ
+                  href={item.key === 'nav_home' ? '#' : item.href}
                   aria-label={item.label || t(item.key)}
-                  // onClick'i kaldırdık, app.tsx'teki global handler halledecek
+                  onClick={(e) => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (item.noPointerEvents && item.dropdown) {
+                      e.preventDefault();
+                      return;
+                    }
+                    if (item.action === 'home' && onMainClick) {
+                      e.preventDefault();
+                      onMainClick();
+                    } else if (item.action === 'products' && onProductsClick) {
+                      e.preventDefault();
+                      onProductsClick();
+                    } else if (item.action === 'references' && onReferencesClick) {
+                      e.preventDefault();
+                      onReferencesClick();
+                    } else if (item.action === 'technology' && onTechnologyClick) {
+                      e.preventDefault();
+                      onTechnologyClick();
+                    } else if (item.action === 'contact') {
+                      handleContactLinkClick(e);
+                    } else if (item.action === 'wastes' && onWasteClick) {
+                      e.preventDefault();
+                      onWasteClick();
+                    } else if (item.action === 'ecatalog' && onECatalogClick) {
+                      e.preventDefault();
+                      onECatalogClick();
+                    }
+                  }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -206,29 +233,32 @@ export const Header = (props: HeaderProps = {}) => {
                     onMouseEnter={handleDropdownEnter}
                     onMouseLeave={handleDropdownLeave}
                     className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 overflow-hidden z-[9999] ${
-                      item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px]' :
-                      item.key === 'nav_products' ? 'grid grid-cols-3 gap-2 p-3 min-w-[780px]' :
+                      item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px]' : 
+                      item.key === 'nav_products' ? 'grid grid-cols-3 gap-2 p-3 min-w-[780px]' : 
                       'min-w-[240px]'
                     }`}
                     role="menu"
                     aria-label={`${item.label || t(item.key)} alt menü`}
                   >
-                    {/* Products Mega Menu */}
+                    {/* Products Mega Menu with Dropdown Models */}
                     {item.key === 'nav_products' ? (
                       item.dropdown.map((subItem: any) => (
                         <div
                           key={subItem.key || subItem}
                           className="relative group/product"
                           onMouseEnter={() => {
+                            // Clear any existing timeout
                             if (productHoverTimeout) {
                               clearTimeout(productHoverTimeout);
                               setProductHoverTimeout(null);
                             }
+                            // Set hovered product immediately
                             if (subItem.hasModels) {
                               setHoveredProduct(subItem.action);
                             }
                           }}
                           onMouseLeave={() => {
+                            // Add delay to allow smooth cursor movement
                             const timeout = setTimeout(() => {
                               setHoveredProduct(null);
                             }, 200);
@@ -237,10 +267,15 @@ export const Header = (props: HeaderProps = {}) => {
                         >
                           {/* Main Product - Goes to Category Page */}
                           <motion.a
-                            href={subItem.href} // <-- DÜZELTİLDİ
-                            onClick={() => {
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
                               setOpenDropdown(null);
                               setHoveredProduct(null);
+                              if (subItem.action && onProductCategoryClick) {
+                                onProductCategoryClick(subItem.action);
+                              }
                             }}
                             whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
                             className="block px-4 py-3 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors whitespace-normal leading-tight rounded"
@@ -249,7 +284,7 @@ export const Header = (props: HeaderProps = {}) => {
                             {subItem.label || t(subItem.key || subItem)}
                           </motion.a>
                           
-                          {/* Models Dropdown */}
+                          {/* Models Dropdown (appears below product name) - with extra padding for smooth hover */}
                           {hoveredProduct === subItem.action && productModels[subItem.action] && (
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
@@ -257,6 +292,7 @@ export const Header = (props: HeaderProps = {}) => {
                               transition={{ duration: 0.2 }}
                               className="pb-3 pt-1"
                               onMouseEnter={() => {
+                                // Clear timeout and keep dropdown open
                                 if (productHoverTimeout) {
                                   clearTimeout(productHoverTimeout);
                                   setProductHoverTimeout(null);
@@ -265,16 +301,18 @@ export const Header = (props: HeaderProps = {}) => {
                               }}
                             >
                               <div className="ml-2 border-l-2 border-[#F4CE14]/30 pl-3 space-y-1">
-                                {productModels[subItem.action].models.map((model) => {
-                                  // Model linki oluştur (app.tsx'e göre)
-                                  const modelHref = `${subItem.href}/${model.toLowerCase()}`;
-                                  return (
+                                {productModels[subItem.action].models.map((model) => (
                                   <motion.a
                                     key={model}
-                                    href={modelHref} // <-- DÜZELTİLDİ
-                                    onClick={() => {
+                                    href="#"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
                                       setOpenDropdown(null);
                                       setHoveredProduct(null);
+                                      if (onProductDetailClick) {
+                                        onProductDetailClick(subItem.action, model);
+                                      }
                                     }}
                                     whileHover={{ backgroundColor: 'rgba(244,206,20,0.15)', x: 3 }}
                                     className="block px-3 py-2 text-xs text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-all rounded"
@@ -282,7 +320,7 @@ export const Header = (props: HeaderProps = {}) => {
                                   >
                                     {model}
                                   </motion.a>
-                                )})}
+                                ))}
                               </div>
                             </motion.div>
                           )}
@@ -293,9 +331,21 @@ export const Header = (props: HeaderProps = {}) => {
                       item.dropdown.map((subItem: any) => (
                         <motion.a
                           key={subItem.key || subItem}
-                          href={subItem.href} // <-- DÜZELTİLDİ
-                          onClick={() => {
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                             setOpenDropdown(null);
+                            
+                            if (item.key === 'nav_corporate') {
+                              if (subItem.action === 'about' && onAboutClick) {
+                                onAboutClick();
+                              } else if (subItem.action === 'certificates' && onCertificatesClick) {
+                                onCertificatesClick();
+                              }
+                            } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
+                              onWasteDetailClick(subItem.action);
+                            }
                           }}
                           whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
                           className={`block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors ${
@@ -378,75 +428,112 @@ export const Header = (props: HeaderProps = {}) => {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="lg:hidden pb-4"
-        >
-          <nav className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <div key={item.key}>
-                <a
-                  href={item.href} // <-- DÜZELTİLDİ
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                  className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
-                >
-                  {item.label || t(item.key)}
-                </a>
-                {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_products' || item.key === 'nav_wastes') && (
-                  <div className="pl-4 mt-2 space-y-2">
-                    {item.dropdown.map((subItem: any) => (
-                      <a
-                        key={subItem.key}
-                        href={subItem.href} // <-- DÜZELTİLDİ
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                        }}
-                        className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block"
-                      >
-                        {subItem.label || t(subItem.key)}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <Button
-              onClick={() => {
-                window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
-                setMobileMenuOpen(false);
-              }}
-              className="bg-[#25D366] text-white hover:bg-[#25D366]/90 w-full"
-            >
-              {t('btn_quote')}
-            </Button>
-            <div className="flex items-center justify-around pt-2 border-t border-[#F4CE14]/30">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => {
-                    setLanguage(lang.code);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${
-                    language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
-                  }`}
-                >
-                  {lang.code.toUpperCase()}
-                </button>
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden pb-4"
+          >
+            <nav className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <div key={item.key}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      setMobileMenuOpen(false);
+                      
+                      if (item.action === 'home' && onMainClick) {
+                        onMainClick();
+                      } else if (item.action === 'products' && onProductsClick) {
+                        onProductsClick();
+                      } else if (item.action === 'references' && onReferencesClick) {
+                        onReferencesClick();
+                      } else if (item.action === 'technology' && onTechnologyClick) {
+                        onTechnologyClick();
+                      } else if (item.action === 'contact') {
+                        if (onContactClick) {
+                          onContactClick();
+                        } else {
+                          const contactSection = document.getElementById('contact');
+                          if (contactSection) {
+                            contactSection.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }
+                      } else if (item.action === 'wastes' && onWasteClick) {
+                        onWasteClick();
+                      } else if (item.action === 'ecatalog' && onECatalogClick) {
+                        onECatalogClick();
+                      }
+                    }}
+                    className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
+                  >
+                    {item.label || t(item.key)}
+                  </a>
+                  {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_products' || item.key === 'nav_wastes') && (
+                    <div className="pl-4 mt-2 space-y-2">
+                      {item.dropdown.map((subItem: any) => (
+                        <a
+                          key={subItem.key}
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            setMobileMenuOpen(false);
+                            if (item.key === 'nav_corporate') {
+                              if (subItem.action === 'about' && onAboutClick) {
+                                onAboutClick();
+                              } else if (subItem.action === 'certificates' && onCertificatesClick) {
+                                onCertificatesClick();
+                              }
+                            } else if (item.key === 'nav_products' && subItem.action && onProductDetailClick) {
+                              onProductDetailClick(subItem.action);
+                            } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
+                              onWasteDetailClick(subItem.action);
+                            }
+                          }}
+                          className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block"
+                        >
+                          {subItem.label || t(subItem.key)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
-            </div>
-          </nav>
-        </motion.div>
-      )}
+              <Button 
+                onClick={() => {
+                  window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
+                  setMobileMenuOpen(false);
+                }}
+                className="bg-[#25D366] text-white hover:bg-[#25D366]/90 w-full"
+              >
+                {t('btn_quote')}
+              </Button>
+              <div className="flex items-center justify-around pt-2 border-t border-[#F4CE14]/30">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${
+                      language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
+                    }`}
+                  >
+                    {lang.code.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </div>
     </motion.header>
   );
 };
-
