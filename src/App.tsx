@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async'; // <-- 1. BU EKLENDİ
+import { Helmet } from 'react-helmet-async';
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -84,20 +84,15 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
 }
 
 /* ---------------------------------------------------------
-   SEO ETİKETLERİNİ OLUŞTURAN BÖLÜM (YENİ)
+   SEO ETİKETLERİNİ OLUŞTURAN BÖLÜM
 --------------------------------------------------------- */
 function PageSpecificSEO({ page, product, model, wasteCategory }: { page: PageView; product?: ProductType; model?: string; wasteCategory?: string }) {
   let title = "Parçalama Makinesi | Geri Dönüşüm Sistemleri | MT Makina"; // Varsayılan Başlık
-  let description = "Endüstriyel parçalama makineleri, geri dönüşüm çözümleri ve özel üretim makineler için MT Makina ile iletişime geçin. Uygun fiyatlar, yüksek kalite."; // Varsayılan Açıklama
+  let description = "Endstriyel parçalama makineleri, geri dönüşüm çözümleri ve özel üretim makineler için MT Makina ile iletişime geçin. Uygun fiyatlar, yüksek kalite."; // Varsayılan Açıklama
   let canonical = "https://parcalamamakinesi.com/"; // Varsayılan URL
-
-  // NOT: Bu `seoConfig` dosyası senin hazır şablonundan geliyor.
-  // Biz şimdilik onu değil, Helmet'i kullanıyoruz.
-  // İleride bu switch'i daha da detaylandırabilirsin.
-
+  
   switch (page) {
     case 'main':
-      // Zaten varsayılan ayarlar ana sayfa için
       break;
     case 'about':
       title = "Hakkımızda | Kurumsal | MT Makina";
@@ -129,9 +124,17 @@ function PageSpecificSEO({ page, product, model, wasteCategory }: { page: PageVi
       description = "Kalite standartlarımızı ve uluslararası geçerliliğe sahip sertifikalarımızı (CE, ISO) bu sayfada bulabilirsiniz.";
       canonical = "https://parcalamamakinesi.com/sertifikalar";
       break;
-    // TODO: Ürün kategori ve detay sayfaları için de case'ler eklenebilir.
-    // Örn: case 'product-category':
-    // Örn: case 'product-detail':
+    case 'ecatalog':
+      title = "E-Katalog | MT Makina";
+      description = "Güncel ürün kataloğumuzu inceleyin ve indirin. Parçalama makineleri ve geri dönüşüm sistemleri.";
+      canonical = "https://parcalamamakinesi.com/e-katalog";
+      break;
+    case 'waste-categories':
+      title = "Atık Türleri | Geri Dönüşüm Çözümleri | MT Makina";
+      description = "Evsel atık, lastik, plastik, metal ve daha birçok atık türü için sunduğumuz parçalama ve geri dönüşüm çözümlerini keşfedin.";
+      canonical = "https://parcalamamakinesi.com/atik-turleri";
+      break;
+    // Diğer 'case'ler (product-detail vb.) eklenebilir
   }
 
   return (
@@ -151,12 +154,11 @@ function AppContent() {
   const { isRTL } = useLanguage();
   const [showIntro, setShowIntro] = useState(true);
 
-  // URL'den gelen duruma göre state'leri ayarla
+  // Sayfa ilk yüklendiğinde URL'i okur
   const [urlState, setUrlState] = useState(parseUrl());
   const { page: currentPage, product: selectedProduct, model: selectedModelName, wasteCategory: selectedWasteCategory } = urlState;
 
-
-  // URL değiştiğinde state'i güncelle (tarayıcıda ileri/geri tuşları için)
+  // URL değiştiğinde (ileri/geri tuşları) state'i güncelle
   useEffect(() => {
     const handlePopState = () => {
       setUrlState(parseUrl());
@@ -164,6 +166,30 @@ function AppContent() {
     window.addEventListener('popstate', handlePopState);
     return () => {
       window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
+  // Navigasyon Yakalayıcı (Link tıklamalarını yönetir)
+  useEffect(() => {
+    const handleLinkClick = (event: MouseEvent) => {
+      const target = (event.target as HTMLElement).closest('a');
+      
+      if (!target || target.hostname !== window.location.hostname || target.target === '_blank' || event.ctrlKey || event.metaKey) {
+        return;
+      }
+      
+      if (target.pathname === window.location.pathname && target.hash) {
+        return; 
+      }
+
+      event.preventDefault();
+      window.history.pushState(null, '', target.pathname);
+      setUrlState(parseUrl()); // Tıklamadan sonra state'i güncelle
+    };
+
+    document.addEventListener('click', handleLinkClick);
+    return () => {
+      document.removeEventListener('click', handleLinkClick);
     };
   }, []);
 
@@ -175,28 +201,57 @@ function AppContent() {
   // scroll top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [currentPage]);
+  }, [currentPage]); // Artık 'currentPage' yerine 'urlState'e bağlı olabilir: }, [urlState.page]);
 
   /* --------------------------
-     SAYFA SEÇİMİ
+     SAYFA SEÇİMİ (ROUTER) - DÜZELTİLDİ
    -------------------------- */
 
-  // Önce hangi sayfada olduğumuza göre SEO etiketlerini hazırlayalım
   const seoTags = <PageSpecificSEO page={currentPage} product={selectedProduct} model={selectedModelName} wasteCategory={selectedWasteCategory} />;
 
-  // Şimdi sayfayı render edelim
-  if (currentPage === 'contact') return <> {seoTags} <ContactPage onBackToMain={() => setUrlState(parseUrl())} /> </>;
-  if (currentPage === 'about') return <> {seoTags} <AboutPage onBackToMain={() => setUrlState(parseUrl())} /> </>;
-  if (currentPage === 'product-detail' && selectedProduct)
-    return <> {seoTags} <ProductDetailPage productType={selectedProduct} modelName={selectedModelName || ""} onBackToMain={() => setUrlState(parseUrl())} /> </>;
+  // Ana sayfaya dönmek için kullanılacak fonksiyon
+  const backToMain = () => setUrlState({ page: 'main' });
 
-  // Ana sayfa
+  // Her sayfa için doğru component'i (bileşeni) döndür
+  if (currentPage === 'contact') {
+    return <> {seoTags} <ContactPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'about') {
+    return <> {seoTags} <AboutPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'products-overview') {
+    return <> {seoTags} <ProductsOverviewPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'technology') {
+    return <> {seoTags} <TechnologyPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'references-overview') {
+    return <> {seoTags} <ReferencesOverviewPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'certificates') {
+    return <> {seoTags} <CertificatesPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'ecatalog') {
+    return <> {seoTags} <ECatalogPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'waste-categories') {
+    return <> {seoTags} <WasteCategoriesPage onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'waste-detail' && selectedWasteCategory) {
+    return <> {seoTags} <WasteDetailPage wasteCategory={selectedWasteCategory} onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'product-category' && selectedProduct) {
+    return <> {seoTags} <ProductCategoryPage productType={selectedProduct} onBackToMain={backToMain} /> </>;
+  }
+  if (currentPage === 'product-detail' && selectedProduct) {
+    return <> {seoTags} <ProductDetailPage productType={selectedProduct} modelName={selectedModelName || ""} onBackToMain={backToMain} /> </>;
+  }
+
+  // Eğer `currentPage` 'main' ise veya başka bir durumla eşleşmezse, ana sayfayı göster
   return (
     <>
-      {seoTags} {/* <-- SEO Etiketleri ana sayfaya da eklendi */}
-
+      {seoTags} 
       {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
-
       {!showIntro && (
         <div className="min-h-screen bg-white">
           <Header />
@@ -218,7 +273,7 @@ function AppContent() {
 }
 
 /* ---------------------------------------------------------
-   UYGULAMANIN ANA KISMI (HelmetProvider BURADAN KALDIRILDI)
+   UYGULAMANIN ANA KISMI
 --------------------------------------------------------- */
 export default function App() {
   return (
@@ -227,3 +282,4 @@ export default function App() {
     </LanguageProvider>
   );
 }
+
