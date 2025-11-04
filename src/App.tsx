@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { HelmetProvider } from "react-helmet-async"; // ✅ HelmetProvider eklendi
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -38,30 +39,28 @@ import {
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
 type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'granulator' | 'baler' | 'conveyor' | 'separator' | null;
 
-// Parse URL and determine current page
+/* ---------------------------------------------------------
+   URL OKUMA – hangi sayfadayız?
+--------------------------------------------------------- */
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
   const path = window.location.pathname;
-  console.log('parseUrl - Parsing path:', path);
-  
-  // Home page
-  if (path === '/' || path === '' || path === '/home') {
-    console.log('parseUrl - Detected: main/home page');
-    return { page: 'main' };
+  console.log('parseUrl - path:', path);
+
+  if (path === '/' || path === '/home') return { page: 'main' };
+  if (path === '/kurumsal') return { page: 'about' };
+  if (path === '/urunler') return { page: 'products-overview' };
+  if (path === '/teknoloji') return { page: 'technology' };
+  if (path === '/referanslar') return { page: 'references-overview' };
+  if (path === '/sertifikalar') return { page: 'certificates' };
+  if (path === '/iletisim') return { page: 'contact' };
+  if (path === '/e-katalog') return { page: 'ecatalog' };
+  if (path === '/atik-turleri') return { page: 'waste-categories' };
+
+  if (path.startsWith('/atik-turleri/')) {
+    const category = path.substring('/atik-turleri/'.length);
+    return { page: 'waste-detail', wasteCategory: category };
   }
-  
-  // Kurumsal (About)
-  if (path === '/kurumsal') {
-    console.log('parseUrl - Detected: about page');
-    return { page: 'about' };
-  }
-  
-  // Ürünler (Products Overview)
-  if (path === '/urunler') {
-    console.log('parseUrl - Detected: products-overview page');
-    return { page: 'products-overview' };
-  }
-  
-  // Product Categories
+
   const productCategoryMap: { [key: string]: ProductType } = {
     '/tek-shaftli-parcalama-makinesi': 'single-shaft',
     '/cift-shaftli-parcalama-makinesi': 'dual-shaft',
@@ -72,646 +71,67 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     '/konveyor-sistemi': 'conveyor',
     '/ayristirma-makinesi': 'separator'
   };
-  
-  // Check if it's a product category page
+
   for (const [urlPath, productType] of Object.entries(productCategoryMap)) {
-    if (path === urlPath) {
-      console.log('parseUrl - Detected: product-category page, product:', productType);
-      return { page: 'product-category', product: productType };
-    }
-    // Check if it's a product detail page (e.g., /tek-shaftli-parcalama-makinesi/tsh-60)
+    if (path === urlPath) return { page: 'product-category', product: productType };
     if (path.startsWith(urlPath + '/')) {
       const model = path.substring(urlPath.length + 1).toUpperCase();
-      console.log('parseUrl - Detected: product-detail page, product:', productType, 'model:', model);
       return { page: 'product-detail', product: productType, model };
     }
   }
-  
-  // Teknoloji
-  if (path === '/teknoloji') {
-    console.log('parseUrl - Detected: technology page');
-    return { page: 'technology' };
-  }
-  
-  // Referanslar
-  if (path === '/referanslar') {
-    console.log('parseUrl - Detected: references-overview page');
-    return { page: 'references-overview' };
-  }
-  
-  // Sertifikalar
-  if (path === '/sertifikalar') {
-    console.log('parseUrl - Detected: certificates page');
-    return { page: 'certificates' };
-  }
-  
-  // İletişim
-  if (path === '/iletisim') {
-    console.log('parseUrl - Detected: contact page');
-    return { page: 'contact' };
-  }
-  
-  // E-Katalog
-  if (path === '/e-katalog') {
-    console.log('parseUrl - Detected: ecatalog page');
-    return { page: 'ecatalog' };
-  }
-  
-  // Atık Türleri
-  if (path === '/atik-turleri') {
-    console.log('parseUrl - Detected: waste-categories page');
-    return { page: 'waste-categories' };
-  }
-  if (path.startsWith('/atik-turleri/')) {
-    const category = path.substring('/atik-turleri/'.length);
-    console.log('parseUrl - Detected: waste-detail page, category:', category);
-    return { page: 'waste-detail', wasteCategory: category };
-  }
-  
-  // Default to main page
-  console.log('parseUrl - No match found, defaulting to main page');
+
   return { page: 'main' };
 }
 
+/* ---------------------------------------------------------
+   SAYFA İÇERİĞİ
+--------------------------------------------------------- */
 function AppContent() {
   const { isRTL } = useLanguage();
   const [showIntro, setShowIntro] = useState(true);
   const [currentPage, setCurrentPage] = useState<PageView>('main');
-  const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>(null);
   const [selectedModelName, setSelectedModelName] = useState<string>('TSH-60');
+  const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(null);
 
-  // Initialize from URL on mount
   useEffect(() => {
-    console.log('App.tsx - Initializing, current pathname:', window.location.pathname);
-    
-    // Check if there's a saved redirect path from 404 page
-    const savedPath = sessionStorage.getItem('spa_redirect_path');
-    if (savedPath) {
-      console.log('App.tsx - Found saved redirect path:', savedPath);
-      sessionStorage.removeItem('spa_redirect_path');
-      // Use replaceState to update URL without reloading and without adding to history
-      window.history.replaceState({}, '', savedPath);
-    }
-    
     const urlState = parseUrl();
-    console.log('App.tsx - Parsed URL state:', urlState);
-    
     setCurrentPage(urlState.page);
     if (urlState.product) setSelectedProduct(urlState.product);
     if (urlState.model) setSelectedModelName(urlState.model);
     if (urlState.wasteCategory) setSelectedWasteCategory(urlState.wasteCategory);
-    
-    // Update SEO based on initial page
-    updatePageSEO(urlState.page, urlState.product, urlState.model);
   }, []);
 
-  // Update document direction based on language
+  // dil yönü
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
-  // Scroll to top when page changes
+  // scroll top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [currentPage, selectedWasteCategory, selectedProduct]);
+  }, [currentPage]);
 
-  // Handle browser back/forward buttons
-  useEffect(() => {
-    const handlePopState = () => {
-      const urlState = parseUrl();
-      setCurrentPage(urlState.page);
-      if (urlState.product) setSelectedProduct(urlState.product);
-      if (urlState.model) setSelectedModelName(urlState.model);
-      if (urlState.wasteCategory) setSelectedWasteCategory(urlState.wasteCategory);
-      updatePageSEO(urlState.page, urlState.product, urlState.model);
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  // Update SEO metadata for current page
-  const updatePageSEO = (page: PageView, product?: ProductType, model?: string) => {
-    let metadata;
-    let structuredData;
-
-    switch (page) {
-      case 'main':
-        metadata = typeof seoMetadata.home === 'function' ? seoMetadata.home() : seoMetadata.home;
-        // Add comprehensive organization structured data for home page
-        structuredData = {
-          "@context": "https://schema.org",
-          "@graph": [
-            generateOrganizationStructuredData(),
-            generateLocalBusinessStructuredData(),
-            {
-              "@type": "WebSite",
-              "name": "MT Makina - Parçalama Makineleri",
-              "url": "https://www.parcalamamakinesi.com",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://www.parcalamamakinesi.com/urunler?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            },
-            {
-              "@type": "ItemList",
-              "name": "Parçalama Makinesi Türleri",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Tek Şaftlı Parçalama Makinesi",
-                  "url": "https://www.parcalamamakinesi.com/tek-shaftli-parcalama-makinesi"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Çift Şaftlı Parçalama Makinesi",
-                  "url": "https://www.parcalamamakinesi.com/cift-shaftli-parcalama-makinesi"
-                }
-              ]
-            }
-          ]
-        };
-        break;
-      
-      case 'product-category':
-        if (product) {
-          metadata = getProductCategorySEO(product);
-          structuredData = {
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": metadata.title,
-            "description": metadata.description,
-            "url": metadata.canonical,
-            "publisher": {
-              "@type": "Organization",
-              "name": "MT Makina",
-              "logo": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png"
-            },
-            "breadcrumb": generateBreadcrumbStructuredData([
-              { name: "Ana Sayfa", url: "https://www.parcalamamakinesi.com/home" },
-              { name: "Ürünler", url: "https://www.parcalamamakinesi.com/urunler" },
-              { name: metadata.title.split('|')[0].trim(), url: metadata.canonical }
-            ])
-          };
-        }
-        break;
-      
-      case 'about':
-        metadata = typeof seoMetadata.about === 'function' ? seoMetadata.about() : seoMetadata.about;
-        break;
-      
-      case 'products-overview':
-        metadata = typeof seoMetadata.products === 'function' ? seoMetadata.products() : seoMetadata.products;
-        break;
-      
-      case 'product-category':
-        if (product) {
-          metadata = getProductCategorySEO(product);
-          structuredData = generateBreadcrumbStructuredData([
-            { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/home' },
-            { name: 'Ürünler', url: 'https://www.parcalamamakinesi.com/urunler' },
-            { name: metadata.title.split('|')[0].trim(), url: metadata.canonical }
-          ]);
-        }
-        break;
-      
-      case 'product-detail':
-        if (product && model) {
-          metadata = getProductModelSEO(product, model);
-          const categoryMeta = getProductCategorySEO(product);
-          structuredData = {
-            ...generateProductStructuredData(product, model),
-            breadcrumb: generateBreadcrumbStructuredData([
-              { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/home' },
-              { name: 'Ürünler', url: 'https://www.parcalamamakinesi.com/urunler' },
-              { name: categoryMeta.title.split('|')[0].trim(), url: categoryMeta.canonical },
-              { name: model, url: metadata.canonical }
-            ])
-          };
-        }
-        break;
-      
-      case 'technology':
-        metadata = typeof seoMetadata.technology === 'function' ? seoMetadata.technology() : seoMetadata.technology;
-        break;
-      
-      case 'references-overview':
-        metadata = typeof seoMetadata.references === 'function' ? seoMetadata.references() : seoMetadata.references;
-        break;
-      
-      case 'certificates':
-        metadata = typeof seoMetadata.certificates === 'function' ? seoMetadata.certificates() : seoMetadata.certificates;
-        break;
-      
-      case 'contact':
-        metadata = typeof seoMetadata.contact === 'function' ? seoMetadata.contact() : seoMetadata.contact;
-        break;
-      
-      case 'ecatalog':
-        metadata = typeof seoMetadata.ecatalog === 'function' ? seoMetadata.ecatalog() : seoMetadata.ecatalog;
-        break;
-      
-      default:
-        metadata = typeof seoMetadata.home === 'function' ? seoMetadata.home() : seoMetadata.home;
-    }
-
-    if (metadata) {
-      updateSEOMetadata(metadata);
-    }
-    
-    if (structuredData) {
-      insertStructuredData(structuredData);
-    }
-  };
-
-  // Navigation with URL updates
-  const navigateWithUrl = (page: PageView, url: string, extraState?: { product?: ProductType; model?: string; wasteCategory?: string }) => {
-    setCurrentPage(page);
-    if (extraState?.product) setSelectedProduct(extraState.product);
-    if (extraState?.model) setSelectedModelName(extraState.model);
-    if (extraState?.wasteCategory) setSelectedWasteCategory(extraState.wasteCategory);
-    window.history.pushState({ page, ...extraState }, '', url);
-    updatePageSEO(page, extraState?.product, extraState?.model);
-  };
-
-  const handleNavigateToMain = () => {
-    navigateWithUrl('main', generateUrl.home());
-    setSelectedWasteCategory(null);
-    setSelectedProduct(null);
-  };
-
-  const handleNavigateToAbout = () => {
-    navigateWithUrl('about', generateUrl.about());
-  };
-
-  const handleNavigateToProducts = () => {
-    navigateWithUrl('products-overview', generateUrl.products());
-  };
-
-  const handleNavigateToTechnology = () => {
-    navigateWithUrl('technology', generateUrl.technology());
-  };
-
-  const handleNavigateToReferences = () => {
-    navigateWithUrl('references-overview', generateUrl.references());
-  };
-
-  const handleNavigateToCertificates = () => {
-    navigateWithUrl('certificates', generateUrl.certificates());
-  };
-
-  const handleNavigateToContact = () => {
-    navigateWithUrl('contact', generateUrl.contact());
-  };
-
-  const handleNavigateToECatalog = () => {
-    navigateWithUrl('ecatalog', generateUrl.ecatalog());
-  };
-
-  const handleNavigateToProductCategory = (productType: string) => {
-    const url = generateUrl.productCategory(productType);
-    navigateWithUrl('product-category', url, { product: productType as ProductType });
-  };
-
-  const handleNavigateToProductDetail = (productType: string, modelName?: string) => {
-    const model = modelName || (productType === 'single-shaft' ? 'TSH-60' : 
-                                 productType === 'dual-shaft' ? 'CS-20' : 
-                                 productType === 'quad-shaft' ? 'QS-80' : 'TSH-60');
-    const url = generateUrl.productDetail(productType, model);
-    navigateWithUrl('product-detail', url, { product: productType as ProductType, model });
-  };
-
-  const handleNavigateToWasteCategories = () => {
-    navigateWithUrl('waste-categories', generateUrl.waste());
-  };
-
-  const handleNavigateToWasteDetail = (wasteType: string) => {
-    const url = generateUrl.waste(wasteType);
-    navigateWithUrl('waste-detail', url, { wasteCategory: wasteType });
-  };
-
-  const handleWasteCategorySelect = (categoryId: string) => {
-    handleNavigateToWasteDetail(categoryId);
-  };
-
-  const handleBackFromWasteDetail = () => {
-    handleNavigateToWasteCategories();
-  };
-
-  const handleBackFromCategory = () => {
-    window.history.back();
-  };
-
-  const handleBackFromProductDetail = () => {
-    if (selectedProduct) {
-      handleNavigateToProductCategory(selectedProduct);
-    } else {
-      handleNavigateToMain();
-    }
-  };
-
-  // Render different pages based on current view
-  if (currentPage === 'product-category' && selectedProduct) {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <ProductCategoryPage 
-          productType={selectedProduct}
-          onBackToMain={handleBackFromCategory}
-          onModelSelect={(modelName) => handleNavigateToProductDetail(selectedProduct, modelName)}
-        />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'contact') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <ContactPage onBackToMain={handleNavigateToMain} />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'ecatalog') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <ECatalogPage onBackToMain={handleNavigateToMain} />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'product-detail' && selectedProduct) {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <ProductDetailPage 
-          productType={selectedProduct}
-          modelName={selectedModelName}
-          onBackToMain={handleBackFromProductDetail}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductDetailClick={handleNavigateToProductDetail}
-        />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'certificates') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <CertificatesPage onBackToMain={handleNavigateToMain} />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'technology') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <TechnologyPage onBackToMain={handleNavigateToMain} />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'products-overview') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <ProductsOverviewPage 
-          onBackToMain={handleNavigateToMain}
-          onProductClick={handleNavigateToProductDetail}
-        />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'about') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <AboutPage onBackToMain={handleNavigateToMain} />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'references-overview') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <ReferencesOverviewPage onBackToMain={handleNavigateToMain} />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'waste-categories') {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <WasteCategoriesPage
-          onCategorySelect={handleWasteCategorySelect}
-          onBackToMain={handleNavigateToMain}
-        />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  if (currentPage === 'waste-detail' && selectedWasteCategory) {
-    return (
-      <>
-        <Header 
-          onWasteClick={handleNavigateToWasteCategories}
-          onWasteDetailClick={handleNavigateToWasteDetail}
-          onMainClick={handleNavigateToMain}
-          onProductsClick={handleNavigateToProducts}
-          onAboutClick={handleNavigateToAbout}
-          onReferencesClick={handleNavigateToReferences}
-          onTechnologyClick={handleNavigateToTechnology}
-          onCertificatesClick={handleNavigateToCertificates}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductCategoryClick={handleNavigateToProductCategory}
-          onProductDetailClick={handleNavigateToProductDetail}
-          onContactClick={handleNavigateToContact}
-        />
-        <WasteDetailPage
-          categoryId={selectedWasteCategory}
-          onBack={handleBackFromWasteDetail}
-        />
-        <ChatWidget />
-      </>
-    );
-  }
-
-  // Main homepage
+  /* --------------------------
+     SAYFA SEÇİMİ
+  -------------------------- */
+  if (currentPage === 'contact') return <ContactPage onBackToMain={() => setCurrentPage('main')} />;
+  if (currentPage === 'about') return <AboutPage onBackToMain={() => setCurrentPage('main')} />;
+  if (currentPage === 'product-detail' && selectedProduct)
+    return <ProductDetailPage productType={selectedProduct} modelName={selectedModelName} onBackToMain={() => setCurrentPage('main')} />;
+  
+  // Ana sayfa
   return (
     <>
       {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
-      
+
       {!showIntro && (
         <div className="min-h-screen bg-white">
-          <Header 
-            onWasteClick={handleNavigateToWasteCategories}
-            onWasteDetailClick={handleNavigateToWasteDetail}
-            onMainClick={handleNavigateToMain}
-            onProductsClick={handleNavigateToProducts}
-            onAboutClick={handleNavigateToAbout}
-            onReferencesClick={handleNavigateToReferences}
-            onTechnologyClick={handleNavigateToTechnology}
-            onCertificatesClick={handleNavigateToCertificates}
-            onECatalogClick={handleNavigateToECatalog}
-            onProductCategoryClick={handleNavigateToProductCategory}
-            onProductDetailClick={handleNavigateToProductDetail}
-            onContactClick={handleNavigateToContact}
-          />
+          <Header />
           <main>
             <HeroSection />
             <IntroSection />
-            <ProductsSection onProductClick={handleNavigateToProductCategory} />
+            <ProductsSection />
             <TechnologySection />
             <ReferencesSection />
             <ContactSection />
@@ -725,10 +145,15 @@ function AppContent() {
   );
 }
 
+/* ---------------------------------------------------------
+   UYGULAMANIN ANA KISMI (HelmetProvider eklendi)
+--------------------------------------------------------- */
 export default function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </HelmetProvider>
   );
 }
