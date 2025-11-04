@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { ArrowLeft, Factory, Users, Award, Target } from "lucide-react";
 import { Button } from "./ui/button";
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async"; // <-- app.tsx zaten yönettiği için buna gerek yok
 
 interface AboutPageProps {
   onBackToMain: () => void;
@@ -10,42 +10,18 @@ interface AboutPageProps {
 
 export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
   return (
-    <div className="min-h-screen bg-[#F5F7F8]">
-      <Helmet>
-        <title>Kurumsal | MT Makina</title>
-        <meta
-          name="description"
-          content="MT Makina, endüstriyel parçalama makineleri, yakma fırınları ve geri dönüşüm sistemleri üretiminde lider firmadır. Kurumsal bilgileri ve vizyonumuzu keşfedin."
-        />
-        <link
-          rel="canonical"
-          href="https://www.parcalamamakinesi.com/kurumsal"
-        />
-      </Helmet>
-
-      {/* Header Section */}
-      <section className="bg-[#45474B] text-[#F5F7F8] py-12">
-        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] flex flex-col items-center text-center">
-          <motion.button
-            onClick={onBackToMain}
-            whileHover={{ x: -5 }}
-            className="flex items-center gap-2 text-[#F4CE14] hover:text-[#F5F7F8] mb-4"
-          >
-            <ArrowLeft size={20} />
-            <span>Ana Sayfaya Dön</span>
-          </motion.button>
-
-          <h1 className="text-4xl font-bold mb-4">Kurumsal</h1>
-          <p className="text-lg max-w-3xl">
-            MT Makina, endüstriyel parçalama makineleri, atık yönetim sistemleri
-            ve geri dönüşüm teknolojilerinde sürdürülebilir çözümler geliştiren
-            bir mühendislik firmasıdır.
-          </p>
-        </div>
-      </section>
+    // Ana kapsayıcı doğrudan içerikle başlar
+    <div className="bg-[#F5F7F8]">
+      
+      {/* GEREKSİZ HEADER BÖLÜMÜ KALDIRILDI.
+        app.tsx zaten bir <Header /> yüklüyor.
+        Sayfa başlığı ("Kurumsal") ve "Geri Dön" butonu burada olmamalı.
+        "Geri Dön" işlevini ana Header'daki logo zaten yapıyor.
+        Sayfa başlığı, içeriğin bir parçası olmalı.
+      */}
 
       {/* Mission & Vision Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 pt-24 md:pt-32 bg-white"> {/* <-- Üst boşluğu artırdık (pt-24) */}
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -66,6 +42,10 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
+            {/* Sayfa başlığını buraya taşıdık */}
+            <h1 className="text-4xl font-bold text-[#45474B] mb-6">
+              Kurumsal
+            </h1>
             <h2 className="text-3xl font-bold text-[#45474B] mb-4">
               Hakkımızda
             </h2>

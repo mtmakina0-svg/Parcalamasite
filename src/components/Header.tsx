@@ -16,7 +16,7 @@ const corporatePathMap = {
   'certificates': '/sertifikalar'
 };
 
-const productPathMap = {
+const productPathMap: { [key: string]: string } = {
   'single-shaft': '/tek-shaftli-parcalama-makinesi',
   'dual-shaft': '/cift-shaftli-parcalama-makinesi',
   'quad-shaft': '/dort-shaftli-parcalama-makinesi',
@@ -378,74 +378,75 @@ export const Header = (props: HeaderProps = {}) => {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden pb-4"
-          >
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <div key={item.key}>
-                  <a
-                    href={item.href} // <-- DÜZELTİLDİ
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                    }}
-                    className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
-                  >
-                    {item.label || t(item.key)}
-                  </a>
-                  {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_products' || item.key === 'nav_wastes') && (
-                    <div className="pl-4 mt-2 space-y-2">
-                      {item.dropdown.map((subItem: any) => (
-                        <a
-                          key={subItem.key}
-                          href={subItem.href} // <-- DÜZELTİLDİ
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                          }}
-                          className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block"
-                        >
-                          {subItem.label || t(subItem.key)}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <Button
-                onClick={() => {
-                  window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
-                  setMobileMenuOpen(false);
-                }}
-                className="bg-[#25D366] text-white hover:bg-[#25D366]/90 w-full"
-              >
-                {t('btn_quote')}
-              </Button>
-              <div className="flex items-center justify-around pt-2 border-t border-[#F4CE14]/30">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${
-                      language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
-                    }`}
-                  >
-                    {lang.code.toUpperCase()}
-                  </button>
-                ))}
-              </div>
-            </nav>
-          </motion.div>
-        )}
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          className="lg:hidden pb-4"
+        >
+          <nav className="flex flex-col space-y-4">
+            {navItems.map((item) => (
+              <div key={item.key}>
+                <a
+                  href={item.href} // <-- DÜZELTİLDİ
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
+                  className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
+                >
+                  {item.label || t(item.key)}
+                </a>
+                {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_products' || item.key === 'nav_wastes') && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {item.dropdown.map((subItem: any) => (
+                      <a
+                        key={subItem.key}
+                        href={subItem.href} // <-- DÜZELTİLDİ
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                        }}
+                        className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block"
+                      >
+                        {subItem.label || t(subItem.key)}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <Button
+              onClick={() => {
+                window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
+                setMobileMenuOpen(false);
+              }}
+              className="bg-[#25D366] text-white hover:bg-[#25D366]/90 w-full"
+            >
+              {t('btn_quote')}
+            </Button>
+            <div className="flex items-center justify-around pt-2 border-t border-[#F4CE14]/30">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    setLanguage(lang.code);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${
+                    language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
+                  }`}
+                >
+                  {lang.code.toUpperCase()}
+                </button>
+              ))}
+            </div>
+          </nav>
+        </motion.div>
+      )}
     </motion.header>
   );
 };
+
