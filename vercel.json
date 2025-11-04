@@ -1,14 +1,6 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
-  ],
-  "buildCommand": "npx vite build",
+  "buildCommand": "npm run build",
   "installCommand": "npm install --ignore-scripts",
-  "framework": "vite",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "framework": "vite"
 }
