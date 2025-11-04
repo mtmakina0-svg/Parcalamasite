@@ -1,27 +1,30 @@
 import React from "react";
 import { motion } from "motion/react";
-import { ArrowLeft, Factory, Users, Award, Target } from "lucide-react";
+import { Factory, Users, Award, Target } from "lucide-react";
 import { Button } from "./ui/button";
-// import { Helmet } from "react-helmet-async"; // <-- app.tsx zaten yönettiği için buna gerek yok
+// Not: Helmet ve ArrowLeft (geri butonu) kaldırıldı, çünkü app.tsx'te yönetiliyor/kullanılmıyor.
 
 interface AboutPageProps {
-  onBackToMain: () => void;
+  // onBackToMain kaldırıldı, Header'dan yönetiliyor.
 }
 
-export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
+export const AboutPage = ({}: AboutPageProps) => {
   return (
-    // Ana kapsayıcı doğrudan içerikle başlar
+    // Ana div'den min-h-screen kaldırıldı, app.tsx'teki ana layout'a güveniyoruz
     <div className="bg-[#F5F7F8]">
-      
-      {/* GEREKSİZ HEADER BÖLÜMÜ KALDIRILDI.
-        app.tsx zaten bir <Header /> yüklüyor.
-        Sayfa başlığı ("Kurumsal") ve "Geri Dön" butonu burada olmamalı.
-        "Geri Dön" işlevini ana Header'daki logo zaten yapıyor.
-        Sayfa başlığı, içeriğin bir parçası olmalı.
+      {/* 🧠 SEO Metadata (Helmet) kaldırıldı. 
+        Bu artık app.tsx dosyasında merkezi olarak yönetiliyor.
+      */}
+
+      {/* Header Section (Ana Sayfaya Dön butonu vs.) kaldırıldı.
+        Bu artık app.tsx'teki kalıcı Header bileşeni tarafından yönetiliyor.
+        Sayfanın pt-32 (padding-top) alması, Header'ın altında başlamasını sağlar.
       */}
 
       {/* Mission & Vision Section */}
-      <section className="py-16 pt-24 md:pt-32 bg-white"> {/* <-- Üst boşluğu artırdık (pt-24) */}
+      <section className="pt-32 pb-16 bg-white">
+        {" "}
+        {/* Header'ın altında başlaması için pt-32 eklendi */}
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -30,9 +33,10 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="https://i.ibb.co/tCW7LCNQ/kurumsal-foto.png"
+              // 👇 KIRIK LİNK DÜZELTİLDİ
+              src="https://placehold.co/800x600/45474B/F5F7F8?text=MT+Makina+Kurumsal"
               alt="MT Makina Kurumsal"
-              className="rounded-2xl shadow-2xl"
+              className="rounded-2xl shadow-2xl w-full" // <-- w-full eklendi
             />
           </motion.div>
 
@@ -42,10 +46,6 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Sayfa başlığını buraya taşıdık */}
-            <h1 className="text-4xl font-bold text-[#45474B] mb-6">
-              Kurumsal
-            </h1>
             <h2 className="text-3xl font-bold text-[#45474B] mb-4">
               Hakkımızda
             </h2>
@@ -56,9 +56,13 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
               müşteri memnuniyeti vizyonuyla global pazarda güvenilir bir marka
               haline gelmiştir.
             </p>
-            <Button className="bg-[#F4CE14] text-[#1E1E1E] hover:bg-[#F4CE14]/80">
+            {/* "Daha Fazla Bilgi" butonu bir yere gitmiyordu,
+              geçici olarak kaldırıldı veya bir link eklenebilir.
+              Şimdilik gizliyorum:
+            */}
+            {/* <Button className="bg-[#F4CE14] text-[#1E1E1E] hover:bg-[#F4CE14]/80">
               Daha Fazla Bilgi
-            </Button>
+            </Button> */}
           </motion.div>
         </div>
       </section>
@@ -130,3 +134,4 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
     </div>
   );
 };
+

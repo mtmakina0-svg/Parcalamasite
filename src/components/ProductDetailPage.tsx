@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, Zap, Wind } from 'lucide-react'; // ArrowLeft kullanılmıyor
+import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, Zap, Wind } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
@@ -42,6 +42,68 @@ interface ProductDetailPageProps {
   onProductDetailClick?: (productType: string, modelName?: string) => void;
 }
 
+// --- 👇 EKSİK VERİLER EKLENDİ ---
+const allModelSpecs = {
+  'single-shaft': {
+    'TSH-60': {
+      motorPower: '15–30 kW',
+      rotorLength: '600 mm',
+      rotorDiameter: '600 x 1100 mm',
+      bladeCount: '24 adet',
+      weight: '2500 kg',
+      capacity: '500-800 kg/saat',
+    },
+    'TSH-80': {
+      motorPower: '22–45 kW',
+      rotorLength: '800 mm',
+      rotorDiameter: '800 x 1300 mm',
+      bladeCount: '32 adet',
+      weight: '3500 kg',
+      capacity: '800-1200 kg/saat',
+    },
+    'TSH-100': {
+      motorPower: '30–75 kW',
+      rotorLength: '1000 mm',
+      rotorDiameter: '1000 x 1500 mm',
+      bladeCount: '40 adet',
+      weight: '5000 kg',
+      capacity: '1200-1800 kg/saat',
+    },
+    'TSH-130': {
+      motorPower: '45–110 kW',
+      rotorLength: '1300 mm',
+      rotorDiameter: '1300 x 1800 mm',
+      bladeCount: '52 adet',
+      weight: '7500 kg',
+      capacity: '1800-2500 kg/saat',
+    },
+    'TSH-160': {
+      motorPower: '55–132 kW (2x)',
+      rotorLength: '1600 mm',
+      rotorDiameter: '1600 x 2100 mm',
+      bladeCount: '64 adet',
+      weight: '11000 kg',
+      capacity: '3500-4500 kg/saat',
+    },
+    'TSH-200': {
+      motorPower: '75–160 kW (2x)',
+      rotorLength: '2000 mm',
+      rotorDiameter: '2000 x 2500 mm',
+      bladeCount: '80 adet',
+      weight: '15000 kg',
+      capacity: '4500-6000 kg/saat',
+    },
+  },
+  'dual-shaft': {
+    // Çift şaftlı modeller buraya eklenebilir
+  },
+  'quad-shaft': {
+    // Dört şaftlı modeller buraya eklenebilir
+  }
+};
+// --- 👆 EKSİK VERİLER EKLENDİ ---
+
+
 export const ProductDetailPage = ({
   productType,
   modelName = 'TSH-60', // Varsayılan model
@@ -51,29 +113,14 @@ export const ProductDetailPage = ({
 }: ProductDetailPageProps) => {
   const { t, isRTL } = useLanguage();
 
-  // modelName'in her zaman büyük harf olmasını sağla (veya generateSEO'yu buna göre ayarla)
   const upperModelName = modelName.toUpperCase();
   
-  // Helmet meta verisi
   const seo = generateSEO(productType, upperModelName);
-
   const images = getModelImages(productType, upperModelName);
   const fallbackImage = getFallbackImage(productType);
-  const currentSpecs =
-    {
-      'single-shaft': {
-        'TSH-60': {
-          motorPower: '15–30 kW',
-          rotorLength: '600 mm',
-          rotorDiameter: '600 x 1100 mm',
-          bladeCount: '24 adet',
-          weight: '2500 kg',
-          capacity: '500-800 kg/saat',
-        },
-        // Diğer single-shaft modeller buraya eklenebilir...
-      },
-      // Diğer productType'lar buraya eklenebilir...
-    }[productType]?.[upperModelName] || null;
+  
+  // Specs'i allModelSpecs'ten al
+  const currentSpecs = (allModelSpecs as any)[productType]?.[upperModelName] || null;
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -92,17 +139,14 @@ export const ProductDetailPage = ({
         <meta property="og:type" content="product" />
       </Helmet>
 
-      {/* Header Section KALDIRILDI - Artık app.tsx'teki Header'ı kullanıyor */}
-
       {/* Main Product Content */}
       <section className="pt-32 pb-16 bg-white"> 
-        {/* pt-32 eklendi (Header + Başlık boşluğu için) */}
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center text-[#45474B] mb-6 text-5xl font-bold" // Renk #F4CE14'ten #45474B'ye değişti (daha okunaklı)
+            className="text-center text-[#45474B] mb-6 text-5xl font-bold"
           >
             {seo.title}
           </motion.h1>
@@ -132,9 +176,10 @@ export const ProductDetailPage = ({
                 {Object.entries(currentSpecs).map(([key, value]) => (
                   <tr key={key} className="border-b border-gray-200">
                     <td className="w-1/3 px-8 py-4 bg-[#F4CE14] font-semibold text-[#1E1E1E] capitalize">
-                      {key.replace(/([A-Z])/g, ' $1')}
+                      {/* 'motorPower' gibi camelCase'i 'Motor Power'a çevir */}
+                      {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                     </td>
-                    <td className="w-2/3 px-8 py-4 text-[#45474B]">{value}</td>
+                    <td className="w-2/3 px-8 py-4 text-[#45474B]">{value as string}</td>
                   </tr>
                 ))}
               </tbody>
@@ -164,3 +209,4 @@ export const ProductDetailPage = ({
     </div>
   );
 };
+
