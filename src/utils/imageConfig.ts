@@ -235,12 +235,57 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
     'MS-2': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'mobile': {
-    'MK-1': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'MK-2': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'MK-3': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'TSM-150': { 
+      main: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png', 
+      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png', 
+      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png' 
+    },
+    'TSM-300': { 
+      main: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png', 
+      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png', 
+      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png' 
+    },
+    'CSM-150': { 
+      main: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png', 
+      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png', 
+      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png' 
+    },
+    'CSM-200': { 
+      main: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png', 
+      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png', 
+      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png', 
+      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png' 
+    }
   },
   'pallet': {
-    'PL-800': { main: 'https://i.ibb.co/svR9Kdq7/1-7.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'TSV-140': { 
+      main: 'https://i.ibb.co/svR9Kdq7/1-7.png', 
+      detail1: 'https://i.ibb.co/svR9Kdq7/1-7.png', 
+      detail2: '', 
+      detail3: '', 
+      detail4: '' 
+    },
+    'TSV-200': { 
+      main: 'https://i.ibb.co/svR9Kdq7/1-7.png', 
+      detail1: 'https://i.ibb.co/svR9Kdq7/1-7.png', 
+      detail2: '', 
+      detail3: '', 
+      detail4: '' 
+    },
+    'TSVX-200': { 
+      main: 'https://i.ibb.co/svR9Kdq7/1-7.png', 
+      detail1: 'https://i.ibb.co/svR9Kdq7/1-7.png', 
+      detail2: '', 
+      detail3: '', 
+      detail4: '' 
+    }
   },
   'tree-root': {
     'TR-1000': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }

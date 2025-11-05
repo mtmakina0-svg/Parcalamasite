@@ -229,6 +229,23 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       'Motor Gücü': '90–132 kW (2-4X)'
     }
   },
+  'pallet': {
+    'TSV-140': {
+      'Parçalama Alanı': '1400 x 400 mm',
+      'Rotor Boyu': '1400 mm',
+      'Motor Gücü': '30 kW'
+    },
+    'TSV-200': {
+      'Parçalama Alanı': '2000 x 400 mm',
+      'Rotor Boyu': '2000 mm',
+      'Motor Gücü': '55 kW'
+    },
+    'TSVX-200': {
+      'Parçalama Alanı': '2000 x 400 mm',
+      'Rotor Boyu': '2000 mm',
+      'Motor Gücü': '45 x 2 kW'
+    }
+  },
   'harddisk': {
     'DATABER-S': {
       motorPower: '3–11 kW',
@@ -254,6 +271,40 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       weight: 'Endüstriyel',
       capacity: 'Üç Aşamalı İmha - Toz Boyutu'
     }
+  },
+  'mobile': {
+    'TSM-150': {
+      motorPower: '400 HP',
+      rotorLength: '1500 mm',
+      rotorDiameter: 'Tek Şaftlı',
+      bladeCount: 'Sertleştirilmiş Çelik',
+      weight: 'Mobil Şase',
+      capacity: '1500 x 1800 mm'
+    },
+    'TSM-300': {
+      motorPower: '600 HP',
+      rotorLength: '3000 mm',
+      rotorDiameter: 'Tek Şaftlı',
+      bladeCount: 'Sertleştirilmiş Çelik',
+      weight: 'Mobil Şase',
+      capacity: '3000 x 2000 mm'
+    },
+    'CSM-150': {
+      motorPower: '400 HP',
+      rotorLength: '1500 mm',
+      rotorDiameter: 'Çift Şaftlı',
+      bladeCount: 'Sertleştirilmiş Çelik',
+      weight: 'Mobil Şase',
+      capacity: '1500 x 1200 mm'
+    },
+    'CSM-200': {
+      motorPower: '800 HP',
+      rotorLength: '2000 mm',
+      rotorDiameter: 'Çift Şaftlı',
+      bladeCount: 'Sertleştirilmiş Çelik',
+      weight: 'Mobil Şase',
+      capacity: '2000 x 1800 mm'
+    }
   }
 };
 
@@ -263,7 +314,8 @@ const availableModels: { [key: string]: string[] } = {
   'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
   'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
-  'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T']
+  'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
+  'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200']
 };
 
 export const ProductDetailPage = ({ 
@@ -312,8 +364,8 @@ export const ProductDetailPage = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [productType, modelName]);
 
-  // Single Shaft Product Data
-  if (productType === 'single-shaft') {
+  // Single Shaft, Harddisk, and Mobile Product Data (using same layout)
+  if (productType === 'single-shaft' || productType === 'harddisk' || productType === 'mobile') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -368,10 +420,10 @@ export const ProductDetailPage = ({
               className="text-center mb-16"
             >
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
-                {modelName} {t('single_shaft_main_title')}
+                {modelName} {productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : productType === 'mobile' ? 'Mobil Kırıcı' : t('single_shaft_main_title')}
               </h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
-                {hasCustomDesc && modelDesc ? modelDesc.intro : t('single_shaft_subtitle')}
+                {hasCustomDesc && modelDesc ? modelDesc.intro : (productType === 'harddisk' ? 'Güvenli Veri İmha Çözümleri' : productType === 'mobile' ? 'Yüksek Kapasiteli Mobil Kırıcılar' : t('single_shaft_subtitle'))}
               </p>
             </motion.div>
 
@@ -384,7 +436,7 @@ export const ProductDetailPage = ({
             >
               <ImageWithFallback
                 src={images.main}
-                alt={`${modelName} ${t('single_shaft_main_title')}`}
+                alt={`${modelName} ${productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : t('single_shaft_main_title')}`}
                 className="w-full rounded-2xl shadow-2xl"
                 fallbackSrc={fallbackImage}
               />
@@ -718,7 +770,7 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* FAQ Section - Dynamic based on productType */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
             <motion.h2
@@ -727,7 +779,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12"
             >
-              {t('single_shaft_faq_title')}
+              {t(`${productType}_faq_title`)}
             </motion.h2>
 
             <motion.div
@@ -737,50 +789,33 @@ export const ProductDetailPage = ({
               className="max-w-4xl mx-auto"
             >
               <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="item-1" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('single_shaft_faq_q1')}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('single_shaft_faq_a1')}
-                  </AccordionContent>
-                </AccordionItem>
+                {[1, 2, 3, 4, 5, 6, 7].map((num) => {
+                  // Check if FAQ exists for this number
+                  const questionKey = `${productType}_faq_q${num}`;
+                  const answerKey = `${productType}_faq_a${num}`;
+                  const question = t(questionKey);
+                  const answer = t(answerKey);
+                  
+                  // Skip if translation returns the key itself (meaning it doesn't exist)
+                  if (question === questionKey || answer === answerKey) {
+                    return null;
+                  }
 
-                <AccordionItem value="item-2" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('single_shaft_faq_q2')}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('single_shaft_faq_a2')}
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-3" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('single_shaft_faq_q3')}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('single_shaft_faq_a3')}
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-4" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('single_shaft_faq_q4')}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('single_shaft_faq_a4')}
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-5" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('single_shaft_faq_q5')}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('single_shaft_faq_a5')}
-                  </AccordionContent>
-                </AccordionItem>
+                  return (
+                    <AccordionItem 
+                      key={`item-${num}`} 
+                      value={`item-${num}`} 
+                      className="bg-[#F5F7F8] rounded-xl px-6 border-none"
+                    >
+                      <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                        {question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[#45474B] leading-relaxed">
+                        {answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  );
+                })}
               </Accordion>
             </motion.div>
           </div>
@@ -843,11 +878,11 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12"
             >
-              {t('single_shaft_similar_products')}
+              Benzer Ürünler
             </motion.h2>
 
             <SimilarProductsSection 
-              currentProductType="single-shaft"
+              currentProductType={productType}
               onProductClick={onProductDetailClick}
             />
           </div>
@@ -2010,418 +2045,6 @@ export const ProductDetailPage = ({
             
             <SimilarProductsSection 
               currentProductType="metal"
-              onProductClick={onProductDetailClick}
-            />
-          </div>
-        </section>
-      </div>
-    );
-  }
-
-  // Harddisk İmha Makinesi Product Data
-  if (productType === 'harddisk') {
-    return (
-      <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
-        {/* Back Button */}
-        <div className="bg-[#45474B] py-4">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.button
-              onClick={onBackToMain}
-              whileHover={{ x: isRTL ? 5 : -5 }}
-              className="flex items-center gap-2 text-[#F4CE14] hover:text-[#F5F7F8] transition-colors"
-            >
-              <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
-              <span>{t('nav_home')}</span>
-            </motion.button>
-          </div>
-        </div>
-
-        {/* Model Selector */}
-        {models.length > 0 && (
-          <section className="bg-[#45474B] py-6 border-t border-[#F4CE14]/20">
-            <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="text-[#F4CE14] text-sm uppercase tracking-wide">
-                  {t('models')}:
-                </span>
-                {models.map((model) => (
-                  <motion.button
-                    key={model}
-                    onClick={() => handleModelChange(model)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 rounded-lg transition-all ${
-                      model === modelName
-                        ? 'bg-[#F4CE14] text-[#1E1E1E]'
-                        : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
-                    }`}
-                  >
-                    {model}
-                  </motion.button>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#45474B] via-[#2F3032] to-[#1E1E1E] py-24">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <h1 className="text-[#F4CE14] mb-8 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
-                  {modelName} Harddisk İmha Parçalama Makinesi
-                </h1>
-                {hasCustomDesc && modelDesc && (
-                  <p className="text-[#F5F7F8] text-xl mb-8 leading-relaxed">
-                    {modelDesc.intro}
-                  </p>
-                )}
-                <div className="flex flex-wrap gap-4">
-                  <Button
-                    onClick={onECatalogClick}
-                    className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
-                  >
-                    <FileDown size={20} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
-                    E-Katalog İndir
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
-              >
-                <div className="absolute inset-0 bg-[#F4CE14] blur-3xl opacity-20 rounded-full"></div>
-                <ImageWithFallback
-                  src={images.main}
-                  alt={`${modelName} Harddisk İmha Makinesi`}
-                  className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
-                  fallbackSrc={fallbackImage}
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Product Description */}
-        {hasCustomDesc && modelDesc && (
-          <section className="py-20 bg-white">
-            <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-              <div className="max-w-4xl mx-auto space-y-8">
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="text-[#45474B] text-lg leading-relaxed"
-                >
-                  {modelDesc.paragraph1}
-                </motion.p>
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="text-[#45474B] text-lg leading-relaxed"
-                >
-                  {modelDesc.paragraph2}
-                </motion.p>
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="text-[#45474B] text-lg leading-relaxed"
-                >
-                  {modelDesc.paragraph3}
-                </motion.p>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Features Grid */}
-        <section className="py-20 bg-[#F5F7F8]">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
-            >
-              Özellikler ve Avantajlar
-            </motion.h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="w-16 h-16 bg-[#F4CE14]/20 rounded-full flex items-center justify-center mb-6">
-                  <Settings className="text-[#F4CE14]" size={32} />
-                </div>
-                <h3 className="text-[#1E1E1E] mb-4">İki Aşamalı Parçalama</h3>
-                <p className="text-[#45474B]">
-                  Harddiskleri iki kez parçalayarak verilerin kurtarılma ihtimalini tamamen ortadan kaldırır.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="w-16 h-16 bg-[#F4CE14]/20 rounded-full flex items-center justify-center mb-6">
-                  <RotateCcw className="text-[#F4CE14]" size={32} />
-                </div>
-                <h3 className="text-[#1E1E1E] mb-4">Geri Dönüşümsüz Parçalama</h3>
-                <p className="text-[#45474B]">
-                  Verilerin geri dönüştürülemez hale gelmesi için harddiskleri ve devre kartlarını fiziksel olarak parçalar.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="w-16 h-16 bg-[#F4CE14]/20 rounded-full flex items-center justify-center mb-6">
-                  <Zap className="text-[#F4CE14]" size={32} />
-                </div>
-                <h3 className="text-[#1E1E1E] mb-4">Uzun Ömürlü Bıçaklar</h3>
-                <p className="text-[#45474B]">
-                  Yüksek kaliteli çelik bıçakları sayesinde aşınmaya karşı dayanıklıdır ve uzun süreli kullanım sağlar.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="w-16 h-16 bg-[#F4CE14]/20 rounded-full flex items-center justify-center mb-6">
-                  <Wind className="text-[#F4CE14]" size={32} />
-                </div>
-                <h3 className="text-[#1E1E1E] mb-4">Büyük İşleme Kapasitesi</h3>
-                <p className="text-[#45474B]">
-                  Farklı boyutlarda ve türlerde dijital depolama cihazlarını ve devre kartlarını hızlıca işleyebilir.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Technical Specifications Table */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
-            >
-              Teknik Özellikler
-            </motion.h2>
-
-            {currentSpecs && (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-[#F5F7F8] rounded-2xl shadow-xl overflow-hidden"
-              >
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-white">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Model</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Motor Gücü</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Parçalama Alanı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Parçalayıcı Sayısı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Bıçak Malzemesi</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Tip</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
-                    </tr>
-                    <tr>
-                      <td className="px-8 py-4 text-[#45474B] bg-[#F4CE14]/10">Parçalama Sistemi</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </motion.div>
-            )}
-
-            {/* Optional Features */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto mt-12"
-            >
-              <h3 className="text-center text-[#45474B] mb-6">Opsiyonel Özellikler</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  'Rotor Soğutma Sistemi',
-                  'Otomatik Yağlama Ünitesi',
-                  'Farklı Ölçülerde Elek',
-                  'Cıvatalı Sökülebilen Bıçak Tasarımı',
-                  'Hidromotor Tahrik Sistemi',
-                  'Ofis ve Endüstriyel Tip Şase Tasarımı',
-                  'Çıkış İçin Helezon, Konveyör ve Taşıma Fanı',
-                  'Ses Yalıtım Sistemi',
-                  'Kamera Kayıt Cihazı',
-                  'Barkod Okuyucu'
-                ].map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="flex items-center gap-3 bg-white p-4 rounded-lg shadow"
-                  >
-                    <div className="w-2 h-2 bg-[#F4CE14] rounded-full"></div>
-                    <span className="text-[#45474B]">{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* E-Catalog Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mt-12"
-            >
-              <Button
-                onClick={onECatalogClick}
-                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
-              >
-                <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
-                E-Katalog İndir
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-4xl font-bold"
-            >
-              Sıkça Sorulan Sorular
-            </motion.h2>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="item-1" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    Harddisk imha makineleri hangi cihazları parçalar?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    DATABER serisi harddisk imha makineleri; sabit diskler (HDD), SSD'ler, devre kartları, USB bellekler, CD/DVD'ler ve diğer dijital depolama cihazlarını güvenli bir şekilde parçalar. Hem 2.5" hem de 3.5" harddiskler işlenebilir.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-2" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    Veri güvenliği nasıl sağlanıyor?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    DATABER-D ve DATABER-T modelleri çok aşamalı parçalama sistemi ile harddiskleri 5-10 mm altına kadar parçalar. Bu seviyede parçalama sonrası verilerin kurtarılması teknik olarak imkansızdır. İsteğe bağlı kamera kaydı ve barkod takibi ile süreç belgelendirilebilir.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-3" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    DATABER serisi modeller arasındaki fark nedir?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    DATABER-S: Tek aşamalı, ofis tipi, 150x150 mm parçalama alanı. DATABER-D: İki aşamalı, 400x400 mm parçalama alanı, daha yüksek kapasite. DATABER-T: Üç aşamalı, 400x400 mm parçalama alanı, maksimum güvenlik ve toz seviyesinde parçalama.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-4" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    Bakım gereksinimleri nelerdir?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    Her 500 parçalama işleminde bıçak kontrolü, 1000 işlemde yağlama ve genel bakım önerilir. Bıçaklar aşınma durumuna göre 5000-10000 parçalama sonrası değiştirilebilir. Otomatik yağlama sistemi ile bakım süresi minimuma iner.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-5" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
-                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    Hangi standartlara uygun?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[#45474B] leading-relaxed">
-                    DATABER serisi makineler NSA/CSS EPL, DIN 66399, DoD 5220.22-M gibi uluslararası veri imha standartlarına uygundur. Güvenlik sertifikasyonu gerektiren devlet kurumları ve bankalar için idealdir.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* YouTube Channel Section */}
-        <section className="py-20 bg-[#F5F7F8]">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <YouTubeChannelSection />
-          </div>
-        </section>
-
-        {/* Similar Products */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
-            >
-              Benzer Ürünler
-            </motion.h2>
-
-            <SimilarProductsSection 
-              currentProductType="harddisk"
               onProductClick={onProductDetailClick}
             />
           </div>

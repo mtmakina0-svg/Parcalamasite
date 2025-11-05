@@ -19,8 +19,8 @@ const availableModels: { [key: string]: string[] } = {
   'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
   'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
-  'mobile': ['MK-1', 'MK-2', 'MK-3'],
-  'pallet': ['PL-800'],
+  'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
+  'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'tree-root': ['TR-1000'],
   'wood-grinder': ['WG-500', 'WG-800', 'WG-1200'],
@@ -71,12 +71,15 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'RDM-200': { capacity: '2000 x 1800 mm', power: '90–132 kW (2-4X)', rotorLength: '2000 mm' }
   },
   'mobile': {
-    'MK-1': { capacity: 'Kompakt', power: 'Hidrolik', rotorLength: 'Taşınabilir' },
-    'MK-2': { capacity: 'Orta Kapasite', power: 'Güçlü Motor', rotorLength: 'Mobil' },
-    'MK-3': { capacity: 'Yüksek Kapasite', power: 'Ultra Güçlü', rotorLength: 'Ağır Hizmet' }
+    'TSM-150': { capacity: '1500x1800 mm', power: '400 HP', rotorLength: '1500 mm' },
+    'TSM-300': { capacity: '3000x2000 mm', power: '600 HP', rotorLength: '3000 mm' },
+    'CSM-150': { capacity: '1500x1200 mm', power: '400 HP', rotorLength: '1500 mm' },
+    'CSM-200': { capacity: '2000x1800 mm', power: '800 HP', rotorLength: '2000 mm' }
   },
   'pallet': {
-    'PL-800': { capacity: '80-120 palet/saat', power: '30-45 kW', rotorLength: '1200 mm' }
+    'TSV-140': { capacity: '1400 x 400 mm', power: '30 kW', rotorLength: '1400 mm' },
+    'TSV-200': { capacity: '2000 x 400 mm', power: '55 kW', rotorLength: '2000 mm' },
+    'TSVX-200': { capacity: '2000 x 400 mm', power: '45 x 2 kW', rotorLength: '2000 mm' }
   },
   'harddisk': {
     'DATABER-S': { capacity: '150x150 mm', power: '3-11 kW', rotorLength: 'Tekli Aşama' },
@@ -183,14 +186,29 @@ const productContentKeys: { [key: string]: {
     desc1: 'harddisk_description_1',
     desc2: 'harddisk_description_2',
     desc3: 'harddisk_description_3',
-    adv1Title: 'single_shaft_advantage_1_title',
-    adv1Desc: 'single_shaft_advantage_1_desc',
-    adv2Title: 'single_shaft_advantage_2_title',
-    adv2Desc: 'single_shaft_advantage_2_desc',
-    adv3Title: 'single_shaft_advantage_3_title',
-    adv3Desc: 'single_shaft_advantage_3_desc',
-    adv4Title: 'single_shaft_advantage_4_title',
-    adv4Desc: 'single_shaft_advantage_4_desc'
+    adv1Title: 'harddisk_adv_1_title',
+    adv1Desc: 'harddisk_adv_1_desc',
+    adv2Title: 'harddisk_adv_2_title',
+    adv2Desc: 'harddisk_adv_2_desc',
+    adv3Title: 'harddisk_adv_3_title',
+    adv3Desc: 'harddisk_adv_3_desc',
+    adv4Title: 'harddisk_adv_4_title',
+    adv4Desc: 'harddisk_adv_4_desc'
+  },
+  'mobile': {
+    title: 'mobile_main_title',
+    subtitle: 'mobile_subtitle',
+    desc1: 'mobile_description_1',
+    desc2: 'mobile_description_2',
+    desc3: 'mobile_description_3',
+    adv1Title: 'mobile_adv_1_title',
+    adv1Desc: 'mobile_adv_1_desc',
+    adv2Title: 'mobile_adv_2_title',
+    adv2Desc: 'mobile_adv_2_desc',
+    adv3Title: 'mobile_adv_3_title',
+    adv3Desc: 'mobile_adv_3_desc',
+    adv4Title: 'mobile_adv_4_title',
+    adv4Desc: 'mobile_adv_4_desc'
   }
 };
 
@@ -254,7 +272,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
           >
             <ImageWithFallback
               src={getModelImages(productType, models[0] || 'TSH-60').main}
-              alt={t('single_shaft_main_title')}
+              alt={t(contentKeys.title)}
               className="w-full rounded-2xl shadow-2xl"
               fallbackSrc={fallbackImage}
             />

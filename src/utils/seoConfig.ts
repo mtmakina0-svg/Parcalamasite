@@ -136,9 +136,9 @@ export const getProductCategorySEO = (type: string): SEOMetadata => {
       keywords: ['mobil kırıcı', 'taşınabilir parçalama', 'şantiye kırıcı', 'mobil shredder', 'portatif parçalama'],
     },
     'pallet': {
-      title: 'Palet Parçalama Makinesi | MT Makina Palet Kırıcı',
-      description: 'MT Makina palet parçalama makineleri, ahşap paletleri etkili şekilde parçalar. Yüksek kapasite, dayanıklı yapı, geri dönüşüm için ideal.',
-      keywords: ['palet kırıcı', 'palet parçalama', 'ahşap palet kırma', 'pallet shredder', 'palet geri dönüşüm'],
+      title: 'Palet Parçalama Makinesi | Ahşap Palet Geri Dönüşümü | MT Makina TSV Serisi',
+      description: 'Palet parçalama makinesi - MT Makina TSV Serisi. Ahşap palet geri dönüşümü, plastik palet kırma, hurda palet işleme. ✓ Tek Şaftlı Sistem ✓ Yüksek Tork ✓ Çivili Palet İşleme ✓ Mıknatıs Seperatör',
+      keywords: ['palet parçalama makinesi', 'pallet shredder', 'TSV serisi', 'ahşap palet geri dönüşümü', 'plastik palet parçalama', 'palet kırma makinası', 'hurda palet geri dönüşümü', 'satılık hurda palet', 'palet hurdası', 'ahşap palet kırma', 'çivili palet parçalama'],
     },
     'harddisk': {
       title: 'Harddisk İmha Makinesi | MT Makina Veri Güvenliği Çözümü',
@@ -299,6 +299,62 @@ export const getProductModelSEO = (type: string, model: string): SEOMetadata => 
         title: 'RDM-200 Redmonster Hurda Metal Parçalama Makinesi | 2000x1800 mm | 90-132 kW | MT Makina',
         description: 'RDM-200 Redmonster hurda metal parçalama makinesi - 2000x1800 mm dev parçalama alanı, 90-132 kW motor. En büyük model, hurdalık ve metal geri dönüşüm tesisleri için. ✓ Maksimum Güç',
         keywords: ['RDM-200', 'redmonster 200', 'hurdalık metal kırıcı', 'maksimum metal parçalama', 'metal geri dönüşüm tesisi', 'endüstriyel hurda parçalama', 'sürekli üretim metal shredder'],
+      }
+    },
+    'pallet': {
+      'TSV-140': {
+        title: 'TSV-140 Palet Parçalama Makinesi | 1400x400 mm | 30 kW | Ahşap Palet Kırma | MT Makina',
+        description: 'TSV-140 palet parçalama makinesi - 1400x400 mm parçalama alanı, 30 kW motor. Ahşap palet geri dönüşümü, plastik palet kırma, çivili palet işleme. ✓ Tek Şaftlı ✓ Yüksek Tork ✓ Mıknatıs Seperatör',
+        keywords: ['TSV-140', 'palet parçalama makinesi', 'ahşap palet geri dönüşümü', 'plastik palet kırma', 'palet kırma makinası', 'hurda palet', 'çivili palet parçalama', 'palet hurdası'],
+      },
+      'TSV-200': {
+        title: 'TSV-200 Palet Parçalama Makinesi | 2000x400 mm | 55 kW | Yüksek Kapasite | MT Makina',
+        description: 'TSV-200 palet parçalama makinesi - 2000x400 mm parçalama alanı, 55 kW güçlü motor. Büyük hacimli ahşap palet geri dönüşümü, endüstriyel palet kırma. ✓ Yüksek Kapasite ✓ PLC Kontrol',
+        keywords: ['TSV-200', 'palet parçalama yüksek kapasite', 'ahşap palet kırma', 'plastik palet geri dönüşümü', 'hurda palet geri dönüşümü', 'satılık hurda palet işleme', 'endüstriyel palet kırıcı'],
+      },
+      'TSVX-200': {
+        title: 'TSVX-200 Palet Parçalama Makinesi | 2000x400 mm | 45x2 kW Çift Motor | MT Makina',
+        description: 'TSVX-200 çift motorlu palet parçalama makinesi - 2000x400 mm parçalama alanı, 2x45 kW çift motor. Ağır hizmet tipi ahşap palet geri dönüşümü, maksimum güç. ✓ Çift Motor ✓ Yüksek Tork',
+        keywords: ['TSVX-200', 'çift motorlu palet parçalama', 'ağır hizmet palet kırma', 'ahşap palet geri dönüşümü', 'plastik palet parçalama', 'hurda palet işleme', 'maksimum güç palet kırıcı'],
+      }
+    },
+    'mobile': {
+      'TSM-150': {
+        title: 'TSM-150 Mobil Kırıcı | Tek Şaftlı Taşınabilir Parçalama | 400 HP | MT Makina',
+        description: 'TSM-150 mobil kırıcı - Tek şaftlı taşınabilir parçalama sistemi, 400 HP motor, 1500x1800 mm parçalama alanı. Şantiye ve sahada kullanım için ideal. ✓ Mobil Şase ✓ Esnek Kullanım',
+        keywords: ['TSM-150', 'mobil kırıcı', 'taşınabilir parçalama', 'şantiye kırıcı', 'tek şaftlı mobil', 'portatif shredder', 'mobil shredder'],
+      },
+      'TSM-300': {
+        title: 'TSM-300 Mobil Kırıcı | Yüksek Kapasiteli Taşınabilir Sistem | 600 HP | MT Makina',
+        description: 'TSM-300 mobil kırıcı - Yüksek kapasiteli tek şaftlı sistem, 600 HP motor, 3000x2000 mm parçalama alanı. Büyük projeler için güçlü mobil çözüm. ✓ Yüksek Kapasite ✓ Güçlü Motor',
+        keywords: ['TSM-300', 'yüksek kapasite mobil', 'büyük mobil kırıcı', 'taşınabilir shredder', '600 hp mobil', 'saha kırıcısı'],
+      },
+      'CSM-150': {
+        title: 'CSM-150 Mobil Kırıcı | Çift Şaftlı Taşınabilir Parçalama | 400 HP | MT Makina',
+        description: 'CSM-150 mobil kırıcı - Çift şaftlı taşınabilir sistem, 400 HP motor, 1500x1200 mm parçalama alanı. Ağır malzemeler için mobil çözüm. ✓ Çift Şaftlı ✓ Yüksek Tork',
+        keywords: ['CSM-150', 'çift şaftlı mobil', 'taşınabilir dual shaft', 'mobil çift şaft', 'şantiye parçalama', 'mobil ağır hizmet'],
+      },
+      'CSM-200': {
+        title: 'CSM-200 Mobil Kırıcı | Maksimum Güçlü Çift Şaftlı Sistem | 800 HP | MT Makina',
+        description: 'CSM-200 mobil kırıcı - Maksimum güçlü çift şaftlı sistem, 800 HP motor, 2000x1800 mm parçalama alanı. En zorlu malzemeler için mobil çözüm. ✓ 800 HP ✓ Maksimum Güç',
+        keywords: ['CSM-200', 'maksimum mobil güç', 'çift şaftlı 800 hp', 'ağır hizmet mobil', 'büyük mobil parçalama', 'endüstriyel mobil kırıcı'],
+      }
+    },
+    'harddisk': {
+      'DATABER-S': {
+        title: 'DATABER-S Harddisk İmha Makinesi | Tek Aşamalı Veri İmha | 3-11 kW | MT Makina',
+        description: 'DATABER-S harddisk imha makinesi - Tek aşamalı fiziksel veri imha sistemi, 3-11 kW motor, 150x150 mm. Güvenli veri silme ve disk imha. ✓ Fiziksel İmha ✓ Veri Güvenliği',
+        keywords: ['DATABER-S', 'harddisk imha', 'veri imha makinesi', 'data destroyer', 'disk kırıcı', 'güvenli veri silme', 'hdd imha'],
+      },
+      'DATABER-D': {
+        title: 'DATABER-D Harddisk İmha Makinesi | İki Aşamalı Veri İmha | 11-22 kW x2 | MT Makina',
+        description: 'DATABER-D harddisk imha makinesi - İki aşamalı fiziksel veri imha sistemi, 11-22 kW x2 motor, 400x400 mm. Kurumsal veri güvenliği için profesyonel çözüm. ✓ İki Aşamalı ✓ Endüstriyel',
+        keywords: ['DATABER-D', 'iki aşamalı imha', 'kurumsal veri imha', 'harddisk destroyer', 'data security', 'disk parçalama', 'güvenli imha'],
+      },
+      'DATABER-T': {
+        title: 'DATABER-T Harddisk İmha Makinesi | Üç Aşamalı Toz Boyutu İmha | 11-45 kW x2 | MT Makina',
+        description: 'DATABER-T harddisk imha makinesi - Üç aşamalı toz boyutuna kadar fiziksel veri imha, 11-45 kW x2 motor, 400x400 mm. Maksimum güvenlik için tam imha. ✓ Üç Aşamalı ✓ Toz Boyutu',
+        keywords: ['DATABER-T', 'üç aşamalı imha', 'toz boyutu imha', 'maksimum güvenlik imha', 'tam veri yok etme', 'profesyonel data destroyer', 'hdd toz imha'],
       }
     },
     'granulator': {
