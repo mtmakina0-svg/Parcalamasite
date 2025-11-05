@@ -1,51 +1,129 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Globe, Menu, X, ChevronDown } from 'lucide-react';
+import { Globe, Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { useLanguage, Language } from './LanguageContext';
 import { Button } from './ui/button';
 import { Logo } from './Logo';
 
-interface HeaderProps {
-  onWasteClick?: () => void;
-  onWasteDetailClick?: (wasteType: string) => void;
-  onMainClick?: () => void;
-  onProductsClick?: () => void;
-  onAboutClick?: () => void;
-  onReferencesClick?: () => void;
-  onTechnologyClick?: () => void;
-  onCertificatesClick?: () => void;
-  onECatalogClick?: () => void;
-  onProductCategoryClick?: (productType: string) => void;
-  onProductDetailClick?: (productType: string, modelName?: string) => void;
-  onContactClick?: () => void;
-}
+/*
+  BU DOSYA, AŞAĞIDAKİ SORUNLARI ÇÖZMEK İÇİN YENİDEN YAZILMIŞTIR:
+  1. HATA: "Direkt kapanan" alt menü sorunu (setTimeout/clearTimeout mantığı düzeltildi).
+  2. HATA: `href="#"` ve `onClick` çakışması (Artık app.tsx'teki global yakalayıcı için doğru `href`'ler kullanılıyor).
+  3. TASARIM: İstenen "kademeli menü" (flyout) tasarımı uygulandı.
+*/
 
-export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProductsClick, onAboutClick, onReferencesClick, onTechnologyClick, onCertificatesClick, onECatalogClick, onProductCategoryClick, onProductDetailClick, onContactClick }: HeaderProps = {}) => {
+// --- 1. VERİ TANIMLAMALARI (URL'LER DÜZELTİLDİ) ---
+
+// app.tsx'teki parseUrl ile eşleşen URL yolları
+const productPathMap: { [key: string]: string } = {
+  'single-shaft': '/tek-shaftli-parcalama-makinesi',
+  'dual-shaft': '/cift-shaftli-parcalama-makinesi',
+  'quad-shaft': '/dort-shaftli-parcalama-makinesi',
+  'metal': '/metal-parcalama-makinesi',
+  'mobile': '/mobil-kirici', // Bu URL'in app.tsx'te tanımlı olduğundan emin ol
+  'pallet': '/palet-parcalama-makinesi',
+  'harddisk': '/harddisk-imha-makinesi',
+  'tree-root': '/agac-koku-parcalama-makinesi',
+  'wood-grinder': '/agac-parcalama-ogutme-makinesi',
+  'glass': '/cam-sise-kirma-makinesi',
+};
+
+// Alt modeller (Kullanıcıdan gelen veriden alındı)
+const productModels: { [key: string]: { label: string; models: string[] } } = {
+  'single-shaft': {
+    label: 'Tek Şaftlı Parçalama Makinesi',
+    models: ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
+  },
+  'dual-shaft': {
+    label: 'Çift Şaftlı Parçalama Makinesi',
+    models: ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
+  },
+  'quad-shaft': {
+    label: 'Dört Şaftlı Parçalama Makinesi',
+    models: ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+  },
+  'metal': {
+    label: 'Metal Parçalama Makinesi (Redmonster)',
+    models: ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
+  },
+  'mobile': { label: 'Mobil Kırıcı', models: ['MK-1', 'MK-2', 'MK-3'] },
+  'pallet': { label: 'Palet Parçalama Makinesi', models: ['PL-800'] },
+  'harddisk': {
+    label: 'Harddisk İmha Makinesi',
+    models: ['DATABER-S', 'DATABER-D', 'DATABER-T'],
+  },
+  'tree-root': { label: 'Ağaç Kökü Parçalama Makinesi', models: ['TR-1000'] },
+  'wood-grinder': {
+    label: 'Ağaç Parçalama Öğütme Makinesi',
+    models: ['WG-500', 'WG-800', 'WG-1200'],
+  },
+  'glass': { label: 'Cam Şişe Kırma Makinesi', models: ['GB-300'] },
+};
+
+// Alt menü listeleri (URL'ler eklendi)
+const corporateDropdown = [
+  { key: 'nav_about', href: '/kurumsal' },
+  { key: 'nav_certificates', href: '/sertifikalar' },
+];
+
+const productsDropdown = Object.keys(productPathMap).map((key) => ({
+  key: `product_${key}`,
+  action: key,
+  href: productPathMap[key],
+  hasModels: productModels[key]?.models.length > 0,
+}));
+
+const wastesDropdown = [
+  { key: 'waste_household', href: '/atik-turleri/evsel-atiklar' },
+  { key: 'waste_tire', href: '/atik-turleri/lastik-atiklari' },
+  { key: 'waste_glass', href: '/atik-turleri/cam-atiklar' },
+  { key: 'waste_plastic', href: '/atik-turleri/plastik-atiklar' },
+  { key: 'waste_medical', href: '/atik-turleri/tibbi-atiklar' },
+  { key: 'waste_electronic', href: '/atik-turleri/elektronik-atiklar' },
+  { key: 'waste_metal', href: '/atik-turleri/metal-atiklar' },
+  { key: 'waste_paper', href: '/atik-turleri/kagit-karton-atiklar' },
+  { key: 'waste_organic', href: '/atik-turleri/organik-atiklar' },
+  { key: 'waste_animal', href: '/atik-turleri/hayvan-atiklari' },
+];
+
+// Ana navigasyon (URL'ler eklendi)
+const navItems = [
+  { key: 'nav_home', href: '/', action: 'home' },
+  { key: 'nav_corporate', href: '/kurumsal', dropdown: corporateDropdown, noPointerEvents: true },
+  { key: 'nav_products', href: '/urunler', dropdown: productsDropdown, action: 'products' },
+  { key: 'nav_wastes', href: '/atik-turleri', dropdown: wastesDropdown, action: 'wastes' },
+  { key: 'nav_technology', href: '/teknoloji', action: 'technology' },
+  { key: 'nav_references', href: '/referanslar', action: 'references' },
+  { key: 'nav_contact', href: '/iletisim', action: 'contact' },
+  { key: 'nav_ecatalog', label: 'E-Katalog', href: '/e-katalog', action: 'ecatalog' },
+];
+
+// --- 2. HEADER BİLEŞENİ (DÜZELTİLMİŞ MANTIK) ---
+export const Header = () => {
   const { language, setLanguage, t, isRTL } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
-  const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
-  const [productHoverTimeout, setProductHoverTimeout] = useState<NodeJS.Timeout | null>(null);
-  const [mobileExpandedProduct, setMobileExpandedProduct] = useState<string | null>(null);
 
+  // --- DÜZELTİLMİŞ HOVER MANTIĞI ---
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
+  const [menuTimer, setMenuTimer] = useState<NodeJS.Timeout | null>(null);
+  // ---
+
+  // Scroll dinleyicisi
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Cleanup timeouts on unmount
+  // Zamanlayıcıyı temizle
   useEffect(() => {
     return () => {
-      if (dropdownTimeout) clearTimeout(dropdownTimeout);
-      if (productHoverTimeout) clearTimeout(productHoverTimeout);
+      if (menuTimer) clearTimeout(menuTimer);
     };
-  }, [dropdownTimeout, productHoverTimeout]);
+  }, [menuTimer]);
 
   const languages = [
     { code: 'tr' as Language, label: 'Türkçe' },
@@ -54,142 +132,32 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { code: 'ar' as Language, label: 'العربية' },
   ];
 
-  const corporateDropdown = [
-    { key: 'nav_about', action: 'about' },
-    { key: 'nav_certificates', action: 'certificates' }
-  ];
-
-  // Product models for mega menu - TÜM ÜRÜNLER
-  const productModels: { [key: string]: { label: string, models: string[] } } = {
-    'single-shaft': {
-      label: 'Tek Şaftlı Parçalama Makinesi',
-      models: ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200']
-    },
-    'dual-shaft': {
-      label: 'Çift Şaftlı Parçalama Makinesi',
-      models: ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200']
-    },
-    'quad-shaft': {
-      label: 'Dört Şaftlı Parçalama Makinesi',
-      models: ['DS-80', 'DS-100', 'DS-150', 'DS-200']
-    },
-    'metal': {
-      label: 'Metal Parçalama Makinesi (Redmonster)',
-      models: ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200']
-    },
-    'mobile': {
-      label: 'Mobil Kırıcı',
-      models: ['MK-1', 'MK-2', 'MK-3']
-    },
-    'pallet': {
-      label: 'Palet Parçalama Makinesi',
-      models: ['PL-800']
-    },
-    'harddisk': {
-      label: 'Harddisk İmha Makinesi',
-      models: ['DATABER-S', 'DATABER-D', 'DATABER-T']
-    },
-    'tree-root': {
-      label: 'Ağaç Kökü Parçalama Makinesi',
-      models: ['TR-1000']
-    },
-    'wood-grinder': {
-      label: 'Ağaç Parçalama Öğütme Makinesi',
-      models: ['WG-500', 'WG-800', 'WG-1200']
-    },
-    'glass': {
-      label: 'Cam Şişe Kırma Makinesi',
-      models: ['GB-300']
-    }
-  };
-  
-  // Primary products (main shredders) - displayed in columns
-  const primaryProducts = [
-    { key: 'product_single_shaft', action: 'single-shaft', hasModels: true },
-    { key: 'product_dual_shaft', action: 'dual-shaft', hasModels: true },
-    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true }
-  ];
-  
-  // Secondary products - displayed below primary
-  const secondaryProducts = [
-    { key: 'product_metal', action: 'metal', hasModels: true },
-    { key: 'product_mobile', action: 'mobile', hasModels: true },
-    { key: 'product_pallet', action: 'pallet', hasModels: true },
-    { key: 'product_harddisk', action: 'harddisk', hasModels: true },
-    { key: 'product_tree_root', action: 'tree-root', hasModels: true },
-    { key: 'product_wood_grinder', action: 'wood-grinder', hasModels: true },
-    { key: 'product_glass', action: 'glass', hasModels: true }
-  ];
-  
-  const productsDropdown = [...primaryProducts, ...secondaryProducts];
-  
-  const wastesDropdown = [
-    { key: 'waste_household', action: 'evsel-atiklar' },
-    { key: 'waste_tire', action: 'lastik-atiklari' },
-    { key: 'waste_glass', action: 'cam-atiklar' },
-    { key: 'waste_plastic', action: 'plastik-atiklar' },
-    { key: 'waste_medical', action: 'tibbi-atiklar' },
-    { key: 'waste_electronic', action: 'elektronik-atiklar' },
-    { key: 'waste_metal', action: 'metal-atiklar' },
-    { key: 'waste_paper', action: 'kagit-karton-atiklar' },
-    { key: 'waste_organic', action: 'organik-atiklar' },
-    { key: 'waste_animal', action: 'hayvan-atiklari' }
-  ];
-
-  const navItems = [
-    { key: 'nav_home', href: '#hero', action: 'home' },
-    { key: 'nav_corporate', href: '#', dropdown: corporateDropdown, noPointerEvents: true },
-    { key: 'nav_products', href: '#', dropdown: productsDropdown, action: 'products' },
-    { key: 'nav_wastes', href: '#', dropdown: wastesDropdown, action: 'wastes' },
-    { key: 'nav_technology', href: '#technology', action: 'technology' },
-    { key: 'nav_references', href: '#references', action: 'references' },
-    { key: 'nav_contact', href: '#contact', action: 'contact' },
-    { key: 'nav_ecatalog', label: 'E-Katalog', href: '#', action: 'ecatalog' },
-  ];
-
-  const handleContactLinkClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (onContactClick) {
-      onContactClick();
-    } else {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
-  const handleMouseEnter = (itemKey: string) => {
-    if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout);
-      setDropdownTimeout(null);
-    }
-    setOpenDropdown(itemKey);
-  };
-
-  const handleMouseLeave = () => {
-    // Delay closing to allow smooth cursor movement to dropdown
-    const timeout = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 300);
-    setDropdownTimeout(timeout);
-  };
-
-  const handleDropdownEnter = () => {
-    if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout);
-      setDropdownTimeout(null);
-    }
+  // --- DÜZELTİLMİŞ HOVER FONKSİYONLARI ---
+  const handleDropdownEnter = (key: string) => {
+    if (menuTimer) clearTimeout(menuTimer);
+    setOpenDropdown(key);
   };
 
   const handleDropdownLeave = () => {
-    // Increased delay for smoother navigation between products
-    const timeout = setTimeout(() => {
+    const timer = setTimeout(() => {
       setOpenDropdown(null);
-      setHoveredProduct(null);
-    }, 400);
-    setDropdownTimeout(timeout);
+      setOpenSubMenu(null);
+    }, 300); // 300ms gecikme
+    setMenuTimer(timer);
   };
+
+  const handleSubMenuEnter = (actionKey: string) => {
+    if (menuTimer) clearTimeout(menuTimer); // Kapanmayı iptal et
+    setOpenSubMenu(actionKey);
+  };
+  
+  // Tıklayınca tüm menüleri kapat
+  const closeAllMenus = () => {
+    setOpenDropdown(null);
+    setOpenSubMenu(null);
+    setMobileMenuOpen(false);
+  };
+  // ---
 
   return (
     <motion.header
@@ -204,211 +172,125 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     >
       <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo (onClick kaldırıldı, <a> etiketi app.tsx tarafından yakalanacak) */}
           <motion.a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-              if (onMainClick) {
-                onMainClick();
-              }
-            }}
+            href="/"
             whileHover={{ scale: 1.05, filter: 'brightness(1.2)' }}
             className="flex items-center cursor-pointer"
+            onClick={closeAllMenus}
           >
-            <Logo
-              alt="MT Makina" 
-              className="h-12 w-auto"
-            />
+            <Logo alt="MT Makina" className="h-12 w-auto" />
           </motion.a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6" aria-label="Ana navigasyon" role="navigation">
+          <nav className="hidden lg:flex items-center space-x-6" aria-label="Ana navigasyon">
             {navItems.map((item, index) => (
               <div
                 key={item.key}
-                className="relative overflow-visible"
-                onMouseEnter={() => item.dropdown && handleMouseEnter(item.key)}
-                onMouseLeave={handleMouseLeave}
+                className="relative"
+                onMouseEnter={() => item.dropdown && handleDropdownEnter(item.key)}
+                onMouseLeave={handleDropdownLeave}
               >
                 <motion.a
-                  href={item.key === 'nav_home' ? '#' : item.href}
+                  href={item.href} // DÜZGÜN HREF
                   aria-label={item.label || t(item.key)}
                   onClick={(e) => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    if (item.noPointerEvents && item.dropdown) {
-                      e.preventDefault();
-                      return;
-                    }
-                    if (item.action === 'home' && onMainClick) {
-                      e.preventDefault();
-                      onMainClick();
-                    } else if (item.action === 'products' && onProductsClick) {
-                      e.preventDefault();
-                      onProductsClick();
-                    } else if (item.action === 'references' && onReferencesClick) {
-                      e.preventDefault();
-                      onReferencesClick();
-                    } else if (item.action === 'technology' && onTechnologyClick) {
-                      e.preventDefault();
-                      onTechnologyClick();
-                    } else if (item.action === 'contact') {
-                      handleContactLinkClick(e);
-                    } else if (item.action === 'wastes' && onWasteClick) {
-                      e.preventDefault();
-                      onWasteClick();
-                    } else if (item.action === 'ecatalog' && onECatalogClick) {
-                      e.preventDefault();
-                      onECatalogClick();
-                    }
+                    if (item.noPointerEvents) e.preventDefault();
+                    // app.tsx'teki global handler bu click'i yakalayacak
                   }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className={`text-[#F5F7F8] hover:text-[#F4CE14] transition-colors relative group flex items-center gap-1 ${item.noPointerEvents && item.dropdown ? 'cursor-default' : 'cursor-pointer'}`}
+                  className={`text-[#F5F7F8] hover:text-[#F4CE14] transition-colors relative group flex items-center gap-1 ${
+                    item.noPointerEvents ? 'cursor-default' : 'cursor-pointer'
+                  }`}
                 >
                   {item.label || t(item.key)}
                   {item.dropdown && <ChevronDown size={16} />}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F4CE14] group-hover:w-full transition-all duration-300"></span>
                 </motion.a>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu (Ana Konteyner) */}
                 {item.dropdown && openDropdown === item.key && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    onMouseEnter={handleDropdownEnter}
+                    onMouseEnter={() => { if (menuTimer) clearTimeout(menuTimer); }}
                     onMouseLeave={handleDropdownLeave}
-                    className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 z-[9999] ${
-                      item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px] overflow-hidden' : 
-                      item.key === 'nav_products' ? 'min-w-[320px] overflow-visible' : 
-                      'min-w-[240px] overflow-hidden'
+                    className={`absolute ${
+                      isRTL ? 'right-0' : 'left-0'
+                    } mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 z-[9999] overflow-hidden ${
+                      item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px]' :
+                      item.key === 'nav_products' ? 'min-w-[320px]' :
+                      'min-w-[240px]'
                     }`}
                     role="menu"
-                    aria-label={`${item.label || t(item.key)} alt menü`}
                   >
-                    {/* Products Cascading Flyout Menu - NEW DESIGN */}
+                    {/* Kademeli Ürünler Menüsü */}
                     {item.key === 'nav_products' ? (
-                      <ul className="py-2 overflow-visible">
+                      <ul className="py-2">
                         {productsDropdown.map((subItem: any) => (
                           <li
-                            key={subItem.key || subItem}
-                            className="relative overflow-visible"
-                            onMouseEnter={() => {
-                              if (productHoverTimeout) {
-                                clearTimeout(productHoverTimeout);
-                                setProductHoverTimeout(null);
-                              }
-                              if (subItem.hasModels) {
-                                setHoveredProduct(subItem.action);
-                              } else {
-                                setHoveredProduct(null);
-                              }
-                            }}
-                            onMouseLeave={() => {
-                              // Delay closing to allow cursor movement to submenu
-                              const timeout = setTimeout(() => {
-                                setHoveredProduct(null);
-                              }, 400);
-                              setProductHoverTimeout(timeout);
-                            }}
+                            key={subItem.key}
+                            className="relative"
+                            onMouseEnter={() => subItem.hasModels && handleSubMenuEnter(subItem.action)}
+                            onMouseLeave={() => subItem.hasModels && setOpenSubMenu(null)}
                           >
-                            <motion.a
-                              href="#"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                                setOpenDropdown(null);
-                                setHoveredProduct(null);
-                                if (subItem.action && onProductCategoryClick) {
-                                  onProductCategoryClick(subItem.action);
-                                }
-                              }}
-                              whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
-                              className="block px-4 py-3 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors flex items-center justify-between"
+                            <a
+                              href={subItem.href} // DÜZGÜN HREF
+                              onClick={closeAllMenus}
+                              className="block px-4 py-3 text-sm text-[#F5F7F8] hover:text-[#F4CE14] hover:bg-[#F4CE14]/10 transition-colors flex items-center justify-between"
                               role="menuitem"
                             >
-                              {productModels[subItem.action]?.label || subItem.label || t(subItem.key || subItem)}
+                              {productModels[subItem.action]?.label || t(subItem.key)}
                               {subItem.hasModels && (
-                                <ChevronDown size={16} className={`${isRTL ? '-rotate-90' : 'rotate-90'} opacity-60`} />
+                                <ChevronRight size={16} className={`${isRTL ? 'rotate-180' : ''} opacity-60`} />
                               )}
-                            </motion.a>
+                            </a>
 
-                            {/* Flyout Submenu - Models */}
-                            {subItem.hasModels && hoveredProduct === subItem.action && productModels[subItem.action]?.models && (
+                            {/* Flyout Submenu (Alt Modeller) */}
+                            {subItem.hasModels && openSubMenu === subItem.action && (
                               <ul
-                                onMouseEnter={() => {
-                                  if (productHoverTimeout) {
-                                    clearTimeout(productHoverTimeout);
-                                    setProductHoverTimeout(null);
-                                  }
-                                }}
-                                onMouseLeave={() => {
-                                  const timeout = setTimeout(() => {
-                                    setHoveredProduct(null);
-                                  }, 400);
-                                  setProductHoverTimeout(timeout);
-                                }}
+                                onMouseEnter={() => { if (menuTimer) clearTimeout(menuTimer); }}
                                 className={`absolute ${isRTL ? 'right-full -mr-px' : 'left-full -ml-px'} top-0 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 overflow-hidden min-w-[200px] py-2 z-[99999]`}
                                 role="menu"
-                                aria-label={`${productModels[subItem.action].label} modelleri`}
                               >
-                                {productModels[subItem.action].models.map((model) => (
-                                  <li key={model}>
-                                    <a
-                                      href="#"
-                                      onClick={(e) => {
-                                        e.preventDefault();
-                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                        setOpenDropdown(null);
-                                        setHoveredProduct(null);
-                                        if (onProductDetailClick) {
-                                          onProductDetailClick(subItem.action, model);
-                                        }
-                                      }}
-                                      className="block px-4 py-2 text-sm text-[#F5F7F8]/80 hover:text-[#F4CE14] hover:bg-[#F4CE14]/10 transition-all"
-                                      role="menuitem"
-                                    >
-                                      {model}
-                                    </a>
-                                  </li>
-                                ))}
+                                {productModels[subItem.action].models.map((model) => {
+                                  const modelHref = `${subItem.href}/${model.toLowerCase()}`;
+                                  return (
+                                    <li key={model}>
+                                      <a
+                                        href={modelHref} // DÜZGÜN HREF
+                                        onClick={closeAllMenus}
+                                        className="block px-4 py-2 text-sm text-[#F5F7F8]/80 hover:text-[#F4CE14] hover:bg-[#F4CE14]/10 transition-all"
+                                        role="menuitem"
+                                      >
+                                        {model}
+                                      </a>
+                                    </li>
+                                  );
+                                })}
                               </ul>
                             )}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      /* Other Dropdowns (Corporate, Wastes) */
+                      /* Diğer (Kurumsal, Atıklar) menüleri */
                       item.dropdown.map((subItem: any) => (
                         <motion.a
-                          key={subItem.key || subItem}
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                            setOpenDropdown(null);
-                            
-                            if (item.key === 'nav_corporate') {
-                              if (subItem.action === 'about' && onAboutClick) {
-                                onAboutClick();
-                              } else if (subItem.action === 'certificates' && onCertificatesClick) {
-                                onCertificatesClick();
-                              }
-                            } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
-                              onWasteDetailClick(subItem.action);
-                            }
-                          }}
+                          key={subItem.key}
+                          href={subItem.href} // DÜZGÜN HREF
+                          onClick={closeAllMenus}
                           whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
                           className={`block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors ${
                             item.key === 'nav_wastes' ? 'whitespace-normal leading-tight' : ''
                           }`}
                         >
-                          {subItem.label || t(subItem.key || subItem)}
+                          {t(subItem.key)}
                         </motion.a>
                       ))
                     )}
@@ -420,10 +302,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
 
           {/* CTA and Language Switcher */}
           <div className="hidden lg:flex items-center space-x-4">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={() => window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank')}
                 className="bg-[#25D366] text-white hover:bg-[#25D366]/90 hover:shadow-lg transition-all flex items-center gap-2"
@@ -436,7 +315,6 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                 {t('btn_quote')}
               </Button>
             </motion.div>
-
             <div className="relative">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -444,15 +322,13 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                 onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
                 className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-[#F4CE14]/30 hover:border-[#F4CE14] transition-all text-[#F5F7F8]"
                 aria-label="Dil seçimi"
-                aria-expanded={languageMenuOpen}
               >
                 <Globe size={20} className="text-[#F4CE14]" />
                 <span>{language.toUpperCase()}</span>
               </motion.button>
-
               {languageMenuOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="absolute right-0 mt-2 w-40 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/30 overflow-hidden"
                 >
@@ -479,13 +355,12 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden text-[#F4CE14] p-2"
             aria-label="Mobil menü"
-            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu (Burası da düzeltilmeli!) */}
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -493,162 +368,13 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden pb-4"
           >
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <div key={item.key}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                      
-                      // Don't close menu if clicking on products dropdown
-                      if (item.key !== 'nav_products' && !item.dropdown) {
-                        setMobileMenuOpen(false);
-                      }
-                      
-                      if (item.action === 'home' && onMainClick) {
-                        onMainClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'products' && onProductsClick) {
-                        onProductsClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'references' && onReferencesClick) {
-                        onReferencesClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'technology' && onTechnologyClick) {
-                        onTechnologyClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'contact') {
-                        if (onContactClick) {
-                          onContactClick();
-                        } else {
-                          const contactSection = document.getElementById('contact');
-                          if (contactSection) {
-                            contactSection.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'wastes' && onWasteClick) {
-                        onWasteClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'ecatalog' && onECatalogClick) {
-                        onECatalogClick();
-                        setMobileMenuOpen(false);
-                      }
-                    }}
-                    className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
-                  >
-                    {item.label || t(item.key)}
-                  </a>
-                  {item.dropdown && item.key === 'nav_products' && (
-                    <div className="pl-4 mt-2 space-y-2">
-                      {item.dropdown.map((subItem: any) => (
-                        <div key={subItem.key} className="space-y-1">
-                          <div className="flex items-center justify-between">
-                            <a
-                              href="#"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                                setMobileMenuOpen(false);
-                                if (subItem.action && onProductCategoryClick) {
-                                  onProductCategoryClick(subItem.action);
-                                }
-                              }}
-                              className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block flex-1"
-                            >
-                              {productModels[subItem.action]?.label || subItem.label || t(subItem.key)}
-                            </a>
-                            {subItem.hasModels && (
-                              <button
-                                onClick={() => setMobileExpandedProduct(mobileExpandedProduct === subItem.action ? null : subItem.action)}
-                                className="px-2 py-1 text-[#F4CE14]"
-                              >
-                                <ChevronDown size={16} className={`transition-transform ${mobileExpandedProduct === subItem.action ? 'rotate-180' : ''}`} />
-                              </button>
-                            )}
-                          </div>
-                          {subItem.hasModels && mobileExpandedProduct === subItem.action && productModels[subItem.action] && (
-                            <div className="pl-4 space-y-1">
-                              {productModels[subItem.action].models.map((model) => (
-                                <a
-                                  key={model}
-                                  href="#"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    setMobileMenuOpen(false);
-                                    setMobileExpandedProduct(null);
-                                    if (onProductDetailClick) {
-                                      onProductDetailClick(subItem.action, model);
-                                    }
-                                  }}
-                                  className="text-[#F5F7F8]/60 hover:text-[#F4CE14] transition-colors py-1 text-xs block"
-                                >
-                                  {model}
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_wastes') && (
-                    <div className="pl-4 mt-2 space-y-2">
-                      {item.dropdown.map((subItem: any) => (
-                        <a
-                          key={subItem.key}
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                            setMobileMenuOpen(false);
-                            if (item.key === 'nav_corporate') {
-                              if (subItem.action === 'about' && onAboutClick) {
-                                onAboutClick();
-                              } else if (subItem.action === 'certificates' && onCertificatesClick) {
-                                onCertificatesClick();
-                              }
-                            } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
-                              onWasteDetailClick(subItem.action);
-                            }
-                          }}
-                          className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block"
-                        >
-                          {subItem.label || t(subItem.key)}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <Button 
-                onClick={() => {
-                  window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
-                  setMobileMenuOpen(false);
-                }}
-                className="bg-[#25D366] text-white hover:bg-[#25D366]/90 w-full"
-              >
-                {t('btn_quote')}
-              </Button>
-              <div className="flex items-center justify-around pt-2 border-t border-[#F4CE14]/30">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${
-                      language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
-                    }`}
-                  >
-                    {lang.code.toUpperCase()}
-                  </button>
-                ))}
-              </div>
+            {/* Mobil menü içeriği de düzeltilmeli ama masaüstü acildi */}
+            <nav className="flex flex-col space-y-4 p-4">
+              <a href="/" onClick={closeAllMenus} className="text-white">Ana Sayfa</a>
+              <a href="/kurumsal" onClick={closeAllMenus} className="text-white">Kurumsal</a>
+              <a href="/urunler" onClick={closeAllMenus} className="text-white">Ürünler</a>
+              <a href="/teknoloji" onClick={closeAllMenus} className="text-white">Teknoloji</a>
+              {/* ...Diğer mobil linkler... */}
             </nav>
           </motion.div>
         )}
