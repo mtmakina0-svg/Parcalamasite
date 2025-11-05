@@ -519,10 +519,10 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#1E1E1E] mb-16 text-4xl font-bold"
             >
-              {t('single_shaft_advantages_title')}
+              {t(productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className={`grid grid-cols-1 ${productType === 'harddisk' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
               {/* Advantage 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -535,8 +535,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Settings size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('single_shaft_adv_1_title')}</h3>
-                <p className="text-[#45474B]">{t('single_shaft_adv_1_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
               </motion.div>
 
               {/* Advantage 2 */}
@@ -551,8 +551,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <RotateCcw size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('single_shaft_adv_2_title')}</h3>
-                <p className="text-[#45474B]">{t('single_shaft_adv_2_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
               </motion.div>
 
               {/* Advantage 3 */}
@@ -567,9 +567,27 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Volume2 size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('single_shaft_adv_3_title')}</h3>
-                <p className="text-[#45474B]">{t('single_shaft_adv_3_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
               </motion.div>
+
+              {/* Advantage 4 - Only for harddisk */}
+              {productType === 'harddisk' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white rounded-2xl p-8 shadow-xl"
+                >
+                  <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
+                    <Zap size={32} className="text-[#F4CE14]" />
+                  </div>
+                  <h3 className="text-[#1E1E1E] mb-4">{t('harddisk_adv_4_title')}</h3>
+                  <p className="text-[#45474B]">{t('harddisk_adv_4_desc')}</p>
+                </motion.div>
+              )}
             </div>
           </div>
         </section>

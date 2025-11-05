@@ -373,6 +373,15 @@ const translations = {
     harddisk_description_1: 'Harddisk imha parçalama makineleri, sabit disk, SSD, devre kartı ve diğer dijital depolama cihazlarının fiziksel olarak imhası için tasarlanmış endüstriyel makinelerdir. MT Makina DATABER serisi, verilerin kalıcı olarak kurtarılamaz hale gelmesini sağlamak için tekli, ikili ve üçlü aşamalı parçalama seçenekleri sunar.',
     harddisk_description_2: 'Bu makineler, PLC kontrol sistemleri, otomatik besleme mekanizmaları ve en sert elektronik bileşenleri bile parçalayabilen sertleştirilmiş çelik bıçaklarla donatılmıştır. Çok aşamalı parçalama işlemi, malzemeleri toz benzeri parçacıklara indirerek tam veri imhasını garanti eder.',
     harddisk_description_3: 'MT Makina harddisk parçalama makineleri, veri merkezleri, BT geri dönüşüm tesisleri, devlet kurumları ve hassas bilgilerin güvenli bir şekilde imha edilmesini gerektiren organizasyonlar için idealdir. Opsiyonel özellikler arasında soğutma sistemleri, otomatik yağlama, kamera kaydı ve barkod okuma yetenekleri bulunur.',
+    harddisk_advantages_title: 'Temel Özellikler',
+    harddisk_adv_1_title: 'İki Aşamalı Parçalama',
+    harddisk_adv_1_desc: 'Harddisk parçalama imha makinesi, hard diskleri iki kez parçalayarak verilerin kurtarılma ihtimalini tamamen ortadan kaldırır.',
+    harddisk_adv_2_title: 'Geri Dönüşümsüz Parçalama',
+    harddisk_adv_2_desc: 'Harddisk parçalama imha makinesi, verilerin geri dönüştürülemez hale gelmesi için hard diskleri ve devre kartlarını fiziksel olarak parçalar.',
+    harddisk_adv_3_title: 'Uzun Ömürlü Bıçaklar',
+    harddisk_adv_3_desc: 'Harddisk parçalama imha makinesi, yüksek kaliteli çelik bıçakları sayesinde aşınmaya karşı dayanıklıdır ve uzun süreli kullanım sağlar.',
+    harddisk_adv_4_title: 'Büyük İşleme Kapasitesi',
+    harddisk_adv_4_desc: 'Harddisk parçalama imha makinesi, farklı boyutlarda ve türlerde dijital depolama cihazlarını ve devre kartlarını hızlıca işleyebilir.',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Yüksek Kapasiteli Mobil Kırıcılar ile Endüstriyel Geri Dönüşümde Güçlü Çözüm',
@@ -748,6 +757,15 @@ const translations = {
     harddisk_description_1: 'Harddisk destruction shredders are industrial machines designed for the physical destruction of hard drives, SSDs, circuit boards and other digital storage devices. MT Makina DATABER series offers single, dual and triple stage shredding options to ensure data is permanently unrecoverable.',
     harddisk_description_2: 'These machines are equipped with PLC control systems, automatic feeding mechanisms, and hardened steel blades that can shred even the toughest electronic components. The multi-stage shredding process ensures complete data destruction by reducing materials to powder-like particles.',
     harddisk_description_3: 'MT Makina harddisk shredders are ideal for data centers, IT recycling facilities, government agencies, and organizations that require secure disposal of sensitive information. Optional features include cooling systems, automatic lubrication, camera recording, and barcode reading capabilities.',
+    harddisk_advantages_title: 'Key Features',
+    harddisk_adv_1_title: 'Two-Stage Shredding',
+    harddisk_adv_1_desc: 'The harddisk destruction shredder completely eliminates the possibility of data recovery by shredding hard drives twice.',
+    harddisk_adv_2_title: 'Irreversible Destruction',
+    harddisk_adv_2_desc: 'The harddisk destruction shredder physically shreds hard drives and circuit boards to ensure data becomes unrecoverable.',
+    harddisk_adv_3_title: 'Long-Lasting Blades',
+    harddisk_adv_3_desc: 'The harddisk destruction shredder is resistant to wear with high-quality steel blades and provides long-term use.',
+    harddisk_adv_4_title: 'Large Processing Capacity',
+    harddisk_adv_4_desc: 'The harddisk destruction shredder can quickly process digital storage devices and circuit boards of different sizes and types.',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Powerful Solutions in Industrial Recycling with High Capacity Mobile Crushers',
@@ -1106,6 +1124,22 @@ const translations = {
     pallet_optional_6: 'Сита разных размеров',
     pallet_optional_7: 'Применения конвейеров/шнеков для выхода',
     
+    // Harddisk Shredder Product Page
+    harddisk_main_title: 'Измельчитель для уничтожения жестких дисков',
+    harddisk_subtitle: 'Безопасное уничтожение данных с помощью многоступенчатой технологии измельчения',
+    harddisk_description_1: 'Измельчители для уничтожения жестких дисков - это промышленные машины, предназначенные для физического уничтожения жестких дисков, SSD, печатных плат и других цифровых устройств хранения данных. Серия DATABER от MT Makina предлагает одноступенчатые, двухступенчатые и трехступенчатые варианты измельчения для обеспечения безвозвратности данных.',
+    harddisk_description_2: 'Эти машины оснащены системами управления PLC, автоматическими механизмами подачи и закаленными стальными лезвиями, которые могут измельчать даже самые прочные электронные компоненты. Многоступенчатый процесс измельчения обеспечивает полное уничтожение данных путем измельчения материалов в порошкообразные частицы.',
+    harddisk_description_3: 'Измельчители жестких дисков MT Makina идеально подходят для центров обработки данных, предприятий по переработке ИТ-оборудования, государственных учреждений и организаций, требующих безопасной утилизации конфиденциальной информации. Дополнительные функции включают системы охлаждения, автоматическую смазку, запись с камеры и возможности чтения штрих-кодов.',
+    harddisk_advantages_title: 'Основные характеристики',
+    harddisk_adv_1_title: 'Двухступенчатое измельчение',
+    harddisk_adv_1_desc: 'Измельчитель для уничтожения жестких дисков полностью исключает возможность восстановления данных, измельчая жесткие диски дважды.',
+    harddisk_adv_2_title: 'Необратимое уничтожение',
+    harddisk_adv_2_desc: 'Измельчитель для уничтожения жестких дисков физически измельчает жесткие диски и печатные платы, чтобы данные стали невосстановимыми.',
+    harddisk_adv_3_title: 'Долговечные лезвия',
+    harddisk_adv_3_desc: 'Измельчитель для уничтожения жестких дисков устойчив к износу благодаря высококачественным стальным лезвиям и обеспечивает долгосрочное использование.',
+    harddisk_adv_4_title: 'Большая производительность обработки',
+    harddisk_adv_4_desc: 'Измельчитель для уничтожения жестких дисков может быстро обрабатывать цифровые устройства хранения данных и печатные платы различных размеров и типов.',
+    
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Мощные решения в промышленной переработке с высокопроизводительными мобильными дробилками',
     mobile_subtitle: 'Выделяется способностью обрабатывать широкий спектр материалов и мобильностью в процессах переработки и управления отходами.',
@@ -1462,6 +1496,22 @@ const translations = {
     pallet_optional_5: 'وحدة التشحيم التلقائي',
     pallet_optional_6: 'شاشات بأحجام مختلفة',
     pallet_optional_7: 'تطبيقات النقل/اللولب للمخرجات',
+    
+    // Harddisk Shredder Product Page
+    harddisk_main_title: 'آلة تمزيق إتلاف الأقراص الصلبة',
+    harddisk_subtitle: 'تدمير آمن للبيانات بتقنية التمزيق متعدد المراحل',
+    harddisk_description_1: 'آلات تمزيق إتلاف الأقراص الصلبة هي آلات صناعية مصممة لتدمير الأقراص الصلبة وأقراص SSD ولوحات الدوائر وأجهزة التخزين الرقمية الأخرى فعلياً. تقدم سلسلة DATABER من MT Makina خيارات تمزيق أحادية وثنائية وثلاثية المراحل لضمان عدم إمكانية استرداد البيانات بشكل دائم.',
+    harddisk_description_2: 'هذه الآلات مجهزة بأنظمة التحكم PLC وآليات التغذية التلقائية وشفرات فولاذية مقساة يمكنها تمزيق حتى أصعب المكونات الإلكترونية. تضمن عملية التمزيق متعددة المراحل تدمير البيانات بالكامل عن طريق تحويل المواد إلى جزيئات شبيهة بالمسحوق.',
+    harddisk_description_3: 'آلات تمزيق الأقراص الصلبة من MT Makina مثالية لمراكز البيانات ومرافق إعادة تدوير تكنولوجيا المعلومات والوكالات الحكومية والمنظمات التي تتطلب التخلص الآمن من المعلومات الحساسة. تشمل الميزات الاختيارية أنظمة التبريد والتشحيم التلقائي وتسجيل الكاميرا وقدرات قراءة الباركود.',
+    harddisk_advantages_title: 'الميزات الرئيسية',
+    harddisk_adv_1_title: 'التمزيق ثنائي المراحل',
+    harddisk_adv_1_desc: 'تقضي آلة تمزيق إتلاف الأقراص الصلبة تماماً على إمكانية استرداد البيانات من خلال تمزيق الأقراص الصلبة مرتين.',
+    harddisk_adv_2_title: 'التدمير غير القابل للإصلاح',
+    harddisk_adv_2_desc: 'تقوم آلة تمزيق إتلاف الأقراص الصلبة بتمزيق الأقراص الصلبة ولوحات الدوائر فعلياً لضمان عدم إمكانية استرداد البيانات.',
+    harddisk_adv_3_title: 'شفرات طويلة الأمد',
+    harddisk_adv_3_desc: 'آلة تمزيق إتلاف الأقراص الصلبة مقاومة للتآكل بفضل شفرات الفولاذ عالية الجودة وتوفر استخداماً طويل الأجل.',
+    harddisk_adv_4_title: 'سعة معالجة كبيرة',
+    harddisk_adv_4_desc: 'يمكن لآلة تمزيق إتلاف الأقراص الصلبة معالجة أجهزة التخزين الرقمية ولوحات الدوائر بأحجام وأنواع مختلفة بسرعة.',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'حلول قوية في إعادة التدوير الصناعي مع الكسارات المتنقلة عالية السعة',
