@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, ChevronRight, Zap, Wind } from 'lucide-react';
+import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, ChevronRight, Zap, Wind, Shield, Wrench } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
@@ -209,41 +209,62 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
   },
   'metal': {
     'RDM-100': {
-      'Parçalama Alanı': '1000 x 1000 mm',
-      'Rotor Boyu': '1000 mm',
-      'Motor Gücü': '45–75 kW (2-4X)'
+      motorPower: '45–75 kW (2-4X)',
+      rotorLength: '1000 mm',
+      rotorDiameter: '1000 x 1000 mm',
+      bladeCount: '96 adet',
+      weight: '6500 kg',
+      capacity: '2000-3500 kg/saat'
     },
     'RDM-150': {
-      'Parçalama Alanı': '1500 x 1500 mm',
-      'Rotor Boyu': '1500 mm',
-      'Motor Gücü': '55–90 kW (2-4X)'
+      motorPower: '55–90 kW (2-4X)',
+      rotorLength: '1500 mm',
+      rotorDiameter: '1500 x 1500 mm',
+      bladeCount: '120 adet',
+      weight: '9000 kg',
+      capacity: '3500-5500 kg/saat'
     },
     'RDM-180': {
-      'Parçalama Alanı': '1800 x 1500 mm',
-      'Rotor Boyu': '1800 mm',
-      'Motor Gücü': '75–90 kW (2-4X)'
+      motorPower: '75–90 kW (2-4X)',
+      rotorLength: '1800 mm',
+      rotorDiameter: '1800 x 1500 mm',
+      bladeCount: '144 adet',
+      weight: '11500 kg',
+      capacity: '5500-8000 kg/saat'
     },
     'RDM-200': {
-      'Parçalama Alanı': '2000 x 1800 mm',
-      'Rotor Boyu': '2000 mm',
-      'Motor Gücü': '90–132 kW (2-4X)'
+      motorPower: '90–132 kW (2-4X)',
+      rotorLength: '2000 mm',
+      rotorDiameter: '2000 x 1800 mm',
+      bladeCount: '160 adet',
+      weight: '14000 kg',
+      capacity: '8000-12000 kg/saat'
     }
   },
   'pallet': {
     'TSV-140': {
-      'Parçalama Alanı': '1400 x 400 mm',
-      'Rotor Boyu': '1400 mm',
-      'Motor Gücü': '30 kW'
+      motorPower: '30 kW',
+      rotorLength: '1400 mm',
+      rotorDiameter: '1400 x 400 mm',
+      bladeCount: '28 adet',
+      weight: '3800 kg',
+      capacity: '1500-2500 kg/saat'
     },
     'TSV-200': {
-      'Parçalama Alanı': '2000 x 400 mm',
-      'Rotor Boyu': '2000 mm',
-      'Motor Gücü': '55 kW'
+      motorPower: '55 kW',
+      rotorLength: '2000 mm',
+      rotorDiameter: '2000 x 400 mm',
+      bladeCount: '40 adet',
+      weight: '5200 kg',
+      capacity: '3000-4500 kg/saat'
     },
     'TSVX-200': {
-      'Parçalama Alanı': '2000 x 400 mm',
-      'Rotor Boyu': '2000 mm',
-      'Motor Gücü': '45 x 2 kW'
+      motorPower: '2 x 45 kW',
+      rotorLength: '2000 mm',
+      rotorDiameter: '2000 x 400 mm',
+      bladeCount: '40 adet',
+      weight: '6500 kg',
+      capacity: '4500-6000 kg/saat'
     }
   },
   'harddisk': {
@@ -315,7 +336,8 @@ const availableModels: { [key: string]: string[] } = {
   'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
-  'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200']
+  'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
+  'pallet': ['TSV-140', 'TSV-200', 'TSVX-200']
 };
 
 export const ProductDetailPage = ({ 
@@ -715,56 +737,77 @@ export const ProductDetailPage = ({
               className="max-w-4xl mx-auto mt-16"
             >
               <h3 className="text-center text-[#45474B] mb-8 text-2xl font-bold">
-                Opsiyonel Özellikler
+                {productType === 'pallet' ? t('pallet_optional_features_title') : 'Opsiyonel Özellikler'}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
-                      <Settings size={24} className="text-[#1E1E1E]" />
-                    </div>
-                    <p className="text-[#1E1E1E]">Farklı Besleme ve Çıkış Seçenekleri</p>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
-                      <RotateCcw size={24} className="text-[#1E1E1E]" />
-                    </div>
-                    <p className="text-[#1E1E1E]">Farklı Rotor Tasarımları</p>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
-                      <Zap size={24} className="text-[#1E1E1E]" />
-                    </div>
-                    <p className="text-[#1E1E1E]">Çift Motorlu Tasarım</p>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
-                      <Wind size={24} className="text-[#1E1E1E]" />
-                    </div>
-                    <p className="text-[#1E1E1E]">Rotor Soğutma Sistemi</p>
-                  </div>
-                </motion.div>
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
+                {productType === 'pallet' ? (
+                  <>
+                    {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+                      <motion.div
+                        key={num}
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                            <Settings size={24} className="text-[#1E1E1E]" />
+                          </div>
+                          <p className="text-[#1E1E1E]">{t(`pallet_optional_${num}`)}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                          <Settings size={24} className="text-[#1E1E1E]" />
+                        </div>
+                        <p className="text-[#1E1E1E]">Farklı Besleme ve Çıkış Seçenekleri</p>
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                          <RotateCcw size={24} className="text-[#1E1E1E]" />
+                        </div>
+                        <p className="text-[#1E1E1E]">Farklı Rotor Tasarımları</p>
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                          <Zap size={24} className="text-[#1E1E1E]" />
+                        </div>
+                        <p className="text-[#1E1E1E]">Çift Motorlu Tasarım</p>
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                          <Wind size={24} className="text-[#1E1E1E]" />
+                        </div>
+                        <p className="text-[#1E1E1E]">Rotor Soğutma Sistemi</p>
+                      </div>
+                    </motion.div>
+                  </>
+                )}
               </div>
             </motion.div>
           </div>
@@ -891,8 +934,8 @@ export const ProductDetailPage = ({
     );
   }
 
-  // Dual Shaft Product Page
-  if (productType === 'dual-shaft') {
+  // Dual Shaft and Pallet Product Pages (using same layout)
+  if (productType === 'dual-shaft' || productType === 'pallet') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -947,10 +990,10 @@ export const ProductDetailPage = ({
               className="text-center mb-16"
             >
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
-                {modelName} {t('dual_shaft_main_title')}
+                {modelName} {t(productType === 'pallet' ? 'pallet_main_title' : 'dual_shaft_main_title')}
               </h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
-                {t('dual_shaft_subtitle')}
+                {t(productType === 'pallet' ? 'pallet_subtitle' : 'dual_shaft_subtitle')}
               </p>
             </motion.div>
 
@@ -963,7 +1006,7 @@ export const ProductDetailPage = ({
             >
               <ImageWithFallback
                 src={images.main}
-                alt={`${modelName} ${t('dual_shaft_main_title')}`}
+                alt={`${modelName} ${t(productType === 'pallet' ? 'pallet_main_title' : 'dual_shaft_main_title')}`}
                 className="w-full rounded-2xl shadow-2xl"
                 fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
               />
@@ -1024,7 +1067,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#1E1E1E] mb-16 text-5xl font-bold"
             >
-              {t('dual_shaft_advantages_title')}
+              {t(productType === 'pallet' ? 'pallet_advantages_title' : 'dual_shaft_advantages_title')}
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1040,8 +1083,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Settings size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('dual_shaft_adv_1_title')}</h3>
-                <p className="text-[#45474B]">{t('dual_shaft_adv_1_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'pallet' ? 'pallet_adv_1_title' : 'dual_shaft_adv_1_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'pallet' ? 'pallet_adv_1_desc' : 'dual_shaft_adv_1_desc')}</p>
               </motion.div>
 
               {/* Advantage 2 */}
@@ -1054,10 +1097,10 @@ export const ProductDetailPage = ({
                 className="bg-white rounded-2xl p-8 shadow-xl"
               >
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
-                  <RotateCcw size={32} className="text-[#F4CE14]" />
+                  {productType === 'pallet' ? <Zap size={32} className="text-[#F4CE14]" /> : <RotateCcw size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('dual_shaft_adv_2_title')}</h3>
-                <p className="text-[#45474B]">{t('dual_shaft_adv_2_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'pallet' ? 'pallet_adv_2_title' : 'dual_shaft_adv_2_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'pallet' ? 'pallet_adv_2_desc' : 'dual_shaft_adv_2_desc')}</p>
               </motion.div>
 
               {/* Advantage 3 */}
@@ -1070,10 +1113,10 @@ export const ProductDetailPage = ({
                 className="bg-white rounded-2xl p-8 shadow-xl"
               >
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
-                  <Volume2 size={32} className="text-[#F4CE14]" />
+                  {productType === 'pallet' ? <Shield size={32} className="text-[#F4CE14]" /> : <Volume2 size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('dual_shaft_adv_3_title')}</h3>
-                <p className="text-[#45474B]">{t('dual_shaft_adv_3_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'pallet' ? 'pallet_adv_3_title' : 'dual_shaft_adv_3_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'pallet' ? 'pallet_adv_3_desc' : 'dual_shaft_adv_3_desc')}</p>
               </motion.div>
 
               {/* Advantage 4 */}
@@ -1086,16 +1129,17 @@ export const ProductDetailPage = ({
                 className="bg-white rounded-2xl p-8 shadow-xl"
               >
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
-                  <Settings size={32} className="text-[#F4CE14]" />
+                  {productType === 'pallet' ? <Wrench size={32} className="text-[#F4CE14]" /> : <Settings size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('dual_shaft_adv_4_title')}</h3>
-                <p className="text-[#45474B]">{t('dual_shaft_adv_4_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'pallet' ? 'pallet_adv_4_title' : 'dual_shaft_adv_4_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'pallet' ? 'pallet_adv_4_desc' : 'dual_shaft_adv_4_desc')}</p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Performance Section with 3 Images */}
+        {/* Performance Section with 3 Images - Only for dual-shaft */}
+        {productType !== 'pallet' && (
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
             <motion.h2
@@ -1179,8 +1223,9 @@ export const ProductDetailPage = ({
             </div>
           </div>
         </section>
+        )}
 
-        {/* Technical Specifications - CS Series Table */}
+        {/* Technical Specifications Table */}
         <section className="py-20 bg-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
             <motion.h2
@@ -1189,7 +1234,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-5xl font-bold"
             >
-              {t('dual_shaft_tech_specs_title')}
+              {t(productType === 'pallet' ? 'pallet_tech_specs_title' : 'dual_shaft_tech_specs_title')}
             </motion.h2>
 
             {currentSpecs && (
@@ -1267,7 +1312,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-5xl font-bold"
             >
-              {t('dual_shaft_faq_title')}
+              {t(productType === 'pallet' ? 'pallet_faq_title' : 'dual_shaft_faq_title')}
             </motion.h2>
 
             <motion.div
@@ -1279,46 +1324,46 @@ export const ProductDetailPage = ({
               <Accordion type="single" collapsible className="space-y-4">
                 <AccordionItem value="item-1" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
                   <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('dual_shaft_faq_q1')}
+                    {t(productType === 'pallet' ? 'pallet_faq_1_q' : 'dual_shaft_faq_q1')}
                   </AccordionTrigger>
                   <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('dual_shaft_faq_a1')}
+                    {t(productType === 'pallet' ? 'pallet_faq_1_a' : 'dual_shaft_faq_a1')}
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
                   <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('dual_shaft_faq_q2')}
+                    {t(productType === 'pallet' ? 'pallet_faq_2_q' : 'dual_shaft_faq_q2')}
                   </AccordionTrigger>
                   <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('dual_shaft_faq_a2')}
+                    {t(productType === 'pallet' ? 'pallet_faq_2_a' : 'dual_shaft_faq_a2')}
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
                   <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('dual_shaft_faq_q3')}
+                    {t(productType === 'pallet' ? 'pallet_faq_3_q' : 'dual_shaft_faq_q3')}
                   </AccordionTrigger>
                   <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('dual_shaft_faq_a3')}
+                    {t(productType === 'pallet' ? 'pallet_faq_3_a' : 'dual_shaft_faq_a3')}
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-4" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
                   <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('dual_shaft_faq_q4')}
+                    {t(productType === 'pallet' ? 'pallet_faq_4_q' : 'dual_shaft_faq_q4')}
                   </AccordionTrigger>
                   <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('dual_shaft_faq_a4')}
+                    {t(productType === 'pallet' ? 'pallet_faq_4_a' : 'dual_shaft_faq_a4')}
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-5" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
                   <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
-                    {t('dual_shaft_faq_q5')}
+                    {t(productType === 'pallet' ? 'pallet_faq_5_q' : 'dual_shaft_faq_q5')}
                   </AccordionTrigger>
                   <AccordionContent className="text-[#45474B] leading-relaxed">
-                    {t('dual_shaft_faq_a5')}
+                    {t(productType === 'pallet' ? 'pallet_faq_5_a' : 'dual_shaft_faq_a5')}
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -1335,7 +1380,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-5xl font-bold"
             >
-              {t('dual_shaft_video_title')}
+              {t(productType === 'pallet' ? 'pallet_video_title' : 'dual_shaft_video_title')}
             </motion.h2>
 
             <motion.div
@@ -1958,16 +2003,28 @@ export const ProductDetailPage = ({
                       <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Parçalama Alanı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs['Parçalama Alanı']}</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Motor Gücü</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Boyu</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs['Rotor Boyu']}</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Uzunluğu</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Parçalama Alanı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Bıçak Sayısı</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
+                    </tr>
+                    <tr className="border-b border-[#F5F7F8]">
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Ağırlık</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
                     </tr>
                     <tr>
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Motor Gücü</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs['Motor Gücü']}</td>
+                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Kapasite</td>
+                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
