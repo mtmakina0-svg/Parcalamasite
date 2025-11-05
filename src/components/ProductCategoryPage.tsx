@@ -5,7 +5,7 @@ import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench, Package, HelpCi
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
-// ✅ DÜZELTME: 'in' hatası 'from' olarak değiştirildi
+// ✅ DÜZELTME: 'in' hatası (bir önceki Vercel hatası) 'from' olarak düzeltildi
 import { getModelDescription, hasModelDescription } from '../utils/modelDescriptions'; 
 import {
   Accordion,
@@ -119,6 +119,7 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
   },
 };
 
+// Kategori metin anahtarları (TÜM KATEGORİLER EKLENDİ)
 const productContentKeys: { [key: string]: {
   title: string;
   subtitle: string;
