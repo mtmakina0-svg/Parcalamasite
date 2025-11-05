@@ -61,7 +61,7 @@ async function generateSitemap() {
   console.log('Site haritası (sitemap.xml) oluşturuluyor...');
 
   const sitemapStream = new SitemapStream({ hostname: BASE_URL });
-  const writePath = path.resolve(__dirname, 'build', 'sitemap.xml');
+  const writePath = path.resolve(__dirname, 'public', 'sitemap.xml');
   const writeStream = createWriteStream(writePath);
 
   sitemapStream.pipe(writeStream);
