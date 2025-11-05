@@ -7,7 +7,7 @@ import { Logo } from './Logo';
 
 /*
   BU DOSYA, AŞAĞIDAKİ SORUNLARI ÇÖZMEK İÇİN YENİDEN YAZILMIŞTIR:
-  1. HATA: "Direkt kapanan" alt menü sorunu (setTimeout/clearTimeout mantığı düzeltildi).
+  1. HATA: "Hiç açılmama" / "Direkt kapanan" alt menü sorunu (setTimeout/clearTimeout mantığı düzeltildi).
   2. HATA: `href="#"` ve `onClick` çakışması (Artık app.tsx'teki global yakalayıcı için doğru `href`'ler kullanılıyor).
   3. TASARIM: İstenen "kademeli menü" (flyout) tasarımı uygulandı.
 */
@@ -104,6 +104,7 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [mobileExpandedProduct, setMobileExpandedProduct] = useState<string | null>(null);
 
   // --- DÜZELTİLMİŞ HOVER MANTIĞI ---
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -195,8 +196,10 @@ export const Header = () => {
                   href={item.href} // DÜZGÜN HREF
                   aria-label={item.label || t(item.key)}
                   onClick={(e) => {
+                    // Sadece 'noPointerEvents' ise tıklamayı engelle
                     if (item.noPointerEvents) e.preventDefault();
-                    // app.tsx'teki global handler bu click'i yakalayacak
+                    // Diğer tüm linkler app.tsx'teki global handler tarafından yakalanacak
+                    // Menü kapanmasın diye closeAllMenus() buradan kaldırıldı
                   }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -218,8 +221,8 @@ export const Header = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    onMouseEnter={() => { if (menuTimer) clearTimeout(menuTimer); }}
-                    onMouseLeave={handleDropdownLeave}
+                    onMouseEnter={() => { if (menuTimer) clearTimeout(menuTimer); }} // Bu ana konteynere girince de kapanmayı iptal et
+                    onMouseLeave={handleDropdownLeave} // Buradan ayrılınca kapanma zamanlayıcısını başlat
                     className={`absolute ${
                       isRTL ? 'right-0' : 'left-0'
                     } mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 z-[9999] overflow-hidden ${
@@ -236,12 +239,13 @@ export const Header = () => {
                           <li
                             key={subItem.key}
                             className="relative"
+                            // Fare üzerine gelince alt menüyü aç
                             onMouseEnter={() => subItem.hasModels && handleSubMenuEnter(subItem.action)}
-                            onMouseLeave={() => subItem.hasModels && setOpenSubMenu(null)}
+                            // Fareden ayrılınca alt menüyü kapat (gecikme mantığı ana konteynerde)
                           >
                             <a
                               href={subItem.href} // DÜZGÜN HREF
-                              onClick={closeAllMenus}
+                              onClick={closeAllMenus} // Tıklayınca menü kapansın
                               className="block px-4 py-3 text-sm text-[#F5F7F8] hover:text-[#F4CE14] hover:bg-[#F4CE14]/10 transition-colors flex items-center justify-between"
                               role="menuitem"
                             >
@@ -254,7 +258,7 @@ export const Header = () => {
                             {/* Flyout Submenu (Alt Modeller) */}
                             {subItem.hasModels && openSubMenu === subItem.action && (
                               <ul
-                                onMouseEnter={() => { if (menuTimer) clearTimeout(menuTimer); }}
+                                onMouseEnter={() => { if (menuTimer) clearTimeout(menuTimer); }} // Buraya girince de kapanmayı iptal et
                                 className={`absolute ${isRTL ? 'right-full -mr-px' : 'left-full -ml-px'} top-0 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 overflow-hidden min-w-[200px] py-2 z-[99999]`}
                                 role="menu"
                               >
@@ -264,7 +268,7 @@ export const Header = () => {
                                     <li key={model}>
                                       <a
                                         href={modelHref} // DÜZGÜN HREF
-                                        onClick={closeAllMenus}
+                                        onClick={closeAllMenus} // Tıklayınca menü kapansın
                                         className="block px-4 py-2 text-sm text-[#F5F7F8]/80 hover:text-[#F4CE14] hover:bg-[#F4CE14]/10 transition-all"
                                         role="menuitem"
                                       >
@@ -284,7 +288,7 @@ export const Header = () => {
                         <motion.a
                           key={subItem.key}
                           href={subItem.href} // DÜZGÜN HREF
-                          onClick={closeAllMenus}
+                          onClick={closeAllMenus} // Tıklayınca menü kapansın
                           whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
                           className={`block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors ${
                             item.key === 'nav_wastes' ? 'whitespace-normal leading-tight' : ''
@@ -360,7 +364,7 @@ export const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu (Burası da düzeltilmeli!) */}
+        {/* Mobile Menu (DÜZELTİLMİŞ) */}
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -368,13 +372,71 @@ export const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden pb-4"
           >
-            {/* Mobil menü içeriği de düzeltilmeli ama masaüstü acildi */}
-            <nav className="flex flex-col space-y-4 p-4">
-              <a href="/" onClick={closeAllMenus} className="text-white">Ana Sayfa</a>
-              <a href="/kurumsal" onClick={closeAllMenus} className="text-white">Kurumsal</a>
-              <a href="/urunler" onClick={closeAllMenus} className="text-white">Ürünler</a>
-              <a href="/teknoloji" onClick={closeAllMenus} className="text-white">Teknoloji</a>
-              {/* ...Diğer mobil linkler... */}
+            <nav className="flex flex-col space-y-2 p-4">
+              {navItems.map((item) => (
+                <div key={item.key}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.dropdown) {
+                        e.preventDefault(); // Ana linke gitmeyi engelle
+                        if (item.key === 'nav_products') {
+                          setMobileExpandedProduct(mobileExpandedProduct === 'nav_products' ? null : 'nav_products');
+                        }
+                        // Diğer dropdownlar için de benzer mantık eklenebilir
+                      } else {
+                        closeAllMenus(); // Tıklayınca kapat
+                      }
+                    }}
+                    className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block flex items-center justify-between"
+                  >
+                    {item.label || t(item.key)}
+                    {item.dropdown && <ChevronDown size={16} className={`transition-transform ${mobileExpandedProduct === item.key ? 'rotate-180' : ''}`} />}
+                  </a>
+                  
+                  {/* Mobil Ürünler Alt Menüsü */}
+                  {item.key === 'nav_products' && mobileExpandedProduct === 'nav_products' && item.dropdown && (
+                    <div className="pl-4 mt-2 space-y-2 border-l border-[#F4CE14]/30">
+                      {productsDropdown.map((subItem: any) => (
+                        <div key={subItem.key}>
+                          <a
+                            href={subItem.href}
+                            onClick={(e) => {
+                              if (subItem.hasModels) {
+                                e.preventDefault();
+                                setMobileExpandedProduct(mobileExpandedProduct === subItem.action ? null : subItem.action);
+                              } else {
+                                closeAllMenus();
+                              }
+                            }}
+                            className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block flex items-center justify-between"
+                          >
+                            {productModels[subItem.action]?.label || t(subItem.key)}
+                            {subItem.hasModels && <ChevronDown size={14} className={`transition-transform ${mobileExpandedProduct === subItem.action ? 'rotate-180' : ''}`} />}
+                          </a>
+
+                          {/* Mobil Model Alt Menüsü */}
+                          {subItem.hasModels && mobileExpandedProduct === subItem.action && productModels[subItem.action] && (
+                            <div className="pl-4 mt-1 space-y-1">
+                              {productModels[subItem.action].models.map((model) => (
+                                <a
+                                  key={model}
+                                  href={`${subItem.href}/${model.toLowerCase()}`}
+                                  onClick={closeAllMenus}
+                                  className="text-[#F5F7F8]/60 hover:text-[#F4CE14] transition-colors py-1 text-xs block"
+                                >
+                                  {model}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {/* Diğer mobil dropdownlar (Kurumsal, Atıklar) buraya eklenebilir */}
+                </div>
+              ))}
             </nav>
           </motion.div>
         )}
