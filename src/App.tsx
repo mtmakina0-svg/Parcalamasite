@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HelmetProvider } from 'react-helmet-async'; // ✅ EKLENDİ (SEO için şart)
+import { HelmetProvider } from 'react-helmet-async'; // ✅ BU ÇOK ÖNEMLİ, KALIYOR
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -172,116 +172,6 @@ function parseUrl(): {
   return { page: 'main' };
 }
 
-// --- ✅ YENİ KAYAN BIÇAK ANİMASYONU BİLEŞENİ ---
-const ShredderBladeAnimation = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  // Scroll dinleyicisi
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Animasyonun başlayacağı ve biteceği scroll değerleri
-  const startScroll = 600; // Ana 'Hero' bölümünün bittiği yer (yaklaşık)
-  const endScroll = document.documentElement.scrollHeight - window.innerHeight - 300; // Footer'dan 300px önce bitir
-
-  // Scroll'a göre hesaplamalar
-  let progress = 0;
-  if (scrollY > startScroll && scrollY < endScroll) {
-    progress = (scrollY - startScroll) / (endScroll - startScroll);
-  } else if (scrollY >= endScroll) {
-    progress = 1;
-  }
-
-  // Opacity (Görünürlük): Başta ve sonda kaybolsun
-  let opacity = 0;
-  if (progress > 0.01 && progress < 0.95) {
-    // 0.01 ile 0.95 arasında görünür
-    opacity = 1;
-  } else if (progress <= 0.01 && scrollY > startScroll) {
-    // Başlangıçta fade-in
-    opacity = progress / 0.01;
-  } else if (progress >= 0.95) {
-    // Sonda fade-out
-    opacity = (1 - progress) / 0.05;
-  }
-  if (scrollY <= startScroll) opacity = 0; // En başta görünmez
-
-  // Yatay Hareket (translateX): Ekran genişliğine göre ilerlesin
-  const translateX = progress * 90; // %0'dan %90'a kadar ilerler (vw = viewport width)
-  // Dönüş (rotate): Scroll ile birlikte dönsün
-  const rotate = scrollY * 0.5; // Scroll'a bağlı hız
-
-  // Kıvılcım için CSS
-  const sparkStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    width: '3px',
-    height: '3px',
-    background: '#F4CE14',
-    borderRadius: '50%',
-    boxShadow: '0 0 4px #F4CE14, 0 0 8px #F4CE14, 0 0 12px #FFD700',
-    // ✅ DÜZELTİLDİ: Template literal'in tamamı burada
-    animation: `sparkle ${0.3 + Math.random() * 0.3}s ease-out infinite alternate`,
-  };
-
-  return (
-    <>
-      {/* Keyframes'i bir kez <style> olarak ekleyelim */}
-      <style>
-        {`
-          @keyframes sparkle {
-            0% { 
-              transform: scale(1) translate(0, 0); 
-              opacity: 1; 
-            }
-            100% { 
-              transform: scale(0) translate(${Math.random() * 40 - 20}px, ${
-          Math.random() * 40 - 20
-        }px); 
-              opacity: 0; 
-            }
-          }
-        `}
-      </style>
-      <div
-        className="fixed top-24 left-0 z-40 transition-opacity duration-300" // Header'ın hemen altında
-        style={{
-          opacity: opacity,
-          transform: `translateX(${translateX}vw)`,
-          display: opacity > 0 ? 'block' : 'none',
-          pointerEvents: 'none', // Tıklanamaz olsun
-        }}
-      >
-        <div style={{ transform: `rotate(${rotate}deg)` }} className="relative w-12 h-12"> {/* Boyut küçültüldü */}
-          {/* SVG Shredder Blade (Parçalayıcı Bıçağı) */}
-          <svg
-            viewBox="0 0 100 100"
-            fill="#45474B" // Gri alanla aynı renk
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.3))' }} // Gölgeli
-          >
-            <path d="M50 0 L65 35 L100 50 L65 65 L50 100 L35 65 L0 50 L35 35 Z" />
-            <circle cx="50" cy="50" r="20" fill="#F5F7F8" />
-            <circle cx="50" cy="50" r="10" fill="#F4CE14" />
-          </svg>
-
-          {/* Kıvılcımlar (Daha fazla) */}
-          <div style={{ ...sparkStyle, transform: 'translate(10px, -5px) scale(0.8)' }} />
-          <div style={{ ...sparkStyle, transform: 'translate(8px, 8px) scale(1.0)' }} />
-          <div style={{ ...sparkStyle, transform: 'translate(-5px, 10px) scale(0.7)' }} />
-        </div>
-      </div>
-    </>
-  );
-};
-// --- YENİ ANİMASYON BİLEŞENİ BİTİŞİ ---
-
 function AppContent() {
   const { isRTL } = useLanguage();
   const [showIntro, setShowIntro] = useState(true);
@@ -445,18 +335,6 @@ function AppContent() {
             ? seoMetadata.products()
             : seoMetadata.products;
         break;
-
-      // Bu case 'product-category' ile zaten cover edilmişti, tekrarı silebiliriz ama kalsın.
-      // case 'product-category':
-      //   if (product) {
-      //     metadata = getProductCategorySEO(product);
-      //     structuredData = generateBreadcrumbStructuredData([
-      //       { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/home' },
-      //       { name: 'Ürünler', url: 'https://www.parcalamamakinesi.com/urunler' },
-      //       { name: metadata.title.split('|')[0].trim(), url: metadata.canonical }
-      //     ]);
-      //   }
-      //   break;
 
       case 'product-detail':
         if (product && model) {
@@ -643,9 +521,7 @@ function AppContent() {
     }
   };
 
-  // --- ✅ YENİ TEKİL SAYFA DÜZENİ (BÜTÜNLÜK KURALI) ---
-  // Header ve Footer'ı her sayfa için tekrar etmek yerine
-  // bir üst seviyeye taşıdık.
+  // --- Sayfa Düzeni (Layout) ---
   const renderPage = () => {
     switch (currentPage) {
       case 'main':
@@ -738,13 +614,12 @@ function AppContent() {
     }
   };
 
-  // Main homepage
+  // Ana sayfa
   return (
     <>
       {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
       
-      {/* ✅ YENİ ANİMASYONU SADECE ANA SAYFADA GÖSTER */}
-      {currentPage === 'main' && !showIntro && <ShredderBladeAnimation />}
+      {/* ❌ KALDIRILDI: Kayan bıçak animasyonu kaldırıldı */}
 
       {!showIntro && (
         <div className="min-h-screen bg-white">
@@ -762,7 +637,6 @@ function AppContent() {
             onProductDetailClick={handleNavigateToProductDetail}
             onContactClick={handleNavigateToContact}
           />
-          {/* ✅ DÜZELTME: renderPage() zaten <main> tag'i içermiyor, o yüzden <main> tag'i burada olmalı. */}
           <main>
              {renderPage()}
           </main>
@@ -776,7 +650,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    // ✅ YENİ: HelmetProvider tüm uygulamayı sarmalıyor
+    // ✅ HelmetProvider tüm uygulamayı sarmalıyor
     <HelmetProvider>
       <LanguageProvider>
         <AppContent />
