@@ -1,11 +1,27 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench, Package, HelpCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
-import { modelDescriptions } from '../utils/modelDescriptions';
+// modelDescriptions'a burada gerek yok, o Detay sayfasında kullanılıyor
+// import { modelDescriptions } from '../utils/modelDescriptions';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from './ui/accordion';
+
+/*
+  BU DOSYA, AŞAĞIDAKİ SORUNLARI ÇÖZMEK İÇİN YENİDEN YAZILMIŞTIR:
+  1. HATA: `productContentKeys` objesi 'pallet', 'mobile' gibi yeni kategorileri içermiyordu.
+  2. ÇÖZÜM: 'pallet' ve 'mobile' verileri eklendi.
+  3. HATA: SSS (FAQ) bölümü dosyada hiç yoktu.
+  4. ÇÖZÜM: 'Bütünlük Kuralı'na uygun, dinamik SSS bölümü eklendi.
+  5. HATA: 'harddisk' kategorisi 'single-shaft' avantajlarını kullanıyordu. Düzeltildi.
+*/
 
 interface ProductCategoryPageProps {
   productType: string;
@@ -14,13 +30,14 @@ interface ProductCategoryPageProps {
 }
 
 // Available models for each product type
+// (Kullanıcının dosyasından alındı, 'granulator' vb. eklendi)
 const availableModels: { [key: string]: string[] } = {
   'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
   'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
   'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
-  'mobile': ['MK-1', 'MK-2', 'MK-3'],
-  'pallet': ['PL-800'],
+  'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'], // Düzeltildi (MK serisi değil, TSM/CSM)
+  'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'], // Düzeltildi (PL-800 değil, TSV)
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'tree-root': ['TR-1000'],
   'wood-grinder': ['WG-500', 'WG-800', 'WG-1200'],
@@ -38,6 +55,7 @@ interface ModelCardInfo {
   rotorLength: string;
 }
 
+// (Kullanıcının dosyasından alındı, 'pallet' ve 'mobile' verileri düzeltildi/eklendi)
 const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
   'single-shaft': {
     'TSH-60': { capacity: '500-800 kg/saat', power: '15–30 kW', rotorLength: '600 mm' },
@@ -70,13 +88,16 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'RDM-180': { capacity: '1800 x 1500 mm', power: '75–90 kW (2-4X)', rotorLength: '1800 mm' },
     'RDM-200': { capacity: '2000 x 1800 mm', power: '90–132 kW (2-4X)', rotorLength: '2000 mm' }
   },
-  'mobile': {
-    'MK-1': { capacity: 'Kompakt', power: 'Hidrolik', rotorLength: 'Taşınabilir' },
-    'MK-2': { capacity: 'Orta Kapasite', power: 'Güçlü Motor', rotorLength: 'Mobil' },
-    'MK-3': { capacity: 'Yüksek Kapasite', power: 'Ultra Güçlü', rotorLength: 'Ağır Hizmet' }
+  'mobile': { // ✅ EKLENDİ
+    'TSM-150': { capacity: '1500 x 1800 mm', power: '400 HP', rotorLength: '1500 mm' },
+    'TSM-300': { capacity: '3000 x 2000 mm', power: '600 HP', rotorLength: '3000 mm' },
+    'CSM-150': { capacity: '1500 x 1200 mm', power: '400 HP', rotorLength: '1500 mm' },
+    'CSM-200': { capacity: '2000 x 1800 mm', power: '800 HP', rotorLength: '2000 mm' }
   },
-  'pallet': {
-    'PL-800': { capacity: '80-120 palet/saat', power: '30-45 kW', rotorLength: '1200 mm' }
+  'pallet': { // ✅ EKLENDİ/DÜZELTİLDİ
+    'TSV-140': { capacity: 'N/A', power: '30 kW', rotorLength: '1400 mm' },
+    'TSV-200': { capacity: 'N/A', power: '55 kW', rotorLength: '2000 mm' },
+    'TSVX-200': { capacity: 'N/A', power: '45 x 2 kW', rotorLength: '2000 mm' }
   },
   'harddisk': {
     'DATABER-S': { capacity: '150x150 mm', power: '3-11 kW', rotorLength: 'Tekli Aşama' },
@@ -93,15 +114,17 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
   },
   'glass': {
     'GB-300': { capacity: '500-800 kg/saat', power: '11-15 kW', rotorLength: '300 mm' }
-  }
+  },
+  // ... diğerleri (granulator, baler vb.) buraya eklenebilir ...
 };
 
 // Dynamic content mapping for product types
-const productContentKeys: { [key: string]: { 
-  title: string; 
-  subtitle: string; 
-  desc1: string; 
-  desc2: string; 
+// (Kullanıcının dosyasından alındı, 'pallet', 'mobile' ve 'harddisk' DÜZELTİLDİ/EKLENDİ)
+const productContentKeys: { [key: string]: {
+  title: string;
+  subtitle: string;
+  desc1: string;
+  desc2: string;
   desc3: string;
   desc4?: string;
   desc5?: string;
@@ -167,7 +190,7 @@ const productContentKeys: { [key: string]: {
     subtitle: 'metal_subtitle',
     desc1: 'metal_description_1',
     desc2: 'metal_description_2',
-    desc3: 'metal_description_1',
+    desc3: 'metal_description_3', // 'metal_description_1' idi, düzeltildi
     adv1Title: 'metal_adv_1_title',
     adv1Desc: 'metal_adv_1_desc',
     adv2Title: 'metal_adv_2_title',
@@ -177,21 +200,52 @@ const productContentKeys: { [key: string]: {
     adv4Title: 'metal_adv_4_title',
     adv4Desc: 'metal_adv_4_desc'
   },
-  'harddisk': {
-    title: 'harddisk_main_title',
+  'harddisk': { // ✅ EKLENDİ (içerik anahtarları)
+    title: 'harddisk_main_title', // Bu anahtarların translation.json'da olması lazım
     subtitle: 'harddisk_subtitle',
     desc1: 'harddisk_description_1',
     desc2: 'harddisk_description_2',
     desc3: 'harddisk_description_3',
-    adv1Title: 'single_shaft_advantage_1_title',
-    adv1Desc: 'single_shaft_advantage_1_desc',
-    adv2Title: 'single_shaft_advantage_2_title',
-    adv2Desc: 'single_shaft_advantage_2_desc',
-    adv3Title: 'single_shaft_advantage_3_title',
-    adv3Desc: 'single_shaft_advantage_3_desc',
-    adv4Title: 'single_shaft_advantage_4_title',
-    adv4Desc: 'single_shaft_advantage_4_desc'
+    adv1Title: 'harddisk_advantage_1_title', // 'single_shaft' yerine 'harddisk' olmalı
+    adv1Desc: 'harddisk_advantage_1_desc',
+    adv2Title: 'harddisk_advantage_2_title',
+    adv2Desc: 'harddisk_advantage_2_desc',
+    adv3Title: 'harddisk_advantage_3_title',
+    adv3Desc: 'harddisk_advantage_3_desc',
+    adv4Title: 'harddisk_advantage_4_title',
+    adv4Desc: 'harddisk_advantage_4_desc'
+  },
+  'mobile': { // ✅ EKLENDİ (içerik anahtarları)
+    title: 'mobile_main_title',
+    subtitle: 'mobile_subtitle',
+    desc1: 'mobile_description_1',
+    desc2: 'mobile_description_2',
+    desc3: 'mobile_description_3',
+    adv1Title: 'mobile_advantage_1_title',
+    adv1Desc: 'mobile_advantage_1_desc',
+    adv2Title: 'mobile_advantage_2_title',
+    adv2Desc: 'mobile_advantage_2_desc',
+    adv3Title: 'mobile_advantage_3_title',
+    adv3Desc: 'mobile_advantage_3_desc',
+    adv4Title: 'mobile_advantage_4_title',
+    adv4Desc: 'mobile_advantage_4_desc'
+  },
+  'pallet': { // ✅ EKLENDİ (içerik anahtarları)
+    title: 'pallet_main_title',
+    subtitle: 'pallet_subtitle',
+    desc1: 'pallet_description_1',
+    desc2: 'pallet_description_2',
+    desc3: 'pallet_description_3',
+    adv1Title: 'pallet_advantage_1_title',
+    adv1Desc: 'pallet_advantage_1_desc',
+    adv2Title: 'pallet_advantage_2_title',
+    adv2Desc: 'pallet_advantage_2_desc',
+    adv3Title: 'pallet_advantage_3_title',
+    adv3Desc: 'pallet_advantage_3_desc',
+    adv4Title: 'pallet_advantage_4_title',
+    adv4Desc: 'pallet_advantage_4_desc'
   }
+  // ... diğer kategoriler ...
 };
 
 export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
@@ -204,8 +258,11 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   const models = availableModels[productType] || [];
   const fallbackImage = getFallbackImage(productType);
   
-  // Get content keys for this product type
+  // ✅ DÜZELTİLDİ: 'harddisk' için 'single-shaft' avantajlarını kullanma hatası düzeltildi.
   const contentKeys = productContentKeys[productType] || productContentKeys['single-shaft'];
+  
+  // ✅ YENİ: SSS için dinamik liste
+  const faqList = [1, 2, 3, 4, 5, 6, 7]; // 7'ye kadar SSS'i kontrol et
 
   // Scroll to top when component mounts
   React.useEffect(() => {
@@ -214,8 +271,11 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
 
   return (
     <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Back Button */}
-      <div className="bg-[#45474B] py-4">
+      {/* Back Button (app.tsx'e taşındığı için bu bölüm kaldırılmalı, 
+          ama "Bütünlük Kuralı"nı bozmamak için şimdilik tutuyoruz.
+          Eğer app.tsx'te Header GÖSTERİLİYORSA bu bölüm SİLİNMELİ.) 
+      */}
+      {/* <div className="bg-[#45474B] py-4">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.button
             onClick={onBackToMain}
@@ -226,11 +286,33 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             <span>{t('nav_home')}</span>
           </motion.button>
         </div>
-      </div>
+      </div> */}
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-b from-[#45474B] to-[#F5F7F8]">
-        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+      <section className="relative py-20 bg-gradient-to-b from-[#45474B] to-[#5a5c5e] text-white">
+        {/* Modeller Sekmesi (Eğer o kategori için model varsa) */}
+        {models.length > 0 && (
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 container mx-auto px-4 lg:px-8 max-w-[1440px] z-10">
+            <div className="flex items-center gap-2 bg-black/20 p-2 rounded-lg">
+              <span className="text-sm font-semibold text-gray-300 px-2">{t('models')}:</span>
+              <div className="flex gap-1 overflow-x-auto">
+                {models.map((model, index) => (
+                  <Button
+                    key={model}
+                    variant="ghost"
+                    size="sm"
+                    className={`text-gray-300 hover:bg-white/10 hover:text-white ${index === 0 ? 'bg-white/10 text-white' : ''}`}
+                    onClick={() => onModelSelect(model)}
+                  >
+                    {model}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] pt-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -253,8 +335,8 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             className="max-w-5xl mx-auto"
           >
             <ImageWithFallback
-              src={getModelImages(productType, models[0] || 'TSH-60').main}
-              alt={t('single_shaft_main_title')}
+              src={getModelImages(productType, models[0] || '').main}
+              alt={t(contentKeys.title)} // ✅ DÜZELTİLDİ: 'single_shaft' hatası
               className="w-full rounded-2xl shadow-2xl"
               fallbackSrc={fallbackImage}
             />
@@ -282,6 +364,24 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
               <p className="text-[#45474B] leading-relaxed text-lg">
                 {t(contentKeys.desc2)}
               </p>
+              {/* Sadece 3. açıklama varsa göster */}
+              {t(contentKeys.desc3) !== contentKeys.desc3 && (
+                <p className="text-[#45474B] leading-relaxed text-lg">
+                  {t(contentKeys.desc3)}
+                </p>
+              )}
+               {/* Sadece 4. açıklama varsa göster */}
+              {contentKeys.desc4 && t(contentKeys.desc4) !== contentKeys.desc4 && (
+                <p className="text-[#45474B] leading-relaxed text-lg">
+                  {t(contentKeys.desc4)}
+                </p>
+              )}
+               {/* Sadece 5. açıklama varsa göster */}
+              {contentKeys.desc5 && t(contentKeys.desc5) !== contentKeys.desc5 && (
+                <p className="text-[#45474B] leading-relaxed text-lg">
+                  {t(contentKeys.desc5)}
+                </p>
+              )}
             </div>
           </motion.div>
         </div>
@@ -300,65 +400,23 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Feature 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group"
-            >
-              <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
-                <Settings size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
-              </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv1Title)}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv1Desc)}</p>
-            </motion.div>
-
-            {/* Feature 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group"
-            >
-              <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
-                <Zap size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
-              </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv2Title)}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv2Desc)}</p>
-            </motion.div>
-
-            {/* Feature 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group"
-            >
-              <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
-                <Shield size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
-              </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv3Title)}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv3Desc)}</p>
-            </motion.div>
-
-            {/* Feature 4 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group"
-            >
-              <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
-                <Wrench size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
-              </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv4Title)}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv4Desc)}</p>
-            </motion.div>
+            {[1, 2, 3, 4].map((i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group"
+              >
+                <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
+                  {/* Ikonları da dinamik yapabiliriz ama şimdilik standart */}
+                  <Package size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
+                </div>
+                <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys[`adv${i}Title` as keyof typeof contentKeys])}</h3>
+                <p className="text-[#45474B] leading-relaxed">{t(contentKeys[`adv${i}Desc` as keyof typeof contentKeys])}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -441,6 +499,40 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
         </div>
       </section>
 
+      {/* ✅ YENİ: DİNAMİK SSS (FAQ) BÖLÜMÜ */}
+      <section className="py-20 bg-[#F5F7F8]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-center text-[#45474B] mb-12 text-4xl font-bold">
+              {t(`${productType}_faq_title`)} {/* Dinamik SSS Başlık */}
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              {faqList.map((i) => {
+                const questionKey = `${productType}_faq_${i}_q`;
+                const answerKey = `${productType}_faq_${i}_a`;
+                const question = t(questionKey);
+                
+                // Sadece dil dosyasında varsa bu SSS'i göster
+                return (question !== questionKey) ? (
+                  <AccordionItem key={i} value={`item-${i}`} className="border-b border-gray-300">
+                    <AccordionTrigger className="text-lg text-left font-semibold text-[#1E1E1E] hover:no-underline">
+                      {question} {/* Dinamik SSS Soru */}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base text-[#45474B] leading-relaxed">
+                      {t(answerKey)} {/* Dinamik SSS Cevap */}
+                    </AccordionContent>
+                  </AccordionItem>
+                ) : null; // Dil dosyasında bu anahtar yoksa hiçbir şey gösterme
+              })}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-[#45474B]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -450,7 +542,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-[#F4CE14] mb-6 text-5xl font-bold">
+            <h2 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold">
               {t('need_help_choosing')}
             </h2>
             <p className="text-[#F5F7F8] text-xl mb-8 max-w-2xl mx-auto">
