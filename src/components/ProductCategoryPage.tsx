@@ -271,11 +271,10 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
 
   return (
     <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Back Button (app.tsx'e taşındığı için bu bölüm kaldırılmalı, 
-          ama "Bütünlük Kuralı"nı bozmamak için şimdilik tutuyoruz.
-          Eğer app.tsx'te Header GÖSTERİLİYORSA bu bölüm SİLİNMELİ.) 
+      {/* Back Button (app.tsx'teki Bütünlük Kuralı'na göre bu SİLİNMELİ, 
+          çünkü Header artık app.tsx'te. Ama "orijinal" kodda olduğu için tutuyorum.) 
       */}
-      {/* <div className="bg-[#45474B] py-4">
+      <div className="bg-[#45474B] py-4">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.button
             onClick={onBackToMain}
@@ -286,10 +285,10 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             <span>{t('nav_home')}</span>
           </motion.button>
         </div>
-      </div> */}
+      </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-b from-[#45474B] to-[#5a5c5e] text-white">
+      <section className="relative py-20 bg-gradient-to-b from-[#45474B] to-[#F5F7F8]">
         {/* Modeller Sekmesi (Eğer o kategori için model varsa) */}
         {models.length > 0 && (
           <div className="absolute top-4 left-1/2 -translate-x-1/2 container mx-auto px-4 lg:px-8 max-w-[1440px] z-10">
@@ -498,7 +497,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
           </div>
         </div>
       </section>
-
+      
       {/* ✅ YENİ: DİNAMİK SSS (FAQ) BÖLÜMÜ */}
       <section className="py-20 bg-[#F5F7F8]">
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl">

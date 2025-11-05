@@ -77,11 +77,11 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     },
     'mobile': {
       label: 'Mobil Kırıcı',
-      models: ['MK-1', 'MK-2', 'MK-3']
+      models: ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200']
     },
     'pallet': {
       label: 'Palet Parçalama Makinesi',
-      models: ['PL-800']
+      models: ['TSV-140', 'TSV-200', 'TSVX-200']
     },
     'harddisk': {
       label: 'Harddisk İmha Makinesi',
