@@ -36,40 +36,34 @@ const products: Product[] = [
     alt: 'Metal Parçalama Makinesi - MT Makina MP Serisi'
   },
   { 
+    id: 'mobile', 
+    title: 'Mobil Kırıcı',
+    image: 'https://i.ibb.co/Ndfqm2fm/organic-waste-shredder-2.png',
+    alt: 'Mobil Kırıcı - Taşınabilir Parçalama Çözümü'
+  },
+  { 
     id: 'pallet', 
     title: 'Palet Parçalama Makinesi',
     image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
     alt: 'Palet Parçalama Makinesi - Ahşap Geri Dönüşüm'
   },
   { 
-    id: 'wood', 
-    title: 'Ağaç Parçalama Makinesi',
-    image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-    alt: 'Ağaç Parçalama Makinesi - Ahşap Atık İşleme'
+    id: 'harddisk', 
+    title: 'Harddisk İmha Makinesi',
+    image: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
+    alt: 'Harddisk İmha Makinesi - Güvenli Veri İmhası'
+  },
+  { 
+    id: 'wood-grinder', 
+    title: 'Ağaç Parçalama Öğütme Makinesi',
+    image: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
+    alt: 'Ağaç Parçalama Öğütme Makinesi - Ahşap İşleme'
   },
   { 
     id: 'glass', 
     title: 'Cam Şişe Kırma Makinesi',
     image: 'https://i.ibb.co/4wtQRwBB/1-1.png',
     alt: 'Cam Şişe Kırma Makinesi - Cam Geri Dönüşüm'
-  },
-  { 
-    id: 'plastic', 
-    title: 'Plastik Parçalama Makinesi',
-    image: 'https://i.ibb.co/5hxMZJ2g/plastic-crusher-machine-4.png',
-    alt: 'Plastik Parçalama Makinesi - Plastik Geri Dönüşüm'
-  },
-  { 
-    id: 'organic', 
-    title: 'Organik Atık Parçalama Makinesi',
-    image: 'https://i.ibb.co/Ndfqm2fm/organic-waste-shredder-2.png',
-    alt: 'Organik Atık Parçalama Makinesi - Kompost İşleme'
-  },
-  { 
-    id: 'tire', 
-    title: 'Lastik Parçalama Makinesi',
-    image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
-    alt: 'Lastik Parçalama Makinesi - Lastik Geri Dönüşüm'
   },
 ];
 

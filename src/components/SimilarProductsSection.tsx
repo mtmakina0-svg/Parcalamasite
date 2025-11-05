@@ -25,18 +25,18 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
-      fallbackImage: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png'
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
       productType: 'quad-shaft',
       translationKey: 'product_quad_shaft',
-      defaultModel: 'QS-80',
-      fallbackImage: 'https://i.ibb.co/SDjBQ9cq/1-9.png'
+      defaultModel: 'DS-80',
+      fallbackImage: 'https://i.ibb.co/Gf8mjXGm/1-1.png'
     },
     {
       productType: 'metal',
       translationKey: 'product_metal',
-      defaultModel: 'MP-100',
+      defaultModel: 'RDM-100',
       fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
     }
   ],
@@ -50,13 +50,13 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
     {
       productType: 'quad-shaft',
       translationKey: 'product_quad_shaft',
-      defaultModel: 'QS-80',
-      fallbackImage: 'https://i.ibb.co/SDjBQ9cq/1-9.png'
+      defaultModel: 'DS-80',
+      fallbackImage: 'https://i.ibb.co/Gf8mjXGm/1-1.png'
     },
     {
       productType: 'metal',
       translationKey: 'product_metal',
-      defaultModel: 'MP-100',
+      defaultModel: 'RDM-100',
       fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
     }
   ],
@@ -71,12 +71,12 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
-      fallbackImage: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png'
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
       productType: 'metal',
       translationKey: 'product_metal',
-      defaultModel: 'MP-100',
+      defaultModel: 'RDM-100',
       fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
     }
   ],
@@ -91,13 +91,13 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
-      fallbackImage: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png'
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
       productType: 'quad-shaft',
       translationKey: 'product_quad_shaft',
-      defaultModel: 'QS-80',
-      fallbackImage: 'https://i.ibb.co/SDjBQ9cq/1-9.png'
+      defaultModel: 'DS-80',
+      fallbackImage: 'https://i.ibb.co/Gf8mjXGm/1-1.png'
     }
   ],
   'granulator': [
@@ -111,12 +111,12 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
-      fallbackImage: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png'
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
       productType: 'metal',
       translationKey: 'product_metal',
-      defaultModel: 'MP-100',
+      defaultModel: 'RDM-100',
       fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
     }
   ],
@@ -131,7 +131,7 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
-      fallbackImage: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png'
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
       productType: 'granulator',
@@ -165,7 +165,7 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       productType: 'conveyor',
       translationKey: 'product_conveyor',
       defaultModel: 'CV-3M',
-      fallbackImage: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png'
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
       productType: 'single-shaft',

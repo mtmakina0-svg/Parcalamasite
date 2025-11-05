@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 const products = [
   {
-    id: 'single_shaft',
+    id: 'single-shaft',
     titleTR: 'Tek Şaftlı Parçalama Makinesi',
     titleEN: 'Single Shaft Shredder',
     titleRU: 'Одновальный измельчитель',
@@ -14,7 +14,7 @@ const products = [
     image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
   },
   {
-    id: 'double_shaft',
+    id: 'dual-shaft',
     titleTR: 'Çift Şaftlı Parçalama Makinesi',
     titleEN: 'Double Shaft Shredder',
     titleRU: 'Двухвальный измельчитель',
@@ -22,7 +22,7 @@ const products = [
     image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
   },
   {
-    id: 'quad_shaft',
+    id: 'quad-shaft',
     titleTR: 'Dört Şaftlı Parçalama Makinesi',
     titleEN: 'Quad Shaft Shredder',
     titleRU: 'Четырехвальный измельчитель',
@@ -38,36 +38,44 @@ const products = [
     image: 'https://i.ibb.co/m5xLp46J/1-1.png',
   },
   {
-    id: 'granulator',
-    titleTR: 'Granülatör Makinesi',
-    titleEN: 'Granulator Machine',
-    titleRU: 'Гранулятор',
-    titleAR: 'آلة التحبيب',
-    image: 'https://i.ibb.co/5hxMZJ2g/plastic-crusher-machine-4.png',
+    id: 'mobile',
+    titleTR: 'Mobil Kırıcı',
+    titleEN: 'Mobile Crusher',
+    titleRU: 'Мобильная дробилка',
+    titleAR: 'كسارة متنقلة',
+    image: 'https://i.ibb.co/Ndfqm2fm/organic-waste-shredder-2.png',
   },
   {
-    id: 'baler',
-    titleTR: 'Balyalama Makinesi',
-    titleEN: 'Baler Machine',
-    titleRU: 'Пресс для тюкования',
-    titleAR: 'آلة التبيل',
+    id: 'pallet',
+    titleTR: 'Palet Parçalama Makinesi',
+    titleEN: 'Pallet Shredder',
+    titleRU: 'Измельчитель поддонов',
+    titleAR: 'آلة تقطيع المنصات',
     image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
   },
   {
-    id: 'conveyor',
-    titleTR: 'Konveyör Sistemi',
-    titleEN: 'Conveyor System',
-    titleRU: 'Конвейерная система',
-    titleAR: 'نظام النقل',
-    image: 'https://i.ibb.co/4wtQRwBB/1-1.png',
+    id: 'harddisk',
+    titleTR: 'Harddisk İmha Makinesi',
+    titleEN: 'Hard Disk Destroyer',
+    titleRU: 'Уничтожитель жестких дисков',
+    titleAR: 'آلة تدمير الأقراص الصلبة',
+    image: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
   },
   {
-    id: 'separator',
-    titleTR: 'Ayırıcı Makine',
-    titleEN: 'Separator Machine',
-    titleRU: 'Сепаратор',
-    titleAR: 'آلة الفصل',
-    image: 'https://i.ibb.co/mCWyPnS6/tibbi-atik-sterilizasyon-tesisi-7.png',
+    id: 'wood-grinder',
+    titleTR: 'Ağaç Parçalama Öğütme Makinesi',
+    titleEN: 'Wood Grinding Machine',
+    titleRU: 'Измельчитель древесины',
+    titleAR: 'آلة طحن الخشب',
+    image: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
+  },
+  {
+    id: 'glass',
+    titleTR: 'Cam Şişe Kırma Makinesi',
+    titleEN: 'Glass Bottle Crusher',
+    titleRU: 'Дробилка стеклянных бутылок',
+    titleAR: 'آلة تكسير الزجاج',
+    image: 'https://i.ibb.co/4wtQRwBB/1-1.png',
   },
 ];
 
@@ -138,7 +146,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
               className="group cursor-pointer"
-              onClick={() => onProductClick?.(product.id.replace(/_/g, '-'))}
+              onClick={() => onProductClick?.(product.id)}
             >
               <Card className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 h-full min-h-[350px] bg-[#F5F7F8] relative">
                 {/* Background Image - Full Coverage */}

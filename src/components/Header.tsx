@@ -29,6 +29,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
   const [productHoverTimeout, setProductHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [mobileExpandedProduct, setMobileExpandedProduct] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,14 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeout) clearTimeout(dropdownTimeout);
+      if (productHoverTimeout) clearTimeout(productHoverTimeout);
+    };
+  }, [dropdownTimeout, productHoverTimeout]);
 
   const languages = [
     { code: 'tr' as Language, label: 'Türkçe' },
@@ -50,7 +59,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { key: 'nav_certificates', action: 'certificates' }
   ];
 
-  // Product models for mega menu
+  // Product models for mega menu - TÜM ÜRÜNLER
   const productModels: { [key: string]: { label: string, models: string[] } } = {
     'single-shaft': {
       label: 'Tek Şaftlı Parçalama Makinesi',
@@ -62,20 +71,57 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     },
     'quad-shaft': {
       label: 'Dört Şaftlı Parçalama Makinesi',
-      models: ['QS-80', 'QS-100', 'QS-120', 'QS-150']
+      models: ['DS-80', 'DS-100', 'DS-150', 'DS-200']
+    },
+    'metal': {
+      label: 'Metal Parçalama Makinesi (Redmonster)',
+      models: ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200']
+    },
+    'mobile': {
+      label: 'Mobil Kırıcı',
+      models: ['MK-1', 'MK-2', 'MK-3']
+    },
+    'pallet': {
+      label: 'Palet Parçalama Makinesi',
+      models: ['PL-800']
+    },
+    'harddisk': {
+      label: 'Harddisk İmha Makinesi',
+      models: ['DATABER-S', 'DATABER-D', 'DATABER-T']
+    },
+    'tree-root': {
+      label: 'Ağaç Kökü Parçalama Makinesi',
+      models: ['TR-1000']
+    },
+    'wood-grinder': {
+      label: 'Ağaç Parçalama Öğütme Makinesi',
+      models: ['WG-500', 'WG-800', 'WG-1200']
+    },
+    'glass': {
+      label: 'Cam Şişe Kırma Makinesi',
+      models: ['GB-300']
     }
   };
   
-  const productsDropdown = [
+  // Primary products (main shredders) - displayed in columns
+  const primaryProducts = [
     { key: 'product_single_shaft', action: 'single-shaft', hasModels: true },
     { key: 'product_dual_shaft', action: 'dual-shaft', hasModels: true },
-    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true },
-    { key: 'product_metal', action: 'metal', hasModels: false },
-    { key: 'product_granulator', action: 'granulator', hasModels: false },
-    { key: 'product_baler', action: 'baler', hasModels: false },
-    { key: 'product_conveyor', action: 'conveyor', hasModels: false },
-    { key: 'product_separator', action: 'separator', hasModels: false }
+    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true }
   ];
+  
+  // Secondary products - displayed below primary
+  const secondaryProducts = [
+    { key: 'product_metal', action: 'metal', hasModels: true },
+    { key: 'product_mobile', action: 'mobile', hasModels: true },
+    { key: 'product_pallet', action: 'pallet', hasModels: true },
+    { key: 'product_harddisk', action: 'harddisk', hasModels: true },
+    { key: 'product_tree_root', action: 'tree-root', hasModels: true },
+    { key: 'product_wood_grinder', action: 'wood-grinder', hasModels: true },
+    { key: 'product_glass', action: 'glass', hasModels: true }
+  ];
+  
+  const productsDropdown = [...primaryProducts, ...secondaryProducts];
   
   const wastesDropdown = [
     { key: 'waste_household', action: 'evsel-atiklar' },
@@ -125,7 +171,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     // Delay closing to allow smooth cursor movement to dropdown
     const timeout = setTimeout(() => {
       setOpenDropdown(null);
-    }, 200);
+    }, 300);
     setDropdownTimeout(timeout);
   };
 
@@ -137,7 +183,12 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
   };
 
   const handleDropdownLeave = () => {
-    setOpenDropdown(null);
+    // Increased delay for smoother navigation between products
+    const timeout = setTimeout(() => {
+      setOpenDropdown(null);
+      setHoveredProduct(null);
+    }, 400);
+    setDropdownTimeout(timeout);
   };
 
   return (
@@ -177,7 +228,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
             {navItems.map((item, index) => (
               <div
                 key={item.key}
-                className="relative"
+                className="relative overflow-visible"
                 onMouseEnter={() => item.dropdown && handleMouseEnter(item.key)}
                 onMouseLeave={handleMouseLeave}
               >
@@ -232,100 +283,105 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     transition={{ duration: 0.2 }}
                     onMouseEnter={handleDropdownEnter}
                     onMouseLeave={handleDropdownLeave}
-                    className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 overflow-hidden z-[9999] ${
-                      item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px]' : 
-                      item.key === 'nav_products' ? 'grid grid-cols-3 gap-2 p-3 min-w-[780px]' : 
-                      'min-w-[240px]'
+                    className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 z-[9999] ${
+                      item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px] overflow-hidden' : 
+                      item.key === 'nav_products' ? 'min-w-[320px] overflow-visible' : 
+                      'min-w-[240px] overflow-hidden'
                     }`}
                     role="menu"
                     aria-label={`${item.label || t(item.key)} alt menü`}
                   >
-                    {/* Products Mega Menu with Dropdown Models */}
+                    {/* Products Cascading Flyout Menu - NEW DESIGN */}
                     {item.key === 'nav_products' ? (
-                      item.dropdown.map((subItem: any) => (
-                        <div
-                          key={subItem.key || subItem}
-                          className="relative group/product"
-                          onMouseEnter={() => {
-                            // Clear any existing timeout
-                            if (productHoverTimeout) {
-                              clearTimeout(productHoverTimeout);
-                              setProductHoverTimeout(null);
-                            }
-                            // Set hovered product immediately
-                            if (subItem.hasModels) {
-                              setHoveredProduct(subItem.action);
-                            }
-                          }}
-                          onMouseLeave={() => {
-                            // Add delay to allow smooth cursor movement
-                            const timeout = setTimeout(() => {
-                              setHoveredProduct(null);
-                            }, 200);
-                            setProductHoverTimeout(timeout);
-                          }}
-                        >
-                          {/* Main Product - Goes to Category Page */}
-                          <motion.a
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              window.scrollTo({ top: 0, behavior: 'smooth' });
-                              setOpenDropdown(null);
-                              setHoveredProduct(null);
-                              if (subItem.action && onProductCategoryClick) {
-                                onProductCategoryClick(subItem.action);
+                      <ul className="py-2 overflow-visible">
+                        {productsDropdown.map((subItem: any) => (
+                          <li
+                            key={subItem.key || subItem}
+                            className="relative overflow-visible"
+                            onMouseEnter={() => {
+                              if (productHoverTimeout) {
+                                clearTimeout(productHoverTimeout);
+                                setProductHoverTimeout(null);
+                              }
+                              if (subItem.hasModels) {
+                                setHoveredProduct(subItem.action);
+                              } else {
+                                setHoveredProduct(null);
                               }
                             }}
-                            whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
-                            className="block px-4 py-3 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors whitespace-normal leading-tight rounded"
-                            role="menuitem"
+                            onMouseLeave={() => {
+                              // Delay closing to allow cursor movement to submenu
+                              const timeout = setTimeout(() => {
+                                setHoveredProduct(null);
+                              }, 400);
+                              setProductHoverTimeout(timeout);
+                            }}
                           >
-                            {subItem.label || t(subItem.key || subItem)}
-                          </motion.a>
-                          
-                          {/* Models Dropdown (appears below product name) - with extra padding for smooth hover */}
-                          {hoveredProduct === subItem.action && productModels[subItem.action] && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              transition={{ duration: 0.2 }}
-                              className="pb-3 pt-1"
-                              onMouseEnter={() => {
-                                // Clear timeout and keep dropdown open
-                                if (productHoverTimeout) {
-                                  clearTimeout(productHoverTimeout);
-                                  setProductHoverTimeout(null);
+                            <motion.a
+                              href="#"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                setOpenDropdown(null);
+                                setHoveredProduct(null);
+                                if (subItem.action && onProductCategoryClick) {
+                                  onProductCategoryClick(subItem.action);
                                 }
-                                setHoveredProduct(subItem.action);
                               }}
+                              whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
+                              className="block px-4 py-3 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors flex items-center justify-between"
+                              role="menuitem"
                             >
-                              <div className="ml-2 border-l-2 border-[#F4CE14]/30 pl-3 space-y-1">
+                              {productModels[subItem.action]?.label || subItem.label || t(subItem.key || subItem)}
+                              {subItem.hasModels && (
+                                <ChevronDown size={16} className={`${isRTL ? '-rotate-90' : 'rotate-90'} opacity-60`} />
+                              )}
+                            </motion.a>
+
+                            {/* Flyout Submenu - Models */}
+                            {subItem.hasModels && hoveredProduct === subItem.action && productModels[subItem.action]?.models && (
+                              <ul
+                                onMouseEnter={() => {
+                                  if (productHoverTimeout) {
+                                    clearTimeout(productHoverTimeout);
+                                    setProductHoverTimeout(null);
+                                  }
+                                }}
+                                onMouseLeave={() => {
+                                  const timeout = setTimeout(() => {
+                                    setHoveredProduct(null);
+                                  }, 400);
+                                  setProductHoverTimeout(timeout);
+                                }}
+                                className={`absolute ${isRTL ? 'right-full -mr-px' : 'left-full -ml-px'} top-0 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 overflow-hidden min-w-[200px] py-2 z-[99999]`}
+                                role="menu"
+                                aria-label={`${productModels[subItem.action].label} modelleri`}
+                              >
                                 {productModels[subItem.action].models.map((model) => (
-                                  <motion.a
-                                    key={model}
-                                    href="#"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                                      setOpenDropdown(null);
-                                      setHoveredProduct(null);
-                                      if (onProductDetailClick) {
-                                        onProductDetailClick(subItem.action, model);
-                                      }
-                                    }}
-                                    whileHover={{ backgroundColor: 'rgba(244,206,20,0.15)', x: 3 }}
-                                    className="block px-3 py-2 text-xs text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-all rounded"
-                                    role="menuitem"
-                                  >
-                                    {model}
-                                  </motion.a>
+                                  <li key={model}>
+                                    <a
+                                      href="#"
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        setOpenDropdown(null);
+                                        setHoveredProduct(null);
+                                        if (onProductDetailClick) {
+                                          onProductDetailClick(subItem.action, model);
+                                        }
+                                      }}
+                                      className="block px-4 py-2 text-sm text-[#F5F7F8]/80 hover:text-[#F4CE14] hover:bg-[#F4CE14]/10 transition-all"
+                                      role="menuitem"
+                                    >
+                                      {model}
+                                    </a>
+                                  </li>
                                 ))}
-                              </div>
-                            </motion.div>
-                          )}
-                        </div>
-                      ))
+                              </ul>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
                     ) : (
                       /* Other Dropdowns (Corporate, Wastes) */
                       item.dropdown.map((subItem: any) => (
@@ -445,16 +501,24 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     onClick={(e) => {
                       e.preventDefault();
                       window.scrollTo({ top: 0, behavior: 'smooth' });
-                      setMobileMenuOpen(false);
+                      
+                      // Don't close menu if clicking on products dropdown
+                      if (item.key !== 'nav_products' && !item.dropdown) {
+                        setMobileMenuOpen(false);
+                      }
                       
                       if (item.action === 'home' && onMainClick) {
                         onMainClick();
+                        setMobileMenuOpen(false);
                       } else if (item.action === 'products' && onProductsClick) {
                         onProductsClick();
+                        setMobileMenuOpen(false);
                       } else if (item.action === 'references' && onReferencesClick) {
                         onReferencesClick();
+                        setMobileMenuOpen(false);
                       } else if (item.action === 'technology' && onTechnologyClick) {
                         onTechnologyClick();
+                        setMobileMenuOpen(false);
                       } else if (item.action === 'contact') {
                         if (onContactClick) {
                           onContactClick();
@@ -464,17 +528,74 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                             contactSection.scrollIntoView({ behavior: 'smooth' });
                           }
                         }
+                        setMobileMenuOpen(false);
                       } else if (item.action === 'wastes' && onWasteClick) {
                         onWasteClick();
+                        setMobileMenuOpen(false);
                       } else if (item.action === 'ecatalog' && onECatalogClick) {
                         onECatalogClick();
+                        setMobileMenuOpen(false);
                       }
                     }}
                     className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
                   >
                     {item.label || t(item.key)}
                   </a>
-                  {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_products' || item.key === 'nav_wastes') && (
+                  {item.dropdown && item.key === 'nav_products' && (
+                    <div className="pl-4 mt-2 space-y-2">
+                      {item.dropdown.map((subItem: any) => (
+                        <div key={subItem.key} className="space-y-1">
+                          <div className="flex items-center justify-between">
+                            <a
+                              href="#"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                setMobileMenuOpen(false);
+                                if (subItem.action && onProductCategoryClick) {
+                                  onProductCategoryClick(subItem.action);
+                                }
+                              }}
+                              className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block flex-1"
+                            >
+                              {productModels[subItem.action]?.label || subItem.label || t(subItem.key)}
+                            </a>
+                            {subItem.hasModels && (
+                              <button
+                                onClick={() => setMobileExpandedProduct(mobileExpandedProduct === subItem.action ? null : subItem.action)}
+                                className="px-2 py-1 text-[#F4CE14]"
+                              >
+                                <ChevronDown size={16} className={`transition-transform ${mobileExpandedProduct === subItem.action ? 'rotate-180' : ''}`} />
+                              </button>
+                            )}
+                          </div>
+                          {subItem.hasModels && mobileExpandedProduct === subItem.action && productModels[subItem.action] && (
+                            <div className="pl-4 space-y-1">
+                              {productModels[subItem.action].models.map((model) => (
+                                <a
+                                  key={model}
+                                  href="#"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    setMobileMenuOpen(false);
+                                    setMobileExpandedProduct(null);
+                                    if (onProductDetailClick) {
+                                      onProductDetailClick(subItem.action, model);
+                                    }
+                                  }}
+                                  className="text-[#F5F7F8]/60 hover:text-[#F4CE14] transition-colors py-1 text-xs block"
+                                >
+                                  {model}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_wastes') && (
                     <div className="pl-4 mt-2 space-y-2">
                       {item.dropdown.map((subItem: any) => (
                         <a
@@ -490,8 +611,6 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                               } else if (subItem.action === 'certificates' && onCertificatesClick) {
                                 onCertificatesClick();
                               }
-                            } else if (item.key === 'nav_products' && subItem.action && onProductDetailClick) {
-                              onProductDetailClick(subItem.action);
                             } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
                               onWasteDetailClick(subItem.action);
                             }

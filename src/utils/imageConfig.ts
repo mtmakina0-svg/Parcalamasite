@@ -11,6 +11,12 @@ export const PRODUCT_FOLDER_MAP: { [key: string]: string } = {
   'dual-shaft': 'ÇİFT ŞAFTLI PARÇALAMA MAKİNESİ',
   'quad-shaft': 'DÖRT ŞAFTLI PARÇALAMA MAKİNESİ',
   'metal': 'METAL PARÇALAMA MAKİNESİ',
+  'mobile': 'MOBİL KIRICI',
+  'pallet': 'PALET PARÇALAMA MAKİNESİ',
+  'harddisk': 'HARDDİSK İMHA MAKİNESİ',
+  'tree-root': 'AĞAÇ KÖKÜ PARÇALAMA MAKİNESİ',
+  'wood-grinder': 'AĞAÇ PARÇALAMA ÖĞÜTME MAKİNESİ',
+  'glass': 'CAM ŞİŞE KIRMA MAKİNESİ',
   'granulator': 'GRANÜLATÖR',
   'baler': 'BALYA PRESİ',
   'conveyor': 'KONVEYÖR SİSTEMİ',
@@ -86,25 +92,129 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
     }
   },
   'dual-shaft': {
-    'CS-20': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-40': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-60': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-80': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-100': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-120': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-150': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-180': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CS-200': { main: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'CS-20': { 
+      main: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
+      detail1: 'https://i.ibb.co/FbDPTXxf/1-2.png', 
+      detail2: 'https://i.ibb.co/1GTVKBRG/1-3.png', 
+      detail3: 'https://i.ibb.co/S4nqh63G/1-4.png', 
+      detail4: '' 
+    },
+    'CS-40': { 
+      main: 'https://i.ibb.co/FbDPTXxf/1-2.png', 
+      detail1: 'https://i.ibb.co/1GTVKBRG/1-3.png', 
+      detail2: 'https://i.ibb.co/S4nqh63G/1-4.png', 
+      detail3: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
+      detail4: '' 
+    },
+    'CS-60': { 
+      main: 'https://i.ibb.co/1GTVKBRG/1-3.png', 
+      detail1: 'https://i.ibb.co/S4nqh63G/1-4.png', 
+      detail2: 'https://i.ibb.co/r2jnGRn6/1-5.png', 
+      detail3: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
+      detail4: '' 
+    },
+    'CS-80': { 
+      main: 'https://i.ibb.co/S4nqh63G/1-4.png', 
+      detail1: 'https://i.ibb.co/r2jnGRn6/1-5.png', 
+      detail2: 'https://i.ibb.co/XrWHZG0L/1-6.png', 
+      detail3: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
+      detail4: '' 
+    },
+    'CS-100': { 
+      main: 'https://i.ibb.co/r2jnGRn6/1-5.png', 
+      detail1: 'https://i.ibb.co/XrWHZG0L/1-6.png', 
+      detail2: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
+      detail3: 'https://i.ibb.co/FbDPTXxf/1-2.png', 
+      detail4: '' 
+    },
+    'CS-120': { 
+      main: 'https://i.ibb.co/XrWHZG0L/1-6.png', 
+      detail1: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
+      detail2: 'https://i.ibb.co/FbDPTXxf/1-2.png', 
+      detail3: 'https://i.ibb.co/1GTVKBRG/1-3.png', 
+      detail4: '' 
+    },
+    'CS-150': { 
+      main: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
+      detail1: 'https://i.ibb.co/FbDPTXxf/1-2.png', 
+      detail2: 'https://i.ibb.co/1GTVKBRG/1-3.png', 
+      detail3: 'https://i.ibb.co/S4nqh63G/1-4.png', 
+      detail4: '' 
+    },
+    'CS-180': { 
+      main: 'https://i.ibb.co/FbDPTXxf/1-2.png', 
+      detail1: 'https://i.ibb.co/1GTVKBRG/1-3.png', 
+      detail2: 'https://i.ibb.co/S4nqh63G/1-4.png', 
+      detail3: 'https://i.ibb.co/r2jnGRn6/1-5.png', 
+      detail4: '' 
+    },
+    'CS-200': { 
+      main: 'https://i.ibb.co/1GTVKBRG/1-3.png', 
+      detail1: 'https://i.ibb.co/S4nqh63G/1-4.png', 
+      detail2: 'https://i.ibb.co/r2jnGRn6/1-5.png', 
+      detail3: 'https://i.ibb.co/XrWHZG0L/1-6.png', 
+      detail4: '' 
+    }
   },
   'quad-shaft': {
-    'QS-80': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'QS-100': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'QS-120': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'QS-150': { main: 'https://i.ibb.co/SDjBQ9cq/1-9.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'DS-80': { 
+      main: 'https://i.ibb.co/Gf8mjXGm/1-1.png', 
+      detail1: 'https://i.ibb.co/d00YBDL5/1-2.png', 
+      detail2: 'https://i.ibb.co/67W76PsR/1-3.png', 
+      detail3: 'https://i.ibb.co/LDs6TYHv/1-4.png', 
+      detail4: '' 
+    },
+    'DS-100': { 
+      main: 'https://i.ibb.co/d00YBDL5/1-2.png', 
+      detail1: 'https://i.ibb.co/67W76PsR/1-3.png', 
+      detail2: 'https://i.ibb.co/LDs6TYHv/1-4.png', 
+      detail3: 'https://i.ibb.co/Gf8mjXGm/1-1.png', 
+      detail4: '' 
+    },
+    'DS-150': { 
+      main: 'https://i.ibb.co/67W76PsR/1-3.png', 
+      detail1: 'https://i.ibb.co/LDs6TYHv/1-4.png', 
+      detail2: 'https://i.ibb.co/Gf8mjXGm/1-1.png', 
+      detail3: 'https://i.ibb.co/d00YBDL5/1-2.png', 
+      detail4: '' 
+    },
+    'DS-200': { 
+      main: 'https://i.ibb.co/LDs6TYHv/1-4.png', 
+      detail1: 'https://i.ibb.co/Gf8mjXGm/1-1.png', 
+      detail2: 'https://i.ibb.co/d00YBDL5/1-2.png', 
+      detail3: 'https://i.ibb.co/67W76PsR/1-3.png', 
+      detail4: '' 
+    }
   },
   'metal': {
-    'MP-100': { main: 'https://i.ibb.co/m5xLp46J/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'MP-150': { main: 'https://i.ibb.co/m5xLp46J/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'RDM-100': { 
+      main: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail1: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail2: '', 
+      detail3: '', 
+      detail4: '' 
+    },
+    'RDM-150': { 
+      main: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail1: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail2: '', 
+      detail3: '', 
+      detail4: '' 
+    },
+    'RDM-180': { 
+      main: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail1: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail2: '', 
+      detail3: '', 
+      detail4: '' 
+    },
+    'RDM-200': { 
+      main: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail1: 'https://i.ibb.co/m5xLp46J/1-1.png', 
+      detail2: '', 
+      detail3: '', 
+      detail4: '' 
+    }
   },
   'granulator': {
     'GR-400': { main: 'https://i.ibb.co/5hxMZJ2g/plastic-crusher-machine-4.png', detail1: '', detail2: '', detail3: '', detail4: '' },
@@ -123,6 +233,66 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   'separator': {
     'MS-1': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
     'MS-2': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'mobile': {
+    'MK-1': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'MK-2': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'MK-3': { main: '', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'pallet': {
+    'PL-800': { main: 'https://i.ibb.co/svR9Kdq7/1-7.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'tree-root': {
+    'TR-1000': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'wood-grinder': {
+    'WG-500': { 
+      main: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png', 
+      detail1: 'https://i.ibb.co/3509qcH2/agac-parcalama-ogutme-makinesi-2.png', 
+      detail2: 'https://i.ibb.co/ksMxp2Gy/agac-parcalama-ogutme-makinesi-3.png', 
+      detail3: 'https://i.ibb.co/wFrzY3Fk/agac-parcalama-ogutme-makinesi-4.png',
+      detail4: '' 
+    },
+    'WG-800': { 
+      main: 'https://i.ibb.co/3509qcH2/agac-parcalama-ogutme-makinesi-2.png', 
+      detail1: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png', 
+      detail2: 'https://i.ibb.co/ksMxp2Gy/agac-parcalama-ogutme-makinesi-3.png', 
+      detail3: 'https://i.ibb.co/wFrzY3Fk/agac-parcalama-ogutme-makinesi-4.png',
+      detail4: '' 
+    },
+    'WG-1200': { 
+      main: 'https://i.ibb.co/ksMxp2Gy/agac-parcalama-ogutme-makinesi-3.png', 
+      detail1: 'https://i.ibb.co/wFrzY3Fk/agac-parcalama-ogutme-makinesi-4.png', 
+      detail2: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png', 
+      detail3: 'https://i.ibb.co/3509qcH2/agac-parcalama-ogutme-makinesi-2.png',
+      detail4: '' 
+    }
+  },
+  'glass': {
+    'GB-300': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+  },
+  'harddisk': {
+    'DATABER-S': { 
+      main: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png', 
+      detail1: 'https://i.ibb.co/gMVFnz1H/hard-disk-devre-karti-imha-parcalama-makinesi-2.png', 
+      detail2: 'https://i.ibb.co/LhDh8pFc/hard-disk-devre-karti-imha-parcalama-makinesi-3.webp', 
+      detail3: 'https://i.ibb.co/Gvmf8ks2/hard-disk-devre-karti-imha-parcalama-makinesi-4.webp',
+      detail4: '' 
+    },
+    'DATABER-D': { 
+      main: 'https://i.ibb.co/gMVFnz1H/hard-disk-devre-karti-imha-parcalama-makinesi-2.png', 
+      detail1: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png', 
+      detail2: 'https://i.ibb.co/LhDh8pFc/hard-disk-devre-karti-imha-parcalama-makinesi-3.webp', 
+      detail3: 'https://i.ibb.co/Gvmf8ks2/hard-disk-devre-karti-imha-parcalama-makinesi-4.webp',
+      detail4: '' 
+    },
+    'DATABER-T': { 
+      main: 'https://i.ibb.co/LhDh8pFc/hard-disk-devre-karti-imha-parcalama-makinesi-3.webp', 
+      detail1: 'https://i.ibb.co/Gvmf8ks2/hard-disk-devre-karti-imha-parcalama-makinesi-4.webp', 
+      detail2: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png', 
+      detail3: 'https://i.ibb.co/gMVFnz1H/hard-disk-devre-karti-imha-parcalama-makinesi-2.png',
+      detail4: '' 
+    }
   }
 };
 
@@ -158,6 +328,12 @@ export const FALLBACK_IMAGES: { [key: string]: string } = {
   'dual-shaft': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'quad-shaft': 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'metal': 'https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+  'mobile': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+  'pallet': 'https://i.ibb.co/svR9Kdq7/1-7.png',
+  'harddisk': 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
+  'tree-root': 'https://i.ibb.co/4wtQRwBB/1-1.png',
+  'wood-grinder': 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
+  'glass': 'https://i.ibb.co/4wtQRwBB/1-1.png',
   'granulator': 'https://images.unsplash.com/photo-1581092160607-ee67e7d27f86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'baler': 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'conveyor': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',

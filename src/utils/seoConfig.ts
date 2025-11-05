@@ -23,6 +23,12 @@ export const generateUrl = {
       'dual-shaft': '/cift-shaftli-parcalama-makinesi',
       'quad-shaft': '/dort-shaftli-parcalama-makinesi',
       'metal': '/metal-parcalama-makinesi',
+      'mobile': '/mobil-kirici',
+      'pallet': '/palet-parcalama-makinesi',
+      'harddisk': '/harddisk-imha-makinesi',
+      'tree-root': '/agac-koku-parcalama-makinesi',
+      'wood-grinder': '/agac-parcalama-ogutme-makinesi',
+      'glass': '/cam-sise-kirma-makinesi',
       'granulator': '/granulator-makinesi',
       'baler': '/balyalama-makinesi',
       'conveyor': '/konveyor-sistemi',
@@ -115,34 +121,44 @@ export const getProductCategorySEO = (type: string): SEOMetadata => {
       keywords: ['çift şaftlı parçalama makinesi', 'dual shaft shredder', 'CS serisi', 'metal parçalama makinesi', 'palet kırıcı', 'lastik parçalama', 'çift şaft shredder', 'ağır hizmet parçalama', 'endüstriyel atık kırıcı'],
     },
     'quad-shaft': {
-      title: 'Dörtlü Şaft Parçalama Makinesi | MT Makina QS Serisi',
-      description: 'MT Makina dörtlü şaft parçalama makineleri (QS Serisi) ultra hassas boyut kontrolü, dört motorlu sistem. E-atık, elektronik hurda ve değerli malzeme geri kazanımı.',
-      keywords: ['dörtlü şaft parçalama', 'quad shaft shredder', 'QS serisi', 'e-atık parçalama', 'elektronik hurda', 'hassas parçalama'],
+      title: 'Dört Şaftlı Katı Atık Parçalama Makinesi | Quad Shaft Shredder | MT Makina DS Serisi',
+      description: 'Dört şaftlı katı atık parçalama makinesi - MT Makina DS Serisi. Plastik, metal, ahşap, kağıt, elektronik atık işleme. ✓ Hidrolik Baskı ✓ Hacimli Malzemeler ✓ Yüksek Verimlilik ✓ CE Belgeli',
+      keywords: ['dört şaftlı parçalama makinesi', 'quad shaft shredder', 'DS serisi', 'katı atık parçalayıcı', 'elektronik atık parçalama', 'tıbbi atık parçalama', 'balya parçalama makinesi', 'lastik parçalama', 'hdd parçalama', 'parçalayıcı makine'],
     },
     'metal': {
-      title: 'Metal Parçalama Makinesi | MT Makina MP Serisi Kırıcı',
-      description: 'MT Makina metal parçalama makineleri (MP Serisi) güçlü motor, özel bıçak sistemi ile demir, alüminyum, bakır ve karışık metal hurdaları parçalar.',
-      keywords: ['metal kırıcı', 'metal shredder', 'demir parçalama', 'alüminyum kırıcı', 'hurda parçalama', 'metal geri dönüşüm'],
+      title: 'Redmonster Hurda Metal Parçalama Makinesi | MT Makina RDM Serisi',
+      description: 'Redmonster hurda metal parçalama makinesi - MT Makina RDM Serisi. Hurda demir, alüminyum, paslanmaz çelik, metal balyaları parçalama. ✓ Yüksek Tork ✓ Dayanıklı Bıçak ✓ Enerji Verimli ✓ CE Belgeli',
+      keywords: ['hurda metal parçalama makinesi', 'redmonster', 'RDM serisi', 'metal kırıcı', 'metal shredder', 'hurda demir parçalama', 'alüminyum kırıcı', 'paslanmaz çelik parçalama', 'metal balyası kırıcı', 'çift şaftlı metal parçalama'],
     },
-    'granulator': {
-      title: 'Granülatör Makinesi | MT Makina GR Serisi',
-      description: 'MT Makina granülatör makineleri (GR Serisi) plastik enjeksiyon kalıntıları, film atıkları ve plastik parça granülleme için yüksek performanslı çözüm.',
-      keywords: ['granülatör', 'plastik granül', 'plastik kırma', 'enjeksiyon atığı', 'film granülleme'],
+    'mobile': {
+      title: 'Mobil Kırıcı | MT Makina Taşınabilir Parçalama Sistemi',
+      description: 'MT Makina mobil kırıcı sistemleri, şantiye ve sahada çalışma için tasarlanmış taşınabilir parçalama çözümü. Esnek kullanım, güçlü performans.',
+      keywords: ['mobil kırıcı', 'taşınabilir parçalama', 'şantiye kırıcı', 'mobil shredder', 'portatif parçalama'],
     },
-    'baler': {
-      title: 'Balyalama Makinesi | MT Makina BP Serisi Balya Presi',
-      description: 'MT Makina hidrolik balyalama makineleri (BP Serisi) kağıt, karton, plastik, tekstil atıklarını sıkıştırarak depolama ve nakliye maliyetlerini azaltır.',
-      keywords: ['balyalama makinesi', 'balya presi', 'hidrolik pres', 'atık sıkıştırma', 'karton balya'],
+    'pallet': {
+      title: 'Palet Parçalama Makinesi | MT Makina Palet Kırıcı',
+      description: 'MT Makina palet parçalama makineleri, ahşap paletleri etkili şekilde parçalar. Yüksek kapasite, dayanıklı yapı, geri dönüşüm için ideal.',
+      keywords: ['palet kırıcı', 'palet parçalama', 'ahşap palet kırma', 'pallet shredder', 'palet geri dönüşüm'],
     },
-    'conveyor': {
-      title: 'Konveyör Sistemi | MT Makina CV Serisi Taşıma Bantları',
-      description: 'MT Makina endüstriyel konveyör sistemleri (CV Serisi) parçalama hatları için modüler taşıma çözümleri, özelleştirilebilir boyutlar.',
-      keywords: ['konveyör sistemi', 'taşıma bandı', 'endüstriyel konveyör', 'malzeme taşıma', 'modüler sistem'],
+    'harddisk': {
+      title: 'Harddisk İmha Makinesi | MT Makina Veri Güvenliği Çözümü',
+      description: 'MT Makina harddisk imha makineleri, veri güvenliği için fiziksel olarak harddiskleri tamamen yok eder. Kurumsal güvenlik çözümü.',
+      keywords: ['harddisk imha', 'veri güvenliği', 'harddisk kırıcı', 'data destroyer', 'güvenli veri silme'],
     },
-    'separator': {
-      title: 'Ayırıcı Makine | MT Makina MS Serisi Malzeme Ayırma',
-      description: 'MT Makina malzeme ayırıcı sistemleri (MS Serisi) manyetik ve hava ayırma teknolojisi ile metal ve plastik ayrıştırma çözümü.',
-      keywords: ['malzeme ayırıcı', 'manyetik ayırıcı', 'hava seperatörü', 'metal ayırma', 'plastik ayrıştırma'],
+    'tree-root': {
+      title: 'Ağaç Kökü Parçalama Makinesi | MT Makina Köksök Kırıcı',
+      description: 'MT Makina ağaç kökü parçalama makineleri, sert ve kalın ağaç köklerini güçlü bıçak sistemi ile etkili şekilde parçalar.',
+      keywords: ['ağaç kökü kırıcı', 'köksök parçalama', 'kök kırma makinesi', 'tree root shredder', 'ağaç kökü geri dönüşüm'],
+    },
+    'wood-grinder': {
+      title: 'Ağaç Parçalama Öğütme Makinesi | MT Makina Ahşap Kırıcı',
+      description: 'MT Makina ağaç parçalama ve öğütme makineleri, ahşap atıkları ince boyutlara parçalar. Yüksek verimli, dayanıklı sistem.',
+      keywords: ['ağaç öğütme', 'ahşap kırma', 'wood grinder', 'ağaç parçalama', 'ahşap geri dönüşüm'],
+    },
+    'glass': {
+      title: 'Cam Şişe Kırma Makinesi | MT Makina Cam Atık Kırıcı',
+      description: 'MT Makina cam şişe kırma makineleri, cam atıkları güvenli ve etkili şekilde parçalar. Geri dönüşüm için ideal çözüm.',
+      keywords: ['cam kırıcı', 'şişe kırma makinesi', 'glass crusher', 'cam geri dönüşüm', 'cam atık parçalama'],
     }
   };
 
@@ -242,37 +258,47 @@ export const getProductModelSEO = (type: string, model: string): SEOMetadata => 
       }
     },
     'quad-shaft': {
-      'QS-80': {
-        title: 'QS-80 Dörtlü Şaft Parçalama Makinesi | Hassas Boyut | MT Makina',
-        description: 'MT Makina QS-80 model dörtlü şaft parçalama makinesi. 4 motorlu sistem, hassas boyut kontrolü, homojen çıktı. E-atık ve değerli malzeme geri kazanımı.',
-        keywords: ['QS-80', 'dörtlü şaft 80', 'hassas parçalama', 'e-atık geri kazanım', '4 motor'],
+      'DS-80': {
+        title: 'DS-80 Dört Şaftlı Parçalama Makinesi | 800x800 mm | 11-22 kW (4x) | MT Makina',
+        description: 'DS-80 dört şaftlı katı atık parçalama makinesi - 800x800 mm parçalama alanı, 11-22 kW (4x) motor. Plastik varil, metal varil, elektronik atık, balya parçalama. ✓ Hidrolik Baskı ✓ Kompakt Çözüm',
+        keywords: ['DS-80', 'dört şaftlı 80', 'katı atık parçalayıcı', 'elektronik atık parçalama', 'balya parçalama', 'lastik parçalama', 'hdd parçalama makinesi'],
       },
-      'QS-100': {
-        title: 'QS-100 Dörtlü Şaft Parçalama Makinesi | E-Atık Uzmanı | MT Makina',
-        description: 'MT Makina QS-100 model dörtlü şaft parçalama makinesi. Elektronik hurda, PCB kartları, kablolar için özel tasarım, yüksek verim.',
-        keywords: ['QS-100', 'dörtlü şaft 100', 'elektronik hurda', 'PCB parçalama', 'kablo ayrıştırma'],
+      'DS-100': {
+        title: 'DS-100 Dört Şaftlı Parçalama Makinesi | 1000x1000 mm | 22-45 kW (4x) | MT Makina',
+        description: 'DS-100 dört şaftlı katı atık parçalama makinesi - 1000x1000 mm parçalama alanı, 22-45 kW (4x) motor. Palet, ahşap, hurda, kağıt, karton parçalama. ✓ Orta-Büyük Kapasite ✓ Çoklu Malzeme',
+        keywords: ['DS-100', 'dört şaftlı 100', 'palet parçalama', 'ahşap parçalama', 'hurda parçalama', 'karton parçalama', 'tıbbi atık parçalama'],
       },
-      'QS-120': {
-        title: 'QS-120 Dörtlü Şaft Parçalama Makinesi | Yüksek Kapasite | MT Makina',
-        description: 'MT Makina QS-120 model dörtlü şaft parçalama makinesi. Yüksek kapasite, hassas kesim, orta ve büyük ölçekli geri dönüşüm tesisleri için.',
-        keywords: ['QS-120', 'dörtlü şaft 120', 'yüksek kapasite quad', 'hassas kesim'],
+      'DS-150': {
+        title: 'DS-150 Dört Şaftlı Parçalama Makinesi | 1500x1500 mm | 45-132 kW (4x) | MT Makina',
+        description: 'DS-150 dört şaftlı katı atık parçalama makinesi - 1500x1500 mm parçalama alanı, 45-132 kW (4x) motor. Hacimli atık işleme, buzdolabı, TV, devre kartı parçalama. ✓ Maksimum Kapasite ✓ Profesyonel',
+        keywords: ['DS-150', 'dört şaftlı 150', 'hacimli atık parçalama', 'buzdolabı parçalama', 'hayvan parçalama', 'hurda lastik parçalama', 'harddisk imha'],
       },
-      'QS-150': {
-        title: 'QS-150 Dörtlü Şaft Parçalama Makinesi | Maksimum Hassasiyet | MT Makina',
-        description: 'MT Makina QS-150 model dörtlü şaft parçalama makinesi. En yüksek hassasiyet ve kapasite, büyük hacimli e-atık işleme için profesyonel sistem.',
-        keywords: ['QS-150', 'dörtlü şaft 150', 'maksimum hassasiyet', 'büyük hacim e-atık'],
+      'DS-200': {
+        title: 'DS-200 Dört Şaftlı Parçalama Makinesi | 2000x2000 mm | 75-160 kW (4x) | MT Makina',
+        description: 'DS-200 dört şaftlı katı atık parçalama makinesi - 2000x2000 mm dev parçalama alanı, 75-160 kW (4x) motor. Endüstriyel mega ölçekli projeler. ✓ En Güçlü Model ✓ 7/24 Kesintisiz Çalışma',
+        keywords: ['DS-200', 'dört şaftlı 200', 'mega ölçekli parçalama', 'endüstriyel atık yönetimi', 'sürdürülebilir geri dönüşüm', 'parçalayıcı makine', 'katı atık parçalayıcı'],
       }
     },
     'metal': {
-      'MP-100': {
-        title: 'MP-100 Metal Parçalama Makinesi | Demir Kırıcı | MT Makina',
-        description: 'MT Makina MP-100 model metal parçalama makinesi. Güçlü motor, sert bıçak sistemi. Demir, çelik, alüminyum hurda parçalama için ideal.',
-        keywords: ['MP-100', 'metal kırıcı 100', 'demir parçalama', 'çelik shredder', 'hurda kırıcı'],
+      'RDM-100': {
+        title: 'RDM-100 Redmonster Hurda Metal Parçalama Makinesi | 1000x1000 mm | 45-75 kW | MT Makina',
+        description: 'RDM-100 Redmonster hurda metal parçalama makinesi - 1000x1000 mm parçalama alanı, 45-75 kW motor. Hurda demir, alüminyum, paslanmaz çelik parçalama. ✓ Yüksek Tork ✓ Dayanıklı Bıçak',
+        keywords: ['RDM-100', 'redmonster 100', 'hurda metal parçalama', 'hurda demir kırıcı', 'alüminyum parçalama', 'metal balyası kırıcı', 'çift şaftlı metal shredder'],
       },
-      'MP-150': {
-        title: 'MP-150 Metal Parçalama Makinesi | Ağır Metal Kırıcı | MT Makina',
-        description: 'MT Makina MP-150 model metal parçalama makinesi. Ağır metal hurdalar için tasarlanmış, yüksek güç, dayanıklı yapı, sürekli çalışma.',
-        keywords: ['MP-150', 'metal kırıcı 150', 'ağır metal', 'otomotiv hurda', 'beyaz eşya kırıcı'],
+      'RDM-150': {
+        title: 'RDM-150 Redmonster Hurda Metal Parçalama Makinesi | 1500x1500 mm | 55-90 kW | MT Makina',
+        description: 'RDM-150 Redmonster hurda metal parçalama makinesi - 1500x1500 mm parçalama alanı, 55-90 kW motor. Ağır metal hurdalar, paslanmaz çelik, alüminyum profil. ✓ Orta-Büyük Kapasite',
+        keywords: ['RDM-150', 'redmonster 150', 'ağır metal kırıcı', 'paslanmaz çelik parçalama', 'alüminyum profil kırıcı', 'metal geri dönüşüm makinesi'],
+      },
+      'RDM-180': {
+        title: 'RDM-180 Redmonster Hurda Metal Parçalama Makinesi | 1800x1500 mm | 75-90 kW | MT Makina',
+        description: 'RDM-180 Redmonster hurda metal parçalama makinesi - 1800x1500 mm parçalama alanı, 75-90 kW motor. Büyük metal parçalar, otomotiv hurda, beyaz eşya. ✓ Yüksek Kapasite',
+        keywords: ['RDM-180', 'redmonster 180', 'otomotiv hurda parçalama', 'beyaz eşya kırıcı', 'büyük metal parçalama', 'endüstriyel metal shredder'],
+      },
+      'RDM-200': {
+        title: 'RDM-200 Redmonster Hurda Metal Parçalama Makinesi | 2000x1800 mm | 90-132 kW | MT Makina',
+        description: 'RDM-200 Redmonster hurda metal parçalama makinesi - 2000x1800 mm dev parçalama alanı, 90-132 kW motor. En büyük model, hurdalık ve metal geri dönüşüm tesisleri için. ✓ Maksimum Güç',
+        keywords: ['RDM-200', 'redmonster 200', 'hurdalık metal kırıcı', 'maksimum metal parçalama', 'metal geri dönüşüm tesisi', 'endüstriyel hurda parçalama', 'sürekli üretim metal shredder'],
       }
     },
     'granulator': {

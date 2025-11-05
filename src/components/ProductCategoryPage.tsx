@@ -5,6 +5,7 @@ import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench } from 'lucide-r
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
+import { modelDescriptions } from '../utils/modelDescriptions';
 
 interface ProductCategoryPageProps {
   productType: string;
@@ -16,8 +17,14 @@ interface ProductCategoryPageProps {
 const availableModels: { [key: string]: string[] } = {
   'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
   'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-shaft': ['QS-80', 'QS-100', 'QS-120', 'QS-150'],
-  'metal': ['MP-100', 'MP-150'],
+  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+  'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
+  'mobile': ['MK-1', 'MK-2', 'MK-3'],
+  'pallet': ['PL-800'],
+  'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
+  'tree-root': ['TR-1000'],
+  'wood-grinder': ['WG-500', 'WG-800', 'WG-1200'],
+  'glass': ['GB-300'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
   'baler': ['BP-60', 'BP-100'],
   'conveyor': ['CV-3M', 'CV-5M', 'CV-10M'],
@@ -39,6 +46,151 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'TSH-130': { capacity: '1800-2500 kg/saat', power: '45–110 kW', rotorLength: '1300 mm' },
     'TSH-160': { capacity: '3500-4500 kg/saat', power: '55–132 kW (2x)', rotorLength: '1600 mm' },
     'TSH-200': { capacity: '4500-6000 kg/saat', power: '75–160 kW (2x)', rotorLength: '2000 mm' }
+  },
+  'dual-shaft': {
+    'CS-20': { capacity: '200 x 200 mm', power: '2,2–11 kW', rotorLength: '200 mm' },
+    'CS-40': { capacity: '400 x 400 mm', power: '5,5–22 kW', rotorLength: '400 mm' },
+    'CS-60': { capacity: '600 x 600 mm', power: '11–45 kW (2x)', rotorLength: '600 mm' },
+    'CS-80': { capacity: '800 x 800 mm', power: '15–55 kW (2x)', rotorLength: '800 mm' },
+    'CS-100': { capacity: '1000 x 1000 mm', power: '22–90 kW (2x)', rotorLength: '1000 mm' },
+    'CS-120': { capacity: '1200 x 1200 mm', power: '30–110 kW (2x)', rotorLength: '1200 mm' },
+    'CS-150': { capacity: '1500 x 1200 mm', power: '45–132 kW (2x)', rotorLength: '1500 mm' },
+    'CS-180': { capacity: '1800 x 1500 mm', power: '55–132 kW (2x)', rotorLength: '1800 mm' },
+    'CS-200': { capacity: '2000 x 1800 mm', power: '75–200 kW (2x)', rotorLength: '2000 mm' }
+  },
+  'quad-shaft': {
+    'DS-80': { capacity: '800 x 800 mm', power: '11–22 kW (4x)', rotorLength: '800 mm' },
+    'DS-100': { capacity: '1000 x 1000 mm', power: '22–45 kW (4x)', rotorLength: '1000 mm' },
+    'DS-150': { capacity: '1500 x 1500 mm', power: '45–132 kW (4x)', rotorLength: '1500 mm' },
+    'DS-200': { capacity: '2000 x 2000 mm', power: '75–160 kW (4x)', rotorLength: '2000 mm' }
+  },
+  'metal': {
+    'RDM-100': { capacity: '1000 x 1000 mm', power: '45–75 kW (2-4X)', rotorLength: '1000 mm' },
+    'RDM-150': { capacity: '1500 x 1500 mm', power: '55–90 kW (2-4X)', rotorLength: '1500 mm' },
+    'RDM-180': { capacity: '1800 x 1500 mm', power: '75–90 kW (2-4X)', rotorLength: '1800 mm' },
+    'RDM-200': { capacity: '2000 x 1800 mm', power: '90–132 kW (2-4X)', rotorLength: '2000 mm' }
+  },
+  'mobile': {
+    'MK-1': { capacity: 'Kompakt', power: 'Hidrolik', rotorLength: 'Taşınabilir' },
+    'MK-2': { capacity: 'Orta Kapasite', power: 'Güçlü Motor', rotorLength: 'Mobil' },
+    'MK-3': { capacity: 'Yüksek Kapasite', power: 'Ultra Güçlü', rotorLength: 'Ağır Hizmet' }
+  },
+  'pallet': {
+    'PL-800': { capacity: '80-120 palet/saat', power: '30-45 kW', rotorLength: '1200 mm' }
+  },
+  'harddisk': {
+    'DATABER-S': { capacity: '150x150 mm', power: '3-11 kW', rotorLength: 'Tekli Aşama' },
+    'DATABER-D': { capacity: '400x400 mm', power: '11-22 kW x2', rotorLength: 'İkili Aşama' },
+    'DATABER-T': { capacity: '400x400 mm', power: '11-45 kW x2', rotorLength: 'Üçlü Aşama' }
+  },
+  'tree-root': {
+    'TR-1000': { capacity: '3-5 ton/saat', power: '75-110 kW', rotorLength: '80 cm çap' }
+  },
+  'wood-grinder': {
+    'WG-500': { capacity: '2-3 ton/saat', power: '37-55 kW', rotorLength: '20 cm çap' },
+    'WG-800': { capacity: '4-6 ton/saat', power: '55-75 kW', rotorLength: '30 cm çap' },
+    'WG-1200': { capacity: '8-12 ton/saat', power: '90-132 kW', rotorLength: '40 cm çap' }
+  },
+  'glass': {
+    'GB-300': { capacity: '500-800 kg/saat', power: '11-15 kW', rotorLength: '300 mm' }
+  }
+};
+
+// Dynamic content mapping for product types
+const productContentKeys: { [key: string]: { 
+  title: string; 
+  subtitle: string; 
+  desc1: string; 
+  desc2: string; 
+  desc3: string;
+  desc4?: string;
+  desc5?: string;
+  adv1Title: string;
+  adv1Desc: string;
+  adv2Title: string;
+  adv2Desc: string;
+  adv3Title: string;
+  adv3Desc: string;
+  adv4Title: string;
+  adv4Desc: string;
+} } = {
+  'single-shaft': {
+    title: 'single_shaft_main_title',
+    subtitle: 'single_shaft_subtitle',
+    desc1: 'single_shaft_description_1',
+    desc2: 'single_shaft_description_2',
+    desc3: 'single_shaft_description_3',
+    adv1Title: 'single_shaft_advantage_1_title',
+    adv1Desc: 'single_shaft_advantage_1_desc',
+    adv2Title: 'single_shaft_advantage_2_title',
+    adv2Desc: 'single_shaft_advantage_2_desc',
+    adv3Title: 'single_shaft_advantage_3_title',
+    adv3Desc: 'single_shaft_advantage_3_desc',
+    adv4Title: 'single_shaft_advantage_4_title',
+    adv4Desc: 'single_shaft_advantage_4_desc'
+  },
+  'dual-shaft': {
+    title: 'dual_shaft_main_title',
+    subtitle: 'dual_shaft_subtitle',
+    desc1: 'dual_shaft_description_1',
+    desc2: 'dual_shaft_description_2',
+    desc3: 'dual_shaft_description_3',
+    desc4: 'dual_shaft_description_4',
+    desc5: 'dual_shaft_description_5',
+    adv1Title: 'dual_shaft_adv_1_title',
+    adv1Desc: 'dual_shaft_adv_1_desc',
+    adv2Title: 'dual_shaft_adv_2_title',
+    adv2Desc: 'dual_shaft_adv_2_desc',
+    adv3Title: 'dual_shaft_adv_3_title',
+    adv3Desc: 'dual_shaft_adv_3_desc',
+    adv4Title: 'dual_shaft_adv_4_title',
+    adv4Desc: 'dual_shaft_adv_4_desc'
+  },
+  'quad-shaft': {
+    title: 'quad_shaft_main_title',
+    subtitle: 'quad_shaft_subtitle',
+    desc1: 'quad_shaft_description_1',
+    desc2: 'quad_shaft_description_2',
+    desc3: 'quad_shaft_description_3',
+    desc4: 'quad_shaft_description_4',
+    adv1Title: 'quad_shaft_adv_1_title',
+    adv1Desc: 'quad_shaft_adv_1_desc',
+    adv2Title: 'quad_shaft_adv_2_title',
+    adv2Desc: 'quad_shaft_adv_2_desc',
+    adv3Title: 'quad_shaft_adv_3_title',
+    adv3Desc: 'quad_shaft_adv_3_desc',
+    adv4Title: 'quad_shaft_adv_4_title',
+    adv4Desc: 'quad_shaft_adv_4_desc'
+  },
+  'metal': {
+    title: 'metal_main_title',
+    subtitle: 'metal_subtitle',
+    desc1: 'metal_description_1',
+    desc2: 'metal_description_2',
+    desc3: 'metal_description_1',
+    adv1Title: 'metal_adv_1_title',
+    adv1Desc: 'metal_adv_1_desc',
+    adv2Title: 'metal_adv_2_title',
+    adv2Desc: 'metal_adv_2_desc',
+    adv3Title: 'metal_adv_3_title',
+    adv3Desc: 'metal_adv_3_desc',
+    adv4Title: 'metal_adv_4_title',
+    adv4Desc: 'metal_adv_4_desc'
+  },
+  'harddisk': {
+    title: 'harddisk_main_title',
+    subtitle: 'harddisk_subtitle',
+    desc1: 'harddisk_description_1',
+    desc2: 'harddisk_description_2',
+    desc3: 'harddisk_description_3',
+    adv1Title: 'single_shaft_advantage_1_title',
+    adv1Desc: 'single_shaft_advantage_1_desc',
+    adv2Title: 'single_shaft_advantage_2_title',
+    adv2Desc: 'single_shaft_advantage_2_desc',
+    adv3Title: 'single_shaft_advantage_3_title',
+    adv3Desc: 'single_shaft_advantage_3_desc',
+    adv4Title: 'single_shaft_advantage_4_title',
+    adv4Desc: 'single_shaft_advantage_4_desc'
   }
 };
 
@@ -51,6 +203,9 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
 
   const models = availableModels[productType] || [];
   const fallbackImage = getFallbackImage(productType);
+  
+  // Get content keys for this product type
+  const contentKeys = productContentKeys[productType] || productContentKeys['single-shaft'];
 
   // Scroll to top when component mounts
   React.useEffect(() => {
@@ -82,11 +237,11 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-[#F4CE14] mb-6 text-5xl font-bold">
-              {t('single_shaft_main_title')}
+            <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold">
+              {t(contentKeys.title)}
             </h1>
             <p className="text-[#F5F7F8] text-xl max-w-4xl mx-auto leading-relaxed">
-              {t('single_shaft_subtitle')}
+              {t(contentKeys.subtitle)}
             </p>
           </motion.div>
 
@@ -117,18 +272,15 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-[#45474B] mb-8 text-4xl font-bold text-center">
+            <h2 className="text-[#45474B] mb-8 text-2xl md:text-3xl font-bold text-center">
               {t('about_our_machines')}
             </h2>
             <div className="prose prose-lg max-w-none space-y-6">
               <p className="text-[#45474B] leading-relaxed text-lg">
-                {t('single_shaft_description_1')}
+                {t(contentKeys.desc1)}
               </p>
               <p className="text-[#45474B] leading-relaxed text-lg">
-                {t('single_shaft_description_2')}
-              </p>
-              <p className="text-[#45474B] leading-relaxed text-lg">
-                {t('single_shaft_description_3')}
+                {t(contentKeys.desc2)}
               </p>
             </div>
           </motion.div>
@@ -142,7 +294,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center text-[#45474B] mb-16 text-4xl font-bold"
+            className="text-center text-[#45474B] mb-16 text-2xl md:text-3xl font-bold"
           >
             {t('key_features')}
           </motion.h2>
@@ -159,8 +311,8 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
               <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
                 <Settings size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
               </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t('single_shaft_advantage_1_title')}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t('single_shaft_advantage_1_desc')}</p>
+              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv1Title)}</h3>
+              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv1Desc)}</p>
             </motion.div>
 
             {/* Feature 2 */}
@@ -174,8 +326,8 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
               <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
                 <Zap size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
               </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t('single_shaft_advantage_2_title')}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t('single_shaft_advantage_2_desc')}</p>
+              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv2Title)}</h3>
+              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv2Desc)}</p>
             </motion.div>
 
             {/* Feature 3 */}
@@ -189,8 +341,8 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
               <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
                 <Shield size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
               </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t('single_shaft_advantage_3_title')}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t('single_shaft_advantage_3_desc')}</p>
+              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv3Title)}</h3>
+              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv3Desc)}</p>
             </motion.div>
 
             {/* Feature 4 */}
@@ -204,8 +356,8 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
               <div className="w-16 h-16 bg-[#F4CE14]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#F4CE14] transition-colors">
                 <Wrench size={32} className="text-[#F4CE14] group-hover:text-[#1E1E1E]" />
               </div>
-              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t('single_shaft_advantage_4_title')}</h3>
-              <p className="text-[#45474B] leading-relaxed">{t('single_shaft_advantage_4_desc')}</p>
+              <h3 className="text-[#45474B] mb-4 text-xl font-bold">{t(contentKeys.adv4Title)}</h3>
+              <p className="text-[#45474B] leading-relaxed">{t(contentKeys.adv4Desc)}</p>
             </motion.div>
           </div>
         </div>
@@ -220,7 +372,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-[#45474B] mb-4 text-4xl font-bold">{t('our_models')}</h2>
+            <h2 className="text-[#45474B] mb-4 text-2xl md:text-3xl font-bold">{t('our_models')}</h2>
             <p className="text-[#45474B] text-xl max-w-3xl mx-auto">
               {t('select_model_description')}
             </p>
@@ -298,7 +450,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-[#F4CE14] mb-6 text-4xl font-bold">
+            <h2 className="text-[#F4CE14] mb-6 text-5xl font-bold">
               {t('need_help_choosing')}
             </h2>
             <p className="text-[#F5F7F8] text-xl mb-8 max-w-2xl mx-auto">

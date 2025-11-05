@@ -16,8 +16,8 @@ interface SitemapUrl {
 const products = {
   'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
   'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-shaft': ['QS-80', 'QS-100', 'QS-120', 'QS-150'],
-  'metal': ['MP-100', 'MP-150'],
+  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+  'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
   'baler': ['BP-60', 'BP-100'],
   'conveyor': ['CV-3M', 'CV-5M', 'CV-10M'],

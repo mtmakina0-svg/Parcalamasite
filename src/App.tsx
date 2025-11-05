@@ -36,7 +36,7 @@ import {
 } from './utils/seoConfig';
 
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
-type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'granulator' | 'baler' | 'conveyor' | 'separator' | null;
+type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood-grinder' | 'glass' | null;
 
 // Parse URL and determine current page
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
@@ -67,10 +67,12 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     '/cift-shaftli-parcalama-makinesi': 'dual-shaft',
     '/dort-shaftli-parcalama-makinesi': 'quad-shaft',
     '/metal-parcalama-makinesi': 'metal',
-    '/granulator-makinesi': 'granulator',
-    '/balyalama-makinesi': 'baler',
-    '/konveyor-sistemi': 'conveyor',
-    '/ayristirma-makinesi': 'separator'
+    '/mobil-kirici': 'mobile',
+    '/palet-parcalama-makinesi': 'pallet',
+    '/harddisk-imha-makinesi': 'harddisk',
+    '/agac-koku-parcalama-makinesi': 'tree-root',
+    '/agac-parcalama-ogutme-makinesi': 'wood-grinder',
+    '/cam-sise-kirma-makinesi': 'glass'
   };
   
   // Check if it's a product category page
