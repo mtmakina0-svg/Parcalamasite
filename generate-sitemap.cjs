@@ -1,5 +1,4 @@
-// Bu script, 'build' işlemi bittikten sonra çalışır
-// ve 'build' klasörünün içine 'sitemap.xml' dosyasını oluşturur.
+// Bu script, 'public' klasörünün içine 'sitemap.xml' dosyasını oluşturur.
 
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
@@ -15,34 +14,77 @@ const staticPages = [
   '/urunler',
   '/teknoloji',
   '/referanslar',
-  '/sertifikalar',
+  '/sertifikalar', // Bu sayfa hala varsa kalsın.
   '/iletisim',
   '/e-katalog',
   '/atik-turleri',
 ];
 
-// Header.tsx dosyasından bildiğimiz dinamik ürün kategorileri
+// -----------------------------------------------------------------
+// YENİ GÜNCEL LİSTE (Ekran görüntülerinizden alındı)
+// -----------------------------------------------------------------
 const productCategories = [
   '/tek-shaftli-parcalama-makinesi',
   '/cift-shaftli-parcalama-makinesi',
   '/dort-shaftli-parcalama-makinesi',
-  '/metal-parcalama-makinesi',
-  '/granulator-makinesi',
-  '/balyalama-makinesi',
-  '/konveyor-sistemi',
-  '/ayristirma-makinesi',
+  '/metal-parcalama-makinesi', // (Redmonster)
+  '/mobil-kirici',
+  '/palet-parcalama-makinesi',
+  '/harddisk-imha-makinesi',
+  '/agac-koku-parcalama-makinesi',
+  '/agac-parcalama-ogutme-makinesi',
+  '/cam-sise-kirma-makinesi',
 ];
 
-// ProductDetailPage.tsx dosyasından bildiğimiz ürün modelleri
-// (Daha fazla model eklerseniz, buraya da eklemek iyi olur)
+// -----------------------------------------------------------------
+// YENİ GÜNCEL MODELLER (Ekran görüntülerinizden alındı)
+// -----------------------------------------------------------------
+// NOT: URL'lerin /tsh-60, /cs-20 gibi küçük harf olacağını varsaydım.
 const productModels = {
+  // Resim: image_446560.png
   '/tek-shaftli-parcalama-makinesi': [
     'TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'
   ],
-  // Diğer kategoriler için modeller...
+  // Resim: image_44657b.png
+  '/cift-shaftli-parcalama-makinesi': [
+    'CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'
+  ],
+  // Resim: image_446580.png
+  '/dort-shaftli-parcalama-makinesi': [
+    'DS-80', 'DS-100', 'DS-150', 'DS-200'
+  ],
+  // Resim: image_44659c.png
+  '/metal-parcalama-makinesi': [
+    'RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'
+  ],
+  // Resim: image_4465a1.png
+  '/mobil-kirici': [
+    'TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'
+  ],
+  // Resim: image_4465bd.png
+  '/palet-parcalama-makinesi': [
+    'TSV-140', 'TSV-200', 'TSVX-200'
+  ],
+  // Resim: image_4465d9.png
+  '/harddisk-imha-makinesi': [
+    'DATABER-S', 'DATABER-D', 'DATABER-T'
+  ],
+  // BU KATEGORİLER İÇİN RESİM ATmadınız, BOŞ BIRAKIYORUM
+  // SİZİN EKLEMENİZ GEREKİR.
+  '/agac-koku-parcalama-makinesi': [
+    // LÜTFEN MODELLERİ BURAYA EKLEYİN
+  ],
+  '/agac-parcalama-ogutme-makinesi': [
+    // LÜTFEN MODELLERİ BURAYA EKLEYİN
+  ],
+  '/cam-sise-kirma-makinesi': [
+    // LÜTFEN MODELLERİ BURAYA EKLEYİN
+  ],
 };
 
-// Header.tsx dosyasından bildiğimiz atık kategorileri
+// -----------------------------------------------------------------
+// Atık Kategorileri (Ekran görüntünüzle uyumlu, dokunmayın)
+// -----------------------------------------------------------------
 const wasteCategories = [
   'evsel-atiklar',
   'lastik-atiklari',
@@ -56,7 +98,9 @@ const wasteCategories = [
   'hayvan-atiklari',
 ];
 
-// Site haritasını oluşturma fonksiyonu
+// -----------------------------------------------------------------
+// SCRIPT'İN KALANI (Burası Kodu Çalıştırır - DOKUNMAYIN)
+// -----------------------------------------------------------------
 async function generateSitemap() {
   console.log('Site haritası (sitemap.xml) oluşturuluyor...');
 
