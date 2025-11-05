@@ -191,6 +191,17 @@ const translations = {
     single_shaft_watch_video: 'Videoyu İzle',
     single_shaft_similar_products: 'Benzer Ürünler',
     single_shaft_ecatalog_btn: 'E-Katalog',
+    single_shaft_faq_title: 'Tek Şaftlı Parçalama Makinesi Hakkında S.S.S.',
+    single_shaft_faq_q1: 'TEK ŞAFTLI PARÇALAMA MAKİNESİ NE İŞE YARAR?',
+    single_shaft_faq_a1: 'Tek şaftlı parçalama makinesi, plastik, kağıt, karton, ahşap ve hafif metal atıkları etkili bir şekilde parçalamak için tasarlanmış endüstriyel bir ekipmandır. Hidrolik itme sistemi ve keskin bıçakları sayesinde malzemeleri istenilen boyuta getirerek geri dönüşüm süreçlerini kolaylaştırır.',
+    single_shaft_faq_q2: 'HANGİ MALZEMELERİ İŞLEYEBİLİR?',
+    single_shaft_faq_a2: 'Tek şaftlı parçalama makineleri plastik filmler, PET şişeler, kağıt, karton, ahşap paletler, tekstil atıkları, plastik kaplar, hafif metaller ve benzeri atık malzemeleri işleyebilir. Özellikle homojen boyuta getirme gerektiren uygulamalarda tercih edilir.',
+    single_shaft_faq_q3: 'DİĞER PARÇALAMA MAKİNELERİNDEN FARKI NEDİR?',
+    single_shaft_faq_a3: 'Tek şaftlı makineler, hidrolik itme sistemi ve elek sistemi sayesinde daha homojen ve kontrollü parça boyutu elde edilmesini sağlar. Çift şaftlı makinelere göre daha küçük ve düzenli parçalar üretir, bu da sonraki işleme aşamalarında avantaj sağlar.',
+    single_shaft_faq_q4: 'BAKIM GEREKSİNİMLERİ NELERDİR?',
+    single_shaft_faq_a4: 'Düzenli bıçak kontrolü ve keskinleştirme, hidrolik sistem bakımı, elek temizliği ve yağlama işlemleri gereklidir. Modüler tasarımı sayesinde bakım işlemleri kolay ve hızlı yapılabilir. Ortalama 800-1000 saat kullanımda bıçak kontrolü önerilir.',
+    single_shaft_faq_q5: 'HANGİ SEKTÖRLERDE KULLANILIR?',
+    single_shaft_faq_a5: 'Plastik geri dönüşüm tesisleri, kağıt ve karton işleme tesisleri, ambalaj endüstrisi, otomotiv sektörü, elektronik atık tesisleri, tekstil geri dönüşüm merkezleri ve belediye atık yönetim tesislerinde yaygın olarak kullanılır.',
     youtube_channel_title: 'YouTube Kanalımızı İnceleyin',
     youtube_channel_description: 'Tüm makinelerimizin çalışma videolarını, müşteri referanslarını ve üretim süreçlerimizi YouTube kanalımızda bulabilirsiniz.',
     visit_youtube: 'YouTube Kanalına Git',
@@ -287,6 +298,12 @@ const translations = {
     quad_shaft_faq_a5: 'Bu makineler, kullanıcı güvenliğini sağlamak için çeşitli güvenlik özellikleri ile donatılmıştır. Bunlar arasında acil durdurma butonları, koruyucu kapaklar ve aşırı yük koruma sistemleri bulunur.',
     quad_shaft_faq_q6: 'PARÇALAMA KAPASİTESİ NEDİR?',
     quad_shaft_faq_a6: 'Parçalama kapasitesi, makinenin modeline ve işlenen malzemenin türüne bağlı olarak değişir. Genel olarak, dört şaftlı parçalama makineleri yüksek kapasiteli işler için tasarlanmıştır ve büyük hacimli malzemeleri etkili bir şekilde işleyebilir.',
+    quad_shaft_video_title: 'Dört Şaftlı Parçalama Makinesi Video',
+    quad_shaft_watch_video: 'Videoyu İzle',
+    quad_shaft_similar_products: 'Benzer Ürünler',
+    quad_shaft_ecatalog_btn: 'E-Katalog İndir',
+    quad_shaft_tech_specs: 'Teknik Özellikler',
+    quad_shaft_optional_features: 'Opsiyonel Özellikler',
     
     // Palet Parçalama Makinesi (TSV Serisi) Ürün Sayfası
     product_pallet: 'Palet Parçalama Makinesi',
@@ -382,6 +399,10 @@ const translations = {
     harddisk_adv_3_desc: 'Harddisk parçalama imha makinesi, yüksek kaliteli çelik bıçakları sayesinde aşınmaya karşı dayanıklıdır ve uzun süreli kullanım sağlar.',
     harddisk_adv_4_title: 'Büyük İşleme Kapasitesi',
     harddisk_adv_4_desc: 'Harddisk parçalama imha makinesi, farklı boyutlarda ve türlerde dijital depolama cihazlarını ve devre kartlarını hızlıca işleyebilir.',
+    harddisk_video_title: 'Harddisk İmha Parçalama Makinesi Video',
+    harddisk_watch_video: 'Videoyu İzle',
+    harddisk_similar_products: 'Benzer Ürünler',
+    harddisk_ecatalog_btn: 'E-Katalog',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Yüksek Kapasiteli Mobil Kırıcılar ile Endüstriyel Geri Dönüşümde Güçlü Çözüm',
@@ -702,6 +723,12 @@ const translations = {
     quad_shaft_faq_a5: 'These machines are equipped with various safety features to ensure user safety. These include emergency stop buttons, protective covers and overload protection systems.',
     quad_shaft_faq_q6: 'WHAT IS THE SHREDDING CAPACITY?',
     quad_shaft_faq_a6: 'The shredding capacity varies depending on the model of the machine and the type of material being processed. In general, quad shaft shredders are designed for high capacity operations and can effectively process large volumes of materials.',
+    quad_shaft_video_title: 'Quad Shaft Shredder Video',
+    quad_shaft_watch_video: 'Watch Video',
+    quad_shaft_similar_products: 'Similar Products',
+    quad_shaft_ecatalog_btn: 'Download E-Catalog',
+    quad_shaft_tech_specs: 'Technical Specifications',
+    quad_shaft_optional_features: 'Optional Features',
     
     // Pallet Shredder (TSV Series) Product Page
     product_pallet: 'Pallet Shredder',
@@ -766,6 +793,10 @@ const translations = {
     harddisk_adv_3_desc: 'The harddisk destruction shredder is resistant to wear with high-quality steel blades and provides long-term use.',
     harddisk_adv_4_title: 'Large Processing Capacity',
     harddisk_adv_4_desc: 'The harddisk destruction shredder can quickly process digital storage devices and circuit boards of different sizes and types.',
+    harddisk_video_title: 'Harddisk Destruction Shredder Video',
+    harddisk_watch_video: 'Watch Video',
+    harddisk_similar_products: 'Similar Products',
+    harddisk_ecatalog_btn: 'E-Catalog',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Powerful Solutions in Industrial Recycling with High Capacity Mobile Crushers',
@@ -884,7 +915,7 @@ const translations = {
     ref_title: 'Наши референции',
     ref_subtitle: 'Мы предоставляем промышленные решения нашим партнерам по всему миру.',
     ref_main_title: 'Удовлетворенность клиентов и истории успеха',
-    ref_main_subtitle: 'В MT Makina мы всегда ставим удовлетворенность клиентов на первое место. Отзывы наших деловых партнеров помогают нам улучшать качество наших продуктов и услуг. Наши успешно завершенные проекты являю��ся на��ими лучшими рекомендациями.',
+    ref_main_subtitle: 'В MT Makina мы всегда ставим удовлетворенность клиентов на первое место. Отзывы наших деловых партнеров помогают нам улучшать качество наших продуктов и услуг. Наши успешно завершенные проекты являю���ся на��ими лучшими рекомендациями.',
     ref_main_paragraph: 'Как надежный деловой партнер в области решений по переработке и управлению отходами, мы продолжаем работать над устойчивым будущим. Сотрудничая с MT Makina, вы можете внести свой вклад в экологическую устойчивость и сделать свои процессы управления отходами более эффективными.',
     ref_global_title: 'Глобальная экспортная сеть',
     ref_global_subtitle: 'Обслуживание клиентов в Европе, на Ближнем Востоке и в Азии.',
@@ -1075,6 +1106,12 @@ const translations = {
     quad_shaft_faq_a5: 'Эти машины оснащены различными функциями безопасности для обеспечения безопасности пользователя. К ним относятся кнопки аварийной остановки, защитные крышки и системы защиты от перегрузки.',
     quad_shaft_faq_q6: 'КАКОВА МОЩНОСТЬ ИЗМЕЛЬЧЕНИЯ?',
     quad_shaft_faq_a6: 'Мощность измельчения зависит от модели машины и типа обрабатываемого материала. В целом, четырехвальные измельчители предназначены для операций высокой производительности и могут эффективно обрабатывать большие объемы материалов.',
+    quad_shaft_video_title: 'Видео четырехвального измельчителя',
+    quad_shaft_watch_video: 'Смотреть видео',
+    quad_shaft_similar_products: 'Похожие продукты',
+    quad_shaft_ecatalog_btn: 'Скачать электронный каталог',
+    quad_shaft_tech_specs: 'Технические характеристики',
+    quad_shaft_optional_features: 'Дополнительные функции',
     
     // Pallet Shredder (TSV Series) Product Page
     product_pallet: 'Измельчитель поддонов',
@@ -1139,6 +1176,10 @@ const translations = {
     harddisk_adv_3_desc: 'Измельчитель для уничтожения жестких дисков устойчив к износу благодаря высококачественным стальным лезвиям и обеспечивает долгосрочное использование.',
     harddisk_adv_4_title: 'Большая производительность обработки',
     harddisk_adv_4_desc: 'Измельчитель для уничтожения жестких дисков может быстро обрабатывать цифровые устройства хранения данных и печатные платы различных размеров и типов.',
+    harddisk_video_title: 'Видео измельчителя для уничтожения жестких дисков',
+    harddisk_watch_video: 'Смотреть видео',
+    harddisk_similar_products: 'Похожие продукты',
+    harddisk_ecatalog_btn: 'Электронный каталог',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Мощные решения в промышленной переработке с высокопроизводительными мобильными дробилками',
@@ -1448,10 +1489,16 @@ const translations = {
     quad_shaft_faq_a5: 'هذه الآلات مجهزة بميزات السلامة المختلفة لضمان سلامة المستخدم. وتشمل هذه أزرار التوقف في حالات الطوارئ، الأغطية الواقية وأنظمة الحماية من الحمل الزائد.',
     quad_shaft_faq_q6: 'ما هي سعة التمزيق؟',
     quad_shaft_faq_a6: 'تختلف سعة التمزيق حسب طراز الآلة ونوع المادة التي تتم معالجتها. بشكل عام، تم تصميم آلات التمزيق رباعية العمود للعمليات عالية السعة ويمكنها معالجة كميات كبيرة من المواد بفعالية.',
+    quad_shaft_video_title: 'فيديو آلة التمزيق رباعية العمود',
+    quad_shaft_watch_video: 'مشاهدة الفيديو',
+    quad_shaft_similar_products: 'منتجات مماثلة',
+    quad_shaft_ecatalog_btn: 'تحميل الكتالوج الإلكتروني',
+    quad_shaft_tech_specs: 'المواصفات الفنية',
+    quad_shaft_optional_features: 'الميزات الاختيارية',
     
     // Pallet Shredder (TSV Series) Product Page
     product_pallet: 'آلة تمزيق المنصات',
-    pallet_main_title: 'آلة تمزيق المنصات: حلول فعالة لإعادة تدوير المنصات الخشبية والبلاستيكية',
+    pallet_main_title: 'آلة تمزيق المنصات: حلول فعالة لإ��ادة تدوير المنصات الخشبية والبلاستيكية',
     pallet_subtitle: 'معدات أساسية توفر الاستدامة البيئية والإدارة الفعالة للنفايات في عملية إعادة تدوير المنصات الخشبية والبلاستيكية.',
     pallet_description_1: 'آلة تمزيق المنصات هي معدات أساسية توفر الاستدامة البيئية والإدارة الفعالة للنفايات في عملية إعادة تدوير المنصات الخشبية والبلاستيكية. كسارة المنصات تسرع عملية إعادة التدوير وتسهل إدارة النفايات عن طريق تقسيم المنصات إلى قطع صغيرة.',
     pallet_description_2: 'المنصات المستخدمة في اللوجستيات وعمليات التخزين يمكن أن تخلق كميات كبيرة من خردة المنصات عندما تصل إلى نهاية عمرها الافتراضي. توفر آلة تمزيق المنصات حلاً واعياً بيئياً من خلال إعادة تدوير هذه النفايات وتساهم في حماية الموارد الطبيعية.',
@@ -1512,6 +1559,10 @@ const translations = {
     harddisk_adv_3_desc: 'آلة تمزيق إتلاف الأقراص الصلبة مقاومة للتآكل بفضل شفرات الفولاذ عالية الجودة وتوفر استخداماً طويل الأجل.',
     harddisk_adv_4_title: 'سعة معالجة كبيرة',
     harddisk_adv_4_desc: 'يمكن لآلة تمزيق إتلاف الأقراص الصلبة معالجة أجهزة التخزين الرقمية ولوحات الدوائر بأحجام وأنواع مختلفة بسرعة.',
+    harddisk_video_title: 'فيديو آلة تمزيق إتلاف الأقراص الصلبة',
+    harddisk_watch_video: 'مشاهدة الفيديو',
+    harddisk_similar_products: 'منتجات مماثلة',
+    harddisk_ecatalog_btn: 'الكتالوج الإلكتروني',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'حلول قوية في إعادة التدوير الصناعي مع الكسارات المتنقلة عالية السعة',

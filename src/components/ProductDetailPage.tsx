@@ -840,7 +840,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12"
             >
-              {t(`${productType}_faq_title`)}
+              {t(`${productType.replace(/-/g, '_')}_faq_title`)}
             </motion.h2>
 
             <motion.div
@@ -852,8 +852,10 @@ export const ProductDetailPage = ({
               <Accordion type="single" collapsible className="space-y-4">
                 {[1, 2, 3, 4, 5, 6, 7].map((num) => {
                   // Check if FAQ exists for this number
-                  const questionKey = `${productType}_faq_q${num}`;
-                  const answerKey = `${productType}_faq_a${num}`;
+                  // Replace hyphens with underscores for translation keys
+                  const normalizedProductType = productType.replace(/-/g, '_');
+                  const questionKey = `${normalizedProductType}_faq_q${num}`;
+                  const answerKey = `${normalizedProductType}_faq_a${num}`;
                   const question = t(questionKey);
                   const answer = t(answerKey);
                   
@@ -891,7 +893,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12"
             >
-              {t('single_shaft_video_title')}
+              {t(productType === 'pallet' ? 'pallet_video_title' : productType === 'harddisk' ? 'harddisk_video_title' : `${productType.replace(/-/g, '_')}_video_title`)}
             </motion.h2>
 
             <motion.div
@@ -920,7 +922,7 @@ export const ProductDetailPage = ({
                 <Button
                   className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
                 >
-                  {t('single_shaft_watch_video')}
+                  {t(`${productType.replace(/-/g, '_')}_watch_video`)}
                 </Button>
               </motion.div>
             </motion.div>
@@ -939,7 +941,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12"
             >
-              Benzer Ürünler
+              {t(`${productType.replace(/-/g, '_')}_similar_products`)}
             </motion.h2>
 
             <SimilarProductsSection 
@@ -1672,7 +1674,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12"
             >
-              Teknik Özellikler
+              {t('quad_shaft_tech_specs')}
             </motion.h2>
 
             {currentSpecs && (
@@ -1730,7 +1732,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-4xl mx-auto mt-12"
             >
-              <h3 className="text-center text-[#45474B] mb-6">Opsiyonel Özellikler</h3>
+              <h3 className="text-center text-[#45474B] mb-6">{t('quad_shaft_optional_features')}</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
                   <p className="text-[#1E1E1E]">• Kayış Kasnaklı Hidrolik Kaplin</p>
@@ -1771,7 +1773,129 @@ export const ProductDetailPage = ({
                 className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
-                E-Katalog İndir
+                {t('quad_shaft_ecatalog_btn')}
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center text-[#45474B] mb-12"
+            >
+              {t('quad_shaft_faq_title')}
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q1')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a1')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q2')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a2')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q3')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a3')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q4')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a4')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q5')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a5')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q6')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a6')}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Video Section */}
+        <section className="py-20 bg-[#F5F7F8]">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center text-[#45474B] mb-12"
+            >
+              {t('quad_shaft_video_title')}
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
+                  >
+                    <Play size={32} className="text-[#1E1E1E] ml-1" />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mt-6"
+            >
+              <Button
+                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
+              >
+                {t('quad_shaft_watch_video')}
               </Button>
             </motion.div>
           </div>
@@ -1789,7 +1913,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12"
             >
-              Benzer Ürünler
+              {t('quad_shaft_similar_products')}
             </motion.h2>
             
             <SimilarProductsSection 
