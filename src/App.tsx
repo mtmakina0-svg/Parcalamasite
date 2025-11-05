@@ -380,9 +380,16 @@ function AppContent() {
   };
 
   const handleNavigateToProductDetail = (productType: string, modelName?: string) => {
-    const model = modelName || (productType === 'single-shaft' ? 'TSH-60' : 
-                                 productType === 'dual-shaft' ? 'CS-20' : 
-                                 productType === 'quad-shaft' ? 'QS-80' : 'TSH-60');
+    const model = modelName || (
+      productType === 'single-shaft' ? 'TSH-60' : 
+      productType === 'dual-shaft' ? 'CS-20' : 
+      productType === 'quad-shaft' ? 'DS-80' : 
+      productType === 'metal' ? 'RDM-100' :
+      productType === 'pallet' ? 'TSV-140' :
+      productType === 'harddisk' ? 'DATABER-S' :
+      productType === 'mobile' ? 'TSM-150' :
+      'TSH-60'
+    );
     const url = generateUrl.productDetail(productType, model);
     navigateWithUrl('product-detail', url, { product: productType as ProductType, model });
   };
