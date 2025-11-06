@@ -19,9 +19,9 @@ export const generateUrl = {
   products: () => '/urunler',
   productCategory: (type: string) => {
     const slugs: { [key: string]: string } = {
-      'single-shaft': '/tek-shaftli-parcalama-makinesi',
-      'dual-shaft': '/cift-shaftli-parcalama-makinesi',
-      'quad-shaft': '/dort-shaftli-parcalama-makinesi',
+      'single-saft': '/tek-saftli-parcalama-makinesi',
+      'dual-saft': '/cift-saftli-parcalama-makinesi',
+      'quad-saft': '/dort-saftli-parcalama-makinesi',
       'metal': '/metal-parcalama-makinesi',
       'mobile': '/mobil-kirici',
       'pallet': '/palet-parcalama-makinesi',
@@ -110,17 +110,17 @@ export const seoMetadata: { [key: string]: SEOMetadata | ((params?: any) => SEOM
 // Product Category SEO Metadata (Dynamic)
 export const getProductCategorySEO = (type: string): SEOMetadata => {
   const categoryData: { [key: string]: Omit<SEOMetadata, 'canonical'> } = {
-    'single-shaft': {
+    'single-saft': {
       title: 'Tek Şaftlı Parçalama Makinesi | Single Shaft Shredder | MT Makina TSH Serisi',
       description: 'Tek şaftlı parçalama makinesi, single shaft shredder - MT Makina TSH Serisi 500-6000 kg/saat. Plastik kırma, ahşap parçalama, kağıt shredder. ✓ 6 Model ✓ CE Belgeli ✓ Hızlı Teslimat ✓ Garanti',
       keywords: ['tek şaftlı parçalama makinesi', 'single shaft shredder', 'TSH serisi', 'plastik kırma makinesi', 'ahşap parçalama makinesi', 'kağıt parçalama', 'plastik shredder', 'ahşap kırıcı', 'tek şaft shredder', 'endüstriyel parçalama'],
     },
-    'dual-shaft': {
+    'dual-saft': {
       title: 'Çift Şaftlı Parçalama Makinesi | Dual Shaft Shredder | MT Makina CS Serisi',
       description: 'Çift şaftlı parçalama makinesi, dual shaft shredder - MT Makina CS Serisi. Metal parçalama, palet kırıcı, lastik shredder. ✓ Ağır Hizmet Tipi ✓ Çift Motor ✓ Yüksek Tork ✓ CE Belgeli',
       keywords: ['çift şaftlı parçalama makinesi', 'dual shaft shredder', 'CS serisi', 'metal parçalama makinesi', 'palet kırıcı', 'lastik parçalama', 'çift şaft shredder', 'ağır hizmet parçalama', 'endüstriyel atık kırıcı'],
     },
-    'quad-shaft': {
+    'quad-saft': {
       title: 'Dört Şaftlı Katı Atık Parçalama Makinesi | Quad Shaft Shredder | MT Makina DS Serisi',
       description: 'Dört şaftlı katı atık parçalama makinesi - MT Makina DS Serisi. Plastik, metal, ahşap, kağıt, elektronik atık işleme. ✓ Hidrolik Baskı ✓ Hacimli Malzemeler ✓ Yüksek Verimlilik ✓ CE Belgeli',
       keywords: ['dört şaftlı parçalama makinesi', 'quad shaft shredder', 'DS serisi', 'katı atık parçalayıcı', 'elektronik atık parçalama', 'tıbbi atık parçalama', 'balya parçalama makinesi', 'lastik parçalama', 'hdd parçalama', 'parçalayıcı makine'],
@@ -178,7 +178,7 @@ export const getProductCategorySEO = (type: string): SEOMetadata => {
 export const getProductModelSEO = (type: string, model: string): SEOMetadata => {
   // Model specific details
   const modelDetails: { [key: string]: { [model: string]: Omit<SEOMetadata, 'canonical'> } } = {
-    'single-shaft': {
+    'single-saft': {
       'TSH-60': {
         title: 'TSH-60 Parçalama Makinesi | 15-30 kW | 500-800 kg/saat | Fiyat Teklifi',
         description: 'TSH-60 tek şaftlı parçalama makinesi - 15-30 kW motor, 600x1100mm parçalama alanı, 500-800 kg/saat. Plastik, ahşap, kağıt için. ✓ Stokta ✓ Hızlı Teslimat ✓ Fiyat Teklifi Al',
@@ -210,7 +210,7 @@ export const getProductModelSEO = (type: string, model: string): SEOMetadata => 
         keywords: ['TSH-200', 'maksimum kapasite shredder', '2000mm parçalama', '5000 kg saat', 'profesyonel shredder', 'yüksek performans'],
       }
     },
-    'dual-shaft': {
+    'dual-saft': {
       'CS-20': {
         title: 'CS-20 Çift Şaftlı Parçalama Makinesi | Kompakt Model | MT Makina',
         description: 'MT Makina CS-20 model çift şaftlı parçalama makinesi. Kompakt tasarım, güçlü çift motor sistemi. Sert plastik, ahşap palet, karton parçalama için ideal.',
@@ -257,7 +257,7 @@ export const getProductModelSEO = (type: string, model: string): SEOMetadata => 
         keywords: ['CS-200', 'çift şaftlı 200', 'sanayi tipi', 'maksimum kapasite', 'sürekli üretim'],
       }
     },
-    'quad-shaft': {
+    'quad-saft': {
       'DS-80': {
         title: 'DS-80 Dört Şaftlı Parçalama Makinesi | 800x800 mm | 11-22 kW (4x) | MT Makina',
         description: 'DS-80 dört şaftlı katı atık parçalama makinesi - 800x800 mm parçalama alanı, 11-22 kW (4x) motor. Plastik varil, metal varil, elektronik atık, balya parçalama. ✓ Hidrolik Baskı ✓ Kompakt Çözüm',

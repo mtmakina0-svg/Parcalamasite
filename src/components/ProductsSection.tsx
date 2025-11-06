@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 const products = [
   {
-    id: 'single-shaft',
+    id: 'single-saft',
     titleTR: 'Tek Şaftlı Parçalama Makinesi',
     titleEN: 'Single Shaft Shredder',
     titleRU: 'Одновальный измельчитель',
@@ -14,7 +14,7 @@ const products = [
     image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
   },
   {
-    id: 'dual-shaft',
+    id: 'dual-saft',
     titleTR: 'Çift Şaftlı Parçalama Makinesi',
     titleEN: 'Double Shaft Shredder',
     titleRU: 'Двухвальный измельчитель',
@@ -22,7 +22,7 @@ const products = [
     image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
   },
   {
-    id: 'quad-shaft',
+    id: 'quad-saft',
     titleTR: 'Dört Şaftlı Parçalama Makinesi',
     titleEN: 'Quad Shaft Shredder',
     titleRU: 'Четырехвальный измельчитель',

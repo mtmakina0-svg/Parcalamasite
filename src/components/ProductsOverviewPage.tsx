@@ -12,19 +12,19 @@ interface Product {
 
 const products: Product[] = [
   { 
-    id: 'single-shaft', 
+    id: 'single-saft', 
     title: 'Tek Şaftlı Parçalama Makinesi',
     image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
     alt: 'Tek Şaftlı Parçalama Makinesi - MT Makina TSH Serisi'
   },
   { 
-    id: 'dual-shaft', 
+    id: 'dual-saft', 
     title: 'Çift Şaftlı Parçalama Makinesi',
     image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
     alt: 'Çift Şaftlı Parçalama Makinesi - MT Makina CS Serisi'
   },
   { 
-    id: 'quad-shaft', 
+    id: 'quad-saft', 
     title: 'Dört Şaftlı Parçalama Makinesi',
     image: 'https://i.ibb.co/SDjBQ9cq/1-9.png',
     alt: 'Dört Şaftlı Parçalama Makinesi - MT Makina QS Serisi'

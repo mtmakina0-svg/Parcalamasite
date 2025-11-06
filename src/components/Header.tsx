@@ -59,15 +59,15 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
 
   // Product models for mega menu - TÜM ÜRÜNLER
   const productModels: { [key: string]: { label: string, models: string[] } } = {
-    'single-shaft': {
+    'single-saft': {
       label: 'Tek Şaftlı Parçalama Makinesi',
       models: ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200']
     },
-    'dual-shaft': {
+    'dual-saft': {
       label: 'Çift Şaftlı Parçalama Makinesi',
       models: ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200']
     },
-    'quad-shaft': {
+    'quad-saft': {
       label: 'Dört Şaftlı Parçalama Makinesi',
       models: ['DS-80', 'DS-100', 'DS-150', 'DS-200']
     },
@@ -103,9 +103,9 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
   
   // Primary products (main shredders) - displayed in columns
   const primaryProducts = [
-    { key: 'product_single_shaft', action: 'single-shaft', hasModels: true },
-    { key: 'product_dual_shaft', action: 'dual-shaft', hasModels: true },
-    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true }
+    { key: 'product_single_shaft', action: 'single-saft', hasModels: true },
+    { key: 'product_dual_shaft', action: 'dual-saft', hasModels: true },
+    { key: 'product_quad_shaft', action: 'quad-saft', hasModels: true }
   ];
   
   // Secondary products - displayed below primary

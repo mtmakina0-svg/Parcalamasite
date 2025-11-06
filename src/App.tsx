@@ -36,7 +36,7 @@ import {
 } from './utils/seoConfig';
 
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
-type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood-grinder' | 'glass' | null;
+type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood-grinder' | 'glass' | null;
 
 // Parse URL and determine current page
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
@@ -63,9 +63,9 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
   
   // Product Categories
   const productCategoryMap: { [key: string]: ProductType } = {
-    '/tek-shaftli-parcalama-makinesi': 'single-shaft',
-    '/cift-shaftli-parcalama-makinesi': 'dual-shaft',
-    '/dort-shaftli-parcalama-makinesi': 'quad-shaft',
+    '/tek-saftli-parcalama-makinesi': 'single-saft',
+    '/cift-saftli-parcalama-makinesi': 'dual-saft',
+    '/dort-saftli-parcalama-makinesi': 'quad-saft',
     '/metal-parcalama-makinesi': 'metal',
     '/mobil-kirici': 'mobile',
     '/palet-parcalama-makinesi': 'pallet',
@@ -381,9 +381,9 @@ function AppContent() {
 
   const handleNavigateToProductDetail = (productType: string, modelName?: string) => {
     const model = modelName || (
-      productType === 'single-shaft' ? 'TSH-60' : 
-      productType === 'dual-shaft' ? 'CS-20' : 
-      productType === 'quad-shaft' ? 'DS-80' : 
+      productType === 'single-saft' ? 'TSH-60' : 
+      productType === 'dual-saft' ? 'CS-20' : 
+      productType === 'quad-saft' ? 'DS-80' : 
       productType === 'metal' ? 'RDM-100' :
       productType === 'pallet' ? 'TSV-140' :
       productType === 'harddisk' ? 'DATABER-S' :
