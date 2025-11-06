@@ -11,7 +11,7 @@ interface ModelDescription {
 }
 
 export const modelDescriptions: { [productType: string]: { [modelName: string]: ModelDescription } } = {
-  'single-shaft': {
+  'single-saft': {
     'TSH-60': {
       intro: 'TSH-60 tek şaftlı parçalama makinesi, küçük ve orta ölçekli işletmeler için ideal çözümdür.',
       paragraph1: 'TSH-60 model, 15-30 kW motor gücü ile plastik, ahşap, kağıt, tekstil ve ambalaj atıklarının etkili şekilde parçalanmasını sağlar. 600x1100 mm parçalama alanı ve 500-800 kg/saat işleme kapasitesi ile günlük orta seviye üretim gereksinimlerini karşılar. Kompakt tasarımı sayesinde sınırlı alanlarda bile verimli çalışır.',
@@ -49,11 +49,11 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       paragraph3: 'TSH-200, mega ölçekli geri dönüşüm kompleksleri, belediye entegre katı atık yönetim tesisleri, otomotiv sanayi atık merkezleri, liman ve gümrük atık işleme merkezleri için ideal çözümdür. Tam otomatik hat entegrasyonu, multi-seperatör sistemleri, otomatik paketleme ve sevkiyat sistemleri ile kombine edilebilir. 7/24 teknik destek, yerinde bakım servisi ve uzun süreli garanti ile desteklenir.'
     }
   },
-  'dual-shaft': {
+  'dual-saft': {
     'CS-20': {
       intro: 'CS-20 çift şaftlı katı atık parçalama makinesi, 200x200 mm parçalama alanı ile kompakt ölçekli işletmeler için ideal plastik parçalama ve metal kırma çözümüdür.',
       paragraph1: 'CS-20 çift şaftlı parçalama makinesi, 2,2-11 kW güçlü motor seçenekleri ve 200 mm rotor boyu ile hurda plastik kırma makinası ve küçük ölçekli geri dönüşüm kırma makinası uygulamalarında mükemmel performans gösterir. Plastik parçalama makinesi olarak kullanıldığında, pet şişe parçalama, pvc kırma ve evsel atık parçalama gibi çeşitli malzemeleri işleyebilir. Düşük devir-yüksek tork prensibi sayesinde enerji verimliliği sağlar ve işletme maliyetlerini düşürür.',
-      paragraph2: 'Metal parçalama makinesi uygulamalarında, hurda demir parçalama ve küçük metal atık kırma işlemlerinde etkilidir. Çift şaftlı katı atık parçalama makinesi yapısı, malzeme sıkışmalarını önler ve dengeli kesme işlemi sağlar. Kağıt parçalama makinesi, ahşap parçalama ve kumaş parçalama gibi farklı atık türlerinde de kullanılabilir. PLC kontrollü otomatik geri dönüş sistemi, sıkışmalara karşı bıçakları korur ve uzun ömürlü kullanım garantisi verir.',
+      paragraph2: 'Metal parçalama makinesi uygulamalarında, hurda demir parçalama ve küçük metal atık kırma işlemlerinde etkilidir. Çift şaftlı katı atık parçalama makinesi yapısı, malzeme sıkışmalarını önler ve dengeli kesme işlemi sağlar. Kağıt parçalama makinesi, ahşap par��alama ve kumaş parçalama gibi farklı atık türlerinde de kullanılabilir. PLC kontrollü otomatik geri dönüş sistemi, sıkışmalara karşı bıçakları korur ve uzun ömürlü kullanım garantisi verir.',
       paragraph3: 'CS-20 modeli, plastik parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından ekonomik bir çözüm sunar. Palet parçalama, lastik parçalama ve cam parçalama uygulamalarında kompakt boyutlarıyla öne çıkar. Modüler bıçak tasarımı kolay bakım sağlar ve farklı elek opsiyonları ile çıkış boyutu ayarlanabilir. Geri dönüşüm kırma makinası olarak küçük tesisler, hurda plastik kırma makinası olarak plastik atık toplama merkezleri ve balya parçalama uygulamaları için idealdir.'
     },
     'CS-40': {
@@ -105,7 +105,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       paragraph3: 'CS-200, parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından mega ölçekli tesisler için en yüksek performans/değer oranını sunar. Hurda demir parçalama makinası fiyatları segmentinde endüstri lideri konumdadır. Plastik parçalama makinesi olarak pet şişe parçalama, hurda plastik kırma makinası ve pvc kırma uygulamalarında maksimum endüstriyel kapasite sağlar. Tam modüler tasarım, kolay bakım, hızlı parça değişimi ve uzun ömürlü kullanım garantisi verir. Palet parçalama makinası, ahşap parçalama, lastik parçalama ve kağıt parçalama kombinasyonlarında mutlak üretim gücü sunar. Geri dönüşüm kırma makinası olarak entegre mega kompleksler ve belediye tesisleri için en güvenilir ve güçlü çözümdür.'
     }
   },
-  'quad-shaft': {
+  'quad-saft': {
     'DS-80': {
       intro: 'DS-80 dört şaftlı katı atık parçalama makinesi, 800x800 mm parçalama alanı ve 11-22 kW (4x) motor gücü ile hacimli atık yönetimi için kompakt ve güçlü bir çözüm sunar.',
       paragraph1: 'DS-80 model, lastik parçalama makinesi, balya parçalama makinesi ve palet parçalama makinesi uygulamalarında yüksek verimlilik sağlar. Plastik varil, metal varil, boya varil ve evsel çöp gibi hacimli atıkları dört şaft teknolojisi ile etkili şekilde parçalar. Elektronik atık parçalama makinesi, hdd parçalama makinesi ve karton parçalama makinesi olarak kullanıldığında, buzdolabı, devre kartı, TV kasası gibi elektronik atıkları güvenli şekilde işler. Dört şaftlı katı atık parçalayıcı yapısı, hidrolik baskı ile malzemeleri hızlı ve homojen şekilde parçalar.',

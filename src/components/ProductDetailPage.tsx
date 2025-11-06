@@ -36,7 +36,7 @@ interface ModelSpecs {
 }
 
 const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } } = {
-  'single-shaft': {
+  'single-saft': {
     'TSH-60': {
       motorPower: '15–30 kW',
       rotorLength: '600 mm',
@@ -86,7 +86,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       capacity: '4500-6000 kg/saat'
     }
   },
-  'dual-shaft': {
+  'dual-saft': {
     'CS-20': {
       motorPower: '2 x 7.5 kW',
       rotorLength: '400 mm',
@@ -169,7 +169,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       screenSize: '150-350 mm'
     }
   },
-  'quad-shaft': {
+  'quad-saft': {
     'DS-80': {
       motorPower: '11–22 kW (4x)',
       rotorLength: '800 mm',
@@ -331,9 +331,9 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
 
 // Available models for each product type
 const availableModels: { [key: string]: string[] } = {
-  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
-  'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+  'single-saft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
+  'dual-saft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
+  'quad-saft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
@@ -387,7 +387,7 @@ export const ProductDetailPage = ({
   }, [productType, modelName]);
 
   // Single Shaft, Harddisk, and Mobile Product Data (using same layout)
-  if (productType === 'single-shaft' || productType === 'harddisk' || productType === 'mobile') {
+  if (productType === 'single-saft' || productType === 'harddisk' || productType === 'mobile') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -955,7 +955,7 @@ export const ProductDetailPage = ({
   }
 
   // Dual Shaft and Pallet Product Pages (using same layout)
-  if (productType === 'dual-shaft' || productType === 'pallet') {
+  if (productType === 'dual-saft' || productType === 'pallet') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -1158,7 +1158,7 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
-        {/* Performance Section with 3 Images - Only for dual-shaft */}
+        {/* Performance Section with 3 Images - Only for dual-saft */}
         {productType !== 'pallet' && (
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -1452,7 +1452,7 @@ export const ProductDetailPage = ({
             </motion.h2>
 
             <SimilarProductsSection 
-              currentProductType="dual-shaft"
+              currentProductType="dual-saft"
               onProductClick={onProductDetailClick}
             />
           </div>
@@ -1462,7 +1462,7 @@ export const ProductDetailPage = ({
   }
 
   // Quad-Shaft (Dört Şaftlı) Product Data
-  if (productType === 'quad-shaft') {
+  if (productType === 'quad-saft') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -1917,7 +1917,7 @@ export const ProductDetailPage = ({
             </motion.h2>
             
             <SimilarProductsSection 
-              currentProductType="quad-shaft"
+              currentProductType="quad-saft"
               onProductClick={onProductDetailClick}
             />
           </div>

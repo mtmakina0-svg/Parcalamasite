@@ -7,9 +7,9 @@
  * Product folder name mapping (for reference)
  */
 export const PRODUCT_FOLDER_MAP: { [key: string]: string } = {
-  'single-shaft': 'TEK ŞAFTLI PARÇALAMA MAKİNESİ',
-  'dual-shaft': 'ÇİFT ŞAFTLI PARÇALAMA MAKİNESİ',
-  'quad-shaft': 'DÖRT ŞAFTLI PARÇALAMA MAKİNESİ',
+  'single-saft': 'TEK ŞAFTLI PARÇALAMA MAKİNESİ',
+  'dual-saft': 'ÇİFT ŞAFTLI PARÇALAMA MAKİNESİ',
+  'quad-saft': 'DÖRT ŞAFTLI PARÇALAMA MAKİNESİ',
   'metal': 'METAL PARÇALAMA MAKİNESİ',
   'mobile': 'MOBİL KIRICI',
   'pallet': 'PALET PARÇALAMA MAKİNESİ',
@@ -47,7 +47,7 @@ export interface ModelImages {
  * Format: https://i.ibb.co/XXXXX/filename.png
  */
 const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
-  'single-shaft': {
+  'single-saft': {
     'TSH-60': {
       main: 'https://i.ibb.co/Hf47H3b1/1-1.png',
       detail1: 'https://i.ibb.co/PvTXDqcZ/1-2.png',
@@ -91,7 +91,7 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: ''
     }
   },
-  'dual-shaft': {
+  'dual-saft': {
     'CS-20': { 
       main: 'https://i.ibb.co/B2yVNQF0/1-1.png', 
       detail1: 'https://i.ibb.co/FbDPTXxf/1-2.png', 
@@ -156,7 +156,7 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: '' 
     }
   },
-  'quad-shaft': {
+  'quad-saft': {
     'DS-80': { 
       main: 'https://i.ibb.co/Gf8mjXGm/1-1.png', 
       detail1: 'https://i.ibb.co/d00YBDL5/1-2.png', 
@@ -369,9 +369,9 @@ export const getModelImages = (
  * Fallback images from Unsplash for different product types
  */
 export const FALLBACK_IMAGES: { [key: string]: string } = {
-  'single-shaft': 'https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwc2hyZWRkZXIlMjBtYWNoaW5lfGVufDF8fHx8MTc2MjE2NzUyOHww&ixlib=rb-4.1.0&q=80&w=1080',
-  'dual-shaft': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
-  'quad-shaft': 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+  'single-saft': 'https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwc2hyZWRkZXIlMjBtYWNoaW5lfGVufDF8fHx8MTc2MjE2NzUyOHww&ixlib=rb-4.1.0&q=80&w=1080',
+  'dual-saft': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+  'quad-saft': 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'metal': 'https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'mobile': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'pallet': 'https://i.ibb.co/svR9Kdq7/1-7.png',
