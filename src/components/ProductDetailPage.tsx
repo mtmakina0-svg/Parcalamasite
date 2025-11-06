@@ -517,7 +517,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-4xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
               {t(productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
             </motion.h2>
@@ -599,7 +599,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-16 text-4xl font-bold"
+              className="text-center text-[#45474B] mb-16 text-3xl font-bold"
             >
               {t('single_shaft_performance_title')}
             </motion.h2>
@@ -684,7 +684,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-4xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('single_shaft_tech_specs_title')}
             </motion.h2>
@@ -754,7 +754,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-4xl mx-auto mt-16"
             >
-              <h3 className="text-center text-[#45474B] mb-8 text-2xl font-bold">
+              <h3 className="text-center text-[#45474B] mb-8 text-3xl font-bold">
                 {productType === 'pallet' ? t('pallet_optional_features_title') : 'Opsiyonel Özellikler'}
               </h3>
               <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
@@ -838,7 +838,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(`${productType.replace(/-/g, '_')}_faq_title`)}
             </motion.h2>
@@ -891,7 +891,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_video_title' : productType === 'harddisk' ? 'harddisk_video_title' : `${productType.replace(/-/g, '_')}_video_title`)}
             </motion.h2>
@@ -939,7 +939,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(`${productType.replace(/-/g, '_')}_similar_products`)}
             </motion.h2>
@@ -1085,7 +1085,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-5xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_advantages_title' : 'dual_shaft_advantages_title')}
             </motion.h2>
@@ -1166,7 +1166,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-16 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-16 text-3xl font-bold"
             >
               {t('dual_shaft_performance_title')}
             </motion.h2>
@@ -1252,7 +1252,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_tech_specs_title' : 'dual_shaft_tech_specs_title')}
             </motion.h2>
@@ -1330,7 +1330,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_faq_title' : 'dual_shaft_faq_title')}
             </motion.h2>
@@ -1398,7 +1398,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_video_title' : 'dual_shaft_video_title')}
             </motion.h2>
@@ -1446,7 +1446,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('dual_shaft_similar_products')}
             </motion.h2>
@@ -1592,7 +1592,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-4xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
               Temel Özellikler ve Avantajlar
             </motion.h2>
@@ -1672,7 +1672,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('quad_shaft_tech_specs')}
             </motion.h2>
@@ -1732,7 +1732,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-4xl mx-auto mt-12"
             >
-              <h3 className="text-center text-[#45474B] mb-6">{t('quad_shaft_optional_features')}</h3>
+              <h3 className="text-center text-[#45474B] mb-6 text-3xl font-bold">{t('quad_shaft_optional_features')}</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
                   <p className="text-[#1E1E1E]">• Kayış Kasnaklı Hidrolik Kaplin</p>
@@ -1786,7 +1786,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('quad_shaft_faq_title')}
             </motion.h2>
@@ -1863,7 +1863,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('quad_shaft_video_title')}
             </motion.h2>
@@ -1911,7 +1911,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('quad_shaft_similar_products')}
             </motion.h2>
@@ -2046,7 +2046,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-5xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
               {t('metal_advantages_title')}
             </motion.h2>
@@ -2126,7 +2126,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('metal_tech_specs_title')}
             </motion.h2>
@@ -2227,8 +2227,53 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
-        {/* YouTube Channel Section */}
-        <YouTubeChannelSection className="py-20 bg-white" />
+        {/* Video Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+            >
+              Metal Parçalama Makinesi Video
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
+                  >
+                    <Play size={32} className="text-[#1E1E1E] ml-1" />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mt-6"
+            >
+              <Button
+                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
+              >
+                Videoyu İzle
+              </Button>
+            </motion.div>
+
+            {/* YouTube Channel Section */}
+            <YouTubeChannelSection className="mt-16" />
+          </div>
+        </section>
 
         {/* Similar Products */}
         <section className="py-20 bg-[#F5F7F8]">
@@ -2237,7 +2282,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               Benzer Ürünler
             </motion.h2>

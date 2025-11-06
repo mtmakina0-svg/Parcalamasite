@@ -399,6 +399,7 @@ const translations = {
     harddisk_adv_3_desc: 'Harddisk parçalama imha makinesi, yüksek kaliteli çelik bıçakları sayesinde aşınmaya karşı dayanıklıdır ve uzun süreli kullanım sağlar.',
     harddisk_adv_4_title: 'Büyük İşleme Kapasitesi',
     harddisk_adv_4_desc: 'Harddisk parçalama imha makinesi, farklı boyutlarda ve türlerde dijital depolama cihazlarını ve devre kartlarını hızlıca işleyebilir.',
+    harddisk_faq_title: 'Harddisk İmha Parçalama Makinesi S.S.S.',
     harddisk_video_title: 'Harddisk İmha Parçalama Makinesi Video',
     harddisk_watch_video: 'Videoyu İzle',
     harddisk_similar_products: 'Benzer Ürünler',
@@ -435,6 +436,9 @@ const translations = {
     mobile_faq_a6: 'İnvertör kontrollü motorlar ve otomatik geri vites özellikleri, enerji verimliliğini artırır ve makinenin performansını optimize eder. Bu, enerji tüketimini azaltırken yüksek verimlilik sağlar.',
     mobile_faq_q7: 'MOBİL KIRICI\'NIN GÜVENLİK ÖZELLİKLERİ NELERDİR?',
     mobile_faq_a7: 'Acil durdurma butonları, koruyucu kaplamalar ve otomatik geri vites özellikleri gibi güvenlik önlemleri ile donatılmıştır. Bu özellikler, operatör güvenliğini sağlar.',
+    mobile_video_title: 'Mobil Kırıcı Video',
+    mobile_watch_video: 'Videoyu İzle',
+    mobile_similar_products: 'Benzer Ürünler',
   },
   en: {
     // Header & Navigation
@@ -793,6 +797,7 @@ const translations = {
     harddisk_adv_3_desc: 'The harddisk destruction shredder is resistant to wear with high-quality steel blades and provides long-term use.',
     harddisk_adv_4_title: 'Large Processing Capacity',
     harddisk_adv_4_desc: 'The harddisk destruction shredder can quickly process digital storage devices and circuit boards of different sizes and types.',
+    harddisk_faq_title: 'Harddisk Destruction Shredder F.A.Q.',
     harddisk_video_title: 'Harddisk Destruction Shredder Video',
     harddisk_watch_video: 'Watch Video',
     harddisk_similar_products: 'Similar Products',
@@ -829,6 +834,9 @@ const translations = {
     mobile_faq_a6: 'Inverter-controlled motors and automatic reverse features increase energy efficiency and optimize machine performance. This provides high efficiency while reducing energy consumption.',
     mobile_faq_q7: 'WHAT ARE THE SAFETY FEATURES OF THE MOBILE CRUSHER?',
     mobile_faq_a7: 'It is equipped with safety measures such as emergency stop buttons, protective covers and automatic reverse features. These features ensure operator safety.',
+    mobile_video_title: 'Mobile Crusher Video',
+    mobile_watch_video: 'Watch Video',
+    mobile_similar_products: 'Similar Products',
   },
   ru: {
     // Header & Navigation
@@ -904,7 +912,7 @@ const translations = {
     tech_subtitle: 'Инженерные решения с фокусом на гидравлические системы, геометрию режущих лезвий, автоматизацию и энергоэффективность.',
     tech_hydraulic: 'Гидравлические системы',
     tech_hydraulic_desc: 'Максимальная эффективность с высоким гидравлическим давлением',
-    tech_blade: 'Технология режущих лезвий',
+    tech_blade: 'Техноло��ия режущих лезвий',
     tech_blade_desc: 'Долговечная резка со специальной геометрией и прочными материалами',
     tech_automation: 'Решения автоматизации',
     tech_automation_desc: 'Интеллектуальные системы управления и мониторинга с ПЛК',
@@ -917,7 +925,7 @@ const translations = {
     ref_main_title: 'Удовлетворенность клиентов и истории успеха',
     ref_main_subtitle: 'В MT Makina мы всегда ставим удовлетворенность клиентов на первое место. Отзывы наших деловых партнеров помогают нам улучшать качество наших продуктов и услуг. Наши успешно завершенные проекты являю���ся на��ими лучшими рекомендациями.',
     ref_main_paragraph: 'Как надежный деловой партнер в области решений по переработке и управлению отходами, мы продолжаем работать над устойчивым будущим. Сотрудничая с MT Makina, вы можете внести свой вклад в экологическую устойчивость и сделать свои процессы управления отходами более эффективными.',
-    ref_global_title: 'Глобальная экспортная сеть',
+    ref_global_title: 'Глобальная экс��ортная сеть',
     ref_global_subtitle: 'Обслуживание клиентов в Европе, на Ближнем Востоке и в Азии.',
     
     // Contact
@@ -1176,6 +1184,7 @@ const translations = {
     harddisk_adv_3_desc: 'Измельчитель для уничтожения жестких дисков устойчив к износу благодаря высококачественным стальным лезвиям и обеспечивает долгосрочное использование.',
     harddisk_adv_4_title: 'Большая производительность обработки',
     harddisk_adv_4_desc: 'Измельчитель для уничтожения жестких дисков может быстро обрабатывать цифровые устройства хранения данных и печатные платы различных размеров и типов.',
+    harddisk_faq_title: 'Часто задаваемые вопросы об измельчителе жестких дисков',
     harddisk_video_title: 'Видео измельчителя для уничтожения жестких дисков',
     harddisk_watch_video: 'Смотреть видео',
     harddisk_similar_products: 'Похожие продукты',
@@ -1212,6 +1221,9 @@ const translations = {
     mobile_faq_a6: 'Двигатели с инверторным управлением и функции автоматического реверса повышают энергоэффективность и оптимизируют производительность машины. Это обеспечивает высокую эффективность при снижении энергопотребления.',
     mobile_faq_q7: 'КАКОВЫ ФУНКЦИИ БЕЗОПАСНОСТИ МОБИЛЬНОЙ ДРОБИЛКИ?',
     mobile_faq_a7: 'Оснащена мерами безопасности, такими как кнопки аварийной остановки, защитные крышки и функции автоматического реверса. Эти функции обеспечивают безопасность оператора.',
+    mobile_video_title: 'Видео мобильной дробилки',
+    mobile_watch_video: 'Смотреть видео',
+    mobile_similar_products: 'Похожие продукты',
   },
   ar: {
     // Header & Navigation
@@ -1290,7 +1302,7 @@ const translations = {
     tech_blade: 'تقنية الشفرات القاطعة',
     tech_blade_desc: 'قطع طويل الأمد بهندسة خاصة ومواد متينة',
     tech_automation: 'حلول الأتمتة',
-    tech_automation_desc: 'أنظمة التشغيل والمراقبة الذكية المتحكم فيها بواسطة PLC',
+    tech_automation_desc: 'أنظمة التشغ��ل والمراقبة الذكية المتحكم فيها بواسطة PLC',
     tech_energy: 'كفاءة الطاقة',
     tech_energy_desc: 'أداء عالي مع استهلاك منخفض للطاقة',
     
@@ -1386,7 +1398,7 @@ const translations = {
     single_shaft_faq_q3: 'ما هي متطلبات الصيانة؟',
     single_shaft_faq_a3: 'يوصى بإجراء فحص منتظم للشفرات وفحص النظام الهيدروليكي والتشحيم. يكفي إجراء فحص عام كل 500 ساعة تشغيل.',
     single_shaft_faq_q4: 'ما هو عمر الدوار والشفرات؟',
-    single_shaft_faq_a4: 'الشفرات مصنوعة من الفولاذ السبائكي المتين وتوفر 2000-5000 ساعة من الاستخدام حسب نوع المادة المعالجة. عمر الدوار يتجاوز 10 سنوات.',
+    single_shaft_faq_a4: 'الشفرات مصنوعة من الفولاذ السبائكي المتين وتوفر 2000-5000 ��اعة من الاستخدام حسب نوع المادة المعالجة. عمر الدوار يتجاوز 10 سنوات.',
     single_shaft_faq_q5: 'على ماذا تعتمد سعة الآلة؟',
     single_shaft_faq_a5: 'تختلف السعة اعتمادًا على نوع ومحتوى الرطوبة والكثافة وحجم التمزيق للمادة المعالجة. يمكن معالجة المواد الخفيفة مثل البلاستيك والورق بسعات أعلى.',
     single_shaft_video_title: 'فيديو آلة التمزيق أحادية العمود',
@@ -1501,7 +1513,7 @@ const translations = {
     pallet_main_title: 'آلة تمزيق المنصات: حلول فعالة لإ��ادة تدوير المنصات الخشبية والبلاستيكية',
     pallet_subtitle: 'معدات أساسية توفر الاستدامة البيئية والإدارة الفعالة للنفايات في عملية إعادة تدوير المنصات الخشبية والبلاستيكية.',
     pallet_description_1: 'آلة تمزيق المنصات هي معدات أساسية توفر الاستدامة البيئية والإدارة الفعالة للنفايات في عملية إعادة تدوير المنصات الخشبية والبلاستيكية. كسارة المنصات تسرع عملية إعادة التدوير وتسهل إدارة النفايات عن طريق تقسيم المنصات إلى قطع صغيرة.',
-    pallet_description_2: 'المنصات المستخدمة في اللوجستيات وعمليات التخزين يمكن أن تخلق كميات كبيرة من خردة المنصات عندما تصل إلى نهاية عمرها الافتراضي. توفر آلة تمزيق المنصات حلاً واعياً بيئياً من خلال إعادة تدوير هذه النفايات وتساهم في حماية الموارد الطبيعية.',
+    pallet_description_2: 'المنصات المستخدمة في اللوجستيات وعمليات التخزين يمكن أن تخ��ق كميات كبيرة من خردة المنصات عندما تصل إلى نهاية عمرها الافتراضي. توفر آلة تمزيق المنصات حلاً واعياً بيئياً من خلال إعادة تدوير هذه النفايات وتساهم في حماية الموارد الطبيعية.',
     pallet_description_3: 'تلعب آلة تمزيق المنصات دوراً نشطاً في عمليات مثل إعادة تدوير المنصات الخشبية وإعادة تدوير المنصات البلاستيكية وإعادة تدوير خردة المنصات. كما أنها تسهل عمليات بيع خردة المنصات.',
     pallet_advantages_title: 'الميزات الأساسية',
     pallet_advantage_1_title: 'كفاءة عالية',
@@ -1559,6 +1571,7 @@ const translations = {
     harddisk_adv_3_desc: 'آلة تمزيق إتلاف الأقراص الصلبة مقاومة للتآكل بفضل شفرات الفولاذ عالية الجودة وتوفر استخداماً طويل الأجل.',
     harddisk_adv_4_title: 'سعة معالجة كبيرة',
     harddisk_adv_4_desc: 'يمكن لآلة تمزيق إتلاف الأقراص الصلبة معالجة أجهزة التخزين الرقمية ولوحات الدوائر بأحجام وأنواع مختلفة بسرعة.',
+    harddisk_faq_title: 'الأسئلة الشائعة حول آلة تمزيق إتلاف الأقراص الصلبة',
     harddisk_video_title: 'فيديو آلة تمزيق إتلاف الأقراص الصلبة',
     harddisk_watch_video: 'مشاهدة الفيديو',
     harddisk_similar_products: 'منتجات مماثلة',
@@ -1595,6 +1608,9 @@ const translations = {
     mobile_faq_a6: 'المحركات المتحكم فيها بالعاكس وميزات الرجوع التلقائي تزيد من كفاءة الطاقة وتحسن أداء الآلة. وهذا يوفر كفاءة عالية مع تقليل استهلاك الطاقة.',
     mobile_faq_q7: 'ما هي ميزات السلامة للكسارة المتنقلة؟',
     mobile_faq_a7: 'مجهزة بتدابير السلامة مثل أزرار التوقف في حالات الطوارئ والأغطية الواقية وميزات الرجوع التلقائي. هذه الميزات تضمن سلامة المشغل.',
+    mobile_video_title: 'فيديو الكسارة المتنقلة',
+    mobile_watch_video: 'مشاهدة الفيديو',
+    mobile_similar_products: 'منتجات مماثلة',
   },
 };
 
