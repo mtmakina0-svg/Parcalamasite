@@ -75,7 +75,7 @@ export const CTASection = () => {
             className="text-4xl md:text-5xl lg:text-6xl text-[#1E1E1E] mb-8"
             style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}
           >
-            Makinenizi Bizimle Planlayın
+            {t('cta_title')}
           </motion.h2>
 
           {/* Subtitle */}
@@ -125,7 +125,7 @@ export const CTASection = () => {
                 size="lg"
                 className="relative bg-[#1E1E1E] text-[#F4CE14] hover:bg-[#1E1E1E]/90 hover:shadow-[0_0_40px_rgba(30,30,30,0.5)] transition-all px-12 py-8 text-xl group"
               >
-                Hemen Teklif Al!
+                {t('cta_button')}
                 <ArrowRight
                   size={24}
                   className={`${isRTL ? 'mr-3 rotate-180' : 'ml-3'} group-hover:translate-x-2 transition-transform`}
