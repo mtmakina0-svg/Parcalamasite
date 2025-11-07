@@ -3,29 +3,30 @@ import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 interface WasteCategory {
   id: string;
-  title: string;
+  titleKey: string;
   image: string;
 }
 
 const wasteCategories: WasteCategory[] = [
-  { id: 'evsel', title: 'Evsel Atıklar', image: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800&q=80' },
-  { id: 'elektronik', title: 'Elektronik Atıklar', image: 'https://images.unsplash.com/photo-1608653206809-e6a8044173b0?w=800&q=80' },
-  { id: 'lastik', title: 'Lastik Atıklar', image: 'https://images.unsplash.com/photo-1761765030682-26f51cfbc034?w=800&q=80' },
-  { id: 'metal', title: 'Metal Atıklar', image: 'https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?w=800&q=80' },
-  { id: 'cam', title: 'Cam Atıklar', image: 'https://images.unsplash.com/photo-1706468808971-ee72122572b6?w=800&q=80' },
-  { id: 'kagit', title: 'Kağıt Karton Atıklar', image: 'https://images.unsplash.com/photo-1757078059269-0ccbd674b1e4?w=800&q=80' },
-  { id: 'plastik', title: 'Plastik Atıklar', image: 'https://images.unsplash.com/photo-1669065514428-b96035a3faf2?w=800&q=80' },
-  { id: 'organik', title: 'Organik Atıklar', image: 'https://images.unsplash.com/photo-1592484773536-263bf52e81fc?w=800&q=80' },
-  { id: 'tibbi', title: 'Tıbbi Atıklar', image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80' },
-  { id: 'agac', title: 'Ağaç Kökü Atıkları', image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80' },
-  { id: 'hayvan', title: 'Hayvan Atıkları', image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80' },
-  { id: 'ambalaj', title: 'Ambalaj Atıkları', image: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&q=80' },
-  { id: 'palet', title: 'Palet Atıkları', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80' },
-  { id: 'tekstil', title: 'Tekstil Atıkları', image: 'https://images.unsplash.com/photo-1610910160298-45c99e1e0b2f?w=800&q=80' },
-  { id: 'aty', title: 'ATY Atıkları', image: 'https://images.unsplash.com/photo-1566976370648-80b3fb37f411?w=800&q=80' },
+  { id: 'evsel', titleKey: 'waste_household', image: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800&q=80' },
+  { id: 'elektronik', titleKey: 'waste_electronic', image: 'https://images.unsplash.com/photo-1608653206809-e6a8044173b0?w=800&q=80' },
+  { id: 'lastik', titleKey: 'waste_tire', image: 'https://images.unsplash.com/photo-1761765030682-26f51cfbc034?w=800&q=80' },
+  { id: 'metal', titleKey: 'waste_metal', image: 'https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?w=800&q=80' },
+  { id: 'cam', titleKey: 'waste_glass', image: 'https://images.unsplash.com/photo-1706468808971-ee72122572b6?w=800&q=80' },
+  { id: 'kagit', titleKey: 'waste_paper', image: 'https://images.unsplash.com/photo-1757078059269-0ccbd674b1e4?w=800&q=80' },
+  { id: 'plastik', titleKey: 'waste_plastic', image: 'https://images.unsplash.com/photo-1669065514428-b96035a3faf2?w=800&q=80' },
+  { id: 'organik', titleKey: 'waste_organic', image: 'https://images.unsplash.com/photo-1592484773536-263bf52e81fc?w=800&q=80' },
+  { id: 'tibbi', titleKey: 'waste_medical', image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80' },
+  { id: 'agac', titleKey: 'waste_tree_root', image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80' },
+  { id: 'hayvan', titleKey: 'waste_animal', image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80' },
+  { id: 'ambalaj', titleKey: 'waste_packaging', image: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&q=80' },
+  { id: 'palet', titleKey: 'waste_pallet', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80' },
+  { id: 'tekstil', titleKey: 'waste_textile', image: 'https://images.unsplash.com/photo-1610910160298-45c99e1e0b2f?w=800&q=80' },
+  { id: 'aty', titleKey: 'waste_aty', image: 'https://images.unsplash.com/photo-1566976370648-80b3fb37f411?w=800&q=80' },
 ];
 
 interface WasteCategoriesPageProps {
@@ -34,6 +35,8 @@ interface WasteCategoriesPageProps {
 }
 
 export const WasteCategoriesPage = ({ onCategorySelect, onBackToMain }: WasteCategoriesPageProps) => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-[#F5F7F8]" style={{ fontFamily: 'Mulish, sans-serif' }}>
       {/* Header Spacer */}
@@ -51,11 +54,10 @@ export const WasteCategoriesPage = ({ onCategorySelect, onBackToMain }: WasteCat
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl text-[#1E1E1E] mb-6">
-              Makinelerimizde İşlediğimiz Atık Türleri
+              {t('waste_categories_title')}
             </h1>
             <p className="text-lg text-[#45474B] max-w-3xl mx-auto leading-relaxed">
-              MT Makina olarak farklı atık türlerinin geri dönüşümü için özel olarak tasarlanmış
-              yüksek performanslı parçalama makineleri üretiyoruz.
+              {t('waste_categories_subtitle')}
             </p>
           </motion.div>
 
@@ -74,15 +76,15 @@ export const WasteCategoriesPage = ({ onCategorySelect, onBackToMain }: WasteCat
                 <div className="relative h-56 overflow-hidden">
                   <ImageWithFallback
                     src={category.image}
-                    alt={category.title}
+                    alt={t(category.titleKey)}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl text-[#1E1E1E] mb-3">{category.title}</h3>
+                  <h3 className="text-xl text-[#1E1E1E] mb-3">{t(category.titleKey)}</h3>
                   <div className="flex items-center text-[#F4CE14] hover:text-[#F4CE14]/80 transition-colors">
-                    <span className="mr-2">Detaylı İncele</span>
+                    <span className="mr-2">{t('btn_view_details')}</span>
                     <ArrowRight size={18} />
                   </div>
                 </div>
@@ -98,21 +100,12 @@ export const WasteCategoriesPage = ({ onCategorySelect, onBackToMain }: WasteCat
             className="bg-white rounded-lg p-12 shadow-md"
           >
             <h2 className="text-3xl text-[#1E1E1E] mb-6 text-center">
-              Atık Yönetimi: MT Makina'nın Çevre Dostu Çözümleri
+              {t('waste_management_title')}
             </h2>
             <div className="space-y-4 text-lg text-[#45474B] leading-relaxed">
-              <p>
-                MT Makina, endüstriyel üretimden evsel atıklara kadar her türlü atığın geri dönüşüm
-                sürecinde yüksek verimlilik sağlayan sistemler sunar.
-              </p>
-              <p>
-                Her atık türü için özel olarak tasarlanmış makinelerimiz, sürdürülebilir üretim ve
-                çevre koruma hedeflerini destekler.
-              </p>
-              <p>
-                MT Makina olarak çevreye duyarlı, yüksek performanslı ve uzun ömürlü sistemlerle
-                sektöre öncülük ediyoruz.
-              </p>
+              <p>{t('waste_management_para1')}</p>
+              <p>{t('waste_management_para2')}</p>
+              <p>{t('waste_management_para3')}</p>
             </div>
           </motion.div>
         </div>
