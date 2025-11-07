@@ -36,7 +36,7 @@ interface ModelSpecs {
 }
 
 const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } } = {
-  'single-shaft': {
+  'single-saft': {
     'TSH-60': {
       motorPower: '15–30 kW',
       rotorLength: '600 mm',
@@ -86,7 +86,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       capacity: '4500-6000 kg/saat'
     }
   },
-  'dual-shaft': {
+  'dual-saft': {
     'CS-20': {
       motorPower: '2 x 7.5 kW',
       rotorLength: '400 mm',
@@ -169,7 +169,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       screenSize: '150-350 mm'
     }
   },
-  'quad-shaft': {
+  'quad-saft': {
     'DS-80': {
       motorPower: '11–22 kW (4x)',
       rotorLength: '800 mm',
@@ -331,9 +331,9 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
 
 // Available models for each product type
 const availableModels: { [key: string]: string[] } = {
-  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
-  'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+  'single-saft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
+  'dual-saft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
+  'quad-saft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
@@ -387,7 +387,7 @@ export const ProductDetailPage = ({
   }, [productType, modelName]);
 
   // Single Shaft, Harddisk, and Mobile Product Data (using same layout)
-  if (productType === 'single-shaft' || productType === 'harddisk' || productType === 'mobile') {
+  if (productType === 'single-saft' || productType === 'harddisk' || productType === 'mobile') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -517,12 +517,12 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-4xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
-              {t('single_shaft_advantages_title')}
+              {t(productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className={`grid grid-cols-1 ${productType === 'harddisk' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
               {/* Advantage 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -535,8 +535,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Settings size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('single_shaft_adv_1_title')}</h3>
-                <p className="text-[#45474B]">{t('single_shaft_adv_1_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
               </motion.div>
 
               {/* Advantage 2 */}
@@ -551,8 +551,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <RotateCcw size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('single_shaft_adv_2_title')}</h3>
-                <p className="text-[#45474B]">{t('single_shaft_adv_2_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
               </motion.div>
 
               {/* Advantage 3 */}
@@ -567,9 +567,27 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Volume2 size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t('single_shaft_adv_3_title')}</h3>
-                <p className="text-[#45474B]">{t('single_shaft_adv_3_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
               </motion.div>
+
+              {/* Advantage 4 - Only for harddisk */}
+              {productType === 'harddisk' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white rounded-2xl p-8 shadow-xl"
+                >
+                  <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
+                    <Zap size={32} className="text-[#F4CE14]" />
+                  </div>
+                  <h3 className="text-[#1E1E1E] mb-4">{t('harddisk_adv_4_title')}</h3>
+                  <p className="text-[#45474B]">{t('harddisk_adv_4_desc')}</p>
+                </motion.div>
+              )}
             </div>
           </div>
         </section>
@@ -581,7 +599,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-16 text-4xl font-bold"
+              className="text-center text-[#45474B] mb-16 text-3xl font-bold"
             >
               {t('single_shaft_performance_title')}
             </motion.h2>
@@ -666,7 +684,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-4xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('single_shaft_tech_specs_title')}
             </motion.h2>
@@ -736,7 +754,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-4xl mx-auto mt-16"
             >
-              <h3 className="text-center text-[#45474B] mb-8 text-2xl font-bold">
+              <h3 className="text-center text-[#45474B] mb-8 text-3xl font-bold">
                 {productType === 'pallet' ? t('pallet_optional_features_title') : 'Opsiyonel Özellikler'}
               </h3>
               <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
@@ -820,9 +838,9 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(`${productType}_faq_title`)}
+              {t(`${productType.replace(/-/g, '_')}_faq_title`)}
             </motion.h2>
 
             <motion.div
@@ -834,8 +852,10 @@ export const ProductDetailPage = ({
               <Accordion type="single" collapsible className="space-y-4">
                 {[1, 2, 3, 4, 5, 6, 7].map((num) => {
                   // Check if FAQ exists for this number
-                  const questionKey = `${productType}_faq_q${num}`;
-                  const answerKey = `${productType}_faq_a${num}`;
+                  // Replace hyphens with underscores for translation keys
+                  const normalizedProductType = productType.replace(/-/g, '_');
+                  const questionKey = `${normalizedProductType}_faq_q${num}`;
+                  const answerKey = `${normalizedProductType}_faq_a${num}`;
                   const question = t(questionKey);
                   const answer = t(answerKey);
                   
@@ -871,9 +891,9 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t('single_shaft_video_title')}
+              {t(productType === 'pallet' ? 'pallet_video_title' : productType === 'harddisk' ? 'harddisk_video_title' : `${productType.replace(/-/g, '_')}_video_title`)}
             </motion.h2>
 
             <motion.div
@@ -902,7 +922,7 @@ export const ProductDetailPage = ({
                 <Button
                   className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
                 >
-                  {t('single_shaft_watch_video')}
+                  {t(`${productType.replace(/-/g, '_')}_watch_video`)}
                 </Button>
               </motion.div>
             </motion.div>
@@ -919,9 +939,9 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              Benzer Ürünler
+              {t(`${productType.replace(/-/g, '_')}_similar_products`)}
             </motion.h2>
 
             <SimilarProductsSection 
@@ -935,7 +955,7 @@ export const ProductDetailPage = ({
   }
 
   // Dual Shaft and Pallet Product Pages (using same layout)
-  if (productType === 'dual-shaft' || productType === 'pallet') {
+  if (productType === 'dual-saft' || productType === 'pallet') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -1065,7 +1085,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-5xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_advantages_title' : 'dual_shaft_advantages_title')}
             </motion.h2>
@@ -1138,7 +1158,7 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
-        {/* Performance Section with 3 Images - Only for dual-shaft */}
+        {/* Performance Section with 3 Images - Only for dual-saft */}
         {productType !== 'pallet' && (
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -1146,7 +1166,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-16 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-16 text-3xl font-bold"
             >
               {t('dual_shaft_performance_title')}
             </motion.h2>
@@ -1232,7 +1252,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_tech_specs_title' : 'dual_shaft_tech_specs_title')}
             </motion.h2>
@@ -1310,7 +1330,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_faq_title' : 'dual_shaft_faq_title')}
             </motion.h2>
@@ -1378,7 +1398,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_video_title' : 'dual_shaft_video_title')}
             </motion.h2>
@@ -1426,13 +1446,13 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('dual_shaft_similar_products')}
             </motion.h2>
 
             <SimilarProductsSection 
-              currentProductType="dual-shaft"
+              currentProductType="dual-saft"
               onProductClick={onProductDetailClick}
             />
           </div>
@@ -1442,7 +1462,7 @@ export const ProductDetailPage = ({
   }
 
   // Quad-Shaft (Dört Şaftlı) Product Data
-  if (productType === 'quad-shaft') {
+  if (productType === 'quad-saft') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -1572,7 +1592,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-4xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
               Temel Özellikler ve Avantajlar
             </motion.h2>
@@ -1652,9 +1672,9 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              Teknik Özellikler
+              {t('quad_shaft_tech_specs')}
             </motion.h2>
 
             {currentSpecs && (
@@ -1712,7 +1732,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-4xl mx-auto mt-12"
             >
-              <h3 className="text-center text-[#45474B] mb-6">Opsiyonel Özellikler</h3>
+              <h3 className="text-center text-[#45474B] mb-6 text-3xl font-bold">{t('quad_shaft_optional_features')}</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
                   <p className="text-[#1E1E1E]">• Kayış Kasnaklı Hidrolik Kaplin</p>
@@ -1753,7 +1773,129 @@ export const ProductDetailPage = ({
                 className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
-                E-Katalog İndir
+                {t('quad_shaft_ecatalog_btn')}
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+            >
+              {t('quad_shaft_faq_title')}
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q1')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a1')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q2')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a2')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q3')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a3')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q4')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a4')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q5')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a5')}
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="bg-[#F5F7F8] rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
+                    {t('quad_shaft_faq_q6')}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#45474B] leading-relaxed">
+                    {t('quad_shaft_faq_a6')}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Video Section */}
+        <section className="py-20 bg-[#F5F7F8]">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+            >
+              {t('quad_shaft_video_title')}
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
+                  >
+                    <Play size={32} className="text-[#1E1E1E] ml-1" />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mt-6"
+            >
+              <Button
+                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
+              >
+                {t('quad_shaft_watch_video')}
               </Button>
             </motion.div>
           </div>
@@ -1769,13 +1911,13 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              Benzer Ürünler
+              {t('quad_shaft_similar_products')}
             </motion.h2>
             
             <SimilarProductsSection 
-              currentProductType="quad-shaft"
+              currentProductType="quad-saft"
               onProductClick={onProductDetailClick}
             />
           </div>
@@ -1904,7 +2046,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#1E1E1E] mb-16 text-5xl font-bold"
+              className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
               {t('metal_advantages_title')}
             </motion.h2>
@@ -1984,7 +2126,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               {t('metal_tech_specs_title')}
             </motion.h2>
@@ -2085,8 +2227,53 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
-        {/* YouTube Channel Section */}
-        <YouTubeChannelSection className="py-20 bg-white" />
+        {/* Video Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+            >
+              Metal Parçalama Makinesi Video
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
+                  >
+                    <Play size={32} className="text-[#1E1E1E] ml-1" />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mt-6"
+            >
+              <Button
+                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
+              >
+                Videoyu İzle
+              </Button>
+            </motion.div>
+
+            {/* YouTube Channel Section */}
+            <YouTubeChannelSection className="mt-16" />
+          </div>
+        </section>
 
         {/* Similar Products */}
         <section className="py-20 bg-[#F5F7F8]">
@@ -2095,7 +2282,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-5xl font-bold"
+              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
               Benzer Ürünler
             </motion.h2>

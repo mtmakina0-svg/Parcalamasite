@@ -63,6 +63,10 @@ const translations = {
     // Hero
     hero_title: 'Parçalama Makinelerinde Endüstriyel Güç',
     hero_subtitle: 'Yüksek verimlilik, uzun ömür ve güvenli çalışma ile çevre dostu üretim.',
+    hero_subtitle_systems: 'Farklı endüstrilere özel yüksek performanslı sistemler',
+    hero_cta_title: 'Makinenizi Bizimle Planlayın',
+    hero_cta_desc: 'Yüksek verimli, uzun ömürlü ve çevre dostu sistemler üretiyoruz.',
+    hero_cta_desc2: 'Hemen Teklif Al! butonu ile projeniz için en uygun çözümü birlikte tasarlayalım.',
     btn_explore: 'Ürünleri İncele',
     
     // Intro Section
@@ -111,9 +115,86 @@ const translations = {
     contact_accounting: 'Muhasebe',
     contact_consulting: 'Danışma',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'Tek Şaftlı Parçalama Makineleri Hakkında S.S.S.',
+    single_saft_video_title: 'Tek Şaftlı Parçalama Makinesi Videoları',
+    single_saft_similar_products: 'Benzer Ürünler',
+    single_saft_watch_video: 'Video İzle',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'TEK ŞAFTLI PARÇALAMA MAKİNESİ NE İŞE YARAR?',
+    single_saft_faq_a1: 'Tek şaftlı parçalama makinesi, çeşitli malzemeleri etkili bir şekilde parçalamak için tasarlanmış, yüksek tork ve düşük hız kombinasyonuyla çalışan bir endüstriyel makinedir. Geri dönüşüm, atık yönetimi ve endüstriyel uygulamalarda kullanılır.',
+    single_saft_faq_q2: 'HANGİ MALZEMELER TEK ŞAFTLI PARÇALAMA MAKİNELERİNDE İŞLENEBİLİR?',
+    single_saft_faq_a2: 'Tekstil atıkları, plastikler, elyaf filmler, ahşap, sunta, MDF levhalar, evsel atıklar ve belediye atıkları gibi çeşitli malzemeler işlenebilir.',
+    single_saft_faq_q3: 'TEK ŞAFTLI PARÇALAMA MAKİNELERİ NASIL ÇALIŞIR?',
+    single_saft_faq_a3: 'Makinelerimiz, yüksek tork ve düşük hızda çalışan bir ana şaft etrafında dönen bıçaklarla malzemeleri parçalar. Malzemeler, şaft üzerindeki bıçaklarla kesilerek küçük parçalara ayrılır.',
+    single_saft_faq_q4: 'TEK ŞAFTLI PARÇALAMA MAKİNELERİNİN ENERJİ TASARRUFU SAĞLAYAN ÖZELLİKLERİ NELERDİR?',
+    single_saft_faq_a4: 'Enerji verimli motorlar ve özel bıçak tasarımı ile düşük enerji tüketimi sağlar. Ayrıca, belirli bir süre malzeme beslenmemesi durumunda motor otomatik olarak kapanır.',
+    
+    dual_saft_faq_title: 'Sıkça Sorulan Sorular - Çift Şaftlı Parçalama Makinesi',
+    dual_saft_video_title: 'Çift Şaftlı Parçalama Makinesi Videoları',
+    dual_saft_similar_products: 'Benzer Ürünler',
+    dual_saft_watch_video: 'Video İzle',
+    
+    quad_saft_faq_title: 'Sıkça Sorulan Sorular - Dört Şaftlı Parçalama Makinesi',
+    quad_saft_video_title: 'Dört Şaftlı Parçalama Makinesi Videoları',
+    quad_saft_similar_products: 'Benzer Ürünler',
+    quad_saft_watch_video: 'Video İzle',
+    
+    metal_faq_title: 'Sıkça Sorulan Sorular - Metal Parçalama Makinesi',
+    metal_video_title: 'Metal Parçalama Makinesi Videoları',
+    metal_similar_products: 'Benzer Ürünler',
+    metal_watch_video: 'Video İzle',
+    
+    pallet_faq_title: 'Sıkça Sorulan Sorular - Palet Parçalama Makinesi',
+    pallet_video_title: 'Palet Parçalama Makinesi Videoları',
+    pallet_similar_products: 'Benzer Ürünler',
+    pallet_watch_video: 'Video İzle',
+    
+    plastic_faq_title: 'Sıkça Sorulan Sorular - Plastik Parçalama Makinesi',
+    plastic_video_title: 'Plastik Parçalama Makinesi Videoları',
+    plastic_similar_products: 'Benzer Ürünler',
+    plastic_watch_video: 'Video İzle',
+    
+    glass_faq_title: 'Sıkça Sorulan Sorular - Cam Parçalama Makinesi',
+    glass_video_title: 'Cam Parçalama Makinesi Videoları',
+    glass_similar_products: 'Benzer Ürünler',
+    glass_watch_video: 'Video İzle',
+    
+    organic_faq_title: 'Sıkça Sorulan Sorular - Organik Atık Parçalama Makinesi',
+    organic_video_title: 'Organik Atık Parçalama Makinesi Videoları',
+    organic_similar_products: 'Benzer Ürünler',
+    organic_watch_video: 'Video İzle',
+    
+    mobile_faq_title: 'Sıkça Sorulan Sorular - Mobil Parçalama Makinesi',
+    mobile_video_title: 'Mobil Parçalama Makinesi Videoları',
+    mobile_similar_products: 'Benzer Ürünler',
+    mobile_watch_video: 'Video İzle',
+    
+    harddisk_faq_title: 'Sıkça Sorulan Sorular - Sabit Disk Parçalama Makinesi',
+    harddisk_video_title: 'Sabit Disk Parçalama Makinesi Videoları',
+    harddisk_similar_products: 'Benzer Ürünler',
+    harddisk_watch_video: 'Video İzle',
+    
+    tree_root_faq_title: 'Sıkça Sorulan Sorular - Ağaç Kökü Parçalama Makinesi',
+    tree_root_video_title: 'Ağaç Kökü Parçalama Makinesi Videoları',
+    tree_root_similar_products: 'Benzer Ürünler',
+    tree_root_watch_video: 'Video İzle',
+    
+    wood_grinder_faq_title: 'Sıkça Sorulan Sorular - Ahşap Öğütücü',
+    wood_grinder_video_title: 'Ahşap Öğütücü Videoları',
+    wood_grinder_similar_products: 'Benzer Ürünler',
+    wood_grinder_watch_video: 'Video İzle',
+    
+    baler_faq_title: 'Sıkça Sorulan Sorular - Balya Makinesi',
+    baler_video_title: 'Balya Makinesi Videoları',
+    baler_similar_products: 'Benzer Ürünler',
+    baler_watch_video: 'Video İzle',
+    
     // CTA
     cta_title: 'Makinenizi Bizimle Planlayın',
     cta_subtitle: 'Projenize uygun parçalama sistemini birlikte tasarlayalım.',
+    cta_button: 'Hemen Teklif Al!',
     
     // Footer
     footer_contact: 'İletişim',
@@ -191,6 +272,17 @@ const translations = {
     single_shaft_watch_video: 'Videoyu İzle',
     single_shaft_similar_products: 'Benzer Ürünler',
     single_shaft_ecatalog_btn: 'E-Katalog',
+    single_shaft_faq_title: 'Tek Şaftlı Parçalama Makinesi Hakkında S.S.S.',
+    single_shaft_faq_q1: 'TEK ŞAFTLI PARÇALAMA MAKİNESİ NE İŞE YARAR?',
+    single_shaft_faq_a1: 'Tek şaftlı parçalama makinesi, plastik, kağıt, karton, ahşap ve hafif metal atıkları etkili bir şekilde parçalamak için tasarlanmış endüstriyel bir ekipmandır. Hidrolik itme sistemi ve keskin bıçakları sayesinde malzemeleri istenilen boyuta getirerek geri dönüşüm süreçlerini kolaylaştırır.',
+    single_shaft_faq_q2: 'HANGİ MALZEMELERİ İŞLEYEBİLİR?',
+    single_shaft_faq_a2: 'Tek şaftlı parçalama makineleri plastik filmler, PET şişeler, kağıt, karton, ahşap paletler, tekstil atıkları, plastik kaplar, hafif metaller ve benzeri atık malzemeleri işleyebilir. Özellikle homojen boyuta getirme gerektiren uygulamalarda tercih edilir.',
+    single_shaft_faq_q3: 'DİĞER PARÇALAMA MAKİNELERİNDEN FARKI NEDİR?',
+    single_shaft_faq_a3: 'Tek şaftlı makineler, hidrolik itme sistemi ve elek sistemi sayesinde daha homojen ve kontrollü parça boyutu elde edilmesini sağlar. Çift şaftlı makinelere göre daha küçük ve düzenli parçalar üretir, bu da sonraki işleme aşamalarında avantaj sağlar.',
+    single_shaft_faq_q4: 'BAKIM GEREKSİNİMLERİ NELERDİR?',
+    single_shaft_faq_a4: 'Düzenli bıçak kontrolü ve keskinleştirme, hidrolik sistem bakımı, elek temizliği ve yağlama işlemleri gereklidir. Modüler tasarımı sayesinde bakım işlemleri kolay ve hızlı yapılabilir. Ortalama 800-1000 saat kullanımda bıçak kontrolü önerilir.',
+    single_shaft_faq_q5: 'HANGİ SEKTÖRLERDE KULLANILIR?',
+    single_shaft_faq_a5: 'Plastik geri dönüşüm tesisleri, kağıt ve karton işleme tesisleri, ambalaj endüstrisi, otomotiv sektörü, elektronik atık tesisleri, tekstil geri dönüşüm merkezleri ve belediye atık yönetim tesislerinde yaygın olarak kullanılır.',
     youtube_channel_title: 'YouTube Kanalımızı İnceleyin',
     youtube_channel_description: 'Tüm makinelerimizin çalışma videolarını, müşteri referanslarını ve üretim süreçlerimizi YouTube kanalımızda bulabilirsiniz.',
     visit_youtube: 'YouTube Kanalına Git',
@@ -287,12 +379,18 @@ const translations = {
     quad_shaft_faq_a5: 'Bu makineler, kullanıcı güvenliğini sağlamak için çeşitli güvenlik özellikleri ile donatılmıştır. Bunlar arasında acil durdurma butonları, koruyucu kapaklar ve aşırı yük koruma sistemleri bulunur.',
     quad_shaft_faq_q6: 'PARÇALAMA KAPASİTESİ NEDİR?',
     quad_shaft_faq_a6: 'Parçalama kapasitesi, makinenin modeline ve işlenen malzemenin türüne bağlı olarak değişir. Genel olarak, dört şaftlı parçalama makineleri yüksek kapasiteli işler için tasarlanmıştır ve büyük hacimli malzemeleri etkili bir şekilde işleyebilir.',
+    quad_shaft_video_title: 'Dört Şaftlı Parçalama Makinesi Video',
+    quad_shaft_watch_video: 'Videoyu İzle',
+    quad_shaft_similar_products: 'Benzer Ürünler',
+    quad_shaft_ecatalog_btn: 'E-Katalog İndir',
+    quad_shaft_tech_specs: 'Teknik Özellikler',
+    quad_shaft_optional_features: 'Opsiyonel Özellikler',
     
     // Palet Parçalama Makinesi (TSV Serisi) Ürün Sayfası
     product_pallet: 'Palet Parçalama Makinesi',
     pallet_main_title: 'Palet Parçalama Makinesi: Ahşap ve Plastik Palet Geri Dönüşümünde Verimli Çözümler',
     pallet_subtitle: 'Ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır.',
-    pallet_description_1: 'Palet parçalama makinesi, ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır. Palet kırma makinası, paletleri küçük parçalara ayırarak geri dönüşüm sürecini hızlandırır ve atık yönetimini kolaylaştırır.',
+    pallet_description_1: 'Palet par��alama makinesi, ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır. Palet kırma makinası, paletleri küçük parçalara ayırarak geri dönüşüm sürecini hızlandırır ve atık yönetimini kolaylaştırır.',
     pallet_description_2: 'Lojistik ve depolama süreçlerinde kullanılan paletler, kullanım ömrünü tamamladığında büyük miktarda palet hurdası oluşturabilir. Palet parçalama makinesi, bu atıkları geri dönüştürerek çevreye duyarlı bir çözüm sunar ve doğal kaynakların korunmasına katkıda bulunur.',
     pallet_description_3: 'Palet parçalama makinesi, ahşap palet geri dönüşümü, plastik palet geri dönüşümü ve hurda palet geri dönüşümü gibi işlemlerde etkin bir rol oynar. Aynı zamanda satılık hurda palet işlemlerini kolaylaştırır.',
     pallet_advantages_title: 'Temel Özellikler',
@@ -373,6 +471,20 @@ const translations = {
     harddisk_description_1: 'Harddisk imha parçalama makineleri, sabit disk, SSD, devre kartı ve diğer dijital depolama cihazlarının fiziksel olarak imhası için tasarlanmış endüstriyel makinelerdir. MT Makina DATABER serisi, verilerin kalıcı olarak kurtarılamaz hale gelmesini sağlamak için tekli, ikili ve üçlü aşamalı parçalama seçenekleri sunar.',
     harddisk_description_2: 'Bu makineler, PLC kontrol sistemleri, otomatik besleme mekanizmaları ve en sert elektronik bileşenleri bile parçalayabilen sertleştirilmiş çelik bıçaklarla donatılmıştır. Çok aşamalı parçalama işlemi, malzemeleri toz benzeri parçacıklara indirerek tam veri imhasını garanti eder.',
     harddisk_description_3: 'MT Makina harddisk parçalama makineleri, veri merkezleri, BT geri dönüşüm tesisleri, devlet kurumları ve hassas bilgilerin güvenli bir şekilde imha edilmesini gerektiren organizasyonlar için idealdir. Opsiyonel özellikler arasında soğutma sistemleri, otomatik yağlama, kamera kaydı ve barkod okuma yetenekleri bulunur.',
+    harddisk_advantages_title: 'Temel Özellikler',
+    harddisk_adv_1_title: 'İki Aşamalı Parçalama',
+    harddisk_adv_1_desc: 'Harddisk parçalama imha makinesi, hard diskleri iki kez parçalayarak verilerin kurtarılma ihtimalini tamamen ortadan kaldırır.',
+    harddisk_adv_2_title: 'Geri Dönüşümsüz Parçalama',
+    harddisk_adv_2_desc: 'Harddisk parçalama imha makinesi, verilerin geri dönüştürülemez hale gelmesi için hard diskleri ve devre kartlarını fiziksel olarak parçalar.',
+    harddisk_adv_3_title: 'Uzun Ömürlü Bıçaklar',
+    harddisk_adv_3_desc: 'Harddisk parçalama imha makinesi, yüksek kaliteli çelik bıçakları sayesinde aşınmaya karşı dayanıklıdır ve uzun süreli kullanım sağlar.',
+    harddisk_adv_4_title: 'Büyük İşleme Kapasitesi',
+    harddisk_adv_4_desc: 'Harddisk parçalama imha makinesi, farklı boyutlarda ve türlerde dijital depolama cihazlarını ve devre kartlarını hızlıca işleyebilir.',
+    harddisk_faq_title: 'Harddisk İmha Parçalama Makinesi S.S.S.',
+    harddisk_video_title: 'Harddisk İmha Parçalama Makinesi Video',
+    harddisk_watch_video: 'Videoyu İzle',
+    harddisk_similar_products: 'Benzer Ürünler',
+    harddisk_ecatalog_btn: 'E-Katalog',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Yüksek Kapasiteli Mobil Kırıcılar ile Endüstriyel Geri Dönüşümde Güçlü Çözüm',
@@ -405,6 +517,9 @@ const translations = {
     mobile_faq_a6: 'İnvertör kontrollü motorlar ve otomatik geri vites özellikleri, enerji verimliliğini artırır ve makinenin performansını optimize eder. Bu, enerji tüketimini azaltırken yüksek verimlilik sağlar.',
     mobile_faq_q7: 'MOBİL KIRICI\'NIN GÜVENLİK ÖZELLİKLERİ NELERDİR?',
     mobile_faq_a7: 'Acil durdurma butonları, koruyucu kaplamalar ve otomatik geri vites özellikleri gibi güvenlik önlemleri ile donatılmıştır. Bu özellikler, operatör güvenliğini sağlar.',
+    mobile_video_title: 'Mobil Kırıcı Video',
+    mobile_watch_video: 'Videoyu İzle',
+    mobile_similar_products: 'Benzer Ürünler',
   },
   en: {
     // Header & Navigation
@@ -459,6 +574,10 @@ const translations = {
     // Hero
     hero_title: 'Industrial Power in Shredding Machines',
     hero_subtitle: 'High efficiency, long life and safe operation with environmentally friendly production.',
+    hero_subtitle_systems: 'High performance systems customized for different industries',
+    hero_cta_title: 'Plan Your Machine With Us',
+    hero_cta_desc: 'We produce highly efficient, long-lasting and environmentally friendly systems.',
+    hero_cta_desc2: 'Click Get a Quote Now! button to design the most suitable solution for your project together.',
     btn_explore: 'Explore Products',
     
     // Intro Section
@@ -518,9 +637,87 @@ const translations = {
     contact_accounting: 'Accounting',
     contact_consulting: 'Consulting',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'FAQ About Single Shaft Shredders',
+    single_saft_video_title: 'Single Shaft Shredder Videos',
+    single_saft_similar_products: 'Similar Products',
+    single_saft_watch_video: 'Watch Video',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'WHAT IS A SINGLE SHAFT SHREDDER USED FOR?',
+    single_saft_faq_a1: 'A single shaft shredder is an industrial machine designed to effectively shred various materials, operating with a combination of high torque and low speed. It is used in recycling, waste management and industrial applications.',
+    single_saft_faq_q2: 'WHAT MATERIALS CAN BE PROCESSED IN SINGLE SHAFT SHREDDERS?',
+    single_saft_faq_a2: 'Various materials can be processed such as textile waste, plastics, fiber films, wood, chipboard, MDF boards, household waste and municipal waste.',
+    single_saft_faq_q3: 'HOW DO SINGLE SHAFT SHREDDERS WORK?',
+    single_saft_faq_a3: 'Our machines shred materials with blades rotating around a main shaft operating at high torque and low speed. Materials are cut by the blades on the shaft and separated into small pieces.',
+    single_saft_faq_q4: 'WHAT ARE THE ENERGY-SAVING FEATURES OF SINGLE SHAFT SHREDDERS?',
+    single_saft_faq_a4: 'It provides low energy consumption with energy-efficient motors and special blade design. Additionally, the motor automatically shuts off if no material is fed for a certain period of time.',
+    
+    dual_saft_faq_title: 'Frequently Asked Questions - Dual Shaft Shredder',
+    dual_saft_video_title: 'Dual Shaft Shredder Videos',
+    dual_saft_similar_products: 'Similar Products',
+    dual_saft_watch_video: 'Watch Video',
+    
+    quad_saft_faq_title: 'Frequently Asked Questions - Quad Shaft Shredder',
+    quad_saft_video_title: 'Quad Shaft Shredder Videos',
+    quad_saft_similar_products: 'Similar Products',
+    quad_saft_watch_video: 'Watch Video',
+    
+    metal_faq_title: 'Frequently Asked Questions - Metal Shredder',
+    metal_video_title: 'Metal Shredder Videos',
+    metal_similar_products: 'Similar Products',
+    metal_watch_video: 'Watch Video',
+    
+    pallet_faq_title: 'Frequently Asked Questions - Pallet Shredder',
+    pallet_video_title: 'Pallet Shredder Videos',
+    pallet_similar_products: 'Similar Products',
+    pallet_watch_video: 'Watch Video',
+    
+    plastic_faq_title: 'Frequently Asked Questions - Plastic Shredder',
+    plastic_video_title: 'Plastic Shredder Videos',
+    plastic_similar_products: 'Similar Products',
+    plastic_watch_video: 'Watch Video',
+    
+    glass_faq_title: 'Frequently Asked Questions - Glass Crusher',
+    glass_video_title: 'Glass Crusher Videos',
+    glass_similar_products: 'Similar Products',
+    glass_watch_video: 'Watch Video',
+    
+    organic_faq_title: 'Frequently Asked Questions - Organic Waste Shredder',
+    organic_video_title: 'Organic Waste Shredder Videos',
+    organic_similar_products: 'Similar Products',
+    organic_watch_video: 'Watch Video',
+    
+    mobile_faq_title: 'Frequently Asked Questions - Mobile Shredder',
+    mobile_video_title: 'Mobile Shredder Videos',
+    mobile_similar_products: 'Similar Products',
+    mobile_watch_video: 'Watch Video',
+    
+    harddisk_faq_title: 'Frequently Asked Questions - Hard Disk Shredder',
+    harddisk_video_title: 'Hard Disk Shredder Videos',
+    harddisk_similar_products: 'Similar Products',
+    harddisk_watch_video: 'Watch Video',
+    
+    tree_root_faq_title: 'Frequently Asked Questions - Tree Root Shredder',
+    tree_root_video_title: 'Tree Root Shredder Videos',
+    tree_root_similar_products: 'Similar Products',
+    tree_root_watch_video: 'Watch Video',
+    
+    wood_grinder_faq_title: 'Frequently Asked Questions - Wood Grinder',
+    wood_grinder_video_title: 'Wood Grinder Videos',
+    wood_grinder_similar_products: 'Similar Products',
+    wood_grinder_watch_video: 'Watch Video',
+    
+    baler_faq_title: 'Frequently Asked Questions - Baler Machine',
+    baler_video_title: 'Baler Machine Videos',
+    baler_similar_products: 'Similar Products',
+    baler_watch_video: 'Watch Video',
+    
     // CTA
     cta_title: 'Plan Your Machine With Us',
     cta_subtitle: 'Let\'s design the shredding system suitable for your project together.',
+    
+    cta_button: 'Get a Quote Now!',
     
     // Footer
     footer_contact: 'Contact',
@@ -693,6 +890,12 @@ const translations = {
     quad_shaft_faq_a5: 'These machines are equipped with various safety features to ensure user safety. These include emergency stop buttons, protective covers and overload protection systems.',
     quad_shaft_faq_q6: 'WHAT IS THE SHREDDING CAPACITY?',
     quad_shaft_faq_a6: 'The shredding capacity varies depending on the model of the machine and the type of material being processed. In general, quad shaft shredders are designed for high capacity operations and can effectively process large volumes of materials.',
+    quad_shaft_video_title: 'Quad Shaft Shredder Video',
+    quad_shaft_watch_video: 'Watch Video',
+    quad_shaft_similar_products: 'Similar Products',
+    quad_shaft_ecatalog_btn: 'Download E-Catalog',
+    quad_shaft_tech_specs: 'Technical Specifications',
+    quad_shaft_optional_features: 'Optional Features',
     
     // Pallet Shredder (TSV Series) Product Page
     product_pallet: 'Pallet Shredder',
@@ -748,6 +951,20 @@ const translations = {
     harddisk_description_1: 'Harddisk destruction shredders are industrial machines designed for the physical destruction of hard drives, SSDs, circuit boards and other digital storage devices. MT Makina DATABER series offers single, dual and triple stage shredding options to ensure data is permanently unrecoverable.',
     harddisk_description_2: 'These machines are equipped with PLC control systems, automatic feeding mechanisms, and hardened steel blades that can shred even the toughest electronic components. The multi-stage shredding process ensures complete data destruction by reducing materials to powder-like particles.',
     harddisk_description_3: 'MT Makina harddisk shredders are ideal for data centers, IT recycling facilities, government agencies, and organizations that require secure disposal of sensitive information. Optional features include cooling systems, automatic lubrication, camera recording, and barcode reading capabilities.',
+    harddisk_advantages_title: 'Key Features',
+    harddisk_adv_1_title: 'Two-Stage Shredding',
+    harddisk_adv_1_desc: 'The harddisk destruction shredder completely eliminates the possibility of data recovery by shredding hard drives twice.',
+    harddisk_adv_2_title: 'Irreversible Destruction',
+    harddisk_adv_2_desc: 'The harddisk destruction shredder physically shreds hard drives and circuit boards to ensure data becomes unrecoverable.',
+    harddisk_adv_3_title: 'Long-Lasting Blades',
+    harddisk_adv_3_desc: 'The harddisk destruction shredder is resistant to wear with high-quality steel blades and provides long-term use.',
+    harddisk_adv_4_title: 'Large Processing Capacity',
+    harddisk_adv_4_desc: 'The harddisk destruction shredder can quickly process digital storage devices and circuit boards of different sizes and types.',
+    harddisk_faq_title: 'Harddisk Destruction Shredder F.A.Q.',
+    harddisk_video_title: 'Harddisk Destruction Shredder Video',
+    harddisk_watch_video: 'Watch Video',
+    harddisk_similar_products: 'Similar Products',
+    harddisk_ecatalog_btn: 'E-Catalog',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Powerful Solutions in Industrial Recycling with High Capacity Mobile Crushers',
@@ -780,6 +997,9 @@ const translations = {
     mobile_faq_a6: 'Inverter-controlled motors and automatic reverse features increase energy efficiency and optimize machine performance. This provides high efficiency while reducing energy consumption.',
     mobile_faq_q7: 'WHAT ARE THE SAFETY FEATURES OF THE MOBILE CRUSHER?',
     mobile_faq_a7: 'It is equipped with safety measures such as emergency stop buttons, protective covers and automatic reverse features. These features ensure operator safety.',
+    mobile_video_title: 'Mobile Crusher Video',
+    mobile_watch_video: 'Watch Video',
+    mobile_similar_products: 'Similar Products',
   },
   ru: {
     // Header & Navigation
@@ -834,6 +1054,10 @@ const translations = {
     // Hero
     hero_title: 'Промышленная мощь в измельчительных машинах',
     hero_subtitle: 'Высокая эффективность, долгий срок службы и безопасная работа с экологически чистым производством.',
+    hero_subtitle_systems: 'Высокопроизводительные системы, разработанные для различных отраслей',
+    hero_cta_title: 'Спланируйте свою машину с нами',
+    hero_cta_desc: 'Мы производим высокоэффективные, долговечные и экологически чистые системы.',
+    hero_cta_desc2: 'Нажмите кнопку Получить предложение сейчас! чтобы разработать наиболее подходящее решение для вашего проекта вместе.',
     btn_explore: 'Изучить продукты',
     
     // Intro Section
@@ -855,7 +1079,7 @@ const translations = {
     tech_subtitle: 'Инженерные решения с фокусом на гидравлические системы, геометрию режущих лезвий, автоматизацию и энергоэффективность.',
     tech_hydraulic: 'Гидравлические системы',
     tech_hydraulic_desc: 'Максимальная эффективность с высоким гидравлическим давлением',
-    tech_blade: 'Технология режущих лезвий',
+    tech_blade: 'Техноло��ия режущих лезвий',
     tech_blade_desc: 'Долговечная резка со специальной геометрией и прочными материалами',
     tech_automation: 'Решения автоматизации',
     tech_automation_desc: 'Интеллектуальные системы управления и мониторинга с ПЛК',
@@ -866,9 +1090,9 @@ const translations = {
     ref_title: 'Наши референции',
     ref_subtitle: 'Мы предоставляем промышленные решения нашим партнерам по всему миру.',
     ref_main_title: 'Удовлетворенность клиентов и истории успеха',
-    ref_main_subtitle: 'В MT Makina мы всегда ставим удовлетворенность клиентов на первое место. Отзывы наших деловых партнеров помогают нам улучшать качество наших продуктов и услуг. Наши успешно завершенные проекты являю��ся на��ими лучшими рекомендациями.',
+    ref_main_subtitle: 'В MT Makina мы всегда ставим удовлетворенность клиентов на первое место. Отзывы наших деловых партнеров помогают нам улучшать качество наших продуктов и услуг. Наши успешно завершенные проекты являю���ся на��ими лучшими рекомендациями.',
     ref_main_paragraph: 'Как надежный деловой партнер в области решений по переработке и управлению отходами, мы продолжаем работать над устойчивым будущим. Сотрудничая с MT Makina, вы можете внести свой вклад в экологическую устойчивость и сделать свои процессы управления отходами более эффективными.',
-    ref_global_title: 'Глобальная экспортная сеть',
+    ref_global_title: 'Глобальная экс��ортная сеть',
     ref_global_subtitle: 'Обслуживание клиентов в Европе, на Ближнем Востоке и в Азии.',
     
     // Contact
@@ -882,9 +1106,86 @@ const translations = {
     contact_accounting: 'Бухгалтерия',
     contact_consulting: 'Консультации',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'Часто задаваемые вопросы об одновальных измельчителях',
+    single_saft_video_title: 'Видео одновального измельчителя',
+    single_saft_similar_products: 'Похожие продукты',
+    single_saft_watch_video: 'Смотреть видео',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'ДЛЯ ЧЕГО ИСПОЛЬЗУЕТСЯ ОДНОВАЛЬНЫЙ ИЗМЕЛЬЧИТЕЛЬ?',
+    single_saft_faq_a1: 'Одновальный измельчитель - это промышленная машина, предназначенная для эффективного измельчения различных материалов, работающая с комбинацией высокого крутящего момента и низкой скорости. Используется в переработке, управлении отходами и промышленных применениях.',
+    single_saft_faq_q2: 'КАКИЕ МАТЕРИАЛЫ МОГУТ ОБРАБАТЫВАТЬСЯ В ОДНОВАЛЬНЫХ ИЗМЕЛЬЧИТЕЛЯХ?',
+    single_saft_faq_a2: 'Могут обрабатываться различные материалы, такие как текстильные отходы, пластик, волокнистые пленки, древесина, ДСП, МДФ плиты, бытовые отходы и муниципальные отходы.',
+    single_saft_faq_q3: 'КАК РАБОТАЮТ ОДНОВАЛЬНЫЕ ИЗМЕЛЬЧИТЕЛИ?',
+    single_saft_faq_a3: 'Наши машины измельчают материалы лезвиями, вращающимися вокруг главного вала, работающего при высоком крутящем моменте и низкой скорости. Материалы разрезаются лезвиями на валу и разделяются на мелкие части.',
+    single_saft_faq_q4: 'КАКОВЫ ЭНЕРГОСБЕРЕГАЮЩИЕ ХАРАКТЕРИСТИКИ ОДНОВАЛЬНЫХ ИЗМЕЛЬЧИТЕЛЕЙ?',
+    single_saft_faq_a4: 'Обеспечивает низкое энергопотребление благодаря энергоэффективным двигателям и специальной конструкции лезвий. Кроме того, двигатель автоматически отключается, если материал не подается в течение определенного периода времени.',
+    
+    dual_saft_faq_title: 'Часто задаваемые вопросы - Двухвальный измельчитель',
+    dual_saft_video_title: 'Видео двухвального измельчителя',
+    dual_saft_similar_products: 'Похожие продукты',
+    dual_saft_watch_video: 'Смотреть видео',
+    
+    quad_saft_faq_title: 'Часто задаваемые вопросы - Четырехвальный измельчитель',
+    quad_saft_video_title: 'Видео четырехвального измельчителя',
+    quad_saft_similar_products: 'Похожие продукты',
+    quad_saft_watch_video: 'Смотреть видео',
+    
+    metal_faq_title: 'Часто задаваемые вопросы - Измельчитель металла',
+    metal_video_title: 'Видео измельчителя металла',
+    metal_similar_products: 'Похожие продукты',
+    metal_watch_video: 'Смотреть видео',
+    
+    pallet_faq_title: 'Часто задаваемые вопросы - Измельчитель поддонов',
+    pallet_video_title: 'Видео измельчителя поддонов',
+    pallet_similar_products: 'Похожие продукты',
+    pallet_watch_video: 'Смотреть видео',
+    
+    plastic_faq_title: 'Часто задаваемые вопросы - Измельчитель пластика',
+    plastic_video_title: 'Видео измельчителя пластика',
+    plastic_similar_products: 'Похожие продукты',
+    plastic_watch_video: 'Смотреть видео',
+    
+    glass_faq_title: 'Часто задаваемые вопросы - Дробилка стекла',
+    glass_video_title: 'Видео дробилки стекла',
+    glass_similar_products: 'Похожие продукты',
+    glass_watch_video: 'Смотреть видео',
+    
+    organic_faq_title: 'Часто задаваемые вопросы - Измельчитель органических отходов',
+    organic_video_title: 'Видео измельчителя органических отходов',
+    organic_similar_products: 'Похожие продукты',
+    organic_watch_video: 'Смотреть видео',
+    
+    mobile_faq_title: 'Часто задаваемые вопросы - Мобильная дробилка',
+    mobile_video_title: 'Видео мобильной дробилки',
+    mobile_similar_products: 'Похожие продукты',
+    mobile_watch_video: 'Смотреть видео',
+    
+    harddisk_faq_title: 'Часто задаваемые вопросы - Уничтожитель жестких дисков',
+    harddisk_video_title: 'Видео уничтожителя жестких дисков',
+    harddisk_similar_products: 'Похожие продукты',
+    harddisk_watch_video: 'Смотреть видео',
+    
+    tree_root_faq_title: 'Часто задаваемые вопросы - Измельчитель корней деревьев',
+    tree_root_video_title: 'Видео измельчителя корней деревьев',
+    tree_root_similar_products: 'Похожие продукты',
+    tree_root_watch_video: 'Смотреть видео',
+    
+    wood_grinder_faq_title: 'Часто задаваемые вопросы - Дробилка для древесины',
+    wood_grinder_video_title: 'Видео дробилки для древесины',
+    wood_grinder_similar_products: 'Похожие продукты',
+    wood_grinder_watch_video: 'Смотреть видео',
+    
+    baler_faq_title: 'Часто задаваемые вопросы - Пресс для тюкования',
+    baler_video_title: 'Видео пресса для тюкования',
+    baler_similar_products: 'Похожие продукты',
+    baler_watch_video: 'Смотреть видео',
+    
     // CTA
     cta_title: 'Спланируйте свою машину с нами',
     cta_subtitle: 'Давайте вместе разработаем систему измельчения, подходящую для вашего проекта.',
+    cta_button: 'Получить предложение сейчас!',
     
     // Footer
     footer_contact: 'Контакт',
@@ -904,7 +1205,11 @@ const translations = {
     product_dual_shaft: 'Двухвальный измельчитель',
     product_quad_shaft: 'Четырехвальный измельчитель',
     product_metal: 'Измельчитель металла',
+    product_mobile: 'Мобильная дробилка',
     product_pallet: 'Измельчитель поддонов',
+    product_harddisk: 'Уничтожитель жестких дисков',
+    product_tree_root: 'Измельчитель корней деревьев',
+    product_wood_grinder: 'Дробилка для древесины',
     product_glass: 'Дробилка стеклянных бутылок',
     product_plastic: 'Измельчитель пластика',
     product_organic: 'Измельчитель органических отходов',
@@ -971,7 +1276,7 @@ const translations = {
     our_models: 'Наши модели',
     select_model_description: 'Выберите модель, которая соответствует вашим потребностям',
     need_help_choosing: 'Нужна помощь в выборе модели?',
-    contact_us_for_consultation: 'Наша команда экспертов поможет вам выбрать наиболее подходящую машину',
+    contact_us_for_consultation: 'Наша ком��нда экспертов поможет вам выбрать наиболее подходящую машину',
     contact_us: 'Свяжитесь с нами',
     single_shaft_advantage_1_title: 'Гибкое использование',
     single_shaft_advantage_1_desc: 'Оптимизированное измельчение для различных типов отходов',
@@ -1032,7 +1337,7 @@ const translations = {
     quad_shaft_subtitle: 'Высокопроизводительное четырехвальное решение для измельчения пластика, металла, дерева, бумаги и электронных отходов',
     quad_shaft_description_1: 'Четырехвальный измельчитель твердых отходов - это высокопроизводительное оборудование, предназначенное для эффективного измельчения различных отходов. Он предлагает превосходную долговечность и эффективность в промышленном и коммерческом управлении отходами, переработке и других применениях. Четырехвальный измельчитель твердых отходов обладает способностью измельчать широкий спектр материалов благодаря модульной конструкции и гибким возможностям использования.',
     quad_shaft_description_2: 'Четырехвальный измельчитель твердых отходов эффективно измельчает крупногабаритные отходы, такие как пластиковые бочки, металлические бочки, бочки с краской, бытовой мусор, медицинские отходы, пластиковые рамы, пластиковые блоки, пластиковые коробки, алюминиевые профили, масляные фильтры, металлические баки, газеты, картон, гофрированная бумага, копировальная бумага, холодильники, печатные платы, корпуса телевизоров, стекловата, стеклянные стаканы и стеклянные бутылки.',
-    quad_shaft_description_3: 'Четырехвальный измельчитель твердых отходов эффективно предотвращает загрязнение материала благодаря многоуровневой герметизирующей структуре и обеспечивает длительное использование благодаря прочным подшипникам. Идеально подходит для обработки крупных и полых изде��ий, четырехвальный измельчитель твердых отходов повышает эффективность и вносит большой вклад в процессы переработки. Четырехвальный измельчитель твердых отходов выделяется как устойчивое и экологически чистое решение в управлении промышленными отходами и процессах переработки.',
+    quad_shaft_description_3: 'Четырехвальный измельчитель твердых отходов эффективно предотвращает загрязнение материала благодаря многоуровневой герметизирующей структуре и обеспечивает длительное использование благодаря прочным подшипникам. Идеально подходит ��ля обработки крупных и полых изде��ий, четырехвальный измельчитель твердых отходов повышает эффективность и вносит большой вклад в процессы переработки. Четырехвальный измельчитель твердых отходов выделяется как устойчивое и экологически чистое решение в управлении промышленными отходами и процессах переработки.',
     quad_shaft_description_4: 'Четырехвальный измельчитель твердых отходов адаптируется к различным промышленным применениям, таким как измельчитель шин, измельчитель тюков, измельчитель животных, измельчитель поддонов, измельчитель древесины, измельчитель лома, измельчитель электронных отходов, измельчитель жестких дисков. Он также идеально подходит для различных потребностей переработки отходов, таких как измельчитель картона, измельчитель бумаги, измельчитель отходов шин и машина для уничтожения жестких дисков. Четырехвальный измельчитель твердых отходов играет важную роль в устойчивых процессах переработки, используясь как измельчитель твердых отходов, способствуя окружающей среде путем уменьшения объема отходов.',
     quad_shaft_adv_1_title: 'Эффективное измельчение с гидравлическим давлением',
     quad_shaft_adv_1_desc: 'Четырехвальный измельчитель быстро и эффективно измельчает материалы благодаря гидравлическому давлению, приложенному к валам.',
@@ -1057,6 +1362,12 @@ const translations = {
     quad_shaft_faq_a5: 'Эти машины оснащены различными функциями безопасности для обеспечения безопасности пользователя. К ним относятся кнопки аварийной остановки, защитные крышки и системы защиты от перегрузки.',
     quad_shaft_faq_q6: 'КАКОВА МОЩНОСТЬ ИЗМЕЛЬЧЕНИЯ?',
     quad_shaft_faq_a6: 'Мощность измельчения зависит от модели машины и типа обрабатываемого материала. В целом, четырехвальные измельчители предназначены для операций высокой производительности и могут эффективно обрабатывать большие объемы материалов.',
+    quad_shaft_video_title: 'Видео четырехвального измельчителя',
+    quad_shaft_watch_video: 'Смотреть видео',
+    quad_shaft_similar_products: 'Похожие продукты',
+    quad_shaft_ecatalog_btn: 'Скачать электронный каталог',
+    quad_shaft_tech_specs: 'Технические характеристики',
+    quad_shaft_optional_features: 'Дополнительные функции',
     
     // Pallet Shredder (TSV Series) Product Page
     product_pallet: 'Измельчитель поддонов',
@@ -1074,7 +1385,7 @@ const translations = {
     pallet_advantage_2_desc: 'Измельчитель поддонов может эффективно измельчать деревянные, пластиковые и металлические поддоны, обеспечивая гибкость в переработке.',
     pallet_adv_2_title: 'Различная способность обработки материалов',
     pallet_adv_2_desc: 'Измельчитель поддонов может эффективно измельчать деревянные, пластиковые и металлические поддоны, обеспечивая гибкость в переработке.',
-    pallet_advantage_3_title: 'Прочная и долговечная конструкция',
+    pallet_advantage_3_title: 'Прочна�� и долговечная конструкция',
     pallet_advantage_3_desc: 'Измельчитель поддонов оснащен прочными компонентами и выдерживает суровые условия работы в течение длительного времени.',
     pallet_adv_3_title: 'Прочная и долговечная конструкция',
     pallet_adv_3_desc: 'Измельчитель поддонов оснащен прочными компонентами и выдерживает суровые условия работы в течение длительного времени.',
@@ -1105,6 +1416,27 @@ const translations = {
     pallet_optional_5: 'Автоматическая смазочная установка',
     pallet_optional_6: 'Сита разных размеров',
     pallet_optional_7: 'Применения конвейеров/шнеков для выхода',
+    
+    // Harddisk Shredder Product Page
+    harddisk_main_title: 'Измельчитель для уничтожения жестких дисков',
+    harddisk_subtitle: 'Безопасное уничтожение данных с помощью многоступенчатой технологии измельчения',
+    harddisk_description_1: 'Измельчители для уничтожения жестких дисков - это промышленные машины, предназначенные для физического уничтожения жестких дисков, SSD, печатных плат и других цифровых устройств хранения данных. Серия DATABER от MT Makina предлагает одноступенчатые, двухступенчатые и трехступенчатые варианты измельчения для обеспечения безвозвратности данных.',
+    harddisk_description_2: 'Эти машины оснащены системами управления PLC, автоматическими механизмами подачи и закаленными стальными лезвиями, которые могут измельчать даже самые прочные электронные компоненты. Многоступенчатый процесс измельчения обеспечивает полное уничтожение данных путем измельчения материалов в порошкообразные частицы.',
+    harddisk_description_3: 'Измельчители жестких дисков MT Makina идеально подходят для центров обработки данных, предприятий по переработке ИТ-оборудования, государственных учреждений и организаций, требующих безопасной утилизации конфиденциальной информации. Дополнительные функции включают системы охлаждения, автоматическую смазку, запись с камеры и возможности чтения штрих-кодов.',
+    harddisk_advantages_title: 'Основные характеристики',
+    harddisk_adv_1_title: 'Двухступенчатое измельчение',
+    harddisk_adv_1_desc: 'Измельчитель для уничтожения жестких дисков полностью исключает возможность восстановления данных, измельчая жесткие диски дважды.',
+    harddisk_adv_2_title: 'Необратимое уничтожение',
+    harddisk_adv_2_desc: 'Измельчитель для уничтожения жестких дисков физически из��ельчает жесткие диски и печатные платы, чтобы данные стали невосстановимыми.',
+    harddisk_adv_3_title: 'Долговечные лезвия',
+    harddisk_adv_3_desc: 'Измельчитель для уничтожения жестких дисков устойчив к износу благодаря высококачественным стальным лезвиям и обеспечивает долгосрочное использование.',
+    harddisk_adv_4_title: 'Большая производительность обработки',
+    harddisk_adv_4_desc: 'Измельчитель для уничтожения жестких дисков может быстро обрабатывать цифровые устройства хранения данных и печатные платы различных размеров и типов.',
+    harddisk_faq_title: 'Часто задаваемые вопросы об измельчителе жестких дисков',
+    harddisk_video_title: 'Видео измельчителя для уничтожения жестких дисков',
+    harddisk_watch_video: 'Смотреть видео',
+    harddisk_similar_products: 'Похожие продукты',
+    harddisk_ecatalog_btn: 'Электронный каталог',
     
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Мощные решения в промышленной переработке с высокопроизводительными мобильными дробилками',
@@ -1137,6 +1469,9 @@ const translations = {
     mobile_faq_a6: 'Двигатели с инверторным управлением и функции автоматического реверса повышают энергоэффективность и оптимизируют производительность машины. Это обеспечивает высокую эффективность при снижении энергопотребления.',
     mobile_faq_q7: 'КАКОВЫ ФУНКЦИИ БЕЗОПАСНОСТИ МОБИЛЬНОЙ ДРОБИЛКИ?',
     mobile_faq_a7: 'Оснащена мерами безопасности, такими как кнопки аварийной остановки, защитные крышки и функции автоматического реверса. Эти функции обеспечивают безопасность оператора.',
+    mobile_video_title: 'Видео мобильной дробилки',
+    mobile_watch_video: 'Смотреть видео',
+    mobile_similar_products: 'Похожие продукты',
   },
   ar: {
     // Header & Navigation
@@ -1191,11 +1526,15 @@ const translations = {
     // Hero
     hero_title: 'القوة الصناعية في آلات التقطيع',
     hero_subtitle: 'كفاءة عالية وعمر طويل وتشغيل آمن مع إنتاج صديق للبيئة.',
+    hero_subtitle_systems: 'أنظمة عالية الأداء مخصصة لصناعات مختلفة',
+    hero_cta_title: 'خطط لآلتك معنا',
+    hero_cta_desc: 'ننتج أنظمة فعالة للغاية وطويلة الأمد وصديقة للبيئة.',
+    hero_cta_desc2: 'انقر على زر احصل على عرض أسعار الآن! لتصميم الحل الأنسب لمشروعك معًا.',
     btn_explore: 'استكشف المنتجات',
     
     // Intro Section
     intro_title: 'إنتاج صديق للبيئة وإعادة تدوير مستدامة',
-    intro_description: 'آلات التقطيع MT MAKINA، التي توفر كفاءة عالية في إدارة النفايات الصناعية وعمليات إعادة التدوير، تضمن التقطيع الفعال لمختلف المواد بفضل هيكلها المتين وأنظمة الشفرات القوية. الأنظمة المنتجة للعديد من المواد مثل الإطارات والمعادن والبلاستيك والخشب والنسيج والنفايات المنزلية والصناعية، تساهم في تقليل حجم النفايات والاستخدام الفعال للموارد من خلال توفير حلول إعادة تدوير مستدامة. للحصول على معلومات مفصلة حول آلات التقطيع MT MAKINA التي تقدم أداءً عاليًا واستخدامًا طويل الأمد مع نماذج مصممة للاحتياجات الخاصة، يرجى الاتصال بنا.',
+    intro_description: 'آلات التقطيع MT MAKINA، التي توفر كفاءة عالية في إدارة النفايات الصناعية وعمليات إعادة التدوير، تضمن التقطيع الفعال لمختلف المواد بفضل هيكلها المتين وأنظمة الشفرات القوية. الأنظمة المنتجة للعديد من المواد مثل الإطارات والمعادن والبلاستيك والخشب والن��يج والنفايات المنزلية والصناعية، تساهم في تقليل حجم النفايات والاستخدام الفعال للموارد من خلال توفير حلول إعادة تدوير مستدامة. للحصول على معلومات مفصلة حول آلات التقطيع MT MAKINA التي تقدم أداءً عاليًا واستخدامًا طويل الأمد مع نماذج مصممة للاحتياجات الخاصة، يرجى الاتصال بنا.',
     eco_friendly: 'صديق للبيئة',
     recycling: 'إعادة التدوير',
     durability: 'المتانة',
@@ -1215,7 +1554,7 @@ const translations = {
     tech_blade: 'تقنية الشفرات القاطعة',
     tech_blade_desc: 'قطع طويل الأمد بهندسة خاصة ومواد متينة',
     tech_automation: 'حلول الأتمتة',
-    tech_automation_desc: 'أنظمة التشغيل والمراقبة الذكية المتحكم فيها بواسطة PLC',
+    tech_automation_desc: 'أنظمة التشغ��ل والمراقبة الذكية المتحكم فيها بواسطة PLC',
     tech_energy: 'كفاءة الطاقة',
     tech_energy_desc: 'أداء عالي مع استهلاك منخفض للطاقة',
     
@@ -1239,9 +1578,86 @@ const translations = {
     contact_accounting: 'المحاسبة',
     contact_consulting: 'الاستشارات',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'الأسئلة الشائعة حول آلات التقطيع أحادية العمود',
+    single_saft_video_title: 'فيديوهات آلة التقطيع أحادية العمود',
+    single_saft_similar_products: 'منتجات مماثلة',
+    single_saft_watch_video: 'مشاهدة الفيديو',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'ما هو الغرض من آلة التقطيع أحادية العمود؟',
+    single_saft_faq_a1: 'آلة التقطيع أحادية العمود هي آلة صناعية مصممة لتقطيع المواد المختلفة بفعالية، وتعمل بمزيج من عزم الدوران العالي والسرعة المنخفضة. تُستخدم في إعادة التدوير وإدارة النفايات والتطبيقات الصناعية.',
+    single_saft_faq_q2: 'ما هي المواد التي يمكن معالجتها في آلات التقطيع أحادية العمود؟',
+    single_saft_faq_a2: 'يمكن معالجة مواد مختلفة مثل نفايات النسيج والبلاستيك والأفلام الليفية والخشب والخشب المضغوط وألواح MDF والنفايات المنزلية ونفايات البلديات.',
+    single_saft_faq_q3: 'كيف تعمل آلات التقطيع أحادية العمود؟',
+    single_saft_faq_a3: 'تقطع آلاتنا المواد بشفرات تدور حول عمود رئيسي يعمل بعزم دوران عالي وسرعة منخفضة. يتم قطع المواد بواسطة الشفرات الموجودة على العمود وفصلها إلى قطع صغيرة.',
+    single_saft_faq_q4: 'ما هي ميزات توفير الطاقة في آلات التقطيع أحادية العمود؟',
+    single_saft_faq_a4: 'توفر استهلاكًا منخفضًا للطاقة بفضل المحركات الموفرة للطاقة وتصميم الشفرات الخاص. بالإضافة إلى ذلك، يتم إيقاف تشغيل المحرك تلقائيًا إذا لم يتم تغذية المواد لفترة زمنية معينة.',
+    
+    dual_saft_faq_title: 'الأسئلة المتكررة - آلة التقطيع ثنائية العمود',
+    dual_saft_video_title: 'فيديوهات آلة التقطيع ثنائية العمود',
+    dual_saft_similar_products: 'منتجات مماثلة',
+    dual_saft_watch_video: 'مشاهدة الفيديو',
+    
+    quad_saft_faq_title: 'الأسئلة المتكررة - آلة التقطيع رباعية العمود',
+    quad_saft_video_title: 'فيديوهات آلة التقطيع رباعية العمود',
+    quad_saft_similar_products: 'منتجات مماثلة',
+    quad_saft_watch_video: 'مشاهدة الفيديو',
+    
+    metal_faq_title: 'الأسئلة المتكررة - آلة تقطيع المعادن',
+    metal_video_title: 'فيديوهات آلة تقطيع المعادن',
+    metal_similar_products: 'منتجات مماثلة',
+    metal_watch_video: 'مشاهدة الفيديو',
+    
+    pallet_faq_title: 'الأسئلة المتكررة - آلة تقطيع المنصات',
+    pallet_video_title: 'فيديوهات آلة تقطيع المنصات',
+    pallet_similar_products: 'منتجات مماثلة',
+    pallet_watch_video: 'مشاهدة الفيديو',
+    
+    plastic_faq_title: 'الأسئلة المتكررة - آلة تقطيع البلاستيك',
+    plastic_video_title: 'فيديوهات آلة تقطيع البلاستيك',
+    plastic_similar_products: 'منتجات مماثلة',
+    plastic_watch_video: 'مشاهدة الفيديو',
+    
+    glass_faq_title: 'الأسئلة المتكررة - كسارة الزجاج',
+    glass_video_title: 'فيديوهات كسارة الزجاج',
+    glass_similar_products: 'منتجات مماثلة',
+    glass_watch_video: 'مشاهدة الفيديو',
+    
+    organic_faq_title: 'الأسئلة المتكررة - آلة تقطيع النفايات العضوية',
+    organic_video_title: 'فيديوهات آلة تقطيع النفايات العضوية',
+    organic_similar_products: 'منتجات مماثلة',
+    organic_watch_video: 'مشاهدة الفيديو',
+    
+    mobile_faq_title: 'الأسئلة المتكررة - آلة التقطيع المتنقلة',
+    mobile_video_title: 'فيديوهات آلة التقطيع المتنقلة',
+    mobile_similar_products: 'منتجات مماثلة',
+    mobile_watch_video: 'مشاهدة الفيديو',
+    
+    harddisk_faq_title: 'الأسئلة المتكررة - آلة تدمير الأقراص الصلبة',
+    harddisk_video_title: 'فيديوهات آلة تدمير الأقراص الصلبة',
+    harddisk_similar_products: 'منتجات مماثلة',
+    harddisk_watch_video: 'مشاهدة الفيديو',
+    
+    tree_root_faq_title: 'الأسئلة المتكررة - آلة تقطيع جذور الأشجار',
+    tree_root_video_title: 'فيديوهات آلة تقطيع جذور الأشجار',
+    tree_root_similar_products: 'منتجات مماثلة',
+    tree_root_watch_video: 'مشاهدة الفيديو',
+    
+    wood_grinder_faq_title: 'الأسئلة المتكررة - طاحونة الخشب',
+    wood_grinder_video_title: 'فيديوهات طاحونة الخشب',
+    wood_grinder_similar_products: 'منتجات مماثلة',
+    wood_grinder_watch_video: 'مشاهدة الفيديو',
+    
+    baler_faq_title: 'الأسئلة المتكررة - آلة الكبس',
+    baler_video_title: 'فيديوهات آلة الكبس',
+    baler_similar_products: 'منتجات مماثلة',
+    baler_watch_video: 'مشاهدة الفيديو',
+    
     // CTA
     cta_title: 'خطط لآلتك معنا',
     cta_subtitle: 'دعنا نصمم نظام التقطيع المناسب لمشروعك معًا.',
+    cta_button: 'احصل على عرض أسعار الآن!',
     
     // Footer
     footer_contact: 'اتصل',
@@ -1261,7 +1677,11 @@ const translations = {
     product_dual_shaft: 'آلة تمزيق ثنائية العمود',
     product_quad_shaft: 'آلة تمزيق رباعية العمود',
     product_metal: 'آلة تمزيق المعادن',
+    product_mobile: 'كسارة متنقلة',
     product_pallet: 'آلة تمزيق المنصات',
+    product_harddisk: 'آلة تدمير القرص الصلب',
+    product_tree_root: 'آلة تمزيق جذور الأشجار',
+    product_wood_grinder: 'آلة طحن الخشب',
     product_glass: 'آلة تكسير الزجاجات',
     product_plastic: 'آلة تمزيق البلاستيك',
     product_organic: '��لة تمزيق النفايات العضوية',
@@ -1306,12 +1726,12 @@ const translations = {
     single_shaft_faq_title: 'الأسئلة الشائعة حول آلة التمزيق أحادية العمود',
     single_shaft_faq_q1: 'ما هي النفايات التي تعالجها آلة التمزيق أحادية العمود؟',
     single_shaft_faq_a1: 'يمكن استخدام آلات التمزيق أحادية العمود لمجموعة واسعة بما في ذلك النفايات المنزلية والبلاستيك والورق والكرتون والمنسوجات وتغليف الألمنيوم والمنصات الخشبية والنفايات العضوية.',
-    single_shaft_faq_q2: 'كيف يعمل نظام الرجوع التلقائي؟',
+    single_shaft_faq_q2: 'كيف يعمل نظام الرجوع التل��ائي؟',
     single_shaft_faq_a2: 'بفضل نظام التحكم PLC، عندما تكتشف الآلة حملاً زائدًا أو انسدادًا، فإنها تشغل الدوار تلقائيًا في الاتجاه المعاكس لضمان التمزيق الصحيح وإطالة عمر الشفرة.',
     single_shaft_faq_q3: 'ما هي متطلبات الصيانة؟',
     single_shaft_faq_a3: 'يوصى بإجراء فحص منتظم للشفرات وفحص النظام الهيدروليكي والتشحيم. يكفي إجراء فحص عام كل 500 ساعة تشغيل.',
     single_shaft_faq_q4: 'ما هو عمر الدوار والشفرات؟',
-    single_shaft_faq_a4: 'الشفرات مصنوعة من الفولاذ السبائكي المتين وتوفر 2000-5000 ساعة من الاستخدام حسب نوع المادة المعالجة. عمر الدوار يتجاوز 10 سنوات.',
+    single_shaft_faq_a4: 'الشفرات مصنوعة من الفولاذ السبائكي المتين وتوفر 2000-5000 ��اعة من الاستخدام حسب نوع المادة المعالجة. عمر الدوار يتجاوز 10 سنوات.',
     single_shaft_faq_q5: 'على ماذا تعتمد سعة الآلة؟',
     single_shaft_faq_a5: 'تختلف السعة اعتمادًا على نوع ومحتوى الرطوبة والكثافة وحجم التمزيق للمادة المعالجة. يمكن معالجة المواد الخفيفة مثل البلاستيك والورق بسعات أعلى.',
     single_shaft_video_title: 'فيديو آلة التمزيق أحادية العمود',
@@ -1414,13 +1834,19 @@ const translations = {
     quad_shaft_faq_a5: 'هذه الآلات مجهزة بميزات السلامة المختلفة لضمان سلامة المستخدم. وتشمل هذه أزرار التوقف في حالات الطوارئ، الأغطية الواقية وأنظمة الحماية من الحمل الزائد.',
     quad_shaft_faq_q6: 'ما هي سعة التمزيق؟',
     quad_shaft_faq_a6: 'تختلف سعة التمزيق حسب طراز الآلة ونوع المادة التي تتم معالجتها. بشكل عام، تم تصميم آلات التمزيق رباعية العمود للعمليات عالية السعة ويمكنها معالجة كميات كبيرة من المواد بفعالية.',
+    quad_shaft_video_title: 'فيديو آلة التمزيق رباعية العمود',
+    quad_shaft_watch_video: 'مشاهدة الفيديو',
+    quad_shaft_similar_products: 'منتجات مماثلة',
+    quad_shaft_ecatalog_btn: 'تحميل الكتالوج الإلكتروني',
+    quad_shaft_tech_specs: 'المواصفات الفنية',
+    quad_shaft_optional_features: 'الميزات الاختيارية',
     
     // Pallet Shredder (TSV Series) Product Page
     product_pallet: 'آلة تمزيق المنصات',
-    pallet_main_title: 'آلة تمزيق المنصات: حلول فعالة لإعادة تدوير المنصات الخشبية والبلاستيكية',
+    pallet_main_title: 'آلة تمزيق المنصات: حلول فعالة لإ��ادة تدوير المنصات الخشبية والبلاستيكية',
     pallet_subtitle: 'معدات أساسية توفر الاستدامة البيئية والإدارة الفعالة للنفايات في عملية إعادة تدوير المنصات الخشبية والبلاستيكية.',
     pallet_description_1: 'آلة تمزيق المنصات هي معدات أساسية توفر الاستدامة البيئية والإدارة الفعالة للنفايات في عملية إعادة تدوير المنصات الخشبية والبلاستيكية. كسارة المنصات تسرع عملية إعادة التدوير وتسهل إدارة النفايات عن طريق تقسيم المنصات إلى قطع صغيرة.',
-    pallet_description_2: 'المنصات المستخدمة في اللوجستيات وعمليات التخزين يمكن أن تخلق كميات كبيرة من خردة المنصات عندما تصل إلى نهاية عمرها الافتراضي. توفر آلة تمزيق المنصات حلاً واعياً بيئياً من خلال إعادة تدوير هذه النفايات وتساهم في حماية الموارد الطبيعية.',
+    pallet_description_2: 'المنصات المستخدمة في اللوجستيات وعمليات التخزين يمكن أن تخ��ق كميات كبيرة من خردة المنصات عندما تصل إلى نهاية عمرها الافتراضي. توفر آلة تمزيق المنصات حلاً واعياً بيئياً من خلال إعادة تدوير هذه النفايات وتساهم في حماية الموارد الطبيعية.',
     pallet_description_3: 'تلعب آلة تمزيق المنصات دوراً نشطاً في عمليات مثل إعادة تدوير المنصات الخشبية وإعادة تدوير المنصات البلاستيكية وإعادة تدوير خردة المنصات. كما أنها تسهل عمليات بيع خردة المنصات.',
     pallet_advantages_title: 'الميزات الأساسية',
     pallet_advantage_1_title: 'كفاءة عالية',
@@ -1463,6 +1889,27 @@ const translations = {
     pallet_optional_6: 'شاشات بأحجام مختلفة',
     pallet_optional_7: 'تطبيقات النقل/اللولب للمخرجات',
     
+    // Harddisk Shredder Product Page
+    harddisk_main_title: 'آلة تمزيق إتلاف الأقراص الصلبة',
+    harddisk_subtitle: 'تدمير آمن للبيانات بتقنية التمزيق متعدد المراحل',
+    harddisk_description_1: 'آلات تمزيق إتلاف الأقراص الصلبة هي آلات صناعية مصممة لتدمير الأقراص الصلبة وأقراص SSD ولوحات الدوائر وأجهزة التخزين الرقمية الأخرى فعلياً. تقدم سلسلة DATABER من MT Makina خيارات تمزيق أحادية وثنائية وثلاثية المراحل لضمان عدم إمكانية استرداد البيانات بشكل دائم.',
+    harddisk_description_2: 'هذه الآلات مجهزة بأنظمة التحكم PLC وآليات التغذية التلقائية وشفرات فولاذية مقساة يمكنها تمزيق حتى أصعب المكونات الإلكترونية. تضمن عملية التمزيق متعددة المراحل تدمير البيانات بالكامل عن طريق تحويل المواد إلى جزيئات شبيهة بالمسحوق.',
+    harddisk_description_3: 'آلات تمزيق الأقراص الصلبة من MT Makina مثالية لمراكز البيانات ومرافق إعادة تدوير تكنولوجيا المعلومات والوكالات الحكومية والمنظمات التي تتطلب التخلص الآمن من المعلومات الحساسة. تشمل الميزات الاختيارية أنظمة التبريد والتشحيم التلقائي وتسجيل الكاميرا وقدرات قراءة الباركود.',
+    harddisk_advantages_title: 'الميزات الرئيسية',
+    harddisk_adv_1_title: 'التمزيق ثنائي المراحل',
+    harddisk_adv_1_desc: 'تقضي آلة تمزيق إتلاف الأقراص الصلبة تماماً على إمكانية استرداد البيانات من خلال تمزيق الأقراص الصلبة مرتين.',
+    harddisk_adv_2_title: 'التدمير غير القابل للإصلاح',
+    harddisk_adv_2_desc: 'تقوم آلة تمزيق إتلاف الأقراص الصلبة بتمزيق الأقراص الصلبة ولوحات الدوائر فعلياً لضمان عدم إمكانية استرداد البيانات.',
+    harddisk_adv_3_title: 'شفرات طويلة الأمد',
+    harddisk_adv_3_desc: 'آلة تمزيق إتلاف الأقراص الصلبة مقاومة للتآكل بفضل شفرات الفولاذ عالية الجودة وتوفر استخداماً طويل الأجل.',
+    harddisk_adv_4_title: 'سعة معالجة كبيرة',
+    harddisk_adv_4_desc: 'يمكن لآلة تمزيق إتلاف الأقراص الصلبة معالجة أجهزة التخزين الرقمية ولوحات الدوائر بأحجام وأنواع مختلفة بسرعة.',
+    harddisk_faq_title: 'الأسئلة الشائعة حول آلة تمزيق إتلاف الأقراص الصلبة',
+    harddisk_video_title: 'فيديو آلة تمزيق إتلاف الأقراص الصلبة',
+    harddisk_watch_video: 'مشاهدة الفيديو',
+    harddisk_similar_products: 'منتجات مماثلة',
+    harddisk_ecatalog_btn: 'الكتالوج الإلكتروني',
+    
     // Mobile Crusher Product Category Page
     mobile_main_title: 'حلول قوية في إعادة التدوير الصناعي مع الكسارات المتنقلة عالية السعة',
     mobile_subtitle: 'تتميز بقدرتها على معالجة مجموعة واسعة من المواد وميزات التنقل في عمليات إعادة التدوير وإدارة النفايات.',
@@ -1494,13 +1941,106 @@ const translations = {
     mobile_faq_a6: 'المحركات المتحكم فيها بالعاكس وميزات الرجوع التلقائي تزيد من كفاءة الطاقة وتحسن أداء الآلة. وهذا يوفر كفاءة عالية مع تقليل استهلاك الطاقة.',
     mobile_faq_q7: 'ما هي ميزات السلامة للكسارة المتنقلة؟',
     mobile_faq_a7: 'مجهزة بتدابير السلامة مثل أزرار التوقف في حالات الطوارئ والأغطية الواقية وميزات الرجوع التلقائي. هذه الميزات تضمن سلامة المشغل.',
+    mobile_video_title: 'فيديو الكسارة المتنقلة',
+    mobile_watch_video: 'مشاهدة الفيديو',
+    mobile_similar_products: 'منتجات مماثلة',
   },
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('tr');
+  // Detect language from URL on initial load
+  const getLanguageFromURL = (): Language => {
+    const path = window.location.pathname;
+    const match = path.match(/^\/(tr|en|ru|ar)/);
+    return (match?.[1] as Language) || 'tr';
+  };
+
+  const [language, setLanguage] = useState<Language>(getLanguageFromURL);
+
+  // Custom setLanguage that also updates URL
+  const changeLanguage = (newLang: Language) => {
+    const currentPath = window.location.pathname;
+    const currentLang = currentPath.match(/^\/(tr|en|ru|ar)/)?.[1] as Language || 'tr';
+    
+    // Import slug mappings from seoConfig
+    const import_slugsByLanguage = {
+      home: { tr: '', en: '', ru: '', ar: '' },
+      about: { tr: 'kurumsal', en: 'about', ru: 'o-kompanii', ar: 'about' },
+      products: { tr: 'urunler', en: 'products', ru: 'produkty', ar: 'products' },
+      technology: { tr: 'teknoloji', en: 'technology', ru: 'tekhnologiya', ar: 'technology' },
+      references: { tr: 'referanslar', en: 'references', ru: 'referencii', ar: 'references' },
+      certificates: { tr: 'sertifikalar', en: 'certificates', ru: 'sertifikaty', ar: 'certificates' },
+      contact: { tr: 'iletisim', en: 'contact', ru: 'kontakty', ar: 'contact' },
+      ecatalog: { tr: 'e-katalog', en: 'e-catalog', ru: 'elektronnyi-katalog', ar: 'e-catalog' }
+    };
+    
+    const import_productCategorySlugs = {
+      'single-saft': { tr: 'tek-saftli-parcalama-makinesi', en: 'single-shaft-shredder', ru: 'odnovalnaya-drobilka', ar: 'single-shaft-shredder' },
+      'dual-saft': { tr: 'cift-saftli-parcalama-makinesi', en: 'dual-shaft-shredder', ru: 'dvukhvalnaya-drobilka', ar: 'dual-shaft-shredder' },
+      'quad-saft': { tr: 'dort-saftli-parcalama-makinesi', en: 'quad-shaft-shredder', ru: 'chetyrekhvalnaya-drobilka', ar: 'quad-shaft-shredder' },
+      'metal': { tr: 'metal-parcalama-makinesi', en: 'metal-shredder', ru: 'drobilka-metalla', ar: 'metal-shredder' },
+      'mobile': { tr: 'mobil-kirici', en: 'mobile-shredder', ru: 'mobilnaya-drobilka', ar: 'mobile-shredder' },
+      'pallet': { tr: 'palet-parcalama-makinesi', en: 'pallet-shredder', ru: 'drobilka-poddonov', ar: 'pallet-shredder' },
+      'harddisk': { tr: 'harddisk-imha-makinesi', en: 'harddisk-destroyer', ru: 'unichtozhitel-zhestkikh-diskov', ar: 'harddisk-destroyer' },
+      'granulator': { tr: 'granulator', en: 'granulator', ru: 'granulator', ar: 'granulator' }
+    };
+    
+    // Parse current URL to determine page type
+    const pathWithoutLang = currentPath.replace(/^\/(tr|en|ru|ar)\//, '');
+    const pathParts = pathWithoutLang.split('/').filter(p => p);
+    
+    let newPath = `/${newLang}`;
+    
+    // Detect page type and rebuild URL
+    if (pathParts.length === 0) {
+      // Home page
+      newPath = `/${newLang}`;
+    } else {
+      // Check if first part matches any static page
+      const firstPart = pathParts[0];
+      let pageFound = false;
+      
+      // Check static pages
+      for (const [pageKey, slugs] of Object.entries(import_slugsByLanguage)) {
+        if (slugs[currentLang] === firstPart) {
+          newPath = `/${newLang}/${slugs[newLang]}`;
+          pageFound = true;
+          break;
+        }
+      }
+      
+      // Check product categories
+      if (!pageFound) {
+        for (const [productKey, slugs] of Object.entries(import_productCategorySlugs)) {
+          if (slugs[currentLang] === firstPart) {
+            newPath = `/${newLang}/${slugs[newLang]}`;
+            
+            // If there's a model (second part), append it
+            if (pathParts.length > 1) {
+              newPath += `/${pathParts[1]}`;
+            }
+            
+            pageFound = true;
+            break;
+          }
+        }
+      }
+      
+      // If no match found, just replace language prefix
+      if (!pageFound) {
+        newPath = currentPath.replace(/^\/(tr|en|ru|ar)/, `/${newLang}`);
+      }
+    }
+    
+    // Update URL and state
+    window.history.pushState({}, '', newPath);
+    setLanguage(newLang);
+    
+    // Reload the page to ensure all components re-render with new language
+    window.location.reload();
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.tr] || key;
@@ -1509,7 +2049,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const isRTL = language === 'ar';
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, isRTL }}>
+    <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t, isRTL }}>
       {children}
     </LanguageContext.Provider>
   );

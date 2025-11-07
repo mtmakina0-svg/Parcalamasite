@@ -1,26 +1,30 @@
 /**
- * Sitemap Generator for MT Makina Website
- * Generates XML sitemap for better SEO
+ * Multi-language Sitemap Generator for MT Makina Website
+ * Generates XML sitemap with hreflang support for all languages
  */
 
-import { generateUrl } from './seoConfig';
+import { generateUrl, type Language } from './seoConfig';
 
 interface SitemapUrl {
   loc: string;
   lastmod?: string;
   changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
   priority?: number;
+  alternates?: { lang: Language; url: string }[];
 }
 
 // All product types and their models
-const products = {
-  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
-  'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+const products: { [key: string]: string[] } = {
+  'single-saft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
+  'dual-saft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
+  'quad-saft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
+  'tree-root': ['TRS-100'],
+  'wood-grinder': ['WG-50'],
+  'glass': ['GC-30'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
   'baler': ['BP-60', 'BP-100'],
   'conveyor': ['CV-3M', 'CV-5M', 'CV-10M'],
@@ -38,8 +42,10 @@ const wasteCategories = [
   'organik'
 ];
 
+const languages: Language[] = ['tr', 'en', 'ru', 'ar'];
+
 /**
- * Generate complete sitemap URLs
+ * Generate complete sitemap URLs with multi-language support
  */
 export function generateSitemapUrls(): SitemapUrl[] {
   const baseUrl = 'https://www.parcalamamakinesi.com';
@@ -47,98 +53,179 @@ export function generateSitemapUrls(): SitemapUrl[] {
   
   const urls: SitemapUrl[] = [];
 
-  // Home page - highest priority
-  urls.push({
-    loc: baseUrl + generateUrl.home(),
-    lastmod: today,
-    changefreq: 'weekly',
-    priority: 1.0
-  });
-
-  // Main pages
-  urls.push({
-    loc: baseUrl + generateUrl.about(),
-    lastmod: today,
-    changefreq: 'monthly',
-    priority: 0.9
-  });
-
-  urls.push({
-    loc: baseUrl + generateUrl.products(),
-    lastmod: today,
-    changefreq: 'weekly',
-    priority: 0.9
-  });
-
-  urls.push({
-    loc: baseUrl + generateUrl.technology(),
-    lastmod: today,
-    changefreq: 'monthly',
-    priority: 0.8
-  });
-
-  urls.push({
-    loc: baseUrl + generateUrl.references(),
-    lastmod: today,
-    changefreq: 'monthly',
-    priority: 0.8
-  });
-
-  urls.push({
-    loc: baseUrl + generateUrl.certificates(),
-    lastmod: today,
-    changefreq: 'monthly',
-    priority: 0.7
-  });
-
-  urls.push({
-    loc: baseUrl + generateUrl.contact(),
-    lastmod: today,
-    changefreq: 'monthly',
-    priority: 0.8
-  });
-
-  urls.push({
-    loc: baseUrl + generateUrl.ecatalog(),
-    lastmod: today,
-    changefreq: 'monthly',
-    priority: 0.7
-  });
-
-  // Product category pages
-  Object.keys(products).forEach(productType => {
+  // For each language, generate all pages
+  languages.forEach(lang => {
+    // Home page - highest priority
+    const homeUrl = baseUrl + generateUrl.home(lang);
+    const homeAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.home(l)
+    }));
     urls.push({
-      loc: baseUrl + generateUrl.productCategory(productType),
+      loc: homeUrl,
       lastmod: today,
       changefreq: 'weekly',
-      priority: 0.85
+      priority: 1.0,
+      alternates: homeAlternates
     });
 
-    // Individual product model pages
-    products[productType as keyof typeof products].forEach(model => {
-      urls.push({
-        loc: baseUrl + generateUrl.productDetail(productType, model),
-        lastmod: today,
-        changefreq: 'weekly',
-        priority: 0.8
-      });
-    });
-  });
-
-  // Waste categories
-  urls.push({
-    loc: baseUrl + generateUrl.waste(),
-    lastmod: today,
-    changefreq: 'monthly',
-    priority: 0.7
-  });
-
-  wasteCategories.forEach(category => {
+    // About page
+    const aboutUrl = baseUrl + generateUrl.about(lang);
+    const aboutAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.about(l)
+    }));
     urls.push({
-      loc: baseUrl + generateUrl.waste(category),
+      loc: aboutUrl,
       lastmod: today,
       changefreq: 'monthly',
-      priority: 0.6
+      priority: 0.9,
+      alternates: aboutAlternates
+    });
+
+    // Products overview page
+    const productsUrl = baseUrl + generateUrl.products(lang);
+    const productsAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.products(l)
+    }));
+    urls.push({
+      loc: productsUrl,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: 0.9,
+      alternates: productsAlternates
+    });
+
+    // Technology page
+    const techUrl = baseUrl + generateUrl.technology(lang);
+    const techAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.technology(l)
+    }));
+    urls.push({
+      loc: techUrl,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: 0.8,
+      alternates: techAlternates
+    });
+
+    // References page
+    const refsUrl = baseUrl + generateUrl.references(lang);
+    const refsAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.references(l)
+    }));
+    urls.push({
+      loc: refsUrl,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: 0.8,
+      alternates: refsAlternates
+    });
+
+    // Certificates page
+    const certsUrl = baseUrl + generateUrl.certificates(lang);
+    const certsAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.certificates(l)
+    }));
+    urls.push({
+      loc: certsUrl,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: 0.7,
+      alternates: certsAlternates
+    });
+
+    // Contact page
+    const contactUrl = baseUrl + generateUrl.contact(lang);
+    const contactAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.contact(l)
+    }));
+    urls.push({
+      loc: contactUrl,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: 0.8,
+      alternates: contactAlternates
+    });
+
+    // E-catalog page
+    const ecatalogUrl = baseUrl + generateUrl.ecatalog(lang);
+    const ecatalogAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.ecatalog(l)
+    }));
+    urls.push({
+      loc: ecatalogUrl,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: 0.7,
+      alternates: ecatalogAlternates
+    });
+
+    // Product category pages
+    Object.keys(products).forEach(productType => {
+      const categoryUrl = baseUrl + generateUrl.productCategory(productType, lang);
+      const categoryAlternates = languages.map(l => ({
+        lang: l,
+        url: baseUrl + generateUrl.productCategory(productType, l)
+      }));
+      urls.push({
+        loc: categoryUrl,
+        lastmod: today,
+        changefreq: 'weekly',
+        priority: 0.85,
+        alternates: categoryAlternates
+      });
+
+      // Product model detail pages
+      products[productType].forEach(model => {
+        const modelUrl = baseUrl + generateUrl.productDetail(productType, model, lang);
+        const modelAlternates = languages.map(l => ({
+          lang: l,
+          url: baseUrl + generateUrl.productDetail(productType, model, l)
+        }));
+        urls.push({
+          loc: modelUrl,
+          lastmod: today,
+          changefreq: 'weekly',
+          priority: 0.8,
+          alternates: modelAlternates
+        });
+      });
+    });
+
+    // Waste category pages
+    const wasteMainUrl = baseUrl + generateUrl.waste(undefined, lang);
+    const wasteMainAlternates = languages.map(l => ({
+      lang: l,
+      url: baseUrl + generateUrl.waste(undefined, l)
+    }));
+    urls.push({
+      loc: wasteMainUrl,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: 0.7,
+      alternates: wasteMainAlternates
+    });
+
+    wasteCategories.forEach(category => {
+      const wasteUrl = baseUrl + generateUrl.waste(category, lang);
+      const wasteAlternates = languages.map(l => ({
+        lang: l,
+        url: baseUrl + generateUrl.waste(category, l)
+      }));
+      urls.push({
+        loc: wasteUrl,
+        lastmod: today,
+        changefreq: 'monthly',
+        priority: 0.6,
+        alternates: wasteAlternates
+      });
     });
   });
 
@@ -146,17 +233,28 @@ export function generateSitemapUrls(): SitemapUrl[] {
 }
 
 /**
- * Generate XML sitemap content
+ * Generate XML sitemap string with hreflang annotations
  */
 export function generateSitemapXML(): string {
   const urls = generateSitemapUrls();
   
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
   
   urls.forEach(url => {
     xml += '  <url>\n';
     xml += `    <loc>${url.loc}</loc>\n`;
+    
+    // Add hreflang alternate links
+    if (url.alternates) {
+      url.alternates.forEach(alt => {
+        xml += `    <xhtml:link rel="alternate" hreflang="${alt.lang}" href="${alt.url}"/>\n`;
+      });
+      // Add x-default
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${url.alternates[0].url}"/>\n`;
+    }
+    
     if (url.lastmod) {
       xml += `    <lastmod>${url.lastmod}</lastmod>\n`;
     }
@@ -180,49 +278,36 @@ export function generateSitemapXML(): string {
 export function generateRobotsTxt(): string {
   const baseUrl = 'https://www.parcalamamakinesi.com';
   
-  return `# Robots.txt for MT Makina - parcalamamakinesi.com
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: *.json$
-
-# Sitemap
-Sitemap: ${baseUrl}/sitemap.xml
-
-# Crawl delay (optional, adjust based on server capacity)
-Crawl-delay: 1
-
-# Specific bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Yandex
-Allow: /
-`;
+  let content = '# MT Makina Robots.txt\n\n';
+  content += 'User-agent: *\n';
+  content += 'Allow: /\n\n';
+  content += 'Disallow: /admin/\n';
+  content += 'Disallow: /api/\n';
+  content += 'Disallow: /*.json$\n\n';
+  content += '# Sitemaps\n';
+  content += `Sitemap: ${baseUrl}/sitemap.xml\n\n`;
+  content += '# Crawl-delay\n';
+  content += 'Crawl-delay: 1\n';
+  
+  return content;
 }
 
 /**
- * Log sitemap generation (useful for debugging)
+ * Get total number of URLs in sitemap
  */
-export function logSitemapInfo(): void {
+export function getSitemapStats() {
   const urls = generateSitemapUrls();
-  console.log('=== MT Makina Sitemap Info ===');
-  console.log(`Total URLs: ${urls.length}`);
-  console.log('\nURL Breakdown:');
-  console.log(`- Main pages: 8`);
-  console.log(`- Product categories: ${Object.keys(products).length}`);
-  console.log(`- Product models: ${Object.values(products).flat().length}`);
-  console.log(`- Waste categories: ${wasteCategories.length + 1}`);
-  console.log('\nTo generate sitemap.xml, copy the output of generateSitemapXML()');
-  console.log('To generate robots.txt, copy the output of generateRobotsTxt()');
-}
-
-// For development - log sitemap info
-if (process.env.NODE_ENV === 'development') {
-  // Uncomment to see sitemap info in console
-  // logSitemapInfo();
+  const byLanguage: { [key: string]: number } = {};
+  
+  languages.forEach(lang => {
+    byLanguage[lang] = urls.filter(url => url.loc.includes(`/${lang}/`)).length;
+  });
+  
+  return {
+    total: urls.length,
+    byLanguage,
+    productPages: Object.values(products).reduce((sum, models) => sum + models.length, 0) * languages.length,
+    categoryPages: Object.keys(products).length * languages.length,
+    mainPages: 8 * languages.length // home, about, products, tech, refs, certs, contact, ecatalog
+  };
 }

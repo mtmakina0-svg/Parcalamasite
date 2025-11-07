@@ -59,53 +59,53 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
 
   // Product models for mega menu - TÜM ÜRÜNLER
   const productModels: { [key: string]: { label: string, models: string[] } } = {
-    'single-shaft': {
-      label: 'Tek Şaftlı Parçalama Makinesi',
+    'single-saft': {
+      label: t('product_single_shaft'),
       models: ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200']
     },
-    'dual-shaft': {
-      label: 'Çift Şaftlı Parçalama Makinesi',
+    'dual-saft': {
+      label: t('product_dual_shaft'),
       models: ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200']
     },
-    'quad-shaft': {
-      label: 'Dört Şaftlı Parçalama Makinesi',
+    'quad-saft': {
+      label: t('product_quad_shaft'),
       models: ['DS-80', 'DS-100', 'DS-150', 'DS-200']
     },
     'metal': {
-      label: 'Metal Parçalama Makinesi (Redmonster)',
+      label: t('product_metal'),
       models: ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200']
     },
     'mobile': {
-      label: 'Mobil Kırıcı',
+      label: t('product_mobile'),
       models: ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200']
     },
     'pallet': {
-      label: 'Palet Parçalama Makinesi',
+      label: t('product_pallet'),
       models: ['TSV-140', 'TSV-200', 'TSVX-200']
     },
     'harddisk': {
-      label: 'Harddisk İmha Makinesi',
+      label: t('product_harddisk'),
       models: ['DATABER-S', 'DATABER-D', 'DATABER-T']
     },
     'tree-root': {
-      label: 'Ağaç Kökü Parçalama Makinesi',
+      label: t('product_tree_root'),
       models: ['TR-1000']
     },
     'wood-grinder': {
-      label: 'Ağaç Parçalama Öğütme Makinesi',
+      label: t('product_wood_grinder'),
       models: ['WG-500', 'WG-800', 'WG-1200']
     },
     'glass': {
-      label: 'Cam Şişe Kırma Makinesi',
+      label: t('product_glass'),
       models: ['GB-300']
     }
   };
   
   // Primary products (main shredders) - displayed in columns
   const primaryProducts = [
-    { key: 'product_single_shaft', action: 'single-shaft', hasModels: true },
-    { key: 'product_dual_shaft', action: 'dual-shaft', hasModels: true },
-    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true }
+    { key: 'product_single_shaft', action: 'single-saft', hasModels: true },
+    { key: 'product_dual_shaft', action: 'dual-saft', hasModels: true },
+    { key: 'product_quad_shaft', action: 'quad-saft', hasModels: true }
   ];
   
   // Secondary products - displayed below primary

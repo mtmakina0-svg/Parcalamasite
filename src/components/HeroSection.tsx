@@ -9,12 +9,30 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#45474B]"
       style={{ fontFamily: 'Mulish, sans-serif' }}
     >
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source
+            src="https://res.cloudinary.com/dutqyzxuz/video/upload/An_ultrarealistic_4k_202508261628_so1wo_y1a637.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
       {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] text-center py-20">
-        {/* MT Makina Logo - Dark variant for white background */}
+      <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] text-center py-20 relative z-10">
+        {/* MT Makina Logo - Light variant for dark background */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -22,9 +40,9 @@ export const HeroSection = () => {
           className="mb-12 flex justify-center"
         >
           <Logo
-            variant="dark"
+            variant="light"
             alt="MT Makina Logo"
-            className="h-40 w-auto object-contain mx-[1px] my-[18px] p-[0px]"
+            className="h-40 w-auto object-contain mx-[1px] my-[18px] p-[0px] drop-shadow-2xl"
           />
         </motion.div>
 
@@ -33,7 +51,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[80px] text-[#45474B] mb-6 mx-auto leading-tight lg:whitespace-nowrap text-center px-4"
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[80px] text-white mb-6 mx-auto leading-tight lg:whitespace-nowrap text-center px-4 drop-shadow-2xl"
           style={{ fontWeight: 700, fontFamily: 'Mulish, sans-serif' }}
         >
           {t('page_title_home')}
@@ -52,10 +70,10 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-[20px] text-[#777777] mb-16 max-w-3xl mx-auto leading-relaxed"
+          className="text-[20px] text-white/90 mb-16 max-w-3xl mx-auto leading-relaxed drop-shadow-lg"
           style={{ fontWeight: 400 }}
         >
-          Farklı endüstrilere özel yüksek performanslı sistemler
+          {t('hero_subtitle_systems')}
         </motion.p>
 
         {/* CTA Section */}
@@ -67,20 +85,20 @@ export const HeroSection = () => {
         >
           {/* CTA Title */}
           <h2 
-            className="text-[32px] text-[#45474B] mb-6"
+            className="text-[32px] text-white mb-6 drop-shadow-lg"
             style={{ fontWeight: 700 }}
           >
-            Makinenizi Bizimle Planlayın
+            {t('hero_cta_title')}
           </h2>
 
           {/* CTA Description */}
           <p 
-            className="text-[18px] text-[#555555] mb-8 leading-relaxed"
+            className="text-[18px] text-white/90 mb-8 leading-relaxed drop-shadow-lg"
             style={{ fontWeight: 400 }}
           >
-            Yüksek verimli, uzun ömürlü ve çevre dostu sistemler üretiyoruz.
+            {t('hero_cta_desc')}
             <br />
-            Hemen Teklif Al! butonu ile projeniz için en uygun çözümü birlikte tasarlayalım.
+            {t('hero_cta_desc2')}
           </p>
 
           {/* WhatsApp CTA Button */}
@@ -99,7 +117,7 @@ export const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Down Indicator - Left Side */}
+      {/* Scroll Down Indicator - Centered */}
       <motion.a
         href="#intro"
         onClick={(e) => {
@@ -112,11 +130,11 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="absolute bottom-8 left-8 w-[30px] h-[50px] border-2 border-[#999999] rounded-[50px] cursor-pointer hover:border-[#F4CE14] transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[30px] h-[50px] border-2 border-white/70 rounded-[50px] cursor-pointer hover:border-[#F4CE14] transition-colors z-20"
         whileHover={{ borderColor: '#F4CE14' }}
       >
         <motion.span
-          className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[6px] h-[6px] bg-[#999999] rounded-full"
+          className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[6px] h-[6px] bg-white/70 rounded-full"
           animate={{
             y: [0, 10, 0],
             opacity: [1, 0.5, 1]

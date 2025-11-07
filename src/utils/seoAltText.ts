@@ -15,9 +15,9 @@ export interface AltTextConfig {
  */
 const productTypeNames = {
   tr: {
-    'single-shaft': 'Tek Şaftlı Parçalama Makinesi',
-    'dual-shaft': 'Çift Şaftlı Parçalama Makinesi',
-    'quad-shaft': 'Dört Şaftlı Katı Atık Parçalama Makinesi',
+    'single-saft': 'Tek Şaftlı Parçalama Makinesi',
+    'dual-saft': 'Çift Şaftlı Parçalama Makinesi',
+    'quad-saft': 'Dört Şaftlı Katı Atık Parçalama Makinesi',
     'metal': 'Metal Parçalama Makinesi',
     'mobile': 'Mobil Kırıcı',
     'pallet': 'Palet Parçalama Makinesi',
@@ -31,9 +31,9 @@ const productTypeNames = {
     'separator': 'Ayırıcı Makine'
   },
   en: {
-    'single-shaft': 'Single Shaft Shredder',
-    'dual-shaft': 'Dual Shaft Shredder',
-    'quad-shaft': 'Quad Shaft Solid Waste Shredder',
+    'single-saft': 'Single Shaft Shredder',
+    'dual-saft': 'Dual Shaft Shredder',
+    'quad-saft': 'Quad Shaft Solid Waste Shredder',
     'metal': 'Metal Shredder',
     'mobile': 'Mobile Crusher',
     'pallet': 'Pallet Shredder',
@@ -47,9 +47,9 @@ const productTypeNames = {
     'separator': 'Separator Machine'
   },
   ru: {
-    'single-shaft': 'Одновальный измельчитель',
-    'dual-shaft': 'Двухвальный измельчитель',
-    'quad-shaft': 'Четырехвальный измельчитель твердых отходов',
+    'single-saft': 'Одновальный измельчитель',
+    'dual-saft': 'Двухвальный измельчитель',
+    'quad-saft': 'Четырехвальный измельчитель твердых отходов',
     'metal': 'Металлический измельчитель',
     'mobile': 'Мобильная дробилка',
     'pallet': 'Измельчитель поддонов',
@@ -63,9 +63,9 @@ const productTypeNames = {
     'separator': 'Сепаратор'
   },
   ar: {
-    'single-shaft': 'آلة تقطيع أحادية العمود',
-    'dual-shaft': 'آلة تقطيع ثنائية العمود',
-    'quad-shaft': 'آلة تمزيق النفايات الصلبة رباعية العمود',
+    'single-saft': 'آلة تقطيع أحادية العمود',
+    'dual-saft': 'آلة تقطيع ثنائية العمود',
+    'quad-saft': 'آلة تمزيق النفايات الصلبة رباعية العمود',
     'metal': 'آلة تقطيع المعادن',
     'mobile': 'كسارة متنقلة',
     'pallet': 'آلة تقطيع المنصات',
