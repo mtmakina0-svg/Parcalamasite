@@ -38,96 +38,110 @@ import {
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
 type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood-grinder' | 'glass' | null;
 
-// Parse URL and determine current page
+// Parse URL and determine current page (Multi-language support)
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
   const path = window.location.pathname;
   console.log('parseUrl - Parsing path:', path);
   
+  // Extract language prefix if present
+  const langMatch = path.match(/^\/(tr|en|ru|ar)/);
+  const pathWithoutLang = langMatch ? path.substring(3) : path; // Remove /tr, /en, etc.
+  console.log('parseUrl - Path without lang:', pathWithoutLang);
+  
   // Home page
-  if (path === '/' || path === '' || path === '/home') {
+  if (path === '/' || pathWithoutLang === '' || pathWithoutLang === '/' || path.match(/^\/(tr|en|ru|ar)\/?$/)) {
     console.log('parseUrl - Detected: main/home page');
     return { page: 'main' };
   }
   
-  // Kurumsal (About)
-  if (path === '/kurumsal') {
+  // Multi-language page detection
+  // About page (kurumsal, about, o-kompanii)
+  if (pathWithoutLang.match(/^\/(kurumsal|about|o-kompanii)$/)) {
     console.log('parseUrl - Detected: about page');
     return { page: 'about' };
   }
   
-  // Ürünler (Products Overview)
-  if (path === '/urunler') {
+  // Products Overview (urunler, products, produkty)
+  if (pathWithoutLang.match(/^\/(urunler|products|produkty)$/)) {
     console.log('parseUrl - Detected: products-overview page');
     return { page: 'products-overview' };
   }
   
-  // Product Categories
-  const productCategoryMap: { [key: string]: ProductType } = {
-    '/tek-saftli-parcalama-makinesi': 'single-saft',
-    '/cift-saftli-parcalama-makinesi': 'dual-saft',
-    '/dort-saftli-parcalama-makinesi': 'quad-saft',
-    '/metal-parcalama-makinesi': 'metal',
-    '/mobil-kirici': 'mobile',
-    '/palet-parcalama-makinesi': 'pallet',
-    '/harddisk-imha-makinesi': 'harddisk',
-    '/agac-koku-parcalama-makinesi': 'tree-root',
-    '/agac-parcalama-ogutme-makinesi': 'wood-grinder',
-    '/cam-sise-kirma-makinesi': 'glass'
-  };
+  // Product Categories - Multi-language slugs
+  const productCategoryPatterns: { pattern: RegExp; type: ProductType }[] = [
+    { pattern: /^\/(tek-saftli-parcalama-makinesi|single-shaft-shredder|odnovalnaya-drobilka)/, type: 'single-saft' },
+    { pattern: /^\/(cift-saftli-parcalama-makinesi|dual-shaft-shredder|dvukhvalnaya-drobilka)/, type: 'dual-saft' },
+    { pattern: /^\/(dort-saftli-parcalama-makinesi|quad-shaft-shredder|chetyrekhvalnaya-drobilka)/, type: 'quad-saft' },
+    { pattern: /^\/(metal-parcalama-makinesi|metal-shredder|drobilka-metalla)/, type: 'metal' },
+    { pattern: /^\/(mobil-kirici|mobile-shredder|mobilnaya-drobilka)/, type: 'mobile' },
+    { pattern: /^\/(palet-parcalama-makinesi|pallet-shredder|drobilka-poddonov)/, type: 'pallet' },
+    { pattern: /^\/(harddisk-imha-makinesi|harddisk-destroyer|unichtozhitel-zhestkikh-diskov)/, type: 'harddisk' },
+    { pattern: /^\/(agac-koku-parcalama-makinesi|tree-root-shredder|drobilka-kornej-derevev)/, type: 'tree-root' },
+    { pattern: /^\/(agac-parcalama-ogutme-makinesi|wood-grinder|drobilka-drevesiny)/, type: 'wood-grinder' },
+    { pattern: /^\/(cam-sise-kirma-makinesi|glass-crusher|drobilka-stekla)/, type: 'glass' }
+  ];
   
-  // Check if it's a product category page
-  for (const [urlPath, productType] of Object.entries(productCategoryMap)) {
-    if (path === urlPath) {
-      console.log('parseUrl - Detected: product-category page, product:', productType);
-      return { page: 'product-category', product: productType };
-    }
-    // Check if it's a product detail page (e.g., /tek-shaftli-parcalama-makinesi/tsh-60)
-    if (path.startsWith(urlPath + '/')) {
-      const model = path.substring(urlPath.length + 1).toUpperCase();
-      console.log('parseUrl - Detected: product-detail page, product:', productType, 'model:', model);
-      return { page: 'product-detail', product: productType, model };
+  // Check product categories and details
+  for (const { pattern, type } of productCategoryPatterns) {
+    const match = pathWithoutLang.match(pattern);
+    if (match) {
+      const matchedSlug = match[0];
+      // Check if it's just the category page
+      if (pathWithoutLang === matchedSlug) {
+        console.log('parseUrl - Detected: product-category page, product:', type);
+        return { page: 'product-category', product: type };
+      }
+      // Check if it's a product detail page (has model after category)
+      if (pathWithoutLang.startsWith(matchedSlug + '/')) {
+        const model = pathWithoutLang.substring(matchedSlug.length + 1).toUpperCase();
+        console.log('parseUrl - Detected: product-detail page, product:', type, 'model:', model);
+        return { page: 'product-detail', product: type, model };
+      }
     }
   }
   
-  // Teknoloji
-  if (path === '/teknoloji') {
+  // Technology (teknoloji, technology, tekhnologiya)
+  if (pathWithoutLang.match(/^\/(teknoloji|technology|tekhnologiya)$/)) {
     console.log('parseUrl - Detected: technology page');
     return { page: 'technology' };
   }
   
-  // Referanslar
-  if (path === '/referanslar') {
+  // References (referanslar, references, referencii)
+  if (pathWithoutLang.match(/^\/(referanslar|references|referencii)$/)) {
     console.log('parseUrl - Detected: references-overview page');
     return { page: 'references-overview' };
   }
   
-  // Sertifikalar
-  if (path === '/sertifikalar') {
+  // Certificates (sertifikalar, certificates, sertifikaty)
+  if (pathWithoutLang.match(/^\/(sertifikalar|certificates|sertifikaty)$/)) {
     console.log('parseUrl - Detected: certificates page');
     return { page: 'certificates' };
   }
   
-  // İletişim
-  if (path === '/iletisim') {
+  // Contact (iletisim, contact, kontakty)
+  if (pathWithoutLang.match(/^\/(iletisim|contact|kontakty)$/)) {
     console.log('parseUrl - Detected: contact page');
     return { page: 'contact' };
   }
   
-  // E-Katalog
-  if (path === '/e-katalog') {
+  // E-Catalog (e-katalog, e-catalog)
+  if (pathWithoutLang.match(/^\/(e-katalog|e-catalog)$/)) {
     console.log('parseUrl - Detected: ecatalog page');
     return { page: 'ecatalog' };
   }
   
-  // Atık Türleri
-  if (path === '/atik-turleri') {
+  // Waste Types (atik-turleri, waste-types, tipy-otkhodov)
+  if (pathWithoutLang.match(/^\/(atik-turleri|waste-types|tipy-otkhodov)$/)) {
     console.log('parseUrl - Detected: waste-categories page');
     return { page: 'waste-categories' };
   }
-  if (path.startsWith('/atik-turleri/')) {
-    const category = path.substring('/atik-turleri/'.length);
-    console.log('parseUrl - Detected: waste-detail page, category:', category);
-    return { page: 'waste-detail', wasteCategory: category };
+  if (pathWithoutLang.match(/^\/(atik-turleri|waste-types|tipy-otkhodov)\//)) {
+    const match = pathWithoutLang.match(/^\/(atik-turleri|waste-types|tipy-otkhodov)\/(.+)$/);
+    if (match) {
+      const category = match[2];
+      console.log('parseUrl - Detected: waste-detail page, category:', category);
+      return { page: 'waste-detail', wasteCategory: category };
+    }
   }
   
   // Default to main page

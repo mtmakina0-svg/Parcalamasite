@@ -1617,7 +1617,36 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('tr');
+  // Detect language from URL on initial load
+  const getLanguageFromURL = (): Language => {
+    const path = window.location.pathname;
+    const match = path.match(/^\/(tr|en|ru|ar)/);
+    return (match?.[1] as Language) || 'tr';
+  };
+
+  const [language, setLanguage] = useState<Language>(getLanguageFromURL);
+
+  // Custom setLanguage that also updates URL
+  const changeLanguage = (newLang: Language) => {
+    const currentPath = window.location.pathname;
+    const currentLang = currentPath.match(/^\/(tr|en|ru|ar)/)?.[1] || 'tr';
+    
+    // Replace language prefix in URL
+    let newPath = currentPath;
+    if (currentPath.match(/^\/(tr|en|ru|ar)/)) {
+      newPath = currentPath.replace(/^\/(tr|en|ru|ar)/, `/${newLang}`);
+    } else {
+      // Add language prefix if not present
+      newPath = `/${newLang}${currentPath}`;
+    }
+    
+    // Update URL and state
+    window.history.pushState({}, '', newPath);
+    setLanguage(newLang);
+    
+    // Reload the page to ensure all components re-render with new language
+    window.location.reload();
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.tr] || key;
@@ -1626,7 +1655,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const isRTL = language === 'ar';
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, isRTL }}>
+    <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t, isRTL }}>
       {children}
     </LanguageContext.Provider>
   );

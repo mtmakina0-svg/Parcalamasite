@@ -1,6 +1,7 @@
 /**
  * SEO Configuration - URL Routing and Meta Tags
  * Comprehensive SEO system for MT Makina website
+ * Multi-language SEO with language prefix support
  */
 
 export interface SEOMetadata {
@@ -12,103 +13,192 @@ export interface SEOMetadata {
   canonical: string;
 }
 
-// URL Path Generator
-export const generateUrl = {
-  home: () => '/home',
-  about: () => '/kurumsal',
-  products: () => '/urunler',
-  productCategory: (type: string) => {
-    const slugs: { [key: string]: string } = {
-      'single-saft': '/tek-saftli-parcalama-makinesi',
-      'dual-saft': '/cift-saftli-parcalama-makinesi',
-      'quad-saft': '/dort-saftli-parcalama-makinesi',
-      'metal': '/metal-parcalama-makinesi',
-      'mobile': '/mobil-kirici',
-      'pallet': '/palet-parcalama-makinesi',
-      'harddisk': '/harddisk-imha-makinesi',
-      'tree-root': '/agac-koku-parcalama-makinesi',
-      'wood-grinder': '/agac-parcalama-ogutme-makinesi',
-      'glass': '/cam-sise-kirma-makinesi',
-      'granulator': '/granulator-makinesi',
-      'baler': '/balyalama-makinesi',
-      'conveyor': '/konveyor-sistemi',
-      'separator': '/ayristirma-makinesi'
-    };
-    return slugs[type] || `/urunler/${type}`;
-  },
-  productDetail: (type: string, model: string) => {
-    const categorySlug = generateUrl.productCategory(type);
-    return `${categorySlug}/${model.toLowerCase()}`;
-  },
-  technology: () => '/teknoloji',
-  references: () => '/referanslar',
-  certificates: () => '/sertifikalar',
-  waste: (category?: string) => category ? `/atik-turleri/${category}` : '/atik-turleri',
-  contact: () => '/iletisim',
-  ecatalog: () => '/e-katalog'
+export type Language = 'tr' | 'en' | 'ru' | 'ar';
+
+// Multi-language URL slugs for each page type
+const slugsByLanguage = {
+  home: { tr: '', en: '', ru: '', ar: '' },
+  about: { tr: 'kurumsal', en: 'about', ru: 'o-kompanii', ar: 'about' },
+  products: { tr: 'urunler', en: 'products', ru: 'produkty', ar: 'products' },
+  technology: { tr: 'teknoloji', en: 'technology', ru: 'tekhnologiya', ar: 'technology' },
+  references: { tr: 'referanslar', en: 'references', ru: 'referencii', ar: 'references' },
+  certificates: { tr: 'sertifikalar', en: 'certificates', ru: 'sertifikaty', ar: 'certificates' },
+  waste: { tr: 'atik-turleri', en: 'waste-types', ru: 'tipy-otkhodov', ar: 'waste-types' },
+  contact: { tr: 'iletisim', en: 'contact', ru: 'kontakty', ar: 'contact' },
+  ecatalog: { tr: 'e-katalog', en: 'e-catalog', ru: 'e-katalog', ar: 'e-catalog' }
 };
 
-// SEO Metadata for each page
+// Product category slugs by language
+const productCategorySlugs = {
+  'single-saft': {
+    tr: 'tek-saftli-parcalama-makinesi',
+    en: 'single-shaft-shredder',
+    ru: 'odnovalnaya-drobilka',
+    ar: 'single-shaft-shredder'
+  },
+  'dual-saft': {
+    tr: 'cift-saftli-parcalama-makinesi',
+    en: 'dual-shaft-shredder',
+    ru: 'dvukhvalnaya-drobilka',
+    ar: 'dual-shaft-shredder'
+  },
+  'quad-saft': {
+    tr: 'dort-saftli-parcalama-makinesi',
+    en: 'quad-shaft-shredder',
+    ru: 'chetyrekhvalnaya-drobilka',
+    ar: 'quad-shaft-shredder'
+  },
+  'metal': {
+    tr: 'metal-parcalama-makinesi',
+    en: 'metal-shredder',
+    ru: 'drobilka-metalla',
+    ar: 'metal-shredder'
+  },
+  'mobile': {
+    tr: 'mobil-kirici',
+    en: 'mobile-shredder',
+    ru: 'mobilnaya-drobilka',
+    ar: 'mobile-shredder'
+  },
+  'pallet': {
+    tr: 'palet-parcalama-makinesi',
+    en: 'pallet-shredder',
+    ru: 'drobilka-poddonov',
+    ar: 'pallet-shredder'
+  },
+  'harddisk': {
+    tr: 'harddisk-imha-makinesi',
+    en: 'harddisk-destroyer',
+    ru: 'unichtozhitel-zhestkikh-diskov',
+    ar: 'harddisk-destroyer'
+  },
+  'tree-root': {
+    tr: 'agac-koku-parcalama-makinesi',
+    en: 'tree-root-shredder',
+    ru: 'drobilka-kornej-derevev',
+    ar: 'tree-root-shredder'
+  },
+  'wood-grinder': {
+    tr: 'agac-parcalama-ogutme-makinesi',
+    en: 'wood-grinder',
+    ru: 'drobilka-drevesiny',
+    ar: 'wood-grinder'
+  },
+  'glass': {
+    tr: 'cam-sise-kirma-makinesi',
+    en: 'glass-crusher',
+    ru: 'drobilka-stekla',
+    ar: 'glass-crusher'
+  },
+  'granulator': {
+    tr: 'granulator-makinesi',
+    en: 'granulator-machine',
+    ru: 'granulyator',
+    ar: 'granulator-machine'
+  },
+  'baler': {
+    tr: 'balyalama-makinesi',
+    en: 'baling-press',
+    ru: 'press-dlya-balirovaniya',
+    ar: 'baling-press'
+  },
+  'conveyor': {
+    tr: 'konveyor-sistemi',
+    en: 'conveyor-system',
+    ru: 'konvejernaya-sistema',
+    ar: 'conveyor-system'
+  },
+  'separator': {
+    tr: 'ayristirma-makinesi',
+    en: 'separator-machine',
+    ru: 'separator',
+    ar: 'separator-machine'
+  }
+};
+
+// URL Path Generator with Multi-language Support
+export const generateUrl = {
+  home: (lang: Language = 'tr') => `/${lang}`,
+  about: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.about[lang]}`,
+  products: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.products[lang]}`,
+  productCategory: (type: string, lang: Language = 'tr') => {
+    const slug = productCategorySlugs[type as keyof typeof productCategorySlugs]?.[lang] || `${slugsByLanguage.products[lang]}/${type}`;
+    return `/${lang}/${slug}`;
+  },
+  productDetail: (type: string, model: string, lang: Language = 'tr') => {
+    const categorySlug = productCategorySlugs[type as keyof typeof productCategorySlugs]?.[lang] || `${slugsByLanguage.products[lang]}/${type}`;
+    return `/${lang}/${categorySlug}/${model.toLowerCase()}`;
+  },
+  technology: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.technology[lang]}`,
+  references: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.references[lang]}`,
+  certificates: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.certificates[lang]}`,
+  waste: (category: string | undefined, lang: Language = 'tr') => 
+    category ? `/${lang}/${slugsByLanguage.waste[lang]}/${category}` : `/${lang}/${slugsByLanguage.waste[lang]}`,
+  contact: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.contact[lang]}`,
+  ecatalog: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.ecatalog[lang]}`
+};
+
+// SEO Metadata for each page (Turkish only - for now, can be extended with translations)
 export const seoMetadata: { [key: string]: SEOMetadata | ((params?: any) => SEOMetadata) } = {
   home: {
     title: 'Parçalama Makinesi | Shredder Machine | MT Makina - Türkiye\'nin 1 Numaralı Üreticisi',
     description: 'Parçalama makinesi, shredder machine, plastik kırma makinesi, metal parçalama, ahşap kırıcı - MT Makina endüstriyel parçalama sistemleri. Tek şaftlı, çift şaftlı TSH serisi. ✓ CE Belgeli ✓ Garanti ✓ Servis',
     keywords: ['parçalama makinesi', 'shredder machine', 'shredder', 'plastik kırma makinesi', 'metal parçalama makinesi', 'ahşap kırma makinesi', 'tek şaftlı parçalama', 'çift şaftlı parçalama', 'TSH parçalama', 'endüstriyel shredder', 'geri dönüşüm makinesi', 'atık kırma makinesi', 'hurda parçalama', 'MT Makina', 'parçalama makinesi fiyatları', 'shredder fiyatları'],
-    canonical: 'https://www.parcalamamakinesi.com/home'
+    canonical: 'https://www.parcalamamakinesi.com/tr'
   },
   
   about: {
     title: 'Kurumsal - MT Makina Hakkında | 20+ Yıllık Deneyim',
     description: 'MT Makina olarak 20 yılı aşkın süredir endüstriyel parçalama sistemleri üretiyoruz. Türkiye ve dünya pazarında güvenilir çözüm ortağınız.',
     keywords: ['MT Makina', 'parçalama makinesi üreticisi', 'endüstriyel makine üretimi', 'Türkiye makine sanayi', 'geri dönüşüm ekipmanları'],
-    canonical: 'https://www.parcalamamakinesi.com/kurumsal'
+    canonical: 'https://www.parcalamamakinesi.com/tr/kurumsal'
   },
   
   products: {
     title: 'Ürünlerimiz - MT Makina Parçalama Makineleri Kataloğu',
     description: 'MT Makina\'nın geniş ürün yelpazesi: Tek şaftlı, çift şaftlı, dörtlü şaft parçalama makineleri, granülatörler, balyalama sistemleri ve daha fazlası.',
     keywords: ['parçalama makinesi modelleri', 'shredder çeşitleri', 'endüstriyel makine kataloğu', 'geri dönüşüm ekipmanları'],
-    canonical: 'https://www.parcalamamakinesi.com/urunler'
+    canonical: 'https://www.parcalamamakinesi.com/tr/urunler'
   },
   
   technology: {
     title: 'Teknoloji - MT Makina İleri Üretim Teknolojileri',
     description: 'MT Makina\'da kullanılan ileri üretim teknolojileri, otomasyon sistemleri, kalite kontrol süreçleri ve Ar-Ge çalışmaları hakkında bilgi edinin.',
     keywords: ['parçalama teknolojisi', 'ileri üretim', 'makine otomasyonu', 'kalite kontrol', 'Ar-Ge'],
-    canonical: 'https://www.parcalamamakinesi.com/teknoloji'
+    canonical: 'https://www.parcalamamakinesi.com/tr/teknoloji'
   },
   
   references: {
     title: 'Referanslar - MT Makina Müşteri Projeleri ve Başarı Hikayeleri',
     description: 'Türkiye ve dünya genelinde MT Makina parçalama sistemlerini kullanan firmalar, başarılı projeler ve müşteri referansları.',
     keywords: ['MT Makina referanslar', 'müşteri projeleri', 'başarı hikayeleri', 'parçalama makinesi kullanıcıları'],
-    canonical: 'https://www.parcalamamakinesi.com/referanslar'
+    canonical: 'https://www.parcalamamakinesi.com/tr/referanslar'
   },
   
   certificates: {
     title: 'Sertifikalar ve Belgeler - MT Makina Kalite Standartları',
     description: 'MT Makina\'nın sahip olduğu ISO sertifikaları, CE belgeleri ve uluslararası kalite standartları.',
     keywords: ['ISO sertifikası', 'CE belgesi', 'kalite belgeleri', 'makine standartları'],
-    canonical: 'https://www.parcalamamakinesi.com/sertifikalar'
+    canonical: 'https://www.parcalamamakinesi.com/tr/sertifikalar'
   },
   
   contact: {
     title: 'İletişim - MT Makina ile İletişime Geçin | Teklif Alın',
     description: 'MT Makina ile iletişime geçin, parçalama makineleri hakkında detaylı bilgi alın ve projeniz için özel teklif isteyin.',
     keywords: ['MT Makina iletişim', 'parçalama makinesi teklif', 'makine fiyat teklifi', 'satış iletişim'],
-    canonical: 'https://www.parcalamamakinesi.com/iletisim'
+    canonical: 'https://www.parcalamamakinesi.com/tr/iletisim'
   },
   
   ecatalog: {
     title: 'E-Katalog - MT Makina Ürün Kataloğu PDF İndir',
     description: 'MT Makina ürün kataloğunu PDF olarak indirin. Tüm parçalama makinesi modelleri, teknik özellikler ve fiyat bilgileri.',
     keywords: ['katalog pdf', 'ürün kataloğu', 'parçalama makinesi katalog', 'MT Makina katalog'],
-    canonical: 'https://www.parcalamamakinesi.com/e-katalog'
+    canonical: 'https://www.parcalamamakinesi.com/tr/e-katalog'
   }
 };
 
 // Product Category SEO Metadata (Dynamic)
-export const getProductCategorySEO = (type: string): SEOMetadata => {
+export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOMetadata => {
   const categoryData: { [key: string]: Omit<SEOMetadata, 'canonical'> } = {
     'single-saft': {
       title: 'Tek Şaftlı Parçalama Makinesi | Single Shaft Shredder | MT Makina TSH Serisi',
@@ -170,12 +260,12 @@ export const getProductCategorySEO = (type: string): SEOMetadata => {
 
   return {
     ...data,
-    canonical: `https://www.parcalamamakinesi.com${generateUrl.productCategory(type)}`
+    canonical: `https://www.parcalamamakinesi.com${generateUrl.productCategory(type, lang)}`
   };
 };
 
 // Product Model SEO Metadata (Dynamic)
-export const getProductModelSEO = (type: string, model: string): SEOMetadata => {
+export const getProductModelSEO = (type: string, model: string, lang: Language = 'tr'): SEOMetadata => {
   // Model specific details
   const modelDetails: { [key: string]: { [model: string]: Omit<SEOMetadata, 'canonical'> } } = {
     'single-saft': {
@@ -425,7 +515,7 @@ export const getProductModelSEO = (type: string, model: string): SEOMetadata => 
 
   return {
     ...modelData,
-    canonical: `https://www.parcalamamakinesi.com${generateUrl.productDetail(type, model)}`
+    canonical: `https://www.parcalamamakinesi.com${generateUrl.productDetail(type, model, lang)}`
   };
 };
 

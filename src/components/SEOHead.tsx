@@ -132,12 +132,16 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     canonicalLink.setAttribute('href', canonical);
 
     // Add hreflang tags for multilingual SEO (critical for Google international ranking)
+    // Extract the path after the language prefix to construct alternate URLs
+    const currentPath = canonical.replace('https://www.parcalamamakinesi.com', '');
+    const pathWithoutLang = currentPath.replace(/^\/(tr|en|ru|ar)/, '');
+    
     const languages = [
-      { code: 'tr', label: 'Turkish' },
-      { code: 'en', label: 'English' },
-      { code: 'ru', label: 'Russian' },
-      { code: 'ar', label: 'Arabic' },
-      { code: 'x-default', label: 'Default' }
+      { code: 'tr', url: `https://www.parcalamamakinesi.com/tr${pathWithoutLang}` },
+      { code: 'en', url: `https://www.parcalamamakinesi.com/en${pathWithoutLang}` },
+      { code: 'ru', url: `https://www.parcalamamakinesi.com/ru${pathWithoutLang}` },
+      { code: 'ar', url: `https://www.parcalamamakinesi.com/ar${pathWithoutLang}` },
+      { code: 'x-default', url: `https://www.parcalamamakinesi.com/tr${pathWithoutLang}` } // Default to Turkish
     ];
     
     // Remove old hreflang tags
@@ -147,11 +151,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       const hreflangLink = document.createElement('link');
       hreflangLink.setAttribute('rel', 'alternate');
       hreflangLink.setAttribute('hreflang', lang.code);
-      hreflangLink.setAttribute('href', 
-        lang.code === 'x-default' 
-          ? canonical 
-          : `${canonical}?lang=${lang.code}`
-      );
+      hreflangLink.setAttribute('href', lang.url);
       document.head.appendChild(hreflangLink);
     });
 
