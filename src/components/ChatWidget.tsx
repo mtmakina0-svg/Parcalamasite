@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X } from 'lucide-react';
 
 export const ChatWidget = () => {

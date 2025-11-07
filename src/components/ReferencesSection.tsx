@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
 import { Globe } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';

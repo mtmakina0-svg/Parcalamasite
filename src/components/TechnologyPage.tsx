@@ -1,42 +1,45 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Cpu, Zap, Shield, Recycle, Cog, BarChart3 } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 interface TechnologyPageProps {
   onBackToMain: () => void;
 }
 
 export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
+  const { t } = useLanguage();
+  
   const technologies = [
     {
       icon: Cpu,
-      title: 'PLC Kontrol Sistemleri',
-      description: 'Siemens ve Schneider marka PLC kontrol sistemleri ile tam otomatik çalışma.',
+      titleKey: 'tech_plc_title',
+      descKey: 'tech_plc_desc',
     },
     {
       icon: Zap,
-      title: 'Yüksek Tork Motor Sistemi',
-      description: 'Enerji tasarruflu ve yüksek performanslı motor teknolojisi.',
+      titleKey: 'tech_motor_title',
+      descKey: 'tech_motor_desc',
     },
     {
       icon: Shield,
-      title: 'Çoklu Güvenlik Sistemleri',
-      description: 'Acil durdurma, aşırı yük koruması ve emniyet sistemleri.',
+      titleKey: 'tech_security_title',
+      descKey: 'tech_security_desc',
     },
     {
       icon: Recycle,
-      title: 'Çevre Dostu Üretim',
-      description: 'Sürdürülebilir ve düşük emisyonlu üretim teknolojileri.',
+      titleKey: 'tech_eco_title',
+      descKey: 'tech_eco_desc',
     },
     {
       icon: Cog,
-      title: 'Modüler Tasarım',
-      description: 'Kolay bakım ve genişletilebilir modüler yapı.',
+      titleKey: 'tech_modular_title',
+      descKey: 'tech_modular_desc',
     },
     {
       icon: BarChart3,
-      title: 'Uzaktan İzleme',
-      description: 'IoT tabanlı uzaktan izleme ve veri analizi sistemleri.',
+      titleKey: 'tech_remote_title',
+      descKey: 'tech_remote_desc',
     },
   ];
 
@@ -60,10 +63,10 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#F5F7F8] mb-6">
-              Teknoloji ve İnovasyon
+              {t('tech_page_title')}
             </h1>
             <p className="text-xl md:text-2xl text-[#F5F7F8]/90 max-w-3xl mx-auto">
-              Endüstri 4.0 uyumlu akıllı parçalama sistemleri
+              {t('tech_page_subtitle')}
             </p>
           </motion.div>
         </div>
@@ -77,7 +80,7 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
               const Icon = tech.icon;
               return (
                 <motion.div
-                  key={tech.title}
+                  key={tech.titleKey}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -87,8 +90,8 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-full flex items-center justify-center mb-6">
                     <Icon size={32} className="text-[#1E1E1E]" />
                   </div>
-                  <h3 className="text-2xl text-[#1E1E1E] mb-4">{tech.title}</h3>
-                  <p className="text-base text-[#45474B] leading-relaxed">{tech.description}</p>
+                  <h3 className="text-2xl text-[#1E1E1E] mb-4">{t(tech.titleKey)}</h3>
+                  <p className="text-base text-[#45474B] leading-relaxed">{t(tech.descKey)}</p>
                 </motion.div>
               );
             })}
@@ -102,22 +105,17 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
             className="bg-white rounded-lg p-12 shadow-md max-w-5xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-8 text-center">
-              Neden MT Makina Teknolojisi?
+              {t('tech_why_title')}
             </h2>
             <div className="space-y-6 text-lg text-[#45474B] leading-relaxed">
               <p>
-                MT Makina, endüstriyel parçalama sistemlerinde en son teknolojiyi kullanarak 
-                müşterilerine maksimum verimlilik ve güvenilirlik sunar. Tüm makinelerimiz 
-                Endüstri 4.0 standartlarına uygun olarak tasarlanmıştır.
+                {t('tech_why_para1')}
               </p>
               <p>
-                Yüksek kaliteli Alman ve İtalyan komponentler kullanarak ürettiğimiz sistemler, 
-                uzun ömürlü ve düşük bakım maliyetli çözümler sunar. PLC kontrol sistemleri ile 
-                tam otomatik çalışma ve kolay kullanım sağlanır.
+                {t('tech_why_para2')}
               </p>
               <p>
-                IoT tabanlı uzaktan izleme sistemlerimiz sayesinde makinelerinizin performansını 
-                anlık olarak takip edebilir, öngörülü bakım yapabilir ve verimliliği artırabilirsiniz.
+                {t('tech_why_para3')}
               </p>
             </div>
           </motion.div>
@@ -127,7 +125,7 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
       {/* Contact Section */}
       <section className="py-20 bg-gradient-to-br from-[#45474B] to-[#35373A]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">Bize Ulaşın</h2>
+          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">{t('tech_contact_title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
@@ -142,7 +140,7 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Adres</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_address')}</h3>
               <p className="text-[#F5F7F8]/90 leading-relaxed">
                 Cumhuriyet Mah. 1983 Sk. Kent Palas 2 K:7 D:85-86 PK:34512 Esenyurt / İstanbul / TÜRKİYE
               </p>
@@ -160,7 +158,7 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Telefon</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_phone')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">+90 212 613 31 82</p>
             </motion.div>
 
@@ -176,7 +174,7 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">E-Posta</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_email')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">info@mtmakina.com.tr</p>
             </motion.div>
           </div>
@@ -188,17 +186,17 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Kurumsal</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('nav_corporate')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>Ana Sayfa</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Hakkımızda</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Misyonumuz</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Vizyonumuz</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>{t('nav_home')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('nav_about')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Misyon</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Vizyon</li>
               </ul>
             </div>
 
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Ürünler</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('nav_products')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
                 <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Parçalama Makineleri</li>
                 <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Ayrıştırma Sistemleri</li>
@@ -209,7 +207,7 @@ export const TechnologyPage = ({ onBackToMain }: TechnologyPageProps) => {
             </div>
 
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Bize Ulaşın</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('contact_us')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
                 <li>E: info@mtmakina.com.tr</li>
                 <li>T: +90 212 613 31 82</li>

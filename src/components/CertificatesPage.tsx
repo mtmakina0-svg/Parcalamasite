@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Award } from 'lucide-react';
 import { CERTIFICATE_IMAGES, CERTIFICATE_FALLBACK } from '../utils/certificatesConfig';
 import { ImageWithFallback } from './figma/ImageWithFallback';

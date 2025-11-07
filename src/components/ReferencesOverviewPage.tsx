@@ -1,7 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Award, Globe, ThumbsUp, Building2, Factory, Briefcase, Landmark } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useLanguage } from './LanguageContext';
 
 interface ReferencesOverviewPageProps {
   onBackToMain: () => void;
@@ -50,39 +51,40 @@ const partners: Partner[] = [
   { name: 'Makine ve Kimya Endüstrisi Kurumu', logo: 'https://i.ibb.co/jvPsx5XB/Makine-ve-Kimya-End-strisi-Kurumu-logo-svg.png', category: 'government', alt: 'MESS - Makine ve Kimya Endüstrisi Kurumu Logo' }
 ];
 
-const categories = [
-  { 
-    id: 'global', 
-    title: 'Küresel Şirketler', 
-    icon: Globe, 
-    description: 'Dünya çapında tanınan uluslararası şirketler',
-    color: 'from-blue-500 to-blue-600'
-  },
-  { 
-    id: 'industry', 
-    title: 'Endüstri ve Üretim', 
-    icon: Factory, 
-    description: 'Sanayi ve üretim sektöründeki önde gelen firmalar',
-    color: 'from-orange-500 to-orange-600'
-  },
-  { 
-    id: 'defense', 
-    title: 'Savunma ve Yüksek Teknoloji', 
-    icon: Briefcase, 
-    description: 'Savunma sanayi ve ileri teknoloji kuruluşları',
-    color: 'from-red-500 to-red-600'
-  },
-  { 
-    id: 'government', 
-    title: 'Kamu Kurumları', 
-    icon: Landmark, 
-    description: 'Devlet kurumları ve kamu kuruluşları',
-    color: 'from-green-500 to-green-600'
-  }
-];
-
 export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageProps) => {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = React.useState<string>('all');
+  
+  const categories = [
+    { 
+      id: 'global', 
+      titleKey: 'ref_cat_global', 
+      icon: Globe, 
+      descKey: 'ref_cat_global_desc',
+      color: 'from-blue-500 to-blue-600'
+    },
+    { 
+      id: 'industry', 
+      titleKey: 'ref_cat_industry', 
+      icon: Factory, 
+      descKey: 'ref_cat_industry_desc',
+      color: 'from-orange-500 to-orange-600'
+    },
+    { 
+      id: 'defense', 
+      titleKey: 'ref_cat_defense', 
+      icon: Briefcase, 
+      descKey: 'ref_cat_defense_desc',
+      color: 'from-red-500 to-red-600'
+    },
+    { 
+      id: 'government', 
+      titleKey: 'ref_cat_government', 
+      icon: Landmark, 
+      descKey: 'ref_cat_government_desc',
+      color: 'from-green-500 to-green-600'
+    }
+  ];
 
   const filteredPartners = activeCategory === 'all' 
     ? partners 
@@ -119,10 +121,10 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
               <Award size={48} className="text-[#1E1E1E]" />
             </motion.div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#F5F7F8] mb-6">
-              İş Ortaklarımız
+              {t('ref_page_title')}
             </h1>
             <p className="text-xl md:text-2xl text-[#F5F7F8]/90 max-w-4xl mx-auto leading-relaxed">
-              Dünya çapında güvenilir iş birliklerimiz ve başarı hikayelerimiz
+              {t('ref_page_subtitle')}
             </p>
           </motion.div>
         </div>
@@ -143,7 +145,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                 <ThumbsUp size={32} className="text-[#1E1E1E]" />
               </div>
               <h3 className="text-5xl text-[#45474B] mb-2">500+</h3>
-              <p className="text-lg text-[#45474B]/70">Tamamlanan Proje</p>
+              <p className="text-lg text-[#45474B]/70">{t('ref_stat_projects')}</p>
             </motion.div>
 
             <motion.div
@@ -157,7 +159,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                 <Globe size={32} className="text-[#1E1E1E]" />
               </div>
               <h3 className="text-5xl text-[#45474B] mb-2">35+</h3>
-              <p className="text-lg text-[#45474B]/70">İhracat Yapılan Ülke</p>
+              <p className="text-lg text-[#45474B]/70">{t('ref_stat_countries')}</p>
             </motion.div>
 
             <motion.div
@@ -171,7 +173,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                 <Building2 size={32} className="text-[#1E1E1E]" />
               </div>
               <h3 className="text-5xl text-[#45474B] mb-2">250+</h3>
-              <p className="text-lg text-[#45474B]/70">İş Ortağı</p>
+              <p className="text-lg text-[#45474B]/70">{t('ref_stat_partners')}</p>
             </motion.div>
 
             <motion.div
@@ -185,7 +187,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                 <Award size={32} className="text-[#1E1E1E]" />
               </div>
               <h3 className="text-5xl text-[#45474B] mb-2">%98</h3>
-              <p className="text-lg text-[#45474B]/70">Müşteri Memnuniyeti</p>
+              <p className="text-lg text-[#45474B]/70">{t('ref_stat_satisfaction')}</p>
             </motion.div>
           </div>
         </div>
@@ -201,10 +203,10 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-4">
-              Kategorilere Göre Referanslar
+              {t('ref_category_title')}
             </h2>
             <p className="text-lg text-[#45474B]/70 max-w-3xl mx-auto">
-              Farklı sektörlerden önde gelen kurumlarla çalışıyoruz
+              {t('ref_category_subtitle')}
             </p>
           </motion.div>
 
@@ -219,7 +221,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                   : 'bg-white text-[#45474B] hover:bg-[#F4CE14]/20'
               }`}
             >
-              Tümü ({partners.length})
+              {t('ref_filter_all')} ({partners.length})
             </motion.button>
             {categories.map((category) => {
               const count = partners.filter(p => p.category === category.id).length;
@@ -236,7 +238,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                   }`}
                 >
                   <category.icon size={20} />
-                  {category.title} ({count})
+                  {t(category.titleKey)} ({count})
                 </motion.button>
               );
             })}
@@ -263,8 +265,8 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                     <div className={`w-16 h-16 bg-gradient-to-br ${cat.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
                       <Icon size={32} className="text-white" />
                     </div>
-                    <h3 className="text-2xl text-[#1E1E1E] mb-2">{cat.title}</h3>
-                    <p className="text-[#45474B]/70">{cat.description}</p>
+                    <h3 className="text-2xl text-[#1E1E1E] mb-2">{t(cat.titleKey)}</h3>
+                    <p className="text-[#45474B]/70">{t(cat.descKey)}</p>
                   </>
                 );
               })()}
@@ -313,12 +315,10 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
               <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
             </svg>
             <p className="text-2xl md:text-3xl text-[#F5F7F8] mb-6 italic leading-relaxed">
-              "MT Makina ile çalışmak, yüksek kaliteli ürünler ve güvenilir hizmet almak demektir. 
-              Projelerimizde her zaman yanımızda oldular. Parçalama sistemlerindeki uzmanlıkları sayesinde 
-              üretim verimliliğimizi %40 artırdık."
+              {t('ref_testimonial_text')}
             </p>
             <div className="h-1 w-24 bg-[#F4CE14] mx-auto mb-4"></div>
-            <p className="text-lg text-[#F5F7F8]/80">— Değerli İş Ortağımız</p>
+            <p className="text-lg text-[#F5F7F8]/80">{t('ref_testimonial_author')}</p>
           </motion.div>
         </div>
       </section>
@@ -333,17 +333,17 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             className="bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-3xl p-12 text-center shadow-2xl"
           >
             <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-6">
-              Siz de İş Ortaklarımıza Katılın
+              {t('ref_cta_title')}
             </h2>
             <p className="text-xl text-[#1E1E1E]/80 mb-8 max-w-3xl mx-auto">
-              Endüstriyel parçalama sistemleri için güvenilir çözüm ortağınız olmaktan mutluluk duyarız
+              {t('ref_cta_subtitle')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-[#1E1E1E] text-[#F4CE14] px-8 py-4 rounded-xl text-lg hover:bg-[#2F3032] transition-colors"
             >
-              İletişime Geçin
+              {t('ref_cta_button')}
             </motion.button>
           </motion.div>
         </div>
@@ -352,7 +352,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
       {/* Contact Section */}
       <section className="py-20 bg-[#45474B]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">Bize Ulaşın</h2>
+          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">{t('tech_contact_title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Address */}
@@ -368,7 +368,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Adres</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_address')}</h3>
               <p className="text-[#F5F7F8]/90 leading-relaxed">
                 Cumhuriyet Mah. 1983 Sk. Kent Palas 2 K:7 D:85-86 PK:34512 Esenyurt / İstanbul / TÜRKİYE
               </p>
@@ -387,7 +387,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Telefon</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_phone')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">+90 212 613 31 82</p>
             </motion.div>
 
@@ -404,7 +404,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">E-Posta</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_email')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">info@mtmakina.com.tr</p>
             </motion.div>
           </div>

@@ -241,7 +241,7 @@ href="https://maps.app.goo.gl/D7UQ1IAJUmzeuxY0n"  ✓ DOĞRU
 
 ### Animasyonlar ✅
 ```
-✅ framer-motion kullanımı (eski framer-motion değil)
+✅ Motion/react kullanımı (eski framer-motion değil)
 ✅ 60-120 FPS performans
 ✅ Smooth transitions (duration: 0.3s - 0.6s)
 ✅ whileHover effects

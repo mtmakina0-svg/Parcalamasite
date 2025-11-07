@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { FileDown, BookOpen, Mail, Phone } from 'lucide-react';
 
 interface ECatalogPageProps {

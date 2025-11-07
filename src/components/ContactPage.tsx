@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram, Send, Youtube } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -72,7 +72,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
               <Mail size={48} className="text-[#F4CE14]" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#F5F7F8] mb-8" style={{ fontWeight: 700 }}>
-              İletişim
+              {t('contact_title')}
             </h1>
             
             {/* Animated Yellow Divider - Two lines meeting in center */}
@@ -92,7 +92,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
             </div>
 
             <p className="text-xl md:text-2xl text-[#F5F7F8]/90 max-w-3xl mx-auto">
-              Bizimle iletişime geçin, size yardımcı olmaktan mutluluk duyarız
+              {t('contact_subtitle')}
             </p>
           </motion.div>
         </div>
@@ -110,17 +110,17 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
               className="bg-white rounded-2xl shadow-xl p-8 lg:p-10"
             >
               <h2 className="text-3xl text-[#45474B] mb-6" style={{ fontWeight: 700 }}>
-                Bize Ulaşın
+                {t('contact_form_title')}
               </h2>
               <p className="text-[#555555] mb-8">
-                Formu doldurun, en kısa sürede size dönüş yapalım.
+                {t('contact_form_description')}
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
                 <div>
                   <label htmlFor="name" className="block text-sm text-[#45474B] mb-2" style={{ fontWeight: 600 }}>
-                    Ad Soyad *
+                    {t('contact_form_name')} *
                   </label>
                   <Input
                     id="name"
@@ -129,7 +129,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Adınız ve soyadınız"
+                    placeholder={t('contact_form_name_placeholder')}
                     className="w-full border-[#45474B]/20 focus:border-[#F4CE14] focus:ring-[#F4CE14] text-[#000000] placeholder:text-[#999999]"
                     style={{ fontFamily: 'Mulish, sans-serif', fontSize: '16px', fontWeight: 400 }}
                   />
@@ -138,7 +138,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                 {/* Email Field */}
                 <div>
                   <label htmlFor="email" className="block text-sm text-[#45474B] mb-2" style={{ fontWeight: 600 }}>
-                    E-posta *
+                    {t('contact_form_email')} *
                   </label>
                   <Input
                     id="email"
@@ -147,7 +147,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="ornek@email.com"
+                    placeholder={t('contact_form_email_placeholder')}
                     className="w-full border-[#45474B]/20 focus:border-[#F4CE14] focus:ring-[#F4CE14] text-[#000000] placeholder:text-[#999999]"
                     style={{ fontFamily: 'Mulish, sans-serif', fontSize: '16px', fontWeight: 400 }}
                   />
@@ -156,7 +156,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                 {/* Phone Field */}
                 <div>
                   <label htmlFor="phone" className="block text-sm text-[#45474B] mb-2" style={{ fontWeight: 600 }}>
-                    Telefon
+                    {t('contact_form_phone')}
                   </label>
                   <Input
                     id="phone"
@@ -164,7 +164,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+90 5XX XXX XX XX"
+                    placeholder={t('contact_form_phone_placeholder')}
                     className="w-full border-[#45474B]/20 focus:border-[#F4CE14] focus:ring-[#F4CE14] text-[#000000] placeholder:text-[#999999]"
                     style={{ fontFamily: 'Mulish, sans-serif', fontSize: '16px', fontWeight: 400 }}
                   />
@@ -173,7 +173,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                 {/* Message Field */}
                 <div>
                   <label htmlFor="message" className="block text-sm text-[#45474B] mb-2" style={{ fontWeight: 600 }}>
-                    Mesajınız *
+                    {t('contact_form_message')} *
                   </label>
                   <Textarea
                     id="message"
@@ -181,7 +181,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Mesajınızı buraya yazın..."
+                    placeholder={t('contact_form_message_placeholder')}
                     rows={6}
                     className="w-full border-[#45474B]/20 focus:border-[#F4CE14] focus:ring-[#F4CE14] resize-none text-[#000000] placeholder:text-[#999999]"
                     style={{ fontFamily: 'Mulish, sans-serif', fontSize: '16px', fontWeight: 400 }}
@@ -195,7 +195,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                   style={{ fontWeight: 600 }}
                 >
                   <Send size={20} />
-                  Gönder
+                  {t('contact_form_submit')}
                 </Button>
               </form>
             </motion.div>
@@ -220,7 +220,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                   </div>
                   <div>
                     <h3 className="text-lg text-[#45474B] mb-2" style={{ fontWeight: 600 }}>
-                      Adres
+                      {t('contact_info_address')}
                     </h3>
                     <p className="text-[#555555] leading-relaxed">
                       Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı,<br />
@@ -237,11 +237,11 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                   </div>
                   <div>
                     <h3 className="text-lg text-[#45474B] mb-2" style={{ fontWeight: 600 }}>
-                      Telefon
+                      {t('contact_info_phone')}
                     </h3>
-                    <p className="text-[#555555] mb-1"><strong>Genel Merkez:</strong></p>
+                    <p className="text-[#555555] mb-1"><strong>{t('contact_info_headquarters')}:</strong></p>
                     <p className="text-[#555555] mb-2">+90 850 259 01 66 / +90 212 613 31 82</p>
-                    <p className="text-[#555555] mb-1"><strong>Satış ve WhatsApp:</strong></p>
+                    <p className="text-[#555555] mb-1"><strong>{t('contact_info_sales_whatsapp')}:</strong></p>
                     <p className="text-[#555555]">+90 542 310 99 30 / +90 212 671 74 55 / +90 212 671 74 56</p>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                   </div>
                   <div>
                     <h3 className="text-lg text-[#45474B] mb-2" style={{ fontWeight: 600 }}>
-                      E-posta
+                      {t('contact_info_email')}
                     </h3>
                     <p className="text-[#555555]">info@mtmakina.com.tr</p>
                     <p className="text-[#555555]">satis@mtmakina.com.tr</p>
@@ -263,7 +263,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
                 {/* Social Media */}
                 <div className="pt-6 border-t border-[#45474B]/10">
                   <h3 className="text-lg text-[#45474B] mb-4" style={{ fontWeight: 600 }}>
-                    Sosyal Medya
+                    {t('contact_info_social_media')}
                   </h3>
                   <div className="flex gap-4">
                     <motion.a
@@ -313,11 +313,11 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
               {/* Working Hours */}
               <div className="bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl text-[#1E1E1E] mb-4" style={{ fontWeight: 700 }}>
-                  Çalışma Saatleri
+                  {t('contact_working_hours')}
                 </h3>
                 <p className="text-[#1E1E1E]/90 leading-relaxed">
-                  <strong>Hafta içi:</strong> 09:00 - 18:00<br />
-                  <strong>Hafta sonu:</strong> Kapalı
+                  <strong>{t('contact_weekdays')}:</strong> 09:00 - 18:00<br />
+                  <strong>{t('contact_weekends')}:</strong> {t('contact_closed')}
                 </p>
               </div>
             </motion.div>
@@ -375,10 +375,10 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl text-[#F5F7F8] mb-6">
-              Projeniz İçin Hemen İletişime Geçin
+              {t('contact_cta_title')}
             </h2>
             <p className="text-xl text-[#F5F7F8]/90 mb-8 max-w-3xl mx-auto">
-              Uzman ekibimiz size en uygun çözümü sunmak için hazır
+              {t('contact_cta_description')}
             </p>
             <Button
               onClick={onBackToMain}
@@ -386,7 +386,7 @@ export const ContactPage = ({ onBackToMain }: ContactPageProps) => {
               className="bg-[#F4CE14] text-[#1E1E1E] hover:bg-[#F4CE14]/90 px-12 py-6 text-lg"
               style={{ fontWeight: 600 }}
             >
-              Ana Sayfaya Dön
+              {t('contact_back_to_home')}
             </Button>
           </motion.div>
         </div>

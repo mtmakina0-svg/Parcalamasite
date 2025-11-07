@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
 import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench } from 'lucide-react';
 import { Button } from './ui/button';

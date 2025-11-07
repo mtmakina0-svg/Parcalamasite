@@ -63,6 +63,10 @@ const translations = {
     // Hero
     hero_title: 'Parçalama Makinelerinde Endüstriyel Güç',
     hero_subtitle: 'Yüksek verimlilik, uzun ömür ve güvenli çalışma ile çevre dostu üretim.',
+    hero_subtitle_systems: 'Farklı endüstrilere özel yüksek performanslı sistemler',
+    hero_cta_title: 'Makinenizi Bizimle Planlayın',
+    hero_cta_desc: 'Yüksek verimli, uzun ömürlü ve çevre dostu sistemler üretiyoruz.',
+    hero_cta_desc2: 'Hemen Teklif Al! butonu ile projeniz için en uygun çözümü birlikte tasarlayalım.',
     btn_explore: 'Ürünleri İncele',
     
     // Intro Section
@@ -91,6 +95,54 @@ const translations = {
     tech_energy: 'Enerji Verimliliği',
     tech_energy_desc: 'Düşük enerji tüketimi ile yüksek performans',
     
+    // Technology Page
+    tech_page_title: 'Teknoloji ve İnovasyon',
+    tech_page_subtitle: 'Endüstri 4.0 uyumlu akıllı parçalama sistemleri',
+    tech_plc_title: 'PLC Kontrol Sistemleri',
+    tech_plc_desc: 'Siemens ve Schneider marka PLC kontrol sistemleri ile tam otomatik çalışma.',
+    tech_motor_title: 'Yüksek Tork Motor Sistemi',
+    tech_motor_desc: 'Enerji tasarruflu ve yüksek performanslı motor teknolojisi.',
+    tech_security_title: 'Çoklu Güvenlik Sistemleri',
+    tech_security_desc: 'Acil durdurma, aşırı yük koruması ve emniyet sistemleri.',
+    tech_eco_title: 'Çevre Dostu Üretim',
+    tech_eco_desc: 'Sürdürülebilir ve düşük emisyonlu üretim teknolojileri.',
+    tech_modular_title: 'Modüler Tasarım',
+    tech_modular_desc: 'Kolay bakım ve genişletilebilir modüler yapı.',
+    tech_remote_title: 'Uzaktan İzleme',
+    tech_remote_desc: 'IoT tabanlı uzaktan izleme ve veri analizi sistemleri.',
+    tech_why_title: 'Neden MT Makina Teknolojisi?',
+    tech_why_para1: 'MT Makina, endüstriyel parçalama sistemlerinde en son teknolojiyi kullanarak müşterilerine maksimum verimlilik ve güvenilirlik sunar. Tüm makinelerimiz Endüstri 4.0 standartlarına uygun olarak tasarlanmıştır.',
+    tech_why_para2: 'Yüksek kaliteli Alman ve İtalyan komponentler kullanarak ürettiğimiz sistemler, uzun ömürlü ve düşük bakım maliyetli çözümler sunar. PLC kontrol sistemleri ile tam otomatik çalışma ve kolay kullanım sağlanır.',
+    tech_why_para3: 'IoT tabanlı uzaktan izleme sistemlerimiz sayesinde makinelerinizin performansını anlık olarak takip edebilir, öngörülü bakım yapabilir ve verimliliği artırabilirsiniz.',
+    tech_contact_title: 'Bize Ulaşın',
+    tech_contact_address: 'Adres',
+    tech_contact_phone: 'Telefon',
+    tech_contact_email: 'E-Posta',
+    
+    // References Page
+    ref_page_title: 'İş Ortaklarımız',
+    ref_page_subtitle: 'Dünya çapında güvenilir iş birliklerimiz ve başarı hikayelerimiz',
+    ref_stat_projects: 'Tamamlanan Proje',
+    ref_stat_countries: 'İhracat Yapılan Ülke',
+    ref_stat_partners: 'İş Ortağı',
+    ref_stat_satisfaction: 'Müşteri Memnuniyeti',
+    ref_category_title: 'Kategorilere Göre Referanslar',
+    ref_category_subtitle: 'Farklı sektörlerden önde gelen kurumlarla çalışıyoruz',
+    ref_filter_all: 'Tümü',
+    ref_cat_global: 'Küresel Şirketler',
+    ref_cat_global_desc: 'Dünya çapında tanınan uluslararası şirketler',
+    ref_cat_industry: 'Endüstri ve Üretim',
+    ref_cat_industry_desc: 'Sanayi ve üretim sektöründeki önde gelen firmalar',
+    ref_cat_defense: 'Savunma ve Yüksek Teknoloji',
+    ref_cat_defense_desc: 'Savunma sanayi ve ileri teknoloji kuruluşları',
+    ref_cat_government: 'Kamu Kurumları',
+    ref_cat_government_desc: 'Devlet kurumları ve kamu kuruluşları',
+    ref_testimonial_text: '"MT Makina ile çalışmak, yüksek kaliteli ürünler ve güvenilir hizmet almak demektir. Projelerimizde her zaman yanımızda oldular. Parçalama sistemlerindeki uzmanlıkları sayesinde üretim verimliliğimizi %40 artırdık."',
+    ref_testimonial_author: '— Değerli İş Ortağımız',
+    ref_cta_title: 'Siz de İş Ortaklarımıza Katılın',
+    ref_cta_subtitle: 'Endüstriyel parçalama sistemleri için güvenilir çözüm ortağınız olmaktan mutluluk duyarız',
+    ref_cta_button: 'İletişime Geçin',
+    
     // References
     ref_title: 'Referanslarımız',
     ref_subtitle: 'Dünyanın dört bir yanındaki partnerlerimize endüstriyel çözümler sunuyoruz.',
@@ -102,6 +154,31 @@ const translations = {
     
     // Contact
     contact_title: 'İletişim',
+    contact_subtitle: 'Bizimle iletişime geçin, size yardımcı olmaktan mutluluk duyarız',
+    contact_form_title: 'Bize Ulaşın',
+    contact_form_description: 'Formu doldurun, en kısa sürede size dönüş yapalım.',
+    contact_form_name: 'Ad Soyad',
+    contact_form_name_placeholder: 'Adınız ve soyadınız',
+    contact_form_email: 'E-posta',
+    contact_form_email_placeholder: 'ornek@email.com',
+    contact_form_phone: 'Telefon',
+    contact_form_phone_placeholder: '+90 5XX XXX XX XX',
+    contact_form_message: 'Mesajınız',
+    contact_form_message_placeholder: 'Mesajınızı buraya yazın...',
+    contact_form_submit: 'Gönder',
+    contact_info_address: 'Adres',
+    contact_info_phone: 'Telefon',
+    contact_info_email: 'E-posta',
+    contact_info_headquarters: 'Genel Merkez',
+    contact_info_sales_whatsapp: 'Satış ve WhatsApp',
+    contact_info_social_media: 'Sosyal Medya',
+    contact_working_hours: 'Çalışma Saatleri',
+    contact_weekdays: 'Hafta içi',
+    contact_weekends: 'Hafta sonu',
+    contact_closed: 'Kapalı',
+    contact_cta_title: 'Projeniz İçin Hemen İletişime Geçin',
+    contact_cta_description: 'Uzman ekibimiz size en uygun çözümü sunmak için hazır',
+    contact_back_to_home: 'Ana Sayfaya Dön',
     contact_headquarters: 'Genel Merkez',
     contact_hq_address: 'Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Kat:7, D:85-86, PK:34512 Esenyurt / İSTANBUL',
     contact_sales: 'Satış',
@@ -111,9 +188,128 @@ const translations = {
     contact_accounting: 'Muhasebe',
     contact_consulting: 'Danışma',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'Tek Şaftlı Parçalama Makineleri Hakkında S.S.S.',
+    single_saft_video_title: 'Tek Şaftlı Parçalama Makinesi Videoları',
+    single_saft_similar_products: 'Benzer Ürünler',
+    single_saft_watch_video: 'Video İzle',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'TEK ŞAFTLI PARÇALAMA MAKİNESİ NE İŞE YARAR?',
+    single_saft_faq_a1: 'Tek şaftlı parçalama makinesi, çeşitli malzemeleri etkili bir şekilde parçalamak için tasarlanmış, yüksek tork ve düşük hız kombinasyonuyla çalışan bir endüstriyel makinedir. Geri dönüşüm, atık yönetimi ve endüstriyel uygulamalarda kullanılır.',
+    single_saft_faq_q2: 'HANGİ MALZEMELER TEK ŞAFTLI PARÇALAMA MAKİNELERİNDE İŞLENEBİLİR?',
+    single_saft_faq_a2: 'Tekstil atıkları, plastikler, elyaf filmler, ahşap, sunta, MDF levhalar, evsel atıklar ve belediye atıkları gibi çeşitli malzemeler işlenebilir.',
+    single_saft_faq_q3: 'TEK ŞAFTLI PARÇALAMA MAKİNELERİ NASIL ÇALIŞIR?',
+    single_saft_faq_a3: 'Makinelerimiz, yüksek tork ve düşük hızda çalışan bir ana şaft etrafında dönen bıçaklarla malzemeleri parçalar. Malzemeler, şaft üzerindeki bıçaklarla kesilerek küçük parçalara ayrılır.',
+    single_saft_faq_q4: 'TEK ŞAFTLI PARÇALAMA MAKİNELERİNİN ENERJİ TASARRUFU SAĞLAYAN ÖZELLİKLERİ NELERDİR?',
+    single_saft_faq_a4: 'Enerji verimli motorlar ve özel bıçak tasarımı ile düşük enerji tüketimi sağlar. Ayrıca, belirli bir süre malzeme beslenmemesi durumunda motor otomatik olarak kapanır.',
+    
+    dual_saft_faq_title: 'Sıkça Sorulan Sorular - Çift Şaftlı Parçalama Makinesi',
+    dual_saft_video_title: 'Çift Şaftlı Parçalama Makinesi Videoları',
+    dual_saft_similar_products: 'Benzer Ürünler',
+    dual_saft_watch_video: 'Video İzle',
+    
+    quad_saft_faq_title: 'Sıkça Sorulan Sorular - Dört Şaftlı Parçalama Makinesi',
+    quad_saft_video_title: 'Dört Şaftlı Parçalama Makinesi Videoları',
+    quad_saft_similar_products: 'Benzer Ürünler',
+    quad_saft_watch_video: 'Video İzle',
+    
+    metal_faq_title: 'Sıkça Sorulan Sorular - Metal Parçalama Makinesi',
+    metal_video_title: 'Metal Parçalama Makinesi Videoları',
+    metal_similar_products: 'Benzer Ürünler',
+    metal_watch_video: 'Video İzle',
+    
+    pallet_faq_title: 'Sıkça Sorulan Sorular - Palet Parçalama Makinesi',
+    pallet_video_title: 'Palet Parçalama Makinesi Videoları',
+    pallet_similar_products: 'Benzer Ürünler',
+    pallet_watch_video: 'Video İzle',
+    
+    plastic_faq_title: 'Sıkça Sorulan Sorular - Plastik Parçalama Makinesi',
+    plastic_video_title: 'Plastik Parçalama Makinesi Videoları',
+    plastic_similar_products: 'Benzer Ürünler',
+    plastic_watch_video: 'Video İzle',
+    
+    glass_faq_title: 'Sıkça Sorulan Sorular - Cam Parçalama Makinesi',
+    glass_video_title: 'Cam Parçalama Makinesi Videoları',
+    glass_similar_products: 'Benzer Ürünler',
+    glass_watch_video: 'Video İzle',
+    
+    organic_faq_title: 'Sıkça Sorulan Sorular - Organik Atık Parçalama Makinesi',
+    organic_video_title: 'Organik Atık Parçalama Makinesi Videoları',
+    organic_similar_products: 'Benzer Ürünler',
+    organic_watch_video: 'Video İzle',
+    
+    mobile_faq_title: 'Sıkça Sorulan Sorular - Mobil Parçalama Makinesi',
+    mobile_video_title: 'Mobil Parçalama Makinesi Videoları',
+    mobile_similar_products: 'Benzer Ürünler',
+    mobile_watch_video: 'Video İzle',
+    
+    harddisk_faq_title: 'Sıkça Sorulan Sorular - Sabit Disk Parçalama Makinesi',
+    harddisk_video_title: 'Sabit Disk Parçalama Makinesi Videoları',
+    harddisk_similar_products: 'Benzer Ürünler',
+    harddisk_watch_video: 'Video İzle',
+    
+    tree_root_faq_title: 'Sıkça Sorulan Sorular - Ağaç Kökü Parçalama Makinesi',
+    tree_root_video_title: 'Ağaç Kökü Parçalama Makinesi Videoları',
+    tree_root_similar_products: 'Benzer Ürünler',
+    tree_root_watch_video: 'Video İzle',
+    
+    wood_grinder_faq_title: 'Sıkça Sorulan Sorular - Ahşap Öğütücü',
+    wood_grinder_video_title: 'Ahşap Öğütücü Videoları',
+    wood_grinder_similar_products: 'Benzer Ürünler',
+    wood_grinder_watch_video: 'Video İzle',
+    
+    baler_faq_title: 'Sıkça Sorulan Sorular - Balya Makinesi',
+    baler_video_title: 'Balya Makinesi Videoları',
+    baler_similar_products: 'Benzer Ürünler',
+    baler_watch_video: 'Video İzle',
+    
     // CTA
     cta_title: 'Makinenizi Bizimle Planlayın',
     cta_subtitle: 'Projenize uygun parçalama sistemini birlikte tasarlayalım.',
+    cta_button: 'Hemen Teklif Al!',
+    
+    // Waste Detail Pages - Common
+    waste_detail_back: 'Geri Dön',
+    waste_detail_systems_title: 'Önerilen Sistemler',
+    
+    // Evsel Atıklar (Household Waste)
+    waste_evsel_intro: 'Evsel atıkların geri dönüşümü, çevre sağlığı ve sürdürülebilir yaşam için kritik önem taşır.',
+    waste_evsel_para1: 'MT Makina, evsel atıkların etkili bir şekilde parçalanması ve geri dönüşümü için özel olarak tasarlanmış makineler üretir.',
+    waste_evsel_para2: 'Her proje, yüksek dayanıklılık, düşük enerji tüketimi ve çevre dostu teknoloji prensipleriyle üretilir.',
+    waste_evsel_para3: 'Avrupa standartlarına uygun, uzun ömürlü sistemlerle çevreye katkı sağlayan çözümler sunuyoruz.',
+    waste_evsel_system1: 'Tek ve çift şaftlı parçalama makineleri',
+    waste_evsel_system2: 'Otomatik besleme sistemleri ve konveyör hatları',
+    waste_evsel_system3: 'Manyetik ve optik ayrıştırma sistemleri',
+    waste_evsel_system4: 'Balya presleri ve depolama çözümleri',
+    
+    // Elektronik Atıklar (Electronic Waste)
+    waste_elektronik_intro: 'Elektronik atıklar (e-atık) değerli metallerin geri kazanımı için özel işlem gerektirir.',
+    waste_elektronik_para1: 'MT Makina, bilgisayar, telefon, beyaz eşya gibi elektronik atıkların güvenli ve verimli parçalanması için gelişmiş sistemler sunar.',
+    waste_elektronik_para2: 'Hassas bıçak teknolojisi ve kontrollü işlem kapasitesi ile değerli metallerin geri kazanımını optimize eder.',
+    waste_elektronik_para3: 'Çevre standartlarına tam uyumlu, tehlikeli madde emisyonlarını minimize eden çözümler üretiyoruz.',
+    waste_elektronik_system1: 'Çift şaftlı ağır hizmet tipi parçalama makineleri',
+    waste_elektronik_system2: 'Kablo sıyırma ve ayırma sistemleri',
+    waste_elektronik_system3: 'PCB parçalama ve değerli metal kazanım hatları',
+    waste_elektronik_system4: 'Toz toplama ve filtrasyon sistemleri',
+    
+    // Lastik Atıklar (Tire Waste)
+    waste_lastik_intro: 'Kullanılmış lastiklerin geri dönüşümü hem çevre hem de ekonomi için büyük değer yaratır.',
+    waste_lastik_para1: 'MT Makina, otomobil, kamyon ve iş makinesi lastiklerinin granül haline getirilmesi için yüksek kapasiteli sistemler üretir.',
+    waste_lastik_para2: 'Güçlü motorlar ve özel tasarım bıçaklarla yüksek dayanıklılık sunan lastik parçalama makineleri geliştiriyoruz.',
+    waste_lastik_para3: 'Enerji verimliliği ve uzun ömürlü kullanım için optimize edilmiş teknolojiler sunuyoruz.',
+    waste_lastik_system1: 'Ön kesim ve birincil parçalama makineleri',
+    waste_lastik_system2: 'İkincil granül parçalama sistemleri',
+    waste_lastik_system3: 'Tel ayırma ve manyetik seperasyon hatları',
+    waste_lastik_system4: 'Toz ve granül boyutlandırma ekipmanları',
+    
+    // Waste Categories Page
+    waste_categories_title: 'Makinelerimizde İşlediğimiz Atık Türleri',
+    waste_categories_subtitle: 'MT Makina olarak farklı atık türlerinin geri dönüşümü için özel olarak tasarlanmış yüksek performanslı parçalama makineleri üretiyoruz.',
+    waste_management_title: "Atık Yönetimi: MT Makina'nın Çevre Dostu Çözümleri",
+    waste_management_para1: 'MT Makina, endüstriyel üretimden evsel atıklara kadar her türlü atığın geri dönüşüm sürecinde yüksek verimlilik sağlayan sistemler sunar.',
+    waste_management_para2: 'Her atık türü için özel olarak tasarlanmış makinelerimiz, sürdürülebilir üretim ve çevre koruma hedeflerini destekler.',
+    waste_management_para3: 'MT Makina olarak çevreye duyarlı, yüksek performanslı ve uzun ömürlü sistemlerle sektöre öncülük ediyoruz.',
     
     // Footer
     footer_contact: 'İletişim',
@@ -493,6 +689,10 @@ const translations = {
     // Hero
     hero_title: 'Industrial Power in Shredding Machines',
     hero_subtitle: 'High efficiency, long life and safe operation with environmentally friendly production.',
+    hero_subtitle_systems: 'High performance systems customized for different industries',
+    hero_cta_title: 'Plan Your Machine With Us',
+    hero_cta_desc: 'We produce highly efficient, long-lasting and environmentally friendly systems.',
+    hero_cta_desc2: 'Click Get a Quote Now! button to design the most suitable solution for your project together.',
     btn_explore: 'Explore Products',
     
     // Intro Section
@@ -532,6 +732,54 @@ const translations = {
     tech_energy: 'Energy Efficiency',
     tech_energy_desc: 'High performance with low energy consumption',
     
+    // Technology Page
+    tech_page_title: 'Technology and Innovation',
+    tech_page_subtitle: 'Industry 4.0 compliant smart shredding systems',
+    tech_plc_title: 'PLC Control Systems',
+    tech_plc_desc: 'Fully automatic operation with Siemens and Schneider brand PLC control systems.',
+    tech_motor_title: 'High Torque Motor System',
+    tech_motor_desc: 'Energy-efficient and high-performance motor technology.',
+    tech_security_title: 'Multiple Security Systems',
+    tech_security_desc: 'Emergency stop, overload protection and safety systems.',
+    tech_eco_title: 'Eco-Friendly Production',
+    tech_eco_desc: 'Sustainable and low-emission production technologies.',
+    tech_modular_title: 'Modular Design',
+    tech_modular_desc: 'Easy maintenance and expandable modular structure.',
+    tech_remote_title: 'Remote Monitoring',
+    tech_remote_desc: 'IoT-based remote monitoring and data analysis systems.',
+    tech_why_title: 'Why MT Makina Technology?',
+    tech_why_para1: 'MT Makina offers maximum efficiency and reliability to its customers by using the latest technology in industrial shredding systems. All our machines are designed in accordance with Industry 4.0 standards.',
+    tech_why_para2: 'Our systems, produced using high-quality German and Italian components, offer long-lasting and low-maintenance solutions. Fully automatic operation and easy use are provided with PLC control systems.',
+    tech_why_para3: 'Thanks to our IoT-based remote monitoring systems, you can track the performance of your machines in real-time, perform predictive maintenance and increase efficiency.',
+    tech_contact_title: 'Contact Us',
+    tech_contact_address: 'Address',
+    tech_contact_phone: 'Phone',
+    tech_contact_email: 'Email',
+    
+    // References Page
+    ref_page_title: 'Our Business Partners',
+    ref_page_subtitle: 'Our reliable partnerships and success stories worldwide',
+    ref_stat_projects: 'Completed Projects',
+    ref_stat_countries: 'Export Countries',
+    ref_stat_partners: 'Business Partners',
+    ref_stat_satisfaction: 'Customer Satisfaction',
+    ref_category_title: 'References by Category',
+    ref_category_subtitle: 'We work with leading institutions from different sectors',
+    ref_filter_all: 'All',
+    ref_cat_global: 'Global Companies',
+    ref_cat_global_desc: 'Internationally recognized companies worldwide',
+    ref_cat_industry: 'Industry & Manufacturing',
+    ref_cat_industry_desc: 'Leading companies in the industrial and production sector',
+    ref_cat_defense: 'Defense & High Technology',
+    ref_cat_defense_desc: 'Defense industry and advanced technology organizations',
+    ref_cat_government: 'Government Institutions',
+    ref_cat_government_desc: 'State institutions and public organizations',
+    ref_testimonial_text: '"Working with MT Makina means receiving high-quality products and reliable service. They were always by our side in our projects. Thanks to their expertise in shredding systems, we increased our production efficiency by 40%."',
+    ref_testimonial_author: '— Our Valued Business Partner',
+    ref_cta_title: 'Join Our Business Partners',
+    ref_cta_subtitle: 'We would be happy to be your reliable solution partner for industrial shredding systems',
+    ref_cta_button: 'Contact Us',
+    
     // References
     ref_title: 'Our References',
     ref_subtitle: 'We provide industrial solutions to our partners around the world.',
@@ -543,6 +791,31 @@ const translations = {
     
     // Contact
     contact_title: 'Contact',
+    contact_subtitle: 'Get in touch with us, we are happy to help you',
+    contact_form_title: 'Contact Us',
+    contact_form_description: 'Fill out the form and we will get back to you as soon as possible.',
+    contact_form_name: 'Full Name',
+    contact_form_name_placeholder: 'Your name and surname',
+    contact_form_email: 'Email',
+    contact_form_email_placeholder: 'example@email.com',
+    contact_form_phone: 'Phone',
+    contact_form_phone_placeholder: '+90 5XX XXX XX XX',
+    contact_form_message: 'Your Message',
+    contact_form_message_placeholder: 'Write your message here...',
+    contact_form_submit: 'Send',
+    contact_info_address: 'Address',
+    contact_info_phone: 'Phone',
+    contact_info_email: 'Email',
+    contact_info_headquarters: 'Headquarters',
+    contact_info_sales_whatsapp: 'Sales and WhatsApp',
+    contact_info_social_media: 'Social Media',
+    contact_working_hours: 'Working Hours',
+    contact_weekdays: 'Weekdays',
+    contact_weekends: 'Weekend',
+    contact_closed: 'Closed',
+    contact_cta_title: 'Contact Us Now For Your Project',
+    contact_cta_description: 'Our expert team is ready to provide you with the most suitable solution',
+    contact_back_to_home: 'Back to Home',
     contact_headquarters: 'Headquarters',
     contact_hq_address: 'Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Floor:7, D:85-86, PK:34512 Esenyurt / ISTANBUL',
     contact_sales: 'Sales',
@@ -552,9 +825,87 @@ const translations = {
     contact_accounting: 'Accounting',
     contact_consulting: 'Consulting',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'FAQ About Single Shaft Shredders',
+    single_saft_video_title: 'Single Shaft Shredder Videos',
+    single_saft_similar_products: 'Similar Products',
+    single_saft_watch_video: 'Watch Video',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'WHAT IS A SINGLE SHAFT SHREDDER USED FOR?',
+    single_saft_faq_a1: 'A single shaft shredder is an industrial machine designed to effectively shred various materials, operating with a combination of high torque and low speed. It is used in recycling, waste management and industrial applications.',
+    single_saft_faq_q2: 'WHAT MATERIALS CAN BE PROCESSED IN SINGLE SHAFT SHREDDERS?',
+    single_saft_faq_a2: 'Various materials can be processed such as textile waste, plastics, fiber films, wood, chipboard, MDF boards, household waste and municipal waste.',
+    single_saft_faq_q3: 'HOW DO SINGLE SHAFT SHREDDERS WORK?',
+    single_saft_faq_a3: 'Our machines shred materials with blades rotating around a main shaft operating at high torque and low speed. Materials are cut by the blades on the shaft and separated into small pieces.',
+    single_saft_faq_q4: 'WHAT ARE THE ENERGY-SAVING FEATURES OF SINGLE SHAFT SHREDDERS?',
+    single_saft_faq_a4: 'It provides low energy consumption with energy-efficient motors and special blade design. Additionally, the motor automatically shuts off if no material is fed for a certain period of time.',
+    
+    dual_saft_faq_title: 'Frequently Asked Questions - Dual Shaft Shredder',
+    dual_saft_video_title: 'Dual Shaft Shredder Videos',
+    dual_saft_similar_products: 'Similar Products',
+    dual_saft_watch_video: 'Watch Video',
+    
+    quad_saft_faq_title: 'Frequently Asked Questions - Quad Shaft Shredder',
+    quad_saft_video_title: 'Quad Shaft Shredder Videos',
+    quad_saft_similar_products: 'Similar Products',
+    quad_saft_watch_video: 'Watch Video',
+    
+    metal_faq_title: 'Frequently Asked Questions - Metal Shredder',
+    metal_video_title: 'Metal Shredder Videos',
+    metal_similar_products: 'Similar Products',
+    metal_watch_video: 'Watch Video',
+    
+    pallet_faq_title: 'Frequently Asked Questions - Pallet Shredder',
+    pallet_video_title: 'Pallet Shredder Videos',
+    pallet_similar_products: 'Similar Products',
+    pallet_watch_video: 'Watch Video',
+    
+    plastic_faq_title: 'Frequently Asked Questions - Plastic Shredder',
+    plastic_video_title: 'Plastic Shredder Videos',
+    plastic_similar_products: 'Similar Products',
+    plastic_watch_video: 'Watch Video',
+    
+    glass_faq_title: 'Frequently Asked Questions - Glass Crusher',
+    glass_video_title: 'Glass Crusher Videos',
+    glass_similar_products: 'Similar Products',
+    glass_watch_video: 'Watch Video',
+    
+    organic_faq_title: 'Frequently Asked Questions - Organic Waste Shredder',
+    organic_video_title: 'Organic Waste Shredder Videos',
+    organic_similar_products: 'Similar Products',
+    organic_watch_video: 'Watch Video',
+    
+    mobile_faq_title: 'Frequently Asked Questions - Mobile Shredder',
+    mobile_video_title: 'Mobile Shredder Videos',
+    mobile_similar_products: 'Similar Products',
+    mobile_watch_video: 'Watch Video',
+    
+    harddisk_faq_title: 'Frequently Asked Questions - Hard Disk Shredder',
+    harddisk_video_title: 'Hard Disk Shredder Videos',
+    harddisk_similar_products: 'Similar Products',
+    harddisk_watch_video: 'Watch Video',
+    
+    tree_root_faq_title: 'Frequently Asked Questions - Tree Root Shredder',
+    tree_root_video_title: 'Tree Root Shredder Videos',
+    tree_root_similar_products: 'Similar Products',
+    tree_root_watch_video: 'Watch Video',
+    
+    wood_grinder_faq_title: 'Frequently Asked Questions - Wood Grinder',
+    wood_grinder_video_title: 'Wood Grinder Videos',
+    wood_grinder_similar_products: 'Similar Products',
+    wood_grinder_watch_video: 'Watch Video',
+    
+    baler_faq_title: 'Frequently Asked Questions - Baler Machine',
+    baler_video_title: 'Baler Machine Videos',
+    baler_similar_products: 'Similar Products',
+    baler_watch_video: 'Watch Video',
+    
     // CTA
     cta_title: 'Plan Your Machine With Us',
     cta_subtitle: 'Let\'s design the shredding system suitable for your project together.',
+    
+    cta_button: 'Get a Quote Now!',
     
     // Footer
     footer_contact: 'Contact',
@@ -891,6 +1242,10 @@ const translations = {
     // Hero
     hero_title: 'Промышленная мощь в измельчительных машинах',
     hero_subtitle: 'Высокая эффективность, долгий срок службы и безопасная работа с экологически чистым производством.',
+    hero_subtitle_systems: 'Высокопроизводительные системы, разработанные для различных отраслей',
+    hero_cta_title: 'Спланируйте свою машину с нами',
+    hero_cta_desc: 'Мы производим высокоэффективные, долговечные и экологически чистые системы.',
+    hero_cta_desc2: 'Нажмите кнопку Получить предложение сейчас! чтобы разработать наиболее подходящее решение для вашего проекта вместе.',
     btn_explore: 'Изучить продукты',
     
     // Intro Section
@@ -939,9 +1294,86 @@ const translations = {
     contact_accounting: 'Бухгалтерия',
     contact_consulting: 'Консультации',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'Часто задаваемые вопросы об одновальных измельчителях',
+    single_saft_video_title: 'Видео одновального измельчителя',
+    single_saft_similar_products: 'Похожие продукты',
+    single_saft_watch_video: 'Смотреть видео',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'ДЛЯ ЧЕГО ИСПОЛЬЗУЕТСЯ ОДНОВАЛЬНЫЙ ИЗМЕЛЬЧИТЕЛЬ?',
+    single_saft_faq_a1: 'Одновальный измельчитель - это промышленная машина, предназначенная для эффективного измельчения различных материалов, работающая с комбинацией высокого крутящего момента и низкой скорости. Используется в переработке, управлении отходами и промышленных применениях.',
+    single_saft_faq_q2: 'КАКИЕ МАТЕРИАЛЫ МОГУТ ОБРАБАТЫВАТЬСЯ В ОДНОВАЛЬНЫХ ИЗМЕЛЬЧИТЕЛЯХ?',
+    single_saft_faq_a2: 'Могут обрабатываться различные материалы, такие как текстильные отходы, пластик, волокнистые пленки, древесина, ДСП, МДФ плиты, бытовые отходы и муниципальные отходы.',
+    single_saft_faq_q3: 'КАК РАБОТАЮТ ОДНОВАЛЬНЫЕ ИЗМЕЛЬЧИТЕЛИ?',
+    single_saft_faq_a3: 'Наши машины измельчают материалы лезвиями, вращающимися вокруг главного вала, работающего при высоком крутящем моменте и низкой скорости. Материалы разрезаются лезвиями на валу и разделяются на мелкие части.',
+    single_saft_faq_q4: 'КАКОВЫ ЭНЕРГОСБЕРЕГАЮЩИЕ ХАРАКТЕРИСТИКИ ОДНОВАЛЬНЫХ ИЗМЕЛЬЧИТЕЛЕЙ?',
+    single_saft_faq_a4: 'Обеспечивает низкое энергопотребление благодаря энергоэффективным двигателям и специальной конструкции лезвий. Кроме того, двигатель автоматически отключается, если материал не подается в течение определенного периода времени.',
+    
+    dual_saft_faq_title: 'Часто задаваемые вопросы - Двухвальный измельчитель',
+    dual_saft_video_title: 'Видео двухвального измельчителя',
+    dual_saft_similar_products: 'Похожие продукты',
+    dual_saft_watch_video: 'Смотреть видео',
+    
+    quad_saft_faq_title: 'Часто задаваемые вопросы - Четырехвальный измельчитель',
+    quad_saft_video_title: 'Видео четырехвального измельчителя',
+    quad_saft_similar_products: 'Похожие продукты',
+    quad_saft_watch_video: 'Смотреть видео',
+    
+    metal_faq_title: 'Часто задаваемые вопросы - Измельчитель металла',
+    metal_video_title: 'Видео измельчителя металла',
+    metal_similar_products: 'Похожие продукты',
+    metal_watch_video: 'Смотреть видео',
+    
+    pallet_faq_title: 'Часто задаваемые вопросы - Измельчитель поддонов',
+    pallet_video_title: 'Видео измельчителя поддонов',
+    pallet_similar_products: 'Похожие продукты',
+    pallet_watch_video: 'Смотреть видео',
+    
+    plastic_faq_title: 'Часто задаваемые вопросы - Измельчитель пластика',
+    plastic_video_title: 'Видео измельчителя пластика',
+    plastic_similar_products: 'Похожие продукты',
+    plastic_watch_video: 'Смотреть видео',
+    
+    glass_faq_title: 'Часто задаваемые вопросы - Дробилка стекла',
+    glass_video_title: 'Видео дробилки стекла',
+    glass_similar_products: 'Похожие продукты',
+    glass_watch_video: 'Смотреть видео',
+    
+    organic_faq_title: 'Часто задаваемые вопросы - Измельчитель органических отходов',
+    organic_video_title: 'Видео измельчителя органических отходов',
+    organic_similar_products: 'Похожие продукты',
+    organic_watch_video: 'Смотреть видео',
+    
+    mobile_faq_title: 'Часто задаваемые вопросы - Мобильная дробилка',
+    mobile_video_title: 'Видео мобильной дробилки',
+    mobile_similar_products: 'Похожие продукты',
+    mobile_watch_video: 'Смотреть видео',
+    
+    harddisk_faq_title: 'Часто задаваемые вопросы - Уничтожитель жестких дисков',
+    harddisk_video_title: 'Видео уничтожителя жестких дисков',
+    harddisk_similar_products: 'Похожие продукты',
+    harddisk_watch_video: 'Смотреть видео',
+    
+    tree_root_faq_title: 'Часто задаваемые вопросы - Измельчитель корней деревьев',
+    tree_root_video_title: 'Видео измельчителя корней деревьев',
+    tree_root_similar_products: 'Похожие продукты',
+    tree_root_watch_video: 'Смотреть видео',
+    
+    wood_grinder_faq_title: 'Часто задаваемые вопросы - Дробилка для древесины',
+    wood_grinder_video_title: 'Видео дробилки для древесины',
+    wood_grinder_similar_products: 'Похожие продукты',
+    wood_grinder_watch_video: 'Смотреть видео',
+    
+    baler_faq_title: 'Часто задаваемые вопросы - Пресс для тюкования',
+    baler_video_title: 'Видео пресса для тюкования',
+    baler_similar_products: 'Похожие продукты',
+    baler_watch_video: 'Смотреть видео',
+    
     // CTA
     cta_title: 'Спланируйте свою машину с нами',
     cta_subtitle: 'Давайте вместе разработаем систему измельчения, подходящую для вашего проекта.',
+    cta_button: 'Получить предложение сейчас!',
     
     // Footer
     footer_contact: 'Контакт',
@@ -1282,6 +1714,10 @@ const translations = {
     // Hero
     hero_title: 'القوة الصناعية في آلات التقطيع',
     hero_subtitle: 'كفاءة عالية وعمر طويل وتشغيل آمن مع إنتاج صديق للبيئة.',
+    hero_subtitle_systems: 'أنظمة عالية الأداء مخصصة لصناعات مختلفة',
+    hero_cta_title: 'خطط لآلتك معنا',
+    hero_cta_desc: 'ننتج أنظمة فعالة للغاية وطويلة الأمد وصديقة للبيئة.',
+    hero_cta_desc2: 'انقر على زر احصل على عرض أسعار الآن! لتصميم الحل الأنسب لمشروعك معًا.',
     btn_explore: 'استكشف المنتجات',
     
     // Intro Section
@@ -1330,9 +1766,86 @@ const translations = {
     contact_accounting: 'المحاسبة',
     contact_consulting: 'الاستشارات',
     
+    // Product Detail Page Common Sections
+    single_saft_faq_title: 'الأسئلة الشائعة حول آلات التقطيع أحادية العمود',
+    single_saft_video_title: 'فيديوهات آلة التقطيع أحادية العمود',
+    single_saft_similar_products: 'منتجات مماثلة',
+    single_saft_watch_video: 'مشاهدة الفيديو',
+    
+    // Single Shaft FAQ
+    single_saft_faq_q1: 'ما هو الغرض من آلة التقطيع أحادية العمود؟',
+    single_saft_faq_a1: 'آلة التقطيع أحادية العمود هي آلة صناعية مصممة لتقطيع المواد المختلفة بفعالية، وتعمل بمزيج من عزم الدوران العالي والسرعة المنخفضة. تُستخدم في إعادة التدوير وإدارة النفايات والتطبيقات الصناعية.',
+    single_saft_faq_q2: 'ما هي المواد التي يمكن معالجتها في آلات التقطيع أحادية العمود؟',
+    single_saft_faq_a2: 'يمكن معالجة مواد مختلفة مثل نفايات النسيج والبلاستيك والأفلام الليفية والخشب والخشب المضغوط وألواح MDF والنفايات المنزلية ونفايات البلديات.',
+    single_saft_faq_q3: 'كيف تعمل آلات التقطيع أحادية العمود؟',
+    single_saft_faq_a3: 'تقطع آلاتنا المواد بشفرات تدور حول عمود رئيسي يعمل بعزم دوران عالي وسرعة منخفضة. يتم قطع المواد بواسطة الشفرات الموجودة على العمود وفصلها إلى قطع صغيرة.',
+    single_saft_faq_q4: 'ما هي ميزات توفير الطاقة في آلات التقطيع أحادية العمود؟',
+    single_saft_faq_a4: 'توفر استهلاكًا منخفضًا للطاقة بفضل المحركات الموفرة للطاقة وتصميم الشفرات الخاص. بالإضافة إلى ذلك، يتم إيقاف تشغيل المحرك تلقائيًا إذا لم يتم تغذية المواد لفترة زمنية معينة.',
+    
+    dual_saft_faq_title: 'الأسئلة المتكررة - آلة التقطيع ثنائية العمود',
+    dual_saft_video_title: 'فيديوهات آلة التقطيع ثنائية العمود',
+    dual_saft_similar_products: 'منتجات مماثلة',
+    dual_saft_watch_video: 'مشاهدة الفيديو',
+    
+    quad_saft_faq_title: 'الأسئلة المتكررة - آلة التقطيع رباعية العمود',
+    quad_saft_video_title: 'فيديوهات آلة التقطيع رباعية العمود',
+    quad_saft_similar_products: 'منتجات مماثلة',
+    quad_saft_watch_video: 'مشاهدة الفيديو',
+    
+    metal_faq_title: 'الأسئلة المتكررة - آلة تقطيع المعادن',
+    metal_video_title: 'فيديوهات آلة تقطيع المعادن',
+    metal_similar_products: 'منتجات مماثلة',
+    metal_watch_video: 'مشاهدة الفيديو',
+    
+    pallet_faq_title: 'الأسئلة المتكررة - آلة تقطيع المنصات',
+    pallet_video_title: 'فيديوهات آلة تقطيع المنصات',
+    pallet_similar_products: 'منتجات مماثلة',
+    pallet_watch_video: 'مشاهدة الفيديو',
+    
+    plastic_faq_title: 'الأسئلة المتكررة - آلة تقطيع البلاستيك',
+    plastic_video_title: 'فيديوهات آلة تقطيع البلاستيك',
+    plastic_similar_products: 'منتجات مماثلة',
+    plastic_watch_video: 'مشاهدة الفيديو',
+    
+    glass_faq_title: 'الأسئلة المتكررة - كسارة الزجاج',
+    glass_video_title: 'فيديوهات كسارة الزجاج',
+    glass_similar_products: 'منتجات مماثلة',
+    glass_watch_video: 'مشاهدة الفيديو',
+    
+    organic_faq_title: 'الأسئلة المتكررة - آلة تقطيع النفايات العضوية',
+    organic_video_title: 'فيديوهات آلة تقطيع النفايات العضوية',
+    organic_similar_products: 'منتجات مماثلة',
+    organic_watch_video: 'مشاهدة الفيديو',
+    
+    mobile_faq_title: 'الأسئلة المتكررة - آلة التقطيع المتنقلة',
+    mobile_video_title: 'فيديوهات آلة التقطيع المتنقلة',
+    mobile_similar_products: 'منتجات مماثلة',
+    mobile_watch_video: 'مشاهدة الفيديو',
+    
+    harddisk_faq_title: 'الأسئلة المتكررة - آلة تدمير الأقراص الصلبة',
+    harddisk_video_title: 'فيديوهات آلة تدمير الأقراص الصلبة',
+    harddisk_similar_products: 'منتجات مماثلة',
+    harddisk_watch_video: 'مشاهدة الفيديو',
+    
+    tree_root_faq_title: 'الأسئلة المتكررة - آلة تقطيع جذور الأشجار',
+    tree_root_video_title: 'فيديوهات آلة تقطيع جذور الأشجار',
+    tree_root_similar_products: 'منتجات مماثلة',
+    tree_root_watch_video: 'مشاهدة الفيديو',
+    
+    wood_grinder_faq_title: 'الأسئلة المتكررة - طاحونة الخشب',
+    wood_grinder_video_title: 'فيديوهات طاحونة الخشب',
+    wood_grinder_similar_products: 'منتجات مماثلة',
+    wood_grinder_watch_video: 'مشاهدة الفيديو',
+    
+    baler_faq_title: 'الأسئلة المتكررة - آلة الكبس',
+    baler_video_title: 'فيديوهات آلة الكبس',
+    baler_similar_products: 'منتجات مماثلة',
+    baler_watch_video: 'مشاهدة الفيديو',
+    
     // CTA
     cta_title: 'خطط لآلتك معنا',
     cta_subtitle: 'دعنا نصمم نظام التقطيع المناسب لمشروعك معًا.',
+    cta_button: 'احصل على عرض أسعار الآن!',
     
     // Footer
     footer_contact: 'اتصل',
@@ -1425,7 +1938,7 @@ const translations = {
     need_help_choosing: 'هل تحتاج مساعدة في اختيار النموذج؟',
     contact_us_for_consultation: 'سيساعدك فريق الخبراء لدينا في اختيار الآلة الأنسب',
     contact_us: 'اتصل بنا',
-    single_shaft_advantage_1_title: 'استخدام مرن',
+    single_shaft_advantage_1_title: 'استخد��م مرن',
     single_shaft_advantage_1_desc: 'تمزيق محسّن لأنواع مختلفة من النفايات',
     single_shaft_advantage_2_title: 'كفاءة عالية',
     single_shaft_advantage_2_desc: 'محرك موفر للطاقة وأداء قوي',
@@ -1450,7 +1963,7 @@ const translations = {
     dual_shaft_adv_3_title: 'مستوى ضوضاء منخفض',
     dual_shaft_adv_3_desc: 'نظام منخفض السرعة يوفر كفاءة في استهلاك الطاقة.',
     dual_shaft_adv_4_title: 'نظام شفرات معياري',
-    dual_shaft_adv_4_desc: 'الشفرات القابلة للاستبدال تضمن سهولة الصيانة وعمر طويل.',
+    dual_shaft_adv_4_desc: 'الشفرات القابلة للاستبدال تض��ن سهولة الصيانة وعمر طويل.',
     dual_shaft_performance_title: 'أقصى كفاءة وموثوقية في آلات التمزيق ثنائية العمود',
     dual_shaft_perf_1: 'عمودان قويان يعملان بشكل متزامن',
     dual_shaft_perf_2: 'نظام عالي الأداء للنفايات المعدنية والبلاستيكية',
@@ -1709,12 +2222,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
     }
     
-    // Update URL and state
-    window.history.pushState({}, '', newPath);
-    setLanguage(newLang);
-    
-    // Reload the page to ensure all components re-render with new language
-    window.location.reload();
+    // Navigate to new URL with full page reload to ensure proper state
+    window.location.href = newPath;
   };
 
   const t = (key: string): string => {
