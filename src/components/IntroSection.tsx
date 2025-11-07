@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from "framer-motion";
 import { useLanguage } from './LanguageContext';
 import { Leaf, Recycle, Shield, Zap } from 'lucide-react';
 
