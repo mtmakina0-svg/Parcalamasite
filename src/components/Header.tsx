@@ -122,21 +122,16 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
   const productsDropdown = [...primaryProducts, ...secondaryProducts];
   
   const wastesDropdown = [
-    { key: 'waste_household', action: 'evsel' },
-    { key: 'waste_electronic', action: 'elektronik' },
-    { key: 'waste_tire', action: 'lastik' },
-    { key: 'waste_metal', action: 'metal' },
-    { key: 'waste_glass', action: 'cam' },
-    { key: 'waste_paper', action: 'kagit' },
-    { key: 'waste_plastic', action: 'plastik' },
-    { key: 'waste_organic', action: 'organik' },
-    { key: 'waste_medical', action: 'tibbi' },
-    { key: 'waste_tree_root', action: 'agac' },
-    { key: 'waste_animal', action: 'hayvan' },
-    { key: 'waste_packaging', action: 'ambalaj' },
-    { key: 'waste_pallet', action: 'palet' },
-    { key: 'waste_textile', action: 'tekstil' },
-    { key: 'waste_aty', action: 'aty' }
+    { key: 'waste_household', action: 'evsel-atiklar' },
+    { key: 'waste_tire', action: 'lastik-atiklari' },
+    { key: 'waste_glass', action: 'cam-atiklar' },
+    { key: 'waste_plastic', action: 'plastik-atiklar' },
+    { key: 'waste_medical', action: 'tibbi-atiklar' },
+    { key: 'waste_electronic', action: 'elektronik-atiklar' },
+    { key: 'waste_metal', action: 'metal-atiklar' },
+    { key: 'waste_paper', action: 'kagit-karton-atiklar' },
+    { key: 'waste_organic', action: 'organik-atiklar' },
+    { key: 'waste_animal', action: 'hayvan-atiklari' }
   ];
 
   const navItems = [
