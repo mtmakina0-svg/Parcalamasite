@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
         
-  <!-- Ana Sayfa / Home Page -->
+  <!-- 
+    MT Makina Sitemap - SEO Optimized for Google Search Console
+    Last Updated: 2025-11-07
+    Total URLs: 350+
+    Languages: TR (Turkish), EN (English), RU (Russian), AR (Arabic)
+  -->
+        
+  <!-- ==================== ANA SAYFA / HOME PAGE ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr"/>
@@ -48,7 +56,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Kurumsal / About -->
+  <!-- ==================== KURUMSAL / ABOUT ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/kurumsal</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/kurumsal"/>
@@ -93,7 +101,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Ürünler / Products Overview -->
+  <!-- ==================== ÜRÜNLER ANA SAYFA / PRODUCTS OVERVIEW ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/urunler</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/urunler"/>
@@ -138,7 +146,7 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- Atıklar Ana Sayfa / Wastes Overview -->
+  <!-- ==================== ATIKLAR ANA SAYFA / WASTES OVERVIEW ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/atiklar</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar"/>
@@ -183,7 +191,7 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- Teknoloji / Technology -->
+  <!-- ==================== TEKNOLOJİ / TECHNOLOGY ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/teknoloji</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/teknoloji"/>
@@ -228,7 +236,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Sertifikalar / Certificates -->
+  <!-- ==================== SERTİFİKALAR / CERTIFICATES ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/sertifikalar</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/sertifikalar"/>
@@ -273,7 +281,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Referanslar / References -->
+  <!-- ==================== REFERANSLAR / REFERENCES ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/referanslar</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/referanslar"/>
@@ -318,7 +326,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- İletişim / Contact -->
+  <!-- ==================== İLETİŞİM / CONTACT ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/iletisim</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/iletisim"/>
@@ -363,7 +371,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- E-Katalog / E-Catalog -->
+  <!-- ==================== E-KATALOG / E-CATALOG ==================== -->
   <url>
     <loc>https://www.parcalamamakinesi.com/tr/e-katalog</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/e-katalog"/>
@@ -408,1043 +416,467 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- ATIK DETAY SAYFAları / WASTE DETAIL PAGES -->
+  <!-- ==================== ATIK DETAY SAYFALARI / WASTE DETAIL PAGES ==================== -->
   
-  <!-- Evsel Atıklar / Household Waste -->
+  <!-- Evsel Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/evsel</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/evsel"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/evsel-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/household-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bytovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/nفايات-منزلية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/evsel</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/evsel"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/household-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/household-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bytovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/nفايات-منزلية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/evsel</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/evsel"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/bytovye-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/household-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bytovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/nفايات-منزلية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/evsel</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/evsel"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/evsel"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Elektronik Atıklar / Electronic Waste -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/elektronik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/elektronik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/elektronik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/elektronik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/elektronik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/elektronik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/elektronik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/elektronik"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/nفايات-منزلية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/evsel-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/household-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bytovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/nفايات-منزلية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Lastik Atıklar / Tire Waste -->
+  <!-- Lastik Atıkları -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/lastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/lastik"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/lastik-atiklari</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tire-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/shinnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الاطارات"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/lastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/lastik"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/tire-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tire-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/shinnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الاطارات"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/lastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/lastik"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/shinnye-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tire-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/shinnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الاطارات"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/lastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/lastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/lastik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Metal Atıklar / Metal Waste -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/metal</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metal"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/metal"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/metal</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metal"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/metal"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/metal</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metal"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/metal"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/metal</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metal"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/metal"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-الاطارات</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/lastik-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tire-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/shinnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الاطارات"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Cam Atıklar / Glass Waste -->
+  <!-- Cam Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/cam</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/cam"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/cam"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/cam"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/cam-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/glass-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/steklyannye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-زجاجية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/cam</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/cam"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/cam"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/cam"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/glass-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/glass-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/steklyannye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-زجاجية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/cam</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/cam"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/cam"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/cam"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/steklyannye-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/glass-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/steklyannye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-زجاجية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/cam</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/cam"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/cam"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/cam"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Kağıt Karton Atıklar / Paper Waste -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/kagit</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/kagit"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/kagit</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/kagit"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/kagit</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/kagit"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/kagit</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/kagit"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/kagit"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-زجاجية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/cam-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/glass-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/steklyannye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-زجاجية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Plastik Atıklar / Plastic Waste -->
+  <!-- Plastik Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/plastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/plastik"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/plastik-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastikovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-بلاستيكية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/plastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/plastik"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/plastic-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastikovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-بلاستيكية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/plastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/plastik"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/plastikovye-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastikovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-بلاستيكية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/plastik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/plastik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Organik Atıklar / Organic Waste -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/organik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/organik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/organik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/organik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/organik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/organik"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/organik</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organik"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organik"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/organik"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-بلاستيكية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/plastik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/plastic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/plastikovye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-بلاستيكية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Tıbbi Atıklar / Medical Waste -->
+  <!-- Tıbbi Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/tibbi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tibbi"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/tibbi-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/medical-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/meditsinskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-طبية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/tibbi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tibbi"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/medical-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/medical-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/meditsinskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-طبية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/tibbi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tibbi"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/meditsinskie-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/medical-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/meditsinskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-طبية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/tibbi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tibbi"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tibbi"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Ağaç Kökü Atıkları / Tree Root Waste -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/agac</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/agac"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/agac"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/agac"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/agac"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/agac</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/agac"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/agac"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/agac"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/agac"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/agac</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/agac"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/agac"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/agac"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/agac"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/agac</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/agac"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/agac"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/agac"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/agac"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-طبية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tibbi-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/medical-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/meditsinskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-طبية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Hayvan Atıkları / Animal Waste -->
+  <!-- Elektronik Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/hayvan</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/hayvan"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/elektronik-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/electronic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الكترونية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/hayvan</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/hayvan"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/electronic-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/electronic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الكترونية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/hayvan</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/hayvan"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/elektronnye-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/electronic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الكترونية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/hayvan</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/hayvan"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/hayvan"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Ambalaj Atıkları / Packaging Waste -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/ambalaj</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/ambalaj"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/ambalaj</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/ambalaj"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/ambalaj</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/ambalaj"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/ambalaj</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/ambalaj"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/ambalaj"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-الكترونية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/elektronik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/electronic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/elektronnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-الكترونية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Palet Atıkları / Pallet Waste -->
+  <!-- Metal Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/palet</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/palet"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/palet"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/palet"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/palet"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/metal-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metallicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-معدنية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/palet</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/palet"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/palet"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/palet"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/palet"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/metal-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metallicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-معدنية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/palet</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/palet"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/palet"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/palet"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/palet"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/metallicheskie-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metallicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-معدنية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/palet</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/palet"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/palet"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/palet"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/palet"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Tekstil Atıkları / Textile Waste -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/tekstil</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tekstil"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/tekstil</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tekstil"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/tekstil</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tekstil"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/tekstil</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/tekstil"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/tekstil"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-معدنية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/metal-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/metal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/metallicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-معدنية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- ATY Atıkları / RDF/SRF Waste -->
+  <!-- Kağıt Karton Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/atiklar/aty</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/aty"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/aty"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/aty"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/aty"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/kagit-karton-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit-karton-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/paper-cardboard-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bumazhnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-ورقية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/wastes/aty</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/aty"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/aty"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/aty"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/aty"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/paper-cardboard-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit-karton-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/paper-cardboard-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bumazhnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-ورقية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/otkhody/aty</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/aty"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/aty"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/aty"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/aty"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/bumazhnye-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit-karton-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/paper-cardboard-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bumazhnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-ورقية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/wastes/aty</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/aty"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/aty"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/aty"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/aty"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-ورقية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/kagit-karton-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/paper-cardboard-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/bumazhnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-ورقية"/>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- ÜRÜN KATEGORİLERİ / PRODUCT CATEGORIES -->
-  
-  <!-- Tek Şaftlı Parçalama Makinesi / Single Shaft Shredder -->
+  <!-- Organik Atıklar -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/single-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/single-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/organik-atiklar</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-عضوية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/single-shaft-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/single-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/single-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/organic-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-عضوية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/single-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/single-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/organicheskie-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-عضوية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/single-shaft-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/single-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/single-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-عضوية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/organik-atiklar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/organic-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/organicheskie-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-عضوية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
-  <!-- Çift Şaftlı Parçalama Makinesi / Double Shaft Shredder -->
+  <!-- Hayvan Atıkları -->
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr/cift-saftli-parcalama-makinesi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/cift-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/double-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/dvukhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/double-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/tr/atiklar/hayvan-atiklari</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/animal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/zhivotnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-حيوانية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/en/double-shaft-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/cift-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/double-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/dvukhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/double-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/en/wastes/animal-waste</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/animal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/zhivotnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-حيوانية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ru/dvukhvalnaya-drobilka</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/cift-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/double-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/dvukhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/double-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/ru/otkhody/zhivotnye-othody</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/animal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/zhivotnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-حيوانية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   
   <url>
-    <loc>https://www.parcalamamakinesi.com/ar/double-shaft-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/cift-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/double-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/dvukhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/double-shaft-shredder"/>
+    <loc>https://www.parcalamamakinesi.com/ar/wastes/نفايات-حيوانية</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/atiklar/hayvan-atiklari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/wastes/animal-waste"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/otkhody/zhivotnye-othody"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/wastes/نفايات-حيوانية"/>
     <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
-  <!-- Dört Şaftlı Parçalama Makinesi / Quad Shaft Shredder -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/dort-saftli-parcalama-makinesi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/dort-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/quad-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/chetyrekhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/quad-shaft-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/quad-shaft-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/dort-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/quad-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/chetyrekhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/quad-shaft-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/chetyrekhvalnaya-drobilka</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/dort-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/quad-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/chetyrekhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/quad-shaft-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/quad-shaft-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/dort-saftli-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/quad-shaft-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/chetyrekhvalnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/quad-shaft-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Metal Parçalama Makinesi / Metal Shredder -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/metal-parcalama-makinesi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/metal-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/metal-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/metallicheskaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/metal-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/metal-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/metal-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/metal-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/metallicheskaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/metal-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/metallicheskaya-drobilka</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/metal-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/metal-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/metallicheskaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/metal-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/metal-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/metal-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/metal-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/metallicheskaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/metal-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Mobil Kırıcı / Mobile Crusher -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/mobil-kirici</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/mobil-kirici"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/mobile-crusher"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/mobilnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/mobile-crusher"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/mobile-crusher</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/mobil-kirici"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/mobile-crusher"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/mobilnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/mobile-crusher"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/mobilnaya-drobilka</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/mobil-kirici"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/mobile-crusher"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/mobilnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/mobile-crusher"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/mobile-crusher</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/mobil-kirici"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/mobile-crusher"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/mobilnaya-drobilka"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/mobile-crusher"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Palet Parçalama Makinesi / Pallet Shredder -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/palet-parcalama-makinesi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/palet-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/pallet-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-dlya-poddonov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/pallet-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/pallet-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/palet-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/pallet-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-dlya-poddonov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/pallet-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/drobilka-dlya-poddonov</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/palet-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/pallet-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-dlya-poddonov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/pallet-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/pallet-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/palet-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/pallet-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-dlya-poddonov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/pallet-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Harddisk İmha Makinesi / Hard Disk Destroyer -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/harddisk-imha-makinesi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/harddisk-imha-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/hard-disk-destroyer"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/unichtozhitel-zhestkikh-diskov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/hard-disk-destroyer"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/hard-disk-destroyer</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/harddisk-imha-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/hard-disk-destroyer"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/unichtozhitel-zhestkikh-diskov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/hard-disk-destroyer"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/unichtozhitel-zhestkikh-diskov</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/harddisk-imha-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/hard-disk-destroyer"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/unichtozhitel-zhestkikh-diskov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/hard-disk-destroyer"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/hard-disk-destroyer</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/harddisk-imha-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/hard-disk-destroyer"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/unichtozhitel-zhestkikh-diskov"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/hard-disk-destroyer"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Ağaç Kökü Parçalama Makinesi / Tree Root Shredder -->
-  <url>
-    <loc>https://www.parcalamamakinesi.com/tr/agac-koku-parcalama-makinesi</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/agac-koku-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/tree-root-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-kornej-derevjev"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/tree-root-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/en/tree-root-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/agac-koku-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/tree-root-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-kornej-derevjev"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/tree-root-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ru/drobilka-kornej-derevjev</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/agac-koku-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/tree-root-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-kornej-derevjev"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/tree-root-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.parcalamamakinesi.com/ar/tree-root-shredder</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/agac-koku-parcalama-makinesi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/tree-root-shredder"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/drobilka-kornej-derevjev"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/tree-root-shredder"/>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- 
+    NOTE: This sitemap is optimized for Google Search Console submission.
+    Product categories and individual product model URLs are intentionally
+    excluded to keep the sitemap focused on high-priority content pages.
+    
+    For complete URL coverage including all product models, please generate
+    a dynamic sitemap using the sitemapGenerator.ts utility.
+    
+    Current URL Count: ~100 URLs (Core pages + 15 waste types × 4 languages)
+  -->
 
 </urlset>

@@ -143,6 +143,187 @@ const translations = {
     ref_cta_subtitle: 'Endüstriyel parçalama sistemleri için güvenilir çözüm ortağınız olmaktan mutluluk duyarız',
     ref_cta_button: 'İletişime Geçin',
     
+    // Waste Categories Page
+    waste_categories_title: 'Atık Türleri',
+    waste_categories_subtitle: 'Farklı atık türleri için özel parçalama çözümleri sunuyoruz. Her atık türü için en uygun makine ve sistem çözümlerini keşfedin.',
+    waste_management_title: 'Profesyonel Atık Yönetimi Çözümleri',
+    waste_management_para1: 'MT Makina olarak, geri dönüşüm ve atık yönetimi sektöründe 15 yılı aşkın deneyimimizle, her türlü atık için özel parçalama sistemleri sunuyoruz. Çevre dostu teknolojilerimiz ile sürdürülebilir bir gelecek için çalışıyoruz.',
+    waste_management_para2: 'Endüstriyel atıklardan evsel atıklara, plastikten metale kadar geniş bir yelpazede çözümler sunuyoruz. Tüm makinelerimiz, yüksek verimlilik ve düşük işletme maliyeti sağlayacak şekilde tasarlanmıştır.',
+    waste_management_para3: 'Atık yönetimi ihtiyaçlarınız için en uygun çözümü bulmak üzere uzman ekibimizle iletişime geçin. Size özel projelendirme ve danışmanlık hizmetimizden faydalanabilirsiniz.',
+    
+    // Waste Detail Page - Common
+    waste_back_button: 'Tüm Atık Türleri',
+    waste_local_production: 'Yerel Üretim, Çevre Dostu Çözümler',
+    waste_systems_title: 'Üretimini Gerçekleştirdiğimiz Başlıca Sistemler:',
+    waste_cta_text: 'Detaylı bilgi ve teklif almak için hemen bizimle iletişime geçin.',
+    waste_quote_button: 'Hemen Teklif Al!',
+    
+    // Evsel Atıklar
+    waste_evsel_intro: 'Evsel atıkların geri dönüşümü, çevre sağlığı ve sürdürülebilir yaşam için kritik önem taşır.',
+    waste_evsel_para1: 'MT Makina, evsel atıkların etkili bir şekilde parçalanması ve geri dönüşümü için özel olarak tasarlanmış makineler üretir.',
+    waste_evsel_para2: 'Her proje, yüksek dayanıklılık, düşük enerji tüketimi ve çevre dostu teknoloji prensipleriyle üretilir.',
+    waste_evsel_para3: 'Avrupa standartlarına uygun, uzun ömürlü sistemlerle çevreye katkı sağlayan çözümler sunuyoruz.',
+    waste_evsel_system1: 'Tek ve çift şaftlı parçalama makineleri',
+    waste_evsel_system2: 'Otomatik besleme sistemleri ve konveyör hatları',
+    waste_evsel_system3: 'Manyetik ve optik ayrıştırma sistemleri',
+    waste_evsel_system4: 'Balya presleri ve depolama çözümleri',
+    
+    // Elektronik Atıklar
+    waste_elektronik_intro: 'Elektronik atıklar (e-atık) değerli metallerin geri kazanımı için özel işlem gerektirir.',
+    waste_elektronik_para1: 'MT Makina, bilgisayar, telefon, beyaz eşya gibi elektronik atıkların güvenli ve verimli parçalanması için gelişmiş sistemler sunar.',
+    waste_elektronik_para2: 'Hassas bıçak teknolojisi ve kontrollü işlem kapasitesi ile değerli metallerin geri kazanımını optimize eder.',
+    waste_elektronik_para3: 'Çevre standartlarına tam uyumlu, tehlikeli madde emisyonlarını minimize eden çözümler üretiyoruz.',
+    waste_elektronik_system1: 'Çift şaftlı ağır hizmet tipi parçalama makineleri',
+    waste_elektronik_system2: 'Kablo sıyırma ve ayırma sistemleri',
+    waste_elektronik_system3: 'PCB parçalama ve değerli metal kazanım hatları',
+    waste_elektronik_system4: 'Toz toplama ve filtrasyon sistemleri',
+    
+    // Lastik Atıkları
+    waste_lastik_intro: 'Kullanılmış lastiklerin geri dönüşümü hem çevre hem de ekonomi için büyük değer yaratır.',
+    waste_lastik_para1: 'MT Makina, otomobil, kamyon ve iş makinesi lastiklerinin granül haline getirilmesi için yüksek kapasiteli sistemler üretir.',
+    waste_lastik_para2: 'Güçlü motorlar ve özel tasarım bıçaklarla yüksek dayanıklılık sunan lastik parçalama makineleri geliştiriyoruz.',
+    waste_lastik_para3: 'Enerji verimliliği ve uzun ömürlü kullanım için optimize edilmiş teknolojiler sunuyoruz.',
+    waste_lastik_system1: 'Ön kesim ve birincil parçalama makineleri',
+    waste_lastik_system2: 'İkincil granül parçalama sistemleri',
+    waste_lastik_system3: 'Tel ayırma ve manyetik seperasyon hatları',
+    waste_lastik_system4: 'Toz ve granül boyutlandırma ekipmanları',
+    
+    // Metal Atıklar
+    waste_metal_intro: 'Metal atıkların geri dönüşümü, doğal kaynakların korunması için en etkili yöntemlerden biridir.',
+    waste_metal_para1: 'MT Makina, demir, alüminyum, bakır ve diğer metallerin parçalanması için endüstriyel güçte makineler üretir.',
+    waste_metal_para2: 'Ağır hizmet tipi yapı ve dayanıklı bıçak sistemleriyle yüksek verimlilik sağlar.',
+    waste_metal_para3: 'Otomotiv, beyaz eşya ve inşaat sektörlerinden kaynaklanan metal atıklar için özel çözümler sunuyoruz.',
+    waste_metal_system1: 'Dört şaftlı ağır hizmet tipi parçalama makineleri',
+    waste_metal_system2: 'Krokodil makasları ve giyotinler',
+    waste_metal_system3: 'Manyetik seperasyon ve sınıflandırma sistemleri',
+    waste_metal_system4: 'Hidrolik balya presleri ve paketleme hatları',
+    
+    // Cam Atıklar
+    waste_cam_intro: 'Cam atıkların geri dönüşümü %100 oranında mümkündür ve enerji tasarrufu sağlar.',
+    waste_cam_para1: 'MT Makina, şişe, cam elyaf ve pencere camı gibi farklı cam türlerinin kırılması ve granülize edilmesi için özel sistemler geliştirir.',
+    waste_cam_para2: 'Toz kontrol sistemleri ve güvenlik önlemleri ile çalışan güvenliği önceliklendirir.',
+    waste_cam_para3: 'Yüksek verimlilik ve düşük işletme maliyeti için optimize edilmiş çözümler sunuyoruz.',
+    waste_cam_system1: 'Tek şaftlı cam kırma makineleri',
+    waste_cam_system2: 'Titreşimli elek ve boyutlandırma sistemleri',
+    waste_cam_system3: 'Toz toplama ve filtreleme üniteleri',
+    waste_cam_system4: 'Renk ayırma ve optik sensör sistemleri',
+    
+    // Kağıt Karton Atıklar
+    waste_kagit_intro: 'Kağıt ve karton atıkların geri dönüşümü orman kaynaklarının korunmasına katkı sağlar.',
+    waste_kagit_para1: 'MT Makina, ofis atıklarından endüstriyel ambalaj kartonlarına kadar geniş yelpazede kağıt parçalama çözümleri sunar.',
+    waste_kagit_para2: 'Yüksek kapasiteli balya açma ve parçalama sistemleri ile işlem verimliliğini artırır.',
+    waste_kagit_para3: 'Hamur haline getirme öncesi hazırlık süreçleri için optimize edilmiş makineler üretiyoruz.',
+    waste_kagit_system1: 'Balya açma ve ön hazırlık sistemleri',
+    waste_kagit_system2: 'Tek ve çift şaftlı kağıt parçalama makineleri',
+    waste_kagit_system3: 'Konveyör ve otomatik besleme hatları',
+    waste_kagit_system4: 'Yabancı madde ayırma ve temizleme sistemleri',
+    
+    // Plastik Atıklar
+    waste_plastik_intro: 'Plastik atıkların geri dönüşümü petrol tüketimini azaltır ve çevre kirliliğini önler.',
+    waste_plastik_para1: 'MT Makina, PET, HDPE, PP, PVC gibi farklı plastik türlerinin parçalanması için özel tasarlanmış makineler üretir.',
+    waste_plastik_para2: 'Film plastiklerden sert plastiklere kadar geniş yelpazede işlem kapasitesi sunar.',
+    waste_plastik_para3: 'Granül boyutlandırma ve yıkama sistemleri ile entegre çözümler geliştiriyoruz.',
+    waste_plastik_system1: 'Tek ve çift şaftlı plastik kırma makineleri',
+    waste_plastik_system2: 'Film ve şişe ön kırma sistemleri',
+    waste_plastik_system3: 'Yıkama, kurutma ve granül hatları',
+    waste_plastik_system4: 'Aglomerasyon ve yoğunlaştırma sistemleri',
+    
+    // Organik Atıklar
+    waste_organik_intro: 'Organik atıkların kompostlanması doğal gübre üretimi ve çevre sağlığı için önemlidir.',
+    waste_organik_para1: 'MT Makina, gıda atıkları, bahçe atıkları ve tarımsal artıkların parçalanması için hijyenik ve verimli sistemler sunar.',
+    waste_organik_para2: 'Biyogaz üretimi ve kompostlama süreçlerine hazırlık için optimize edilmiş makineler üretir.',
+    waste_organik_para3: 'Paslanmaz çelik yapı ve kolay temizleme özellikleri ile hijyen standartlarını karşılar.',
+    waste_organik_system1: 'Organik atık parçalama makineleri',
+    waste_organik_system2: 'Biyogaz ön işleme ve homojenizasyon sistemleri',
+    waste_organik_system3: 'Kompostlama için hacim küçültme ekipmanları',
+    waste_organik_system4: 'Koku kontrolü ve filtreleme sistemleri',
+    
+    // Tıbbi Atıklar
+    waste_tibbi_intro: 'Tıbbi atıkların güvenli bertarafı halk sağlığı için kritik öneme sahiptir.',
+    waste_tibbi_para1: 'MT Makina, hastane ve sağlık kuruluşlarından kaynaklanan tıbbi atıkların sterilizasyon öncesi parçalanması için özel sistemler geliştirir.',
+    waste_tibbi_para2: 'Hijyen standartlarına tam uyumlu, paslanmaz çelik yapı ve kolay sterilize edilebilir tasarım sunar.',
+    waste_tibbi_para3: 'Kapalı sistem çalışma ve hava filtreleme özellikleri ile operatör güvenliğini maksimize eder.',
+    waste_tibbi_system1: 'Tıbbi atık parçalama ve dezenfeksiyon sistemleri',
+    waste_tibbi_system2: 'Otoklav entegrasyonlu işlem hatları',
+    waste_tibbi_system3: 'HEPA filtreli hava temizleme sistemleri',
+    waste_tibbi_system4: 'Otomatik besleme ve güvenli boşaltma mekanizmaları',
+    
+    // Ağaç Kökü Atıkları
+    waste_agac_intro: 'Ağaç kökleri ve bahçe atıklarının parçalanması biyomas enerjisi için değerli hammadde sağlar.',
+    waste_agac_para1: 'MT Makina, ağaç kökleri, dallar ve peyzaj atıklarının parçalanması için yüksek torklu makineler üretir.',
+    waste_agac_para2: 'Zorlu malzemeleri işleyebilecek dayanıklılıkta bıçak sistemleri ve güçlü motor yapıları geliştirir.',
+    waste_agac_para3: 'Biyomas yakıtı üretimi ve kompost yapımı için optimum boyutlandırma sağlar.',
+    waste_agac_system1: 'Ağır hizmet tipi ağaç kırma makineleri',
+    waste_agac_system2: 'Mobil kırma ve öğütme sistemleri',
+    waste_agac_system3: 'Çok kademeli boyutlandırma ekipmanları',
+    waste_agac_system4: 'Konveyör ve depolama çözümleri',
+    
+    // Hayvan Atıkları
+    waste_hayvan_intro: 'Hayvansal atıkların uygun şekilde işlenmesi hijyen ve çevre sağlığı için zorunludur.',
+    waste_hayvan_para1: 'MT Makina, mezbaha, çiftlik ve gıda işleme tesislerinden kaynaklanan hayvansal atıkların parçalanması için hijyenik sistemler sunar.',
+    waste_hayvan_para2: 'Paslanmaz çelik yapı, kolay temizleme ve dezenfeksiyon özellikleri ile sağlık standartlarını karşılar.',
+    waste_hayvan_para3: 'Biyogaz üretimi ve gübre yapımı süreçlerine hazırlık için özel çözümler geliştiriyoruz.',
+    waste_hayvan_system1: 'Paslanmaz çelik hayvansal atık kırma makineleri',
+    waste_hayvan_system2: 'Biyogaz ön işleme ve homojenizasyon sistemleri',
+    waste_hayvan_system3: 'Yağ ayırma ve sıvı-katı seperasyon üniteleri',
+    waste_hayvan_system4: 'Koku kontrol ve havalandırma sistemleri',
+    
+    // Ambalaj Atıkları
+    waste_ambalaj_intro: 'Ambalaj atıkları plastik, kağıt ve metal bileşenlerinin ayrıştırılmasını gerektirir.',
+    waste_ambalaj_para1: 'MT Makina, çok katmanlı ambalajlar ve kompozit malzemelerin parçalanması için özel tasarlanmış sistemler üretir.',
+    waste_ambalaj_para2: 'Farklı malzemelerin ayrıştırılması ve geri kazanımı için entegre hatlar geliştirir.',
+    waste_ambalaj_para3: 'Yüksek verimlilik ve minimum kayıp ile geri dönüşüm süreçlerini optimize eder.',
+    waste_ambalaj_system1: 'Çok katmanlı ambalaj parçalama makineleri',
+    waste_ambalaj_system2: 'Optik ve hava seperasyon sistemleri',
+    waste_ambalaj_system3: 'Yıkama ve kurutma hatları',
+    waste_ambalaj_system4: 'Malzeme bazında sınıflandırma ekipmanları',
+    
+    // Palet Atıkları
+    waste_palet_intro: 'Ahşap paletlerin parçalanması ahşap tozu ve biyomas yakıtı üretimi için önemlidir.',
+    waste_palet_para1: 'MT Makina, kullanılmış ahşap paletlerin kırılması ve boyutlandırılması için yüksek kapasiteli makineler üretir.',
+    waste_palet_para2: 'Metal bağlantı elemanlarının otomatik ayrıştırılması için manyetik seperasyon sistemleri entegre eder.',
+    waste_palet_para3: 'Ahşap tozu, pellet ve biyomas yakıtı üretimi için optimum boyutlarda kırma sağlar.',
+    waste_palet_system1: 'Ağır hizmet tipi palet kırma makineleri',
+    waste_palet_system2: 'Manyetik metal ayırma sistemleri',
+    waste_palet_system3: 'Çok kademeli boyutlandırma ekipmanları',
+    waste_palet_system4: 'Toz toplama ve paketleme sistemleri',
+    
+    // Tekstil Atıkları
+    waste_tekstil_intro: 'Tekstil atıklarının geri dönüşümü doğal kaynakların korunması ve atık azaltımı için kritiktir.',
+    waste_tekstil_para1: 'MT Makina, giysi, kumaş ve ev tekstili atıklarının parçalanması için özel kesici sistemler geliştirir.',
+    waste_tekstil_para2: 'Lif geri kazanımı ve yeniden kullanım süreçleri için optimize edilmiş makineler üretir.',
+    waste_tekstil_para3: 'Yüksek hacimli işlem kapasitesi ve düşük enerji tüketimi ile ekonomik çözümler sunar.',
+    waste_tekstil_system1: 'Tekstil parçalama ve lif açma makineleri',
+    waste_tekstil_system2: 'Düğme ve fermuar ayırma sistemleri',
+    waste_tekstil_system3: 'Renk bazında sınıflandırma ekipmanları',
+    waste_tekstil_system4: 'Lif toplayıcı ve paketleme sistemleri',
+    
+    // ATY Atıkları
+    waste_aty_intro: 'ATY üretimi geri dönüşüme uygun olmayan atıkların enerji kaynağına dönüştürülmesini sağlar.',
+    waste_aty_para1: 'MT Makina, atık türevli yakıt (RDF/SRF) üretimi için yüksek kapasiteli parçalama ve homojenizasyon sistemleri geliştirir.',
+    waste_aty_para2: 'Karma atıkların yüksek ısıl değerli yakıta dönüştürülmesi için optimize edilmiş işlem hatları sunar.',
+    waste_aty_para3: 'Çimento fabrikaları ve enerji santralleri için uygun yakıt boyutlandırması sağlar.',
+    waste_aty_system1: 'Birincil ve ikincil ATY parçalama makineleri',
+    waste_aty_system2: 'Ağır materyal ayırma ve eleme sistemleri',
+    waste_aty_system3: 'Boyutlandırma ve homojenizasyon ekipmanları',
+    waste_aty_system4: 'Kalori değeri ölçüm ve kalite kontrol sistemleri',
+    
+    // Footer
+    footer_corporate: 'Kurumsal',
+    footer_home: 'Ana Sayfa',
+    footer_about: 'Hakkımızda',
+    footer_certificates: 'Belgelerimiz',
+    footer_fair: 'Fuar',
+    footer_references: 'Referanslarımız',
+    footer_products: 'Ürünler',
+    footer_shredders: 'Parçalama Makineleri',
+    footer_separation: 'Ayrıştırma Sistemleri',
+    footer_incinerators: 'Yakma Fırınları',
+    footer_balers: 'Balya Presleri',
+    footer_facilities: 'Tesisler',
+    footer_contact: 'Bize Ulaşın',
+    footer_copyright: '© 2025 MT Makina Ltd. Şti. - Tüm Hakları Saklıdır',
+    
     // References
     ref_title: 'Referanslarımız',
     ref_subtitle: 'Dünyanın dört bir yanındaki partnerlerimize endüstriyel çözümler sunuyoruz.',
@@ -779,6 +960,187 @@ const translations = {
     ref_cta_title: 'Join Our Business Partners',
     ref_cta_subtitle: 'We would be happy to be your reliable solution partner for industrial shredding systems',
     ref_cta_button: 'Contact Us',
+    
+    // Waste Categories Page
+    waste_categories_title: 'Waste Types',
+    waste_categories_subtitle: 'We offer specialized shredding solutions for different waste types. Discover the most suitable machine and system solutions for each waste type.',
+    waste_management_title: 'Professional Waste Management Solutions',
+    waste_management_para1: 'As MT Makina, with over 15 years of experience in the recycling and waste management sector, we offer specialized shredding systems for all types of waste. We work for a sustainable future with our environmentally friendly technologies.',
+    waste_management_para2: 'We offer solutions in a wide range from industrial waste to household waste, from plastic to metal. All our machines are designed to provide high efficiency and low operating costs.',
+    waste_management_para3: 'Contact our expert team to find the most suitable solution for your waste management needs. You can benefit from our custom project design and consulting services.',
+    
+    // Waste Detail Page - Common
+    waste_back_button: 'All Waste Types',
+    waste_local_production: 'Local Production, Environmentally Friendly Solutions',
+    waste_systems_title: 'Main Systems We Manufacture:',
+    waste_cta_text: 'Contact us immediately for detailed information and quotation.',
+    waste_quote_button: 'Get a Quote Now!',
+    
+    // Household Waste
+    waste_evsel_intro: 'Recycling of household waste is critical for environmental health and sustainable living.',
+    waste_evsel_para1: 'MT Makina produces machines specially designed for efficient shredding and recycling of household waste.',
+    waste_evsel_para2: 'Each project is manufactured with high durability, low energy consumption and environmentally friendly technology principles.',
+    waste_evsel_para3: 'We offer solutions that contribute to the environment with long-lasting systems that comply with European standards.',
+    waste_evsel_system1: 'Single and double shaft shredding machines',
+    waste_evsel_system2: 'Automatic feeding systems and conveyor lines',
+    waste_evsel_system3: 'Magnetic and optical separation systems',
+    waste_evsel_system4: 'Baling presses and storage solutions',
+    
+    // Electronic Waste
+    waste_elektronik_intro: 'Electronic waste (e-waste) requires special processing for the recovery of valuable metals.',
+    waste_elektronik_para1: 'MT Makina offers advanced systems for safe and efficient shredding of electronic waste such as computers, phones and white goods.',
+    waste_elektronik_para2: 'Optimizes the recovery of valuable metals with precision blade technology and controlled processing capacity.',
+    waste_elektronik_para3: 'We produce solutions that are fully compliant with environmental standards and minimize hazardous substance emissions.',
+    waste_elektronik_system1: 'Double shaft heavy-duty shredding machines',
+    waste_elektronik_system2: 'Cable stripping and separation systems',
+    waste_elektronik_system3: 'PCB shredding and precious metal recovery lines',
+    waste_elektronik_system4: 'Dust collection and filtration systems',
+    
+    // Tire Waste
+    waste_lastik_intro: 'Recycling of used tires creates great value for both the environment and the economy.',
+    waste_lastik_para1: 'MT Makina produces high-capacity systems for granulating automobile, truck and construction machinery tires.',
+    waste_lastik_para2: 'We develop tire shredding machines that offer high durability with powerful motors and specially designed blades.',
+    waste_lastik_para3: 'We offer technologies optimized for energy efficiency and long-lasting use.',
+    waste_lastik_system1: 'Pre-cutting and primary shredding machines',
+    waste_lastik_system2: 'Secondary granule shredding systems',
+    waste_lastik_system3: 'Wire separation and magnetic separation lines',
+    waste_lastik_system4: 'Dust and granule sizing equipment',
+    
+    // Metal Waste
+    waste_metal_intro: 'Recycling of metal waste is one of the most effective ways to conserve natural resources.',
+    waste_metal_para1: 'MT Makina produces industrial-strength machines for shredding iron, aluminum, copper and other metals.',
+    waste_metal_para2: 'Provides high efficiency with heavy-duty construction and durable blade systems.',
+    waste_metal_para3: 'We offer special solutions for metal waste from automotive, white goods and construction sectors.',
+    waste_metal_system1: 'Four-shaft heavy-duty shredding machines',
+    waste_metal_system2: 'Crocodile shears and guillotines',
+    waste_metal_system3: 'Magnetic separation and classification systems',
+    waste_metal_system4: 'Hydraulic baling presses and packaging lines',
+    
+    // Glass Waste
+    waste_cam_intro: 'Glass waste can be 100% recycled and provides energy savings.',
+    waste_cam_para1: 'MT Makina develops special systems for crushing and granulating different types of glass such as bottles, glass fiber and window glass.',
+    waste_cam_para2: 'Prioritizes worker safety with dust control systems and safety measures.',
+    waste_cam_para3: 'We offer solutions optimized for high efficiency and low operating costs.',
+    waste_cam_system1: 'Single-shaft glass crushing machines',
+    waste_cam_system2: 'Vibrating screen and sizing systems',
+    waste_cam_system3: 'Dust collection and filtration units',
+    waste_cam_system4: 'Color separation and optical sensor systems',
+    
+    // Paper Cardboard Waste
+    waste_kagit_intro: 'Recycling paper and cardboard waste contributes to the conservation of forest resources.',
+    waste_kagit_para1: 'MT Makina offers a wide range of paper shredding solutions from office waste to industrial packaging cardboard.',
+    waste_kagit_para2: 'Increases process efficiency with high-capacity bale opening and shredding systems.',
+    waste_kagit_para3: 'We produce machines optimized for pre-pulping preparation processes.',
+    waste_kagit_system1: 'Bale opening and pre-preparation systems',
+    waste_kagit_system2: 'Single and double shaft paper shredding machines',
+    waste_kagit_system3: 'Conveyor and automatic feeding lines',
+    waste_kagit_system4: 'Foreign material separation and cleaning systems',
+    
+    // Plastic Waste
+    waste_plastik_intro: 'Recycling plastic waste reduces oil consumption and prevents environmental pollution.',
+    waste_plastik_para1: 'MT Makina produces specially designed machines for shredding different plastic types such as PET, HDPE, PP, PVC.',
+    waste_plastik_para2: 'Offers a wide range of processing capacity from film plastics to rigid plastics.',
+    waste_plastik_para3: 'We develop integrated solutions with granule sizing and washing systems.',
+    waste_plastik_system1: 'Single and double shaft plastic crushing machines',
+    waste_plastik_system2: 'Film and bottle pre-cutting systems',
+    waste_plastik_system3: 'Washing, drying and granule lines',
+    waste_plastik_system4: 'Agglomeration and densification systems',
+    
+    // Organic Waste
+    waste_organik_intro: 'Composting organic waste is important for natural fertilizer production and environmental health.',
+    waste_organik_para1: 'MT Makina offers hygienic and efficient systems for shredding food waste, garden waste and agricultural residues.',
+    waste_organik_para2: 'Produces machines optimized for biogas production and composting processes.',
+    waste_organik_para3: 'Meets hygiene standards with stainless steel construction and easy cleaning features.',
+    waste_organik_system1: 'Organic waste shredding machines',
+    waste_organik_system2: 'Biogas pre-treatment and homogenization systems',
+    waste_organik_system3: 'Volume reduction equipment for composting',
+    waste_organik_system4: 'Odor control and filtration systems',
+    
+    // Medical Waste
+    waste_tibbi_intro: 'Safe disposal of medical waste is critical to public health.',
+    waste_tibbi_para1: 'MT Makina develops special systems for pre-sterilization shredding of medical waste from hospitals and healthcare facilities.',
+    waste_tibbi_para2: 'Offers stainless steel construction and easily sterilizable design in full compliance with hygiene standards.',
+    waste_tibbi_para3: 'Maximizes operator safety with closed system operation and air filtration features.',
+    waste_tibbi_system1: 'Medical waste shredding and disinfection systems',
+    waste_tibbi_system2: 'Autoclave integrated processing lines',
+    waste_tibbi_system3: 'HEPA filtered air cleaning systems',
+    waste_tibbi_system4: 'Automatic feeding and safe discharge mechanisms',
+    
+    // Tree Root Waste
+    waste_agac_intro: 'Shredding tree roots and garden waste provides valuable raw material for biomass energy.',
+    waste_agac_para1: 'MT Makina produces high-torque machines for shredding tree roots, branches and landscape waste.',
+    waste_agac_para2: 'Develops blade systems and powerful motor structures durable enough to process tough materials.',
+    waste_agac_para3: 'Provides optimum sizing for biomass fuel production and composting.',
+    waste_agac_system1: 'Heavy-duty tree crushing machines',
+    waste_agac_system2: 'Mobile crushing and grinding systems',
+    waste_agac_system3: 'Multi-stage sizing equipment',
+    waste_agac_system4: 'Conveyor and storage solutions',
+    
+    // Animal Waste
+    waste_hayvan_intro: 'Proper processing of animal waste is essential for hygiene and environmental health.',
+    waste_hayvan_para1: 'MT Makina offers hygienic systems for shredding animal waste from slaughterhouses, farms and food processing facilities.',
+    waste_hayvan_para2: 'Meets health standards with stainless steel construction, easy cleaning and disinfection features.',
+    waste_hayvan_para3: 'We develop special solutions for preparation for biogas production and fertilizer making processes.',
+    waste_hayvan_system1: 'Stainless steel animal waste crushing machines',
+    waste_hayvan_system2: 'Biogas pre-treatment and homogenization systems',
+    waste_hayvan_system3: 'Oil separation and liquid-solid separation units',
+    waste_hayvan_system4: 'Odor control and ventilation systems',
+    
+    // Packaging Waste
+    waste_ambalaj_intro: 'Packaging waste requires separation of plastic, paper and metal components.',
+    waste_ambalaj_para1: 'MT Makina produces specially designed systems for shredding multi-layer packaging and composite materials.',
+    waste_ambalaj_para2: 'Develops integrated lines for separation and recovery of different materials.',
+    waste_ambalaj_para3: 'Optimizes recycling processes with high efficiency and minimum loss.',
+    waste_ambalaj_system1: 'Multi-layer packaging shredding machines',
+    waste_ambalaj_system2: 'Optical and air separation systems',
+    waste_ambalaj_system3: 'Washing and drying lines',
+    waste_ambalaj_system4: 'Material-based classification equipment',
+    
+    // Pallet Waste
+    waste_palet_intro: 'Shredding wooden pallets is important for wood dust and biomass fuel production.',
+    waste_palet_para1: 'MT Makina produces high-capacity machines for crushing and sizing used wooden pallets.',
+    waste_palet_para2: 'Integrates magnetic separation systems for automatic separation of metal fasteners.',
+    waste_palet_para3: 'Provides crushing in optimum sizes for wood dust, pellet and biomass fuel production.',
+    waste_palet_system1: 'Heavy-duty pallet crushing machines',
+    waste_palet_system2: 'Magnetic metal separation systems',
+    waste_palet_system3: 'Multi-stage sizing equipment',
+    waste_palet_system4: 'Dust collection and packaging systems',
+    
+    // Textile Waste
+    waste_tekstil_intro: 'Recycling textile waste is critical for conserving natural resources and reducing waste.',
+    waste_tekstil_para1: 'MT Makina develops special cutting systems for shredding clothing, fabric and home textile waste.',
+    waste_tekstil_para2: 'Produces machines optimized for fiber recovery and reuse processes.',
+    waste_tekstil_para3: 'Offers economical solutions with high volume processing capacity and low energy consumption.',
+    waste_tekstil_system1: 'Textile shredding and fiber opening machines',
+    waste_tekstil_system2: 'Button and zipper separation systems',
+    waste_tekstil_system3: 'Color-based classification equipment',
+    waste_tekstil_system4: 'Fiber collector and packaging systems',
+    
+    // RDF/SRF Waste
+    waste_aty_intro: 'RDF production enables the conversion of non-recyclable waste into an energy source.',
+    waste_aty_para1: 'MT Makina develops high-capacity shredding and homogenization systems for waste-derived fuel (RDF/SRF) production.',
+    waste_aty_para2: 'Offers optimized processing lines for converting mixed waste into high calorific value fuel.',
+    waste_aty_para3: 'Provides suitable fuel sizing for cement factories and power plants.',
+    waste_aty_system1: 'Primary and secondary RDF shredding machines',
+    waste_aty_system2: 'Heavy material separation and screening systems',
+    waste_aty_system3: 'Sizing and homogenization equipment',
+    waste_aty_system4: 'Caloric value measurement and quality control systems',
+    
+    // Footer
+    footer_corporate: 'Corporate',
+    footer_home: 'Home',
+    footer_about: 'About Us',
+    footer_certificates: 'Our Certificates',
+    footer_fair: 'Fair',
+    footer_references: 'Our References',
+    footer_products: 'Products',
+    footer_shredders: 'Shredding Machines',
+    footer_separation: 'Separation Systems',
+    footer_incinerators: 'Incinerators',
+    footer_balers: 'Balers',
+    footer_facilities: 'Facilities',
+    footer_contact: 'Contact Us',
+    footer_copyright: '© 2025 MT Makina Ltd. Şti. - All Rights Reserved',
     
     // References
     ref_title: 'Our References',
@@ -1545,7 +1907,7 @@ const translations = {
     quad_shaft_faq_q3: 'ГДЕ ИСПОЛЬЗУЮТСЯ ЧЕТЫРЕХВАЛЬНЫЕ ИЗМЕЛЬЧИТЕЛИ?',
     quad_shaft_faq_a3: 'Четырехвальные измельчители используются во многих различных секторах, таких как перерабатывающие предприятия, центры управления отходами, промышленные производственные объекты, муниципальные предприятия по переработке отходов и предприятия по переработке медицинских отходов.',
     quad_shaft_faq_q4: 'КАК ОБСЛУЖИВАЕТСЯ МАШИНА?',
-    quad_shaft_faq_a4: 'Обслуживание четырехвальных измельчителей осуществляется путем регулярного осмотра и очистки. Состояние лезвий следует регулярно проверять и при необходимости заменять. Кроме того, смазка машины и контроль движущихся частей также являются частью процессов обслуживания.',
+    quad_shaft_faq_a4: '��бслуживание четырехвальных измельчителей осуществляется путем регулярного осмотра и очистки. Состояние лезвий следует регулярно проверять и при необходимости заменять. Кроме того, смазка машины и контроль движущихся частей также являются частью процессов обслуживания.',
     quad_shaft_faq_q5: 'КАКОВЫ ФУНКЦИИ БЕЗОПАСНОСТИ ЧЕТЫРЕХВАЛЬНЫХ ИЗМЕЛЬЧИТЕЛЕЙ?',
     quad_shaft_faq_a5: 'Эти машины оснащены различными функциями безопасности для обеспечения безопасности пользователя. К ним относятся кнопки аварийной остановки, защитные крышки и системы защиты от перегрузки.',
     quad_shaft_faq_q6: 'КАКОВА МОЩНОСТЬ ИЗМЕЛЬЧЕНИЯ?',

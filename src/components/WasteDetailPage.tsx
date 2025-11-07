@@ -2,262 +2,128 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { ArrowLeft, Check } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 interface WasteDetailPageProps {
   categoryId: string;
   onBack: () => void;
 }
 
-const wasteData: Record<string, {
-  title: string;
-  heroImage: string;
-  intro: string;
-  paragraphs: string[];
-  systems: string[];
-}> = {
-  evsel: {
-    title: 'Evsel Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1920&q=80',
-    intro: 'Evsel atıkların geri dönüşümü, çevre sağlığı ve sürdürülebilir yaşam için kritik önem taşır.',
-    paragraphs: [
-      'MT Makina, evsel atıkların etkili bir şekilde parçalanması ve geri dönüşümü için özel olarak tasarlanmış makineler üretir.',
-      'Her proje, yüksek dayanıklılık, düşük enerji tüketimi ve çevre dostu teknoloji prensipleriyle üretilir.',
-      'Avrupa standartlarına uygun, uzun ömürlü sistemlerle çevreye katkı sağlayan çözümler sunuyoruz.'
-    ],
-    systems: [
-      'Tek ve çift şaftlı parçalama makineleri',
-      'Otomatik besleme sistemleri ve konveyör hatları',
-      'Manyetik ve optik ayrıştırma sistemleri',
-      'Balya presleri ve depolama çözümleri'
-    ]
-  },
-  elektronik: {
-    title: 'Elektronik Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1608653206809-e6a8044173b0?w=1920&q=80',
-    intro: 'Elektronik atıklar (e-atık) değerli metallerin geri kazanımı için özel işlem gerektirir.',
-    paragraphs: [
-      'MT Makina, bilgisayar, telefon, beyaz eşya gibi elektronik atıkların güvenli ve verimli parçalanması için gelişmiş sistemler sunar.',
-      'Hassas bıçak teknolojisi ve kontrollü işlem kapasitesi ile değerli metallerin geri kazanımını optimize eder.',
-      'Çevre standartlarına tam uyumlu, tehlikeli madde emisyonlarını minimize eden çözümler üretiyoruz.'
-    ],
-    systems: [
-      'Çift şaftlı ağır hizmet tipi parçalama makineleri',
-      'Kablo sıyırma ve ayırma sistemleri',
-      'PCB parçalama ve değerli metal kazanım hatları',
-      'Toz toplama ve filtrasyon sistemleri'
-    ]
-  },
-  lastik: {
-    title: 'Lastik Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1761765030682-26f51cfbc034?w=1920&q=80',
-    intro: 'Kullanılmış lastiklerin geri dönüşümü hem çevre hem de ekonomi için büyük değer yaratır.',
-    paragraphs: [
-      'MT Makina, otomobil, kamyon ve iş makinesi lastiklerinin granül haline getirilmesi için yüksek kapasiteli sistemler üretir.',
-      'Güçlü motorlar ve özel tasarım bıçaklarla yüksek dayanıklılık sunan lastik parçalama makineleri geliştiriyoruz.',
-      'Enerji verimliliği ve uzun ömürlü kullanım için optimize edilmiş teknolojiler sunuyoruz.'
-    ],
-    systems: [
-      'Ön kesim ve birincil parçalama makineleri',
-      'İkincil granül parçalama sistemleri',
-      'Tel ayırma ve manyetik seperasyon hatları',
-      'Toz ve granül boyutlandırma ekipmanları'
-    ]
-  },
-  metal: {
-    title: 'Metal Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?w=1920&q=80',
-    intro: 'Metal atıkların geri dönüşümü, doğal kaynakların korunması için en etkili yöntemlerden biridir.',
-    paragraphs: [
-      'MT Makina, demir, alüminyum, bakır ve diğer metallerin parçalanması için endüstriyel güçte makineler üretir.',
-      'Ağır hizmet tipi yapı ve dayanıklı bıçak sistemleriyle yüksek verimlilik sağlar.',
-      'Otomotiv, beyaz eşya ve inşaat sektörlerinden kaynaklanan metal atıklar için özel çözümler sunuyoruz.'
-    ],
-    systems: [
-      'Dört şaftlı ağır hizmet tipi parçalama makineleri',
-      'Krokodil makasları ve giyotinler',
-      'Manyetik seperasyon ve sınıflandırma sistemleri',
-      'Hidrolik balya presleri ve paketleme hatları'
-    ]
-  },
-  cam: {
-    title: 'Cam Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1706468808971-ee72122572b6?w=1920&q=80',
-    intro: 'Cam atıkların geri dönüşümü %100 oranında mümkündür ve enerji tasarrufu sağlar.',
-    paragraphs: [
-      'MT Makina, şişe, cam elyaf ve pencere camı gibi farklı cam türlerinin kırılması ve granülize edilmesi için özel sistemler geliştirir.',
-      'Toz kontrol sistemleri ve güvenlik önlemleri ile çalışan güvenliği önceliklendirir.',
-      'Yüksek verimlilik ve düşük işletme maliyeti için optimize edilmiş çözümler sunuyoruz.'
-    ],
-    systems: [
-      'Tek şaftlı cam kırma makineleri',
-      'Titreşimli elek ve boyutlandırma sistemleri',
-      'Toz toplama ve filtreleme üniteleri',
-      'Renk ayırma ve optik sensör sistemleri'
-    ]
-  },
-  kagit: {
-    title: 'Kağıt Karton Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1757078059269-0ccbd674b1e4?w=1920&q=80',
-    intro: 'Kağıt ve karton atıkların geri dönüşümü orman kaynaklarının korunmasına katkı sağlar.',
-    paragraphs: [
-      'MT Makina, ofis atıklarından endüstriyel ambalaj kartonlarına kadar geniş yelpazede kağıt parçalama çözümleri sunar.',
-      'Yüksek kapasiteli balya açma ve parçalama sistemleri ile işlem verimliliğini artırır.',
-      'Hamur haline getirme öncesi hazırlık süreçleri için optimize edilmiş makineler üretiyoruz.'
-    ],
-    systems: [
-      'Balya açma ve ön hazırlık sistemleri',
-      'Tek ve çift şaftlı kağıt parçalama makineleri',
-      'Konveyör ve otomatik besleme hatları',
-      'Yabancı madde ayırma ve temizleme sistemleri'
-    ]
-  },
-  plastik: {
-    title: 'Plastik Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1669065514428-b96035a3faf2?w=1920&q=80',
-    intro: 'Plastik atıkların geri dönüşümü petrol tüketimini azaltır ve çevre kirliliğini önler.',
-    paragraphs: [
-      'MT Makina, PET, HDPE, PP, PVC gibi farklı plastik türlerinin parçalanması için özel tasarlanmış makineler üretir.',
-      'Film plastiklerden sert plastiklere kadar geniş yelpazede işlem kapasitesi sunar.',
-      'Granül boyutlandırma ve yıkama sistemleri ile entegre çözümler geliştiriyoruz.'
-    ],
-    systems: [
-      'Tek ve çift şaftlı plastik kırma makineleri',
-      'Film ve şişe ön kırma sistemleri',
-      'Yıkama, kurutma ve granül hatları',
-      'Aglomerasyon ve yoğunlaştırma sistemleri'
-    ]
-  },
-  organik: {
-    title: 'Organik Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1592484773536-263bf52e81fc?w=1920&q=80',
-    intro: 'Organik atıkların kompostlanması doğal gübre üretimi ve çevre sağlığı için önemlidir.',
-    paragraphs: [
-      'MT Makina, gıda atıkları, bahçe atıkları ve tarımsal artıkların parçalanması için hijyenik ve verimli sistemler sunar.',
-      'Biyogaz üretimi ve kompostlama süreçlerine hazırlık için optimize edilmiş makineler üretir.',
-      'Paslanmaz çelik yapı ve kolay temizleme özellikleri ile hijyen standartlarını karşılar.'
-    ],
-    systems: [
-      'Organik atık parçalama makineleri',
-      'Biyogaz ön işleme ve homojenizasyon sistemleri',
-      'Kompostlama için hacim küçültme ekipmanları',
-      'Koku kontrolü ve filtreleme sistemleri'
-    ]
-  },
-  tibbi: {
-    title: 'Tıbbi Atıklar',
-    heroImage: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&q=80',
-    intro: 'Tıbbi atıkların güvenli bertarafı halk sağlığı için kritik öneme sahiptir.',
-    paragraphs: [
-      'MT Makina, hastane ve sağlık kuruluşlarından kaynaklanan tıbbi atıkların sterilizasyon öncesi parçalanması için özel sistemler geliştirir.',
-      'Hijyen standartlarına tam uyumlu, paslanmaz çelik yapı ve kolay sterilize edilebilir tasarım sunar.',
-      'Kapalı sistem çalışma ve hava filtreleme özellikleri ile operatör güvenliğini maksimize eder.'
-    ],
-    systems: [
-      'Tıbbi atık parçalama ve dezenfeksiyon sistemleri',
-      'Otoklav entegrasyonlu işlem hatları',
-      'HEPA filtreli hava temizleme sistemleri',
-      'Otomatik besleme ve güvenli boşaltma mekanizmaları'
-    ]
-  },
-  agac: {
-    title: 'Ağaç Kökü Atıkları',
-    heroImage: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80',
-    intro: 'Ağaç kökleri ve bahçe atıklarının parçalanması biyomas enerjisi için değerli hammadde sağlar.',
-    paragraphs: [
-      'MT Makina, ağaç kökleri, dallar ve peyzaj atıklarının parçalanması için yüksek torklu makineler üretir.',
-      'Zorlu malzemeleri işleyebilecek dayanıklılıkta bıçak sistemleri ve güçlü motor yapıları geliştirir.',
-      'Biyomas yakıtı üretimi ve kompost yapımı için optimum boyutlandırma sağlar.'
-    ],
-    systems: [
-      'Ağır hizmet tipi ağaç kırma makineleri',
-      'Mobil kırma ve öğütme sistemleri',
-      'Çok kademeli boyutlandırma ekipmanları',
-      'Konveyör ve depolama çözümleri'
-    ]
-  },
-  hayvan: {
-    title: 'Hayvan Atıkları',
-    heroImage: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1920&q=80',
-    intro: 'Hayvansal atıkların uygun şekilde işlenmesi hijyen ve çevre sağlığı için zorunludur.',
-    paragraphs: [
-      'MT Makina, mezbaha, çiftlik ve gıda işleme tesislerinden kaynaklanan hayvansal atıkların parçalanması için hijyenik sistemler sunar.',
-      'Paslanmaz çelik yapı, kolay temizleme ve dezenfeksiyon özellikleri ile sağlık standartlarını karşılar.',
-      'Biyogaz üretimi ve gübre yapımı süreçlerine hazırlık için özel çözümler geliştiriyoruz.'
-    ],
-    systems: [
-      'Paslanmaz çelik hayvansal atık kırma makineleri',
-      'Biyogaz ön işleme ve homojenizasyon sistemleri',
-      'Yağ ayırma ve sıvı-katı seperasyon üniteleri',
-      'Koku kontrol ve havalandırma sistemleri'
-    ]
-  },
-  ambalaj: {
-    title: 'Ambalaj Atıkları',
-    heroImage: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=1920&q=80',
-    intro: 'Ambalaj atıkları plastik, kağıt ve metal bileşenlerinin ayrıştırılmasını gerektirir.',
-    paragraphs: [
-      'MT Makina, çok katmanlı ambalajlar ve kompozit malzemelerin parçalanması için özel tasarlanmış sistemler üretir.',
-      'Farklı malzemelerin ayrıştırılması ve geri kazanımı için entegre hatlar geliştirir.',
-      'Yüksek verimlilik ve minimum kayıp ile geri dönüşüm süreçlerini optimize eder.'
-    ],
-    systems: [
-      'Çok katmanlı ambalaj parçalama makineleri',
-      'Optik ve hava seperasyon sistemleri',
-      'Yıkama ve kurutma hatları',
-      'Malzeme bazında sınıflandırma ekipmanları'
-    ]
-  },
-  palet: {
-    title: 'Palet Atıkları',
-    heroImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80',
-    intro: 'Ahşap paletlerin parçalanması ahşap tozu ve biyomas yakıtı üretimi için önemlidir.',
-    paragraphs: [
-      'MT Makina, kullanılmış ahşap paletlerin kırılması ve boyutlandırılması için yüksek kapasiteli makineler üretir.',
-      'Metal bağlantı elemanlarının otomatik ayrıştırılması için manyetik seperasyon sistemleri entegre eder.',
-      'Ahşap tozu, pellet ve biyomas yakıtı üretimi için optimum boyutlarda kırma sağlar.'
-    ],
-    systems: [
-      'Ağır hizmet tipi palet kırma makineleri',
-      'Manyetik metal ayırma sistemleri',
-      'Çok kademeli boyutlandırma ekipmanları',
-      'Toz toplama ve paketleme sistemleri'
-    ]
-  },
-  tekstil: {
-    title: 'Tekstil Atıkları',
-    heroImage: 'https://images.unsplash.com/photo-1610910160298-45c99e1e0b2f?w=1920&q=80',
-    intro: 'Tekstil atıklarının geri dönüşümü doğal kaynakların korunması ve atık azaltımı için kritiktir.',
-    paragraphs: [
-      'MT Makina, giysi, kumaş ve ev tekstili atıklarının parçalanması için özel kesici sistemler geliştirir.',
-      'Lif geri kazanımı ve yeniden kullanım süreçleri için optimize edilmiş makineler üretir.',
-      'Yüksek hacimli işlem kapasitesi ve düşük enerji tüketimi ile ekonomik çözümler sunar.'
-    ],
-    systems: [
-      'Tekstil parçalama ve lif açma makineleri',
-      'Düğme ve fermuar ayırma sistemleri',
-      'Renk bazında sınıflandırma ekipmanları',
-      'Lif toplayıcı ve paketleme sistemleri'
-    ]
-  },
-  aty: {
-    title: 'ATY (Atık Türevli Yakıt) Atıkları',
-    heroImage: 'https://images.unsplash.com/photo-1566976370648-80b3fb37f411?w=1920&q=80',
-    intro: 'ATY üretimi geri dönüşüme uygun olmayan atıkların enerji kaynağına dönüştürülmesini sağlar.',
-    paragraphs: [
-      'MT Makina, atık türevli yakıt (RDF/SRF) üretimi için yüksek kapasiteli parçalama ve homojenizasyon sistemleri geliştirir.',
-      'Karma atıkların yüksek ısıl değerli yakıta dönüştürülmesi için optimize edilmiş işlem hatları sunar.',
-      'Çimento fabrikaları ve enerji santralleri için uygun yakıt boyutlandırması sağlar.'
-    ],
-    systems: [
-      'Birincil ve ikincil ATY parçalama makineleri',
-      'Ağır materyal ayırma ve eleme sistemleri',
-      'Boyutlandırma ve homojenizasyon ekipmanları',
-      'Kalori değeri ölçüm ve kalite kontrol sistemleri'
-    ]
-  }
-};
-
 export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) => {
+  const { t } = useLanguage();
+  
+  // Get translated waste data
+  const getWasteData = (key: string) => {
+    const wasteDataMap: Record<string, any> = {
+      evsel: {
+        title: t('waste_household'),
+        heroImage: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1920&q=80',
+        intro: t('waste_evsel_intro'),
+        paragraphs: [t('waste_evsel_para1'), t('waste_evsel_para2'), t('waste_evsel_para3')],
+        systems: [t('waste_evsel_system1'), t('waste_evsel_system2'), t('waste_evsel_system3'), t('waste_evsel_system4')]
+      },
+      elektronik: {
+        title: t('waste_electronic'),
+        heroImage: 'https://images.unsplash.com/photo-1608653206809-e6a8044173b0?w=1920&q=80',
+        intro: t('waste_elektronik_intro'),
+        paragraphs: [t('waste_elektronik_para1'), t('waste_elektronik_para2'), t('waste_elektronik_para3')],
+        systems: [t('waste_elektronik_system1'), t('waste_elektronik_system2'), t('waste_elektronik_system3'), t('waste_elektronik_system4')]
+      },
+      lastik: {
+        title: t('waste_tire'),
+        heroImage: 'https://images.unsplash.com/photo-1761765030682-26f51cfbc034?w=1920&q=80',
+        intro: t('waste_lastik_intro'),
+        paragraphs: [t('waste_lastik_para1'), t('waste_lastik_para2'), t('waste_lastik_para3')],
+        systems: [t('waste_lastik_system1'), t('waste_lastik_system2'), t('waste_lastik_system3'), t('waste_lastik_system4')]
+      },
+      metal: {
+        title: t('waste_metal'),
+        heroImage: 'https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?w=1920&q=80',
+        intro: t('waste_metal_intro'),
+        paragraphs: [t('waste_metal_para1'), t('waste_metal_para2'), t('waste_metal_para3')],
+        systems: [t('waste_metal_system1'), t('waste_metal_system2'), t('waste_metal_system3'), t('waste_metal_system4')]
+      },
+      cam: {
+        title: t('waste_glass'),
+        heroImage: 'https://images.unsplash.com/photo-1706468808971-ee72122572b6?w=1920&q=80',
+        intro: t('waste_cam_intro'),
+        paragraphs: [t('waste_cam_para1'), t('waste_cam_para2'), t('waste_cam_para3')],
+        systems: [t('waste_cam_system1'), t('waste_cam_system2'), t('waste_cam_system3'), t('waste_cam_system4')]
+      },
+      kagit: {
+        title: t('waste_paper'),
+        heroImage: 'https://images.unsplash.com/photo-1757078059269-0ccbd674b1e4?w=1920&q=80',
+        intro: t('waste_kagit_intro'),
+        paragraphs: [t('waste_kagit_para1'), t('waste_kagit_para2'), t('waste_kagit_para3')],
+        systems: [t('waste_kagit_system1'), t('waste_kagit_system2'), t('waste_kagit_system3'), t('waste_kagit_system4')]
+      },
+      plastik: {
+        title: t('waste_plastic'),
+        heroImage: 'https://images.unsplash.com/photo-1669065514428-b96035a3faf2?w=1920&q=80',
+        intro: t('waste_plastik_intro'),
+        paragraphs: [t('waste_plastik_para1'), t('waste_plastik_para2'), t('waste_plastik_para3')],
+        systems: [t('waste_plastik_system1'), t('waste_plastik_system2'), t('waste_plastik_system3'), t('waste_plastik_system4')]
+      },
+      organik: {
+        title: t('waste_organic'),
+        heroImage: 'https://images.unsplash.com/photo-1592484773536-263bf52e81fc?w=1920&q=80',
+        intro: t('waste_organik_intro'),
+        paragraphs: [t('waste_organik_para1'), t('waste_organik_para2'), t('waste_organik_para3')],
+        systems: [t('waste_organik_system1'), t('waste_organik_system2'), t('waste_organik_system3'), t('waste_organik_system4')]
+      },
+      tibbi: {
+        title: t('waste_medical'),
+        heroImage: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&q=80',
+        intro: t('waste_tibbi_intro'),
+        paragraphs: [t('waste_tibbi_para1'), t('waste_tibbi_para2'), t('waste_tibbi_para3')],
+        systems: [t('waste_tibbi_system1'), t('waste_tibbi_system2'), t('waste_tibbi_system3'), t('waste_tibbi_system4')]
+      },
+      agac: {
+        title: t('waste_tree_root'),
+        heroImage: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80',
+        intro: t('waste_agac_intro'),
+        paragraphs: [t('waste_agac_para1'), t('waste_agac_para2'), t('waste_agac_para3')],
+        systems: [t('waste_agac_system1'), t('waste_agac_system2'), t('waste_agac_system3'), t('waste_agac_system4')]
+      },
+      hayvan: {
+        title: t('waste_animal'),
+        heroImage: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1920&q=80',
+        intro: t('waste_hayvan_intro'),
+        paragraphs: [t('waste_hayvan_para1'), t('waste_hayvan_para2'), t('waste_hayvan_para3')],
+        systems: [t('waste_hayvan_system1'), t('waste_hayvan_system2'), t('waste_hayvan_system3'), t('waste_hayvan_system4')]
+      },
+      ambalaj: {
+        title: t('waste_packaging'),
+        heroImage: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=1920&q=80',
+        intro: t('waste_ambalaj_intro'),
+        paragraphs: [t('waste_ambalaj_para1'), t('waste_ambalaj_para2'), t('waste_ambalaj_para3')],
+        systems: [t('waste_ambalaj_system1'), t('waste_ambalaj_system2'), t('waste_ambalaj_system3'), t('waste_ambalaj_system4')]
+      },
+      palet: {
+        title: t('waste_pallet'),
+        heroImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80',
+        intro: t('waste_palet_intro'),
+        paragraphs: [t('waste_palet_para1'), t('waste_palet_para2'), t('waste_palet_para3')],
+        systems: [t('waste_palet_system1'), t('waste_palet_system2'), t('waste_palet_system3'), t('waste_palet_system4')]
+      },
+      tekstil: {
+        title: t('waste_textile'),
+        heroImage: 'https://images.unsplash.com/photo-1610910160298-45c99e1e0b2f?w=1920&q=80',
+        intro: t('waste_tekstil_intro'),
+        paragraphs: [t('waste_tekstil_para1'), t('waste_tekstil_para2'), t('waste_tekstil_para3')],
+        systems: [t('waste_tekstil_system1'), t('waste_tekstil_system2'), t('waste_tekstil_system3'), t('waste_tekstil_system4')]
+      },
+      aty: {
+        title: t('waste_aty'),
+        heroImage: 'https://images.unsplash.com/photo-1566976370648-80b3fb37f411?w=1920&q=80',
+        intro: t('waste_aty_intro'),
+        paragraphs: [t('waste_aty_para1'), t('waste_aty_para2'), t('waste_aty_para3')],
+        systems: [t('waste_aty_system1'), t('waste_aty_system2'), t('waste_aty_system3'), t('waste_aty_system4')]
+      }
+    };
+    return wasteDataMap[key];
+  };
+  
   // URL to wasteData key mapping
   const urlToKeyMap: Record<string, string> = {
     'evsel-atiklar': 'evsel',
@@ -307,7 +173,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
 
   // Get the actual data key from URL
   const dataKey = urlToKeyMap[categoryId] || categoryId;
-  const data = wasteData[dataKey];
+  const data = getWasteData(dataKey);
 
   // If category not found, redirect back to waste categories
   React.useEffect(() => {
@@ -364,7 +230,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
                 className="border-[#45474B] text-[#45474B] hover:bg-[#45474B]/10"
               >
                 <ArrowLeft size={18} className="mr-2" />
-                Tüm Atık Türleri
+                {t('waste_back_button')}
               </Button>
             </motion.div>
 
@@ -376,7 +242,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
               className="bg-white rounded-lg p-10 shadow-md mb-8"
             >
               <h2 className="text-2xl md:text-3xl text-[#1E1E1E] mb-6">
-                Yerel Üretim, Çevre Dostu Çözümler
+                {t('waste_local_production')}
               </h2>
               <p className="text-lg text-[#45474B] mb-6 italic leading-relaxed">
                 {data.intro}
@@ -396,7 +262,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
               className="bg-gradient-to-br from-[#45474B] to-[#35373A] rounded-lg p-10 shadow-lg mb-10"
             >
               <h3 className="text-2xl text-[#F4CE14] mb-6">
-                Üretimini Gerçekleştirdiğimiz Başlıca Sistemler:
+                {t('waste_systems_title')}
               </h3>
               <ul className="space-y-3">
                 {data.systems.map((system, index) => (
@@ -422,14 +288,14 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
               className="bg-white rounded-lg p-10 shadow-md text-center"
             >
               <p className="text-xl text-[#45474B] mb-6 leading-relaxed">
-                Detaylı bilgi ve teklif almak için hemen bizimle iletişime geçin.
+                {t('waste_cta_text')}
               </p>
               <Button
                 onClick={() => window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20' + data.title + '%20hakkında%20bilgi%20almak%20istiyorum.', '_blank')}
                 size="lg"
                 className="bg-[#F4CE14] text-[#1E1E1E] hover:bg-[#F4CE14]/90 hover:shadow-lg transition-all px-12 py-6 text-lg"
               >
-                Hemen Teklif Al!
+                {t('waste_quote_button')}
               </Button>
             </motion.div>
           </div>
@@ -439,7 +305,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
       {/* Contact Section */}
       <section className="py-20 bg-gradient-to-br from-[#45474B] to-[#35373A]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">Bize Ulaşın</h2>
+          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">{t('tech_contact_title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Address */}
@@ -455,7 +321,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Adres</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_address')}</h3>
               <p className="text-[#F5F7F8]/90 leading-relaxed">
                 Cumhuriyet Mah. 1983 Sk. Kent Palas 2 K:7 D:85-86 PK:34512 Esenyurt / İstanbul / TÜRKİYE
               </p>
@@ -474,7 +340,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Telefon</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_phone')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">+90 212 613 31 82</p>
             </motion.div>
 
@@ -491,7 +357,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">E-Posta</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_email')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">info@mtmakina.com.tr</p>
             </motion.div>
           </div>
@@ -504,31 +370,31 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             {/* Kurumsal */}
             <div>
-              <h3 className="text-xl text-[#F4CE14] mb-4">Kurumsal</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('footer_corporate')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBack}>Ana Sayfa</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Hakkımızda</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Belgelerimiz</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Fuar</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Referanslarımız</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBack}>{t('footer_home')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_about')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_certificates')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_fair')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_references')}</li>
               </ul>
             </div>
 
             {/* Ürünler */}
             <div>
-              <h3 className="text-xl text-[#F4CE14] mb-4">Ürünler</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('footer_products')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Parçalama Makineleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Ayrıştırma Sistemleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Yakma Fırınları</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Balya Presleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Tesisler</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_shredders')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_separation')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_incinerators')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_balers')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_facilities')}</li>
               </ul>
             </div>
 
             {/* Bize Ulaşın */}
             <div>
-              <h3 className="text-xl text-[#F4CE14] mb-4">Bize Ulaşın</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('footer_contact')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
                 <li>E: info@mtmakina.com.tr</li>
                 <li>T: +90 212 613 31 82</li>
@@ -559,7 +425,7 @@ export const WasteDetailPage = ({ categoryId, onBack }: WasteDetailPageProps) =>
                 </svg>
               </a>
             </div>
-            <p className="text-center text-[#F5F7F8]/60">© 2025 MT Makina Ltd. Şti. - Tüm Hakları Saklıdır</p>
+            <p className="text-center text-[#F5F7F8]/60">{t('footer_copyright')}</p>
           </div>
         </div>
       </footer>
