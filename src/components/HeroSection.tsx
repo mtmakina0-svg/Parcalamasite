@@ -73,7 +73,7 @@ export const HeroSection = () => {
           className="text-[20px] text-white/90 mb-16 max-w-3xl mx-auto leading-relaxed drop-shadow-lg"
           style={{ fontWeight: 400 }}
         >
-          {t('hero_subtitle_systems')}
+          Farklı endüstrilere özel yüksek performanslı sistemler
         </motion.p>
 
         {/* CTA Section */}
@@ -88,7 +88,7 @@ export const HeroSection = () => {
             className="text-[32px] text-white mb-6 drop-shadow-lg"
             style={{ fontWeight: 700 }}
           >
-            {t('hero_cta_title')}
+            Makinenizi Bizimle Planlayın
           </h2>
 
           {/* CTA Description */}
@@ -96,9 +96,9 @@ export const HeroSection = () => {
             className="text-[18px] text-white/90 mb-8 leading-relaxed drop-shadow-lg"
             style={{ fontWeight: 400 }}
           >
-            {t('hero_cta_desc')}
+            Yüksek verimli, uzun ömürlü ve çevre dostu sistemler üretiyoruz.
             <br />
-            {t('hero_cta_desc2')}
+            Hemen Teklif Al! butonu ile projeniz için en uygun çözümü birlikte tasarlayalım.
           </p>
 
           {/* WhatsApp CTA Button */}
