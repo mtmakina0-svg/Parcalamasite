@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from "framer-motion";
 import { useLanguage } from './LanguageContext';
 import { MapPin, Phone, Mail, MessageCircle, Globe2, Calculator, HelpCircle } from 'lucide-react';
 
