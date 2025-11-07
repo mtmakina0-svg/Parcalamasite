@@ -88,6 +88,13 @@
       var hash = window.location.hash;
       var fullPath = path + search + hash;
       
+      // Sitemap ve robots.txt gibi statik dosyaları yönlendirme
+      var staticFiles = ['/sitemap.xml', '/robots.txt', '/404.html'];
+      if (staticFiles.indexOf(path) !== -1) {
+        console.log('404.html - Static file detected, not redirecting:', path);
+        return; // Bu dosyalar için redirect yapma
+      }
+      
       console.log('404.html - Redirecting from:', fullPath);
       
       // Path'i session storage'a kaydet
