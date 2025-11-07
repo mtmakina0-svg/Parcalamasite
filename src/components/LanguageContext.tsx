@@ -2034,12 +2034,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
     }
     
-    // Update URL and state
-    window.history.pushState({}, '', newPath);
-    setLanguage(newLang);
-    
-    // Reload the page to ensure all components re-render with new language
-    window.location.reload();
+    // Navigate to new URL with full page reload to ensure proper state
+    window.location.href = newPath;
   };
 
   const t = (key: string): string => {
