@@ -1,0 +1,10 @@
+# Netlify Redirects for MT Makina SPA
+# This is a TEXT file for Netlify routing configuration
+# Last Updated: 2025-11-07
+
+# Force static file serving (priority rules)
+/sitemap.xml    /sitemap.xml    200!
+/robots.txt     /robots.txt     200!
+
+# SPA fallback - redirect all other routes to index.html
+/*              /index.html     200
