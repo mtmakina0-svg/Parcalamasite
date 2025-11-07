@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home Pages -->
+  <url>
+    <loc>https://www.parcalamamakinesi.com/tr</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/tr"/>
+    <lastmod>2024-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Turkish Pages -->
+  <url>
+    <loc>https://www.parcalamamakinesi.com/tr/kurumsal</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/kurumsal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/o-kompanii"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/about"/>
+    <lastmod>2024-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.parcalamamakinesi.com/tr/urunler</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/urunler"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/produkty"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/products"/>
+    <lastmod>2024-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Product Categories - Single Shaft -->
+  <url>
+    <loc>https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/single-shaft-shredder"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/single-shaft-shredder"/>
+    <lastmod>2024-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Product Detail - TSH-60 -->
+  <url>
+    <loc>https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi/tsh-60</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi/tsh-60"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en/single-shaft-shredder/tsh-60"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka/tsh-60"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar/single-shaft-shredder/tsh-60"/>
+    <lastmod>2024-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Add more URLs as needed - this is a sample -->
+  
+</urlset>

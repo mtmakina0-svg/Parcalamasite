@@ -32,8 +32,10 @@ import {
   generateBreadcrumbStructuredData,
   insertStructuredData,
   generateOrganizationStructuredData,
-  generateLocalBusinessStructuredData
+  generateLocalBusinessStructuredData,
+  type Language
 } from './utils/seoConfig';
+import { SEOHead } from './components/SEOHead';
 
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
 type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood-grinder' | 'glass' | null;
@@ -150,12 +152,74 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
 }
 
 function AppContent() {
-  const { isRTL } = useLanguage();
+  const { isRTL, language } = useLanguage();
   const [showIntro, setShowIntro] = useState(true);
   const [currentPage, setCurrentPage] = useState<PageView>('main');
   const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>(null);
   const [selectedModelName, setSelectedModelName] = useState<string>('TSH-60');
+  
+  // SEO Head data based on current page
+  const getSEOData = () => {
+    const path = window.location.pathname;
+    const langMatch = path.match(/^\/(tr|en|ru|ar)/);
+    const currentLang: Language = (langMatch?.[1] as Language) || language || 'tr';
+    
+    let seoData = seoMetadata.home;
+    let pageTypeForHreflang: any = 'home';
+    let productTypeForHreflang = undefined;
+    let modelForHreflang = undefined;
+    let wasteCategoryForHreflang = undefined;
+    
+    if (currentPage === 'product-category' && selectedProduct) {
+      seoData = getProductCategorySEO(selectedProduct, currentLang);
+      pageTypeForHreflang = 'product-category';
+      productTypeForHreflang = selectedProduct;
+    } else if (currentPage === 'product-detail' && selectedProduct && selectedModelName) {
+      seoData = getProductModelSEO(selectedProduct, selectedModelName, currentLang);
+      pageTypeForHreflang = 'product-detail';
+      productTypeForHreflang = selectedProduct;
+      modelForHreflang = selectedModelName;
+    } else if (currentPage === 'about') {
+      seoData = seoMetadata.about;
+      pageTypeForHreflang = 'about';
+    } else if (currentPage === 'products-overview') {
+      seoData = seoMetadata.products;
+      pageTypeForHreflang = 'products';
+    } else if (currentPage === 'technology') {
+      seoData = seoMetadata.technology;
+      pageTypeForHreflang = 'technology';
+    } else if (currentPage === 'references-overview') {
+      seoData = seoMetadata.references;
+      pageTypeForHreflang = 'references';
+    } else if (currentPage === 'certificates') {
+      seoData = seoMetadata.certificates;
+      pageTypeForHreflang = 'certificates';
+    } else if (currentPage === 'contact') {
+      seoData = seoMetadata.contact;
+      pageTypeForHreflang = 'contact';
+    } else if (currentPage === 'ecatalog') {
+      seoData = seoMetadata.ecatalog;
+      pageTypeForHreflang = 'ecatalog';
+    } else if (currentPage === 'waste-categories') {
+      pageTypeForHreflang = 'waste-categories';
+    } else if (currentPage === 'waste-detail' && selectedWasteCategory) {
+      pageTypeForHreflang = 'waste-detail';
+      wasteCategoryForHreflang = selectedWasteCategory;
+    }
+    
+    if (typeof seoData === 'function') {
+      seoData = seoData();
+    }
+    
+    return {
+      ...seoData,
+      pageType: pageTypeForHreflang,
+      productType: productTypeForHreflang,
+      model: modelForHreflang,
+      wasteCategory: wasteCategoryForHreflang
+    };
+  };
 
   // Initialize from URL on mount
   useEffect(() => {
@@ -209,6 +273,11 @@ function AppContent() {
 
   // Update SEO metadata for current page
   const updatePageSEO = (page: PageView, product?: ProductType, model?: string) => {
+    // Get current language from URL
+    const path = window.location.pathname;
+    const langMatch = path.match(/^\/(tr|en|ru|ar)/);
+    const currentLang: Language = (langMatch?.[1] as Language) || 'tr';
+    
     let metadata;
     let structuredData;
 
@@ -255,7 +324,8 @@ function AppContent() {
       
       case 'product-category':
         if (product) {
-          metadata = getProductCategorySEO(product);
+          metadata = getProductCategorySEO(product, currentLang);
+          const baseUrl = 'https://www.parcalamamakinesi.com';
           structuredData = {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
@@ -268,8 +338,8 @@ function AppContent() {
               "logo": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png"
             },
             "breadcrumb": generateBreadcrumbStructuredData([
-              { name: "Ana Sayfa", url: "https://www.parcalamamakinesi.com/home" },
-              { name: "Ürünler", url: "https://www.parcalamamakinesi.com/urunler" },
+              { name: "Ana Sayfa", url: baseUrl + generateUrl.home(currentLang) },
+              { name: "Ürünler", url: baseUrl + generateUrl.products(currentLang) },
               { name: metadata.title.split('|')[0].trim(), url: metadata.canonical }
             ])
           };
@@ -284,26 +354,16 @@ function AppContent() {
         metadata = typeof seoMetadata.products === 'function' ? seoMetadata.products() : seoMetadata.products;
         break;
       
-      case 'product-category':
-        if (product) {
-          metadata = getProductCategorySEO(product);
-          structuredData = generateBreadcrumbStructuredData([
-            { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/home' },
-            { name: 'Ürünler', url: 'https://www.parcalamamakinesi.com/urunler' },
-            { name: metadata.title.split('|')[0].trim(), url: metadata.canonical }
-          ]);
-        }
-        break;
-      
       case 'product-detail':
         if (product && model) {
-          metadata = getProductModelSEO(product, model);
-          const categoryMeta = getProductCategorySEO(product);
+          metadata = getProductModelSEO(product, model, currentLang);
+          const categoryMeta = getProductCategorySEO(product, currentLang);
+          const baseUrl = 'https://www.parcalamamakinesi.com';
           structuredData = {
             ...generateProductStructuredData(product, model),
             breadcrumb: generateBreadcrumbStructuredData([
-              { name: 'Ana Sayfa', url: 'https://www.parcalamamakinesi.com/home' },
-              { name: 'Ürünler', url: 'https://www.parcalamamakinesi.com/urunler' },
+              { name: 'Ana Sayfa', url: baseUrl + generateUrl.home(currentLang) },
+              { name: 'Ürünler', url: baseUrl + generateUrl.products(currentLang) },
               { name: categoryMeta.title.split('|')[0].trim(), url: categoryMeta.canonical },
               { name: model, url: metadata.canonical }
             ])
@@ -355,41 +415,41 @@ function AppContent() {
   };
 
   const handleNavigateToMain = () => {
-    navigateWithUrl('main', generateUrl.home());
+    navigateWithUrl('main', generateUrl.home(language as Language));
     setSelectedWasteCategory(null);
     setSelectedProduct(null);
   };
 
   const handleNavigateToAbout = () => {
-    navigateWithUrl('about', generateUrl.about());
+    navigateWithUrl('about', generateUrl.about(language as Language));
   };
 
   const handleNavigateToProducts = () => {
-    navigateWithUrl('products-overview', generateUrl.products());
+    navigateWithUrl('products-overview', generateUrl.products(language as Language));
   };
 
   const handleNavigateToTechnology = () => {
-    navigateWithUrl('technology', generateUrl.technology());
+    navigateWithUrl('technology', generateUrl.technology(language as Language));
   };
 
   const handleNavigateToReferences = () => {
-    navigateWithUrl('references-overview', generateUrl.references());
+    navigateWithUrl('references-overview', generateUrl.references(language as Language));
   };
 
   const handleNavigateToCertificates = () => {
-    navigateWithUrl('certificates', generateUrl.certificates());
+    navigateWithUrl('certificates', generateUrl.certificates(language as Language));
   };
 
   const handleNavigateToContact = () => {
-    navigateWithUrl('contact', generateUrl.contact());
+    navigateWithUrl('contact', generateUrl.contact(language as Language));
   };
 
   const handleNavigateToECatalog = () => {
-    navigateWithUrl('ecatalog', generateUrl.ecatalog());
+    navigateWithUrl('ecatalog', generateUrl.ecatalog(language as Language));
   };
 
   const handleNavigateToProductCategory = (productType: string) => {
-    const url = generateUrl.productCategory(productType);
+    const url = generateUrl.productCategory(productType, language as Language);
     navigateWithUrl('product-category', url, { product: productType as ProductType });
   };
 
@@ -404,16 +464,16 @@ function AppContent() {
       productType === 'mobile' ? 'TSM-150' :
       'TSH-60'
     );
-    const url = generateUrl.productDetail(productType, model);
+    const url = generateUrl.productDetail(productType, model, language as Language);
     navigateWithUrl('product-detail', url, { product: productType as ProductType, model });
   };
 
   const handleNavigateToWasteCategories = () => {
-    navigateWithUrl('waste-categories', generateUrl.waste());
+    navigateWithUrl('waste-categories', generateUrl.waste(undefined, language as Language));
   };
 
   const handleNavigateToWasteDetail = (wasteType: string) => {
-    const url = generateUrl.waste(wasteType);
+    const url = generateUrl.waste(wasteType, language as Language);
     navigateWithUrl('waste-detail', url, { wasteCategory: wasteType });
   };
 
@@ -437,10 +497,23 @@ function AppContent() {
     }
   };
 
+  // Get SEO data for current page
+  const currentSEOData = getSEOData();
+  
   // Render different pages based on current view
   if (currentPage === 'product-category' && selectedProduct) {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header 
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}

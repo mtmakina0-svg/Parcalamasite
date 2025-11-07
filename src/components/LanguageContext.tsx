@@ -1137,7 +1137,7 @@ const translations = {
     pallet_advantage_2_desc: 'Измельчитель поддонов может эффективно измельчать деревянные, пластиковые и металлические поддоны, обеспечивая гибкость в переработке.',
     pallet_adv_2_title: 'Различная способность обработки материалов',
     pallet_adv_2_desc: 'Измельчитель поддонов может эффективно измельчать деревянные, пластиковые и металлические поддоны, обеспечивая гибкость в переработке.',
-    pallet_advantage_3_title: 'Прочная и долговечная конструкция',
+    pallet_advantage_3_title: 'Прочна�� и долговечная конструкция',
     pallet_advantage_3_desc: 'Измельчитель поддонов оснащен прочными компонентами и выдерживает суровые условия работы в течение длительного времени.',
     pallet_adv_3_title: 'Прочная и долговечная конструкция',
     pallet_adv_3_desc: 'Измельчитель поддонов оснащен прочными компонентами и выдерживает суровые условия работы в течение длительного времени.',
@@ -1614,7 +1614,7 @@ const translations = {
   },
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // Detect language from URL on initial load

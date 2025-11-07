@@ -1,5 +1,6 @@
 import { useEffect, useContext } from 'react';
 import { LanguageContext } from './LanguageContext';
+import { generateUrl, type Language } from '../utils/seoConfig';
 
 /**
  * SEOHead Component - Advanced SEO Optimization
@@ -15,6 +16,11 @@ interface SEOHeadProps {
   ogType?: string;
   structuredData?: any; // JSON-LD structured data
   noindex?: boolean; // Option to prevent indexing
+  // Multi-language URL generation props
+  pageType?: 'home' | 'about' | 'products' | 'technology' | 'references' | 'certificates' | 'contact' | 'ecatalog' | 'product-category' | 'product-detail' | 'waste-categories' | 'waste-detail';
+  productType?: string;
+  model?: string;
+  wasteCategory?: string;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -25,7 +31,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogImage = 'https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png',
   ogType = 'website',
   structuredData,
-  noindex = false
+  noindex = false,
+  pageType,
+  productType,
+  model,
+  wasteCategory
 }) => {
   const { language } = useContext(LanguageContext);
 
@@ -132,26 +142,67 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     canonicalLink.setAttribute('href', canonical);
 
     // Add hreflang tags for multilingual SEO (critical for Google international ranking)
-    // Extract the path after the language prefix to construct alternate URLs
-    const currentPath = canonical.replace('https://www.parcalamamakinesi.com', '');
-    const pathWithoutLang = currentPath.replace(/^\/(tr|en|ru|ar)/, '');
+    // Generate correct URLs for each language based on page type
+    const baseUrl = 'https://www.parcalamamakinesi.com';
+    const supportedLanguages: Language[] = ['tr', 'en', 'ru', 'ar'];
     
-    const languages = [
-      { code: 'tr', url: `https://www.parcalamamakinesi.com/tr${pathWithoutLang}` },
-      { code: 'en', url: `https://www.parcalamamakinesi.com/en${pathWithoutLang}` },
-      { code: 'ru', url: `https://www.parcalamamakinesi.com/ru${pathWithoutLang}` },
-      { code: 'ar', url: `https://www.parcalamamakinesi.com/ar${pathWithoutLang}` },
-      { code: 'x-default', url: `https://www.parcalamamakinesi.com/tr${pathWithoutLang}` } // Default to Turkish
-    ];
+    const generateHreflangUrls = () => {
+      const urls: { code: string; url: string }[] = [];
+      
+      supportedLanguages.forEach(lang => {
+        let url = baseUrl;
+        
+        if (pageType === 'home') {
+          url += generateUrl.home(lang);
+        } else if (pageType === 'about') {
+          url += generateUrl.about(lang);
+        } else if (pageType === 'products') {
+          url += generateUrl.products(lang);
+        } else if (pageType === 'technology') {
+          url += generateUrl.technology(lang);
+        } else if (pageType === 'references') {
+          url += generateUrl.references(lang);
+        } else if (pageType === 'certificates') {
+          url += generateUrl.certificates(lang);
+        } else if (pageType === 'contact') {
+          url += generateUrl.contact(lang);
+        } else if (pageType === 'ecatalog') {
+          url += generateUrl.ecatalog(lang);
+        } else if (pageType === 'product-category' && productType) {
+          url += generateUrl.productCategory(productType, lang);
+        } else if (pageType === 'product-detail' && productType && model) {
+          url += generateUrl.productDetail(productType, model, lang);
+        } else if (pageType === 'waste-categories') {
+          url += generateUrl.waste(undefined, lang);
+        } else if (pageType === 'waste-detail' && wasteCategory) {
+          url += generateUrl.waste(wasteCategory, lang);
+        } else {
+          // Fallback: use current canonical
+          url = canonical.replace(/\/(tr|en|ru|ar)\//, `/${lang}/`);
+        }
+        
+        urls.push({ code: lang, url });
+      });
+      
+      // Add x-default (defaults to Turkish)
+      urls.push({ 
+        code: 'x-default', 
+        url: urls.find(u => u.code === 'tr')?.url || canonical 
+      });
+      
+      return urls;
+    };
+    
+    const hreflangUrls = generateHreflangUrls();
     
     // Remove old hreflang tags
     document.querySelectorAll('link[hreflang]').forEach(link => link.remove());
     
-    languages.forEach(lang => {
+    hreflangUrls.forEach(({ code, url }) => {
       const hreflangLink = document.createElement('link');
       hreflangLink.setAttribute('rel', 'alternate');
-      hreflangLink.setAttribute('hreflang', lang.code);
-      hreflangLink.setAttribute('href', lang.url);
+      hreflangLink.setAttribute('hreflang', code);
+      hreflangLink.setAttribute('href', url);
       document.head.appendChild(hreflangLink);
     });
 
@@ -198,7 +249,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       }
     });
 
-  }, [title, description, keywords, canonical, ogImage, ogType, structuredData, noindex, language]);
+  }, [title, description, keywords, canonical, ogImage, ogType, structuredData, noindex, language, pageType, productType, model, wasteCategory]);
 
   return null; // This component doesn't render anything
 };
