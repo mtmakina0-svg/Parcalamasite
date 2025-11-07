@@ -309,7 +309,7 @@ const translations = {
     product_pallet: 'Palet Parçalama Makinesi',
     pallet_main_title: 'Palet Parçalama Makinesi: Ahşap ve Plastik Palet Geri Dönüşümünde Verimli Çözümler',
     pallet_subtitle: 'Ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır.',
-    pallet_description_1: 'Palet parçalama makinesi, ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır. Palet kırma makinası, paletleri küçük parçalara ayırarak geri dönüşüm sürecini hızlandırır ve atık yönetimini kolaylaştırır.',
+    pallet_description_1: 'Palet par��alama makinesi, ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır. Palet kırma makinası, paletleri küçük parçalara ayırarak geri dönüşüm sürecini hızlandırır ve atık yönetimini kolaylaştırır.',
     pallet_description_2: 'Lojistik ve depolama süreçlerinde kullanılan paletler, kullanım ömrünü tamamladığında büyük miktarda palet hurdası oluşturabilir. Palet parçalama makinesi, bu atıkları geri dönüştürerek çevreye duyarlı bir çözüm sunar ve doğal kaynakların korunmasına katkıda bulunur.',
     pallet_description_3: 'Palet parçalama makinesi, ahşap palet geri dönüşümü, plastik palet geri dönüşümü ve hurda palet geri dönüşümü gibi işlemlerde etkin bir rol oynar. Aynı zamanda satılık hurda palet işlemlerini kolaylaştırır.',
     pallet_advantages_title: 'Temel Özellikler',
@@ -961,7 +961,11 @@ const translations = {
     product_dual_shaft: 'Двухвальный измельчитель',
     product_quad_shaft: 'Четырехвальный измельчитель',
     product_metal: 'Измельчитель металла',
+    product_mobile: 'Мобильная дробилка',
     product_pallet: 'Измельчитель поддонов',
+    product_harddisk: 'Уничтожитель жестких дисков',
+    product_tree_root: 'Измельчитель корней деревьев',
+    product_wood_grinder: 'Дробилка для древесины',
     product_glass: 'Дробилка стеклянных бутылок',
     product_plastic: 'Измельчитель пластика',
     product_organic: 'Измельчитель органических отходов',
@@ -1028,7 +1032,7 @@ const translations = {
     our_models: 'Наши модели',
     select_model_description: 'Выберите модель, которая соответствует вашим потребностям',
     need_help_choosing: 'Нужна помощь в выборе модели?',
-    contact_us_for_consultation: 'Наша команда экспертов поможет вам выбрать наиболее подходящую машину',
+    contact_us_for_consultation: 'Наша ком��нда экспертов поможет вам выбрать наиболее подходящую машину',
     contact_us: 'Свяжитесь с нами',
     single_shaft_advantage_1_title: 'Гибкое использование',
     single_shaft_advantage_1_desc: 'Оптимизированное измельчение для различных типов отходов',
@@ -1089,7 +1093,7 @@ const translations = {
     quad_shaft_subtitle: 'Высокопроизводительное четырехвальное решение для измельчения пластика, металла, дерева, бумаги и электронных отходов',
     quad_shaft_description_1: 'Четырехвальный измельчитель твердых отходов - это высокопроизводительное оборудование, предназначенное для эффективного измельчения различных отходов. Он предлагает превосходную долговечность и эффективность в промышленном и коммерческом управлении отходами, переработке и других применениях. Четырехвальный измельчитель твердых отходов обладает способностью измельчать широкий спектр материалов благодаря модульной конструкции и гибким возможностям использования.',
     quad_shaft_description_2: 'Четырехвальный измельчитель твердых отходов эффективно измельчает крупногабаритные отходы, такие как пластиковые бочки, металлические бочки, бочки с краской, бытовой мусор, медицинские отходы, пластиковые рамы, пластиковые блоки, пластиковые коробки, алюминиевые профили, масляные фильтры, металлические баки, газеты, картон, гофрированная бумага, копировальная бумага, холодильники, печатные платы, корпуса телевизоров, стекловата, стеклянные стаканы и стеклянные бутылки.',
-    quad_shaft_description_3: 'Четырехвальный измельчитель твердых отходов эффективно предотвращает загрязнение материала благодаря многоуровневой герметизирующей структуре и обеспечивает длительное использование благодаря прочным подшипникам. Идеально подходит для обработки крупных и полых изде��ий, четырехвальный измельчитель твердых отходов повышает эффективность и вносит большой вклад в процессы переработки. Четырехвальный измельчитель твердых отходов выделяется как устойчивое и экологически чистое решение в управлении промышленными отходами и процессах переработки.',
+    quad_shaft_description_3: 'Четырехвальный измельчитель твердых отходов эффективно предотвращает загрязнение материала благодаря многоуровневой герметизирующей структуре и обеспечивает длительное использование благодаря прочным подшипникам. Идеально подходит ��ля обработки крупных и полых изде��ий, четырехвальный измельчитель твердых отходов повышает эффективность и вносит большой вклад в процессы переработки. Четырехвальный измельчитель твердых отходов выделяется как устойчивое и экологически чистое решение в управлении промышленными отходами и процессах переработки.',
     quad_shaft_description_4: 'Четырехвальный измельчитель твердых отходов адаптируется к различным промышленным применениям, таким как измельчитель шин, измельчитель тюков, измельчитель животных, измельчитель поддонов, измельчитель древесины, измельчитель лома, измельчитель электронных отходов, измельчитель жестких дисков. Он также идеально подходит для различных потребностей переработки отходов, таких как измельчитель картона, измельчитель бумаги, измельчитель отходов шин и машина для уничтожения жестких дисков. Четырехвальный измельчитель твердых отходов играет важную роль в устойчивых процессах переработки, используясь как измельчитель твердых отходов, способствуя окружающей среде путем уменьшения объема отходов.',
     quad_shaft_adv_1_title: 'Эффективное измельчение с гидравлическим давлением',
     quad_shaft_adv_1_desc: 'Четырехвальный измельчитель быстро и эффективно измельчает материалы благодаря гидравлическому давлению, приложенному к валам.',
@@ -1179,7 +1183,7 @@ const translations = {
     harddisk_adv_1_title: 'Двухступенчатое измельчение',
     harddisk_adv_1_desc: 'Измельчитель для уничтожения жестких дисков полностью исключает возможность восстановления данных, измельчая жесткие диски дважды.',
     harddisk_adv_2_title: 'Необратимое уничтожение',
-    harddisk_adv_2_desc: 'Измельчитель для уничтожения жестких дисков физически измельчает жесткие диски и печатные платы, чтобы данные стали невосстановимыми.',
+    harddisk_adv_2_desc: 'Измельчитель для уничтожения жестких дисков физически из��ельчает жесткие диски и печатные платы, чтобы данные стали невосстановимыми.',
     harddisk_adv_3_title: 'Долговечные лезвия',
     harddisk_adv_3_desc: 'Измельчитель для уничтожения жестких дисков устойчив к износу благодаря высококачественным стальным лезвиям и обеспечивает долгосрочное использование.',
     harddisk_adv_4_title: 'Большая производительность обработки',
@@ -1282,7 +1286,7 @@ const translations = {
     
     // Intro Section
     intro_title: 'إنتاج صديق للبيئة وإعادة تدوير مستدامة',
-    intro_description: 'آلات التقطيع MT MAKINA، التي توفر كفاءة عالية في إدارة النفايات الصناعية وعمليات إعادة التدوير، تضمن التقطيع الفعال لمختلف المواد بفضل هيكلها المتين وأنظمة الشفرات القوية. الأنظمة المنتجة للعديد من المواد مثل الإطارات والمعادن والبلاستيك والخشب والنسيج والنفايات المنزلية والصناعية، تساهم في تقليل حجم النفايات والاستخدام الفعال للموارد من خلال توفير حلول إعادة تدوير مستدامة. للحصول على معلومات مفصلة حول آلات التقطيع MT MAKINA التي تقدم أداءً عاليًا واستخدامًا طويل الأمد مع نماذج مصممة للاحتياجات الخاصة، يرجى الاتصال بنا.',
+    intro_description: 'آلات التقطيع MT MAKINA، التي توفر كفاءة عالية في إدارة النفايات الصناعية وعمليات إعادة التدوير، تضمن التقطيع الفعال لمختلف المواد بفضل هيكلها المتين وأنظمة الشفرات القوية. الأنظمة المنتجة للعديد من المواد مثل الإطارات والمعادن والبلاستيك والخشب والن��يج والنفايات المنزلية والصناعية، تساهم في تقليل حجم النفايات والاستخدام الفعال للموارد من خلال توفير حلول إعادة تدوير مستدامة. للحصول على معلومات مفصلة حول آلات التقطيع MT MAKINA التي تقدم أداءً عاليًا واستخدامًا طويل الأمد مع نماذج مصممة للاحتياجات الخاصة، يرجى الاتصال بنا.',
     eco_friendly: 'صديق للبيئة',
     recycling: 'إعادة التدوير',
     durability: 'المتانة',
@@ -1348,7 +1352,11 @@ const translations = {
     product_dual_shaft: 'آلة تمزيق ثنائية العمود',
     product_quad_shaft: 'آلة تمزيق رباعية العمود',
     product_metal: 'آلة تمزيق المعادن',
+    product_mobile: 'كسارة متنقلة',
     product_pallet: 'آلة تمزيق المنصات',
+    product_harddisk: 'آلة تدمير القرص الصلب',
+    product_tree_root: 'آلة تمزيق جذور الأشجار',
+    product_wood_grinder: 'آلة طحن الخشب',
     product_glass: 'آلة تكسير الزجاجات',
     product_plastic: 'آلة تمزيق البلاستيك',
     product_organic: '��لة تمزيق النفايات العضوية',
@@ -1393,7 +1401,7 @@ const translations = {
     single_shaft_faq_title: 'الأسئلة الشائعة حول آلة التمزيق أحادية العمود',
     single_shaft_faq_q1: 'ما هي النفايات التي تعالجها آلة التمزيق أحادية العمود؟',
     single_shaft_faq_a1: 'يمكن استخدام آلات التمزيق أحادية العمود لمجموعة واسعة بما في ذلك النفايات المنزلية والبلاستيك والورق والكرتون والمنسوجات وتغليف الألمنيوم والمنصات الخشبية والنفايات العضوية.',
-    single_shaft_faq_q2: 'كيف يعمل نظام الرجوع التلقائي؟',
+    single_shaft_faq_q2: 'كيف يعمل نظام الرجوع التل��ائي؟',
     single_shaft_faq_a2: 'بفضل نظام التحكم PLC، عندما تكتشف الآلة حملاً زائدًا أو انسدادًا، فإنها تشغل الدوار تلقائيًا في الاتجاه المعاكس لضمان التمزيق الصحيح وإطالة عمر الشفرة.',
     single_shaft_faq_q3: 'ما هي متطلبات الصيانة؟',
     single_shaft_faq_a3: 'يوصى بإجراء فحص منتظم للشفرات وفحص النظام الهيدروليكي والتشحيم. يكفي إجراء فحص عام كل 500 ساعة تشغيل.',
@@ -1629,15 +1637,76 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // Custom setLanguage that also updates URL
   const changeLanguage = (newLang: Language) => {
     const currentPath = window.location.pathname;
-    const currentLang = currentPath.match(/^\/(tr|en|ru|ar)/)?.[1] || 'tr';
+    const currentLang = currentPath.match(/^\/(tr|en|ru|ar)/)?.[1] as Language || 'tr';
     
-    // Replace language prefix in URL
-    let newPath = currentPath;
-    if (currentPath.match(/^\/(tr|en|ru|ar)/)) {
-      newPath = currentPath.replace(/^\/(tr|en|ru|ar)/, `/${newLang}`);
+    // Import slug mappings from seoConfig
+    const import_slugsByLanguage = {
+      home: { tr: '', en: '', ru: '', ar: '' },
+      about: { tr: 'kurumsal', en: 'about', ru: 'o-kompanii', ar: 'about' },
+      products: { tr: 'urunler', en: 'products', ru: 'produkty', ar: 'products' },
+      technology: { tr: 'teknoloji', en: 'technology', ru: 'tekhnologiya', ar: 'technology' },
+      references: { tr: 'referanslar', en: 'references', ru: 'referencii', ar: 'references' },
+      certificates: { tr: 'sertifikalar', en: 'certificates', ru: 'sertifikaty', ar: 'certificates' },
+      contact: { tr: 'iletisim', en: 'contact', ru: 'kontakty', ar: 'contact' },
+      ecatalog: { tr: 'e-katalog', en: 'e-catalog', ru: 'elektronnyi-katalog', ar: 'e-catalog' }
+    };
+    
+    const import_productCategorySlugs = {
+      'single-saft': { tr: 'tek-saftli-parcalama-makinesi', en: 'single-shaft-shredder', ru: 'odnovalnaya-drobilka', ar: 'single-shaft-shredder' },
+      'dual-saft': { tr: 'cift-saftli-parcalama-makinesi', en: 'dual-shaft-shredder', ru: 'dvukhvalnaya-drobilka', ar: 'dual-shaft-shredder' },
+      'quad-saft': { tr: 'dort-saftli-parcalama-makinesi', en: 'quad-shaft-shredder', ru: 'chetyrekhvalnaya-drobilka', ar: 'quad-shaft-shredder' },
+      'metal': { tr: 'metal-parcalama-makinesi', en: 'metal-shredder', ru: 'drobilka-metalla', ar: 'metal-shredder' },
+      'mobile': { tr: 'mobil-kirici', en: 'mobile-shredder', ru: 'mobilnaya-drobilka', ar: 'mobile-shredder' },
+      'pallet': { tr: 'palet-parcalama-makinesi', en: 'pallet-shredder', ru: 'drobilka-poddonov', ar: 'pallet-shredder' },
+      'harddisk': { tr: 'harddisk-imha-makinesi', en: 'harddisk-destroyer', ru: 'unichtozhitel-zhestkikh-diskov', ar: 'harddisk-destroyer' },
+      'granulator': { tr: 'granulator', en: 'granulator', ru: 'granulator', ar: 'granulator' }
+    };
+    
+    // Parse current URL to determine page type
+    const pathWithoutLang = currentPath.replace(/^\/(tr|en|ru|ar)\//, '');
+    const pathParts = pathWithoutLang.split('/').filter(p => p);
+    
+    let newPath = `/${newLang}`;
+    
+    // Detect page type and rebuild URL
+    if (pathParts.length === 0) {
+      // Home page
+      newPath = `/${newLang}`;
     } else {
-      // Add language prefix if not present
-      newPath = `/${newLang}${currentPath}`;
+      // Check if first part matches any static page
+      const firstPart = pathParts[0];
+      let pageFound = false;
+      
+      // Check static pages
+      for (const [pageKey, slugs] of Object.entries(import_slugsByLanguage)) {
+        if (slugs[currentLang] === firstPart) {
+          newPath = `/${newLang}/${slugs[newLang]}`;
+          pageFound = true;
+          break;
+        }
+      }
+      
+      // Check product categories
+      if (!pageFound) {
+        for (const [productKey, slugs] of Object.entries(import_productCategorySlugs)) {
+          if (slugs[currentLang] === firstPart) {
+            newPath = `/${newLang}/${slugs[newLang]}`;
+            
+            // If there's a model (second part), append it
+            if (pathParts.length > 1) {
+              newPath += `/${pathParts[1]}`;
+            }
+            
+            pageFound = true;
+            break;
+          }
+        }
+      }
+      
+      // If no match found, just replace language prefix
+      if (!pageFound) {
+        newPath = currentPath.replace(/^\/(tr|en|ru|ar)/, `/${newLang}`);
+      }
     }
     
     // Update URL and state
