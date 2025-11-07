@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Award, Globe, ThumbsUp, Building2, Factory, Briefcase, Landmark } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 

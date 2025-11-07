@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Cpu, Zap, Shield, Recycle, Cog, BarChart3 } from 'lucide-react';
 
 interface TechnologyPageProps {

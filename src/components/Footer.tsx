@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useLanguage } from './LanguageContext';
 import { Linkedin, Youtube, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { Logo } from './Logo';

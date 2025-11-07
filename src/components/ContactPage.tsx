@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram, Send, Youtube } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
