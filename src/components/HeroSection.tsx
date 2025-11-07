@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion'; // HATA BURADAYDI, DÜZELTİLDİ
 import { MessageCircle } from 'lucide-react';
 import { Logo } from './Logo';
 import { useLanguage } from './LanguageContext';
@@ -84,7 +84,7 @@ export const HeroSection = () => {
           className="mt-16 max-w-2xl mx-auto"
         >
           {/* CTA Title */}
-          <h2 
+          <h2
             className="text-[32px] text-white mb-6 drop-shadow-lg"
             style={{ fontWeight: 700 }}
           >
@@ -92,7 +92,7 @@ export const HeroSection = () => {
           </h2>
 
           {/* CTA Description */}
-          <p 
+          <p
             className="text-[18px] text-white/90 mb-8 leading-relaxed drop-shadow-lg"
             style={{ fontWeight: 400 }}
           >
