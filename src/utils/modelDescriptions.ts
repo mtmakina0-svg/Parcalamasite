@@ -37,13 +37,13 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       ru: {
         intro: 'Одновальный измельчитель TSH-60 - идеальное решение для малых и средних предприятий.',
         paragraph1: 'Модель TSH-60 обеспечивает эффективное измельчение пластика, дерева, бумаги, текстиля и упаковочных отходов при мощности двигателя 15-30 кВт. С зоной измельчения 600x1100 мм и производительностью 500-800 кг/час она отвечает ежедневным требованиям производства среднего уровня. Благодаря компактной конструкции она эффективно работает даже в ограниченном пространстве.',
-        paragraph2: 'Оснащенный системой автоматизации с ПЛК-управлением, TSH-60 продлевает срок службы ножей и обеспечивает бесперебойное производство благодаря автоматической функции реверса в случае перегрузки. С заменяемой системой сит можно получить ��азличные размеры на выходе.',
+        paragraph2: 'Оснащенный системой автоматизации с ПЛК-управлением, TSH-60 продлевает срок службы ножей и обеспечивает бесперебойное производство благодаря автоматической функции реверса в случае перегрузки. С заменяемой системой сит можно получить ��зличные размеры на выходе.',
         paragraph3: 'Измельчитель MT Makina TSH-60 обладает промышленной прочностью, несмотря на компактный размер. С длиной ротора 600 мм, 24 сменными ножами и автоматической системой смазки требует минимального обслуживания. Это экономичное и эффективное решение для предприятий по переработке пластика, обработке древесных отходов и картонно-бумажных предприятий.'
       },
       ar: {
         intro: 'آلة التقطيع أحادية العمود TSH-60 هي الحل الأمثل للشركات الصغيرة والمتوسطة.',
         paragraph1: 'يوفر طراز TSH-60 تقطيعًا فعالاً للبلاستيك والخشب والورق والمنسوجات ونفايات التعبئة والتغليف بقوة محرك 15-30 كيلووات. بمنطقة تقطيع 600×1100 مم وسعة معالجة 500-800 كجم/ساعة، يلبي متطلبات الإنتاج اليومية متوسطة المستوى. بفضل تصميمه المدمج، يعمل بكفاءة حتى في المساحات المحدودة.',
-        paragraph2: 'مجهز بنظام أت��تة يتحكم فيه PLC، يطيل TSH-60 عمر الشفرات ويضمن إنتاجًا مستمرًا من خلال وظيفة الرجوع التلقائي في حالة الحمل الزائد. يمكن الحصول على أحجام مخرجات مختلفة بنظام الشاشة القابل للاستبدال.',
+        paragraph2: 'مجهز بنظام أتتة يتحكم فيه PLC، يطيل TSH-60 عمر الشفرات ويضمن إنتاجًا مستمرًا من خلال وظيفة الرجوع التلقائي في حالة الحمل الزائد. يمكن الحصول على أحجام مخرجات مختلفة بنظام الشاشة القابل للاستبدال.',
         paragraph3: 'تقدم آلة التقطيع MT Makina TSH-60 متانة صناعية على الرغم من حجمها المدمج. مع طول دوار 600 مم و24 شفرة قابلة للاستبدال ونظام تشحيم تلقائي، يتطلب الحد الأدنى من الصيانة. إنه حل اقتصادي وفعال لمرافق إعادة تدوير البلاستيك ومعالجة نفايات الخشب ومرافق الورق والكرتون.'
       }
     },
@@ -76,7 +76,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
     'TSH-100': {
       tr: {
         intro: 'TSH-100 tek şaftlı parçalama makinesi, yüksek kapasite gerektiren endüstriyel uygulamalar için tasarlanmış profesyonel bir sistemdir.',
-        paragraph1: 'TSH-100 model, 30-75 kW güçlü motor seçenekleri ile 1000x1300 mm geniş parçalama alanı sunar. 1200-1800 kg/saat işleme kapasitesi ile büyük ölçekli üretim tesislerinin ihtiyaçlarını karşılar. Kalın duvarlı plastikler, büyük çaplı ahşap parçalar, endüstriyel konteynerler, IBC tanklar ve ağır tekstil atıklarını kolayca parçalar.',
+        paragraph1: 'TSH-100 model, 30-75 kW güçlü motor seçenekleri ile 1000x1300 mm geniş parçalama alanı sunar. 1200-1800 kg/saat i��leme kapasitesi ile büyük ölçekli üretim tesislerinin ihtiyaçlarını karşılar. Kalın duvarlı plastikler, büyük çaplı ahşap parçalar, endüstriyel konteynerler, IBC tanklar ve ağır tekstil atıklarını kolayca parçalar.',
         paragraph2: 'İleri seviye PLC kontrol paneli, touch screen operatör arayüzü, uzaktan izleme ve bakım hatırlatma sistemleri ile donatılmıştır. 1000 mm rotor, 40 adet premium kalite bıçak ve hidrolik itici sistem sayesinde sürekli ve kesintisiz üretim garantisi verir. Otomatik ters çalışma ve akıllı yük yönetimi, maksimum verimlilik sağlar.',
         paragraph3: 'MT Makina TSH-100, büyük plastik geri dönüşüm tesisleri, ahşap palet üreticileri, kompozit malzeme işleyiciler ve endüstriyel atık yönetim firmaları için ideal çözümdür. Modüler yapısı sayesinde konveyör sistemleri ve seperatörlerle entegre edilebilir. CE sertifikalı güvenlik standartları ve 2 yıl garanti ile desteklenir.'
       },
@@ -95,7 +95,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       ar: {
         intro: 'آلة التقطيع أحادية العمود TSH-100 هي نظام احترافي مصمم للتطبيقات الصناعية التي تتطلب سعة عالية.',
         paragraph1: 'يوفر طراز TSH-100 منطقة تقطيع واسعة 1000×1300 مم مع خيارات محرك قوية 30-75 كيلووات. بسعة معالجة 1200-1800 كجم/ساعة، يلبي احتياجات منشآت الإنتاج واسعة النطاق. يقطع بسهولة البلاستيك ذو الجدران السميكة وقطع الخشب الكبيرة والحاويات الصناعية وخزانات IBC ونفايات المنسوجات الثقيلة.',
-        paragraph2: 'مجهز بلوحة تحكم PLC متقدمة وواجهة مشغل شاشة تعمل باللمس وأنظمة المراقبة عن بُعد وتذكير الصيانة. مع دوار 1000 مم و40 شفرة عالية الجودة ونظام دفع هيدروليكي، يضمن إنت��جًا مستمرًا ومتواصلاً. توفر العملية العكسية التلقائية وإدارة الحمل الذكية أقصى كفاءة.',
+        paragraph2: 'مجهز بلوحة تحكم PLC متقدمة وواجهة مشغل شاشة تعمل باللمس وأنظمة المراقبة عن بُعد وتذكير الصيانة. مع دوار 1000 مم و40 شفرة عالية الجودة ونظام دفع هيدروليكي، يضمن إنتجًا ��ستمرًا ومتواصلاً. توفر العملية العكسية التلقائية وإدارة الحمل الذكية أقصى كفاءة.',
         paragraph3: 'MT Makina TSH-100 هو حل مثالي لمنشآت إعادة تدوير البلاستيك الكبيرة ومصنعي المنصات الخشبية ومعالجي المواد المركبة وشركات إدارة النفايات الصناعية. بفضل هيكلها المعياري، يمكن دمجها مع أنظمة النقل والفواصل. مدعومة بمعايير السلامة المعتمدة من CE وضمان لمدة عامين.'
       }
     },
@@ -114,7 +114,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       },
       ru: {
         intro: 'Одновальный измельчитель TSH-130 - мощная система измельчения, разработанная для тяжелых промышленных применений.',
-        paragraph1: 'Модель TSH-130 предлагает сверхширокую зону измельчения 1300x1600 мм с высокомоментным двигателем 45-110 кВт. С производительностью обработки 1800-2500 кг/час она отвечает требованиям крупных предприятий с непрерывным производством. Показывает превосходную производительность при измельчении толстостенного промышленного пластика, крупных деревянных бревен, отходов мебели и кроватей, труб большого диаметра и тяжелых промышленных отходов.',
+        paragraph1: 'Модель TSH-130 предлагает сверхширокую зону измельчения 1300x1600 мм с высокомоментным двигателем 45-110 кВт. С производительностью обработки 1800-2500 кг/час она отвечает требованиям крупных предприятий с непрерывным производством. Показывает превосходную производительность при измельчении толстостенного промышленного пластика, крупных деревянных бревен, отходов мебели �� кроватей, труб большого диаметра и тяжелых промышленных отходов.',
         paragraph2: 'Промышленная автоматизация ПЛК включает отслеживание производства в реальном времени, анализ энергопотребления и модули планирования технического обслуживания. С длинным ротором 1300 мм, системой из 48 усиленных ножей и усиленной конструкцией подшипников имеет возможность непрерывной работы 7/24. Гидравлический податчик и система автоматического контроля уровня минимизируют вмешательство оператора.',
         paragraph3: 'TSH-130 оптимизирован для крупных комплексов по переработке пластика, центров обработки древесины, предприятий по утилизации бытовой техники и управления отходами тяжелой промышленности. Возможно как грубое, так и тонкое измельчение с двойной системой сит. Быстрая окупаемость инвестиций благодаря высокой долговечности и низким эксплуатационным расходам.'
       },
@@ -173,12 +173,40 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       ar: {
         intro: 'آلة التقطيع أحادية العمود TSH-200 هي أكبر وأقوى طراز من MT Makina، مصممة للمشاريع الضخمة التي تتطلب أقصى سعة.',
         paragraph1: 'يوفر طراز TSH-200 منطقة تقطيع عملاقة 2000×2300 مم مع نظام محرك مزدوج 2×75-160 كيلووات. بسعة معالجة 4500-6000 كجم/ساعة، لديها القدرة على معالجة ما يصل إلى 5 أطنان من النفايات في الساعة. يستخدم للحاويات الصناعية كبيرة الحجم وتشطيبات الحافلات والشاحنات الداخلية وخزانات البلاستيك ذات القطر الكبير وهياكل الآلات الصناعية والهياكل الخشبية الكبيرة ومشاريع النفايات الإلكترونية بالجملة.',
-        paragraph2: 'يتميز نظام PLC وSCADA الأكثر تقدمًا بتحسين الحمل بمساعدة الذكاء الاصطناعي وتحليل الأداء في الوقت الفعلي والتحكم الكامل عن بُعد وتخزين البيانات المستند إلى السحابة. مع دوار فائق الطول 2000 مم و80 شفرة عالية الجودة ونظام هيدروليكي بدرجة صناعية وهيكل فولاذي معزز، يعالج بسهولة حتى أصعب المواد. يوفر عزم دوران وكفاءة فريدة بفضل نظام المحرك المزدوج ونظام التروس التفاضلي.',
+        paragraph2: 'يتميز نظام PLC وSCADA الأكثر تقدمًا بتحسين الحمل بمساعدة الذكاء الاصطناعي وتحليل الأداء في الوقت الفعلي والتحكم الكامل عن بُعد وتخزين البيانات المستند إلى السحابة. مع دوار فائق الطول 2000 مم و80 شفرة عالية الجودة ونظام هيدروليكي بدرجة صناعية وهيكل فولاذي معزز، يعالج بسهولة حتى أصعب المواد. ��وفر عزم دوران وكفاءة فريدة بفضل نظام المحرك المزدوج ونظام التروس التفاضلي.',
         paragraph3: 'TSH-200 هو الحل الأمثل لمجمعات إعادة التدوير على نطاق ضخم ومرافق الإدارة المتكاملة للنفايات الصلبة البلدية ومراكز النفايات الصناعية للسيارات ومراكز معالجة نفايات الموانئ والجمارك. يمكن دمجه مع التكامل الآلي الكامل للخط وأنظمة الفصل المتعددة وأنظمة التعبئة والشحن التلقائية. مدعوم بدعم فني على مدار 24/7 وخدمة صيانة في الموقع وضمان طويل الأجل.'
       }
     }
   },
-  // DİĞER MAKİNE TÜRLERİ (dual-saft, quad-saft, metal, pallet, mobile, harddisk)
+  'dual-saft': {
+    'CS-60': {
+      tr: {
+        intro: 'CS-60 çift şaftlı parçalama makinesi, endüstriyel atık yönetiminde yüksek verimlilik sunan kompakt ve güçlü bir çözümdür.',
+        paragraph1: 'CS-60 model, 2x15 kW çift motor konfigürasyonu ile 800 mm rotor uzunluğu ve 300 mm rotor çapına sahiptir. 800-1500 kg/saat işleme kapasitesi ile plastik, metal, lastik, ahşap, cam ve evsel atıkların güvenli şekilde parçalanmasını sağlar. Düşük hız - yüksek tork prensibi ile çalışan CS-60, zorlu malzemeleri bile kolayca işler ve enerji verimliliği sunar.',
+        paragraph2: 'Gelişmiş PLC kontrol sistemi, otomatik ters çalışma fonksiyonu ve acil durum güvenlik sistemleri ile donatılmış CS-60, kesintisiz üretim garantisi verir. 64 adet özel alaşımlı bıçak ve değiştirilebilel elek sistemi (40-120 mm) ile farklı çıkış boyutları elde edebilirsiniz. Senkronize çalışan çift şaft yapısı, malzeme sıkışmalarını önler ve dengeli kesim işlemi sağlar.',
+        paragraph3: 'MT Makina CS-60 çift şaftlı parçalama makinesi, plastik geri dönüşüm tesisleri, metal hurda işleme merkezleri, lastik parçalama üniteleri, ahşap atık işleme ve evsel atık yönetim merkezleri için idealdir. Kompakt tasarımı sayesinde orta ölçekli tesislere kolayca entegre edilir. CE sertifikalı güvenlik standartları ve 2 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'CS-60 High Efficiency in Industrial Waste Management with Dual Shaft Shredder',
+        paragraph1: 'One of the biggest challenges faced in industrial waste management and recycling processes is the efficient processing of different material types. The dual shaft shredder overcomes this challenge by effectively shredding even the toughest materials with a combination of high torque and low speed. Offering a wide range of applications such as plastic shredder, metal shredder, tire shredder, wood shredder, glass shredder and household waste shredder, this system plays a critical role in recycling processes.',
+        paragraph2: 'The CS-Series dual shaft shredder, with its robust steel blades and powerful motors, delivers durable performance by efficiently processing different waste types in machines such as scrap plastic shredder, paper shredder and pallet shredder. The shredder operates at low speed, reducing vibrations and providing an environmentally friendly solution. In applications such as scrap tire shredder and PVC shredder, it protects the environment by minimizing dust emissions with low speed.',
+        paragraph3: 'Equipped with PLC automation system, real-time motor load monitoring, automatic start-stop and emergency safety systems. 800 mm rotor length and 64 high-quality blades guarantee homogeneous shredding and long-lasting use. CS-60 is optimized for medium-sized recycling facilities, plastic processing factories and waste management centers with low energy consumption and high efficiency ratio.'
+      },
+      ru: {
+        intro: 'Высокая эффективность в управлении промышленными отходами с двухвальным измельчителем CS-60',
+        paragraph1: 'Одна из самых больших проблем в управлении промышленными отходами и процессах переработки - эффективная обработка различных типов материалов. Двухвальный измельчитель преодолевает эту проблему, эффективно измельчая даже самые твердые материалы с помощью комбинации высокого крутящего момента и низкой скорости. Предлагая широкий спектр применения, такой как измельчитель пластика, измельчитель металла, измельчитель шин, измельчитель дерева, измельчитель стекла и измельчитель бытовых отходов, эта система играет критическую роль в процессах переработки.',
+        paragraph2: 'Двухвальный измельчитель серии CS с прочными стальными ножами и мощными двигателями обеспечивает долговечную работу, эффективно обрабатывая различные типы отходов в машинах, таких как измельчитель пластикового лома, измельчитель бумаги и измельчитель поддонов. Измельчитель работает на низкой скорости, уменьшая вибрации и обеспечивая экологически чистое решение. В таких применениях, как измельчитель лома шин и измельчитель ПВХ, он защищает окружающую среду, минимизируя выбросы пыли при низкой скорости.',
+        paragraph3: 'Оснащен системой автоматизации ПЛК, мониторингом нагрузки двигателя в реальном времени, автоматическим запуском-остановкой и системами аварийной безопасности. Длина ротора 800 мм и 64 высококачественных ножа гарантируют однородное измельчение и долговечное использование. CS-60 оптимизирован для перерабатывающих предприятий среднего размера, заводов по переработке пластмасс и центров управления отходами с низким энергопотреблением и высоким коэффициентом эффективности.'
+      },
+      ar: {
+        intro: 'كفاءة عالية في إدارة النفايات الصناعية باستخدام آلة التمزيق ثنائية العمود CS-60',
+        paragraph1: 'واحدة من أكبر التحديات التي تواجهها في إدارة النفايات الصناعية وعمليات إعادة التدوير هي المعالجة الفعالة لأنواع المواد المختلفة. تتغلب آلة التمزيق ثنائية العمود على هذا التحدي من خلال تمزيق حتى أصعب المواد بشكل فعال مع مزيج من عزم الدوران العالي والسرعة المنخفضة. من خلال تقديم مجموعة واسعة من التطبيقات مثل آلة تمزيق البلاستيك وآلة تمزيق المعادن وآلة تمزيق الإطارات وآلة تمزيق الخشب وآلة تمزيق الزجاج وآلة تمزيق النفايات المنزلية، يلعب هذا النظام دورًا حاسمًا في عمليات إعادة التدوير.',
+        paragraph2: 'آلة التمزيق ثنائية العمود من سلسلة CS، بشفراتها الفولاذية القوية ومحركاتها القوية، توفر أداءً متينًا من خلال معالجة أنواع مختلفة من النفايات بكفاءة في آلات مثل آلة تمزيق البلاستيك الخردة وآلة تمزيق الورق وآلة تمزيق المنصات. تعمل آلة التمزيق بسرعة منخفضة، مما يقلل من الاهتزازات ويوفر حلاً صديقًا للبيئة. في تطبيقات مثل آلة تمزيق إطارات الخردة وآلة تمزيق PVC، تحمي البيئة من خلال تقليل انبعاثات الغبار بسرعة منخفضة.',
+        paragraph3: 'مجهز بنظام أتمتة PLC ومراقبة حمل المحرك في الوقت الفعلي والبدء والإيقاف التلقائي وأنظمة السلامة في حالات الطوارئ. يضمن طول الدوار 800 مم و64 شفرة عالية الجودة تمزيقًا متجانسًا واستخدامًا طويل الأمد. تم تحسين CS-60 لمرافق إعادة التدوير متوسطة الحجم ومصانع معالجة البلاستيك ومراكز إدارة النفايات مع انخفاض استهلاك الطاقة ونسبة كفاءة عالية.'
+      }
+    }
+  },
+  // DİĞER MAKİNE TÜRLERİ (quad-saft, metal, pallet, mobile, harddisk)
   // Bu modeller için çeviri metinleri henüz eklenmemiştir
   // getModelDescription fonksiyonu bu modeller için genel fallback metinler döndürecektir
 };
@@ -188,12 +216,6 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
  */
 const getFallbackDescription = (productType: string, modelName: string, language: Language): ModelDescription => {
   const productNames: {[key: string]: {[lang in Language]: string}} = {
-    'dual-saft': {
-      tr: 'Çift Şaftlı Parçalama Makinesi',
-      en: 'Dual Shaft Shredder',
-      ru: 'Двухвальный измельчитель',
-      ar: 'آلة التقطيع ثنائية العمود'
-    },
     'quad-saft': {
       tr: 'Dört Şaftlı Parçalama Makinesi',
       en: 'Four Shaft Shredder',

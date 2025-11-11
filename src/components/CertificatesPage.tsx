@@ -3,25 +3,28 @@ import { motion } from 'motion/react';
 import { Award } from 'lucide-react';
 import { CERTIFICATE_IMAGES, CERTIFICATE_FALLBACK } from '../utils/certificatesConfig';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useLanguage } from './LanguageContext';
 
 interface CertificatesPageProps {
   onBackToMain: () => void;
 }
 
 export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
+  const { t, isRTL } = useLanguage();
+  
   const certificates = [
-    { image: CERTIFICATE_IMAGES.cert1, caption: 'ISO 45001:2018 İş Sağlığı ve Güvenliği Yönetim Sistemi' },
-    { image: CERTIFICATE_IMAGES.cert2, caption: 'ISO 14001:2015 Çevre Yönetim Sistemi' },
-    { image: CERTIFICATE_IMAGES.cert3, caption: 'ISO 18001 OHSAS İş Sağlığı ve Güvenliği Belgesi' },
-    { image: CERTIFICATE_IMAGES.cert4, caption: 'ISO 9001:2015 Kalite Yönetim Sistemi Belgesi' },
-    { image: CERTIFICATE_IMAGES.cert5, caption: 'CE Uygunluk Beyanı' },
-    { image: CERTIFICATE_IMAGES.cert6, caption: 'ISO 50001:2018 Enerji Yönetim Sistemi Belgesi' },
-    { image: CERTIFICATE_IMAGES.cert7, caption: 'CE Uygunluk Beyanı - Geri Dönüşüm Sistemleri İmalatı' },
-    { image: CERTIFICATE_IMAGES.cert8, caption: 'CE Uygunluk Beyanı - Levha Parçalama Makinesi' },
+    { image: CERTIFICATE_IMAGES.cert1, caption: t('cert1_caption') },
+    { image: CERTIFICATE_IMAGES.cert2, caption: t('cert2_caption') },
+    { image: CERTIFICATE_IMAGES.cert3, caption: t('cert3_caption') },
+    { image: CERTIFICATE_IMAGES.cert4, caption: t('cert4_caption') },
+    { image: CERTIFICATE_IMAGES.cert5, caption: t('cert5_caption') },
+    { image: CERTIFICATE_IMAGES.cert6, caption: t('cert6_caption') },
+    { image: CERTIFICATE_IMAGES.cert7, caption: t('cert7_caption') },
+    { image: CERTIFICATE_IMAGES.cert8, caption: t('cert8_caption') },
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F7F8]" style={{ fontFamily: 'Mulish, sans-serif' }}>
+    <div className="min-h-screen bg-[#F5F7F8]" style={{ fontFamily: 'Mulish, sans-serif' }} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Header Spacer */}
       <div className="h-20"></div>
 
@@ -43,10 +46,10 @@ export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
               <Award size={48} className="text-[#F4CE14]" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#F5F7F8] mb-6">
-              Belgelerimiz
+              {t('certificates_page_title')}
             </h1>
             <p className="text-xl md:text-2xl text-[#F5F7F8]/90 max-w-3xl mx-auto">
-              MT Makina olarak kalite, güvenlik ve uluslararası standartlara bağlılığımızın belgeleri
+              {t('certificates_page_subtitle')}
             </p>
           </motion.div>
         </div>
@@ -94,11 +97,10 @@ export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl text-[#F5F7F8] mb-6">
-              Kalite ve Güvenlik Odaklı Üretim
+              {t('certificates_quality_title')}
             </h2>
             <p className="text-xl text-[#F5F7F8]/90 mb-8 max-w-3xl mx-auto">
-              Tüm sertifikalarımız, müşterilerimize en yüksek kalite ve güvenlik standartlarında 
-              ürün sunma taahhüdümüzün kanıtıdır.
+              {t('certificates_quality_description')}
             </p>
             <motion.a
               href="https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20belgeleriniz%20hakkında%20bilgi%20almak%20istiyorum."
@@ -111,7 +113,7 @@ export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
               </svg>
-              Hemen Teklif Al!
+              {t('certificates_cta_button')}
             </motion.a>
           </motion.div>
         </div>
@@ -121,36 +123,36 @@ export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
       <footer className="bg-[#1E1E1E] py-16">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Kurumsal</h3>
+            <div className={`text-center ${isRTL ? 'md:text-right' : 'md:text-left'}`}>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('certificates_footer_corporate')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>Ana Sayfa</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Hakkımızda</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Belgelerimiz</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Misyonumuz</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Vizyonumuz</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>{t('certificates_footer_home')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_about')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_certificates')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_mission')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_vision')}</li>
               </ul>
             </div>
 
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Ürünler</h3>
+            <div className={`text-center ${isRTL ? 'md:text-right' : 'md:text-left'}`}>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('certificates_footer_products')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Tek Şaftlı Parçalama</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Çift Şaftlı Parçalama</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Metal Parçalama</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Palet Parçalama</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Lastik Parçalama</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_single_shaft')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_dual_shaft')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_metal')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_pallet')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('certificates_footer_tire')}</li>
               </ul>
             </div>
 
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Bize Ulaşın</h3>
+            <div className={`text-center ${isRTL ? 'md:text-right' : 'md:text-left'}`}>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('certificates_footer_contact')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
                 <li>E: info@mtmakina.com.tr</li>
                 <li>T: +90 212 613 31 82</li>
                 <li>M: +90 542 310 99 30</li>
                 <li className="pt-2 leading-relaxed">
-                  Cumhuriyet Mah. 1983 Sk. Kent Palas 2 K:7 D:85-86 PK:34512 Esenyurt / İstanbul / TÜRKİYE
+                  {t('footer_full_address')}
                 </li>
               </ul>
             </div>
@@ -174,7 +176,7 @@ export const CertificatesPage = ({ onBackToMain }: CertificatesPageProps) => {
                 </svg>
               </a>
             </div>
-            <p className="text-center text-[#F5F7F8]/60">© 2025 MT Makina Ltd. Şti. - Tüm Hakları Saklıdır</p>
+            <p className="text-center text-[#F5F7F8]/60">{t('footer_copyright')}</p>
           </div>
         </div>
       </footer>

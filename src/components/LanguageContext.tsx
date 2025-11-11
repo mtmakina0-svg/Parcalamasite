@@ -772,7 +772,7 @@ const translations = {
     quad_shaft_adv_4_desc: 'Dört şaftlı parçalama makinesi, plastik, metal, ahşap ve elektronik atıklar gibi birçok farklı malzemeyi işleyebilir.',
     
     // Quad Shaft FAQ
-    quad_shaft_faq_title: 'Dört Şaftlı Parçalama Makinesi Hakkında S.S.S.',
+    quad_shaft_faq_title: 'Dört ��aftlı Parçalama Makinesi Hakkında S.S.S.',
     quad_shaft_faq_q1: 'DÖRT ŞAFTLI PARÇALAMA MAKİNESİ NE İŞE YARAR?',
     quad_shaft_faq_a1: 'Dört şaftlı parçalama makinesi, çeşitli atık malzemeleri küçük parçalara ayırmak için kullanılan güçlü ve dayanıklı bir endüstriyel ekipmandır. Dört şaftlı tasarımı sayesinde, yüksek tork ve düşük hızda çalışarak verimli ve etkili bir parçalama işlemi sağlar.',
     quad_shaft_faq_q2: 'HANGİ MALZEMELERİ PARÇALAYABİLİR?',
@@ -2957,6 +2957,34 @@ const translations = {
     ecatalog_footer_plastic: 'تمزيق البلاستيك',
     ecatalog_footer_contact: 'اتصل بنا',
     ecatalog_footer_copyright: '© 2025 MT Makina Ltd. Şti. - جميع الحقوق محفوظة',
+    
+    // Certificates Page
+    certificates_page_title: 'شهاداتنا',
+    certificates_page_subtitle: 'كشركة MT Makina، مستندات التزامنا بالجودة والسلامة والمعايير الدولية',
+    certificates_quality_title: 'إنتاج موجه نحو الجودة والسلامة',
+    certificates_quality_description: 'جميع شهاداتنا هي دليل على التزامنا بتقديم منتجات لعملائنا بأعلى معايير الجودة والسلامة.',
+    certificates_cta_button: 'احصل على عرض أسعار الآن!',
+    cert1_caption: 'ISO 45001:2018 نظام إدارة الصحة والسلامة المهنية',
+    cert2_caption: 'ISO 14001:2015 نظام الإدارة البيئية',
+    cert3_caption: 'ISO 18001 OHSAS شهادة الصحة والسلامة المهنية',
+    cert4_caption: 'ISO 9001:2015 شهادة نظام إدارة الجودة',
+    cert5_caption: 'إعلان مطابقة CE',
+    cert6_caption: 'ISO 50001:2018 شهادة نظام إدارة الطاقة',
+    cert7_caption: 'إعلان مطابقة CE - تصنيع أنظمة إعادة التدوير',
+    cert8_caption: 'إعلان مطابقة CE - آلة تمزيق الألواح',
+    certificates_footer_corporate: 'من نحن',
+    certificates_footer_home: 'الرئيسية',
+    certificates_footer_about: 'معلومات عنا',
+    certificates_footer_certificates: 'شهاداتنا',
+    certificates_footer_mission: 'مهمتنا',
+    certificates_footer_vision: 'رؤيتنا',
+    certificates_footer_products: 'المنتجات',
+    certificates_footer_single_shaft: 'التمزيق أحادي العمود',
+    certificates_footer_dual_shaft: 'التمزيق ثنائي العمود',
+    certificates_footer_metal: 'تمزيق المعادن',
+    certificates_footer_pallet: 'تمزيق المنصات',
+    certificates_footer_tire: 'تمزيق الإطارات',
+    certificates_footer_contact: 'اتصل بنا',
   },
 };
 
