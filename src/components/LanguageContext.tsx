@@ -857,6 +857,17 @@ const translations = {
     metal_main_title: 'Redmonster Hurda Metal Parçalama Makinesi ile Geri Dönüşümde Yüksek Verimlilik',
     metal_subtitle: 'Hurda Demir, Alüminyum, Paslanmaz Çelik ve Metal Balyaları için Çift Şaftlı Çözüm',
     metal_about_title: 'Redmonster Metal Parçalama Sistemleri Hakkında',
+    
+    // Model-specific titles and subtitles
+    metal_rdm100_title: 'RDM-100 Redmonster Hurda Metal Parçalama Makinesi',
+    metal_rdm100_subtitle: 'Hurda demir, alüminyum, paslanmaz çelik ve metal balyaları için yüksek torklu çözüm',
+    metal_rdm150_title: 'RDM-150 Redmonster Hurda Metal Parçalama Makinesi',
+    metal_rdm150_subtitle: 'Orta kapasiteli tesisler için güçlü metal parçalama sistemi',
+    metal_rdm180_title: 'RDM-180 Redmonster Hurda Metal Parçalama Makinesi',
+    metal_rdm180_subtitle: 'Yüksek kapasiteli endüstriyel metal geri dönüşüm çözümü',
+    metal_rdm200_title: 'RDM-200 Redmonster Hurda Metal Parçalama Makinesi',
+    metal_rdm200_subtitle: 'Maksimum kapasite ve verimlilik için ultra güçlü metal parçalama',
+    
     metal_description_1: 'Metal geri dönüşümü, çevresel sürdürülebilirlik ve ekonomik verimlilik açısından büyük bir önem taşır. Bu süreçte hurda metal parçalama makinesi kritik bir rol oynar. Çift şaftlı hurda metal parçalama makinesi, çeşitli metal türlerini etkili bir şekilde parçalayarak geri dönüşüm için uygun hale getirir.',
     metal_description_2: 'Hurda metal parçalama makinesi, hurda demir, alüminyum, paslanmaz çelik ve metal balyaları gibi farklı metal türlerini işleyebilme kapasitesine sahiptir. Redmonster hurda metal parçalama makinesi, geniş bir yelpazede metal hurdalarını parçalamak için tasarlanmış güçlü makinelerden oluşur.',
     metal_advantages_title: 'Redmonster Serisi Temel Özellikler',
@@ -870,6 +881,14 @@ const translations = {
     metal_adv_4_desc: 'Optimize edilmiş güç tüketimi ile düşük işletme maliyeti',
     metal_tech_specs_title: 'RDM Serisi Teknik Özellikler',
     metal_optional_features_title: 'Opsiyonel Özellikler',
+    metal_optional_1: 'Dört Motorlu Tasarım',
+    metal_optional_2: 'Rotor Soğutma Sistemi',
+    metal_optional_3: 'Otomatik Yağlama Ünitesi',
+    metal_optional_4: 'Hidrolik Baskı Ünitesi',
+    metal_optional_5: 'Farklı Ölçülerde Elek',
+    metal_optional_6: 'Cıvatalı Sökülebilen Bıçak Tasarımı',
+    metal_optional_7: 'Elektrik Motoru Tahrik Sistemi',
+    metal_optional_8: 'Besleme ve Boşaltma Konveyörü',
     
     // Harddisk İmha Makinesi Ürün Sayfası
     harddisk_main_title: 'Harddisk İmha Parçalama Makinesi',
@@ -1709,6 +1728,17 @@ const translations = {
     metal_main_title: 'High Efficiency in Recycling with Redmonster Scrap Metal Shredder',
     metal_subtitle: 'Dual Shaft Solution for Scrap Iron, Aluminum, Stainless Steel and Metal Bales',
     metal_about_title: 'About Redmonster Metal Shredding Systems',
+    
+    // Model-specific titles and subtitles
+    metal_rdm100_title: 'RDM-100 Redmonster Scrap Metal Shredder',
+    metal_rdm100_subtitle: 'High-torque solution for scrap iron, aluminum, stainless steel and metal bales',
+    metal_rdm150_title: 'RDM-150 Redmonster Scrap Metal Shredder',
+    metal_rdm150_subtitle: 'Powerful metal shredding system for medium capacity facilities',
+    metal_rdm180_title: 'RDM-180 Redmonster Scrap Metal Shredder',
+    metal_rdm180_subtitle: 'High-capacity industrial metal recycling solution',
+    metal_rdm200_title: 'RDM-200 Redmonster Scrap Metal Shredder',
+    metal_rdm200_subtitle: 'Ultra-powerful metal shredding for maximum capacity and efficiency',
+    
     metal_description_1: 'Metal recycling is of great importance in terms of environmental sustainability and economic efficiency. In this process, the scrap metal shredding machine plays a critical role. The dual shaft scrap metal shredder effectively shreds various types of metals, making them ready for recycling.',
     metal_description_2: 'The scrap metal shredding machine has the capacity to process different types of metals such as scrap iron, aluminum, stainless steel and metal bales. Redmonster scrap metal shredding machine consists of powerful machines designed to shred a wide range of metal scraps.',
     metal_advantages_title: 'Redmonster Series Key Features',
@@ -1721,6 +1751,15 @@ const translations = {
     metal_adv_4_title: 'Energy Efficiency',
     metal_adv_4_desc: 'Low operating cost with optimized power consumption',
     metal_tech_specs_title: 'RDM Series Technical Specifications',
+    metal_optional_features_title: 'Optional Features',
+    metal_optional_1: 'Four Motor Design',
+    metal_optional_2: 'Rotor Cooling System',
+    metal_optional_3: 'Automatic Lubrication Unit',
+    metal_optional_4: 'Hydraulic Pressure Unit',
+    metal_optional_5: 'Different Sized Screens',
+    metal_optional_6: 'Bolted Removable Blade Design',
+    metal_optional_7: 'Electric Motor Drive System',
+    metal_optional_8: 'Feeding and Discharge Conveyor',
     
     // Pallet Optional Features
     pallet_optional_features_title: 'Optional Features',
@@ -2319,6 +2358,16 @@ const translations = {
     // Metal Shredder (Redmonster) Product Page
     metal_main_title: 'Высокая эффективность переработки с измельчителем металлолома Redmonster',
     metal_subtitle: 'Двухвальное решение для металлолома, алюминия, нержавеющей стали и металлических тюков',
+    
+    // Model-specific titles and subtitles
+    metal_rdm100_title: 'Измельчитель металлолома RDM-100 Redmonster',
+    metal_rdm100_subtitle: 'Решение с высоким крутящим моментом для металлолома, алюминия, нержавеющей стали и металлических тюков',
+    metal_rdm150_title: 'Измельчитель металлолома RDM-150 Redmonster',
+    metal_rdm150_subtitle: 'Мощная система измельчения металла для предприятий средней мощности',
+    metal_rdm180_title: 'Измельчитель металлолома RDM-180 Redmonster',
+    metal_rdm180_subtitle: 'Высокопроизводительное решение для промышленной переработки металла',
+    metal_rdm200_title: 'Измельчитель металлолома RDM-200 Redmonster',
+    metal_rdm200_subtitle: 'Сверхмощное измельчение металла для максимальной мощности и эффективности',
     metal_about_title: 'О системах измельчения металла Redmonster',
     metal_description_1: 'Переработка металла имеет большое значение с точки зрения экологической устойчивости и экономической эффективности. В этом процессе измельчитель металлолома играет критическую роль. Двухвальный измельчитель металлолома эффективно измельчает различные типы металлов, делая их готовыми к переработке.',
     metal_description_2: 'Измельчитель металлолома имеет возможность обрабатывать различные типы металлов, такие как металлолом, алюминий, нержавеющая сталь и металлические тюки. Измельчитель металлолома Redmonster состоит из мощных машин, предназначенных для измельчения широкого спектра металлолома.',
@@ -2332,6 +2381,15 @@ const translations = {
     metal_adv_4_title: 'Энергоэффективность',
     metal_adv_4_desc: 'Низкая стоимость эксплуатации с оптимизированным энергопотреблением',
     metal_tech_specs_title: 'Технические характеристики серии RDM',
+    metal_optional_features_title: 'Дополнительные функции',
+    metal_optional_1: 'Конструкция с четырьмя двигателями',
+    metal_optional_2: 'Система охлаждения ротора',
+    metal_optional_3: 'Автоматическая смазочная установка',
+    metal_optional_4: 'Гидравлическая прессовая установка',
+    metal_optional_5: 'Сита разных размеров',
+    metal_optional_6: 'Съемная конструкция ножей на болтах',
+    metal_optional_7: 'Система привода электродвигателя',
+    metal_optional_8: 'Конвейер подачи и разгрузки',
     
     // Pallet Optional Features
     pallet_optional_features_title: 'Дополнительные функции',
@@ -2809,6 +2867,16 @@ const translations = {
     metal_main_title: 'كفاءة عالية في إعادة التدوير مع آلة تقطيع المعادن الخردة Redmonster',
     metal_subtitle: 'حل ثنائي العمود للحديد الخردة والألمنيوم والفولاذ المقاوم للصدأ وبالات المعادن',
     metal_about_title: 'حول أنظمة تقطيع المعادن Redmonster',
+    
+    // Model-specific titles and subtitles
+    metal_rdm100_title: 'آلة تقطيع المعادن الخردة RDM-100 Redmonster',
+    metal_rdm100_subtitle: 'حل عزم دوران عالي للحديد الخردة والألمنيوم والفولاذ المقاوم للصدأ وبالات المعادن',
+    metal_rdm150_title: 'آلة تقطيع المعادن الخردة RDM-150 Redmonster',
+    metal_rdm150_subtitle: 'نظام تقطيع معادن قوي للمنشآت متوسطة السعة',
+    metal_rdm180_title: 'آلة تقطيع المعادن الخردة RDM-180 Redmonster',
+    metal_rdm180_subtitle: 'حل إعادة تدوير معادن صناعي عالي السعة',
+    metal_rdm200_title: 'آلة تقطيع المعادن الخردة RDM-200 Redmonster',
+    metal_rdm200_subtitle: 'تقطيع معادن فائق القوة لأقصى سعة وكفاءة',
     metal_description_1: 'إعادة تدوير المعادن ذات أهمية كبيرة من حيث الاستدامة البيئية والكفاءة الاقتصادية. في هذه العملية، تلعب آلة تقطيع المعادن الخردة دورًا حاسمًا. تقوم آلة تقطيع المعادن الخردة ثنائية العمود بتقطيع أنواع مختلفة من المعادن بشكل فعال، مما يجعلها جاهزة لإعادة التدوير.',
     metal_description_2: 'تتمتع آلة تقطيع المعادن الخردة بالقدرة على معالجة أنواع مختلفة من المعادن مثل الحديد الخردة والألمنيوم والفولاذ المقاوم للصدأ وبالات المعادن. تتكون آلة تقطيع المعادن الخردة Redmonster من آلات قوية مصممة لتقطيع مجموعة واسعة من خردة المعادن.',
     metal_advantages_title: 'الميزات الرئيسية لسلسلة Redmonster',
@@ -2821,6 +2889,15 @@ const translations = {
     metal_adv_4_title: 'كفاءة الطاقة',
     metal_adv_4_desc: 'تكلفة تشغيل منخفضة مع استهلاك طاقة محسّن',
     metal_tech_specs_title: 'المواصفات الفنية لسلسلة RDM',
+    metal_optional_features_title: 'الميزات الاختيارية',
+    metal_optional_1: 'تصميم أربعة محركات',
+    metal_optional_2: 'نظام تبريد الدوار',
+    metal_optional_3: 'وحدة التشحيم التلقائي',
+    metal_optional_4: 'وحدة الضغط الهيدروليكي',
+    metal_optional_5: 'شاشات بأحجام مختلفة',
+    metal_optional_6: 'تصميم شفرات قابلة للإزالة بمسامير',
+    metal_optional_7: 'نظام محرك كهربائي',
+    metal_optional_8: 'ناقل التغذية والتفريغ',
     
     // Pallet Optional Features
     pallet_optional_features_title: 'الميزات الاختيارية',

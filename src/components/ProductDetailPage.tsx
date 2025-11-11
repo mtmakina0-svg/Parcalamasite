@@ -1982,10 +1982,10 @@ export const ProductDetailPage = ({
               className="text-center mb-16"
             >
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
-                {modelName} Redmonster Hurda Metal Parçalama Makinesi
+                {t(`metal_${modelName.toLowerCase().replace('-', '')}_title`)}
               </h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
-                Hurda demir, alüminyum, paslanmaz çelik ve metal balyaları için yüksek torklu çözüm
+                {t(`metal_${modelName.toLowerCase().replace('-', '')}_subtitle`)}
               </p>
             </motion.div>
 
@@ -1998,7 +1998,7 @@ export const ProductDetailPage = ({
             >
               <ImageWithFallback
                 src={images.main}
-                alt={`${modelName} Redmonster Metal Parçalama Makinesi`}
+                alt={t(`metal_${modelName.toLowerCase().replace('-', '')}_title`)}
                 className="w-full rounded-2xl shadow-2xl"
                 fallbackSrc={fallbackImage}
               />
@@ -2017,18 +2017,16 @@ export const ProductDetailPage = ({
               className="prose prose-lg max-w-none"
             >
               <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
-                Metal geri dönüşümü, çevresel sürdürülebilirlik ve ekonomik verimlilik açısından büyük bir önem taşır. 
-                Bu süreçte hurda metal parçalama makinesi kritik bir rol oynar. Çift şaftlı hurda metal parçalama makinesi, 
-                çeşitli metal türlerini etkili bir şekilde parçalayarak geri dönüşüm için uygun hale getirir.
+                {modelDesc?.intro}
               </p>
               <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
-                Hurda metal parçalama makinesi, hurda demir, alüminyum, paslanmaz çelik ve metal balyaları gibi farklı 
-                metal türlerini işleyebilme kapasitesine sahiptir. Redmonster hurda metal parçalama makinesi, geniş bir 
-                yelpazede metal hurdalarını parçalamak için tasarlanmış güçlü makinelerden oluşur.
+                {modelDesc?.paragraph1}
+              </p>
+              <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
+                {modelDesc?.paragraph2}
               </p>
               <p className="text-[#45474B] leading-relaxed text-lg" style={{ lineHeight: '1.8' }}>
-                Hurda metal parçalama makinesi, hurdalıklarda ve metal geri dönüşüm tesislerinde hurda metali etkili 
-                bir şekilde işleyerek, metallerin belirli bir boyutta parçalanmasını sağlar.
+                {modelDesc?.paragraph3}
               </p>
             </motion.div>
           </div>
@@ -2183,28 +2181,28 @@ export const ProductDetailPage = ({
               <h3 className="text-center text-[#45474B] mb-6 text-3xl font-bold">{t('metal_optional_features_title')}</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Dört Motorlu Tasarım</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_1')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Rotor Soğutma Sistemi</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_2')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Otomatik Yağlama Ünitesi</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_3')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Hidrolik Baskı Ünitesi</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_4')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Farklı Ölçülerde Elek</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_5')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Cıvatalı Sökülebilen Bıçak Tasarımı</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_6')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Elektrik Motoru Tahrik Sistemi</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_7')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Besleme ve Boşaltma Konveyörü</p>
+                  <p className="text-[#1E1E1E]">• {t('metal_optional_8')}</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -2236,7 +2234,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              Metal Parçalama Makinesi Video
+              {t('metal_video_title')}
             </motion.h2>
 
             <motion.div
