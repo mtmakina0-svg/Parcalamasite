@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Target, Eye, Users } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 interface AboutPageProps {
   onBackToMain: () => void;
 }
 
 export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-[#F5F7F8]" style={{ fontFamily: 'Mulish, sans-serif' }}>
       {/* Header Spacer */}
@@ -27,10 +30,10 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#F5F7F8] mb-6">
-              Hakkımızda
+              {t('about_page_title')}
             </h1>
             <p className="text-xl md:text-2xl text-[#F5F7F8]/90 max-w-4xl mx-auto leading-relaxed">
-              20 yılı aşkın tecrübe ile endüstriyel geri dönüşüm sistemlerinde güvenilir çözüm ortağınız
+              {t('about_page_subtitle')}
             </p>
           </motion.div>
         </div>
@@ -51,12 +54,10 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
               <Users size={40} className="text-[#1E1E1E]" />
             </div>
             <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-6">
-              Sektörün En İyisi Olma Yolunda
+              {t('about_intro_title')}
             </h2>
             <p className="text-lg text-[#45474B] leading-relaxed">
-              MT Makina, yerli üretim gücüyle endüstriyel geri dönüşüm makineleri üretiminde liderdir. 
-              Sürekli gelişen teknolojisiyle müşterilerine yüksek verimlilik, dayanıklılık ve çevre dostu 
-              çözümler sunar.
+              {t('about_intro_description')}
             </p>
           </motion.div>
 
@@ -72,11 +73,9 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mb-6">
                 <Target size={32} className="text-[#1E1E1E]" />
               </div>
-              <h3 className="text-2xl md:text-3xl text-[#1E1E1E] mb-4">Misyonumuz</h3>
+              <h3 className="text-2xl md:text-3xl text-[#1E1E1E] mb-4">{t('about_mission_title')}</h3>
               <p className="text-lg text-[#45474B] leading-relaxed">
-                Misyonumuz, sürdürülebilir atık yönetimi teknolojileri geliştirerek hem çevreye hem de 
-                sanayiye katkı sağlamaktır. Müşteri odaklı yaklaşım ve yenilikçi mühendislik anlayışını 
-                birleştiriyoruz.
+                {t('about_mission_description')}
               </p>
             </motion.div>
 
@@ -90,11 +89,9 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mb-6">
                 <Eye size={32} className="text-[#1E1E1E]" />
               </div>
-              <h3 className="text-2xl md:text-3xl text-[#1E1E1E] mb-4">Vizyonumuz</h3>
+              <h3 className="text-2xl md:text-3xl text-[#1E1E1E] mb-4">{t('about_vision_title')}</h3>
               <p className="text-lg text-[#45474B] leading-relaxed">
-                Vizyonumuz, global ölçekte tanınan, çevre dostu teknolojiler geliştiren ve atık yönetiminde 
-                fark yaratan bir marka olmaktır. Gelecek nesiller için daha temiz bir dünya hedefiyle 
-                ilerliyoruz.
+                {t('about_vision_description')}
               </p>
             </motion.div>
           </div>
@@ -107,7 +104,7 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
             className="mb-12"
           >
             <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-12 text-center">
-              Yönetim Kadromuz
+              {t('about_leadership_title')}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -119,16 +116,15 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
                     <div className="w-32 h-32 bg-[#45474B]/20 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <Users size={60} className="text-[#45474B]/40" />
                     </div>
-                    <p className="text-sm text-[#45474B]/40">Profil Fotoğrafı</p>
+                    <p className="text-sm text-[#45474B]/40">{t('about_profile_photo')}</p>
                   </div>
                 </div>
                 
                 <div className="p-8">
-                  <h3 className="text-2xl text-[#1E1E1E] mb-2">Müslim BAĞLUCA</h3>
-                  <p className="text-lg text-[#F4CE14] mb-4">Genel Müdür</p>
+                  <h3 className="text-2xl text-[#1E1E1E] mb-2">{t('about_leader1_name')}</h3>
+                  <p className="text-lg text-[#F4CE14] mb-4">{t('about_leader1_title')}</p>
                   <p className="text-base text-[#45474B] leading-relaxed">
-                    MT Makina'nın kurucusu ve genel müdürü. 20 yılı aşkın deneyimiyle sektörde yenilikçi 
-                    çözümler geliştirmektedir.
+                    {t('about_leader1_description')}
                   </p>
                 </div>
               </div>
@@ -141,15 +137,15 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
                     <div className="w-32 h-32 bg-[#45474B]/20 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <Users size={60} className="text-[#45474B]/40" />
                     </div>
-                    <p className="text-sm text-[#45474B]/40">Profil Fotoğrafı</p>
+                    <p className="text-sm text-[#45474B]/40">{t('about_profile_photo')}</p>
                   </div>
                 </div>
                 
                 <div className="p-8">
-                  <h3 className="text-2xl text-[#1E1E1E] mb-2">Hacer Emine SOYDAN</h3>
-                  <p className="text-lg text-[#F4CE14] mb-4">Genel Müdür Yardımcısı</p>
+                  <h3 className="text-2xl text-[#1E1E1E] mb-2">{t('about_leader2_name')}</h3>
+                  <p className="text-lg text-[#F4CE14] mb-4">{t('about_leader2_title')}</p>
                   <p className="text-base text-[#45474B] leading-relaxed">
-                    MT Makina'nın stratejik planlama ve operasyonel yönetim süreçlerinden sorumludur.
+                    {t('about_leader2_description')}
                   </p>
                 </div>
               </div>
@@ -161,7 +157,7 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
       {/* Contact Section */}
       <section className="py-20 bg-gradient-to-br from-[#45474B] to-[#35373A]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">Bize Ulaşın</h2>
+          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">{t('about_contact_title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Address */}
@@ -177,7 +173,7 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Adres</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('about_address_label')}</h3>
               <p className="text-[#F5F7F8]/90 leading-relaxed">
                 Cumhuriyet Mah. 1983 Sk. Kent Palas 2 K:7 D:85-86 PK:34512 Esenyurt / İstanbul / TÜRKİYE
               </p>
@@ -196,7 +192,7 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Telefon</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('about_phone_label')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">+90 212 613 31 82</p>
             </motion.div>
 
@@ -213,7 +209,7 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">E-Posta</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('about_email_label')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">info@mtmakina.com.tr</p>
             </motion.div>
           </div>
@@ -226,30 +222,30 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             {/* Kurumsal */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Kurumsal</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('about_footer_corporate')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>Ana Sayfa</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Hakkımızda</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Misyonumuz</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Vizyonumuz</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>{t('about_footer_home')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_about')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_mission')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_vision')}</li>
               </ul>
             </div>
 
             {/* Ürünler */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Ürünler</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('about_footer_products')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Parçalama Makineleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Ayrıştırma Sistemleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Yakma Fırınları</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Balya Presleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Tesisler</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_shredders')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_separation')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_incinerators')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_balers')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_footer_facilities')}</li>
               </ul>
             </div>
 
             {/* Bize Ulaşın */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Bize Ulaşın</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('about_footer_contact')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
                 <li>E: info@mtmakina.com.tr</li>
                 <li>T: +90 212 613 31 82</li>
@@ -280,7 +276,7 @@ export const AboutPage = ({ onBackToMain }: AboutPageProps) => {
                 </svg>
               </a>
             </div>
-            <p className="text-center text-[#F5F7F8]/60">© 2025 MT Makina Ltd. Şti. - Tüm Hakları Saklıdır</p>
+            <p className="text-center text-[#F5F7F8]/60">{t('about_footer_copyright')}</p>
           </div>
         </div>
       </footer>
