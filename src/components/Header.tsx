@@ -147,7 +147,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { key: 'nav_technology', href: '#technology', action: 'technology' },
     { key: 'nav_references', href: '#references', action: 'references' },
     { key: 'nav_contact', href: '#contact', action: 'contact' },
-    { key: 'nav_ecatalog', label: 'E-Katalog', href: '#', action: 'ecatalog' },
+    { key: 'nav_ecatalog', href: '#', action: 'ecatalog' },
   ];
 
   const handleContactLinkClick = (e: React.MouseEvent) => {
