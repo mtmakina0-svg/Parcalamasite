@@ -70,7 +70,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
         intro: 'توفر آلة التقطيع أحادية العمود TSH-80 حلاً قويًا وفعالاً لمنشآت الإنتاج متوسطة الحجم.',
         paragraph1: 'يتميز طراز TSH-80 بمنطقة تقطيع واسعة 800×1100 مم بقوة محرك 22-45 كيلووات. بسعة 800-1200 كجم/ساعة، يلبي متطلبات معالجة النفايات اليومية ذات الحجم الكبير. يظهر أداءً متفوقًا في تقطيع نفايات حقن البلاستيك وزجاجات PET ومواد PP-PE والمنصات الخشبية ونفايات التعبئة والتغليف الصناعية.',
         paragraph2: 'مجهز بنظام أتمتة PLC متقدم ومراقبة حمل المحرك في الوقت الفعلي والبدء والإيقاف التلقائي وأنظمة السلامة في حالات الطوارئ. يضمن طول الدوار 800 مم و32 شفرة عالية الجودة تقطيعًا متجانسًا واستخدامًا طويل الأمد.',
-        paragraph3: 'تم تحسين TSH-80 لمرافق إعادة التدوير متوسطة الحجم ومصانع معالجة البلاستيك ومراكز إدارة النفايات. يمكن التحكم في حجم المخرجات باستخدام نظام الشاشة القابل للاستبدال (20-80 مم). يقلل من تكاليف التشغيل بفضل انخفاض استهلاك الطاقة ونسبة الكفاءة العالية.'
+        paragraph3: 'تم تحسين TSH-80 لمرافق إعادة التدوير متوسطة الحجم ومصانع معالجة البلاستيك ومراكز إدارة النفايات. يمكن التحكم في حجم المخرجات باستخدام نظام الشاشة القابل للاستبدال (20-80 مم). يقلل من تكاليف التشغيل بفضل انخفاض استه��اك الطاقة ونسبة الكفاءة العالية.'
       }
     },
     'TSH-100': {
@@ -147,7 +147,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       ar: {
         intro: 'آلة التقطيع أحادية العمود TSH-160 هي نظام من الدرجة الصناعية يوفر سعة وأداء عاليين للغاية بتقنية المحرك المزدوج.',
         paragraph1: 'يوفر طراز TSH-160 منطقة تقطيع فائقة الاتساع 1600×1800 مم مع تكوين محرك مزدوج 2×55-132 كيلووات. بسعة معالجة 3500-4500 كجم/ساعة، هو أحد أنظمة العمود الواحد ذات السعة الأعلى في تركيا. يستخدم في الحاويات الصناعية كبيرة الحجم والمصدات وأجزاء السيارات وأنظمة الأنابيب ذات القطر الكبير والمواد المركبة ومشاريع معالجة النفايات بالجملة.',
-        paragraph2: 'يوفر نظام الأتمتة المتقدم القائم على PLC من Siemens تكامل SCADA والتدخل عن بُعد والصيانة التنبؤية والبنية التحتية لاتصال إنترنت الأشياء. مع دوار طويل إضافي 1600 مم و64 شفرة سبائك خاصة وعلبة تروس معززة، يوفر أقصى عزم دوران ومتانة. بفضل نظام المحرك المزدوج، يضمن تشغيلاً متواصلاً حتى تحت الأحمال الثقيلة.',
+        paragraph2: 'يوف�� نظام الأتمتة المتقدم القائم على PLC من Siemens تكامل SCADA والتدخل عن بُعد والصيانة التنبؤية والبنية التحتية لاتصال إنترنت الأشياء. مع دوار طويل إضافي 1600 مم و64 شفرة سبائك خاصة وعلبة تروس معززة، يوفر أقصى عزم دوران ومتانة. بفضل نظام المحرك المزدوج، يضمن تشغيلاً متواصلاً حتى تحت الأحمال الثقيلة.',
         paragraph3: 'تم تصميم MT Makina TSH-160 لمجمعات إعادة التدوير واسعة النطاق ومراكز استعادة السيارات ومرافق إدارة النفايات البلدية ومراكز معالجة النفايات المشتركة في المناطق الصناعية. يمكن دمجه مع التغذية بالناقل الأوتوماتيكي بالكامل والفاصل المغناطيسي والفاصل الهوائي ومكبس البالات. مدعوم بمعايير السلامة الأوروبية وشهادة CE.'
       }
     },
@@ -167,18 +167,70 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       ru: {
         intro: 'Одновальный измельчитель TSH-200 - самая большая и мощная модель MT Makina, разработанная для мега-проектов, требующих максимальной производительности.',
         paragraph1: 'Модель TSH-200 предлагает гигантскую зону измельчения 2000x2300 мм с системой двойного двигателя 2x 75-160 кВт. С производительностью обработки 4500-6000 кг/час она способна обрабатывать до 5 тонн отходов в час. Используется для промышленных контейнеров большого объема, внутренней отделки автобусов и грузовиков, пластиковых резервуаров большого диаметра, корпусов промышленного оборудования, больших деревянных конструкций и крупных проектов по электронным отходам.',
-        paragraph2: 'Самая передовая система ПЛК и SCADA включает оптимизацию нагрузки с помощью ИИ, анализ производительности в реальном времени, полное дистанционное управление и облачное хранение данных. С ультрадлинным ротором 2000 мм, 80 ножами премиум-качества, гидравлической системой промышленного класса и усиленным стальным корпусом легко обрабатывает даже самые прочные материалы. Обеспечивает уникальный крутящий момент и эффективность благодаря системе с двумя двигателями и дифференциальной передачей.',
+        paragraph2: 'Самая передовая система ПЛК и SCADA включает оптимизацию нагрузки с помощью ИИ, анализ производительности в реальном времени, полное дистанционное управление и облачное хранение данных. С ул��традлинным ротором 2000 мм, 80 ножами премиум-качества, гидравлической системой промышленного класса и усиленным стальным корпусом легко обрабатывает даже самые прочные материалы. Обеспечивает уникальный крутящий момент и эффективность благодаря системе с двумя двигателями и дифференциальной передачей.',
         paragraph3: 'TSH-200 - идеальное решение для мегамасштабных комплексов переработки, муниципальных интегрированных объектов управления твердыми отходами, центров промышленных отходов автомобильной промышленности, портовых и таможенных центров переработки отходов. Может комбинироваться с полностью автоматической интеграцией линии, мультисепараторными системами, автоматическими системами упаковки и отгрузки. Поддерживается круглосуточной технической поддержкой, сервисом обслуживания на месте и долгосрочной гарантией.'
       },
       ar: {
         intro: 'آلة التقطيع أحادية العمود TSH-200 هي أكبر وأقوى طراز من MT Makina، مصممة للمشاريع الضخمة التي تتطلب أقصى سعة.',
         paragraph1: 'يوفر طراز TSH-200 منطقة تقطيع عملاقة 2000×2300 مم مع نظام محرك مزدوج 2×75-160 كيلووات. بسعة معالجة 4500-6000 كجم/ساعة، لديها القدرة على معالجة ما يصل إلى 5 أطنان من النفايات في الساعة. يستخدم للحاويات الصناعية كبيرة الحجم وتشطيبات الحافلات والشاحنات الداخلية وخزانات البلاستيك ذات القطر الكبير وهياكل الآلات الصناعية والهياكل الخشبية الكبيرة ومشاريع النفايات الإلكترونية بالجملة.',
-        paragraph2: 'يتميز نظام PLC وSCADA الأكثر تقدمًا بتحسين الحمل بمساعدة الذكاء الاصطناعي وتحليل الأداء في الوقت الفعلي والتحكم الكامل عن بُعد وتخزين البيانات المستند إلى السحابة. مع دوار فائق الطول 2000 مم و80 شفرة عالية الجودة ونظام هيدروليكي بدرجة صناعية وهيكل فولاذي معزز، يعالج بسهولة حتى أصعب المواد. ��وفر عزم دوران وكفاءة فريدة بفضل نظام المحرك المزدوج ونظام التروس التفاضلي.',
+        paragraph2: 'يتميز نظام PLC وSCADA الأكثر تقدمًا بتحسين الحمل بمساعدة الذكاء الاصطناعي وتحليل الأداء في الوقت الفعلي والتحكم الكامل عن بُعد وتخزين البيانات المستند إلى السحابة. مع دوار فائق الطول 2000 مم و80 شفرة عالية الجودة و��ظام هيدروليكي بدرجة صناعية وهيكل فولاذي معزز، يعالج بسهولة حتى أصعب المواد. ��وفر عزم دوران وكفاءة فريدة بفضل نظام المحرك المزدوج ونظام التروس التفاضلي.',
         paragraph3: 'TSH-200 هو الحل الأمثل لمجمعات إعادة التدوير على نطاق ضخم ومرافق الإدارة المتكاملة للنفايات الصلبة البلدية ومراكز النفايات الصناعية للسيارات ومراكز معالجة نفايات الموانئ والجمارك. يمكن دمجه مع التكامل الآلي الكامل للخط وأنظمة الفصل المتعددة وأنظمة التعبئة والشحن التلقائية. مدعوم بدعم فني على مدار 24/7 وخدمة صيانة في الموقع وضمان طويل الأجل.'
       }
     }
   },
   'dual-saft': {
+    'CS-20': {
+      tr: {
+        intro: 'CS-20 çift şaftlı parçalama makinesi, küçük ölçekli geri dönüşüm tesisleri için kompakt ve ekonomik çözümdür.',
+        paragraph1: 'CS-20 model, 2x7.5 kW çift motor sistemi ile 400 mm rotor uzunluğu ve 200 mm rotor çapına sahiptir. 300-500 kg/saat işleme kapasitesi ile küçük ve orta boy işletmelerin günlük atık işleme ihtiyaçlarını karşılar. Plastik film, pet şişe, karton, kağıt, hafif metal ve küçük ahşap parçaların parçalanmasında etkili performans gösterir.',
+        paragraph2: 'Basit kullanımlı kontrol paneli ve güvenlik sistemleri ile donatılmış CS-20, sınırlı alanlarda bile verimli çalışır. 32 adet değiştirilebilir bıçak ve ayarlanabilir elek sistemi (30-80 mm) ile farklı materyal türlerine uyum sağlar. Düşük enerji tüketimi sayesinde işletme maliyetlerini minimize eder.',
+        paragraph3: 'MT Makina CS-20, küçük plastik geri dönüşüm atölyeleri, kağıt-karton toplama merkezleri, ambalaj atığı işleme birimleri ve yerel atık yönetim merkezleri için idealdir. Kolay montaj ve hızlı kurulum imkanı sunar. 1 yıl garanti ve teknik destek ile desteklenir.'
+      },
+      en: {
+        intro: 'CS-20 dual shaft shredder is a compact and economical solution for small-scale recycling facilities.',
+        paragraph1: 'CS-20 model features 2x7.5 kW dual motor system with 400 mm rotor length and 200 mm rotor diameter. With 300-500 kg/hour processing capacity, it meets daily waste processing needs of small and medium-sized businesses.',
+        paragraph2: 'Equipped with easy-to-use control panel and safety systems, CS-20 operates efficiently even in limited spaces. With 32 replaceable blades and adjustable screen system (30-80 mm), it adapts to different material types.',
+        paragraph3: 'MT Makina CS-20 is ideal for small plastic recycling workshops, paper-cardboard collection centers, packaging waste processing units and local waste management centers.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-20 - компактное и экономичное решение для малых предприятий по переработке.',
+        paragraph1: 'Модель CS-20 оснащена системой с двумя двигателями 2x7,5 кВт с длиной ротора 400 мм и диаметром ротора 200 мм. С производительностью обработки 300-500 кг/час она отвечает ежедневным потребностям малых и средних предприятий.',
+        paragraph2: 'Оснащенный простой панелью управления и системами безопасности, CS-20 эффективно работает даже в ограниченном пространстве. С 32 сменными ножами и регулируемой системой сит (30-80 мм) адаптируется к различным типам материалов.',
+        paragraph3: 'MT Makina CS-20 идеально подходит для небольших мастерских по переработке пластика, центров сбора бумаги и картона, подразделений по переработке упаковочных отходов.'
+      },
+      ar: {
+        intro: 'آلة التمزيق ثنائية العمود CS-20 هي حل مدمج واقتصادي لمرافق إعادة التدوير صغيرة الحجم.',
+        paragraph1: 'يتميز طراز CS-20 بنظام محرك مزدوج 2×7.5 كيلووات مع طول دوار 400 مم وقطر دوار 200 مم. بسعة معالجة 300-500 كجم/ساعة، يلبي احتياجات معالجة النفايات اليومية للشركات الصغيرة والمتوسطة.',
+        paragraph2: 'مجهز بلوحة تحكم سهلة الاستخدام وأنظمة السلامة، يعمل CS-20 بكفاءة حتى في المساحات المحدودة. مع 32 شفرة قابلة للاستبدال ونظام شاشة قابل للتعديل (30-80 مم).',
+        paragraph3: 'MT Makina CS-20 مثالي لورش إعادة تدوير البلاستيك الصغيرة ومراكز جمع الورق والكرتون ووحدات معالجة نفايات التعبئة والتغليف.'
+      }
+    },
+    'CS-40': {
+      tr: {
+        intro: 'CS-40 çift şaftlı parçalama makinesi, orta ölçekli işletmeler için güvenilir ve verimli bir parçalama çözümüdür.',
+        paragraph1: 'CS-40 model, 2x11 kW çift motor gücü ile 600 mm rotor uzunluğu ve 250 mm rotor çapı sunarak dengeli parçalama performansı sağlar. 500-800 kg/saat işleme kapasitesi ile plastik şişeler, PP-PE malzemeler, karton kutular, ahşap paletler ve hafif metal atıkların işlenmesinde üstün verimlilik gösterir.',
+        paragraph2: 'Yarı-otomatik kontrol sistemi, aşırı yük koruması ve acil durdurma butonu ile donatılmış CS-40, güvenli çalışma ortamı sunar. 48 adet yüksek mukavemetli bıçak ve ayarlanabilir elek sistemi (30-100 mm) ile farklı çıkış boyutları elde edilebilir.',
+        paragraph3: 'CS-40, plastik toplama merkezleri, ambalaj atığı işleme tesisleri, ahşap atık geri dönüşümü ve karma atık ön işleme üniteleri için optimize edilmiştir. Kompakt boyutlara rağmen sağlam çelik gövde yapısı uzun ömür garantisi verir.'
+      },
+      en: {
+        intro: 'CS-40 dual shaft shredder is a reliable and efficient shredding solution for medium-sized businesses.',
+        paragraph1: 'CS-40 model provides balanced shredding performance with 2x11 kW dual motor power, 600 mm rotor length and 250 mm rotor diameter. With 500-800 kg/hour processing capacity, it shows superior efficiency.',
+        paragraph2: 'Equipped with semi-automatic control system, overload protection and emergency stop button, CS-40 offers safe working environment. Different output sizes can be obtained with 48 high-strength blades.',
+        paragraph3: 'CS-40 is optimized for plastic collection centers, packaging waste processing facilities, wood waste recycling and mixed waste pre-processing units.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-40 - надежное и эффективное решение для предприятий среднего размера.',
+        paragraph1: 'Модель CS-40 обеспечивает сбалансированную производительность измельчения с мощностью двойного двигателя 2x11 кВт, длиной ротора 600 мм и диаметром ротора 250 мм.',
+        paragraph2: 'Оснащенный полуавтоматической системой управления, защитой от перегрузки и кнопкой аварийного останова, CS-40 обеспечивает безопасную рабочую среду.',
+        paragraph3: 'CS-40 оптимизирован для центров сбора пластика, предприятий по переработке упаковочных отходов, переработки древесных отходов.'
+      },
+      ar: {
+        intro: 'آلة التمزيق ثنائية العمود CS-40 هي حل تمزيق موثوق وفعال للشركات متوسطة الحجم.',
+        paragraph1: 'يوفر طراز CS-40 أداء تمزيق متوازنًا بقوة محرك مزدوج 2×11 كيلووات وطول دوار 600 مم وقطر دوار 250 مم.',
+        paragraph2: 'مجهز بنظام تحكم شبه أوتوماتيكي وحماية من الحمل الزائد وزر إيقاف طوارئ، يوفر CS-40 بيئة عمل آمنة.',
+        paragraph3: 'تم تحسين CS-40 لمراكز جمع البلاستيك ومرافق معالجة نفايات التعبئة والتغليف وإعادة تدوير نفايات الخشب.'
+      }
+    },
     'CS-60': {
       tr: {
         intro: 'CS-60 çift şaftlı parçalama makinesi, endüstriyel atık yönetiminde yüksek verimlilik sunan kompakt ve güçlü bir çözümdür.',
@@ -187,28 +239,395 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
         paragraph3: 'MT Makina CS-60 çift şaftlı parçalama makinesi, plastik geri dönüşüm tesisleri, metal hurda işleme merkezleri, lastik parçalama üniteleri, ahşap atık işleme ve evsel atık yönetim merkezleri için idealdir. Kompakt tasarımı sayesinde orta ölçekli tesislere kolayca entegre edilir. CE sertifikalı güvenlik standartları ve 2 yıl garanti ile desteklenir.'
       },
       en: {
-        intro: 'CS-60 High Efficiency in Industrial Waste Management with Dual Shaft Shredder',
-        paragraph1: 'One of the biggest challenges faced in industrial waste management and recycling processes is the efficient processing of different material types. The dual shaft shredder overcomes this challenge by effectively shredding even the toughest materials with a combination of high torque and low speed. Offering a wide range of applications such as plastic shredder, metal shredder, tire shredder, wood shredder, glass shredder and household waste shredder, this system plays a critical role in recycling processes.',
-        paragraph2: 'The CS-Series dual shaft shredder, with its robust steel blades and powerful motors, delivers durable performance by efficiently processing different waste types in machines such as scrap plastic shredder, paper shredder and pallet shredder. The shredder operates at low speed, reducing vibrations and providing an environmentally friendly solution. In applications such as scrap tire shredder and PVC shredder, it protects the environment by minimizing dust emissions with low speed.',
-        paragraph3: 'Equipped with PLC automation system, real-time motor load monitoring, automatic start-stop and emergency safety systems. 800 mm rotor length and 64 high-quality blades guarantee homogeneous shredding and long-lasting use. CS-60 is optimized for medium-sized recycling facilities, plastic processing factories and waste management centers with low energy consumption and high efficiency ratio.'
+        intro: 'CS-60 dual shaft shredder is a compact and powerful solution offering high efficiency in industrial waste management.',
+        paragraph1: 'CS-60 model features 2x15 kW dual motor configuration with 800 mm rotor length and 300 mm rotor diameter. With 800-1500 kg/hour processing capacity, it ensures safe shredding of plastic, metal, tire, wood, glass and household waste.',
+        paragraph2: 'Equipped with advanced PLC control system, automatic reverse function and emergency safety systems, CS-60 guarantees uninterrupted production. Different output sizes can be obtained with 64 special alloy blades.',
+        paragraph3: 'MT Makina CS-60 dual shaft shredder is ideal for plastic recycling facilities, metal scrap processing centers, tire shredding units, wood waste processing and household waste management centers.'
       },
       ru: {
-        intro: 'Высокая эффективность в управлении промышленными отходами с двухвальным измельчителем CS-60',
-        paragraph1: 'Одна из самых больших проблем в управлении промышленными отходами и процессах переработки - эффективная обработка различных типов материалов. Двухвальный измельчитель преодолевает эту проблему, эффективно измельчая даже самые твердые материалы с помощью комбинации высокого крутящего момента и низкой скорости. Предлагая широкий спектр применения, такой как измельчитель пластика, измельчитель металла, измельчитель шин, измельчитель дерева, измельчитель стекла и измельчитель бытовых отходов, эта система играет критическую роль в процессах переработки.',
-        paragraph2: 'Двухвальный измельчитель серии CS с прочными стальными ножами и мощными двигателями обеспечивает долговечную работу, эффективно обрабатывая различные типы отходов в машинах, таких как измельчитель пластикового лома, измельчитель бумаги и измельчитель поддонов. Измельчитель работает на низкой скорости, уменьшая вибрации и обеспечивая экологически чистое решение. В таких применениях, как измельчитель лома шин и измельчитель ПВХ, он защищает окружающую среду, минимизируя выбросы пыли при низкой скорости.',
-        paragraph3: 'Оснащен системой автоматизации ПЛК, мониторингом нагрузки двигателя в реальном времени, автоматическим запуском-остановкой и системами аварийной безопасности. Длина ротора 800 мм и 64 высококачественных ножа гарантируют однородное измельчение и долговечное использование. CS-60 оптимизирован для перерабатывающих предприятий среднего размера, заводов по переработке пластмасс и центров управления отходами с низким энергопотреблением и высоким коэффициентом эффективности.'
+        intro: 'Двухвальный измельчитель CS-60 - компактное и мощное решение, обеспечивающее высокую эффективность в управлении промышленными отходами.',
+        paragraph1: 'Модель CS-60 оснащена конфигурацией двойного двигателя 2x15 кВт с длиной ротора 800 мм и диаметром ротора 300 мм. С производительностью обработки 800-1500 кг/час.',
+        paragraph2: 'Оснащенный усовершенствованной системой управления ПЛК, функцией автоматического реверса и системами аварийной безопасности, CS-60 гарантирует бесп��ребойное производство.',
+        paragraph3: 'Двухвальный измельчитель MT Makina CS-60 идеально подходит для предприя��ий по переработке пластика, центров обработки металлолома.'
       },
       ar: {
-        intro: 'كفاءة عالية في إدارة النفايات الصناعية باستخدام آلة التمزيق ثنائية العمود CS-60',
-        paragraph1: 'واحدة من أكبر التحديات التي تواجهها في إدارة النفايات الصناعية وعمليات إعادة التدوير هي المعالجة الفعالة لأنواع المواد المختلفة. تتغلب آلة التمزيق ثنائية العمود على هذا التحدي من خلال تمزيق حتى أصعب المواد بشكل فعال مع مزيج من عزم الدوران العالي والسرعة المنخفضة. من خلال تقديم مجموعة واسعة من التطبيقات مثل آلة تمزيق البلاستيك وآلة تمزيق المعادن وآلة تمزيق الإطارات وآلة تمزيق الخشب وآلة تمزيق الزجاج وآلة تمزيق النفايات المنزلية، يلعب هذا النظام دورًا حاسمًا في عمليات إعادة التدوير.',
-        paragraph2: 'آلة التمزيق ثنائية العمود من سلسلة CS، بشفراتها الفولاذية القوية ومحركاتها القوية، توفر أداءً متينًا من خلال معالجة أنواع مختلفة من النفايات بكفاءة في آلات مثل آلة تمزيق البلاستيك الخردة وآلة تمزيق الورق وآلة تمزيق المنصات. تعمل آلة التمزيق بسرعة منخفضة، مما يقلل من الاهتزازات ويوفر حلاً صديقًا للبيئة. في تطبيقات مثل آلة تمزيق إطارات الخردة وآلة تمزيق PVC، تحمي البيئة من خلال تقليل انبعاثات الغبار بسرعة منخفضة.',
-        paragraph3: 'مجهز بنظام أتمتة PLC ومراقبة حمل المحرك في الوقت الفعلي والبدء والإيقاف التلقائي وأنظمة السلامة في حالات الطوارئ. يضمن طول الدوار 800 مم و64 شفرة عالية الجودة تمزيقًا متجانسًا واستخدامًا طويل الأمد. تم تحسين CS-60 لمرافق إعادة التدوير متوسطة الحجم ومصانع معالجة البلاستيك ومراكز إدارة النفايات مع انخفاض استهلاك الطاقة ونسبة كفاءة عالية.'
+        intro: 'آلة التمزيق ثنائية العمود CS-60 هي حل مدمج وقوي يوفر كفاءة عالية في إدارة النفايات الصناعية.',
+        paragraph1: 'يتميز طراز CS-60 بتكوين محرك مزدوج 2×15 كيلووات مع طول دوار 800 مم وقطر دوار 300 مم. بسعة معالجة 800-1500 كجم/ساعة.',
+        paragraph2: 'مجهز بنظام تحكم PLC متقدم ووظيفة عكسية تلقائية وأنظمة السلامة في حالات الطوارئ، يضمن CS-60 إنتاجًا متواصلاً.',
+        paragraph3: 'آلة التمزيق ثنائية العمود MT Makina CS-60 مثالية لمرافق إعادة تدوير البلاستيك ومراكز معالجة الخردة المعدنية.'
+      }
+    },
+    'CS-80': {
+      tr: {
+        intro: 'CS-80 çift şaftlı parçalama makinesi, yüksek hacimli atık işleme gerektiren tesisler için güçlü ve dayanıklı bir çözümdür.',
+        paragraph1: 'CS-80 model, 2x22 kW yüksek performanslı çift motor sistemi ile 1000 mm rotor uzunluğu ve 350 mm rotor çapı sunarak ağır hizmet tipi uygulamalar için tasarlanmıştır. 1500-2500 kg/saat işleme kapasitesi ile endüstriyel plastik konteynerler, kalın duvarlı borular, büyük ahşap paletler, otomotiv parçaları ve kompozit malzemelerin parçalanmasında üstün performans gösterir.',
+        paragraph2: 'Tam otomatik PLC kontrol paneli, gerçek zamanlı yük izleme, otomatik aşırı yük koruması ve çift yönlü ters çalışma fonksiyonu ile donatılmış CS-80, 7/24 kesintisiz çalışma kapasitesine sahiptir. 80 adet premium kalite bıçak ve çift elek sistemi (50-150 mm) ile hem kaba hem de orta boy parçalama yapılabilir.',
+        paragraph3: 'CS-80, büyük plastik geri dönüşüm tesisleri, otomotiv hurda işleme merkezleri, ahşap palet parçalama üniteleri için optimize edilmiştir. Modüler yapısı sayesinde konveyör besleyici ile entegre edilebilir.'
+      },
+      en: {
+        intro: 'CS-80 dual shaft shredder is a powerful and durable solution for facilities requiring high-volume waste processing.',
+        paragraph1: 'CS-80 model is designed for heavy-duty applications with 2x22 kW high-performance dual motor system. With 1500-2500 kg/hour processing capacity, it shows superior performance.',
+        paragraph2: 'Equipped with fully automatic PLC control panel, real-time load monitoring, automatic overload protection, CS-80 has 7/24 uninterrupted operation capacity.',
+        paragraph3: 'CS-80 is optimized for large plastic recycling facilities, automotive scrap processing centers, wooden pallet shredding units.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-80 - мощное и долговечное решение для объектов, требующих обработки больших объемов отходов.',
+        paragraph1: 'Модель CS-80 разработана для тяжелых условий эксплуатации с высокопроизводительной системой двойного двигателя 2x22 кВт.',
+        paragraph2: 'Оснащенный полностью автоматической панелью управления ПЛК, мониторингом нагрузки в реальном времени, CS-80 имеет возможность непрерывной работы 7/24.',
+        paragraph3: 'CS-80 оптимизирован для крупных предприятий по переработке пластика, центров обработки автомобильного лома.'
+      },
+      ar: {
+        intro: 'آلة التمزيق ثنائية العمود CS-80 هي حل قوي ومتين للمرافق التي تتطلب معالجة نفايات كبيرة الحجم.',
+        paragraph1: 'تم تصميم طراز CS-80 للتطبيقات الثقيلة بنظام محرك مزدوج عالي الأداء 2×22 كيلووات.',
+        paragraph2: 'مجهز بلوحة تحكم PLC أوتوماتيكية بالكامل ومراقبة الحمل في الوقت الفعلي، يتمتع CS-80 بقدرة تشغيل متواصل 7/24.',
+        paragraph3: 'تم تحسين CS-80 لمرافق إعادة تدوير البلاستيك الكبيرة ومراكز معالجة خردة السيارات.'
+      }
+    },
+    'CS-100': {
+      tr: {
+        intro: 'CS-100 çift şaftlı parçalama makinesi, yüksek kapasiteli endüstriyel uygulamalar için güçlü tork ve üstün performans sunar.',
+        paragraph1: 'CS-100 model, 2x30 kW endüstriyel sınıf çift motor yapısı ile 1200 mm geniş rotor uzunluğu ve 400 mm rotor çapına sahiptir. 2500-4000 kg/saat yüksek işleme kapasitesi ile büyük hacimli konteynerler, IBC tanklar, endüstriyel plastik kasalar ve evsel eşya atıklarının parçalanmasında maksimum verimlilik sağlar.',
+        paragraph2: 'Siemens PLC tabanlı gelişmiş otomasyon sistemi, dokunmatik ekran operatör paneli, uzaktan izleme altyapısı ile donatılmış CS-100, endüstri 4.0 standartlarına uygundur. 96 adet özel sertleştirilmiş bıçak ve çift kademeli elek sistemi (60-180 mm) ile homojen parçalama garantisi verir.',
+        paragraph3: 'CS-100, büyük kapasiteli geri dönüşüm kompleksleri, belediye katı atık yönetim tesisleri, otomotiv geri kazanım merkezleri için tasarlanmıştır. Tam otomatik besleme sistemi ile entegre edilebilir.'
+      },
+      en: {
+        intro: 'CS-100 dual shaft shredder offers powerful torque and superior performance for high-capacity industrial applications.',
+        paragraph1: 'CS-100 model features industrial-grade dual motor structure with 2x30 kW. With 2500-4000 kg/hour high processing capacity, it provides maximum efficiency.',
+        paragraph2: 'Equipped with Siemens PLC-based advanced automation system, touchscreen operator panel, CS-100 complies with Industry 4.0 standards.',
+        paragraph3: 'CS-100 is designed for large capacity recycling complexes, municipal solid waste management facilities, automotive recovery centers.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-100 предлагает мощный крутящий момент и превосходную производительность.',
+        paragraph1: 'Модель CS-100 оснащена двухмоторной конструкцией промышленного класса 2x30 кВт.',
+        paragraph2: 'Оснащенный передовой системой автоматизации на базе ПЛК Siemens, CS-100 соответствует стандартам Индустрии 4.0.',
+        paragraph3: 'CS-100 разработан для крупных комплексов переработки, муниципальных объектов управления твердыми отходами.'
+      },
+      ar: {
+        intro: 'تقدم آلة التمزيق ثنائية العمود CS-100 عزم دوران قويًا وأداءً متفوقًا.',
+        paragraph1: 'يتميز طراز CS-100 بهيكل محرك مزدوج من الدرجة الصناعية 2×30 كيلووات.',
+        paragraph2: 'مجهز بنظام أتمتة متقدم قائم على PLC من Siemens، يتوافق CS-100 مع معايير الصناعة 4.0.',
+        paragraph3: 'تم تصميم CS-100 لمجمعات إعادة التدوير كبيرة السعة ومرافق إدارة النفايات الصلبة البلدية.'
+      }
+    },
+    'CS-120': {
+      tr: {
+        intro: 'CS-120 çift şaftlı parçalama makinesi, ağır sanayi atık yönetiminde maksimum kapasite ve performans sunan profesyonel bir sistemdir.',
+        paragraph1: 'CS-120 model, 2x37 kW yüksek tork çift motor yapısı ile 1400 mm ultra geniş rotor uzunluğu ve 450 mm rotor çapı sunarak en zorlu uygulamalar için tasarlanmıştır. 4000-6000 kg/saat işleme kapasitesi ile lastik balyaları, büyük plastik tanklar ve ağır kompozit malzemelerin parçalanmasında olağanüstü performans gösterir.',
+        paragraph2: 'Endüstriyel sınıf Siemens S7 PLC otomasyon, SCADA entegrasyonu, gerçek zamanlı veri analizi ve predictive maintenance modülleri ile donatılmıştır. 112 adet özel alaşımlı bıçak ve üç kademeli elek sistemi (80-200 mm) ile maksimum tork sağlar.',
+        paragraph3: 'CS-120, mega ölçekli geri dönüşüm kompleksleri, belediye entegre katı atık tesisleri, lastik geri dönüşüm fabrikaları için optimize edilmiştir.'
+      },
+      en: {
+        intro: 'CS-120 dual shaft shredder is a professional system offering maximum capacity in heavy industrial waste management.',
+        paragraph1: 'CS-120 model is designed for the toughest applications with 2x37 kW high-torque dual motor. With 4000-6000 kg/hour capacity.',
+        paragraph2: 'Equipped with industrial-grade Siemens S7 PLC automation, SCADA integration, real-time data analysis.',
+        paragraph3: 'CS-120 is optimized for mega-scale recycling complexes, municipal integrated solid waste facilities.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-120 - профессиональная система, обеспечивающая максимальную производительность.',
+        paragraph1: 'Модель CS-120 разработана для самых сложных применений с высокомоментной конструкцией 2x37 кВт.',
+        paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, интеграцией SCADA.',
+        paragraph3: 'CS-120 оптимизирован для мегамасштабных комплексов переработки.'
+      },
+      ar: {
+        intro: 'آلة التمزيق ثنائية العمود CS-120 هي نظام احترافي يوفر أقصى سعة.',
+        paragraph1: 'تم تصميم طراز CS-120 لأصعب التطبيقات بهيكل محرك مزدوج عالي عزم الدوران 2×37 كيلووات.',
+        paragraph2: 'مجهز بأتمتة Siemens S7 PLC من الدرجة الصناعية وتكامل SCADA.',
+        paragraph3: 'تم تحسين CS-120 لمجمعات إعادة التدوير على نطاق ضخم.'
+      }
+    },
+    'CS-150': {
+      tr: {
+        intro: 'CS-150 çift şaftlı parçalama makinesi, mega kapasiteli geri dönüşüm kompleksleri için tasarlanmış ultra güçlü sistemdir.',
+        paragraph1: 'CS-150 model, 2x45 kW ultra yüksek tork ile 1600 mm dev rotor uzunluğu sunar. 6000-8000 kg/saat kapasite ile otobüs-kamyon lastikleri ve büyük endüstriyel konteynerler parçalar.',
+        paragraph2: 'En ileri Siemens S7-1500 PLC otomasyon, yapay zeka destekli yük optimizasyonu, bulut tabanlı veri toplama ile donatılmış.',
+        paragraph3: 'CS-150, mega ölçekli entegre geri dönüşüm tesisleri, lastik piroliz öncesi hazırlık tesisleri için özel olarak tasarlanmıştır.'
+      },
+      en: {
+        intro: 'CS-150 dual shaft shredder is an ultra-powerful industrial system designed for mega-capacity recycling complexes.',
+        paragraph1: 'CS-150 model features 2x45 kW ultra-high torque with 1600 mm giant rotor length. 6000-8000 kg/hour capacity.',
+        paragraph2: 'Equipped with most advanced Siemens S7-1500 PLC automation, AI-assisted load optimization.',
+        paragraph3: 'CS-150 is specifically designed for mega-scale integrated recycling facilities.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-150 - сверхмощная промышленная система.',
+        paragraph1: 'Модель CS-150 оснащена сверхвысоким крутящим моментом 2x45 кВт. Производительность 6000-8000 кг/час.',
+        paragraph2: 'Оснащенный самой передовой автоматизацией Siemens S7-1500 PLC.',
+        paragraph3: 'CS-150 специально разработан для интегрированных предприятий переработки мегамасштаба.'
+      },
+      ar: {
+        intro: 'آلة التمزيق ثنائية العمود CS-150 هي نظام صناعي فائق القوة.',
+        paragraph1: 'يتميز طراز CS-150 بعزم دوران فائق 2×45 كيلووات. سعة 6000-8000 كجم/ساعة.',
+        paragraph2: 'مجهز بأكثر أنظمة الأتمتة تقدمًا Siemens S7-1500 PLC.',
+        paragraph3: 'تم تصميم CS-150 خصيصًا لمرافق إعادة التدوير المتكاملة على نطاق ضخم.'
+      }
+    },
+    'CS-180': {
+      tr: {
+        intro: 'CS-180 çift şaftlı parçalama makinesi, uluslararası standartlarda mega projelere yönelik ultra kapasiteli sistemdir.',
+        paragraph1: 'CS-180 model, 2x55 kW ekstrem tork ile 1800 mm ultra geniş rotor sunar. 8000-12000 kg/saat muazzam kapasite ile kamyon şaseleri ve dev plastik tankları parçalar.',
+        paragraph2: 'Tam entegre Siemens TIA Portal otomasyon, makine öğrenimi algoritmaları, gerçek zamanlı big data analizi ile donatılmış.',
+        paragraph3: 'CS-180, uluslararası entegre geri dönüşüm kompleksleri, megakent atık yönetim merkezleri için özel mühendislik çözümü olarak tasarlanmıştır.'
+      },
+      en: {
+        intro: 'CS-180 dual shaft shredder is an ultra-capacity industrial powerhouse for mega projects.',
+        paragraph1: 'CS-180 model features 2x55 kW extreme torque with 1800 mm ultra-wide rotor. 8000-12000 kg/hour capacity.',
+        paragraph2: 'Equipped with fully integrated Siemens TIA Portal automation, machine learning algorithms.',
+        paragraph3: 'CS-180 is designed as special engineering solution for international integrated recycling complexes.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-180 - ультрапроизводительная промышленная электростанция.',
+        paragraph1: 'Модель CS-180 оснащена экстремальным крутящим моментом 2x55 кВт. Производительность 8000-12000 кг/час.',
+        paragraph2: 'Оснащенный полностью интегрированной автоматизацией Siemens TIA Portal.',
+        paragraph3: 'CS-180 разработан как специальное инженерное решение для международных комплексов переработки.'
+      },
+      ar: {
+        intro: 'آلة التمزيق ثنائية العمود CS-180 هي محطة طاقة صناعية فائقة السعة.',
+        paragraph1: 'يتميز طراز CS-180 بعزم دوران قصوى 2×55 كيلووات. سعة 8000-12000 كجم/ساعة.',
+        paragraph2: 'مجهز بأتمتة متكاملة بالكامل Siemens TIA Portal.',
+        paragraph3: 'تم تصميم CS-180 كحل هندسي خاص لمجمعات إعادة التدوير المتكاملة الدولية.'
+      }
+    },
+    'CS-200': {
+      tr: {
+        intro: 'CS-200 çift şaftlı parçalama makinesi, MT Makina\'nın en büyük modeli olup dünya standartlarında mega kapasiteli mühendislik harikasıdır.',
+        paragraph1: 'CS-200 model, 2x75 kW maksimum tork ile 2000 mm dev rotor sunar. 12000-18000 kg/saat olağanüstü kapasite ile saatte 18 tona kadar atık işler. Tren vagonları, gemi parçaları ve mega ahşap yapılar parçalar.',
+        paragraph2: 'En ileri Siemens S7-1500 Failsafe PLC, derin öğrenme AI, digital twin simülasyonu, IoT sensör ağı ve cyber security ile donatılmış. 160 ultra premium bıçak ve altı kademeli akıllı elek sistemi (150-350 mm) sunar.',
+        paragraph3: 'CS-200, global entegre geri dönüşüm kompleksleri, metropol atık yönetim mega projeleri için turnkey çözüm olarak tasarlanmıştır. 5 yıl platinum garanti+7/24 global teknik destek.'
+      },
+      en: {
+        intro: 'CS-200 dual shaft shredder is MT Makina\'s largest model, an engineering marvel for mega-capacity projects in world standards.',
+        paragraph1: 'CS-200 model features 2x75 kW maximum torque with 2000 mm giant rotor. 12000-18000 kg/hour capacity processing up to 18 tons per hour.',
+        paragraph2: 'Equipped with most advanced Siemens S7-1500 Failsafe PLC, deep learning AI, digital twin simulation.',
+        paragraph3: 'CS-200 is designed as turnkey solution for global recycling complexes. Supported by 5-year platinum warranty+24/7 global support.'
+      },
+      ru: {
+        intro: 'Двухвальный измельчитель CS-200 - самая большая модель MT Makina, инженерное чудо мирового стандарта.',
+        paragraph1: 'Модель CS-200 оснащена максимальным крутящим моментом 2x75 кВт. Производительность 12000-18000 кг/час.',
+        paragraph2: 'Оснащенный самой передовой автоматизацией Siemens S7-1500 Failsafe PLC, глубоким обучением ИИ.',
+        paragraph3: 'CS-200 разработан как комплексное решение для глобальных комплексов переработки.'
+      },
+      ar: {
+        intro: 'آلة التمزيق ثنائية العمود CS-200 هي أكبر طراز من MT Makina، معجزة هندسية بمعايير عالمية.',
+        paragraph1: 'يتميز طراز CS-200 بعزم دوران أقصى 2×75 كيلووات. سعة 12000-18000 كجم/ساعة.',
+        paragraph2: 'مجهز بأكثر الأنظمة تقدمًا Siemens S7-1500 Failsafe PLC، الذكاء الاصطناعي للتعلم العميق.',
+        paragraph3: 'تم تصميم CS-200 كحل تسليم مفتاح لمجمعات إعادة التدوير العالمية.'
       }
     }
   },
-  // DİĞER MAKİNE TÜRLERİ (quad-saft, metal, pallet, mobile, harddisk)
+  'quad-saft': {
+    'DS-80': {
+      tr: {
+        intro: 'DS-80 dört şaftlı parçalama makinesi, ince parçalama ve homojen çıkış boyutu gerektiren uygulamalar için profesyonel bir çözümdür.',
+        paragraph1: 'DS-80 model, 4x7.5 kW (toplam 30 kW) dört motor sistemi ile 800 mm rotor uzunluğu ve dört kademeli kesim mekanizmasına sahiptir. 600-1000 kg/saat işleme kapasitesi ile plastik filmler, PET şişeler, karton-kağıt, tekstil atıkları ve elektronik atıkların ince parçalanmasında üstün performans gösterir.',
+        paragraph2: 'Gelişmiş PLC kontrol sistemi, dört şaft senkronizasyonu, otomatik aşırı yük algılama ve ters çalışma fonksiyonu ile donatılmış DS-80, kesintisiz ve güvenli çalışma garantisi verir. 48 adet özel kesim bıçağı ve ayarlanabilir elek sistemi (10-40 mm) ile çıkış boyutu hassas kontrol edilebilir.',
+        paragraph3: 'MT Makina DS-80, plastik geri dönüşüm tesisleri, e-atık ön işleme üniteleri, tekstil geri dönüşümü için idealdir. Kompakt tasarımı ile orta ölçekli tesislere kolayca entegre edilir. CE sertifikası ve 2 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'DS-80 four shaft shredder is a professional solution for applications requiring fine shredding and homogeneous output size.',
+        paragraph1: 'DS-80 model features 4x7.5 kW (total 30 kW) four motor system with 800 mm rotor length. With 600-1000 kg/hour processing capacity, it shows superior performance.',
+        paragraph2: 'Equipped with advanced PLC control system, four shaft synchronization, automatic overload detection, DS-80 guarantees uninterrupted operation.',
+        paragraph3: 'MT Makina DS-80 is ideal for plastic recycling facilities, e-waste pre-processing units, textile recycling.'
+      },
+      ru: {
+        intro: 'Четырехвальный измельчитель DS-80 - профессиональное решение для тонкого измельчения.',
+        paragraph1: 'Модель DS-80 оснащена системой четырех двигателей 4x7,5 кВт (всего 30 кВт) с длиной ротора 800 мм.',
+        paragraph2: 'Оснащенный системой управления ПЛК, синхронизацией четырех валов, DS-80 гарантирует бесперебойную работу.',
+        paragraph3: 'MT Makina DS-80 идеально подходит для предприятий по переработке пластика.'
+      },
+      ar: {
+        intro: 'آلة التمزيق رباعية العمود DS-80 حل احترافي للتمزيق الدقيق.',
+        paragraph1: 'يتميز طراز DS-80 بنظام أربعة محركات 4×7.5 كيلووات (إجمالي 30 كيلووات).',
+        paragraph2: 'مجهز بنظام تحكم PLC ومزامنة أربعة أعمدة، يضمن DS-80 تشغيلاً متواصلاً.',
+        paragraph3: 'MT Makina DS-80 مثالي لمرافق إعادة تدوير البلاستيك.'
+      }
+    },
+    'DS-100': {
+      tr: {
+        intro: 'DS-100 dört şaftlı parçalama makinesi, orta-yüksek kapasiteli tesisler için yüksek verimlilik sunan güçlü bir sistemdir.',
+        paragraph1: 'DS-100 model, 4x11 kW (toplam 44 kW) güçlü dört motor yapısı ile 1000 mm geniş rotor uzunluğuna sahiptir. 1000-1800 kg/saat işleme kapasitesi ile endüstriyel plastik atıklar, elektronik kartlar, kablo atıkları ve kompozit malzemelerin homojen parçalanmasında mükemmel performans gösterir.',
+        paragraph2: 'Siemens PLC tabanlı tam otomatik kontrol sistemi, dört şaft tam senkronizasyon ve gerçek zamanlı motor yük izleme ile donatılmış DS-100, 7/24 kesintisiz çalışma kapasitesine sahiptir. 64 adet premium kalite bıçak ve çift kademeli elek sistemi (8-35 mm) ile hassas parça kontrolü sağlar.',
+        paragraph3: 'DS-100, orta-büyük plastik geri dönüşüm tesisleri, elektronik atık işleme merkezleri için optimize edilmiştir. Konveyör besleyici ile entegre edilebilir. CE standartları ve 2 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'DS-100 four shaft shredder is a powerful system offering high efficiency for medium-high capacity facilities.',
+        paragraph1: 'DS-100 model features 4x11 kW (total 44 kW) powerful four motor structure with 1000 mm wide rotor. With 1000-1800 kg/hour processing capacity.',
+        paragraph2: 'Equipped with Siemens PLC-based fully automatic control system, four shaft full synchronization, DS-100 has 7/24 operation capacity.',
+        paragraph3: 'DS-100 is optimized for medium-large plastic recycling facilities, electronic waste processing centers.'
+      },
+      ru: {
+        intro: 'Четырехвальный измельчитель DS-100 - мощная система для предприятий средне-высокой производительности.',
+        paragraph1: 'Модель DS-100 оснащена четырехмоторной конструкцией 4x11 кВт (всего 44 кВт) с длиной ротора 1000 мм.',
+        paragraph2: 'Оснащенный системой управления Siemens PLC, полной синхронизацией четырех валов, DS-100 работает 7/24.',
+        paragraph3: 'DS-100 оптимизирован для средне-крупных предприятий по переработке пластика.'
+      },
+      ar: {
+        intro: 'آلة التمزيق رباعية العمود DS-100 نظام قوي لمرافق السعة المتوسطة-العالية.',
+        paragraph1: 'يتميز طراز DS-100 بهيكل أربعة محركات 4×11 كيلووات (إجمالي 44 كيلووات).',
+        paragraph2: 'مجهز بنظام تحكم Siemens PLC ومزامنة كاملة لأربعة أعمدة، يعمل DS-100 بقدرة 7/24.',
+        paragraph3: 'تم تحسين DS-100 لمرافق إعادة التدوير متوسطة-كبيرة الحجم.'
+      }
+    },
+    'DS-150': {
+      tr: {
+        intro: 'DS-150 dört şaftlı parçalama makinesi, yüksek kapasiteli tesisler için ultra hassas parçalama performansı sunan profesyonel bir sistemdir.',
+        paragraph1: 'DS-150 model, 4x18.5 kW (toplam 74 kW) yüksek güç dört motor konfigürasyonu ile 1500 mm ultra geniş rotor uzunluğuna sahiptir. 2000-3500 kg/saat yüksek işleme kapasitesi ile endüstriyel plastik konteynerler, büyük elektronik cihazlar ve kompozit malzemelerin ultra ince parçalanmasında lider performans gösterir.',
+        paragraph2: 'Endüstriyel sınıf Siemens S7 PLC otomasyon, dört şaft intelligent synchronization ve predictive maintenance modülleri ile donatılmış DS-150, Endüstri 4.0 standartlarına uyumludur. 80 adet ultra dayanıklı bıçak ve üç kademeli elek sistemi (5-30 mm) ile maksimum verimlilik sağlar.',
+        paragraph3: 'DS-150, büyük kapasiteli plastik geri dönüşüm kompleksleri, elektronik atık fabrikaları için tasarlanmıştır. AI destekli malzeme tanıma ile entegre edilebilir. ISO 9001 sertifikası ve 3 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'DS-150 four shaft shredder is a professional system offering ultra-precise shredding for high-capacity facilities.',
+        paragraph1: 'DS-150 model features 4x18.5 kW (total 74 kW) high power four motor configuration with 1500 mm ultra-wide rotor.',
+        paragraph2: 'Equipped with industrial-grade Siemens S7 PLC automation, four shaft intelligent synchronization, DS-150 complies with Industry 4.0.',
+        paragraph3: 'DS-150 is designed for large capacity plastic recycling complexes, electronic waste factories.'
+      },
+      ru: {
+        intro: 'Четырехвальный измельчитель DS-150 - профессиональная система для высокопроизводительных объектов.',
+        paragraph1: 'Модель DS-150 оснащена четырехмоторной конфигурацией 4x18,5 кВт (всего 74 кВт) с длиной ротора 1500 мм.',
+        paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, DS-150 соответствует стандартам Индустрии 4.0.',
+        paragraph3: 'DS-150 разработан для крупных комплексов переработки пластика.'
+      },
+      ar: {
+        intro: 'آلة التمزيق رباعية العمود DS-150 نظام احترافي للمرافق عالية السعة.',
+        paragraph1: 'يتميز طراز DS-150 بتكوين أربعة محركات 4×18.5 كيلووات (إجمالي 74 كيلووات).',
+        paragraph2: 'مجهز بأتمتة Siemens S7 PLC من الدرجة الصناعية، يتوافق DS-150 مع معايير الصناعة 4.0.',
+        paragraph3: 'تم تصميم DS-150 لمجمعات إعادة التدوير كبيرة السعة.'
+      }
+    },
+    'DS-200': {
+      tr: {
+        intro: 'DS-200 dört şaftlı parçalama makinesi, MT Makina\'nın en gelişmiş modeli olup mega kapasiteli projeler için ultra hassas teknoloji sunan mühendislik şaheseridir.',
+        paragraph1: 'DS-200 model, 4x30 kW (toplam 120 kW) maksimum güç dört motor sistemi ile 2000 mm dev rotor uzunluğuna sahiptir. 3500-6000 kg/saat olağanüstü işleme kapasitesi ile büyük endüstriyel ekipmanlar, dev elektronik cihazlar ve özel kompozit malzemelerin ultra hassas parçalanmasında dünya standardında performans gösterir.',
+        paragraph2: 'En ileri Siemens S7-1500 PLC otomasyon, yapay zeka destekli dört şaft senkronizasyonu, digital twin simülasyonu, IoT sensör ağı ile donatılmış DS-200, Endüstri 5.0 standartlarının öncüsüdür. 96 adet ultra premium kalite bıçak ve dört kademeli akıllı elek sistemi (3-25 mm) ile maksimum hassasiyet garantisi verir.',
+        paragraph3: 'DS-200, global entegre geri dönüşüm kompleksleri, mega elektronik atık tesisleri için turnkey çözüm olarak tasarlanmıştır. Tam otonom AI destekli üretim hattı, robotik sistemler ve ERP-MES-SCADA entegrasyonu mümkündür. 5 yıl platinum garanti+7/24 global teknik destek ile desteklenir.'
+      },
+      en: {
+        intro: 'DS-200 four shaft shredder is MT Makina\'s most advanced model, an engineering masterpiece for mega-capacity projects.',
+        paragraph1: 'DS-200 model features 4x30 kW (total 120 kW) maximum power four motor system with 2000 mm giant rotor.',
+        paragraph2: 'Equipped with most advanced Siemens S7-1500 PLC automation, AI-assisted four shaft synchronization, DS-200 pioneers Industry 5.0.',
+        paragraph3: 'DS-200 is designed as turnkey solution for global recycling complexes. Supported by 5-year platinum warranty+24/7 support.'
+      },
+      ru: {
+        intro: 'Четырехвальный измельчитель DS-200 - самая передовая модел�� MT Makina, инженерный шедевр.',
+        paragraph1: 'Модель DS-200 оснащена системой четырех двигателей 4x30 кВт (всего 120 кВт) с длиной ротора 2000 мм.',
+        paragraph2: 'Оснащенный автоматизацией Siemens S7-1500 PLC с помощью ИИ, DS-200 является пионером Индустрии 5.0.',
+        paragraph3: 'DS-200 разработан как комплексное решение для глобальных комплексов переработки.'
+      },
+      ar: {
+        intro: 'آلة التمزيق رباعية العمود DS-200 الطراز الأكثر تقدمًا من MT Makina، تحفة هندسية.',
+        paragraph1: 'يتميز طراز DS-200 بنظام أربعة محركات 4×30 كيلووات (إجمالي 120 كيلووات).',
+        paragraph2: 'مجهز بأتمتة Siemens S7-1500 PLC بمساعدة الذكاء الاصطناعي، يرائد DS-200 الصناعة 5.0.',
+        paragraph3: 'تم تصميم DS-200 كحل تسليم مفتاح لمجمعات إعادة التدوير العالمية.'
+      }
+    }
+  },
+  'metal': {
+    'RDM-100': {
+      tr: {
+        intro: 'RDM-100 Redmonster metal parçalama makinesi, küçük-orta ölçekli metal hurda işleme tesisleri için kompakt ve güçlü bir çözümdür.',
+        paragraph1: 'RDM-100 model, 75 kW yüksek tork motor gücü ile 1000 mm rotor uzunluğu ve özel tasarım metal kesim bıçaklarına sahiptir. 1500-2500 kg/saat işleme kapasitesi ile alüminyum profiller, bakır kablolar, demir çubuklar, ince metal levhalar, bisiklet-motosiklet parçaları ve hafif metal atıkların güvenli şekilde parçalanmasını sağlar. Düşük hız-ultra yüksek tork prensibi ile zorlu metalleri bile kolayca keser.',
+        paragraph2: 'PLC kontrollü otomasyon sistemi, otomatik aşırı yük koruması, acil durum durdurma ve ters çalışma fonksiyonu ile donatılmış RDM-100, güvenli ve kesintisiz üretim garantisi verir. 24 adet özel alaşımlı kesici bıçak ve güçlendirilmiş dişli kutusu ile uzun ömür ve minimum bakım gerektirir. Manyetik seperatör ile entegre edilerek farklı metal türleri ayırabilir.',
+        paragraph3: 'MT Makina RDM-100, küçük metal geri dönüşüm atölyeleri, hurda toplama merkezleri, alüminyum işleme tesisleri ve yerel metal atık yönetim merkezleri için idealdir. Kompakt boyutlara rağmen endüstriyel dayanıklılık sunar. CE sertifikalı güvenlik standartları ve 2 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'RDM-100 Redmonster metal shredder is a compact and powerful solution for small-medium scale metal scrap processing facilities.',
+        paragraph1: 'RDM-100 model features 75 kW high torque motor power with 1000 mm rotor length and special design metal cutting blades. With 1500-2500 kg/hour processing capacity, it safely shreds aluminum profiles, copper cables, iron bars, thin metal sheets, bicycle-motorcycle parts.',
+        paragraph2: 'Equipped with PLC controlled automation system, automatic overload protection, emergency stop and reverse function, RDM-100 guarantees safe and uninterrupted production. With 24 special alloy cutting blades and reinforced gearbox.',
+        paragraph3: 'MT Makina RDM-100 is ideal for small metal recycling workshops, scrap collection centers, aluminum processing facilities.'
+      },
+      ru: {
+        intro: 'Измельчитель металла RDM-100 Redmonster - компактное и мощное решение для малых-средних предприятий по переработке металлолома.',
+        paragraph1: 'Модель RDM-100 оснащена мощным двигателем 75 кВт с длиной ротора 1000 мм и специальными ножами для резки металла. Производительность 1500-2500 кг/час.',
+        paragraph2: 'Оснащенный системой автоматизации ПЛК, автоматической защитой от перегрузки, RDM-100 гарантирует безопасное производство.',
+        paragraph3: 'MT Makina RDM-100 идеально подходит для небольших мастерских по переработке металла, центров сбора металлолома.'
+      },
+      ar: {
+        intro: 'آلة تمزيق المعادن RDM-100 Redmonster حل مدمج وقوي لمرافق معالجة الخردة المعدنية صغيرة-متوسطة الحجم.',
+        paragraph1: 'يتميز طراز RDM-100 بقوة محرك عزم دوران عالي 75 كيلووات مع طول دوار 1000 مم. سعة معالجة 1500-2500 كجم/ساعة.',
+        paragraph2: 'مجهز بنظام أتمتة PLC وحماية تلقائية من الحمل الزائد، يضمن RDM-100 إنتاجًا آمنًا.',
+        paragraph3: 'MT Makina RDM-100 مثالي لورش إعادة تدوير المعادن الصغيرة ومراكز جمع الخردة.'
+      }
+    },
+    'RDM-150': {
+      tr: {
+        intro: 'RDM-150 Redmonster metal parçalama makinesi, orta-büyük kapasiteli metal geri dönüşüm tesisleri için yüksek performanslı profesyonel bir sistemdir.',
+        paragraph1: 'RDM-150 model, 110 kW ultra yüksek tork motor yapısı ile 1500 mm geniş rotor uzunluğu ve takviyeli kesim sistemi sahiptir. 2500-4000 kg/saat işleme kapasitesi ile kalın alüminyum bloklar, endüstriyel çelik profiller, bakır transformatörler, otomotiv motor blokları, kalın metal levhalar ve ağır metal yapıların parçalanmasında üstün performans gösterir. Hidrolik itici sistem ile sürekli besleme garantisi verir.',
+        paragraph2: 'Siemens PLC tabanlı gelişmiş otomasyon, gerçek zamanlı tork izleme, otomatik aşırı yük algılama ve çift yönlü ters çalışma fonksiyonu ile donatılmış RDM-150, 7/24 kesintisiz çalışma kapasitesine sahiptir. 32 adet ultra dayanıklı kesici bıçak, güçlendirilmiş rotor şaftı ve endüstriyel dişli kutusu ile maksimum verimlilik sağlar. Manyetik ve eddy current seperatör ile entegre edilerek yüksek saflıkta metal ayırımı yapılabilir.',
+        paragraph3: 'RDM-150, orta-büyük metal hurda işleme tesisleri, otomotiv geri dönüşüm merkezleri, endüstriyel metal atık işleme ve belediye metal toplama merkezleri için optimize edilmiştir. Modüler yapısı sayesinde konveyör besleyici ve seperatör sistemleri ile kolayca entegre edilir. CE ve ISO sertifikaları ile 2 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'RDM-150 Redmonster metal shredder is a high-performance professional system for medium-large capacity metal recycling facilities.',
+        paragraph1: 'RDM-150 model features 110 kW ultra-high torque motor structure with 1500 mm wide rotor length. With 2500-4000 kg/hour processing capacity, it shows superior performance in shredding thick aluminum blocks, industrial steel profiles, copper transformers.',
+        paragraph2: 'Equipped with Siemens PLC-based advanced automation, real-time torque monitoring, automatic overload detection, RDM-150 has 7/24 uninterrupted operation capacity.',
+        paragraph3: 'RDM-150 is optimized for medium-large metal scrap processing facilities, automotive recycling centers, industrial metal waste processing.'
+      },
+      ru: {
+        intro: 'Измельчитель металла RDM-150 Redmonster - высокопроизводительная профессиональная система для средне-крупных предприятий.',
+        paragraph1: 'Модель RDM-150 оснащена сверхвысоким крутящим моментом 110 кВт с широкой длиной ротора 1500 мм. Производительность 2500-4000 кг/час.',
+        paragraph2: 'Оснащенный передовой автоматизацией Siemens PLC, мониторингом крутящего момента в реальном времени, RDM-150 работает 7/24.',
+        paragraph3: 'RDM-150 оптимизирован для средне-крупных предприятий по переработке металлолома, центров переработки автомобилей.'
+      },
+      ar: {
+        intro: 'آلة تمزيق المعادن RDM-150 Redmonster نظام احترافي عالي الأداء لمرافق إعادة التدوير متوسطة-كبيرة السعة.',
+        paragraph1: 'يتميز طراز RDM-150 بهيكل محرك بعزم دوران فائق 110 كيلووات مع طول دوار واسع 1500 مم. سعة معالجة 2500-4000 كجم/ساعة.',
+        paragraph2: 'مجهز بأتمتة Siemens PLC المتقدمة ومراقبة عزم الدوران في الوقت الفعلي، يعمل RDM-150 بقدرة 7/24.',
+        paragraph3: 'تم تحسين RDM-150 لمرافق معالجة الخردة المعدنية متوسطة-كبيرة الحجم.'
+      }
+    },
+    'RDM-180': {
+      tr: {
+        intro: 'RDM-180 Redmonster metal parçalama makinesi, büyük kapasiteli endüstriyel metal geri dönüşüm kompleksleri için maksimum güç ve performans sunan profesyonel bir sistemdir.',
+        paragraph1: 'RDM-180 model, 160 kW mega tork motor yapısı ile 1800 mm ultra geniş rotor uzunluğu ve ağır hizmet tipi kesim sistemi sahiptir. 4000-6000 kg/saat yüksek işleme kapasitesi ile otomotiv şaseleri, endüstriyel makine parçaları, çelik I-profiller, büyük dökme alüminyum parçalar, transformatör sacları ve ağır metal atıkların parçalanmasında olağanüstü performans gösterir. Çift hidrolik itici sistem ile kesintisiz besleme sağlar.',
+        paragraph2: 'Endüstriyel sınıf Siemens S7 PLC otomasyon, SCADA entegrasyonu, gerçek zamanlı performans analizi, uzaktan izleme ve predictive maintenance modülleri ile donatılmış RDM-180, Endüstri 4.0 standartlarına tam uyumludur. 40 adet ultra premium kesici bıçak, takviyeli çelik rotor ve ağır hizmet dişli kutusu ile maksimum tork ve uzun ömür garantisi verir. Otomatik yağlama sistemi ile minimum bakım gerektirir.',
+        paragraph3: 'RDM-180, büyük metal geri dönüşüm kompleksleri, otomotiv parçalama fabrikaları, endüstriyel metal hurda işleme merkezleri ve belediye entegre metal geri kazanım tesisleri için tasarlanmıştır. Tam otomatik konveyör sistemi, manyetik seperatör, eddy current ve optik seperatörler ile entegre edilebilir. ISO 9001, CE sertifikaları ve 3 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'RDM-180 Redmonster metal shredder is a professional system offering maximum power and performance for large capacity industrial metal recycling complexes.',
+        paragraph1: 'RDM-180 model features 160 kW mega torque motor structure with 1800 mm ultra-wide rotor length. With 4000-6000 kg/hour high processing capacity, it shows extraordinary performance in shredding automotive chassis, industrial machine parts, steel I-profiles.',
+        paragraph2: 'Equipped with industrial-grade Siemens S7 PLC automation, SCADA integration, real-time performance analysis, RDM-180 is fully compliant with Industry 4.0 standards.',
+        paragraph3: 'RDM-180 is designed for large metal recycling complexes, automotive shredding factories, industrial metal scrap processing centers.'
+      },
+      ru: {
+        intro: 'Измельчитель металла RDM-180 Redmonster - профессиональная система, обеспечивающая максимальную мощность для крупных комплексов.',
+        paragraph1: 'Модель RDM-180 оснащена мегамощным двигателем 160 кВт со сверхширокой длиной ротора 1800 мм. Производительность 4000-6000 кг/час.',
+        paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, интеграцией SCADA, RDM-180 полностью соответствует стандартам Индустрии 4.0.',
+        paragraph3: 'RDM-180 разработан для крупных комплексов по переработке металла, заводов по измельчению автомобилей.'
+      },
+      ar: {
+        intro: 'آلة تمزيق المعادن RDM-180 Redmonster نظام احترافي يوفر أقصى قوة وأداء لمجمعات إعادة التدوير الصناعية كبيرة السعة.',
+        paragraph1: 'يتميز طراز RDM-180 بهيكل محرك بعزم دوران ضخم 160 كيلووات مع طول دوار فائق الاتساع 1800 مم. سعة معالجة 4000-6000 كجم/ساعة.',
+        paragraph2: 'مجهز بأتمتة Siemens S7 PLC من الدرجة الصناعية وتكامل SCADA، يتوافق RDM-180 بالكامل مع معايير الصناعة 4.0.',
+        paragraph3: 'تم تصميم RDM-180 لمجمعات إعادة تدوير المعادن الكبيرة ومصانع تمزيق السيارات.'
+      }
+    },
+    'RDM-200': {
+      tr: {
+        intro: 'RDM-200 Redmonster metal parçalama makinesi, MT Makina\'nın en güçlü modeli olup mega kapasiteli projelere yönelik dünya standartlarında bir mühendislik harikasıdır.',
+        paragraph1: 'RDM-200 model, 220 kW maksimum tork motor sistemi ile 2000 mm dev rotor uzunluğu ve ultra güçlü kesim teknolojisine sahiptir. 6000-10000 kg/saat olağanüstü işleme kapasitesi ile otobüs-kamyon şaseleri, endüstriyel çelik yapılar, büyük dökümhaneler, transformatör kasaları, gemi parçaları, demiryolu ekipmanları ve mega metal atık projelerinin parçalanmasında dünya lideri performans gösterir. Saatte 10 tona kadar ağır metal işleyebilme gücüne sahiptir.',
+        paragraph2: 'En ileri Siemens S7-1500 PLC otomasyon, yapay zeka destekli yük optimizasyonu, gerçek zamanlı digital twin simülasyonu, IoT sensör ağı, bulut tabanlı performans izleme, predictive maintenance AI ve cyber security altyapısı ile donatılmış RDM-200, Endüstri 5.0 ve sürdürülebilir üretim standartlarının öncüsüdür. 48 adet ultra premium kalite kesici bıçak, takviyeli çelik monokok gövde, çift senkronize hidrolik itici, otomatik bıçak pozisyonlama ve endüstriyel soğutma sistemi ile maksimum performans ve sıfır planlı duruş garantisi verir.',
+        paragraph3: 'RDM-200, global metal geri dönüşüm kompleksleri, mega otomotiv parçalama tesisleri, uluslararası hurda işleme merkezleri, belediye entegre metal geri kazanım fabrikaları ve özel mühendislik projeleri için turnkey çözüm olarak tasarlanmıştır. Tam otomatik AI destekli üretim hattı, robotik yükleme sistemleri, çok seviyeli seperasyon (manyetik, eddy current, optik, X-Ray), otomatik kalite kontrol ve ERP-MES-SCADA tam entegrasyonu ile endüstri 4.0+ standardında fabrika kurulumu mümkündür. Tüm küresel güvenlik ve kalite standartları (CE, UL, ISO 9001, ISO 14001, ISO 45001) ve 5 yıl platinum garanti+7/24 global teknik destek ile desteklenir.'
+      },
+      en: {
+        intro: 'RDM-200 Redmonster metal shredder is MT Makina\'s most powerful model, a world-standard engineering marvel for mega-capacity projects.',
+        paragraph1: 'RDM-200 model features 220 kW maximum torque motor system with 2000 mm giant rotor length. With 6000-10000 kg/hour extraordinary processing capacity, it shows world-leading performance in shredding bus-truck chassis, industrial steel structures, large foundries.',
+        paragraph2: 'Equipped with most advanced Siemens S7-1500 PLC automation, AI-assisted load optimization, real-time digital twin simulation, RDM-200 pioneers Industry 5.0 standards.',
+        paragraph3: 'RDM-200 is designed as turnkey solution for global metal recycling complexes, mega automotive shredding facilities. Supported by 5-year platinum warranty+24/7 global support.'
+      },
+      ru: {
+        intro: 'Измельчитель металла RDM-200 Redmonster - самая мощная модель MT Makina, инженерное чудо мирового стандарта.',
+        paragraph1: 'Модель RDM-200 оснащена системой двигателя максимального крутящего момента 220 кВт с гигантской длиной ротора 2000 мм. Производительность 6000-10000 кг/час.',
+        paragraph2: 'Оснащенный самой передовой автоматизацией Siemens S7-1500 PLC, оптимизацией нагрузки с помощью ИИ, RDM-200 является пионером стандартов Индустрии 5.0.',
+        paragraph3: 'RDM-200 разработан как комплексное решение для глобальных комплексов по переработке металла.'
+      },
+      ar: {
+        intro: 'آلة تمزيق المعادن RDM-200 Redmonster الطراز الأقوى من MT Makina، معجزة هندسية بمعايير عالمية.',
+        paragraph1: 'يتميز طراز RDM-200 بنظام محرك بعزم دوران أقصى 220 كيلووات مع طول دوار عملاق 2000 مم. سعة معالجة 6000-10000 كجم/ساعة.',
+        paragraph2: 'مجهز بأكثر أنظمة الأتمتة تقدمًا Siemens S7-1500 PLC وتحسين الحمل بمساعدة الذكاء الاصطناعي، يرائد RDM-200 معايير الصناعة 5.0.',
+        paragraph3: 'تم تصميم RDM-200 كحل تسليم مفتاح لمجمعات إعادة تدوير المعادن العالمية.'
+      }
+    }
+  },
+  // DİĞER MAKİNE TÜRLERİ (pallet, mobile, harddisk)
   // Bu modeller için çeviri metinleri henüz eklenmemiştir
-  // getModelDescription fonksiyonu bu modeller için genel fallback metinler döndürecektir
 };
 
 /**
