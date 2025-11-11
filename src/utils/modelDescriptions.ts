@@ -1,7 +1,9 @@
 /**
- * Model-Specific SEO-Optimized Descriptions
- * Her makine modeli için benzersiz, SEO odaklı açıklama metinleri
+ * Model-Specific Multilingual SEO-Optimized Descriptions
+ * Her makine modeli için benzersiz, çok dilli, SEO odaklı açıklama metinleri
  */
+
+type Language = 'tr' | 'en' | 'ru' | 'ar';
 
 interface ModelDescription {
   intro: string;
@@ -10,346 +12,272 @@ interface ModelDescription {
   paragraph3: string;
 }
 
-export const modelDescriptions: { [productType: string]: { [modelName: string]: ModelDescription } } = {
+interface MultilingualModelDescription {
+  tr: ModelDescription;
+  en: ModelDescription;
+  ru: ModelDescription;
+  ar: ModelDescription;
+}
+
+export const modelDescriptions: { [productType: string]: { [modelName: string]: MultilingualModelDescription } } = {
   'single-saft': {
     'TSH-60': {
-      intro: 'TSH-60 tek şaftlı parçalama makinesi, küçük ve orta ölçekli işletmeler için ideal çözümdür.',
-      paragraph1: 'TSH-60 model, 15-30 kW motor gücü ile plastik, ahşap, kağıt, tekstil ve ambalaj atıklarının etkili şekilde parçalanmasını sağlar. 600x1100 mm parçalama alanı ve 500-800 kg/saat işleme kapasitesi ile günlük orta seviye üretim gereksinimlerini karşılar. Kompakt tasarımı sayesinde sınırlı alanlarda bile verimli çalışır.',
-      paragraph2: 'PLC kontrollü otomasyon sistemi ile donatılmış TSH-60, aşırı yüklenme durumlarında otomatik ters çalışma fonksiyonu sayesinde bıçakların ömrünü uzatır ve kesintisiz üretim sağlar. Değiştirilebilir elek sistemi ile farklı çıkış boyutları elde edebilirsiniz.',
-      paragraph3: 'MT Makina TSH-60 parçalama makinesi, kompakt boyutlara rağmen endüstriyel dayanıklılık sunar. 600 mm rotor uzunluğu, 24 adet değiştirilebilir bıçak ve otomatik yağlama sistemi ile minimum bakım gerektirir. Plastik geri dönüşüm tesisleri, ahşap atık işleme ve kağıt-karton tesisleri için ekonomik ve verimli bir çözümdür.'
+      tr: {
+        intro: 'TSH-60 tek şaftlı parçalama makinesi, küçük ve orta ölçekli işletmeler için ideal çözümdür.',
+        paragraph1: 'TSH-60 model, 15-30 kW motor gücü ile plastik, ahşap, kağıt, tekstil ve ambalaj atıklarının etkili şekilde parçalanmasını sağlar. 600x1100 mm parçalama alanı ve 500-800 kg/saat işleme kapasitesi ile günlük orta seviye üretim gereksinimlerini karşılar. Kompakt tasarımı sayesinde sınırlı alanlarda bile verimli çalışır.',
+        paragraph2: 'PLC kontrollü otomasyon sistemi ile donatılmış TSH-60, aşırı yüklenme durumlarında otomatik ters çalışma fonksiyonu sayesinde bıçakların ömrünü uzatır ve kesintisiz üretim sağlar. Değiştirilebilir elek sistemi ile farklı çıkış boyutları elde edebilirsiniz.',
+        paragraph3: 'MT Makina TSH-60 parçalama makinesi, kompakt boyutlara rağmen endüstriyel dayanıklılık sunar. 600 mm rotor uzunluğu, 24 adet değiştirilebilir bıçak ve otomatik yağlama sistemi ile minimum bakım gerektirir. Plastik geri dönüşüm tesisleri, ahşap atık işleme ve kağıt-karton tesisleri için ekonomik ve verimli bir çözümdür.'
+      },
+      en: {
+        intro: 'TSH-60 single shaft shredder is an ideal solution for small and medium-sized enterprises.',
+        paragraph1: 'TSH-60 model provides effective shredding of plastic, wood, paper, textile and packaging waste with 15-30 kW motor power. With 600x1100 mm shredding area and 500-800 kg/hour processing capacity, it meets daily medium-level production requirements. Thanks to its compact design, it works efficiently even in limited spaces.',
+        paragraph2: 'Equipped with PLC controlled automation system, TSH-60 extends blade life and ensures uninterrupted production through automatic reverse function in case of overload. Different output sizes can be obtained with the replaceable screen system.',
+        paragraph3: 'MT Makina TSH-60 shredder offers industrial durability despite its compact size. With 600 mm rotor length, 24 replaceable blades and automatic lubrication system, it requires minimum maintenance. It is an economical and efficient solution for plastic recycling facilities, wood waste processing and paper-cardboard facilities.'
+      },
+      ru: {
+        intro: 'Одновальный измельчитель TSH-60 - идеальное решение для малых и средних предприятий.',
+        paragraph1: 'Модель TSH-60 обеспечивает эффективное измельчение пластика, дерева, бумаги, текстиля и упаковочных отходов при мощности двигателя 15-30 кВт. С зоной измельчения 600x1100 мм и производительностью 500-800 кг/час она отвечает ежедневным требованиям производства среднего уровня. Благодаря компактной конструкции она эффективно работает даже в ограниченном пространстве.',
+        paragraph2: 'Оснащенный системой автоматизации с ПЛК-управлением, TSH-60 продлевает срок службы ножей и обеспечивает бесперебойное производство благодаря автоматической функции реверса в случае перегрузки. С заменяемой системой сит можно получить ��азличные размеры на выходе.',
+        paragraph3: 'Измельчитель MT Makina TSH-60 обладает промышленной прочностью, несмотря на компактный размер. С длиной ротора 600 мм, 24 сменными ножами и автоматической системой смазки требует минимального обслуживания. Это экономичное и эффективное решение для предприятий по переработке пластика, обработке древесных отходов и картонно-бумажных предприятий.'
+      },
+      ar: {
+        intro: 'آلة التقطيع أحادية العمود TSH-60 هي الحل الأمثل للشركات الصغيرة والمتوسطة.',
+        paragraph1: 'يوفر طراز TSH-60 تقطيعًا فعالاً للبلاستيك والخشب والورق والمنسوجات ونفايات التعبئة والتغليف بقوة محرك 15-30 كيلووات. بمنطقة تقطيع 600×1100 مم وسعة معالجة 500-800 كجم/ساعة، يلبي متطلبات الإنتاج اليومية متوسطة المستوى. بفضل تصميمه المدمج، يعمل بكفاءة حتى في المساحات المحدودة.',
+        paragraph2: 'مجهز بنظام أت��تة يتحكم فيه PLC، يطيل TSH-60 عمر الشفرات ويضمن إنتاجًا مستمرًا من خلال وظيفة الرجوع التلقائي في حالة الحمل الزائد. يمكن الحصول على أحجام مخرجات مختلفة بنظام الشاشة القابل للاستبدال.',
+        paragraph3: 'تقدم آلة التقطيع MT Makina TSH-60 متانة صناعية على الرغم من حجمها المدمج. مع طول دوار 600 مم و24 شفرة قابلة للاستبدال ونظام تشحيم تلقائي، يتطلب الحد الأدنى من الصيانة. إنه حل اقتصادي وفعال لمرافق إعادة تدوير البلاستيك ومعالجة نفايات الخشب ومرافق الورق والكرتون.'
+      }
     },
     'TSH-80': {
-      intro: 'TSH-80 tek şaftlı parçalama makinesi, orta ölçekli üretim tesisleri için güçlü ve verimli bir çözüm sunar.',
-      paragraph1: 'TSH-80 model, 22-45 kW motor gücü ile 800x1100 mm geniş parçalama alanına sahiptir. 800-1200 kg/saat kapasite ile günlük yüksek hacimli atık işleme gereksinimlerini karşılar. Plastik enjeksiyon atıkları, PET şişeler, PP-PE malzemeler, ahşap paletler ve endüstriyel ambalaj atıklarının parçalanmasında üstün performans gösterir.',
-      paragraph2: 'Gelişmiş PLC otomasyon sistemi, gerçek zamanlı motor yükü izleme, otomatik başlatma-durdurma ve acil durum güvenlik sistemleri ile donatılmıştır. 800 mm rotor uzunluğu ve 32 adet yüksek kaliteli bıçak, homojen parçalama ve uzun ömürlü kullanım garantisi verir.',
-      paragraph3: 'TSH-80, orta büyüklükteki geri dönüşüm tesisleri, plastik işleme fabrikaları ve atık yönetim merkezleri için optimize edilmiştir. Değiştirilebilel elek sistemi (20-80 mm) ile çıkış boyutu kontrolü yapılabilir. Düşük enerji tüketimi ve yüksek verimlilik oranı ile işletme maliyetlerini minimize eder.'
+      tr: {
+        intro: 'TSH-80 tek şaftlı parçalama makinesi, orta ölçekli üretim tesisleri için güçlü ve verimli bir çözüm sunar.',
+        paragraph1: 'TSH-80 model, 22-45 kW motor gücü ile 800x1100 mm geniş parçalama alanına sahiptir. 800-1200 kg/saat kapasite ile günlük yüksek hacimli atık işleme gereksinimlerini karşılar. Plastik enjeksiyon atıkları, PET şişeler, PP-PE malzemeler, ahşap paletler ve endüstriyel ambalaj atıklarının parçalanmasında üstün performans gösterir.',
+        paragraph2: 'Gelişmiş PLC otomasyon sistemi, gerçek zamanlı motor yükü izleme, otomatik başlatma-durdurma ve acil durum güvenlik sistemleri ile donatılmıştır. 800 mm rotor uzunluğu ve 32 adet yüksek kaliteli bıçak, homojen parçalama ve uzun ömürlü kullanım garantisi verir.',
+        paragraph3: 'TSH-80, orta büyüklükteki geri dönüşüm tesisleri, plastik işleme fabrikaları ve atık yönetim merkezleri için optimize edilmiştir. Değiştirilebilel elek sistemi (20-80 mm) ile çıkış boyutu kontrolü yapılabilir. Düşük enerji tüketimi ve yüksek verimlilik oranı ile işletme maliyetlerini minimize eder.'
+      },
+      en: {
+        intro: 'TSH-80 single shaft shredder offers powerful and efficient solution for medium-scale production facilities.',
+        paragraph1: 'TSH-80 model has a wide shredding area of 800x1100 mm with 22-45 kW motor power. With 800-1200 kg/hour capacity, it meets daily high-volume waste processing requirements. It shows superior performance in shredding plastic injection waste, PET bottles, PP-PE materials, wooden pallets and industrial packaging waste.',
+        paragraph2: 'Equipped with advanced PLC automation system, real-time motor load monitoring, automatic start-stop and emergency safety systems. 800 mm rotor length and 32 high-quality blades guarantee homogeneous shredding and long-lasting use.',
+        paragraph3: 'TSH-80 is optimized for medium-sized recycling facilities, plastic processing factories and waste management centers. Output size control can be done with replaceable screen system (20-80 mm). It minimizes operating costs with low energy consumption and high efficiency ratio.'
+      },
+      ru: {
+        intro: 'Одновальный измельчитель TSH-80 предлагает мощное и эффективное решение для производственных объектов среднего масштаба.',
+        paragraph1: 'Модель TSH-80 имеет широкую зону измельчения 800x1100 мм с мощностью двигателя 22-45 кВт. С производительностью 800-1200 кг/час она отвечает ежедневным требованиям обработки больших объемов отходов. Показывает превосходную производительность при измельчении отходов пластикового литья, ПЭТ-бутылок, материалов PP-PE, деревянных поддонов и промышленных упаковочных отходов.',
+        paragraph2: 'Оснащен усовершенствованной системой автоматизации ПЛК, мониторингом нагрузки двигателя в реальном времени, автоматическим запуском-остановкой и системами аварийной безопасности. Длина ротора 800 мм и 32 высококачественных ножа гарантируют однородное измельчение и долговечное использование.',
+        paragraph3: 'TSH-80 оптимизирован для перерабатывающих предприятий среднего размера, заводов по переработке пластмасс и центров управления отходами. Контроль размера на выходе может осуществляться с помощью сменной системы сит (20-80 мм). Минимизирует эксплуатационные расходы благодаря низкому энергопотреблению и высокому коэффициенту эффективности.'
+      },
+      ar: {
+        intro: 'توفر آلة التقطيع أحادية العمود TSH-80 حلاً قويًا وفعالاً لمنشآت الإنتاج متوسطة الحجم.',
+        paragraph1: 'يتميز طراز TSH-80 بمنطقة تقطيع واسعة 800×1100 مم بقوة محرك 22-45 كيلووات. بسعة 800-1200 كجم/ساعة، يلبي متطلبات معالجة النفايات اليومية ذات الحجم الكبير. يظهر أداءً متفوقًا في تقطيع نفايات حقن البلاستيك وزجاجات PET ومواد PP-PE والمنصات الخشبية ونفايات التعبئة والتغليف الصناعية.',
+        paragraph2: 'مجهز بنظام أتمتة PLC متقدم ومراقبة حمل المحرك في الوقت الفعلي والبدء والإيقاف التلقائي وأنظمة السلامة في حالات الطوارئ. يضمن طول الدوار 800 مم و32 شفرة عالية الجودة تقطيعًا متجانسًا واستخدامًا طويل الأمد.',
+        paragraph3: 'تم تحسين TSH-80 لمرافق إعادة التدوير متوسطة الحجم ومصانع معالجة البلاستيك ومراكز إدارة النفايات. يمكن التحكم في حجم المخرجات باستخدام نظام الشاشة القابل للاستبدال (20-80 مم). يقلل من تكاليف التشغيل بفضل انخفاض استهلاك الطاقة ونسبة الكفاءة العالية.'
+      }
     },
     'TSH-100': {
-      intro: 'TSH-100 tek şaftlı parçalama makinesi, yüksek kapasite gerektiren endüstriyel uygulamalar için tasarlanmış profesyonel bir sistemdir.',
-      paragraph1: 'TSH-100 model, 30-75 kW güçlü motor seçenekleri ile 1000x1300 mm geniş parçalama alanı sunar. 1200-1800 kg/saat işleme kapasitesi ile büyük ölçekli üretim tesislerinin ihtiyaçlarını karşılar. Kalın duvarlı plastikler, büyük çaplı ahşap parçalar, endüstriyel konteynerler, IBC tanklar ve ağır tekstil atıklarını kolayca parçalar.',
-      paragraph2: 'İleri seviye PLC kontrol paneli, touch screen operatör arayüzü, uzaktan izleme ve bakım hatırlatma sistemleri ile donatılmıştır. 1000 mm rotor, 40 adet premium kalite bıçak ve hidrolik itici sistem sayesinde sürekli ve kesintisiz üretim garantisi verir. Otomatik ters çalışma ve akıllı yük yönetimi, maksimum verimlilik sağlar.',
-      paragraph3: 'MT Makina TSH-100, büyük plastik geri dönüşüm tesisleri, ahşap palet üreticileri, kompozit malzeme işleyiciler ve endüstriyel atık yönetim firmaları için ideal çözümdür. Modüler yapısı sayesinde konveyör sistemleri ve seperatörlerle entegre edilebilir. CE sertifikalı güvenlik standartları ve 2 yıl garanti ile desteklenir.'
+      tr: {
+        intro: 'TSH-100 tek şaftlı parçalama makinesi, yüksek kapasite gerektiren endüstriyel uygulamalar için tasarlanmış profesyonel bir sistemdir.',
+        paragraph1: 'TSH-100 model, 30-75 kW güçlü motor seçenekleri ile 1000x1300 mm geniş parçalama alanı sunar. 1200-1800 kg/saat işleme kapasitesi ile büyük ölçekli üretim tesislerinin ihtiyaçlarını karşılar. Kalın duvarlı plastikler, büyük çaplı ahşap parçalar, endüstriyel konteynerler, IBC tanklar ve ağır tekstil atıklarını kolayca parçalar.',
+        paragraph2: 'İleri seviye PLC kontrol paneli, touch screen operatör arayüzü, uzaktan izleme ve bakım hatırlatma sistemleri ile donatılmıştır. 1000 mm rotor, 40 adet premium kalite bıçak ve hidrolik itici sistem sayesinde sürekli ve kesintisiz üretim garantisi verir. Otomatik ters çalışma ve akıllı yük yönetimi, maksimum verimlilik sağlar.',
+        paragraph3: 'MT Makina TSH-100, büyük plastik geri dönüşüm tesisleri, ahşap palet üreticileri, kompozit malzeme işleyiciler ve endüstriyel atık yönetim firmaları için ideal çözümdür. Modüler yapısı sayesinde konveyör sistemleri ve seperatörlerle entegre edilebilir. CE sertifikalı güvenlik standartları ve 2 yıl garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'TSH-100 single shaft shredder is a professional system designed for industrial applications requiring high capacity.',
+        paragraph1: 'TSH-100 model offers a wide shredding area of 1000x1300 mm with powerful motor options of 30-75 kW. With 1200-1800 kg/hour processing capacity, it meets the needs of large-scale production facilities. It easily shreds thick-walled plastics, large wood parts, industrial containers, IBC tanks and heavy textile waste.',
+        paragraph2: 'Equipped with advanced PLC control panel, touch screen operator interface, remote monitoring and maintenance reminder systems. With 1000 mm rotor, 40 premium quality blades and hydraulic pusher system, it guarantees continuous and uninterrupted production. Automatic reverse operation and intelligent load management provide maximum efficiency.',
+        paragraph3: 'MT Makina TSH-100 is an ideal solution for large plastic recycling facilities, wooden pallet manufacturers, composite material processors and industrial waste management companies. Thanks to its modular structure, it can be integrated with conveyor systems and separators. Supported by CE certified safety standards and 2-year warranty.'
+      },
+      ru: {
+        intro: 'Одновальный измельчитель TSH-100 - профессиональная система, разработанная для промышленных применений, требующих высокой производительности.',
+        paragraph1: 'Модель TSH-100 предлагает широкую зону измельчения 1000x1300 мм с мощными вариантами двигателя 30-75 кВт. С производительностью обработки 1200-1800 кг/час она отвечает потребностям крупномасштабных производственных объектов. Легко измельчает толстостенный пластик, крупные деревянные детали, промышленные контейнеры, баки IBC и тяжелые текстильные отходы.',
+        paragraph2: 'Оснащен усовершенствованной панелью управления ПЛК, сенсорным интерфейсом оператора, системами дистанционного мониторинга и напоминания о техническом обслуживании. С ротором 1000 мм, 40 ножами премиум-качества и гидравлической системой толкателя гарантирует непрерывное производство. Автоматическая реверсивная работа и интеллектуальное управление нагрузкой обеспечивают максимальную эффективность.',
+        paragraph3: 'MT Makina TSH-100 - идеальное решение для крупных предприятий по переработке пластика, производителей деревянных поддонов, переработчиков композитных материалов и компаний по управлению промышленными отходами. Благодаря модульной структуре может быть интегрирован с конвейерными системами и сепараторами. Поддерживается сертифицированными стандартами безопасности CE и 2-летней гарантией.'
+      },
+      ar: {
+        intro: 'آلة التقطيع أحادية العمود TSH-100 هي نظام احترافي مصمم للتطبيقات الصناعية التي تتطلب سعة عالية.',
+        paragraph1: 'يوفر طراز TSH-100 منطقة تقطيع واسعة 1000×1300 مم مع خيارات محرك قوية 30-75 كيلووات. بسعة معالجة 1200-1800 كجم/ساعة، يلبي احتياجات منشآت الإنتاج واسعة النطاق. يقطع بسهولة البلاستيك ذو الجدران السميكة وقطع الخشب الكبيرة والحاويات الصناعية وخزانات IBC ونفايات المنسوجات الثقيلة.',
+        paragraph2: 'مجهز بلوحة تحكم PLC متقدمة وواجهة مشغل شاشة تعمل باللمس وأنظمة المراقبة عن بُعد وتذكير الصيانة. مع دوار 1000 مم و40 شفرة عالية الجودة ونظام دفع هيدروليكي، يضمن إنت��جًا مستمرًا ومتواصلاً. توفر العملية العكسية التلقائية وإدارة الحمل الذكية أقصى كفاءة.',
+        paragraph3: 'MT Makina TSH-100 هو حل مثالي لمنشآت إعادة تدوير البلاستيك الكبيرة ومصنعي المنصات الخشبية ومعالجي المواد المركبة وشركات إدارة النفايات الصناعية. بفضل هيكلها المعياري، يمكن دمجها مع أنظمة النقل والفواصل. مدعومة بمعايير السلامة المعتمدة من CE وضمان لمدة عامين.'
+      }
     },
     'TSH-130': {
-      intro: 'TSH-130 tek şaftlı parçalama makinesi, ağır hizmet tipi endüstriyel uygulamalar için tasarlanmı�� güçlü bir parçalama sistemidir.',
-      paragraph1: 'TSH-130 model, 45-110 kW yüksek tork motor gücü ile 1300x1600 mm ekstra geniş parçalama alanı sunar. 1800-2500 kg/saat işleme kapasitesi ile sürekli üretim yapan büyük tesislerin gereksinimlerini karşılar. Kalın çeperli endüstriyel plastikler, büyük ahşap kütükler, yatak ve mobilya atıkları, büyük çaplı borular ve ağır endüstriyel atıkların parçalanmasında üstün performans gösterir.',
-      paragraph2: 'Endüstriyel sınıf PLC otomasyon, gerçek zamanlı üretim takibi, enerji tüketim analizi ve bakım planlama modülleri içerir. 1300 mm uzun rotor, 48 adet takviyeli bıçak sistemi ve güçlendirilmiş rulman yapısı ile 7/24 kesintisiz çalışma kapasitesine sahiptir. Hidrolik besleyici ve otomatik seviye kontrol sistemi operatör müdahalesini minimize eder.',
-      paragraph3: 'TSH-130, büyük kapasiteli plastik geri dönüşüm kompleksleri, ahşap işleme merkezleri, evsel eşya geri kazanım tesisleri ve ağır sanayi atık yönetimi için optimize edilmiştir. Çift elek sistemi ile hem kaba hem de ince parçalama yapılabilir. Yüksek dayanıklılık ve düşük işletme maliyeti ile yatırım geri dönüşü hızlıdır.'
+      tr: {
+        intro: 'TSH-130 tek şaftlı parçalama makinesi, ağır hizmet tipi endüstriyel uygulamalar için tasarlanmış güçlü bir parçalama sistemidir.',
+        paragraph1: 'TSH-130 model, 45-110 kW yüksek tork motor gücü ile 1300x1600 mm ekstra geniş parçalama alanı sunar. 1800-2500 kg/saat işleme kapasitesi ile sürekli üretim yapan büyük tesislerin gereksinimlerini karşılar. Kalın çeperli endüstriyel plastikler, büyük ahşap kütükler, yatak ve mobilya atıkları, büyük çaplı borular ve ağır endüstriyel atıkların parçalanmasında üstün performans gösterir.',
+        paragraph2: 'Endüstriyel sınıf PLC otomasyon, gerçek zamanlı üretim takibi, enerji tüketim analizi ve bakım planlama modülleri içerir. 1300 mm uzun rotor, 48 adet takviyeli bıçak sistemi ve güçlendirilmiş rulman yapısı ile 7/24 kesintisiz çalışma kapasitesine sahiptir. Hidrolik besleyici ve otomatik seviye kontrol sistemi operatör müdahalesini minimize eder.',
+        paragraph3: 'TSH-130, büyük kapasiteli plastik geri dönüşüm kompleksleri, ahşap işleme merkezleri, evsel eşya geri kazanım tesisleri ve ağır sanayi atık yönetimi için optimize edilmiştir. Çift elek sistemi ile hem kaba hem de ince parçalama yapılabilir. Yüksek dayanıklılık ve düşük işletme maliyeti ile yatırım geri dönüşü hızlıdır.'
+      },
+      en: {
+        intro: 'TSH-130 single shaft shredder is a powerful shredding system designed for heavy-duty industrial applications.',
+        paragraph1: 'TSH-130 model offers an extra wide shredding area of 1300x1600 mm with 45-110 kW high torque motor power. With 1800-2500 kg/hour processing capacity, it meets the requirements of large facilities with continuous production. It shows superior performance in shredding thick-walled industrial plastics, large wood logs, bed and furniture waste, large diameter pipes and heavy industrial waste.',
+        paragraph2: 'Industrial grade PLC automation includes real-time production tracking, energy consumption analysis and maintenance planning modules. With 1300 mm long rotor, 48 reinforced blade system and strengthened bearing structure, it has 7/24 uninterrupted operation capacity. Hydraulic feeder and automatic level control system minimize operator intervention.',
+        paragraph3: 'TSH-130 is optimized for large capacity plastic recycling complexes, wood processing centers, household appliance recovery facilities and heavy industry waste management. Both coarse and fine shredding can be done with dual screen system. Fast return on investment with high durability and low operating costs.'
+      },
+      ru: {
+        intro: 'Одновальный измельчитель TSH-130 - мощная система измельчения, разработанная для тяжелых промышленных применений.',
+        paragraph1: 'Модель TSH-130 предлагает сверхширокую зону измельчения 1300x1600 мм с высокомоментным двигателем 45-110 кВт. С производительностью обработки 1800-2500 кг/час она отвечает требованиям крупных предприятий с непрерывным производством. Показывает превосходную производительность при измельчении толстостенного промышленного пластика, крупных деревянных бревен, отходов мебели и кроватей, труб большого диаметра и тяжелых промышленных отходов.',
+        paragraph2: 'Промышленная автоматизация ПЛК включает отслеживание производства в реальном времени, анализ энергопотребления и модули планирования технического обслуживания. С длинным ротором 1300 мм, системой из 48 усиленных ножей и усиленной конструкцией подшипников имеет возможность непрерывной работы 7/24. Гидравлический податчик и система автоматического контроля уровня минимизируют вмешательство оператора.',
+        paragraph3: 'TSH-130 оптимизирован для крупных комплексов по переработке пластика, центров обработки древесины, предприятий по утилизации бытовой техники и управления отходами тяжелой промышленности. Возможно как грубое, так и тонкое измельчение с двойной системой сит. Быстрая окупаемость инвестиций благодаря высокой долговечности и низким эксплуатационным расходам.'
+      },
+      ar: {
+        intro: 'آلة التقطيع أحادية العمود TSH-130 هي نظام تقطيع قوي مصمم للتطبيقات الصناعية الثقيلة.',
+        paragraph1: 'يوفر طراز TSH-130 منطقة تقطيع واسعة للغاية 1300×1600 مم مع قوة محرك عزم دوران عالية 45-110 كيلووات. بسعة معالجة 1800-2500 كجم/ساعة، يلبي متطلبات المنشآت الكبيرة ذات الإنتاج المستمر. يظهر أداءً متفوقًا في تقطيع البلاستيك الصناعي ذو الجدران السميكة وجذوع الخشب الكبيرة ونفايات الأسرة والأثاث والأنابيب ذات القطر الكبير والنفايات الصناعية الثقيلة.',
+        paragraph2: 'تتضمن أتمتة PLC الصناعية تتبع الإنتاج في الوقت الفعلي وتحليل استهلاك الطاقة ووحدات تخطيط الصيانة. مع دوار طويل 1300 مم ونظام 48 شفرة معززة وهيكل محمل معزز، لديه قدرة تشغيل متواصل 7/24. يقلل المغذي الهيدروليكي ونظام التحكم في المستوى التلقائي من تدخل المشغل.',
+        paragraph3: 'تم تحسين TSH-130 لمجمعات إعادة تدوير البلاستيك ذات السعة الكبيرة ومراكز معالجة الخشب ومرافق استعادة الأجهزة المنزلية وإدارة نفايات الصناعة الثقيلة. يمكن إجراء التقطيع الخشن والناعم باستخدام نظام الشاشة المزدوجة. عائد سريع على الاستثمار مع متانة عالية وتكاليف تشغيل منخفضة.'
+      }
     },
     'TSH-160': {
-      intro: 'TSH-160 tek şaftlı parçalama makinesi, çift motor teknolojisi ile ekstra yüksek kapasite ve performans sunan endüstriyel sın��f bir sistemdir.',
-      paragraph1: 'TSH-160 model, 2x 55-132 kW çift motor konfigürasyonu ile 1600x1800 mm ultra geniş parçalama alanı sunar. 3500-4500 kg/saat işleme kapasitesi ile Türkiye\'nin en yüksek kapasiteli tek şaftlı sistemlerinden biridir. Büyük hacimli endüstriyel konteynerler, otomotiv tampon ve parçaları, büyük çaplı boru sistemleri, kompozit malzemeler ve toplu atık işleme projelerinde kullanılır.',
-      paragraph2: 'Siemens PLC tabanlı ileri otomasyon sistemi, SCADA entegrasyonu, uzaktan müdahale, predictive maintenance (öngörülü bakım) ve IoT bağlantı altyapısı sunar. 1600 mm ekstra uzun rotor, 64 adet özel alaşımlı bıçak ve takviyeli dişli kutusu ile maksimum tork ve dayanıklılık sağlar. Çift motor sistemi sayesinde ağır yüklerde bile kesintisiz çalışma garantisi verir.',
-      paragraph3: 'MT Makina TSH-160, büyük ölçekli geri dönüşüm kompleksleri, otomotiv geri kazanım merkezleri, belediye atık yönetim tesisleri ve sanayi bölgesi ortak atık işleme merkezleri için tasarlanmıştır. Tam otomatik konveyör besleme, manyetik seperatör, hava seperatörü ve balya presi ile entegre edilebilir. Avrupa standartlarında güvenlik ve CE sertifikası ile desteklenir.'
+      tr: {
+        intro: 'TSH-160 tek şaftlı parçalama makinesi, çift motor teknolojisi ile ekstra yüksek kapasite ve performans sunan endüstriyel sınıf bir sistemdir.',
+        paragraph1: 'TSH-160 model, 2x 55-132 kW çift motor konfigürasyonu ile 1600x1800 mm ultra geniş parçalama alanı sunar. 3500-4500 kg/saat işleme kapasitesi ile Türkiye\'nin en yüksek kapasiteli tek şaftlı sistemlerinden biridir. Büyük hacimli endüstriyel konteynerler, otomotiv tampon ve parçaları, büyük çaplı boru sistemleri, kompozit malzemeler ve toplu atık işleme projelerinde kullanılır.',
+        paragraph2: 'Siemens PLC tabanlı ileri otomasyon sistemi, SCADA entegrasyonu, uzaktan müdahale, predictive maintenance (öngörülü bakım) ve IoT bağlantı altyapısı sunar. 1600 mm ekstra uzun rotor, 64 adet özel alaşımlı bıçak ve takviyeli dişli kutusu ile maksimum tork ve dayanıklılık sağlar. Çift motor sistemi sayesinde ağır yüklerde bile kesintisiz çalışma garantisi verir.',
+        paragraph3: 'MT Makina TSH-160, büyük ölçekli geri dönüşüm kompleksleri, otomotiv geri kazanım merkezleri, belediye atık yönetim tesisleri ve sanayi bölgesi ortak atık işleme merkezleri için tasarlanmıştır. Tam otomatik konveyör besleme, manyetik seperatör, hava seperatörü ve balya presi ile entegre edilebilir. Avrupa standartlarında güvenlik ve CE sertifikası ile desteklenir.'
+      },
+      en: {
+        intro: 'TSH-160 single shaft shredder is an industrial-class system offering extra high capacity and performance with dual motor technology.',
+        paragraph1: 'TSH-160 model offers an ultra-wide shredding area of 1600x1800 mm with 2x 55-132 kW dual motor configuration. With a processing capacity of 3500-4500 kg/hour, it is one of Turkey\'s highest capacity single shaft systems. It is used in large volume industrial containers, automotive bumpers and parts, large diameter pipe systems, composite materials and bulk waste processing projects.',
+        paragraph2: 'Siemens PLC-based advanced automation system offers SCADA integration, remote intervention, predictive maintenance and IoT connectivity infrastructure. With 1600 mm extra long rotor, 64 special alloy blades and reinforced gearbox, it provides maximum torque and durability. Thanks to the dual motor system, it guarantees uninterrupted operation even under heavy loads.',
+        paragraph3: 'MT Makina TSH-160 is designed for large-scale recycling complexes, automotive recovery centers, municipal waste management facilities and industrial zone joint waste processing centers. It can be integrated with fully automatic conveyor feeding, magnetic separator, air separator and bale press. Supported by European standards safety and CE certification.'
+      },
+      ru: {
+        intro: 'Одновальный измельчитель TSH-160 - система промышленного класса, предлагающая сверхвысокую производительность и производительность с технологией двойного двигателя.',
+        paragraph1: 'Модель TSH-160 предлагает сверхширокую зону измельчения 1600x1800 мм с конфигурацией двойного двигателя 2x 55-132 кВт. С производительностью обработки 3500-4500 кг/час это одна из самых высокопроизводительных одновальных систем Турции. Используется в крупногабаритных промышленных контейнерах, автомобильных бамперах и деталях, трубных системах большого диаметра, композитных материалах и проектах массовой переработки отходов.',
+        paragraph2: 'Передовая система автоматизации на базе ПЛК Siemens предлагает интеграцию SCADA, дистанционное вмешательство, прогнозируемое техническое обслуживание и инфраструктуру подключения IoT. С дополнительным длинным ротором 1600 мм, 64 ножами из специального сплава и усиленным редуктором обеспечивает максимальный крутящий момент и долговечность. Благодаря системе с двумя двигателями гарантирует бесперебойную работу даже при больших нагрузках.',
+        paragraph3: 'MT Makina TSH-160 разработан для крупномасштабных комплексов переработки, центров восстановления автомобилей, муниципальных объектов по управлению отходами и совместных центров переработки отходов промышленных зон. Может быть интегрирован с полностью автоматической конвейерной подачей, магнитным сепаратором, воздушным сепаратором и пресс-подборщиком. Поддерживается европейскими стандартами безопасности и сертификацией CE.'
+      },
+      ar: {
+        intro: 'آلة التقطيع أحادية العمود TSH-160 هي نظام من الدرجة الصناعية يوفر سعة وأداء عاليين للغاية بتقنية المحرك المزدوج.',
+        paragraph1: 'يوفر طراز TSH-160 منطقة تقطيع فائقة الاتساع 1600×1800 مم مع تكوين محرك مزدوج 2×55-132 كيلووات. بسعة معالجة 3500-4500 كجم/ساعة، هو أحد أنظمة العمود الواحد ذات السعة الأعلى في تركيا. يستخدم في الحاويات الصناعية كبيرة الحجم والمصدات وأجزاء السيارات وأنظمة الأنابيب ذات القطر الكبير والمواد المركبة ومشاريع معالجة النفايات بالجملة.',
+        paragraph2: 'يوفر نظام الأتمتة المتقدم القائم على PLC من Siemens تكامل SCADA والتدخل عن بُعد والصيانة التنبؤية والبنية التحتية لاتصال إنترنت الأشياء. مع دوار طويل إضافي 1600 مم و64 شفرة سبائك خاصة وعلبة تروس معززة، يوفر أقصى عزم دوران ومتانة. بفضل نظام المحرك المزدوج، يضمن تشغيلاً متواصلاً حتى تحت الأحمال الثقيلة.',
+        paragraph3: 'تم تصميم MT Makina TSH-160 لمجمعات إعادة التدوير واسعة النطاق ومراكز استعادة السيارات ومرافق إدارة النفايات البلدية ومراكز معالجة النفايات المشتركة في المناطق الصناعية. يمكن دمجه مع التغذية بالناقل الأوتوماتيكي بالكامل والفاصل المغناطيسي والفاصل الهوائي ومكبس البالات. مدعوم بمعايير السلامة الأوروبية وشهادة CE.'
+      }
     },
     'TSH-200': {
-      intro: 'TSH-200 tek şaftlı parçalama makinesi, MT Makina\'nın en büyük ve en güçlü modeli olup maksimum kapasite gerektiren mega projeler için tasarlanmıştır.',
-      paragraph1: 'TSH-200 model, 2x 75-160 kW çift motor sistemi ile 2000x2300 mm dev parçalama alanı sunar. 4500-6000 kg/saat işleme kapasitesi ile saatte 5 tona kadar atık işleyebilme gücüne sahiptir. Endüstriyel büyük hacimli konteynerler, otobüs-kamyon iç döşemeleri, büyük çaplı plastik tanklar, endüstriyel makine kasaları, büyük ahşap yapılar ve toplu elektronik atık projeleri için kullanılır.',
-      paragraph2: 'En ileri PLC ve SCADA sistemi, yapay zeka destekli yük optimizasyonu, gerçek zamanlı performans analizi, uzaktan tam kontrol ve bulut tabanlı veri saklama özelliklerine sahiptir. 2000 mm ultra uzun rotor, 80 adet premium kalite bıçak, endüstriyel sınıf hidrolik sistem ve takviyeli çelik gövde ile en zorlu malzemeleri bile kolayca işler. Çift motor ve diferansiyel dişli sistemi sayesinde eşsiz tork ve verim sunar.',
-      paragraph3: 'TSH-200, mega ölçekli geri dönüşüm kompleksleri, belediye entegre katı atık yönetim tesisleri, otomotiv sanayi atık merkezleri, liman ve gümrük atık işleme merkezleri için ideal çözümdür. Tam otomatik hat entegrasyonu, multi-seperatör sistemleri, otomatik paketleme ve sevkiyat sistemleri ile kombine edilebilir. 7/24 teknik destek, yerinde bakım servisi ve uzun süreli garanti ile desteklenir.'
+      tr: {
+        intro: 'TSH-200 tek şaftlı parçalama makinesi, MT Makina\'nın en büyük ve en güçlü modeli olup maksimum kapasite gerektiren mega projeler için tasarlanmıştır.',
+        paragraph1: 'TSH-200 model, 2x 75-160 kW çift motor sistemi ile 2000x2300 mm dev parçalama alanı sunar. 4500-6000 kg/saat işleme kapasitesi ile saatte 5 tona kadar atık işleyebilme gücüne sahiptir. Endüstriyel büyük hacimli konteynerler, otobus-kamyon iç döşemeleri, büyük çaplı plastik tanklar, endüstriyel makine kasaları, büyük ahşap yapılar ve toplu elektronik atık projeleri için kullanılır.',
+        paragraph2: 'En ileri PLC ve SCADA sistemi, yapay zeka destekli yük optimizasyonu, gerçek zamanlı performans analizi, uzaktan tam kontrol ve bulut tabanlı veri saklama özelliklerine sahiptir. 2000 mm ultra uzun rotor, 80 adet premium kalite bıçak, endüstriyel sınıf hidrolik sistem ve takviyeli çelik gövde ile en zorlu malzemeleri bile kolayca işler. Çift motor ve diferansiyel dişli sistemi sayesinde eşsiz tork ve verim sunar.',
+        paragraph3: 'TSH-200, mega ölçekli geri dönüşüm kompleksleri, belediye entegre katı atık yönetim tesisleri, otomotiv sanayi atık merkezleri, liman ve gümrük atık işleme merkezleri için ideal çözümdür. Tam otomatik hat entegrasyonu, multi-seperatör sistemleri, otomatik paketleme ve sevkiyat sistemleri ile kombine edilebilir. 7/24 teknik destek, yerinde bakım servisi ve uzun süreli garanti ile desteklenir.'
+      },
+      en: {
+        intro: 'TSH-200 single shaft shredder is MT Makina\'s largest and most powerful model, designed for mega projects requiring maximum capacity.',
+        paragraph1: 'TSH-200 model offers a giant shredding area of 2000x2300 mm with 2x 75-160 kW dual motor system. With a processing capacity of 4500-6000 kg/hour, it has the power to process up to 5 tons of waste per hour. It is used for industrial large volume containers, bus-truck interior trim, large diameter plastic tanks, industrial machine casings, large wooden structures and bulk electronic waste projects.',
+        paragraph2: 'The most advanced PLC and SCADA system features AI-assisted load optimization, real-time performance analysis, full remote control and cloud-based data storage. With 2000 mm ultra-long rotor, 80 premium quality blades, industrial grade hydraulic system and reinforced steel body, it easily processes even the toughest materials. It offers unique torque and efficiency thanks to dual motor and differential gear system.',
+        paragraph3: 'TSH-200 is the ideal solution for mega-scale recycling complexes, municipal integrated solid waste management facilities, automotive industrial waste centers, port and customs waste processing centers. It can be combined with fully automatic line integration, multi-separator systems, automatic packaging and shipping systems. Supported by 24/7 technical support, on-site maintenance service and long-term warranty.'
+      },
+      ru: {
+        intro: 'Одновальный измельчитель TSH-200 - самая большая и мощная модель MT Makina, разработанная для мега-проектов, требующих максимальной производительности.',
+        paragraph1: 'Модель TSH-200 предлагает гигантскую зону измельчения 2000x2300 мм с системой двойного двигателя 2x 75-160 кВт. С производительностью обработки 4500-6000 кг/час она способна обрабатывать до 5 тонн отходов в час. Используется для промышленных контейнеров большого объема, внутренней отделки автобусов и грузовиков, пластиковых резервуаров большого диаметра, корпусов промышленного оборудования, больших деревянных конструкций и крупных проектов по электронным отходам.',
+        paragraph2: 'Самая передовая система ПЛК и SCADA включает оптимизацию нагрузки с помощью ИИ, анализ производительности в реальном времени, полное дистанционное управление и облачное хранение данных. С ультрадлинным ротором 2000 мм, 80 ножами премиум-качества, гидравлической системой промышленного класса и усиленным стальным корпусом легко обрабатывает даже самые прочные материалы. Обеспечивает уникальный крутящий момент и эффективность благодаря системе с двумя двигателями и дифференциальной передачей.',
+        paragraph3: 'TSH-200 - идеальное решение для мегамасштабных комплексов переработки, муниципальных интегрированных объектов управления твердыми отходами, центров промышленных отходов автомобильной промышленности, портовых и таможенных центров переработки отходов. Может комбинироваться с полностью автоматической интеграцией линии, мультисепараторными системами, автоматическими системами упаковки и отгрузки. Поддерживается круглосуточной технической поддержкой, сервисом обслуживания на месте и долгосрочной гарантией.'
+      },
+      ar: {
+        intro: 'آلة التقطيع أحادية العمود TSH-200 هي أكبر وأقوى طراز من MT Makina، مصممة للمشاريع الضخمة التي تتطلب أقصى سعة.',
+        paragraph1: 'يوفر طراز TSH-200 منطقة تقطيع عملاقة 2000×2300 مم مع نظام محرك مزدوج 2×75-160 كيلووات. بسعة معالجة 4500-6000 كجم/ساعة، لديها القدرة على معالجة ما يصل إلى 5 أطنان من النفايات في الساعة. يستخدم للحاويات الصناعية كبيرة الحجم وتشطيبات الحافلات والشاحنات الداخلية وخزانات البلاستيك ذات القطر الكبير وهياكل الآلات الصناعية والهياكل الخشبية الكبيرة ومشاريع النفايات الإلكترونية بالجملة.',
+        paragraph2: 'يتميز نظام PLC وSCADA الأكثر تقدمًا بتحسين الحمل بمساعدة الذكاء الاصطناعي وتحليل الأداء في الوقت الفعلي والتحكم الكامل عن بُعد وتخزين البيانات المستند إلى السحابة. مع دوار فائق الطول 2000 مم و80 شفرة عالية الجودة ونظام هيدروليكي بدرجة صناعية وهيكل فولاذي معزز، يعالج بسهولة حتى أصعب المواد. يوفر عزم دوران وكفاءة فريدة بفضل نظام المحرك المزدوج ونظام التروس التفاضلي.',
+        paragraph3: 'TSH-200 هو الحل الأمثل لمجمعات إعادة التدوير على نطاق ضخم ومرافق الإدارة المتكاملة للنفايات الصلبة البلدية ومراكز النفايات الصناعية للسيارات ومراكز معالجة نفايات الموانئ والجمارك. يمكن دمجه مع التكامل الآلي الكامل للخط وأنظمة الفصل المتعددة وأنظمة التعبئة والشحن التلقائية. مدعوم بدعم فني على مدار 24/7 وخدمة صيانة في الموقع وضمان طويل الأجل.'
+      }
     }
   },
-  'dual-saft': {
-    'CS-20': {
-      intro: 'CS-20 çift şaftlı katı atık parçalama makinesi, 200x200 mm parçalama alanı ile kompakt ölçekli işletmeler için ideal plastik parçalama ve metal kırma çözümüdür.',
-      paragraph1: 'CS-20 çift şaftlı parçalama makinesi, 2,2-11 kW güçlü motor seçenekleri ve 200 mm rotor boyu ile hurda plastik kırma makinası ve küçük ölçekli geri dönüşüm kırma makinası uygulamalarında mükemmel performans gösterir. Plastik parçalama makinesi olarak kullanıldığında, pet şişe parçalama, pvc kırma ve evsel atık parçalama gibi çeşitli malzemeleri işleyebilir. Düşük devir-yüksek tork prensibi sayesinde enerji verimliliği sağlar ve işletme maliyetlerini düşürür.',
-      paragraph2: 'Metal parçalama makinesi uygulamalarında, hurda demir parçalama ve küçük metal atık kırma işlemlerinde etkilidir. Çift şaftlı katı atık parçalama makinesi yapısı, malzeme sıkışmalarını önler ve dengeli kesme işlemi sağlar. Kağıt parçalama makinesi, ahşap par��alama ve kumaş parçalama gibi farklı atık türlerinde de kullanılabilir. PLC kontrollü otomatik geri dönüş sistemi, sıkışmalara karşı bıçakları korur ve uzun ömürlü kullanım garantisi verir.',
-      paragraph3: 'CS-20 modeli, plastik parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından ekonomik bir çözüm sunar. Palet parçalama, lastik parçalama ve cam parçalama uygulamalarında kompakt boyutlarıyla öne çıkar. Modüler bıçak tasarımı kolay bakım sağlar ve farklı elek opsiyonları ile çıkış boyutu ayarlanabilir. Geri dönüşüm kırma makinası olarak küçük tesisler, hurda plastik kırma makinası olarak plastik atık toplama merkezleri ve balya parçalama uygulamaları için idealdir.'
+  // DİĞER MAKİNE TÜRLERİ (dual-saft, quad-saft, metal, pallet, mobile, harddisk)
+  // Bu modeller için çeviri metinleri henüz eklenmemiştir
+  // getModelDescription fonksiyonu bu modeller için genel fallback metinler döndürecektir
+};
+
+/**
+ * Get fallback description for models without specific translations
+ */
+const getFallbackDescription = (productType: string, modelName: string, language: Language): ModelDescription => {
+  const productNames: {[key: string]: {[lang in Language]: string}} = {
+    'dual-saft': {
+      tr: 'Çift Şaftlı Parçalama Makinesi',
+      en: 'Dual Shaft Shredder',
+      ru: 'Двухвальный измельчитель',
+      ar: 'آلة التقطيع ثنائية العمود'
     },
-    'CS-40': {
-      intro: 'CS-40 çift şaftlı parçalama makinesi, 400x400 mm geniş parçalama alanı ve 5,5-22 kW motor gücü ile orta ölçekli geri dönüşüm tesisleri için güçlü bir çözümdür.',
-      paragraph1: 'CS-40 model, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında yüksek verimlilik sağlar. Hurda plastik kırma makinası olarak PP, PE, PET plastik atıkları, pvc kırma makinası olarak PVC borular ve profilleri işleyebilir. 400 mm rotor uzunluğu, pet şişe parçalama makinası, kağıt parçalama makinesi ve palet parçalama makinası uygulamalarında geniş malzeme yelpazesini destekler. Çift şaftlı katı atık parçalama makinesi teknolojisi, evsel atık parçalama ve lastik parçalama gibi zorlu malzemelerde bile kesintisiz performans gösterir.',
-      paragraph2: 'Metal parçalama makinesi olarak kullanıldığında, hurda demir parçalama makinası, alüminyum hurda ve bakır kablo gibi metalleri etkili şekilde parçalar. Ahşap parçalama makinesi olarak paletler ve ahşap atıklar, kumaş parçalama makinesi olarak tekstil atıkları işlenebilir. Cam parçalama makinesi uygulamalarında da düşük toz emisyonu ile çevre dostu çalışma sağlar. Geri dönüşüm kırma makinası olarak balya parçalama makinası ile entegre çalışabilir ve invertör kontrollü motorlar enerji verimliliği sunar.',
-      paragraph3: 'CS-40, parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından orta segment işletmeler için uygun maliyetli bir çözümdür. Hurda araba parçalama için plastik tampon ve iç döşeme parçalarını, hurda plastik kırma makinası olarak endüstriyel plastik konteynerlerini işler. Modüler rotor ve rulman tasarımı kolay bakım sağlar. Pet şişe parçalama makinası, palet parçalama ve kağıt parçalama uygulamalarında yüksek kapasite sunar. Plastik parçalama makinesi, metal parçalama makinesi ve evsel atık parçalama kombinasyonlarında çok yönlü kullanım imkanı verir.'
+    'quad-saft': {
+      tr: 'Dört Şaftlı Parçalama Makinesi',
+      en: 'Four Shaft Shredder',
+      ru: 'Четырехвальный измельчитель',
+      ar: 'آلة التقطيع رباعية العمود'
     },
-    'CS-60': {
-      intro: 'CS-60 çift şaftlı parçalama makinesi, 600x600 mm parçalama alanı ve 11-45 kW (2x) motor gücü ile ağır hizmet tipi endüstriyel atık yönetimi için tasarlanmış profesyonel bir sistemdir.',
-      paragraph1: 'CS-60 çift şaftlı katı atık parçalama makinesi, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında üstün performans gösterir. Hurda plastik kırma makinası olarak kalın duvarlı plastik konteynerler, IBC tanklar ve endüstriyel plastik atıkları kolayca işler. Pet şişe parçalama makinası, pvc kırma makinası ve lastik parçalama makinası olarak geniş yelpazede malzeme işleme kapasitesi sunar. Yüksek tork ve düşük hız kombinasyonu, zorlu malzemelerde bile etkili parçalama sağlar ve enerji verimliliği artırır.',
-      paragraph2: 'Metal parçalama makinesi olarak hurda demir parçalama makinası, hurda araba parçalama ve metal profil kırma işlemlerinde güçlü performans sergiler. Geri dönüşüm kırma makinası olarak ahşap parçalama makinesi, palet parçalama makinası ve kağıt parçalama makinesi uygulamalarını destekler. Cam parçalama makinesi ve kumaş parçalama makinesi olarak da kullanılabilir. Çift şaftlı yapı, evsel atık parçalama makinesi uygulamalarında karışık atık türlerini aynı anda işleyebilir. Balya parçalama makinası ile entegre çalışarak büyük hacimleri verimli şekilde parçalar.',
-      paragraph3: 'CS-60, parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından yüksek performans/maliyet oranı sunar. Hurda demir parçalama makinası fiyatları segmentinde rekabetçi konumdadır. Plastik parçalama makinesi olarak pet şişe parçalama, pvc kırma ve hurda plastik kırma makinası uygulamalarında yatırım geri dönüşü hızlıdır. Modüler bıçak sistemi, kolay bakım ve uzun ömür sağlar. Palet parçalama makinası, ahşap parçalama, kağıt parçalama ve lastik parçalama kombinasyonlarında çok yönlü kullanım sunar. Geri dönüşüm kırma makinası olarak büyük tesisler, metal parçalama makinesi olarak hurda işleme merkezleri için ideal bir çözümdür.'
+    'metal': {
+      tr: 'Redmonster Metal Parçalama Makinesi',
+      en: 'Redmonster Metal Shredder',
+      ru: 'Металлический измельчитель Redmonster',
+      ar: 'آلة تقطيع المعادن Redmonster'
     },
-    'CS-80': {
-      intro: 'CS-80 çift şaftlı katı atık parçalama makinesi, 800x800 mm geniş parçalama alanı ve 15-55 kW (2x) motor gücü ile büyük hacimli endüstriyel atık işleme kapasitesi sunar.',
-      paragraph1: 'CS-80 modeli, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında yüksek kapasite ile öne çıkar. Hurda plastik kırma makinası olarak büyük plastik konteynerler, otomotiv tamponlar ve endüstriyel plastik atıkları hızlı şekilde parçalar. Pet şişe parçalama makinası, pvc kırma makinası ve lastik parçalama makinası uygulamalarında geniş rotor boyu sayesinde büyük parçaları tek seferde işleyebilir. Çift şaftlı katı atık parçalama makinesi teknolojisi, evsel atık parçalama ve karışık atık yönetiminde maksimum verim sağlar.',
-      paragraph2: 'Metal parçalama makinesi olarak hurda demir parçalama makinası, hurda araba parçalama ve ağır metal atık işleme kapasitesine sahiptir. Geri dönüşüm kırma makinası olarak ahşap parçalama makinesi, palet parçalama makinası ve kağıt parçalama makinesi uygulamalarını destekler. Cam parçalama makinesi ve kumaş parçalama makinesi olarak da yüksek performans gösterir. Balya parçalama makinası ile kombine çalışarak sıkıştırılmış atık balyaların açılmasını ve parçalanmasını sağlar. İnvertör kontrollü çift motor sistemi, enerji maliyetlerini optimize eder.',
-      paragraph3: 'CS-80, parçalama makinesi fiyatları segmentinde büyük kapasiteli tesisler için ideal bir yatırımdır. Metal parçalama makinası fiyatları ve hurda demir parçalama makinası fiyatları açısından rekabetçi avantaj sağlar. Plastik parçalama makinesi olarak pet şişe parçalama, hurda plastik kırma ve pvc kırma uygulamalarında yüksek verimlilik sunar. Modüler rotor tasarımı, kolay bakım ve hızlı bıçak değişimi imkanı verir. Palet parçalama makinası, ahşap parçalama, lastik parçalama ve kağıt parçalama kombinasyonlarında endüstriyel dayanıklılık sergiler. Geri dönüşüm kırma makinası olarak büyük tesisler için güvenilir bir çözümdür.'
+    'pallet': {
+      tr: 'Palet Parçalama Makinesi',
+      en: 'Pallet Shredder',
+      ru: 'Измельчитель поддонов',
+      ar: 'آلة تقطيع المنصات'
     },
-    'CS-100': {
-      intro: 'CS-100 çift şaftlı parçalama makinesi, 1000x1000 mm ultra geniş parçalama alanı ve 22-90 kW (2x) motor gücü ile mega kapasiteli geri dönüşüm tesisleri için tasarlanmış güçlü bir sistemdir.',
-      paragraph1: 'CS-100 model, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında endüstri lideri performans sunar. Hurda plastik kırma makinası olarak dev plastik konteynerler, endüstriyel tanklar ve büyük hacimli plastik atıkları yüksek hızda işler. Pet şişe parçalama makinası, pvc kırma makinası ve lastik parçalama makinası uygulamalarında 1000 mm rotor uzunluğu sayesinde maksimum üretim kapasitesi sağlar. Çift şaftlı katı atık parçalama makinesi teknolojisi, evsel atık parçalama makinesi olarak belediye atık yönetim projelerinde kritik rol oynar.',
-      paragraph2: 'Metal parçalama makinesi olarak hurda demir parçalama makinası, hurda araba parçalama ve ağır metal yapı parçalama işlemlerinde üstün güç sergiler. Geri dönüşüm kırma makinası olarak ahşap parçalama makinesi, palet parçalama makinası ve kağıt parçalama makinesi kapasitelerini destekler. Cam parçalama makinesi ve kumaş parçalama makinesi olarak endüstriyel ölçekte çalışabilir. Balya parçalama makinası entegrasyonu ile büyük balyaların otomatik beslenmesi ve parçalanması sağlanır. Çift motor sistemi ve otomatik geri dönüş özelliği, 7/24 kesintisiz çalışma garantisi verir.',
-      paragraph3: 'CS-100, parçalama makinesi fiyatları segmentinde büyük yatırımlar için optimal çözümdür. Metal parçalama makinası fiyatları ve hurda demir parçalama makinası fiyatları açısından yüksek kapasite/maliyet oranı sunar. Plastik parçalama makinesi olarak pet şişe parçalama, hurda plastik kırma makinası ve pvc kırma uygulamalarında endüstriyel verimlilik sağlar. Hidrolik itme sistemi, büyük ve ağır malzemelerin otomatik beslenmesini kolaylaştırır. Palet parçalama makinası, ahşap parçalama, lastik parçalama ve kağıt parçalama kombinasyonlarında maksimum üretim kapasitesi sunar. Geri dönüşüm kırma makinası olarak entegre atık yönetim tesisleri için ideal bir çözümdür.'
+    'mobile': {
+      tr: 'Mobil Kırıcı',
+      en: 'Mobile Crusher',
+      ru: 'Мобильная дробилка',
+      ar: 'كسارة متنقلة'
     },
-    'CS-120': {
-      intro: 'CS-120 çift şaftlı katı atık parçalama makinesi, 1200x1200 mm ekstra geniş parçalama alanı ve 30-110 kW (2x) motor gücü ile ağır sanayi atık yönetimi için profesyonel çözüm sunar.',
-      paragraph1: 'CS-120 çift şaftlı parçalama makinesi, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında üst seviye performans gösterir. Hurda plastik kırma makinası olarak endüstriyel büyük boy plastik atıklar, IBC tanklar ve kalın duvarlı konteynerleri kolayca parçalar. Pet şişe parçalama makinası, pvc kırma makinası ve lastik parçalama makinası uygulamalarında yüksek tork ile zorlu malzemeleri işler. Çift şaftlı katı atık parçalama makinesi yapısı, evsel atık parçalama makinesi olarak belediye ve sanayi bölgesi atık yönetim projelerinde kritik bir araç olarak kullanıl��r.',
-      paragraph2: 'Metal parçalama makinesi olarak hurda demir parçalama makinası, hurda araba parçalama ve ağır metal yapı çerçeveleri gibi zorlu malzemeleri parçalar. Geri dönüşüm kırma makinası olarak ahşap parçalama makinesi, palet parçalama makinası ve kağıt parçalama makinesi kapasitelerini güçlendirir. Cam parçalama makinesi ve kumaş parçalama makinesi olarak endüstriyel ölçekte yüksek verimlilik sağlar. Balya parçalama makinası ile entegre çalışarak büyük hacimli sıkıştırılmış atıkları otomatik olarak işler. İleri PLC kontrol sistemi, uzaktan izleme ve bakım hatırlatma özellikleri sunar.',
-      paragraph3: 'CS-120, parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından büyük tesisler için yatırım değeri yüksek bir çözümdür. Hurda demir parçalama makinası fiyatları segmentinde rekabetçi konumdadır. Plastik parçalama makinesi olarak pet şişe parçalama, hurda plastik kırma makinası ve pvc kırma uygulamalarında maksimum kapasite sağlar. Modüler bıçak ve rotor tasarımı, kolay bakım ve uzun ömürlü kullanım garantisi verir. Palet parçalama makinası, ahşap parçalama, lastik parçalama ve kağıt parçalama kombinasyonlarında endüstriyel dayanıklılık sergiler. Geri dönüşüm kırma makinası olarak mega tesisler için güvenilir bir yatırımdır.'
-    },
-    'CS-150': {
-      intro: 'CS-150 çift şaftlı parçalama makinesi, 1500x1200 mm dev parçalama alanı ve 45-132 kW (2x) motor gücü ile ağır hizmet tipi endüstriyel projeler için tasarlanmış güçlü bir sistemdir.',
-      paragraph1: 'CS-150 model, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında maksimum güç ve kapasite sunar. Hurda plastik kırma makinası olarak endüstriyel dev plastik konteynerler, büyük tanklar ve kalın plastik yapıları parçalar. Pet şişe parçalama makinası, pvc kırma makinası ve lastik parçalama makinası uygulamalarında 1500 mm rotor uzunluğu ile yüksek hacimli üretim sağlar. Çift şaftlı katı atık parçalama makinesi teknolojisi, evsel atık parçalama makinesi olarak büyük belediye projeleri ve sanayi bölgesi atık yönetiminde kullanılır.',
-      paragraph2: 'Metal parçalama makinesi olarak hurda demir parçalama makinası, hurda araba parçalama ve ağır metal yapı atıklarını yüksek tork ile işler. Geri dönüşüm kırma makinası olarak ahşap parçalama makinesi, palet parçalama makinası ve kağıt parçalama makinesi uygulamalarını destekler. Cam parçalama makinesi ve kumaş parçalama makinesi olarak endüstriyel ölçekte maksimum verimlilik gösterir. Balya parçalama makinası entegrasyonu ile büyük balyalar otomatik olarak açılır ve parçalanır. Çift motor sistemi ve hidrolik itme ünitesi, 7/24 kesintisiz çalışma kapasitesi sağlar.',
-      paragraph3: 'CS-150, parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından ağır sanayi yatırımları için ideal bir çözümdür. Hurda demir parçalama makinası fiyatları segmentinde yüksek performans/fiyat oranı sunar. Plastik parçalama makinesi olarak pet şişe parçalama, hurda plastik kırma makinası ve pvc kırma uygulamalarında endüstriyel kapasite sağlar. Modüler tasarım, kolay bakım ve hızlı parça değişimi imkanı verir. Palet parçalama makinası, ahşap parçalama, lastik parçalama ve kağıt parçalama kombinasyonlarında maksimum üretim sunar. Geri dönüşüm kırma makinası olarak mega kapasiteli tesisler için en güvenilir çözümdür.'
-    },
-    'CS-180': {
-      intro: 'CS-180 çift şaftlı katı atık parçalama makinesi, 1800x1500 mm ultra geniş parçalama alanı ve 55-132 kW (2x) motor gücü ile mega projelerde üstün performans sağlar.',
-      paragraph1: 'CS-180 çift şaftlı parçalama makinesi, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında endüstri zirvesi performans sergiler. Hurda plastik kırma makinası olarak dev endüstriyel konteynerler, büyük hacimli tanklar ve kalın plastik yapıları kolayca parçalar. Pet şişe parçalama makinası, pvc kırma makinası ve lastik parçalama makinası uygulamalarında 1800 mm rotor boyu ile maksimum üretim kapasitesi sağlar. Çift şaftlı katı atık parçalama makinesi yapısı, evsel atık parçalama makinesi olarak büyük metropol belediye projelerinde kullanılır.',
-      paragraph2: 'Metal parçalama makinesi olarak hurda demir parçalama makinası, hurda araba parçalama ve ağır metal yapı demontajı işlemlerinde güçlü performans gösterir. Geri dönüşüm kırma makinası olarak ahşap parçalama makinesi, palet parçalama makinası ve kağıt parçalama makinesi kapasitelerini maksimize eder. Cam parçalama makinesi ve kumaş parçalama makinesi olarak endüstriyel ölçekte yüksek verimlilik sağlar. Balya parçalama makinası ile entegre çalışarak sıkıştırılmış büyük balyaların otomatik işlenmesini gerçekleştirir. İleri PLC ve SCADA entegrasyonu, uzaktan tam kontrol ve bakım optimizasyonu sunar.',
-      paragraph3: 'CS-180, parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından mega yatırımlar için optimal çözümdür. Hurda demir parçalama makinası fiyatları segmentinde yüksek kapasite sunar. Plastik parçalama makinesi olarak pet şişe parçalama, hurda plastik kırma makinası ve pvc kırma uygulamalarında endüstriyel üretim sağlar. Hidrolik itme ve otomatik besleme sistemi, büyük malzemelerin kesintisiz işlenmesini kolaylaştırır. Palet parçalama makinası, ahşap parçalama, lastik parçalama ve kağıt parçalama kombinasyonlarında maksimum kapasite sunar. Geri dönüşüm kırma makinası olarak entegre atık yönetim kompleksleri için ideal bir yatırımdır.'
-    },
-    'CS-200': {
-      intro: 'CS-200 çift şaftlı parçalama makinesi, 2000x1800 mm dev parçalama alanı ve 75-200 kW (2x) motor gücü ile MT Makina\'nın en güçlü çift şaftlı katı atık parçalama sistemidir.',
-      paragraph1: 'CS-200 model, plastik parçalama makinesi ve metal parçalama makinesi uygulamalarında mutlak güç ve kapasite liderliği sunar. Hurda plastik kırma makinası olarak endüstriyel dev boyutlu konteynerler, büyük tanklar ve ultra kalın plastik yapıları parçalar. Pet şişe parçalama makinası, pvc kırma makinası ve lastik parçalama makinası uygulamalarında 2000 mm rotor uzunluğu ile maksimum hacim işleme kapasitesi sağlar. Çift şaftlı katı atık parçalama makinesi teknolojisi, evsel atık parçalama makinesi olarak büyükşehir belediye entegre atık yönetim tesislerinde kritik rol oynar.',
-      paragraph2: 'Metal parçalama makinesi olarak hurda demir parçalama makinası, hurda araba parçalama ve ağır endüstriyel metal atık işleme projelerinde üstün güç sergiler. Geri dönüşüm kırma makinası olarak ahşap parçalama makinesi, palet parçalama makinası ve kağıt parçalama makinesi uygulamalarını destekler. Cam parçalama makinesi ve kumaş parçalama makinesi olarak endüstriyel ölçekte maksimum verimlilik gösterir. Balya parçalama makinası entegrasyonu ile dev balyaların otomatik açılması ve parçalanması sağlanır. Çift motor sistemi, hidrolik itme ünitesi ve otomatik geri dönüş ile 7/24 kesintisiz operasyon garantisi verir.',
-      paragraph3: 'CS-200, parçalama makinesi fiyatları ve metal parçalama makinası fiyatları açısından mega ölçekli tesisler için en yüksek performans/değer oranını sunar. Hurda demir parçalama makinası fiyatları segmentinde endüstri lideri konumdadır. Plastik parçalama makinesi olarak pet şişe parçalama, hurda plastik kırma makinası ve pvc kırma uygulamalarında maksimum endüstriyel kapasite sağlar. Tam modüler tasarım, kolay bakım, hızlı parça değişimi ve uzun ömürlü kullanım garantisi verir. Palet parçalama makinası, ahşap parçalama, lastik parçalama ve kağıt parçalama kombinasyonlarında mutlak üretim gücü sunar. Geri dönüşüm kırma makinası olarak entegre mega kompleksler ve belediye tesisleri için en güvenilir ve güçlü çözümdür.'
+    'harddisk': {
+      tr: 'Harddisk İmha Makinesi',
+      en: 'Hard Disk Destroyer',
+      ru: 'Уничтожитель жестких дисков',
+      ar: 'آلة إتلاف الأقراص الصلبة'
     }
-  },
-  'quad-saft': {
-    'DS-80': {
-      intro: 'DS-80 dört şaftlı katı atık parçalama makinesi, 800x800 mm parçalama alanı ve 11-22 kW (4x) motor gücü ile hacimli atık yönetimi için kompakt ve güçlü bir çözüm sunar.',
-      paragraph1: 'DS-80 model, lastik parçalama makinesi, balya parçalama makinesi ve palet parçalama makinesi uygulamalarında yüksek verimlilik sağlar. Plastik varil, metal varil, boya varil ve evsel çöp gibi hacimli atıkları dört şaft teknolojisi ile etkili şekilde parçalar. Elektronik atık parçalama makinesi, hdd parçalama makinesi ve karton parçalama makinesi olarak kullanıldığında, buzdolabı, devre kartı, TV kasası gibi elektronik atıkları güvenli şekilde işler. Dört şaftlı katı atık parçalayıcı yapısı, hidrolik baskı ile malzemeleri hızlı ve homojen şekilde parçalar.',
-      paragraph2: 'Ahşap parçalama makinesi ve hurda parçalama makinesi uygulamalarında, plastik çerçeve, plastik blok, alüminyum profil gibi malzemeleri işler. Kağıt parçalama makinesi olarak gazete, karton kağıt, oluklu kağıt ve fotokopi kağıdı parçalama kapasitesine sahiptir. Hurda lastik parçalama makinesi ve harddisk imha makinesi olarak özel uygulamalarda kullanılır. Katı atık parçalayıcı olarak cam yünü, cam bardak ve cam şişe gibi cam malzemeleri de işleyebilir. Modüler bıçak tasarımı, kolay bakım ve uzun ömürlü kullanım sağlar.',
-      paragraph3: 'DS-80, parçalayıcı makine olarak orta ölçekli geri dönüşüm tesisleri, belediye atık yönetim merkezleri ve elektronik atık işleme tesisleri için ideal bir çözümdür. Çoklu sızdırmazlık yapısı malzeme kirliliğini önler ve dayanıklı yataklar uzun ömür garantisi verir. Hidrolik baskı sistemi, büyük ve içi boş ürünlerin işlenmesini kolaylaştırır. Balya parçalama, hayvan parçalama ve tıbbi atık işleme uygulamalarında yüksek performans sergiler. Dört şaftlı katı atık parçalama makinesi, sürdürülebilir geri dönüşüm süreçlerinde önemli rol oynar.'
+  };
+
+  const productName = productNames[productType]?.[language] || productNames[productType]?.tr || '';
+
+  const templates: {[lang in Language]: ModelDescription} = {
+    tr: {
+      intro: `${modelName} ${productName}, endüstriyel atık yönetimi için güçlü ve verimli bir çözüm sunar.`,
+      paragraph1: `${modelName} model, yüksek performanslı motor gücü ve geniş parçalama alanı ile çeşitli atık türlerinin etkili şekilde işlenmesini sağlar. Endüstriyel dayanıklılık ve uzun ömürlü kullanım için tasarlanmıştır.`,
+      paragraph2: `Gelişmiş otomasyon sistemi, kullanıcı dostu kontrol paneli ve güvenlik özellikleri ile donatılmıştır. Yüksek kaliteli bıçak sistemi ve güçlü motor, kesintisiz ve verimli çalışma garantisi verir.`,
+      paragraph3: `MT Makina ${modelName}, geri dönüşüm tesisleri, atık yönetim merkezleri ve endüstriyel işletmeler için ideal bir çözümdür. Modüler yapısı sayesinde kolay bakım ve uzun ömür sunar.`
     },
-    'DS-100': {
-      intro: 'DS-100 dört şaftlı parçalama makinesi, 1000x1000 mm geniş parçalama alanı ve 22-45 kW (4x) motor gücü ile orta-büyük ölçekli atık işleme tesisleri için güçlü bir sistemdir.',
-      paragraph1: 'DS-100 modeli, lastik parçalama makinesi, palet parçalama makinesi ve ahşap parçalama makinesi uygulamalarında üstün performans gösterir. Plastik varil, metal varil, boya varil, evsel çöp ve tıbbi atık gibi hacimli malzemeleri dört şaft teknolojisi ile verimli şekilde parçalar. Elektronik atık parçalama makinesi olarak buzdolabı, devre kartı, TV kasası ve hdd parçalama işlemlerinde güvenilir çözüm sunar. Balya parçalama makinesi olarak sıkıştırılmış atık balyalarını açar ve parçalar. Dört şaftlı katı atık parçalama makinesi yapısı, yüksek tork ile zorlu malzemeleri işler.',
-      paragraph2: 'Hurda parçalama makinesi ve kağıt parçalama makinesi uygulamalarında, alüminyum profil, yağ filtresi, metal tank, gazete, karton kağıt gibi malzemeleri parçalar. Karton parçalama makinesi olarak oluklu kağıt ve fotokopi kağıdı işleme kapasitesine sahiptir. Hurda lastik parçalama makinesi ve harddisk imha makinesi olarak özel uygulamalarda etkilidir. Katı atık parçalayıcı olarak plastik çerçeve, plastik blok, plastik kutu, cam yünü, cam bardak ve cam şişe gibi çeşitli atıkları işler. Hidrolik baskı ile malzemeler hızlı ve etkili şekilde parçalanır.',
-      paragraph3: 'DS-100, parçalayıcı makine olarak büyük ölçekli geri dönüşüm kompleksleri, belediye entegre atık yönetim tesisleri ve elektronik atık geri kazanım merkezleri için tasarlanmıştır. Çoklu sızdırmazlık yapısı ve dayanıklı yataklar, uzun ömürlü ve kesintisiz çalışma garantisi verir. Geniş malzeme işleme kapasitesi ile plastik, metal, ahşap, kağıt, cam ve elektronik atıkları tek bir makinede işler. Hayvan parçalama makinesi ve tıbbi atık parçalama uygulamalarında da kullanılabilir. Dört şaftlı katı atık parçalama makinesi, sürdürülebilir atık yönetiminde kritik rol oynar.'
+    en: {
+      intro: `${modelName} ${productName} offers a powerful and efficient solution for industrial waste management.`,
+      paragraph1: `${modelName} model provides effective processing of various waste types with high-performance motor power and wide shredding area. Designed for industrial durability and long-lasting use.`,
+      paragraph2: `Equipped with advanced automation system, user-friendly control panel and safety features. High-quality blade system and powerful motor guarantee uninterrupted and efficient operation.`,
+      paragraph3: `MT Makina ${modelName} is an ideal solution for recycling facilities, waste management centers and industrial enterprises. Thanks to its modular structure, it offers easy maintenance and long life.`
     },
-    'DS-150': {
-      intro: 'DS-150 dört şaftlı katı atık parçalama makinesi, 1500x1500 mm ekstra geniş parçalama alanı ve 45-132 kW (4x) motor gücü ile büyük ölçekli endüstriyel atık yönetimi için profesyonel bir çözümdür.',
-      paragraph1: 'DS-150 modeli, lastik parçalama makinesi, balya parçalama makinesi ve palet parçalama makinesi uygulamalarında maksimum kapasite sunar. Plastik varil, metal varil, boya varil, evsel çöp ve tıbbi atık gibi hacimli atıkları dört şaft teknolojisi ile yüksek hızda parçalar. Elektronik atık parçalama makinesi olarak buzdolabı, devre kartı, TV kasası, hdd parçalama ve büyük elektronik cihazları güvenli şekilde işler. Ahşap parçalama makinesi olarak paletler ve büyük ahşap yapıları parçalar. Dört şaftlı katı atık parçalama makinesi, hidrolik baskı ile maksimum verimlilik sağlar.',
-      paragraph2: 'Hurda parçalama makinesi ve kağıt parçalama makinesi uygulamalarında, alüminyum profil, yağ filtresi, metal tank, gazete, karton kağıt ve oluklu kağıt işleme kapasitesine sahiptir. Karton parçalama makinesi olarak fotokopi kağıdı ve ambalaj atıklarını parçalar. Hurda lastik parçalama makinesi ve harddisk imha makinesi olarak endüstriyel ölçekte çalışır. Katı atık parçalayıcı olarak plastik çerçeve, plastik blok, plastik kutu, cam yünü, cam bardak ve cam şişe gibi çeşitli malzemeleri etkili şekilde işler. Geniş malzeme işleme kapasitesi operasyonel verimliliği artırır.',
-      paragraph3: 'DS-150, parçalayıcı makine olarak mega ölçekli geri dönüşüm tesisleri, büyükşehir belediye atık yönetim merkezleri ve endüstriyel atık işleme kompleksleri için tasarlanmıştır. Çoklu sızdırmazlık yapısı ve takviyeli yataklar, 7/24 kesintisiz çalışma kapasitesi sağlar. Büyük ve içi boş ürünlerin işlenmesinde maksimum verim sunar. Hayvan parçalama makinesi, tıbbi atık parçalama ve tehlikeli atık işleme uygulamalarında da kullanılabilir. Dört şaftlı katı atık parçalama makinesi, çevre dostu ve sürdürülebilir atık yönetiminde vazgeçilmez bir araç olarak öne çıkar.'
+    ru: {
+      intro: `${modelName} ${productName} предлагает мощное и эффективное решение для промышленного управления отходами.`,
+      paragraph1: `Модель ${modelName} обеспечивает эффективную переработку различных типов отходов с высокопроизводительным двигателем и широкой зоной измельчения. Разработан для промышленной прочности и долговечного использования.`,
+      paragraph2: `Оснащен передовой системой автоматизации, удобной панелью управления и функциями безопасности. Высококачественная система лезвий и мощный двигатель гарантируют бесперебойную и эффективную работу.`,
+      paragraph3: `MT Makina ${modelName} - идеальное решение для предприятий по переработке, центров управления отходами и промышленных предприятий. Благодаря модульной конструкции обеспечивает простое обслуживание и долгий срок службы.`
     },
-    'DS-200': {
-      intro: 'DS-200 dört şaftlı parçalama makinesi, 2000x2000 mm dev parçalama alanı ve 75-160 kW (4x) motor gücü ile MT Makina\'nın en büyük ve en güçlü dört şaftlı katı atık parçalama sistemidir.',
-      paragraph1: 'DS-200 modeli, lastik parçalama makinesi, balya parçalama makinesi ve palet parçalama makinesi uygulamalarında mutlak güç ve kapasite liderliği sunar. Plastik varil, metal varil, boya varil, evsel çöp ve tıbbi atık gibi hacimli atıkları dört şaft teknolojisi ile maksimum hızda parçalar. Elektronik atık parçalama makinesi olarak buzdolabı, devre kartı, TV kasası, hdd parçalama ve endüstriyel elektronik cihazları güvenli ve hızlı şekilde işler. Ahşap parçalama makinesi olarak büyük paletler, ahşap konteynerler ve yapı ahşaplarını parçalar. Dört şaftlı katı atık parçalama makinesi, hidrolik baskı ile eşsiz verimlilik sağlar.',
-      paragraph2: 'Hurda parçalama makinesi ve kağıt parçalama makinesi uygulamalarında, alüminyum profil, yağ filtresi, metal tank, gazete, karton kağıt, oluklu kağıt ve fotokopi kağıdı işleme kapasitesine sahiptir. Karton parçalama makinesi olarak büyük hacimlerde ambalaj atıklarını parçalar. Hurda lastik parçalama makinesi ve harddisk imha makinesi olarak mega ölçekli projelerde çalışır. Katı atık parçalayıcı olarak plastik çerçeve, plastik blok, plastik kutu, cam yünü, cam bardak ve cam şişe gibi tüm atık türlerini etkili şekilde işler. Geniş malzeme işleme kapasitesi ile operasyonel verimliliği maksimize eder.',
-      paragraph3: 'DS-200, parçalayıcı makine olarak mega ölçekli geri dönüşüm kompleksleri, metropol belediye entegre atık yönetim tesisleri ve endüstriyel atık işleme merkezleri için en güçlü çözümdür. Çoklu sızdırmazlık yapısı ve ultra dayanıklı yataklar, 7/24 kesintisiz maksimum performans garantisi verir. Büyük ve içi boş ürünlerin işlenmesinde mutlak verim sunar. Hayvan parçalama makinesi, tıbbi atık parçalama ve tehlikeli atık işleme uygulamalarında endüstri lideri performans sergiler. Dört şaftlı katı atık parçalama makinesi, sürdürülebilir çevre yönetimi ve sıfır atık hedeflerinde kritik rol oynar ve atık hacmini minimuma indirerek çevreye maksimum katkı sağlar.'
+    ar: {
+      intro: `${modelName} ${productName} يوفر حلاً قويًا وفعالاً لإدارة النفايات الصناعية.`,
+      paragraph1: `يوفر طراز ${modelName} معالجة فعالة لأنواع مختلفة من النفايات بقوة محرك عالية الأداء ومنطقة تقطيع واسعة. مصمم للمتانة الصناعية والاستخدام طويل الأمد.`,
+      paragraph2: `مجهز بنظام أتمتة متقدم ولوحة تحكم سهلة الاستخدام وميزات الأمان. يضمن نظام الشفرات عالي الجودة والمحرك القوي تشغيلاً متواصلاً وفعالاً.`,
+      paragraph3: `MT Makina ${modelName} هو حل مثالي لمنشآت إعادة التدوير ومراكز إدارة النفايات والمؤسسات الصناعية. بفضل هيكله المعياري، يوفر صيانة سهلة وعمرًا طويلاً.`
     }
-  },
-  'metal': {
-    'MP-1000': {
-      intro: 'MP-1000 metal parçalama makinesi, demir, çelik, alüminyum ve karışık metal hurdalarının yüksek verimli parçalanması için güçlü bir çözümdür.',
-      paragraph1: 'MP-1000 model, 90 kW ultra güçlü motor ile 1000 mm rotor uzunluğu ve özel takviyeli bıçak sistemi sunar. 1500-2500 kg/saat kapasite ile demir profi ller, çelik saclar, alüminyum hurdalar, bakır kablolar ve karışık metal atıkların parçalanmasında üstün performans gösterir.',
-      paragraph2: 'Özel sertleştirilmiş çelik bıçaklar (HRC 58-62), metal işlemede maksimum dayanıklılık sağlar. Hidrolik besleme sistemi ve otomatik yük algılama, ağır ve kalın metallerle bile sorunsuz çalışma garantisi verir. PLC kontrollü ters çalışma ve acil durdurma sistemleri operatör güvenliğini maksimize eder.',
-      paragraph3: 'MP-1000, hurda metal geri dönüşüm tesisleri, otomotiv geri kazanım merkezleri, demirçelik fabrikaları ve metal işleme atölyeleri için ideal çözümdür. Manyetik seperatör ile demir-demir dışı metal ayrımı yapılabilir. CE sertifikalı yüksek güvenlik standartları ile donatılmıştır.'
-    }
-  },
-  'granulator': {
-    'GR-300': {
-      intro: 'GR-300 granülatör makinesi, plastik enjeksiyon atıkları, film atıkları ve küçük plastik parçaların yüksek kaliteli granül haline getirilmesi için tasarlanmıştır.',
-      paragraph1: 'GR-300 model, 15 kW yüksek devirli motor ile 300 mm rotor çapı ve keskin bıçak geometrisi sunar. 150-300 kg/saat kapasite ile PP, PE, PVC, ABS plastik türlerinin homojen granüle edilmesini sağlar. Kompakt tasarımı sayesinde enjeksiyon makinesi yanına yerleştirilebilir.',
-      paragraph2: 'Hassas bıçak açı tasarımı ve yüksek devir sistemi, plastikleri ezmeden keskin şekilde granülleyerek toz oluşumunu minimize eder. Otomatik elek değiştirme sistemi ile 3-12 mm arası granül boyutu seçilebilir. Gürültü izolasyonu ve titreşim damperleri ile sessiz çalışma sağlar.',
-      paragraph3: 'GR-300, plastik enjeksiyon atölyeleri, film üretim tesisleri, plastik profil üreticileri ve küçük geri dönüşüm tesisleri için ekonomik bir çözümdür. Enjeksiyon makinesine doğrudan bağlanabilir veya bağımsız çalışabilir. Kolay bakım ve hızlı bıçak değişimi özellikleri sunar.'
-    }
-  },
-  'baler': {
-    'BP-60': {
-      intro: 'BP-60 balyalama makinesi, kağıt, karton, plastik ve tekstil atıklarının sıkıştırılarak depolama ve nakliye maliyetlerinin azaltılması için kompakt bir çözümdür.',
-      paragraph1: 'BP-60 model, 25 ton hidrolik basınç gücü ile 800x600x1000 mm balya boyutu üretir. 150-250 kg ağırlığında balyalar oluşturarak depolama alanından %80\'e kadar tasarruf sağlar. Kağıt, karton, PET şişe, plastik film, tekstil ve köpük malzemelerin balyalanmasında etkilidir.',
-      paragraph2: 'Tam otomatik PLC kontrol sistemi, balya tamamlandığında uyarı verir ve otomatik bağlama önerir. Çift etkili hidrolik silindir sistemi, hızlı sıkıştırma ve geri dönüş sağlar. Manuel bağlama sistemi ile operatör güvenliği maksimize edilmiştir.',
-      paragraph3: 'BP-60, küçük ve orta ölçekli geri dönüşüm tesisleri, süpermarketler, kağıt üretim tesisleri, tekstil atölyeleri için idealdir. Kompakt boyutları sayesinde dar alanlara yerleştirilebilir. Düşük enerji tüketimi ve minimal bakım gereksinimi ile işletme maliyetlerini düşürür.'
-    },
-    'BP-100': {
-      intro: 'BP-100 balyalama makinesi, yüksek hacimli atık işleyen tesisler için güçlü sıkıştırma kapasitesi sunan profesyonel bir balya presidir.',
-      paragraph1: 'BP-100 model, 100 ton hidrolik basınç gücü ile 1100x800x1200 mm büyük balya boyutu üretir. 400-600 kg ağırlığında balyalar oluşturarak maksimum nakliye verimliliği sağlar. Karton, kağıt, PET, HDPE, tekstil, plastik film ve büyük hacimli ambalaj atıklarının sıkıştırılmasında üstün performans gösterir.',
-      paragraph2: 'İleri PLC otomasyon sistemi, tam otomatik çalışma modunu destekler. Konveyör besleme entegrasyonu, otomatik dolum tespiti ve otomatik bağlama sistemi ile operatör müdahalesi minimize edilir. Çift hidrolik pompa sistemi, hızlı çevrim süresi ve yüksek üretim kapasitesi garantisi verir.',
-      paragraph3: 'BP-100, büyük geri dönüşüm kompleksleri, kağıt fabrikaları, süpermarket zincirleri, lojistik merkezleri ve belediye atık yönetim tesisleri için tasarlanmıştır. Tam otomatik hat entegrasyonu, konveyör sistemleri ve SCADA bağlantısı ile kombine edilebilir. Yüksek dayanıklılık ve uzun ömür garantisi sunar.'
-    }
-  },
-  'conveyor': {
-    'CV-3M': {
-      intro: 'CV-3M konveyör sistemi, 3 metre uzunluğunda kompakt malzeme taşıma çözümü sunan modüler bir taşıma bandıdır.',
-      paragraph1: 'CV-3M model, 1.5 kW motor gücü ile 500 mm bant genişliği ve 0-30 m/dk ayarlanabilir hız kontrolü sunar. 500 kg/saat taşıma kapasitesi ile parçalanmış plastik, ahşap, kağıt ve hafif endüstriyel atıkların kısa mesafe transferinde kullanılır.',
-      paragraph2: 'Modüler yapı tasarımı, kolay kurulum ve istenilen yüksekliğe ayarlama imkanı verir. Kayar kızak sistemi ve ayarlanabilir destek ayakları ile 0-45 derece açı ayarı yapılabilir. Kolay temizlenebilir yüzey ve hızlı bant değişimi özellikleri sunar.',
-      paragraph3: 'CV-3M, küçük parçalama hatları, paketleme istasyonları, malzeme transfer noktaları için ekonomik bir çözümdür. Kompakt boyutları sayesinde dar alanlarda ve mobil uygulamalarda kullanılabilir. Düşük enerji tüketimi ve sessiz çalışma özellikleri sunar.'
-    },
-    'CV-5M': {
-      intro: 'CV-5M konveyör sistemi, 5 metre uzunluğunda orta mesafe malzeme taşıma için güvenilir ve verimli bir çözüm sunar.',
-      paragraph1: 'CV-5M model, 2.2 kW motor gücü ile 600 mm bant genişliği sunar. 800 kg/saat taşıma kapasitesi ile parçalanmış atıkların, ayrıştırılmış malzemelerin ve işlenmiş ürünlerin orta mesafe transferini sağlar. Değişken hız kontrolü ile farklı malzeme akış hızlarına uyum sağlar.',
-      paragraph2: 'Galvanizli çelik konstrüksiyon ve dayanıklı rulman sistemi, uzun ömürlü kullanım garantisi verir. PLC entegrasyonu, otomatik başlatma-durdurma ve acil durdurma sistemleri ile donatılmıştır. Yan koruma bariyerleri malzeme dökülmesini önler.',
-      paragraph3: 'CV-5M, orta ölçekli geri dönüşüm tesisleri, parçalama hatları arası transfer, seperatör besleme uygulamaları için idealdir. Parçalama makinesi çıkışından balyalama makinesine veya depolama alanına malzeme transferinde kullanılır.'
-    },
-    'CV-10M': {
-      intro: 'CV-10M konveyör sistemi, 10 metre uzunluğunda endüstriyel sınıf, yüksek kapasiteli malzeme taşıma bandıdır.',
-      paragraph1: 'CV-10M model, 3 kW güçlü motor ile 800 mm geniş bant ve takviyeli konstrüksiyon sunar. 1500 kg/saat taşıma kapasitesi ile ağır ve yüksek hacimli malzemelerin uzun mesafe transferinde kullanılır. Değişken frekanslı sürücü (inverter) ile hassas hız kontrolü yapılabilir.',
-      paragraph2: 'Ağır hizmet tipi çelik gövde, endüstriyel rulmanlar ve çift zincir tahrik sistemi, 7/24 kesintisiz çalışma kapasitesi sağlar. PLC ve SCADA entegrasyonu, uzaktan kontrol ve otomasyon sistemlerine bağlanabilir. Bakım kolaylığı için açılabilir yan kapaklar ve hızlı müdahale noktaları mevcuttur.',
-      paragraph3: 'CV-10M, büyük geri dönüşüm kompleksleri, endüstriyel üretim hatları, lojistik tesisleri ve depolama sistemleri için tasarlanmıştır. Yükseklik farkı olan uygulamalarda eğimli konveyör olarak kullanılabilir. Modüler yapısı sayesinde birden fazla ünite birleştirilerek uzatılabilir.'
-    }
-  },
-  'separator': {
-    'MS-1': {
-      intro: 'MS-1 malzeme ayırıcı, manyetik ayırma teknolojisi ile demir ve ferröz metallerin plastik ve diğer malzemelerden ayrıştırılmasını sağlar.',
-      paragraph1: 'MS-1 model, 1.1 kW motor gücü ve güçlü neodymium mıknatıs sistemi ile 500 mm bant genişliğinde çalışır. 800 kg/saat işleme kapasitesi ile karışık atık akışından demir, çelik ve ferröz metalleri %98 verimlilikle ayırır. Konveyör hattına kolayca entegre edilebilir.',
-      paragraph2: 'Otomatik temizleme sistemi, toplanan metalleri ayrı bir toplama konveyörüne aktarır. Ayarlanabilir manyetik alan gücü, farklı metal boyutları ve ağırlıklarına göre optimize edilebilir. Kompakt tasarımı sayesinde mevcut hatlar üzerine sonradan eklenebilir.',
-      paragraph3: 'MS-1, plastik geri dönüşüm tesisleri, karışık atık işleme merkezleri, e-atık ayırma tesisleri için ekonomik bir çözümdür. Parçalama makinesi çıkışına monte edilerek temiz malzeme akışı sağlar. Minimal bakım gereksinimi ve uzun ömürlü mıknatıs sistemi ile düşük işletme maliyeti sunar.'
-    },
-    'MS-2': {
-      intro: 'MS-2 malzeme ayırıcı, hava seperatörü teknolojisi ile hafif ve ağır malzemelerin yoğunluk bazlı ayrıştırılmasını sağlayan ileri bir sistemdir.',
-      paragraph1: 'MS-2 model, 5.5 kW hava üfleyici motor ve hassas hava akış kontrolü ile çalışır. 1200 kg/saat işleme kapasitesi ile plastik-metal, plastik-ahşap, kağıt-plastik gibi karışık malzemeleri yoğunluk farkına göre ayırır. Otomatik kontrol sistemi ile %95 ayırma verimliliği sağlar.',
-      paragraph2: 'Çift kanal sistemi, hafif malzemeleri (plastik, kağıt, köpük) ve ağır malzemeleri (metal, cam, taş) ayrı çıkışlara yönlendirir. Ayarlanabilir hava hızı ve açı kontrolü ile farklı malzeme kombinasyonlarına uyum sağlar. Toz toplama sistemi entegrasyonu çevre dostu çalışma sağlar.',
-      paragraph3: 'MS-2, ileri geri dönüşüm tesisleri, multilayer ambalaj ayırma merkezleri, kompozit malzeme işleme hatları için idealdir. Parçalama ve manyetik seperatör sonrası kullanılarak en yüksek ayırma kalitesini sağlar. Tam otomatik PLC kontrol ve SCADA entegrasyonu ile endüstri 4.0 uyumludur.'
-    }
-  },
-  'mobile': {
-    'MK-1': {
-      intro: 'MK-1 Mobil Kırıcı, şantiye ve sahada kullanım için tasarlanmış kompakt ve taşınabilir parçalama çözümüdür.',
-      paragraph1: 'MK-1 mobil kırıcı, çekme römorku üzerine monte edilmiş taşınabilir yapısı ile inşaat sahaları, yıkım projeleri ve geçici atık işleme noktalarında kullanılır. Beton, tuğla, asfalt, ahşap ve karışık inşaat atıklarının yerinde parçalanmasını sağlar. Hidrolik ayaklı stabilizasyon sistemi ile her türlü arazide güvenli çalışma sunar.',
-      paragraph2: 'Hareketli konveyör besleme sistemi ve entegre manyetik seperatör ile demir parçaları otomatik olarak ayırır. Toz bastırma sistemi ve gürültü izolasyonu ile çevre dostu çalışma sağlar. Kompakt boyutları sayesinde dar şantiye alanlarına kolayca yerleştirilebilir ve transport edilebilir.',
-      paragraph3: 'MK-1, inşaat firmaları, yıkım şirketleri, belediye altyapı projeleri ve geçici atık yönetim uygulamaları için idealdir. Hızlı kurulum ve kolay transport özellikleri sayesinde proje bazlı kullanıma uygundur. Yakıt tasarruflu motor ve düşük bakım maliyeti ile ekonomik çözüm sunar.'
-    },
-    'MK-2': {
-      intro: 'MK-2 Mobil Kırıcı, orta kapasiteli şantiye uygulamaları için güçlü ve verimli taşınabilir parçalama sistemidir.',
-      paragraph1: 'MK-2 mobil kırıcı, güçlü parçalama kapasitesi ve geniş besleme ağzı ile büyük çaplı beton parçaları, yol yapı atıkları, doğal taş ve ağır inşaat malzemelerinin parçalanmasında üstün performans gösterir. Hidrolik ayarlanabilir besleme sistemi ve otomatik yük kontrolü ile kesintisiz çalışma sağlar.',
-      paragraph2: 'Çok kademeli parçalama sistemi ile istenilen çıkış boyutuna göre ayarlanabilir çalışma sunar. Entegre vibrasyon eleme ünitesi ile farklı boyutlardaki malzemeleri sınıflandırır. GPS takip sistemi ve uzaktan izleme modülü ile fleet yönetimi yapılabilir.',
-      paragraph3: 'MK-2, büyük inşaat projeleri, yol yapım şirketleri, taş ocakları ve maden sahaları için profesyonel bir çözümdür. Yüksek mobilite ve hızlı kurulum özellikleri ile proje bazlı kiralama ve satış için uygundur. Dayanıklı yapısı ve kolay bakım erişimi ile uzun ömürlü kullanım garantisi verir.'
-    },
-    'MK-3': {
-      intro: 'MK-3 Mobil Kırıcı, yüksek kapasite gerektiren büyük ölçekli proje ve şantiyeler için tasarlanmış ağır hizmet tipi mobil parçalama sistemidir.',
-      paragraph1: 'MK-3 mobil kırıcı, ultra güçlü motor ve geniş parçalama kapasitesi ile beton yapı elemanları, köprü-viyadük yıkım atıkları, büyük çaplı taşlar ve ağır sanayi atıklarının parçalanmasında kullanılır. Tam otomatik PLC kontrol sistemi ve touch screen operatör paneli ile kolay kullanım sağlar.',
-      paragraph2: 'Çift kademeli parçalama ve entegre eleme sistemi ile üç farklı boyutta malzeme çıkışı alınabilir. Otomatik yağlama sistemi, uzaktan teşhis ve bakım uyarı modülü ile minimum down-time garantisi verir. Toz bastırma püskürtme sistemi ve gürültü bariyerleri ile çevresel etki minimize edilir.',
-      paragraph3: 'MK-3, mega inşaat projeleri, baraj-tünel yapımı, büyük ölçekli yıkım işleri ve madencilik uygulamaları için ideal çözümdür. Yüksek üretim kapasitesi ve dayanıklı yapısı ile 7/24 kesintisiz çalışma imkanı sunar. CE sertifikas�� ve uluslararası güvenlik standartları ile donatılmıştır.'
-    }
-  },
-  'pallet': {
-    'TSV-140': {
-      intro: 'TSV-140 tek şaftlı palet parçalama makinesi, ahşap ve plastik paletlerin verimli geri dönüşümü için tasarlanmış kompakt çözümdür.',
-      paragraph1: 'TSV-140 palet parçalama makinesi, 1400x400 mm parçalama alanı ve 30 kW motor gücü ile Euro paletleri (1200x800 mm) ve standart ahşap paletlerin etkili şekilde parçalanmasını sağlar. Palet kırma makinası olarak çivili ahşap palet, plastik palet ve hurda palet geri dönüşümünde kullanılır. Tek şaftlı rotor sistemi, yüksek tork ve düşük hızda dönerek paletlerin homojen parçalanmasını garantiler. Ahşap palet geri dönüşümü ve plastik palet geri dönüşümü için ideal çözümdür.',
-      paragraph2: 'Palet parçalama makinesi TSV-140, özel tasarım sertleştirilmiş çelik bıçaklar ile çivi ve metal parçalara karşı dayanıklıdır. Satılık hurda palet işlemlerinde, paletler içindeki metalleri ayırmak için opsiyonel çapraz bant mıknatıs sistemi eklenebilir. PLC kontrollü otomatik ters çalışma sistemi, tıkanmalara karşı bıçakları korur ve kesintisiz üretim sağlar. Ahşap palet kırma ve palet hurdası parçalama işlemlerinde minimum enerji tüketimi ile maksimum verimlilik sunar.',
-      paragraph3: 'MT Makina TSV-140 palet parçalama makinesi, lojistik firmaları, palet üretim tesisleri, geri dönüşüm merkezleri ve biyokütle yakıt üretim tesisleri için ekonomik bir yatırımdır. Parçalanan ahşap palet malzemesi, biyokütle enerji üretimi, ahşap levha hammaddesi ve kompost üretiminde kullanılabilir. Hurda palet geri dönüşümü ile hem çevresel sürdürülebilirlik sağlanır hem de atık yönetim maliyetleri düşürülür. Kompakt tasarımı ve kolay bakım özellikleri ile düşük işletme maliyeti sunar.'
-    },
-    'TSV-200': {
-      intro: 'TSV-200 tek şaftlı palet parçalama makinesi, yüksek kapasiteli ahşap ve plastik palet geri dönüşümü için güçlü çözümdür.',
-      paragraph1: 'TSV-200 palet parçalama makinesi, 2000x400 mm geniş parçalama alanı ve 55 kW güçlü motor ile büyük hacimli palet atıklarının işlenmesinde üstün performans gösterir. Palet kırma makinası olarak Euro palet (1200x800 mm), endüstriyel palet (1000x1200 mm) ve büyük boy özel paletlerin parçalanmasında kullanılır. Tek şaftlı rotor teknolojisi, ahşap palet geri dönüşümü, plastik palet geri dönüşümü ve hurda palet geri dönüşümü işlemlerinde yüksek verimlilik sağlar. Yüksek tork ve düşük devir kombinasyonu, zorlu malzemelerde bile kesintisiz çalışma garantisi verir.',
-      paragraph2: 'Palet parçalama makinesi TSV-200, endüstriyel sınıf sertleştirilmiş çelik bıçaklar ve güçlendirilmiş rotor yapısı ile çivi ve metal aksesuarlara karşı maksimum dayanıklılık sunar. Satılık hurda palet ve palet hurdası işlemlerinde, opsiyonel çapraz bant mıknatıs seperatörü ile metal parçalar otomatik olarak ayrıştırılır. İleri PLC otomasyon sistemi, gerçek zamanlı yük izleme, otomatik ters çalışma ve bakım hatırlatma özellikleri ile donatılmıştır. Ahşap palet kırma ve büyük hacimli palet atık yönetiminde maksimum kapasite sunar.',
-      paragraph3: 'MT Makina TSV-200 palet parçalama makinesi, büyük lojistik merkezleri, palet üretim fabrikaları, endüstriyel geri dönüşüm tesisleri ve biyokütle enerji santralleri için optimize edilmiştir. Parçalanan palet malzemesi, yüksek kalori değerli biyokütle yakıt, ahşap levha sektörü hammaddesi ve organik gübre üretiminde değerlendirilir. Hurda palet geri dönüşümü ile atık bertaraf maliyetleri ortadan kalkar ve çevresel sürdürülebilirlik sağlanır. Yüksek işleme kapasitesi ve düşük enerji tüketimi ile ekonomik çalışma garantisi verir.',
-    },
-    'TSVX-200': {
-      intro: 'TSVX-200 çift motorlu tek şaftlı palet parçalama makinesi, ekstra güç gerektiren ağır hizmet tipi palet geri dönüşüm uygulamaları için tasarlanmıştır.',
-      paragraph1: 'TSVX-200 palet parçalama makinesi, 2x45 kW çift motor konfigürasyonu ve 2000x400 mm geniş parçalama alanı ile en zorlu palet atıklarını işler. Palet kırma makinası olarak kalın ahşap paletler, ağır yük taşıma paletleri, çelik takviyeli paletler ve kompozit paletlerin parçalanmasında üstün güç sergiler. Çift motor sistemi, ahşap palet geri dönüşümü, plastik palet geri dönüşümü ve hurda palet geri dönüşümü işlemlerinde maksimum tork ve kesintisiz çalışma garantisi verir. Ağır hizmet tipi palet hurdası ve satılık hurda palet yığınlarının hızlı işlenmesinde kullanılır.',
-      paragraph2: 'Palet parçalama makinesi TSVX-200, ultra dayanıklı özel alaşımlı bıçaklar ve takviyeli çelik gövde ile endüstriyel sınıf dayanıklılık sunar. Çapraz bant mıknatıs seperatörü, çivi, vida ve metal bağlantı parçalarını otomatik olarak ayırır. Siemens PLC tabanlı ileri otomasyon, gerçek zamanlı performans izleme, predictive maintenance (öngörülü bakım) ve uzaktan müdahale özellikleri ile donatılmıştır. Ahşap palet kırma ve büyük ölçekli palet atık yönetimi projelerinde 7/24 kesintisiz çalışma kapasitesine sahiptir.',
-      paragraph3: 'MT Makina TSVX-200 palet parçalama makinesi, mega lojistik kompleksleri, büyük palet üretim fabrikaları, endüstriyel geri dönüşüm merkezleri, biyokütle enerji santralleri ve belediye entegre atık yönetim tesisleri için profesyonel çözümdür. Parçalanan yüksek kaliteli palet malzemesi, biyokütle yakıt üretimi, ahşap levha endüstrisi ve ahşap pelet üretiminde kullanılır. Hurda palet geri dönüşümü ile büyük hacimlerde atık bertaraf maliyetleri ortadan kalkar ve çevresel sürdürülebilirlik maksimize edilir. Yüksek üretim kapasitesi, düşük enerji maliyeti ve uzun ömürlü kullanım ile yatırım geri dönüşü hızlıdır.'
-    }
-  },
-  'tree-root': {
-    'TR-1000': {
-      intro: 'TR-1000 Ağaç Kökü Parçalama Makinesi, kalın ağaç kökleri ve odun kütüklerinin parçalanması için özel geliştirilmiş ağır hizmet tipi sistemdir.',
-      paragraph1: 'TR-1000 model, 75-110 kW ultra güçlü motor ve özel sertleştirilmiş bıçak sistemi ile 80 cm çapa kadar ağaç köklerini parçalayabilir. Yavaş devir-yüksek tork prensibi ile zorlu malzemelerde bile kesintisiz çalışma sağlar. Saatte 3-5 ton işleme kapasitesi ile büyük ölçekli orman temizleme ve peyzaj projelerinde kullanılır.',
-      paragraph2: 'Hidrolik besleyici ve otomatik itici sistem, büyük kökleri güvenli şekilde parçalama bölgesine iter. Ağır hizmet tipi çelik gövde ve takviyeli dişli kutusu maksimum dayanıklılık sağlar. Mobil şasi opsiyonu ile şantiye ve orman sahalarında taşınabilir kullanım imkanı sunar.',
-      paragraph3: 'TR-1000, belediye park ve bahçe işleri, orman işletmeleri, arazi temizleme şirketleri ve büyük peyzaj projeleri için profesyonel çözümdür. Parçalanan kök malzeme biyokütle yakıt, kompost veya mulch olarak değerlendirilebilir. Zorlu arazi koşullarında güvenilir çalışma garantisi verir.'
-    }
-  },
-  'wood-grinder': {
-    'WG-500': {
-      intro: 'WG-500 Ağaç Parçalama ve Öğütme Makinesi, ağaç dalları, kütükler ve odun atıklarının ince parçacıklara öğütülmesi için tasarlanmış çok fonksiyonlu sistemdir.',
-      paragraph1: 'WG-500 model, iki kademeli parçalama ve öğütme sistemi ile 20 cm çapa kadar ağaç dallarını 5-10 mm boyutunda homojen yonga haline getirir. 37-55 kW motor gücü ile saatte 2-3 ton işleme kapasitesine sahiptir. Bahçe atıkları, budama artıkları, meyve bahçesi dalları ve mobilya atıklarının işlenmesinde üstün performans gösterir.',
-      paragraph2: 'Özel tasarım kırma ve öğütme bıçakları, ahşabı ezmeden keskin şekilde yongalayarak kaliteli çıkış malzemesi sağlar. Ayarlanabilir elek sistemi ile 5-50 mm arası farklı yonga boyutları elde edilebilir. Toz bastırma sistemi ve gürültü izolasyonu ile çevre dostu çalışma sunar.',
-      paragraph3: 'WG-500, belediyeler, park yönetimleri, peyzaj firmaları, biyokütle enerji tesisleri ve kompost üretim merkezleri için ideal çözümdür. Üretilen ahşap yongası, enerji üretimi, kompost, hayvan altlığı ve peyzaj malçı olarak kullanılabilir. Kompakt tasarımı ile kolay transport ve kurulum imkanı sunar.'
-    },
-    'WG-800': {
-      intro: 'WG-800 Ağaç Parçalama ve Öğütme Makinesi, orta kapasiteli tesisler için güçlü ve verimli ahşap işleme çözümüdür.',
-      paragraph1: 'WG-800 model, gelişmiş çift kademeli sistem ile 30 cm çapa kadar ağaç gövdelerini işler. 55-75 kW motor gücü ve geniş besleme hunisi ile saatte 4-6 ton kapasiteye ulaşır. Ağaç budama atıkları, palet ahşabı, mobilya üretim artıkları ve inşaat ahşap atıklarının öğütülmesinde yüksek verimlilik sağlar.',
-      paragraph2: 'Hidrolik besleyici konveyör sistemi, malzeme akışını otomatikleştirir. PLC kontrollü yük sensörü, motora aşırı yük bindirmeden optimal üretim hızını ayarlar. Çift elek sistemi ile hem kaba yonga (10-30 mm) hem ince talaş (3-8 mm) üretilebilir. Otomatik yağlama sistemi bakım aralıklarını uzatır.',
-      paragraph3: 'WG-800, orta ölçekli belediye tesisleri, özel orman işletmeleri, biyokütle santralleri ve kompost üretim tesisleri için tasarlanmıştır. Yüksek kapasite ve enerji verimliliği ile ekonomik çalışma garantisi verir. Mobil veya sabit kurulum opsiyonları mevcuttur.'
-    },
-    'WG-1200': {
-      intro: 'WG-1200 Ağaç Parçalama ve Öğütme Makinesi, yüksek kapasite gerektiren büyük tesisler için endüstriyel sınıf öğütme sistemidir.',
-      paragraph1: 'WG-1200 model, 40 cm çapa kadar ağaç kütüklerini işleyebilen ağır hizmet tipi sistemdir. 90-132 kW güçlü motor ve ekstra geniş besleme bölgesi ile saatte 8-12 ton işleme kapasitesine sahiptir. Orman endüstrisi atıkları, büyük ağaç gövdeleri, mobilya fabrikası atıkları ve tüm ahşap bazlı atıkların öğütülmesinde kullanılır.',
-      paragraph2: 'Üç kademeli parçalama ve öğütme sistemi: ön kırıcı bıçaklar, orta parçalama bıçakları ve son öğütme elekleri ile ultra homojen yonga üretimi sağlar. Otomatik metal detektör ve acil geri çekme sistemi, bıçakları korur. Tam otomatik konveyör besleme ve yığın yönetim sistemi operatör ihtiyacını minimize eder.',
-      paragraph3: 'WG-1200, büyük belediye atık yönetim merkezleri, orman ürünleri fabrikaları, biyokütle enerji santralleri ve endüstriyel kompost tesisleri için profesyonel çözümdür. 7/24 kesintisiz çalışma kapasitesi ve yüksek dayanıklılık ile uzun ömürlü kullanım garantisi verir. SCADA entegrasyonu ve uzaktan izleme sistemi ile endüstri 4.0 uyumludur.'
-    }
-  },
-  'glass': {
-    'GB-300': {
-      intro: 'GB-300 Cam Şişe Kırma Makinesi, cam şişelerin güvenli ve verimli şekilde kırılması için tasarlanmış kompakt sistemdir.',
-      paragraph1: 'GB-300 model, özel tasarım kırma silindiri ile cam şişeleri küçük parçalara ayırır. 11-15 kW motor gücü ile saatte 500-800 kg cam şişe işleme kapasitesine sahiptir. Bira, şarap, su ve meşrubat şişelerinin kırılmasında kullanılır. Kompakt tasarımı sayesinde restoran, otel ve küçük geri dönüşüm tesislerinde kullanılabilir.',
-      paragraph2: 'Kapalı kırma kabini ve güvenlik kapakları, cam parçacıklarının dışarı sıçramasını önler. Toz toplama sistemi entegrasyonu ile temiz çalışma ortamı sağlar. Ayarlanabilir kırma seviyesi ile 10-30 mm boyutunda homojen cam parçacıkları elde edilir. Paslanmaz çelik konstrüksiyon uzun ömür garantisi verir.',
-      paragraph3: 'GB-300, otel ve restoranlar, geri dönüşüm toplama merkezleri, içecek üretim tesisleri ve belediye atık noktaları için ekonomik çözümdür. Kırılan cam, cam geri dönüşümü, yol yapım malzemesi ve inşaat agregası olarak değerlendirilebilir. Düşük enerji tüketimi ve minimal bakım gereksinimi sunar.'
-    }
-  },
-  'quad-shaft': {
-    'DS-80': {
-      intro: 'DS-80 dört şaftlı katı atık parçalama makinesi, 800x800 mm parçalama alanı ile kompakt boyutlara rağmen plastik varil, metal tank ve hacimli atıkların etkili parçalanmasını sağlar.',
-      paragraph1: 'DS-80 model, 4 adet 11-22 kW motor ile toplam 44-88 kW güce sahip dört şaftlı sistemdir. 800 mm rotor boyu ve hidrolik baskı ünitesi ile plastik varil, boya varilleri, alüminyum profil, yağ filtreleri ve orta hacimli atıkları verimli şekilde parçalar. Çoklu sızdırmazlık yapısı malzeme kirliliğini önler ve dayanıklı yatakları ile uzun ömürlü kullanım sağlar.',
-      paragraph2: 'Hidrolik baskı sistemi malzemeleri şaftlara doğru iterek hızlı ve etkili parçalama sağlar. Cıvatalı sökülebilir bıçak tasarımı kolay bakım ve değişim imkanı sunar. PLC kontrol sistemi ve otomatik yağlama ünitesi opsiyonu ile kesintisiz çalışma garantisi verir. Farklı ölçülerde elek seçeneği ile çıkış boyutu kontrolü yapılabilir.',
-      paragraph3: 'DS-80, küçük-orta ölçekli geri dönüşüm tesisleri, atık yönetim merkezleri ve plastik varil işleme tesisleri için ideal çözümdür. Kompakt tasarımı sayesinde sınırlı alanlarda bile verimli çalışır. Ofis ve endüstriyel tip şase tasarımı seçenekleri ile farklı kullanım alanlarına uygun konfigürasyonlar sunulur.'
-    },
-    'DS-100': {
-      intro: 'DS-100 dört şaftlı katı atık parçalama makinesi, 1000x1000 mm geniş parçalama alanı ile orta kapasite gerektiren işletmeler için güçlü ve çok yönlü atık işleme çözümüdür.',
-      paragraph1: 'DS-100 model, 4 adet 22-45 kW motor ile toplam 88-180 kW güce sahiptir. 1000 mm rotor boyu ile plastik çerçeve, plastik blok, plastik kutu, evsel çöp, karton kağıt ve oluklu kağıt gibi çok çeşitli malzemeleri işler. Hidromotor tahrik sistemi opsiyonu ile zorlu malzemelerde daha yüksek tork sağlar.',
-      paragraph2: 'Gelişmiş hidrolik baskı ünitesi, büyük ve içi boş ürünlerin işlenmesini kolaylaştırır. Kayış kasnaklı hidrolik kaplin sistemi ani yük değişimlerinde koruma sağlar. Rotor soğutma sistemi opsiyonu ile yoğun çalışma koşullarında bile optimal sıcaklık kontrolü sağlanır. Çıkış için konveyör uygulamaları entegrasyonu ile tam otomatik hat kurulabilir.',
-      paragraph3: 'DS-100, orta ölçekli geri dönüşüm tesisleri, belediye atık işleme merkezleri ve tıbbi atık yönetim tesisleri için tasarlanmıştır. Geniş malzeme işleme kapasitesi sayesinde plastik, metal, ahşap ve karışık atıkları tek makinede işleyebilir. Yüksek verimlilik ve düşük işletme maliyeti ile ekonomik çözüm sunar.'
-    },
-    'DS-150': {
-      intro: 'DS-150 dört şaftlı katı atık parçalama makinesi, 1500x1500 mm ekstra geniş parçalama alanı ile büyük hacimli atıkların işlenmesinde profesyonel performans sunar.',
-      paragraph1: 'DS-150 model, 4 adet 45-132 kW motor ile toplam 180-528 kW ultra güçlü sistem sunar. 1500 mm rotor boyu ile buzdolabı, TV kasası, devre kartı, metal tank, gazete, fotokopi kağıdı ve cam yünü gibi zorlu ve hacimli atıkları kolayca parçalar. Özel sertleştirilmiş bıçak sistemi metal ve elektronik atıklara karşı yüksek dayanıklılık gösterir.',
-      paragraph2: 'Hidrolik baskı ünitesi büyük hacimli malzemeleri kontrollü şekilde parçalama bölgesine iter. Otomatik yağlama ünitesi bakım aralıklarını uzatır ve kesintisiz üretim sağlar. Farklı ölçülerde elek seçenekleri ile çıkış malzemesinin boyutu tam kontrol edilebilir. Hidromotor tahrik sistemi ile maksimum tork ve verimlilik elde edilir.',
-      paragraph3: 'DS-150, büyük ölçekli geri dönüşüm tesisleri, elektronik atık işleme merkezleri ve endüstriyel atık yönetim şirketleri için profesyonel çözümdür. Buzdolabı, klima ve beyaz eşya geri dönüşümü yapan tesislerde yaygın olarak kullanılır. Yüksek kapasite ve geniş malzeme uyumluluğu ile çok amaçlı kullanım imkanı sunar.'
-    },
-    'DS-200': {
-      intro: 'DS-200 dört şaftlı katı atık parçalama makinesi, 2000x2000 mm ultra geniş parçalama alanı ile en büyük ve en zorlu atıkların işlenmesinde endüstri lideri performans sunar.',
-      paragraph1: 'DS-200 model, 4 adet 75-160 kW motor ile toplam 300-640 kW dev güç kapasitesine sahiptir. 2000 mm rotor boyu ile cam bardak, cam şişe, büyük plastik bloklar, endüstriyel konteynerler ve tüm hacimli atık türlerini işler. En zorlu malzemelerde bile kesintisiz çalışma garantisi verir.',
-      paragraph2: 'İleri seviye hidrolik baskı sistemi ve çok kademeli parçalama bıçakları maksimum verimlilik sağlar. Kayış kasnaklı hidrolik kaplin ve rotor soğutma sistemi standart donanım olarak sunulur. PLC tabanlı tam otomasyon sistemi, touch screen operatör arayüzü ve uzaktan izleme modülü ile endüstri 4.0 uyumludur. Otomatik yağlama ünitesi 7/24 kesintisiz çalışma kapasitesi sağlar.',
-      paragraph3: 'DS-200, dev ölçekli geri dönüşüm tesisleri, belediye katı atık işleme merkezleri ve entegre atık yönetim kompleksleri için en üst seviye çözümdür. Cam geri dönüşümü, büyük plastik ürünler, elektronik atık ve karışık endüstriyel atıkların işlenmesinde maksimum kapasite sunar. Çıkış konveyör sistemleri entegrasyonu ile tam otomatik hat kurulumu yapılabilir. Zorlu endüstriyel koşullarda güvenilir ve ekonomik çalışma garantisi verir.'
-    }
-  },
-  'harddisk': {
-    'DATABER-S': {
-      intro: 'DATABER-S Harddisk İmha Makinesi, veri güvenliği için fiziksel olarak harddiskleri ve devre kartlarını tamamen yok eden tekli parçalama sistemine sahip güvenilir çözümdür.',
-      paragraph1: 'DATABER-S model, 150 x 150 mm parçalama alanı ve 3-11 kW motor gücü ile harddiskleri, hurda elektronik kartları ve elektronik atıkları tek aşamalı parçalama ile güvenli şekilde imha eder. Sertleştirilmiş çelik kesme bıçakları ile 2.5" ve 3.5" harddiskler fiziksel olarak parçalanarak verilerin kurtarılamaz hale gelmesi sağlanır. Acil durum kapatma düğmesi ve tekerlekli kabin ile güvenli kullanım sunulur.',
-      paragraph2: 'Otomatik besleme sistemi ve güvenlik sensörleri ile kolay kullanım sağlar. Tekli parçalayıcı sistemi harddiskleri ve devre kartlarını fiziksel olarak parçalar. Boşaltım konveyör bandı parçalanan elektronik atıkların kolayca taşınmasını sağlar. Dijital depolama cihazları için pratik tutma tepsisi mevcuttur. Düşük enerji tüketimi ile ekonomik çalışır.',
-      paragraph3: 'DATABER-S, bankalar, kamu kurumları, veri merkezleri, sağlık kuruluşları ve güvenlik gerektiren tüm sektörler için idealdir. KVKK ve GDPR uyumlu fiziksel veri imha sertifikası ile desteklenir. Kompakt tasarımı sayesinde ofis ve küçük veri merkezlerinde kullanılabilir. Minimal bakım gereksinimi ile uzun ömürlü kullanım garantisi verir.'
-    },
-    'DATABER-D': {
-      intro: 'DATABER-D Harddisk İmha Makinesi, çift aşamalı parçalama sistemi ile maksimum veri güvenliği sağlayan yüksek kapasiteli profesyonel çözümdür.',
-      paragraph1: 'DATABER-D model, 400 x 400 mm geniş parçalama alanı ve 2 adet parçalayıcı ile 11-22 kW x 2 güçlü motor sistemine sahiptir. İki aşamalı parçalama işlemi harddiskleri ve hurda elektronik kartları daha küçük parçalara ayırarak veri kurtarma ihtimalini tamamen ortadan kaldırır. Hem çok sert server harddisklerini hem de elektronik devre kartlarını yüksek kapasitelerde imha edebilir.',
-      paragraph2: 'Çift beslemeli sistem ile server harddiskleri ve devre kartları için ayrı besleme konveyörleri mevcuttur. PLC ekranında harddiskler tek tek sayılarak imha işlemi izlenebilir ve raporlanır. Otomatik geri dönüş özelliği malzeme sıkışmasını önleyerek verimli çalışma sağlar. Toz toplama sistemi entegrasyonu ile temiz çalışma ortamı sunulur.',
-      paragraph3: 'DATABER-D, büyük veri merkezleri, IT şirketleri, bankacılık sektörü ve savunma sanayi için profesyonel çözümdür. Büyük miktarda veriyi kısa sürede güvenli şekilde yok eder. İki aşamalı imha sistemi hem harddisklerde hem de hurda elektronik kartlarda bulunan hassas verilerin tamamen kurtarılamaz hale gelmesini güvence altına alır. Yüksek güvenlik standartlarına uygun çalışır.'
-    },
-    'DATABER-T': {
-      intro: 'DATABER-T Harddisk İmha Makinesi, üç aşamalı parçalama sistemi ile en yüksek güvenlik seviyesini sunan, toz boyutuna kadar parçalama yapabilen endüstriyel çözümdür.',
-      paragraph1: 'DATABER-T model, 400 x 400 mm parçalama alanı ve 3 adet parçalayıcı ile 11-45 kW x 2 ultra güçlü motor sistemine sahiptir. Üçlü parçalama aşaması ile harddiskler ve devre kartları istenen ölçülerde toz boyutuna kadar küçültülebilir. Materyaller mikron ölçülerinde parçalanabilir ve verilerin geri getirilmesi imkânsız hale getirilir.',
-      paragraph2: 'Çok aşamalı imha sistemi harddiskleri, elektronik hurdaları ve devre kartlarını birkaç parçalama makinesinden geçirerek maksimum güvenlik sağlar. Çift beslemeli tasarım ile server harddiskleri ve devre kartları ayrı konveyörlerden beslenebilir. PLC kontrol sistemi ile her aşama izlenir ve detaylı raporlama yapılır. Otomatik yağlama ünitesi opsiyonu ile bakım aralıkları uzatılır.',
-      paragraph3: 'DATABER-T, çok gizli ve önemli veri taşıyan teknolojik atıkların imhası için kritik öneme sahiptir. Devlet kurumları, savunma sanayi, finans sektörü ve büyük IT atık yönetim firmaları için en üst düzey güvenlik sağlar. Toz boyutuna kadar küçültme özelliği ile en hassas verilerin bile geri dönüştürülemez hale getirilmesini garanti eder. 7/24 kesintisiz çalışma kapasitesi ile yüksek hacimli işletmelere uygundur.'
-    }
-  },
-  'mobile': {
-    'TSM-150': {
-      intro: 'TSM-150 Mobil Kırıcı, 400 HP motor gücü ve 1500 mm\'lik rotoru ile sahadaki en esnek çözümlerinizden biridir.',
-      paragraph1: 'TSM-150 Mobil Kırıcı, 400 HP motor gücü ve 1500 mm\'lik rotoru ile sahadaki en esnek çözümlerinizden biridir. Özellikle yerinde parçalama gerektiren projeler için tasarlanan bu model, 1500x1800 mm\'lik geniş parçalama alanı sayesinde orta ve büyük ölçekli atıkları (inşaat atığı, palet, ahşap) kolaylıkla işler.',
-      paragraph2: 'TSM-150, taşınabilirlik ve gücü bir araya getirerek lojistik maliyetlerinizi düşürür. Sahada kurulum yaparak malzemeleri yerinde parçalama imkanı sunar, böylece taşıma ve depolama maliyetleri minimize edilir. Tek şaftlı tasarımı ile yüksek hızda parçalama yapar ve çeşitli malzemeleri (plastik, ahşap, inşaat atığı) etkili şekilde işler.',
-      paragraph3: 'Mobil şase üzerine monte edilmiş TSM-150, inşaat şantiyelerinde, geri dönüşüm tesislerinde ve sahada geçici atık yönetimi gerektiren projelerde mükemmel performans gösterir. Dizel motor veya jeneratör opsiyonları ile elektrik bağlantısı olmayan alanlarda bile çalışabilir. Dayanıklı çelik yapısı ve uzun ömürlü bıçakları ile zorlu saha koşullarına dayanır.'
-    },
-    'TSM-300': {
-      intro: 'Serinin en güçlü modellerinden olan TSM-300 Mobil Kırıcı, 600 HP motoru ve devasa 3000x2000 mm parçalama alanı ile en zorlu görevler için üretilmiştir.',
-      paragraph1: 'Serinin en güçlü modellerinden olan TSM-300 Mobil Kırıcı, 600 HP motoru ve devasa 3000x2000 mm parçalama alanı ile en zorlu görevler için üretilmiştir. 3000 mm\'lik rotoru, büyük hacimli endüstriyel atıkları ve inşaat yıkım molozlarını durmaksızın işler.',
-      paragraph2: 'TSM-300, yüksek kapasite gerektiren büyük ölçekli geri dönüşüm tesisleri ve şantiyeler için maksimum verimlilik sunar. Güçlü motor sistemi ile ağır ve yoğun malzemeleri (büyük ahşap kütükler, kalın plastik konteynerler, inşaat molozları) yüksek hızda parçalar. Mobil platformu sayesinde farklı lokasyonlara kolayca taşınabilir.',
-      paragraph3: 'TSM-300, büyük inşaat projelerinde, yıkım sahalarında ve endüstriyel atık yönetim merkezlerinde kullanılır. Tekerlekli veya paletli sistem opsiyonları ile zorlu arazi koşullarında bile sorunsuz çalışır. Uzaktan kumanda kontrol sistemi ile operatör güvenliği artırılır. Otomatik yağlama ve rotor soğutma sistemleri ile uzun süreli kesintisiz çalışma kapasitesi sağlar.'
-    },
-    'CSM-150': {
-      intro: 'CSM-150 Mobil Kırıcı, Çift Şaftlı (Dual-Shaft) sistemin yüksek tork avantajını taşınabilirlikle birleştirir.',
-      paragraph1: 'CSM-150 Mobil Kırıcı, Çift Şaftlı (Dual-Shaft) sistemin yüksek tork avantajını taşınabilirlikle birleştirir. 400 HP motor gücü ve 1500x1200 mm\'lik parçalama alanı ile zorlu, yoğun malzemeleri (örn: metal hurdaları, lastik) düşük hızda yüksek torkla parçalar.',
-      paragraph2: 'CSM-150, özellikle yerinde metal ve endüstriyel atık ayrıştırması yapan tesisler için ideal, kompakt ve güçlü bir çözümdür. Çift şaftlı yapısı sayesinde malzemeleri ezer ve parçalar, tek şaftlı sistemlere göre daha ince boyutlarda çıkış sağlar. Metal hurdalar, lastik, kablo ve kompozit malzemeler gibi zorlu atıkları etkili şekilde işler.',
-      paragraph3: 'Mobil şase üzerine kurulu CSM-150, hurda tesisleri, metal geri dönüşüm merkezleri ve sahada metal atık işleme gerektiren projelerde kullanılır. Hidromotor tahrik sistemi opsiyonu ile hassas tork kontrolü yapılabilir. Taşınabilir konveyör sistemleri ile entegre çalışarak işlenmiş malzemeyi direkt olarak kamyonlara veya konteynerlara yükleyebilir. Dayanıklı çift rotor yapısı ve sertleştirilmiş çelik bıçaklar ile uzun ömürlü kullanım garantisi verir.'
-    },
-    'CSM-200': {
-      intro: '800 HP motor gücüne sahip CSM-200 Mobil Kırıcı, taşınabilir geri dönüşümün zirvesini temsil eder.',
-      paragraph1: '800 HP motor gücüne sahip CSM-200 Mobil Kırıcı, taşınabilir geri dönüşümün zirvesini temsil eder. 2000x1800 mm\'lik geniş besleme alanı ve 2000 mm\'lik çift şaftlı rotoru, en büyük ve en inatçı atıkları (araç parçaları, büyük metal hurdalar) bile kolayca işler.',
-      paragraph2: 'CSM-200, maksimum dayanıklılık ve en yüksek kapasiteyi arayan profesyonel geri dönüşüm operasyonları için tasarlanmıştır. Çift şaftlı sistem ile ağır metal atıklar, büyük lastikler, endüstriyel kablolar ve kompozit malzemeler yüksek torkla parçalanır. 800 HP güçlü motor sistemi, kesintisiz ve yüksek kapasiteli üretim sağlar.',
-      paragraph3: 'CSM-200, büyük metal hurda işleme tesisleri, otomotiv geri dönüşüm merkezleri ve endüstriyel atık yönetim komplekslerinde kullanılır. Tekerlekli veya paletli mobil platform ile farklı lokasyonlara kolayca taşınır. Hidrolik açılan elek sistemi ile çıkış boyutu ayarlanabilir. Uzaktan kumandalı kontrol, kamera sistemi ve otomatik güvenlik özellikleri ile operatör güvenliği maksimize edilir. Endüstriyel tip şase tasarımı ve takviyeli yapısı ile en zorlu çalışma koşullarına dayanır.'
-    }
-  }
+  };
+
+  return templates[language];
 };
 
 /**
  * Get model-specific description
+ * @param productType - Product type (single-saft, dual-saft, quad-saft, etc.)
+ * @param modelName - Model name (TSH-60, CS-80, etc.)
+ * @param language - Language code (tr, en, ru, ar) - defaults to 'tr'
  */
-export const getModelDescription = (productType: string, modelName: string): ModelDescription | null => {
-  return modelDescriptions[productType]?.[modelName] || null;
+export const getModelDescription = (
+  productType: string,
+  modelName: string,
+  language: Language = 'tr'
+): ModelDescription | null => {
+  const multiDesc = modelDescriptions[productType]?.[modelName];
+  
+  // If specific description exists, return it for the requested language
+  if (multiDesc) {
+    return multiDesc[language] || multiDesc.tr || null;
+  }
+  
+  // If no specific description, return fallback description
+  return getFallbackDescription(productType, modelName, language);
 };
 
 /**

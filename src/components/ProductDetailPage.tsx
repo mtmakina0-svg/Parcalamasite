@@ -347,7 +347,7 @@ export const ProductDetailPage = ({
   onECatalogClick, 
   onProductDetailClick 
 }: ProductDetailPageProps) => {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
 
   // Get dynamic image paths based on model from GitHub
   const images = getModelImages(productType, modelName);
@@ -370,8 +370,8 @@ export const ProductDetailPage = ({
   // Get available models for current product type
   const models = availableModels[productType] || [];
   
-  // Get model-specific description
-  const modelDesc = getModelDescription(productType, modelName);
+  // Get model-specific description with current language
+  const modelDesc = getModelDescription(productType, modelName, language);
   const hasCustomDesc = hasModelDescription(productType, modelName);
 
   // Handle model change
