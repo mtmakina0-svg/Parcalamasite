@@ -62,6 +62,14 @@ const products = [
     image: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
   },
   {
+    id: 'tree-root',
+    titleTR: 'Ağaç Kökü Parçalama Makinesi',
+    titleEN: 'Tree Root Shredder',
+    titleRU: 'Измельчитель корней деревьев',
+    titleAR: 'آلة تقطيع جذور الأشجار',
+    image: 'https://i.ibb.co/KmLJHvN/agac-koku-parcalama-makinesi-tw-200-1.png',
+  },
+  {
     id: 'wood-grinder',
     titleTR: 'Ağaç Parçalama Öğütme Makinesi',
     titleEN: 'Wood Grinding Machine',

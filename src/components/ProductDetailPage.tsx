@@ -293,6 +293,58 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       capacity: 'Üç Aşamalı İmha - Toz Boyutu'
     }
   },
+  'tree-root': {
+    'TW-100': {
+      motorPower: '132–160 kW',
+      rotorLength: '500 mm',
+      rotorDiameter: 'Ø 1000 mm',
+      bladeCount: 'Çok Bıçaklı Rotor',
+      weight: 'Orta Ölçekli',
+      capacity: 'Orta Kapasite'
+    },
+    'TW-150': {
+      motorPower: '160–220 kW',
+      rotorLength: '800 mm',
+      rotorDiameter: 'Ø 1500 mm',
+      bladeCount: '28-32 adet',
+      weight: 'Büyük Ölçekli',
+      capacity: 'Yüksek Kapasite'
+    },
+    'TW-200': {
+      motorPower: '220–315 kW',
+      rotorLength: '1000 mm',
+      rotorDiameter: 'Ø 2000 mm',
+      bladeCount: '36-40 adet',
+      weight: 'Endüstriyel',
+      capacity: '8-15 ton/saat'
+    }
+  },
+  'wood': {
+    'TSY-100': {
+      motorPower: '55–90 kW (2X)',
+      rotorLength: '1000 mm',
+      rotorDiameter: 'Yatay Tasarım',
+      bladeCount: 'Sertleştirilmiş Çelik Bıçak',
+      weight: 'Orta Ölçekli',
+      capacity: '3-8 ton/saat'
+    },
+    'TSY-150': {
+      motorPower: '75–110 kW (2X)',
+      rotorLength: '1500 mm',
+      rotorDiameter: 'Yatay Tasarım',
+      bladeCount: 'Hardox Özel Alaşım',
+      weight: 'Büyük Ölçekli',
+      capacity: '5-12 ton/saat'
+    },
+    'TSY-200': {
+      motorPower: '90–200 kW (2X)',
+      rotorLength: '2000 mm',
+      rotorDiameter: 'Yatay Tasarım',
+      bladeCount: 'Hardox 500',
+      weight: 'Endüstriyel',
+      capacity: '8-15 ton/saat'
+    }
+  },
   'mobile': {
     'TSM-150': {
       motorPower: '400 HP',
@@ -326,6 +378,32 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       weight: 'Mobil Şase',
       capacity: '2000 x 1800 mm'
     }
+  },
+  'wood': {
+    'TSY-100': {
+      motorPower: '55–90 kW (2x)',
+      rotorLength: '1000 mm',
+      rotorDiameter: 'Yatay Tasarım',
+      bladeCount: 'Çok Bıçaklı Rotor',
+      weight: 'Orta Ölçekli',
+      capacity: 'Orta Kapasite'
+    },
+    'TSY-150': {
+      motorPower: '75–110 kW (2x)',
+      rotorLength: '1500 mm',
+      rotorDiameter: 'Yatay Tasarım',
+      bladeCount: 'Sertleştirilmiş Çelik',
+      weight: 'Büyük Ölçekli',
+      capacity: 'Yüksek Kapasite'
+    },
+    'TSY-200': {
+      motorPower: '90–200 kW (2x)',
+      rotorLength: '2000 mm',
+      rotorDiameter: 'Yatay Tasarım',
+      bladeCount: 'Ultra Dayanıklı',
+      weight: 'Endüstriyel',
+      capacity: 'Mega Kapasite'
+    }
   }
 };
 
@@ -337,20 +415,51 @@ const availableModels: { [key: string]: string[] } = {
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
-  'pallet': ['TSV-140', 'TSV-200', 'TSVX-200']
+  'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
+  'tree-root': ['TW-100', 'TW-150', 'TW-200'],
+  'wood': ['TSY-100', 'TSY-150', 'TSY-200']
+};
+
+// Title/Subtitle mapping for each product type
+const productTitleKeys: { [key: string]: { title: string; subtitle: string } } = {
+  'single-saft': { title: 'single_saft_main_title', subtitle: 'single_saft_subtitle' },
+  'dual-saft': { title: 'dual_shaft_main_title', subtitle: 'dual_shaft_subtitle' },
+  'quad-saft': { title: 'quad_saft_main_title', subtitle: 'quad_saft_subtitle' },
+  'metal': { title: 'metal_main_title', subtitle: 'metal_subtitle' },
+  'harddisk': { title: 'harddisk_main_title', subtitle: 'harddisk_subtitle' },
+  'mobile': { title: 'mobile_main_title', subtitle: 'mobile_subtitle' },
+  'pallet': { title: 'pallet_main_title', subtitle: 'pallet_subtitle' },
+  'tree-root': { title: 'tree_root_main_title', subtitle: 'tree_root_subtitle' },
+  'wood': { title: 'wood_main_title', subtitle: 'wood_subtitle' }
+};
+
+// Description keys mapping for each product type
+const productDescriptionKeys: { [key: string]: string } = {
+  'single-saft': 'single_shaft',
+  'dual-saft': 'dual_shaft',
+  'quad-saft': 'quad_saft',
+  'metal': 'metal',
+  'harddisk': 'harddisk',
+  'mobile': 'mobile',
+  'pallet': 'pallet',
+  'tree-root': 'tree_root',
+  'wood': 'wood'
 };
 
 export const ProductDetailPage = ({ 
   productType, 
-  modelName = 'TSH-60', // Default model
+  modelName, 
   onBackToMain, 
   onECatalogClick, 
   onProductDetailClick 
 }: ProductDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
 
+  // Set default model based on product type
+  const defaultModelName = modelName || (productType === 'tree-root' ? 'TW-100' : 'TSH-60');
+
   // Get dynamic image paths based on model from GitHub
-  const images = getModelImages(productType, modelName);
+  const images = getModelImages(productType, defaultModelName);
   
   // Get fallback image for this product type
   const fallbackImage = getFallbackImage(productType);
@@ -358,21 +467,21 @@ export const ProductDetailPage = ({
   // Debug: Log image paths (only in development)
   React.useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      console.log('🖼️ Image paths for', modelName, ':', images);
+      console.log('🖼️ Image paths for', defaultModelName, ':', images);
       console.log('📍 Main image URL:', images.main);
       console.log('🔄 Fallback URL:', fallbackImage);
     }
-  }, [modelName]);
+  }, [defaultModelName]);
 
   // Get current model specs
-  const currentSpecs = modelSpecifications[productType]?.[modelName];
+  const currentSpecs = modelSpecifications[productType]?.[defaultModelName];
   
   // Get available models for current product type
   const models = availableModels[productType] || [];
   
   // Get model-specific description with current language
-  const modelDesc = getModelDescription(productType, modelName, language);
-  const hasCustomDesc = hasModelDescription(productType, modelName);
+  const modelDesc = getModelDescription(productType, defaultModelName, language);
+  const hasCustomDesc = hasModelDescription(productType, defaultModelName);
 
   // Handle model change
   const handleModelChange = (newModel: string) => {
@@ -384,10 +493,10 @@ export const ProductDetailPage = ({
   // Scroll to top when component mounts
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [productType, modelName]);
+  }, [productType, defaultModelName]);
 
-  // Single Shaft, Harddisk, and Mobile Product Data (using same layout)
-  if (productType === 'single-saft' || productType === 'harddisk' || productType === 'mobile') {
+  // Single Shaft, Harddisk, Mobile, Tree Root, and Wood Product Data (using same layout)
+  if (productType === 'single-saft' || productType === 'harddisk' || productType === 'mobile' || productType === 'tree-root' || productType === 'wood') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -442,10 +551,10 @@ export const ProductDetailPage = ({
               className="text-center mb-16"
             >
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
-                {modelName} {productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : productType === 'mobile' ? 'Mobil Kırıcı' : t('single_shaft_main_title')}
+                {defaultModelName} {productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : productType === 'mobile' ? 'Mobil Kırıcı' : productType === 'tree-root' ? t('tree_root_main_title') : productType === 'wood' ? t('wood_main_title') : t('single_shaft_main_title')}
               </h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
-                {hasCustomDesc && modelDesc ? modelDesc.intro : (productType === 'harddisk' ? 'Güvenli Veri İmha Çözümleri' : productType === 'mobile' ? 'Yüksek Kapasiteli Mobil Kırıcılar' : t('single_shaft_subtitle'))}
+                {hasCustomDesc && modelDesc ? modelDesc.intro : (productType === 'harddisk' ? 'Güvenli Veri İmha Çözümleri' : productType === 'mobile' ? 'Yüksek Kapasiteli Mobil Kırıcılar' : productType === 'tree-root' ? t('tree_root_subtitle') : productType === 'wood' ? t('wood_subtitle') : t('single_shaft_subtitle'))}
               </p>
             </motion.div>
 
@@ -458,7 +567,7 @@ export const ProductDetailPage = ({
             >
               <ImageWithFallback
                 src={images.main}
-                alt={`${modelName} ${productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : t('single_shaft_main_title')}`}
+                alt={`${defaultModelName} ${productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : productType === 'tree-root' ? t('tree_root_main_title') : t('single_shaft_main_title')}`}
                 className="w-full rounded-2xl shadow-2xl"
                 fallbackSrc={fallbackImage}
               />
@@ -491,19 +600,48 @@ export const ProductDetailPage = ({
               ) : (
                 <>
                   <p className="text-[#45474B] leading-relaxed mb-6">
-                    {t('single_shaft_description_1')}
+                    {t(`${productDescriptionKeys[productType] || 'single_shaft'}_description_1`)}
                   </p>
                   <p className="text-[#45474B] leading-relaxed mb-6">
-                    {t('single_shaft_description_2')}
+                    {t(`${productDescriptionKeys[productType] || 'single_shaft'}_description_2`)}
                   </p>
                   <p className="text-[#45474B] leading-relaxed">
-                    {t('single_shaft_description_3')}
+                    {t(`${productDescriptionKeys[productType] || 'single_shaft'}_description_3`)}
                   </p>
                 </>
               )}
             </motion.div>
           </div>
         </section>
+
+        {/* Tree Root Application Areas Section */}
+        {productType === 'tree-root' && (
+          <section className="py-16 bg-[#F5F7F8]">
+            <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-[#45474B] mb-8 text-center text-2xl md:text-3xl">
+                  {t('tree_root_application_title')}
+                </h2>
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
+                    {t('tree_root_application_desc')}
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
+                    {t('tree_root_application_desc2')}
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed text-lg" style={{ lineHeight: '1.8' }}>
+                    {t('tree_root_application_desc3')}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
 
         {/* Advantages Section */}
         <section className="py-20 bg-[#F4CE14] relative overflow-hidden">
@@ -519,10 +657,10 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
-              {t(productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
+              {t(productType === 'tree-root' ? 'tree_root_advantages_title' : productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
             </motion.h2>
 
-            <div className={`grid grid-cols-1 ${productType === 'harddisk' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
+            <div className={`grid grid-cols-1 ${productType === 'harddisk' || productType === 'tree-root' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
               {/* Advantage 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -535,8 +673,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Settings size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_1_title' : productType === 'harddisk' ? 'harddisk_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_1_desc' : productType === 'harddisk' ? 'harddisk_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
               </motion.div>
 
               {/* Advantage 2 */}
@@ -549,10 +687,10 @@ export const ProductDetailPage = ({
                 className="bg-white rounded-2xl p-8 shadow-xl"
               >
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
-                  <RotateCcw size={32} className="text-[#F4CE14]" />
+                  {productType === 'tree-root' ? <Zap size={32} className="text-[#F4CE14]" /> : <RotateCcw size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_2_title' : productType === 'harddisk' ? 'harddisk_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_2_desc' : productType === 'harddisk' ? 'harddisk_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
               </motion.div>
 
               {/* Advantage 3 */}
@@ -565,14 +703,14 @@ export const ProductDetailPage = ({
                 className="bg-white rounded-2xl p-8 shadow-xl"
               >
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
-                  <Volume2 size={32} className="text-[#F4CE14]" />
+                  {productType === 'tree-root' ? <Shield size={32} className="text-[#F4CE14]" /> : <Volume2 size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'harddisk' ? 'harddisk_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'harddisk' ? 'harddisk_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_3_title' : productType === 'harddisk' ? 'harddisk_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_3_desc' : productType === 'harddisk' ? 'harddisk_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
               </motion.div>
 
-              {/* Advantage 4 - Only for harddisk */}
-              {productType === 'harddisk' && (
+              {/* Advantage 4 - For harddisk and tree-root */}
+              {(productType === 'harddisk' || productType === 'tree-root') && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -582,10 +720,10 @@ export const ProductDetailPage = ({
                   className="bg-white rounded-2xl p-8 shadow-xl"
                 >
                   <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
-                    <Zap size={32} className="text-[#F4CE14]" />
+                    {productType === 'tree-root' ? <Wrench size={32} className="text-[#F4CE14]" /> : <Zap size={32} className="text-[#F4CE14]" />}
                   </div>
-                  <h3 className="text-[#1E1E1E] mb-4">{t('harddisk_adv_4_title')}</h3>
-                  <p className="text-[#45474B]">{t('harddisk_adv_4_desc')}</p>
+                  <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_4_title' : 'harddisk_adv_4_title')}</h3>
+                  <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_4_desc' : 'harddisk_adv_4_desc')}</p>
                 </motion.div>
               )}
             </div>
@@ -677,6 +815,128 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
+        {/* Tree Root Model-Specific Highlights */}
+        {productType === 'tree-root' && (
+          <section className="py-16 bg-[#45474B]">
+            <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center text-[#F4CE14] mb-12 text-3xl font-bold"
+              >
+                {defaultModelName === 'TW-100' ? t('tw100_highlights_title') : 
+                 defaultModelName === 'TW-150' ? t('tw150_highlights_title') : 
+                 t('tw200_highlights_title')}
+              </motion.h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {defaultModelName === 'TW-100' && (
+                  <>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">🌲 {t('tw100_feature_1_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw100_feature_1_desc')}</p>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">⚡ {t('tw100_feature_2_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw100_feature_2_desc')}</p>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">💰 {t('tw100_feature_3_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw100_feature_3_desc')}</p>
+                    </motion.div>
+                  </>
+                )}
+
+                {defaultModelName === 'TW-150' && (
+                  <>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">🏭 {t('tw150_feature_1_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw150_feature_1_desc')}</p>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">🚜 {t('tw150_feature_2_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw150_feature_2_desc')}</p>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">🔧 {t('tw150_feature_3_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw150_feature_3_desc')}</p>
+                    </motion.div>
+                  </>
+                )}
+
+                {defaultModelName === 'TW-200' && (
+                  <>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">🏆 {t('tw200_feature_1_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw200_feature_1_desc')}</p>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">🤖 {t('tw200_feature_2_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw200_feature_2_desc')}</p>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                      className="bg-[#F5F7F8] rounded-xl p-6 border-2 border-[#F4CE14] hover:shadow-2xl transition-all"
+                    >
+                      <h4 className="text-[#F4CE14] mb-3">🌍 {t('tw200_feature_3_title')}</h4>
+                      <p className="text-[#45474B] text-sm">{t('tw200_feature_3_desc')}</p>
+                    </motion.div>
+                  </>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Technical Specifications */}
         <section className="py-20 bg-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -686,7 +946,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t('single_shaft_tech_specs_title')}
+              {t(productType === 'tree-root' ? 'tree_root_tech_specs_title' : 'single_shaft_tech_specs_title')}
             </motion.h2>
 
             {currentSpecs && (
@@ -755,9 +1015,9 @@ export const ProductDetailPage = ({
               className="max-w-4xl mx-auto mt-16"
             >
               <h3 className="text-center text-[#45474B] mb-8 text-3xl font-bold">
-                {productType === 'pallet' ? t('pallet_optional_features_title') : 'Opsiyonel Özellikler'}
+                {productType === 'pallet' ? t('pallet_optional_features_title') : productType === 'tree-root' ? t('tree_root_optional_features_title') : 'Opsiyonel Özellikler'}
               </h3>
-              <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' || productType === 'tree-root' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
                 {productType === 'pallet' ? (
                   <>
                     {[1, 2, 3, 4, 5, 6, 7].map((num) => (
@@ -771,6 +1031,23 @@ export const ProductDetailPage = ({
                             <Settings size={24} className="text-[#1E1E1E]" />
                           </div>
                           <p className="text-[#1E1E1E]">{t(`pallet_optional_${num}`)}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </>
+                ) : productType === 'tree-root' ? (
+                  <>
+                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                      <motion.div
+                        key={num}
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                            <Settings size={24} className="text-[#1E1E1E]" />
+                          </div>
+                          <p className="text-[#1E1E1E]">{t(`tree_root_optional_${num}`)}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1010,10 +1287,10 @@ export const ProductDetailPage = ({
               className="text-center mb-16"
             >
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
-                {modelName} {t(productType === 'pallet' ? 'pallet_main_title' : 'dual_shaft_main_title')}
+                {t(productTitleKeys[productType]?.title || 'product_' + productType)}
               </h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
-                {t(productType === 'pallet' ? 'pallet_subtitle' : 'dual_shaft_subtitle')}
+                {t(productTitleKeys[productType]?.subtitle || 'product_' + productType + '_subtitle')}
               </p>
             </motion.div>
 
@@ -1026,7 +1303,7 @@ export const ProductDetailPage = ({
             >
               <ImageWithFallback
                 src={images.main}
-                alt={`${modelName} ${t(productType === 'pallet' ? 'pallet_main_title' : 'dual_shaft_main_title')}`}
+                alt={`${modelName} ${t(productTitleKeys[productType]?.title || 'product_' + productType)}`}
                 className="w-full rounded-2xl shadow-2xl"
                 fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
               />

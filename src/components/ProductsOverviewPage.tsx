@@ -54,6 +54,12 @@ const products: Product[] = [
     alt: 'Harddisk İmha Makinesi - Güvenli Veri İmhası'
   },
   { 
+    id: 'tree-root', 
+    title: 'Ağaç Kökü Parçalama Makinesi',
+    image: 'https://i.ibb.co/KmLJHvN/agac-koku-parcalama-makinesi-tw-200-1.png',
+    alt: 'Ağaç Kökü Parçalama Makinesi - MT Makina TW Serisi'
+  },
+  { 
     id: 'wood-grinder', 
     title: 'Ağaç Parçalama Öğütme Makinesi',
     image: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',

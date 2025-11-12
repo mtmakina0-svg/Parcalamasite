@@ -22,7 +22,7 @@ const availableModels: { [key: string]: string[] } = {
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
-  'tree-root': ['TR-1000'],
+  'tree-root': ['TW-100', 'TW-150', 'TW-200'],
   'wood-grinder': ['WG-500', 'WG-800', 'WG-1200'],
   'glass': ['GB-300'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
@@ -87,7 +87,9 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'DATABER-T': { capacity: '400x400 mm', power: '11-45 kW x2', rotorLength: 'Üçlü Aşama' }
   },
   'tree-root': {
-    'TR-1000': { capacity: '3-5 ton/saat', power: '75-110 kW', rotorLength: '80 cm çap' }
+    'TW-100': { capacity: 'Ø 1000 mm', power: '132–160 kW', rotorLength: '500 mm' },
+    'TW-150': { capacity: 'Ø 1500 mm', power: '160–220 kW', rotorLength: '800 mm' },
+    'TW-200': { capacity: 'Ø 2000 mm', power: '220–315 kW', rotorLength: '1000 mm' }
   },
   'wood-grinder': {
     'WG-500': { capacity: '2-3 ton/saat', power: '37-55 kW', rotorLength: '20 cm çap' },
@@ -224,6 +226,21 @@ const productContentKeys: { [key: string]: {
     adv3Desc: 'pallet_adv_3_desc',
     adv4Title: 'pallet_adv_4_title',
     adv4Desc: 'pallet_adv_4_desc'
+  },
+  'tree-root': {
+    title: 'tree_root_main_title',
+    subtitle: 'tree_root_subtitle',
+    desc1: 'tree_root_description_1',
+    desc2: 'tree_root_description_2',
+    desc3: 'tree_root_description_3',
+    adv1Title: 'tree_root_adv_1_title',
+    adv1Desc: 'tree_root_adv_1_desc',
+    adv2Title: 'tree_root_adv_2_title',
+    adv2Desc: 'tree_root_adv_2_desc',
+    adv3Title: 'tree_root_adv_3_title',
+    adv3Desc: 'tree_root_adv_3_desc',
+    adv4Title: 'tree_root_adv_4_title',
+    adv4Desc: 'tree_root_adv_4_desc'
   }
 };
 
@@ -444,7 +461,9 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                       {info && (
                         <div className="space-y-2 mb-6">
                           <div className="flex justify-between items-center text-sm">
-                            <span className="text-[#45474B]/70">Kapasite:</span>
+                            <span className="text-[#45474B]/70">
+                              {productType === 'tree-root' ? 'Parçalama Alanı:' : 'Kapasite:'}
+                            </span>
                             <span className="text-[#45474B] font-semibold">{info.capacity}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm">
@@ -452,7 +471,9 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                             <span className="text-[#45474B] font-semibold">{info.power}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm">
-                            <span className="text-[#45474B]/70">Rotor Uzunluğu:</span>
+                            <span className="text-[#45474B]/70">
+                              {productType === 'tree-root' ? 'Rotor Boyu:' : 'Rotor Uzunluğu:'}
+                            </span>
                             <span className="text-[#45474B] font-semibold">{info.rotorLength}</span>
                           </div>
                         </div>

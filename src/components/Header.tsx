@@ -89,7 +89,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     },
     'tree-root': {
       label: t('product_tree_root'),
-      models: ['TR-1000']
+      models: ['TW-100', 'TW-150', 'TW-200']
     },
     'wood-grinder': {
       label: t('product_wood_grinder'),

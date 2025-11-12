@@ -288,24 +288,44 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
     }
   },
   'tree-root': {
-    'TR-1000': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'TW-100': { 
+      main: 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png', 
+      detail1: 'https://i.ibb.co/wFfH472Y/agac-koku-parcalama-makinesi-sabit-4.png', 
+      detail2: 'https://i.ibb.co/dJBnRpKg/agac-koku-parcalama-makinesi-sabit-5.png', 
+      detail3: 'https://i.ibb.co/cc0FFnGZ/agac-koku-parcalama-makinesi-sabit-6.png', 
+      detail4: 'https://i.ibb.co/LztfNHvz/agac-koku-parcalama-makinesi-sabit-7.png' 
+    },
+    'TW-150': { 
+      main: 'https://i.ibb.co/wFfH472Y/agac-koku-parcalama-makinesi-sabit-4.png', 
+      detail1: 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png', 
+      detail2: 'https://i.ibb.co/dJBnRpKg/agac-koku-parcalama-makinesi-sabit-5.png', 
+      detail3: 'https://i.ibb.co/cc0FFnGZ/agac-koku-parcalama-makinesi-sabit-6.png', 
+      detail4: 'https://i.ibb.co/LztfNHvz/agac-koku-parcalama-makinesi-sabit-7.png' 
+    },
+    'TW-200': { 
+      main: 'https://i.ibb.co/dJBnRpKg/agac-koku-parcalama-makinesi-sabit-5.png', 
+      detail1: 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png', 
+      detail2: 'https://i.ibb.co/wFfH472Y/agac-koku-parcalama-makinesi-sabit-4.png', 
+      detail3: 'https://i.ibb.co/cc0FFnGZ/agac-koku-parcalama-makinesi-sabit-6.png', 
+      detail4: 'https://i.ibb.co/LztfNHvz/agac-koku-parcalama-makinesi-sabit-7.png' 
+    }
   },
-  'wood-grinder': {
-    'WG-500': { 
+  'wood': {
+    'TSY-100': { 
       main: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png', 
       detail1: 'https://i.ibb.co/3509qcH2/agac-parcalama-ogutme-makinesi-2.png', 
       detail2: 'https://i.ibb.co/ksMxp2Gy/agac-parcalama-ogutme-makinesi-3.png', 
       detail3: 'https://i.ibb.co/wFrzY3Fk/agac-parcalama-ogutme-makinesi-4.png',
       detail4: '' 
     },
-    'WG-800': { 
+    'TSY-150': { 
       main: 'https://i.ibb.co/3509qcH2/agac-parcalama-ogutme-makinesi-2.png', 
       detail1: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png', 
       detail2: 'https://i.ibb.co/ksMxp2Gy/agac-parcalama-ogutme-makinesi-3.png', 
       detail3: 'https://i.ibb.co/wFrzY3Fk/agac-parcalama-ogutme-makinesi-4.png',
       detail4: '' 
     },
-    'WG-1200': { 
+    'TSY-200': { 
       main: 'https://i.ibb.co/ksMxp2Gy/agac-parcalama-ogutme-makinesi-3.png', 
       detail1: 'https://i.ibb.co/wFrzY3Fk/agac-parcalama-ogutme-makinesi-4.png', 
       detail2: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png', 
@@ -376,7 +396,7 @@ export const FALLBACK_IMAGES: { [key: string]: string } = {
   'mobile': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'pallet': 'https://i.ibb.co/svR9Kdq7/1-7.png',
   'harddisk': 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
-  'tree-root': 'https://i.ibb.co/4wtQRwBB/1-1.png',
+  'tree-root': 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png',
   'wood-grinder': 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
   'glass': 'https://i.ibb.co/4wtQRwBB/1-1.png',
   'granulator': 'https://images.unsplash.com/photo-1581092160607-ee67e7d27f86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',

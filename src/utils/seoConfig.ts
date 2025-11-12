@@ -78,7 +78,7 @@ const productCategorySlugs = {
     ru: 'drobilka-kornej-derevev',
     ar: 'tree-root-shredder'
   },
-  'wood-grinder': {
+  'wood': {
     tr: 'agac-parcalama-ogutme-makinesi',
     en: 'wood-grinder',
     ru: 'drobilka-drevesiny',
@@ -228,7 +228,7 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
     'pallet': {
       title: 'Palet Parçalama Makinesi | Ahşap Palet Geri Dönüşümü | MT Makina TSV Serisi',
       description: 'Palet parçalama makinesi - MT Makina TSV Serisi. Ahşap palet geri dönüşümü, plastik palet kırma, hurda palet işleme. ✓ Tek Şaftlı Sistem ✓ Yüksek Tork ✓ Çivili Palet İşleme ✓ Mıknatıs Seperatör',
-      keywords: ['palet parçalama makinesi', 'pallet shredder', 'TSV serisi', 'ahşap palet geri dönüşümü', 'plastik palet parçalama', 'palet kırma makinası', 'hurda palet geri dönüşümü', 'satılık hurda palet', 'palet hurdası', 'ahşap palet kırma', 'çivili palet parçalama'],
+      keywords: ['palet parçalama makinesi', 'pallet shredder', 'TSV serisi', 'ahşap palet geri dönüşümü', 'plastik palet parçalama', 'palet kırma makinası', 'hurda palet', 'çivili palet parçalama'],
     },
     'harddisk': {
       title: 'Harddisk İmha Makinesi | MT Makina Veri Güvenliği Çözümü',
@@ -240,7 +240,7 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
       description: 'MT Makina ağaç kökü parçalama makineleri, sert ve kalın ağaç köklerini güçlü bıçak sistemi ile etkili şekilde parçalar.',
       keywords: ['ağaç kökü kırıcı', 'köksök parçalama', 'kök kırma makinesi', 'tree root shredder', 'ağaç kökü geri dönüşüm'],
     },
-    'wood-grinder': {
+    'wood': {
       title: 'Ağaç Parçalama Öğütme Makinesi | MT Makina Ahşap Kırıcı',
       description: 'MT Makina ağaç parçalama ve öğütme makineleri, ahşap atıkları ince boyutlara parçalar. Yüksek verimli, dayanıklı sistem.',
       keywords: ['ağaç öğütme', 'ahşap kırma', 'wood grinder', 'ağaç parçalama', 'ahşap geri dönüşüm'],
@@ -503,6 +503,23 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
         title: 'MS-2 Malzeme Ayırıcı | Hava Seperatörü | MT Makina',
         description: 'MT Makina MS-2 model malzeme ayırıcı. Hava ayırma sistemi, plastik-metal ayrıştırma, yüksek verim, otomatik kontrol.',
         keywords: ['MS-2', 'hava seperatörü', 'plastik ayırma', 'otomatik ayrıştırma', 'yüksek verim'],
+      }
+    },
+    'tree-root': {
+      'TW-100': {
+        title: 'TW-100 Ağaç Kökü Parçalama Makinesi | Ø 1000 mm | 132-160 kW | MT Makina',
+        description: 'TW-100 ağaç kökü parçalama makinesi - Orta ölçekli odunsu atık işleme, Ø 1000 mm parçalama, 500 mm rotor, 132-160 kW motor. ✓ Çok Bıçaklı Rotor ✓ Otomatik Ters Çalışma',
+        keywords: ['TW-100', 'ağaç kökü parçalama', 'odun parçalama', 'kök parçalama makinası', 'ağaç atık işleme', 'biyokütle yakıt', 'orman yönetimi'],
+      },
+      'TW-150': {
+        title: 'TW-150 Ağaç Kökü Parçalama Makinesi | Ø 1500 mm | 160-220 kW | MT Makina',
+        description: 'TW-150 ağaç kökü parçalama makinesi - Büyük ölçekli ağaç kökü işleme, Ø 1500 mm parçalama, 800 mm rotor, 160-220 kW motor. ✓ PLC Otomasyon ✓ Mobil Tasarım',
+        keywords: ['TW-150', 'büyük ağaç kökü parçalama', 'endüstriyel odun parçalama', 'ağır hizmet kök parçalama', 'orman atık yönetimi', 'ahşap geri dönüşüm', 'biyoenerji üretimi'],
+      },
+      'TW-200': {
+        title: 'TW-200 Ağaç Kökü Parçalama Makinesi | Ø 2000 mm | 220-315 kW | MT Makina',
+        description: 'TW-200 ağaç kökü parçalama makinesi - Ultra yüksek kapasite, Ø 2000 mm parçalama, 1000 mm rotor, 220-315 kW motor, 8-15 ton/saat. ✓ Endüstri 4.0 ✓ SCADA',
+        keywords: ['TW-200', 'endüstriyel ağaç parçalama', 'mega kapasiteli kök parçalama', 'biyokütle santral ekipmanı', 'ağır hizmet odun işleme', 'orman yönetim makinesi', 'ahşap enerji üretimi'],
       }
     }
   };

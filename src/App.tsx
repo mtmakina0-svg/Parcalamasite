@@ -38,7 +38,7 @@ import {
 import { SEOHead } from './components/SEOHead';
 
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
-type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood-grinder' | 'glass' | null;
+type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood' | 'glass' | null;
 
 // Parse URL and determine current page (Multi-language support)
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
@@ -79,7 +79,7 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     { pattern: /^\/(palet-parcalama-makinesi|pallet-shredder|drobilka-poddonov)/, type: 'pallet' },
     { pattern: /^\/(harddisk-imha-makinesi|harddisk-destroyer|unichtozhitel-zhestkikh-diskov)/, type: 'harddisk' },
     { pattern: /^\/(agac-koku-parcalama-makinesi|tree-root-shredder|drobilka-kornej-derevev)/, type: 'tree-root' },
-    { pattern: /^\/(agac-parcalama-ogutme-makinesi|wood-grinder|drobilka-drevesiny)/, type: 'wood-grinder' },
+    { pattern: /^\/(agac-parcalama-ogutme-makinesi|wood-grinder|drobilka-drevesiny)/, type: 'wood' },
     { pattern: /^\/(cam-sise-kirma-makinesi|glass-crusher|drobilka-stekla)/, type: 'glass' }
   ];
   
@@ -462,6 +462,8 @@ function AppContent() {
       productType === 'pallet' ? 'TSV-140' :
       productType === 'harddisk' ? 'DATABER-S' :
       productType === 'mobile' ? 'TSM-150' :
+      productType === 'tree-root' ? 'TW-100' :
+      productType === 'wood' ? 'TSY-100' :
       'TSH-60'
     );
     const url = generateUrl.productDetail(productType, model, language as Language);
