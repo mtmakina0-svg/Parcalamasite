@@ -454,9 +454,12 @@ export const ProductDetailPage = ({
   onProductDetailClick 
 }: ProductDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
+  
+  // DEBUG - Check what productType we're receiving
+  console.log('🔍 ProductDetailPage Rendered:', { productType, modelName, language });
 
   // Set default model based on product type
-  const defaultModelName = modelName || (productType === 'tree-root' ? 'TW-100' : 'TSH-60');
+  const defaultModelName = modelName || (productType === 'tree-root' ? 'TW-100' : productType === 'wood' ? 'TSY-100' : 'TSH-60');
 
   // Get dynamic image paths based on model from GitHub
   const images = getModelImages(productType, defaultModelName);
@@ -482,6 +485,42 @@ export const ProductDetailPage = ({
   // Get model-specific description with current language
   const modelDesc = getModelDescription(productType, defaultModelName, language);
   const hasCustomDesc = hasModelDescription(productType, defaultModelName);
+  
+  // Get product title based on type
+  const getProductTitle = () => {
+    switch(productType) {
+      case 'harddisk':
+        return 'Harddisk İmha Parçalama Makinesi';
+      case 'mobile':
+        return 'Mobil Kırıcı';
+      case 'tree-root':
+        return t('tree_root_main_title');
+      case 'wood':
+        return t('wood_main_title');
+      case 'single-saft':
+      default:
+        return t('single_shaft_main_title');
+    }
+  };
+  
+  // Get product subtitle based on type
+  const getProductSubtitle = () => {
+    if (hasCustomDesc && modelDesc) return modelDesc.intro;
+    
+    switch(productType) {
+      case 'harddisk':
+        return 'Güvenli Veri İmha Çözümleri';
+      case 'mobile':
+        return 'Yüksek Kapasiteli Mobil Kırıcılar';
+      case 'tree-root':
+        return t('tree_root_subtitle');
+      case 'wood':
+        return t('wood_subtitle');
+      case 'single-saft':
+      default:
+        return t('single_shaft_subtitle');
+    }
+  };
 
   // Handle model change
   const handleModelChange = (newModel: string) => {
@@ -551,10 +590,10 @@ export const ProductDetailPage = ({
               className="text-center mb-16"
             >
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
-                {defaultModelName} {productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : productType === 'mobile' ? 'Mobil Kırıcı' : productType === 'tree-root' ? t('tree_root_main_title') : productType === 'wood' ? t('wood_main_title') : t('single_shaft_main_title')}
+                {defaultModelName} {getProductTitle()}
               </h1>
               <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
-                {hasCustomDesc && modelDesc ? modelDesc.intro : (productType === 'harddisk' ? 'Güvenli Veri İmha Çözümleri' : productType === 'mobile' ? 'Yüksek Kapasiteli Mobil Kırıcılar' : productType === 'tree-root' ? t('tree_root_subtitle') : productType === 'wood' ? t('wood_subtitle') : t('single_shaft_subtitle'))}
+                {getProductSubtitle()}
               </p>
             </motion.div>
 
@@ -657,10 +696,10 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
-              {t(productType === 'tree-root' ? 'tree_root_advantages_title' : productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
+              {t(productType === 'tree-root' ? 'tree_root_advantages_title' : productType === 'wood' ? 'wood_advantages_title' : productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
             </motion.h2>
 
-            <div className={`grid grid-cols-1 ${productType === 'harddisk' || productType === 'tree-root' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
+            <div className={`grid grid-cols-1 ${productType === 'harddisk' || productType === 'tree-root' || productType === 'wood' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
               {/* Advantage 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -673,8 +712,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Settings size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_1_title' : productType === 'harddisk' ? 'harddisk_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_1_desc' : productType === 'harddisk' ? 'harddisk_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_1_title' : productType === 'wood' ? 'wood_adv_1_title' : productType === 'harddisk' ? 'harddisk_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_1_desc' : productType === 'wood' ? 'wood_adv_1_desc' : productType === 'harddisk' ? 'harddisk_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
               </motion.div>
 
               {/* Advantage 2 */}
@@ -689,8 +728,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   {productType === 'tree-root' ? <Zap size={32} className="text-[#F4CE14]" /> : <RotateCcw size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_2_title' : productType === 'harddisk' ? 'harddisk_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_2_desc' : productType === 'harddisk' ? 'harddisk_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_2_title' : productType === 'wood' ? 'wood_adv_2_title' : productType === 'harddisk' ? 'harddisk_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_2_desc' : productType === 'wood' ? 'wood_adv_2_desc' : productType === 'harddisk' ? 'harddisk_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
               </motion.div>
 
               {/* Advantage 3 */}
@@ -705,12 +744,12 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   {productType === 'tree-root' ? <Shield size={32} className="text-[#F4CE14]" /> : <Volume2 size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_3_title' : productType === 'harddisk' ? 'harddisk_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_3_desc' : productType === 'harddisk' ? 'harddisk_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_3_title' : productType === 'wood' ? 'wood_adv_3_title' : productType === 'harddisk' ? 'harddisk_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_3_desc' : productType === 'wood' ? 'wood_adv_3_desc' : productType === 'harddisk' ? 'harddisk_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
               </motion.div>
 
-              {/* Advantage 4 - For harddisk and tree-root */}
-              {(productType === 'harddisk' || productType === 'tree-root') && (
+              {/* Advantage 4 - For harddisk, tree-root and wood */}
+              {(productType === 'harddisk' || productType === 'tree-root' || productType === 'wood') && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -722,8 +761,8 @@ export const ProductDetailPage = ({
                   <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                     {productType === 'tree-root' ? <Wrench size={32} className="text-[#F4CE14]" /> : <Zap size={32} className="text-[#F4CE14]" />}
                   </div>
-                  <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_4_title' : 'harddisk_adv_4_title')}</h3>
-                  <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_4_desc' : 'harddisk_adv_4_desc')}</p>
+                  <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_4_title' : productType === 'wood' ? 'wood_adv_4_title' : 'harddisk_adv_4_title')}</h3>
+                  <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_4_desc' : productType === 'wood' ? 'wood_adv_4_desc' : 'harddisk_adv_4_desc')}</p>
                 </motion.div>
               )}
             </div>
@@ -946,7 +985,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(productType === 'tree-root' ? 'tree_root_tech_specs_title' : 'single_shaft_tech_specs_title')}
+              {t(productType === 'tree-root' ? 'tree_root_tech_specs_title' : productType === 'wood' ? 'wood_tech_specs_title' : 'single_shaft_tech_specs_title')}
             </motion.h2>
 
             {currentSpecs && (
@@ -1015,9 +1054,9 @@ export const ProductDetailPage = ({
               className="max-w-4xl mx-auto mt-16"
             >
               <h3 className="text-center text-[#45474B] mb-8 text-3xl font-bold">
-                {productType === 'pallet' ? t('pallet_optional_features_title') : productType === 'tree-root' ? t('tree_root_optional_features_title') : 'Opsiyonel Özellikler'}
+                {productType === 'pallet' ? t('pallet_optional_features_title') : productType === 'tree-root' ? t('tree_root_optional_features_title') : productType === 'wood' ? t('wood_optional_features_title') : 'Opsiyonel Özellikler'}
               </h3>
-              <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' || productType === 'tree-root' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' || productType === 'tree-root' || productType === 'wood' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
                 {productType === 'pallet' ? (
                   <>
                     {[1, 2, 3, 4, 5, 6, 7].map((num) => (
@@ -1048,6 +1087,23 @@ export const ProductDetailPage = ({
                             <Settings size={24} className="text-[#1E1E1E]" />
                           </div>
                           <p className="text-[#1E1E1E]">{t(`tree_root_optional_${num}`)}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </>
+                ) : productType === 'wood' ? (
+                  <>
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                      <motion.div
+                        key={num}
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
+                            <Settings size={24} className="text-[#1E1E1E]" />
+                          </div>
+                          <p className="text-[#1E1E1E]">{t(`wood_optional_${num}`)}</p>
                         </div>
                       </motion.div>
                     ))}

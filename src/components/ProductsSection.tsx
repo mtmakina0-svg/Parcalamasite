@@ -70,7 +70,7 @@ const products = [
     image: 'https://i.ibb.co/KmLJHvN/agac-koku-parcalama-makinesi-tw-200-1.png',
   },
   {
-    id: 'wood-grinder',
+    id: 'wood',
     titleTR: 'Ağaç Parçalama Öğütme Makinesi',
     titleEN: 'Wood Grinding Machine',
     titleRU: 'Измельчитель древесины',

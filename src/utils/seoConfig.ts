@@ -123,6 +123,7 @@ export const generateUrl = {
   products: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.products[lang]}`,
   productCategory: (type: string, lang: Language = 'tr') => {
     const slug = productCategorySlugs[type as keyof typeof productCategorySlugs]?.[lang] || `${slugsByLanguage.products[lang]}/${type}`;
+    console.log('🔗 generateUrl.productCategory:', { type, lang, slug, fullUrl: `/${lang}/${slug}` });
     return `/${lang}/${slug}`;
   },
   productDetail: (type: string, model: string, lang: Language = 'tr') => {
@@ -417,7 +418,7 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
       'TSM-300': {
         title: 'TSM-300 Mobil Kırıcı | Yüksek Kapasiteli Taşınabilir Sistem | 600 HP | MT Makina',
         description: 'TSM-300 mobil kırıcı - Yüksek kapasiteli tek şaftlı sistem, 600 HP motor, 3000x2000 mm parçalama alanı. Büyük projeler için güçlü mobil çözüm. ✓ Yüksek Kapasite ✓ Güçlü Motor',
-        keywords: ['TSM-300', 'yüksek kapasite mobil', 'büyük mobil kırıcı', 'taşınabilir shredder', '600 hp mobil', 'saha kırıcısı'],
+        keywords: ['TSM-300', 'yüksek kapasite mobil', 'büyük mobil k��rıcı', 'taşınabilir shredder', '600 hp mobil', 'saha kırıcısı'],
       },
       'CSM-150': {
         title: 'CSM-150 Mobil Kırıcı | Çift Şaftlı Taşınabilir Parçalama | 400 HP | MT Makina',

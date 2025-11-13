@@ -449,6 +449,7 @@ function AppContent() {
   };
 
   const handleNavigateToProductCategory = (productType: string) => {
+    console.log('🎯 handleNavigateToProductCategory called with:', productType);
     const url = generateUrl.productCategory(productType, language as Language);
     navigateWithUrl('product-category', url, { product: productType as ProductType });
   };
