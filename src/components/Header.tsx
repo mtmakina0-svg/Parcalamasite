@@ -93,7 +93,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     },
     'wood': {
       label: t('product_wood_grinder'),
-      models: ['WG-500', 'WG-800', 'WG-1200']
+      models: ['TSY-100', 'TSY-150', 'TSY-200']
     },
     'glass': {
       label: t('product_glass'),

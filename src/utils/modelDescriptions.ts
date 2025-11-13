@@ -90,7 +90,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
         intro: 'Одновальный измельчитель TSH-100 - профессиональная система, разработанная для промышленных применений, требующих высокой производительности.',
         paragraph1: 'Модель TSH-100 предлагает широкую зону измельчения 1000x1300 мм с мощными вариантами двигателя 30-75 кВт. С производительностью обработки 1200-1800 кг/час она отвечает потребностям крупномасштабных производственных объектов. Легко измельчает толстостенный пластик, крупные деревянные детали, промышленные контейнеры, баки IBC и тяжелые текстильные отходы.',
         paragraph2: 'Оснащен усовершенствованной панелью управления ПЛК, сенсорным интерфейсом оператора, системами дистанционного мониторинга и напоминания о техническом обслуживании. С ротором 1000 мм, 40 ножами премиум-качества и гидравлической системой толкателя гарантирует непрерывное производство. Автоматическая реверсивная работа и интеллектуальное управление нагрузкой обеспечивают максимальную эффективность.',
-        paragraph3: 'MT Makina TSH-100 - идеальное решение для крупных предприятий по переработке пластика, производителей деревянных поддонов, переработчиков композитных материалов и компаний по управлению промышленными отходами. Благодаря модульной структуре может быть интегрирован с конвейерными системами и сепараторами. Поддерживается сертифицированными стандартами безопасности CE и 2-летней гарантией.'
+        paragraph3: 'MT Makina TSH-100 - идеальное решение для крупных предприятий по переработке пл��стика, производителей деревянных поддонов, переработчиков композитных материалов и компаний по управлению промышленными отходами. Благодаря модульной структуре может быть интегрирован с конвейерными системами и сепараторами. Поддерживается сертифицированными стандартами безопасности CE и 2-летней гарантией.'
       },
       ar: {
         intro: 'آلة التقطيع أحادية العمود TSH-100 هي نظام احترافي مصمم للتطبيقات الصناعية التي تتطلب سعة عالية.',
@@ -220,7 +220,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       },
       ru: {
         intro: 'Двухвальный измельчитель CS-40 - надежное и эффективное решение для предприятий среднего размера.',
-        paragraph1: 'Модель CS-40 обеспечивает сбалансированную производительность измельчения с мощностью двойного двигателя 2x11 кВт, длиной ротора 600 мм и диаметром ротора 250 мм.',
+        paragraph1: 'Модель CS-40 обеспечивает сбалансированную производительность измельчения с мощностью двойного двигателя 2x11 кВт, длиной рот��ра 600 мм и диаметром ротора 250 мм.',
         paragraph2: 'Оснащенный полуавтоматической системой управления, защитой от перегрузки и кнопкой аварийного останова, CS-40 обеспечивает безопасную рабочую среду.',
         paragraph3: 'CS-40 оптимизирован для центров сбора пластика, предприятий по переработке упаковочных отходов, переработки древесных отходов.'
       },
@@ -245,7 +245,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
         paragraph3: 'MT Makina CS-60 dual shaft shredder is ideal for plastic recycling facilities, metal scrap processing centers, tire shredding units, wood waste processing and household waste management centers.'
       },
       ru: {
-        intro: 'Двухвальный измельчитель CS-60 - компактное и мощное решение, обеспечивающее высокую эффективность в управлении промышленными отходами.',
+        intro: 'Двухвальный измельчитель CS-60 - компактное и мощн��е решение, обеспечивающее высокую эффективность в управлении промышленными отходами.',
         paragraph1: 'Модель CS-60 оснащена конфигурацией двойного двигателя 2x15 кВт с длиной ротора 800 мм и диаметром ротора 300 мм. С производительностью обработки 800-1500 кг/час.',
         paragraph2: 'Оснащенный усовершенствованной системой управления ПЛК, функцией автоматического реверса и системами аварийной безопасности, CS-60 гарантирует бесп��ребойное производство.',
         paragraph3: 'Двухвальный измельчитель MT Makina CS-60 идеально подходит для предприя��ий по переработке пластика, центров обработки металлолома.'
@@ -484,7 +484,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
         intro: 'Четырехвальный измельчитель DS-150 - профессиональная система для высокопроизводительных объектов.',
         paragraph1: 'Модель DS-150 оснащена четырехмоторной конфигурацией 4x18,5 кВт (всего 74 кВт) с длиной ротора 1500 мм.',
         paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, DS-150 соответствует стандартам Индустрии 4.0.',
-        paragraph3: 'DS-150 разработан для крупных комплексов переработки пластика.'
+        paragraph3: 'DS-150 разработан для крупных комплексов переработки пласт��ка.'
       },
       ar: {
         intro: 'آلة التمزيق رباعية العمود DS-150 نظام احترافي للمرافق عالية السعة.',
@@ -568,7 +568,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       },
       ar: {
         intro: 'آلة تمزيق المعادن RDM-150 Redmonster نظام احترافي عالي الأداء لمرافق إعادة التدوير متوسطة-كبيرة السعة.',
-        paragraph1: 'يتميز طراز RDM-150 بهيكل محرك بعزم دوران فائق 110 كيلووات مع طول دوار واسع 1500 مم. سعة معالجة 2500-4000 كجم/ساعة.',
+        paragraph1: 'يتميز طراز RDM-150 بهيكل محرك بع��م دوران فائق 110 كيلووات مع طول دوار واسع 1500 مم. سعة معالجة 2500-4000 كجم/ساعة.',
         paragraph2: 'مجهز بأتمتة Siemens PLC المتقدمة ومراقبة عزم الدوران في الوقت الفعلي، يعمل RDM-150 بقدرة 7/24.',
         paragraph3: 'تم تحسين RDM-150 لمرافق معالجة الخردة المعدنية متوسطة-كبيرة الحجم.'
       }
@@ -647,7 +647,7 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
         paragraph3: 'MT Makina TSM-150 оптимизирован для строительных площадок, зон бедствия, временных перерабатывающих объектов.'
       },
       ar: {
-        intro: 'كسارة TSM-150 المتنقلة أحادية العمود حل احترافي محمول ومدمج للتطبيقات الميدانية.',
+        intro: 'كسارة TSM-150 المتنقلة أحادية العمود حل احترافي محمول ومدمج للتطبيقات ��لميدانية.',
         paragraph1: 'يتميز طراز TSM-150 بمحرك عالي الأداء 300 كيلووات (400 حصان) مع عرض دوار 1500 مم. سعة معالجة 15-25 طن/ساعة.',
         paragraph2: 'مجهز بنظام أتمتة PLC وتحكم عن بعد وحماية تلقائية من الحمل الزائد، يلبي TSM-150 معايير سلامة مواقع البناء.',
         paragraph3: 'تم تحسين MT Makina TSM-150 لمواقع البناء ومناطق الكوارث ومرافق إعادة التدوير المؤقتة.'
@@ -972,7 +972,87 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       }
     }
   },
-  // DİĞER MAKİNE TÜRLERİ (wood-grinder, glass)
+  'wood': {
+    'TSY-100': {
+      tr: {
+        intro: 'TSY-100 yatay ağaç parçalama makinesi, 1000 mm rotor boyu ve 55-90 kW (2X) çift motor gücü ile orta ölçekli işletmeler için güçlü bir çözümdür.',
+        paragraph1: 'TSY-100 model, 55-90 kW (2X) çift motor konfigürasyonu ile ağaç dalları, hurma lifli atıklar, bahçe budama artıkları ve odunsu malzemelerin güçlü parçalanmasını sağlar. 1000 mm rotor boyu ile orta ölçekli tarım kooperatifleri, belediye park bakım işletmeleri, biyokütle yakıt üretim tesisleri için ideal performans sunar. Yatay beslemeli hidrolik piston sistemi, uzun dalların kolayca işlenmesini sağlar.',
+        paragraph2: 'TSY-100, özel tasarım rotor bıçakları ile lifli ve nemli malzemelerde yüksek performans gösterir. PLC kontrollü akıllı besleme sistemi, otomatik yük algılama ve ters çalışma fonksiyonu ile sıkışmaları önler. Değiştirilebilir elek sistemi ile farklı çıkış boyutları elde edilir. Hidrolik açılan elek sistemi bakım süresini minimize eder.',
+        paragraph3: 'MT Makina TSY-100, çift motorlu tasarım standardında gelir. Opsiyonel özellikler: Kayış kasnaklı hidrolik kaplin, volanlı tasarım, rotor soğutma sistemi, otomatik yağlama ünitesi, farklı ölçülerde elek, hidrolik açılan elek sistemi, çıkış için helezon/konveyör/taşıma fanı uygulamaları. CE sertifikalı.'
+      },
+      en: {
+        intro: 'WG-500 horizontal wood shredder is an excellent entry-level solution for small and medium-sized businesses.',
+        paragraph1: 'WG-500 model provides efficient shredding of tree branches, palm fibrous waste, garden pruning residues and woody materials up to 20 cm diameter with 37-55 kW motor power. With a processing capacity of 2-3 tons per hour, it is ideal for small-scale agricultural cooperatives, municipal park maintenance operations, small biomass fuel production facilities and local farms. The horizontal feed hydraulic piston system allows easy processing of long branches and maximizes operator safety.',
+        paragraph2: 'Despite its compact structure, WG-500 offers industrial durability and shows high performance in fibrous and moist materials with special design rotor blades with 2-3 mm wall thickness. The PLC-controlled intelligent feeding system prevents jamming and ensures uninterrupted production with automatic load detection and reverse function. Different output sizes can be obtained with the replaceable 30-50 mm screen system. The hydraulically opening screen box minimizes maintenance time.',
+        paragraph3: 'MT Makina WG-500 wood shredder can be installed even in limited spaces thanks to its compact dimensions (approximately 2.5x1.8x2.2 m). Higher efficiency is achieved with dual motor design option. Automatic lubrication unit, rotor cooling system and dust suppression spray system are offered optionally. It is an economical and reliable solution for palm tree shredding, palm branch processing, garden waste recycling and small-scale biomass fuel production. CE certified, 2 years warranty.'
+      },
+      ru: {
+        intro: 'Горизонтальный измельчитель древесины WG-500 - отличное начальное решение для малых и средних предприятий.',
+        paragraph1: 'Модель WG-500 обеспечивает эффективное измельчение веток деревьев, волокнистых отходов пальм, садовых обрезков и древесных материалов диаметром до 20 см при мощности двигателя 37-55 кВт. При производительности 2-3 тонны в час идеально подходит для мелкомасштабных сельскохозяйственных кооперативов, муниципальных парковых служб, небольших заводов по производству биомассового топлива и местных ферм. Горизонтальная система подачи с гидравлическим поршнем обеспечивает легкую обработку длинных веток и максимальную безопасность оператора.',
+        paragraph2: 'Несмотря на компактную конструкцию, WG-500 обладает промышленной прочностью и показывает высокую производительность на волокнистых и влажных материалах благодаря специальным роторным ножам толщиной стенки 2-3 мм. Интеллектуальная система подачи с ПЛК-управлением предотвращает заклинивание и обеспечивает бесперебойное производство с автоматическим определением нагрузки и функцией реверса. Различные размеры на выходе можно получить с заменяемой системой сит 30-50 мм. Гидравлически открывающийся ящик сита минимизирует время обслуживания.',
+        paragraph3: 'Измельчитель древесины MT Makina WG-500 может быть установлен даже в ограниченном пространстве благодаря компактным размерам (примерно 2.5x1.8x2.2 м). Более высокая эффективность достигается с опцией двухмоторной конструкции. Автоматический блок смазки, система охлаждения ротора и система подавления пыли предлагаются опционально. Это экономичное и надежное решение для измельчения пальм, обработки пальмовых веток, переработки садовых отходов и мелкомасштабного производства биомассового топлива. Сертифицировано CE, гарантия 2 года.'
+      },
+      ar: {
+        intro: 'آلة تقطيع الخشب الأفقية WG-500 هي حل ممتاز للمبتدئين للشركات الصغيرة والمتوسطة.',
+        paragraph1: 'يوفر طراز WG-500 تقطيعًا فعالاً لأغصان الأشجار ونفايات النخيل الليفية وبقايا تقليم الحدائق والمواد الخشبية بقطر يصل إلى 20 سم بقوة محرك 37-55 كيلووات. بسعة معالجة 2-3 طن في الساعة، فهو مثالي للتعاونيات الزراعية صغيرة النطاق وعمليات صيانة المتنزهات البلدية ومرافق إنتاج وقود الكتلة الحيوية الصغيرة والمزارع المحلية. يتيح نظام المكبس الهيدروليكي للتغذية الأفقية معالجة سهلة للفروع الطويلة ويزيد من سلامة المشغل إلى أقصى حد.',
+        paragraph2: 'على الرغم من هيكلها المدمج، تقدم WG-500 متانة صناعية وتظهر أداءً عاليًا في المواد الليفية والرطبة مع شفرات دوار ذات تصميم خاص بسمك جدار 2-3 مم. يمنع نظام التغذية الذكي المتحكم فيه بواسطة PLC الانحشار ويضمن إنتاجًا مستمرًا مع الكشف التلقائي عن الحمل ووظيفة الرجوع. يمكن الحصول على أحجام مخرجات مختلفة مع نظام الشاشة القابل للاستبدال 30-50 مم. يقلل صندوق الشاشة الذي يفتح هيدروليكيًا من وقت الصيانة إلى الحد الأدنى.',
+        paragraph3: 'يمكن تركيب آلة تقطيع الخشب MT Makina WG-500 حتى في المساحات المحدودة بفضل أبعادها المدمجة (تقريبًا 2.5×1.8×2.2 م). يتم تحقيق كفاءة أعلى مع خيار التصميم ثنائي المحرك. يتم تقديم وحدة التشحيم التلقائي ونظام تبريد الدوار ونظام قمع الغبار بالرش اختياريًا. إنه حل اقتصادي وموثوق لتقطيع أشجار النخيل ومعالجة فروع النخيل وإعادة تدوير نفايات الحدائق وإنتاج وقود الكتلة الحيوية على نطاق صغير. معتمد CE، ضمان لمدة عامين.'
+      }
+    },
+    'TSY-150': {
+      tr: {
+        intro: 'TSY-150 yatay ağaç parçalama makinesi, 1500 mm rotor boyu ve 75-110 kW (2X) yüksek motor gücü ile endüstriyel ölçekte üstün performans sağlar.',
+        paragraph1: 'TSY-150 model, 75-110 kW (2X) güçlü çift motor ile ağaç gövdeleri, kalın dallar, hurma kütükleri ve yoğun odunsu atıkların hızlı parçalanmasını sağlar. 1500 mm rotor boyu ile büyük ölçekli tarım işletmeleri, biyokütle enerji santralleri, mobilya fabrikası atık geri dönüşümü ve odun pelet üretim tesisleri için mükemmel bir çözümdür. Çift hidrolik pistonlu besleme sistemi, ağır ve uzun malzemelerin güvenli işlenmesini garanti eder.',
+        paragraph2: 'TSY-150, gelişmiş rotor tasarımı ve yüksek kaliteli çelik bıçaklar ile sert ahşap türleri, çam, meşe ve tropik ağaç türlerinde üstün performans gösterir. PLC tabanlı otomasyon sistemi, gerçek zamanlı yük izleme ve akıllı ters çalışma algoritması ile enerji verimliliği sağlar. Hidrolik açılır elek kasası ve hızlı bakım sistemi ile operasyonel süre minimumda tutulur.',
+        paragraph3: 'MT Makina TSY-150, çift motorlu tasarım ile standart olarak gelir. Opsiyonel özellikler: Kayış kasnaklı hidrolik kaplin, volanlı tasarım, rotor soğutma sistemi, otomatik yağlama ünitesi, farklı ölçülerde elek seçenekleri, hidrolik açılan elek sistemi, çıkış için helezon/konveyör/taşıma fanı entegrasyonu. Hurma çiftlikleri, zeytinlik bakımı, orman işletmeleri ve endüstriyel biomass tesisleri için güvenilir çözüm. CE sertifikalı.'
+      },
+      en: {
+        intro: 'WG-800 horizontal wood shredder is a professional solution offering high capacity and efficiency for medium-scale industrial facilities.',
+        paragraph1: 'WG-800 model provides fast shredding of tree trunks, thick branches, palm logs and dense woody waste up to 30 cm diameter with 55-75 kW powerful motor. With a processing capacity of 4-6 tons per hour, it is ideal for medium-scale biomass power plants, large agricultural operations, furniture factory waste recycling and wood pellet production facilities. The dual hydraulic piston feeding system guarantees safe and continuous processing of heavy and long materials.',
+        paragraph2: 'With advanced rotor design and 3 mm thick Premium quality steel blades, WG-800 shows superior performance in hard wood types, pine, oak and tropical tree species. Siemens PLC-based automation system reduces energy consumption by 25% with real-time load monitoring, automatic speed adjustment and intelligent reverse algorithm. Maintenance time is minimal with hydraulically opening screen box and quick blade change system. With 40-80 mm replaceable screen options, pellet production, biochar raw material and garden mulch production can be made.',
+        paragraph3: 'MT Makina WG-800 wood shredder provides long-lasting performance even in heavy use with durable steel construction and vibration-preventing infrastructure. Energy efficiency is increased with flywheel design option. Rotor cooling system, automatic lubrication unit, dust suppression fan system and output conveyor integration are available. It is a highly efficient and reliable solution for palm farms, olive grove maintenance, forestry operations and industrial biomass facilities. CE and ISO 9001 certified, 3 years warranty.'
+      },
+      ru: {
+        intro: 'Горизонтальный измельчитель древесины WG-800 - профессиональное решение, обеспечивающее высокую производительность и эффективность для средних промышленных объектов.',
+        paragraph1: 'Модель WG-800 обеспечивает быстрое измельчение стволов деревьев, толстых веток, бревен пальм и плотных древесных отходов диаметром до 30 см с мощным двигателем 55-75 кВт. При производительности 4-6 тонн в час идеально подходит для средних биомассовых электростанций, крупных сельскохозяйственных операций, переработки отходов мебельных фабрик и заводов по производству древесных пеллет. Система подачи с двумя гидравлическими поршнями гарантирует безопасную и непрерывную обработку тяжелых и длинных материалов.',
+        paragraph2: 'Благодаря усовершенствованной конструкции ротора и стальным ножам премиум-класса толщиной 3 мм, WG-800 показывает превосходную производительность на твердых породах дерева, сосне, дубе и тропических видах деревьев. Система автоматизации на базе Siemens PLC снижает энергопотребление на 25% благодаря мониторингу нагрузки в реальном времени, автоматической регулировке скорости и интеллектуальному алгоритму реверса. Время обслуживания минимально благодаря гидравлически открывающемуся ящику сита и системе быстрой замены ножей. С заменяемыми опциями сит 40-80 мм можно производить пеллеты, сырье для биоугля и садовую мульчу.',
+        paragraph3: 'Измельчитель древесины MT Makina WG-800 обеспечивает долговечную работу даже при интенсивном использовании благодаря прочной стальной конструкции и виброгасящей инфраструктуре. Энергоэффективность повышается с опцией конструкции с маховиком. Доступны система охлаждения ротора, автоматический блок смазки, система подавления пыли с вентилятором и интеграция выходного конвейера. Это высокоэффективное и надежное решение для пальмовых ферм, обслуживания оливковых рощ, лесных хозяйств и промышленных биомассовых объектов. Сертифицировано CE и ISO 9001, гарантия 3 года.'
+      },
+      ar: {
+        intro: 'آلة تقطيع الخشب الأفقية WG-800 هي حل احترافي يوفر سعة عالية وكفاءة للمرافق الصناعية متوسطة الحجم.',
+        paragraph1: 'يوفر طراز WG-800 تقطيعًا سريعًا لجذوع الأشجار والفروع السميكة وجذوع النخيل والنفايات الخشبية الكثيفة بقطر يصل إلى 30 سم بمحرك قوي 55-75 كيلووات. بسعة معالجة 4-6 طن في الساعة، فهو مثالي لمحطات طاقة الكتلة الحيوية متوسطة الحجم والعمليات الزراعية الكبيرة وإعادة تدوير نفايات مصانع الأثاث ومرافق إنتاج حبيبات الخشب. يضمن نظام التغذية ذو المكبس الهيدروليكي المزدوج معالجة آمنة ومستمرة للمواد الثقيلة والطويلة.',
+        paragraph2: 'مع تصميم دوار متقدم وشفرات فولاذية ممتازة الجودة بسمك 3 مم، يُظهر WG-800 أداءً فائقًا في أنواع الخشب الصلب والصنوبر والبلوط وأنواع الأشجار الاستوائية. يقلل نظام الأتمتة القائم على Siemens PLC من استهلاك الطاقة بنسبة 25٪ مع مراقبة الحمل في الوقت الفعلي وضبط السرعة التلقائي وخوارزمية عكسية ذكية. وقت الصيانة في حده الأدنى مع صندوق الشاشة الذي يفتح هيدروليكيًا ونظام تغيير الشفرة السريع. مع خيارات الشاشة القابلة للاستبدال 40-80 مم، يمكن إنتاج الحبيبات ومواد الفحم الحيوي الخام والنشارة الحديقة.',
+        paragraph3: 'توفر آلة تقطيع الخشب MT Makina WG-800 أداءً طويل الأمد حتى في الاستخدام المكثف مع بناء فولاذي متين وبنية تحتية تمنع الاهتزاز. تزداد كفاءة الطاقة مع خيار تصميم دولاب الموازنة. تتوفر أنظمة تبريد الدوار ووحدة التشحيم التلقائي ونظام قمع الغبار بالمروحة وتكامل ناقل الإخراج. إنه حل فعال للغاية وموثوق به لمزارع النخيل وصيانة بساتين الزيتون وعمليات الغابات والمرافق الصناعية للكتلة الحيوية. معتمد CE و ISO 9001، ضمان 3 سنوات.'
+      }
+    },
+    'TSY-200': {
+      tr: {
+        intro: 'TSY-200 yatay ağaç parçalama makinesi, 2000 mm rotor boyu ve 90-200 kW (2X) ultra güçlü motorları ile endüstriyel ölçekte maksimum kapasite sağlar.',
+        paragraph1: 'TSY-200 model, 90-200 kW (2X) ultra güçlü çift motor ile ağaç kütükleri, kalın gövdeler, hurma ağacı gövdeleri ve en sert odunsu atıkların yoğun işlenmesini sağlar. 2000 mm rotor boyu ile büyük biyokütle enerji santralleri, endüstriyel odun pelet fabrikaları, kereste fabrikası atık yönetimi ve geniş ölçekli orman işletmeleri için ideal çözümdür. Üçlü hidrolik pistonlu besleme sistemi ve geniş besleme ağzı, çok büyük malzemelerin kesintisiz işlenmesini garanti eder.',
+        paragraph2: 'Premium segment TSY-200, özel alaşımlı çelik rotor bıçakları ve takviyeli rotor gövdesi ile tropik sert ağaçlar, egzotik ahşap türleri ve en yoğun odunsu malzemelerde mükemmel kesim performansı gösterir. Gelişmiş PLC ve HMI dokunmatik panel ile otomasyon, gerçek zamanlı performans izleme, enerji optimizasyonu ve bakım hatırlatıcıları sunar. Hızlı açılır elek sistemi ve modüler bakım teknolojisi ile operasyonel verimlilik maksimize edilir.',
+        paragraph3: 'MT Makina TSY-200, ağır hizmet tipi çelik şase ve çift yataklı rotor sistemi ile 7/24 kesintisiz çalışma kapasitesine sahiptir. Çift motorlu tasarım standart gelir. Tüm opsiyonel özellikler mevcuttur: Kayış kasnaklı hidrolik kaplin, volanlı tasarım, rotor soğutma sistemi, çift hatlı otomatik yağlama, toz bastırma ve aspirasyon sistemi, çıkış için helezon/konveyör/taşıma fanı entegrasyonu. Biyokütle pelet üretimi, biyokömür sanayii, MDF-OSB hammadde hazırlama için turnkey çözüm. CE-ISO 9001 sertifikalı.'
+      },
+      en: {
+        intro: 'WG-1200 horizontal wood shredder is a Premium segment solution providing maximum performance for industrial-scale facilities requiring high capacity.',
+        paragraph1: 'WG-1200 model provides intensive processing of tree logs, thick trunks, palm tree trunks and hardest woody waste up to 40 cm diameter with 90-132 kW ultra-powerful motor. With a processing capacity of 8-12 tons per hour, it is ideal for large biomass power plants, industrial wood pellet factories, lumber mill waste management and large-scale forestry operations. Triple hydraulic piston feeding system and wide feed opening (1200 mm) guarantee uninterrupted processing of very large materials.',
+        paragraph2: 'Premium segment WG-1200 shows excellent cutting performance in tropical hardwoods, exotic wood species and densest woody materials with 4 mm thick special alloy steel rotor blades and reinforced rotor body. Advanced automation with Siemens S7-1200 PLC and HMI touch panel offers real-time performance monitoring, energy optimization (30% saving), maintenance reminders and remote monitoring capacity. Operational efficiency is maximized with quick-opening screen system (50-100 mm options) and modular blade change technology.',
+        paragraph3: 'MT Makina WG-1200 wood shredder has 24/7 continuous operation capacity with heavy-duty steel chassis, anti-vibration dampers and dual bearing rotor system. Dual motor design is offered as standard. Rotor cooling system, dual-line automatic lubrication, dust suppression and aspiration system, auger/conveyor/blower fan integration for output are available. Turnkey solution for biomass pellet production, biochar industry, MDF-OSB raw material preparation and industrial compost production. Industry 4.0 ready, CE-ISO 9001-ISO 14001 certified, 5 years Premium warranty.'
+      },
+      ru: {
+        intro: 'Горизонтальный измельчитель древесины WG-1200 - это решение премиум-сегмента, обеспечивающее максимальную производительность для промышленных объектов, требующих высокой производительности.',
+        paragraph1: 'Модель WG-1200 обеспечивает интенсивную обработку бревен, толстых стволов, стволов пальм и самых твердых древесных отходов диаметром до 40 см с ультрамощным двигателем 90-132 кВт. При производительности 8-12 тонн в час идеально подходит для крупных биомассовых электростанций, промышленных заводов по производству древесных пеллет, управления отходами лесопильных заводов и крупномасштабных лесных хозяйств. Система подачи с тройным гидравлическим поршнем и широкое отверстие подачи (1200 мм) гарантируют непрерывную обработку очень больших материалов.',
+        paragraph2: 'WG-1200 премиум-сегмента показывает отличную производительность резки на тропических твердых породах, экзотических видах дерева и самых плотных древесных материалах благодаря роторным ножам из специальной легированной стали толщиной 4 мм и усиленному корпусу ротора. Передовая автоматизация с Siemens S7-1200 PLC и сенсорной панелью HMI предлагает мониторинг производительности в реальном времени, оптимизацию энергопотребления (экономия 30%), напоминания о техническом обслуживании и возможность удаленного мониторинга. Операционная эффективность максимизируется благодаря быстро открывающейся системе сит (варианты 50-100 мм) и модульной технологии замены ножей.',
+        paragraph3: 'Измельчитель древесины MT Makina WG-1200 имеет круглосуточную непрерывную работу со сверхпрочным стальным шасси, антивибрационными амортизаторами и роторной системой с двойными подшипниками. Конструкция с двумя двигателями предлагается в стандартной комплектации. Доступны система охлаждения ротора, двухлинейная автоматическая смазка, система подавления пыли и аспирации, интеграция шнека/конвейера/вентилятора для выхода. Комплексное решение для производства биомассовых пеллет, промышленности биоугля, подготовки сырья МДФ-ОСБ и промышленного производства компоста. Готов к Индустрии 4.0, сертифицирован CE-ISO 9001-ISO 14001, премиум-гарантия 5 лет.'
+      },
+      ar: {
+        intro: 'آلة تقطيع الخشب الأفقية WG-1200 هي حل من الفئة الممتازة يوفر أقصى أداء للمرافق الصناعية التي تتطلب سعة عالية.',
+        paragraph1: 'يوفر طراز WG-1200 معالجة مكثفة لجذوع الأشجار والجذوع السميكة وجذوع أشجار النخيل وأصعب النفايات الخشبية بقطر يصل إلى 40 سم بمحرك فائق القوة 90-132 كيلووات. بسعة معالجة 8-12 طن في الساعة، فهو مثالي لمحطات طاقة الكتلة الحيوية الكبيرة ومصانع حبيبات الخشب الصناعية وإدارة نفايات مصانع الأخشاب وعمليات الغابات واسعة النطاق. يضمن نظام التغذية بالمكبس الهيدروليكي الثلاثي وفتحة التغذية الواسعة (1200 مم) معالجة مستمرة للمواد الكبيرة جدًا.',
+        paragraph2: 'يُظهر WG-1200 من الفئة الممتازة أداء قطع ممتازًا في الأخشاب الصلبة الاستوائية وأنواع الخشب الغريبة وأكثف المواد الخشبية مع شفرات دوار من الفولاذ المقاوم للصدأ بسمك 4 مم وجسم دوار معزز. توفر الأتمتة المتقدمة مع Siemens S7-1200 PLC ولوحة اللمس HMI مراقبة الأداء في الوقت الفعلي وتحسين الطاقة (توفير 30٪) وتذكيرات الصيانة وقدرة المراقبة عن بعد. يتم زيادة الكفاءة التشغيلية إلى أقصى حد مع نظام الشاشة سريع الفتح (خيارات 50-100 مم) وتقنية تغيير الشفرة المعيارية.',
+        paragraph3: 'تتميز آلة تقطيع الخشب MT Makina WG-1200 بقدرة تشغيل مستمر على مدار الساعة طوال أيام الأسبوع مع هيكل فولاذي للخدمة الشاقة ومخمدات مضادة للاهتزاز ونظام دوار بمحمل مزدوج. يتم تقديم التصميم ثنائي المحرك كمعيار. تتوفر أنظمة تبريد الدوار والتشحيم التلقائي ثنائي الخط ونظام قمع الغبار والشفط وتكامل اللولب/الناقل/مروحة المنفاخ للإخراج. حل جاهز لإنتاج حبيبات الكتلة الحيوية وصناعة الفحم الحيوي وإعداد المواد الخام MDF-OSB وإنتاج السماد الصناعي. جاهز للصناعة 4.0، معتمد CE-ISO 9001-ISO 14001، ضمان ممتاز لمدة 5 سنوات.'
+      }
+    }
+  },
+  // DİĞER MAKİNE TÜRLERİ (glass)
   // Bu modeller için çeviri metinleri gerektiğinde eklenecektir
 };
 

@@ -23,7 +23,7 @@ const products: { [key: string]: string[] } = {
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'tree-root': ['TRS-100'],
-  'wood-grinder': ['WG-50'],
+  'wood': ['WG-50'],
   'glass': ['GC-30'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
   'baler': ['BP-60', 'BP-100'],

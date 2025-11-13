@@ -23,7 +23,7 @@ const availableModels: { [key: string]: string[] } = {
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'tree-root': ['TW-100', 'TW-150', 'TW-200'],
-  'wood': ['WG-500', 'WG-800', 'WG-1200'],
+  'wood': ['TSY-100', 'TSY-150', 'TSY-200'],
   'glass': ['GB-300'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
   'baler': ['BP-60', 'BP-100'],
@@ -92,9 +92,9 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'TW-200': { capacity: 'Ø 2000 mm', power: '220–315 kW', rotorLength: '1000 mm' }
   },
   'wood': {
-    'WG-500': { capacity: '2-3 ton/saat', power: '37-55 kW', rotorLength: '20 cm çap' },
-    'WG-800': { capacity: '4-6 ton/saat', power: '55-75 kW', rotorLength: '30 cm çap' },
-    'WG-1200': { capacity: '8-12 ton/saat', power: '90-132 kW', rotorLength: '40 cm çap' }
+    'TSY-100': { capacity: 'Rotor: 1000 mm', power: '55–90 kW (2X)', rotorLength: '1000 mm' },
+    'TSY-150': { capacity: 'Rotor: 1500 mm', power: '75–110 kW (2X)', rotorLength: '1500 mm' },
+    'TSY-200': { capacity: 'Rotor: 2000 mm', power: '90–200 kW (2X)', rotorLength: '2000 mm' }
   },
   'glass': {
     'GB-300': { capacity: '500-800 kg/saat', power: '11-15 kW', rotorLength: '300 mm' }
@@ -241,6 +241,21 @@ const productContentKeys: { [key: string]: {
     adv3Desc: 'tree_root_adv_3_desc',
     adv4Title: 'tree_root_adv_4_title',
     adv4Desc: 'tree_root_adv_4_desc'
+  },
+  'wood': {
+    title: 'wood_main_title',
+    subtitle: 'wood_subtitle',
+    desc1: 'wood_description_1',
+    desc2: 'wood_description_2',
+    desc3: 'wood_description_3',
+    adv1Title: 'wood_adv_1_title',
+    adv1Desc: 'wood_adv_1_desc',
+    adv2Title: 'wood_adv_2_title',
+    adv2Desc: 'wood_adv_2_desc',
+    adv3Title: 'wood_adv_3_title',
+    adv3Desc: 'wood_adv_3_desc',
+    adv4Title: 'wood_adv_4_title',
+    adv4Desc: 'wood_adv_4_desc'
   }
 };
 

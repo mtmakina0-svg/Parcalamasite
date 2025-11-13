@@ -1183,7 +1183,7 @@ export const ProductDetailPage = ({
               className="max-w-4xl mx-auto"
             >
               <Accordion type="single" collapsible className="space-y-4">
-                {[1, 2, 3, 4, 5, 6, 7].map((num) => {
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => {
                   // Check if FAQ exists for this number
                   // Replace hyphens with underscores for translation keys
                   const normalizedProductType = productType.replace(/-/g, '_');
