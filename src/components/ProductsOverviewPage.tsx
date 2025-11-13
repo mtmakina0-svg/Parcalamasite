@@ -60,7 +60,7 @@ const products: Product[] = [
     alt: 'Ağaç Kökü Parçalama Makinesi - MT Makina TW Serisi'
   },
   { 
-    id: 'wood-grinder', 
+    id: 'wood', 
     title: 'Ağaç Parçalama Öğütme Makinesi',
     image: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
     alt: 'Ağaç Parçalama Öğütme Makinesi - Ahşap İşleme'

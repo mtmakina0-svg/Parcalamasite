@@ -23,7 +23,7 @@ const availableModels: { [key: string]: string[] } = {
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'tree-root': ['TW-100', 'TW-150', 'TW-200'],
-  'wood-grinder': ['WG-500', 'WG-800', 'WG-1200'],
+  'wood': ['WG-500', 'WG-800', 'WG-1200'],
   'glass': ['GB-300'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
   'baler': ['BP-60', 'BP-100'],
@@ -91,7 +91,7 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'TW-150': { capacity: 'Ø 1500 mm', power: '160–220 kW', rotorLength: '800 mm' },
     'TW-200': { capacity: 'Ø 2000 mm', power: '220–315 kW', rotorLength: '1000 mm' }
   },
-  'wood-grinder': {
+  'wood': {
     'WG-500': { capacity: '2-3 ton/saat', power: '37-55 kW', rotorLength: '20 cm çap' },
     'WG-800': { capacity: '4-6 ton/saat', power: '55-75 kW', rotorLength: '30 cm çap' },
     'WG-1200': { capacity: '8-12 ton/saat', power: '90-132 kW', rotorLength: '40 cm çap' }

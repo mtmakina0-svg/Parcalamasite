@@ -91,7 +91,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
       label: t('product_tree_root'),
       models: ['TW-100', 'TW-150', 'TW-200']
     },
-    'wood-grinder': {
+    'wood': {
       label: t('product_wood_grinder'),
       models: ['WG-500', 'WG-800', 'WG-1200']
     },
@@ -115,7 +115,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { key: 'product_pallet', action: 'pallet', hasModels: true },
     { key: 'product_harddisk', action: 'harddisk', hasModels: true },
     { key: 'product_tree_root', action: 'tree-root', hasModels: true },
-    { key: 'product_wood_grinder', action: 'wood-grinder', hasModels: true },
+    { key: 'product_wood_grinder', action: 'wood', hasModels: true },
     { key: 'product_glass', action: 'glass', hasModels: true }
   ];
   

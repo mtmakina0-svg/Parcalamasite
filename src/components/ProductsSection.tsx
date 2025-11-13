@@ -154,7 +154,10 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
               className="group cursor-pointer"
-              onClick={() => onProductClick?.(product.id)}
+              onClick={() => {
+                console.log('🎯 ProductsSection Card clicked - product.id:', product.id);
+                onProductClick?.(product.id);
+              }}
             >
               <Card className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 h-full min-h-[350px] bg-[#F5F7F8] relative">
                 {/* Background Image - Full Coverage */}
