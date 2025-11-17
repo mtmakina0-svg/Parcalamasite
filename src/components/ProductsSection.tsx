@@ -68,7 +68,7 @@ const products = [
     titleEN: 'Tree Root Shredder',
     titleRU: 'Измельчитель корней деревьев',
     titleAR: 'آلة تقطيع جذور الأشجار',
-    image: 'https://i.ibb.co/KmLJHvN/agac-koku-parcalama-makinesi-tw-200-1.png',
+    image: 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png',
   },
   {
     id: 'wood',

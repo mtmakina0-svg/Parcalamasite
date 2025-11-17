@@ -758,6 +758,10 @@ const translations = {
     glass_main_title: 'Cam Şişe Kırma Makinesi',
     glass_subtitle: 'Cam Geri Dönüşümünde Yüksek Verimlilik',
     
+    // Products Overview Page
+    products_page_title: 'Parçalama Makinesi Çözümlerimiz',
+    products_page_subtitle: 'Farklı endüstrilere özel yüksek performanslı sistemler',
+    
     single_shaft_description_1: 'Tek şaftlı katı atık parçalama makinesi; evsel, endüstriyel, plastik, kâğıt, tekstil, alüminyum ve ambalaj atıklarının etkili şekilde parçalanmasını sağlar. MT Makina mühendisliğiyle geliştirilen bu sistemler, yüksek torklu şaft tasarımı ve enerji verimli hidrolik sistemiyle uzun ömürlü kullanım sunar.',
     single_shaft_description_2: 'PLC kontrollü otomasyon sistemi sayesinde, aşırı yüklenme durumlarında otomatik ters çalışma fonksiyonu devreye girer. Bu özellik hem kesici bıçakların ömrünü uzatır hem de bakım ihtiyacını minimuma indirir.',
     single_shaft_description_3: 'MT Makina\'nın tek şaftlı kırıcıları, yüksek dayanım gerektiren sanayi uygulamaları için optimize edilmiştir. 800 – 1500 mm rotor uzunluğu, değiştirilebilir bıçak modülleri ve otomatik besleme kontrol sistemi ile maksimum verimlilik elde edilir.',
@@ -1184,6 +1188,10 @@ const translations = {
     // Glass Crusher Product Detail Page
     glass_main_title: 'Glass Bottle Crusher',
     glass_subtitle: 'High Efficiency in Glass Recycling',
+    
+    // Products Overview Page
+    products_page_title: 'Our Shredding Machine Solutions',
+    products_page_subtitle: 'High-performance systems designed for different industries',
     
     products_title: 'Product Categories',
     products_description: 'MT Makina\'s high-performance shredding machines make a difference in industrial recycling processes with their robust body structure and efficient blade systems.',
@@ -2197,6 +2205,10 @@ const translations = {
     glass_main_title: 'Дробилка для стекла',
     glass_subtitle: 'Высокая эффективность при переработке стекла',
     
+    // Products Overview Page
+    products_page_title: 'Наши решения для измельчительных машин',
+    products_page_subtitle: 'Высокопроизводительные системы для различных отраслей',
+    
     products_title: 'Категории продуктов',
     products_description: 'Высокопроизводительные измель��ительные машины MT Makina выделяются в процессах промышленной переработки благодаря прочной конструкции корпуса и эффективным системам лезвий.',
     products_subtitle: 'Мощные и эффективные измельчительные машины MT Makina: одновальные, двухвальные, четырехвальные, металлические, поддонные, пластиковые, стеклянные, органические, медицинские и другие.',
@@ -2333,7 +2345,7 @@ const translations = {
     tree_root_optional_3: 'Система охлаждения ротора',
     tree_root_optional_4: 'Автоматическая система смазки',
     tree_root_optional_5: 'Сита разных размеров',
-    tree_root_optional_6: 'Конвейер подачи',
+    tree_root_optional_6: 'Конвейер пода��и',
     tree_root_faq_title: 'Часто задаваемые вопросы - Измельчитель корней деревьев',
     tree_root_video_title: 'Видео измельчителя корней деревьев',
     tree_root_similar_products: 'Похожие продукты',
@@ -2602,7 +2614,7 @@ const translations = {
     single_shaft_tech_capacity_value: '800 – 3000 кг/ч',
     single_shaft_faq_title: 'Часто задаваемые вопросы об одновальном измельчителе',
     single_shaft_faq_q1: 'Какие отходы обрабатывает одновальный измельчитель?',
-    single_shaft_faq_a1: 'Одновальные измельчители могут использоваться для широкого спектра, включая бытовые отходы, пластик, бумагу, картон, текстиль, алюминиевую упаковку, деревянные поддоны и органические отходы.',
+    single_shaft_faq_a1: 'Одновальные измельчители могут использоваться для широкого спектра, включая б��товые отходы, пластик, бумагу, картон, текстиль, алюминиевую упаковку, деревянные поддоны и органические отходы.',
     single_shaft_faq_q2: 'Как работает система автоматического реверса?',
     single_shaft_faq_a2: 'Благодаря системе управления ПЛК, когда машина обнаруживает перегрузку или заклинивание, она автоматически зап��скает ротор в обратном направлении для обеспечения правильного измельчения и продления срока службы лезвия.',
     single_shaft_faq_q3: 'Каковы требования к техническому обслуживанию?',
@@ -2968,6 +2980,10 @@ const translations = {
     // Glass Crusher Product Detail Page
     glass_main_title: 'آلة تكسير الزجاج',
     glass_subtitle: 'كفاءة عالية في إعادة تدوير الزجاج',
+    
+    // Products Overview Page
+    products_page_title: 'حلولنا لآلات التقطيع',
+    products_page_subtitle: 'أنظمة عالية الأداء مصممة لمختلف الصناعات',
     
     products_title: 'فئات المنتجات',
     products_description: 'آلات التقطيع عالية الأداء من MT Makina تحدث فرقًا في عمليات إعادة التدوير الصناعية بفضل هيكلها القوي وأنظمة الشفرات الفعالة.',

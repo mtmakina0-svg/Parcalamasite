@@ -519,15 +519,26 @@ export const ProductDetailPage = ({
     if (hasCustomDesc && modelDesc) return modelDesc.intro;
     
     switch(productType) {
-      case 'harddisk':
-        return 'Güvenli Veri İmha Çözümleri';
+      case 'single-saft':
+        return t('single_shaft_subtitle');
+      case 'dual-saft':
+        return t('dual_shaft_subtitle');
+      case 'quad-saft':
+        return t('quad_shaft_subtitle');
+      case 'metal':
+        return t('metal_subtitle');
       case 'mobile':
-        return 'Yüksek Kapasiteli Mobil Kırıcılar';
+        return t('mobile_subtitle');
+      case 'pallet':
+        return t('pallet_subtitle');
+      case 'harddisk':
+        return t('harddisk_subtitle');
       case 'tree-root':
         return t('tree_root_subtitle');
       case 'wood':
         return t('wood_subtitle');
-      case 'single-saft':
+      case 'glass':
+        return t('glass_subtitle');
       default:
         return t('single_shaft_subtitle');
     }
@@ -617,7 +628,7 @@ export const ProductDetailPage = ({
             >
               <ImageWithFallback
                 src={images.main}
-                alt={`${defaultModelName} ${productType === 'harddisk' ? 'Harddisk İmha Parçalama Makinesi' : productType === 'tree-root' ? t('tree_root_main_title') : t('single_shaft_main_title')}`}
+                alt={`${defaultModelName} ${getProductTitle()}`}
                 className="w-full rounded-2xl shadow-2xl"
                 fallbackSrc={fallbackImage}
               />

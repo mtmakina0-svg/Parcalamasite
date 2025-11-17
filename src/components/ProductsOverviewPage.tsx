@@ -57,7 +57,7 @@ const products: Product[] = [
   { 
     id: 'tree-root', 
     titleKey: 'product_tree_root',
-    image: 'https://i.ibb.co/KmLJHvN/agac-koku-parcalama-makinesi-tw-200-1.png',
+    image: 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png',
     altKey: 'product_tree_root'
   },
   { 
