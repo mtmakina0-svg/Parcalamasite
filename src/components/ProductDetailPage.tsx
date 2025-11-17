@@ -489,15 +489,26 @@ export const ProductDetailPage = ({
   // Get product title based on type
   const getProductTitle = () => {
     switch(productType) {
-      case 'harddisk':
-        return 'Harddisk İmha Parçalama Makinesi';
+      case 'single-saft':
+        return t('single_shaft_main_title');
+      case 'dual-saft':
+        return t('dual_shaft_main_title');
+      case 'quad-saft':
+        return t('quad_shaft_main_title');
+      case 'metal':
+        return t('metal_main_title');
       case 'mobile':
-        return 'Mobil Kırıcı';
+        return t('mobile_main_title');
+      case 'pallet':
+        return t('pallet_main_title');
+      case 'harddisk':
+        return t('harddisk_main_title');
       case 'tree-root':
         return t('tree_root_main_title');
       case 'wood':
         return t('wood_main_title');
-      case 'single-saft':
+      case 'glass':
+        return t('glass_main_title');
       default:
         return t('single_shaft_main_title');
     }

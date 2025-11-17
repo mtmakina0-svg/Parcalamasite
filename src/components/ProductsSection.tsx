@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
 import { Card } from './ui/card';
 import { ArrowRight } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const products = [
   {
@@ -163,11 +164,12 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                 {/* Background Image - Full Coverage */}
                 <div className="absolute inset-0">
                   {product.image ? (
-                    <img 
+                    <ImageWithFallback
                       src={product.image} 
                       alt={getProductTitle(product)}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
+                      fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#F4CE14] to-[#F4CE14]/70"></div>

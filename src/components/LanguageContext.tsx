@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 export type Language = 'tr' | 'en' | 'ru' | 'ar';
 
@@ -729,6 +729,35 @@ const translations = {
     // Single Shaft Product Detail Page
     single_shaft_main_title: 'Tek Şaftlı Katı Atık Parçalama Makinesi',
     single_shaft_subtitle: 'Geniş Atık Yelpazesinde Yüksek Verim, Güçlü Performans',
+    
+    // Dual Shaft Product Detail Page
+    dual_shaft_main_title: 'Çift Şaftlı Parçalama Makinesi',
+    dual_shaft_subtitle: 'Ağır Hizmet Tipi Malzemeler için Çift Güç',
+    
+    // Quad Shaft Product Detail Page
+    quad_shaft_main_title: 'Dört Şaftlı Parçalama Makinesi',
+    quad_shaft_subtitle: 'Ultra Yüksek Verimlilik ve Homojen Parçalama',
+    
+    // Metal Shredder Product Detail Page
+    metal_main_title: 'Metal Parçalama Makinesi',
+    metal_subtitle: 'Metal Atıkları için Özel Tasarım ve Güç',
+    
+    // Mobile Shredder Product Detail Page
+    mobile_main_title: 'Mobil Kırıcı',
+    mobile_subtitle: 'Her Yerde Taşınabilir Parçalama Gücü',
+    
+    // Pallet Shredder Product Detail Page
+    pallet_main_title: 'Palet Parçalama Makinesi',
+    pallet_subtitle: 'Ahşap Paletler için Özelleştirilmiş Çözüm',
+    
+    // Harddisk Destroyer Product Detail Page
+    harddisk_main_title: 'Harddisk İmha Parçalama Makinesi',
+    harddisk_subtitle: 'Güvenli Veri İmha Çözümleri',
+    
+    // Glass Crusher Product Detail Page
+    glass_main_title: 'Cam Şişe Kırma Makinesi',
+    glass_subtitle: 'Cam Geri Dönüşümünde Yüksek Verimlilik',
+    
     single_shaft_description_1: 'Tek şaftlı katı atık parçalama makinesi; evsel, endüstriyel, plastik, kâğıt, tekstil, alüminyum ve ambalaj atıklarının etkili şekilde parçalanmasını sağlar. MT Makina mühendisliğiyle geliştirilen bu sistemler, yüksek torklu şaft tasarımı ve enerji verimli hidrolik sistemiyle uzun ömürlü kullanım sunar.',
     single_shaft_description_2: 'PLC kontrollü otomasyon sistemi sayesinde, aşırı yüklenme durumlarında otomatik ters çalışma fonksiyonu devreye girer. Bu özellik hem kesici bıçakların ömrünü uzatır hem de bakım ihtiyacını minimuma indirir.',
     single_shaft_description_3: 'MT Makina\'nın tek şaftlı kırıcıları, yüksek dayanım gerektiren sanayi uygulamaları için optimize edilmiştir. 800 – 1500 mm rotor uzunluğu, değiştirilebilir bıçak modülleri ve otomatik besleme kontrol sistemi ile maksimum verimlilik elde edilir.',
@@ -1123,6 +1152,38 @@ const translations = {
     product_tree_root: 'Tree Root Shredder',
     product_wood_grinder: 'Wood Grinding Machine',
     product_glass: 'Glass Bottle Crusher',
+    
+    // Single Shaft Product Detail Page
+    single_shaft_main_title: 'Single Shaft Solid Waste Shredder',
+    single_shaft_subtitle: 'High Efficiency and Powerful Performance Across a Wide Range of Waste',
+    
+    // Dual Shaft Product Detail Page
+    dual_shaft_main_title: 'Dual Shaft Shredder',
+    dual_shaft_subtitle: 'Double Power for Heavy-Duty Materials',
+    
+    // Quad Shaft Product Detail Page
+    quad_shaft_main_title: 'Quad Shaft Shredder',
+    quad_shaft_subtitle: 'Ultra High Efficiency and Homogeneous Shredding',
+    
+    // Metal Shredder Product Detail Page
+    metal_main_title: 'Metal Shredder',
+    metal_subtitle: 'Specialized Design and Power for Metal Waste',
+    
+    // Mobile Shredder Product Detail Page
+    mobile_main_title: 'Mobile Crusher',
+    mobile_subtitle: 'Portable Shredding Power Anywhere',
+    
+    // Pallet Shredder Product Detail Page
+    pallet_main_title: 'Pallet Shredder',
+    pallet_subtitle: 'Customized Solution for Wooden Pallets',
+    
+    // Harddisk Destroyer Product Detail Page
+    harddisk_main_title: 'Hard Disk Destruction Shredder',
+    harddisk_subtitle: 'Secure Data Destruction Solutions',
+    
+    // Glass Crusher Product Detail Page
+    glass_main_title: 'Glass Bottle Crusher',
+    glass_subtitle: 'High Efficiency in Glass Recycling',
     
     products_title: 'Product Categories',
     products_description: 'MT Makina\'s high-performance shredding machines make a difference in industrial recycling processes with their robust body structure and efficient blade systems.',
@@ -2093,6 +2154,49 @@ const translations = {
     performance: 'Производительность',
     
     // Products
+    product_single_shaft: 'Одновальная дробилка',
+    product_dual_shaft: 'Двухвальная дробилка',
+    product_quad_shaft: 'Четырехвальная дробилка',
+    product_metal: 'Дробилка для металла',
+    product_mobile: 'Мобильная дробилка',
+    product_pallet: 'Дробилка для поддонов',
+    product_harddisk: 'Уничтожитель жестких дисков',
+    product_tree_root: 'Дробилка корней деревьев',
+    product_wood_grinder: 'Измельчитель древесины',
+    product_glass: 'Дробилка для стекла',
+    
+    // Single Shaft Product Detail Page
+    single_shaft_main_title: 'Одновальная дробилка твердых отходов',
+    single_shaft_subtitle: 'Высокая эффективность и мощная производительность для широкого спектра отходов',
+    
+    // Dual Shaft Product Detail Page
+    dual_shaft_main_title: 'Двухвальная дробилка',
+    dual_shaft_subtitle: 'Двойная мощность для тяжелых материалов',
+    
+    // Quad Shaft Product Detail Page
+    quad_shaft_main_title: 'Четырехвальная дробилка',
+    quad_shaft_subtitle: 'Сверхвысокая эффективность и однородное измельчение',
+    
+    // Metal Shredder Product Detail Page
+    metal_main_title: 'Дробилка для металла',
+    metal_subtitle: 'Специализированный дизайн и мощность для металлических отходов',
+    
+    // Mobile Shredder Product Detail Page
+    mobile_main_title: 'Мобильная дробилка',
+    mobile_subtitle: 'Портативная мощность измельчения в любом месте',
+    
+    // Pallet Shredder Product Detail Page
+    pallet_main_title: 'Дробилка для поддонов',
+    pallet_subtitle: 'Индивидуальное решение для деревянных поддонов',
+    
+    // Harddisk Destroyer Product Detail Page
+    harddisk_main_title: 'Уничтожитель жестких дисков',
+    harddisk_subtitle: 'Безопасные решения для уничтожения данных',
+    
+    // Glass Crusher Product Detail Page
+    glass_main_title: 'Дробилка для стекла',
+    glass_subtitle: 'Высокая эффективность при переработке стекла',
+    
     products_title: 'Категории продуктов',
     products_description: 'Высокопроизводительные измель��ительные машины MT Makina выделяются в процессах промышленной переработки благодаря прочной конструкции корпуса и эффективным системам лезвий.',
     products_subtitle: 'Мощные и эффективные измельчительные машины MT Makina: одновальные, двухвальные, четырехвальные, металлические, поддонные, пластиковые, стеклянные, органические, медицинские и другие.',
@@ -2822,6 +2926,49 @@ const translations = {
     performance: 'الأداء',
     
     // Products
+    product_single_shaft: 'آلة التقطيع أحادية العمود',
+    product_dual_shaft: 'آلة التقطيع ثنائية العمود',
+    product_quad_shaft: 'آلة التقطيع رباعية العمود',
+    product_metal: 'آلة تقطيع المعادن',
+    product_mobile: 'آلة التكسير المتنقلة',
+    product_pallet: 'آلة تقطيع المنصات',
+    product_harddisk: 'آلة إتلاف الأقراص الصلبة',
+    product_tree_root: 'آلة تقطيع جذور الأشجار',
+    product_wood_grinder: 'آلة طحن الخشب',
+    product_glass: 'آلة تكسير الزجاج',
+    
+    // Single Shaft Product Detail Page
+    single_shaft_main_title: 'آلة تقطيع النفايات الصلبة أحادية العمود',
+    single_shaft_subtitle: 'كفاءة عالية وأداء قوي لمجموعة واسعة من النفايات',
+    
+    // Dual Shaft Product Detail Page
+    dual_shaft_main_title: 'آلة التقطيع ثنائية العمود',
+    dual_shaft_subtitle: 'قوة مزدوجة للمواد الثقيلة',
+    
+    // Quad Shaft Product Detail Page
+    quad_shaft_main_title: 'آلة التقطيع رباعية العمود',
+    quad_shaft_subtitle: 'كفاءة فائقة وتقطيع متجانس',
+    
+    // Metal Shredder Product Detail Page
+    metal_main_title: 'آلة تقطيع المعادن',
+    metal_subtitle: 'تصميم متخصص وقوة للنفايات المعدنية',
+    
+    // Mobile Shredder Product Detail Page
+    mobile_main_title: 'آلة التكسير المتنقلة',
+    mobile_subtitle: 'قوة التقطيع المحمولة في أي مكان',
+    
+    // Pallet Shredder Product Detail Page
+    pallet_main_title: 'آلة تقطيع المنصات',
+    pallet_subtitle: 'حل مخصص للمنصات الخشبية',
+    
+    // Harddisk Destroyer Product Detail Page
+    harddisk_main_title: 'آلة إتلاف الأقراص الصلبة',
+    harddisk_subtitle: 'حلول آمنة لإتلاف البيانات',
+    
+    // Glass Crusher Product Detail Page
+    glass_main_title: 'آلة تكسير الزجاج',
+    glass_subtitle: 'كفاءة عالية في إعادة تدوير الزجاج',
+    
     products_title: 'فئات المنتجات',
     products_description: 'آلات التقطيع عالية الأداء من MT Makina تحدث فرقًا في عمليات إعادة التدوير الصناعية بفضل هيكلها القوي وأنظمة الشفرات الفعالة.',
     products_subtitle: 'آلات التقطيع القوية والفعالة من MT Makina: أحادي، مزدوج، رباعي العمود، معدني، منصات، بلاستيك، زجاج، عضوي، طبي والمزيد.',
@@ -3472,6 +3619,23 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const [language, setLanguage] = useState<Language>(getLanguageFromURL);
+
+  // Update language when URL changes (for navigation)
+  useEffect(() => {
+    const updateLanguageFromURL = () => {
+      const newLang = getLanguageFromURL();
+      if (newLang !== language) {
+        setLanguage(newLang);
+      }
+    };
+
+    // Listen to popstate (browser back/forward)
+    window.addEventListener('popstate', updateLanguageFromURL);
+    
+    return () => {
+      window.removeEventListener('popstate', updateLanguageFromURL);
+    };
+  }, [language]);
 
   // Custom setLanguage that also updates URL
   const changeLanguage = (newLang: Language) => {

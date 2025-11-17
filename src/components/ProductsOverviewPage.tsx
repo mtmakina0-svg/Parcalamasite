@@ -2,74 +2,75 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useLanguage } from './LanguageContext';
 
 interface Product {
   id: string;
-  title: string;
+  titleKey: string;
   image: string;
-  alt: string;
+  altKey: string;
 }
 
 const products: Product[] = [
   { 
     id: 'single-saft', 
-    title: 'Tek Şaftlı Parçalama Makinesi',
+    titleKey: 'product_single_shaft',
     image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
-    alt: 'Tek Şaftlı Parçalama Makinesi - MT Makina TSH Serisi'
+    altKey: 'product_single_shaft'
   },
   { 
     id: 'dual-saft', 
-    title: 'Çift Şaftlı Parçalama Makinesi',
+    titleKey: 'product_dual_shaft',
     image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
-    alt: 'Çift Şaftlı Parçalama Makinesi - MT Makina CS Serisi'
+    altKey: 'product_dual_shaft'
   },
   { 
     id: 'quad-saft', 
-    title: 'Dört Şaftlı Parçalama Makinesi',
+    titleKey: 'product_quad_shaft',
     image: 'https://i.ibb.co/SDjBQ9cq/1-9.png',
-    alt: 'Dört Şaftlı Parçalama Makinesi - MT Makina QS Serisi'
+    altKey: 'product_quad_shaft'
   },
   { 
     id: 'metal', 
-    title: 'Metal Parçalama Makinesi',
+    titleKey: 'product_metal',
     image: 'https://i.ibb.co/m5xLp46J/1-1.png',
-    alt: 'Metal Parçalama Makinesi - MT Makina MP Serisi'
+    altKey: 'product_metal'
   },
   { 
     id: 'mobile', 
-    title: 'Mobil Kırıcı',
+    titleKey: 'product_mobile',
     image: 'https://i.ibb.co/Ndfqm2fm/organic-waste-shredder-2.png',
-    alt: 'Mobil Kırıcı - Taşınabilir Parçalama Çözümü'
+    altKey: 'product_mobile'
   },
   { 
     id: 'pallet', 
-    title: 'Palet Parçalama Makinesi',
+    titleKey: 'product_pallet',
     image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-    alt: 'Palet Parçalama Makinesi - Ahşap Geri Dönüşüm'
+    altKey: 'product_pallet'
   },
   { 
     id: 'harddisk', 
-    title: 'Harddisk İmha Makinesi',
+    titleKey: 'product_harddisk',
     image: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
-    alt: 'Harddisk İmha Makinesi - Güvenli Veri İmhası'
+    altKey: 'product_harddisk'
   },
   { 
     id: 'tree-root', 
-    title: 'Ağaç Kökü Parçalama Makinesi',
+    titleKey: 'product_tree_root',
     image: 'https://i.ibb.co/KmLJHvN/agac-koku-parcalama-makinesi-tw-200-1.png',
-    alt: 'Ağaç Kökü Parçalama Makinesi - MT Makina TW Serisi'
+    altKey: 'product_tree_root'
   },
   { 
     id: 'wood', 
-    title: 'Ağaç Parçalama Öğütme Makinesi',
+    titleKey: 'product_wood_grinder',
     image: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
-    alt: 'Ağaç Parçalama Öğütme Makinesi - Ahşap İşleme'
+    altKey: 'product_wood_grinder'
   },
   { 
     id: 'glass', 
-    title: 'Cam Şişe Kırma Makinesi',
+    titleKey: 'product_glass',
     image: 'https://i.ibb.co/4wtQRwBB/1-1.png',
-    alt: 'Cam Şişe Kırma Makinesi - Cam Geri Dönüşüm'
+    altKey: 'product_glass'
   },
 ];
 
@@ -79,8 +80,10 @@ interface ProductsOverviewPageProps {
 }
 
 export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsOverviewPageProps) => {
+  const { t, isRTL } = useLanguage();
+  
   return (
-    <div className="min-h-screen bg-[#F5F7F8]" style={{ fontFamily: 'Mulish, sans-serif' }}>
+    <div className="min-h-screen bg-[#F5F7F8]" style={{ fontFamily: 'Mulish, sans-serif' }} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Header Spacer */}
       <div className="h-20"></div>
 
@@ -99,10 +102,10 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#F5F7F8] mb-6">
-              Parçalama Makinesi Çözümlerimiz
+              {t('products_page_title') || 'Parçalama Makinesi Çözümlerimiz'}
             </h1>
             <p className="text-xl md:text-2xl text-[#F5F7F8]/90 max-w-3xl mx-auto">
-              Farklı endüstrilere özel yüksek performanslı sistemler
+              {t('products_page_subtitle') || 'Farklı endüstrilere özel yüksek performanslı sistemler'}
             </p>
           </motion.div>
         </div>
@@ -126,7 +129,7 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
                 <div className="relative h-64 bg-[#45474B] overflow-hidden group">
                   <ImageWithFallback
                     src={product.image}
-                    alt={product.alt}
+                    alt={t(product.altKey)}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
                   />
@@ -135,10 +138,10 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
                 
                 {/* Card Content */}
                 <div className="p-6">
-                  <h3 className="text-xl text-[#1E1E1E] mb-3">{product.title}</h3>
+                  <h3 className="text-xl text-[#1E1E1E] mb-3">{t(product.titleKey)}</h3>
                   <div className="flex items-center text-[#F4CE14] hover:text-[#F4CE14]/80 transition-colors">
-                    <span className="mr-2">Detaylı İncele</span>
-                    <ArrowRight size={18} />
+                    <span className={isRTL ? 'ml-2' : 'mr-2'}>{t('btn_view_details') || 'Detaylı İncele'}</span>
+                    <ArrowRight size={18} className={isRTL ? 'rotate-180' : ''} />
                   </div>
                 </div>
               </motion.div>

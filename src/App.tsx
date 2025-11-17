@@ -251,6 +251,11 @@ function AppContent() {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
+  // Update SEO when language changes (for URL language detection)
+  useEffect(() => {
+    updatePageSEO(currentPage, selectedProduct, selectedModelName);
+  }, [language]);
+
   // Scroll to top when page changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
