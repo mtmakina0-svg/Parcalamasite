@@ -1947,7 +1947,7 @@ const translations = {
     metal_description_1: 'Metal recycling is of great importance in terms of environmental sustainability and economic efficiency. In this process, the scrap metal shredding machine plays a critical role. The dual shaft scrap metal shredder effectively shreds various types of metals, making them ready for recycling.',
     metal_description_2: 'The scrap metal shredding machine has the capacity to process different types of metals such as scrap iron, aluminum, stainless steel and metal bales. Redmonster scrap metal shredding machine consists of powerful machines designed to shred a wide range of metal scraps.',
     metal_advantages_title: 'Redmonster Series Key Features',
-    metal_adv_1_title: 'High Torque Power',
+   metal_adv_1_title: 'High Torque Power',
     metal_adv_1_desc: 'Powerful motors specially designed for metal shredding and high torque capacity',
     metal_adv_2_title: 'Robust Blade Design',
     metal_adv_2_desc: 'Durable and long-lasting steel blades for scrap metal',
