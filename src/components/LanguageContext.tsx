@@ -1726,17 +1726,6 @@ const translations = {
     footer_full_email: 'info@mtmakina.com.tr',
     footer_website: 'www.mtmakina.com.tr',
     
-    // Products
-    product_single_shaft: 'Single Shaft Shredder',
-    product_dual_shaft: 'Dual Shaft Shredder',
-    product_quad_shaft: 'Quad Shaft Shredder',
-    product_metal: 'Metal Shredder',
-    product_pallet: 'Pallet Shredder',
-    product_glass: 'Glass Bottle Crusher',
-    product_plastic: 'Plastic Shredder',
-    product_organic: 'Organic Waste Shredder',
-    product_tire: 'Tire Shredder',
-    
     // Single Shaft Product Detail Page
     single_shaft_main_title: 'Single Shaft Solid Waste Shredder',
     single_shaft_subtitle: 'High Efficiency and Powerful Performance Across Wide Range of Waste',
@@ -1947,7 +1936,7 @@ const translations = {
     metal_description_1: 'Metal recycling is of great importance in terms of environmental sustainability and economic efficiency. In this process, the scrap metal shredding machine plays a critical role. The dual shaft scrap metal shredder effectively shreds various types of metals, making them ready for recycling.',
     metal_description_2: 'The scrap metal shredding machine has the capacity to process different types of metals such as scrap iron, aluminum, stainless steel and metal bales. Redmonster scrap metal shredding machine consists of powerful machines designed to shred a wide range of metal scraps.',
     metal_advantages_title: 'Redmonster Series Key Features',
-   metal_adv_1_title: 'High Torque Power',
+    metal_adv_1_title: 'High Torque Power',
     metal_adv_1_desc: 'Powerful motors specially designed for metal shredding and high torque capacity',
     metal_adv_2_title: 'Robust Blade Design',
     metal_adv_2_desc: 'Durable and long-lasting steel blades for scrap metal',
@@ -2484,21 +2473,6 @@ const translations = {
     certificates_footer_pallet: 'Измельчитель поддонов',
     certificates_footer_tire: 'Измельчитель шин',
     certificates_footer_contact: 'Связаться с нами',
-    
-    // Products
-    product_single_shaft: 'Одновальный измельчитель',
-    product_dual_shaft: 'Двухвальный измельчитель',
-    product_quad_shaft: 'Четырехвальный измельчитель',
-    product_metal: 'Измельчитель металла',
-    product_mobile: 'Мобильная дробилка',
-    product_pallet: 'Измельчитель поддонов',
-    product_harddisk: 'Уничтожитель жестких дисков',
-    product_tree_root: 'Измельчитель корней деревьев',
-    product_wood_grinder: 'Дробилка для древесины',
-    product_glass: 'Дробилка стеклянных бутылок',
-    product_plastic: 'Измельчитель пластика',
-    product_organic: 'Измельчитель органических отходов',
-    product_tire: 'Измельчитель шин',
     
     // Single Shaft Product Detail Page
     single_shaft_main_title: 'Одновальный измельчитель твердых отходов',
@@ -3125,8 +3099,8 @@ const translations = {
     footer_full_email: 'info@mtmakina.com.tr',
     footer_website: 'www.mtmakina.com.tr',
     
-    // Products
-    product_single_shaft: 'آلة تمزيق أحادية العمود',
+    // Single Shaft Product Detail Page
+    single_shaft_main_title: 'آلة تمزيق أحادية العمود',
     product_dual_shaft: 'آلة تمزيق ثنائية العمود',
     product_quad_shaft: 'آلة تمزيق رباعية العمود',
     product_metal: 'آلة تمزيق المعادن',
