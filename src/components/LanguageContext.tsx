@@ -321,8 +321,6 @@ const translations = {
     footer_incinerators: 'Yakma Fırınları',
     footer_balers: 'Balya Presleri',
     footer_facilities: 'Tesisler',
-    footer_contact: 'Bize Ulaşın',
-    footer_copyright: '© 2025 MT Makina Ltd. Şti. - Tüm Hakları Saklıdır',
     
     // About Page
     about_page_title: 'Hakkımızda',
@@ -652,36 +650,6 @@ const translations = {
     // Waste Detail Pages - Common
     waste_detail_back: 'Geri Dön',
     waste_detail_systems_title: 'Önerilen Sistemler',
-    
-    // Evsel Atıklar (Household Waste)
-    waste_evsel_intro: 'Evsel atıkların geri dönüşümü, çevre sağlığı ve sürdürülebilir yaşam için kritik önem taşır.',
-    waste_evsel_para1: 'MT Makina, evsel atıkların etkili bir şekilde parçalanması ve geri dönüşümü için özel olarak tasarlanmış makineler üretir.',
-    waste_evsel_para2: 'Her proje, yüksek dayanıklılık, düşük enerji tüketimi ve çevre dostu teknoloji prensipleriyle üretilir.',
-    waste_evsel_para3: 'Avrupa standartlarına uygun, uzun ömürlü sistemlerle çevreye katkı sağlayan çözümler sunuyoruz.',
-    waste_evsel_system1: 'Tek ve çift şaftlı parçalama makineleri',
-    waste_evsel_system2: 'Otomatik besleme sistemleri ve konveyör hatları',
-    waste_evsel_system3: 'Manyetik ve optik ayrıştırma sistemleri',
-    waste_evsel_system4: 'Balya presleri ve depolama çözümleri',
-    
-    // Elektronik Atıklar (Electronic Waste)
-    waste_elektronik_intro: 'Elektronik atıklar (e-atık) değerli metallerin geri kazanımı için özel işlem gerektirir.',
-    waste_elektronik_para1: 'MT Makina, bilgisayar, telefon, beyaz eşya gibi elektronik atıkların güvenli ve verimli parçalanması için gelişmiş sistemler sunar.',
-    waste_elektronik_para2: 'Hassas bıçak teknolojisi ve kontrollü işlem kapasitesi ile değerli metallerin geri kazanımını optimize eder.',
-    waste_elektronik_para3: 'Çevre standartlarına tam uyumlu, tehlikeli madde emisyonlarını minimize eden çözümler üretiyoruz.',
-    waste_elektronik_system1: 'Çift şaftlı ağır hizmet tipi parçalama makineleri',
-    waste_elektronik_system2: 'Kablo sıyırma ve ayırma sistemleri',
-    waste_elektronik_system3: 'PCB parçalama ve değerli metal kazanım hatları',
-    waste_elektronik_system4: 'Toz toplama ve filtrasyon sistemleri',
-    
-    // Lastik Atıklar (Tire Waste)
-    waste_lastik_intro: 'Kullanılmış lastiklerin geri dönüşümü hem çevre hem de ekonomi için büyük değer yaratır.',
-    waste_lastik_para1: 'MT Makina, otomobil, kamyon ve iş makinesi lastiklerinin granül haline getirilmesi için yüksek kapasiteli sistemler üretir.',
-    waste_lastik_para2: 'Güçlü motorlar ve özel tasarım bıçaklarla yüksek dayanıklılık sunan lastik parçalama makineleri geliştiriyoruz.',
-    waste_lastik_para3: 'Enerji verimliliği ve uzun ömürlü kullanım için optimize edilmiş teknolojiler sunuyoruz.',
-    waste_lastik_system1: 'Ön kesim ve birincil parçalama makineleri',
-    waste_lastik_system2: 'İkincil granül parçalama sistemleri',
-    waste_lastik_system3: 'Tel ayırma ve manyetik seperasyon hatları',
-    waste_lastik_system4: 'Toz ve granül boyutlandırma ekipmanları',
     
     // Waste Categories Page
     waste_categories_title: 'Makinelerimizde İşlediğimiz Atık Türleri',
@@ -1418,8 +1386,6 @@ const translations = {
     footer_incinerators: 'Incinerators',
     footer_balers: 'Balers',
     footer_facilities: 'Facilities',
-    footer_contact: 'Contact Us',
-    footer_copyright: '© 2025 MT Makina Ltd. Şti. - All Rights Reserved',
     
     // About Page
     about_page_title: 'About Us',
