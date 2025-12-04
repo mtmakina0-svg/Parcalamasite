@@ -1195,7 +1195,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(`${productType.replace(/-/g, '_')}_faq_title`)}
+              {t(`${productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_')}_faq_title`)}
             </motion.h2>
 
             <motion.div
@@ -1208,7 +1208,7 @@ export const ProductDetailPage = ({
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => {
                   // Check if FAQ exists for this number
                   // Replace hyphens with underscores for translation keys
-                  const normalizedProductType = productType.replace(/-/g, '_');
+                  const normalizedProductType = productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_');
                   const questionKey = `${normalizedProductType}_faq_q${num}`;
                   const answerKey = `${normalizedProductType}_faq_a${num}`;
                   const question = t(questionKey);
@@ -1248,7 +1248,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(productType === 'pallet' ? 'pallet_video_title' : productType === 'harddisk' ? 'harddisk_video_title' : `${productType.replace(/-/g, '_')}_video_title`)}
+              {t(productType === 'pallet' ? 'pallet_video_title' : productType === 'harddisk' ? 'harddisk_video_title' : productType === 'mobile' ? 'mobile_crusher_video_title' : `${productType.replace(/-/g, '_')}_video_title`)}
             </motion.h2>
 
             <motion.div
@@ -1277,7 +1277,7 @@ export const ProductDetailPage = ({
                 <Button
                   className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
                 >
-                  {t(`${productType.replace(/-/g, '_')}_watch_video`)}
+                  {t(`${productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_')}_watch_video`)}
                 </Button>
               </motion.div>
             </motion.div>
@@ -1296,7 +1296,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(`${productType.replace(/-/g, '_')}_similar_products`)}
+              {t(`${productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_')}_similar_products`)}
             </motion.h2>
 
             <SimilarProductsSection 

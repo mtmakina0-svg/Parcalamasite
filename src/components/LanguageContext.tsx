@@ -629,11 +629,6 @@ const translations = {
     organic_similar_products: 'Benzer Ürünler',
     organic_watch_video: 'Video İzle',
     
-    mobile_faq_title: 'Sıkça Sorulan Sorular - Mobil Parçalama Makinesi',
-    mobile_video_title: 'Mobil Parçalama Makinesi Videoları',
-    mobile_similar_products: 'Benzer Ürünler',
-    mobile_watch_video: 'Video İzle',
-    
     harddisk_faq_title: 'Sıkça Sorulan Sorular - Sabit Disk Parçalama Makinesi',
     harddisk_video_title: 'Sabit Disk Parçalama Makinesi Videoları',
     harddisk_similar_products: 'Benzer Ürünler',
@@ -736,10 +731,6 @@ const translations = {
     // Metal Shredder Product Detail Page
     metal_main_title: 'Metal Parçalama Makinesi',
     metal_subtitle: 'Metal Atıkları için Özel Tasarım ve Güç',
-    
-    // Mobile Shredder Product Detail Page
-    mobile_main_title: 'Mobil Kırıcı',
-    mobile_subtitle: 'Her Yerde Taşınabilir Parçalama Gücü',
     
     // Pallet Shredder Product Detail Page
     pallet_main_title: 'Palet Parçalama Makinesi',
@@ -1054,24 +1045,24 @@ const translations = {
     mobile_adv_4_desc: 'Yüksek kaliteli çelikten üretilen mobil kırıcı, uzun ömürlü ve sürekli çalışma imkanı sunar.',
     
     // Mobile Crusher FAQ
-    mobile_faq_title: 'Mobil Kırıcı S.S.S.',
-    mobile_faq_q1: 'MOBİL KIRICI HANGİ MALZEMELERİ İŞLEYEBİLİR?',
-    mobile_faq_a1: 'Plastik, metal, lastik, ahşap, kağıt, tekstil, elektronik atıklar, inşaat ve yıkım atıkları, evsel atıklar, yeşil atıklar, paletler ve balyalar gibi geniş bir malzeme yelpazesini işleyebilir.',
-    mobile_faq_q2: 'MOBİL KIRICI HANGİ ENDÜSTRİLERDE KULLANILIR?',
-    mobile_faq_a2: 'Geri dönüşüm tesisleri, atık yönetimi, inşaat ve yıkım projeleri, tarım, orman yönetimi, belediye atıkları işleme tesisleri ve endüstriyel atık yönetimi gibi çeşitli endüstrilerde kullanılır.',
-    mobile_faq_q3: 'MOBİL KIRICI\'NIN BAKIM GEREKSİNİMLERİ NELERDİR?',
-    mobile_faq_a3: 'Uzun bakım aralıkları ile düşük bakım gereksinimi vardır. Bıçakların ve diğer komponentlerin düzenli kontrolü ve bakımı yapılmalıdır. Otomatik yağlama üniteleri ve hidrolik açılan elek sistemleri, bakım süresini ve maliyetlerini azaltır.',
-    mobile_faq_q4: 'MOBİL KIRICI ÖZELLEŞTİRİLEBİLİR Mİ?',
-    mobile_faq_a4: 'Evet, makine belirli endüstri gereksinimlerine ve malzeme türlerine uygun çeşitli bıçak konfigürasyonları, boyutlar ve ek özellikler ile özelleştirilebilir.',
-    mobile_faq_q5: 'MOBİL KIRICI\'NIN KAPASİTE ARALIĞI NEDİR?',
-    mobile_faq_a5: 'Kapasite aralığı modele bağlı olarak değişir. Küçük ölçekli operasyonlardan büyük ölçekli endüstriyel uygulamalara kadar çeşitli kapasitelerde mevcuttur.',
-    mobile_faq_q6: 'MOBİL KIRICI\'NIN ENERJİ VERİMLİLİĞİ NASIL SAĞLANIR?',
-    mobile_faq_a6: 'İnvertör kontrollü motorlar ve otomatik geri vites özellikleri, enerji verimliliğini artırır ve makinenin performansını optimize eder. Bu, enerji tüketimini azaltırken yüksek verimlilik sağlar.',
-    mobile_faq_q7: 'MOBİL KIRICI\'NIN GÜVENLİK ÖZELLİKLERİ NELERDİR?',
-    mobile_faq_a7: 'Acil durdurma butonları, koruyucu kaplamalar ve otomatik geri vites özellikleri gibi güvenlik önlemleri ile donatılmıştır. Bu özellikler, operatör güvenliğini sağlar.',
-    mobile_video_title: 'Mobil Kırıcı Video',
-    mobile_watch_video: 'Videoyu İzle',
-    mobile_similar_products: 'Benzer Ürünler',
+    mobile_crusher_faq_title: 'Mobil Kırıcı S.S.S.',
+    mobile_crusher_faq_q1: 'MOBİL KIRICI HANGİ MALZEMELERİ İŞLEYEBİLİR?',
+    mobile_crusher_faq_a1: 'Plastik, metal, lastik, ahşap, kağıt, tekstil, elektronik atıklar, inşaat ve yıkım atıkları, evsel atıklar, yeşil atıklar, paletler ve balyalar gibi geniş bir malzeme yelpazesini işleyebilir.',
+    mobile_crusher_faq_q2: 'MOBİL KIRICI HANGİ ENDÜSTRİLERDE KULLANILIR?',
+    mobile_crusher_faq_a2: 'Geri dönüşüm tesisleri, atık yönetimi, inşaat ve yıkım projeleri, tarım, orman yönetimi, belediye atıkları işleme tesisleri ve endüstriyel atık yönetimi gibi çeşitli endüstrilerde kullanılır.',
+    mobile_crusher_faq_q3: 'MOBİL KIRICI\'NIN BAKIM GEREKSİNİMLERİ NELERDİR?',
+    mobile_crusher_faq_a3: 'Uzun bakım aralıkları ile düşük bakım gereksinimi vardır. Bıçakların ve diğer komponentlerin düzenli kontrolü ve bakımı yapılmalıdır. Otomatik yağlama üniteleri ve hidrolik açılan elek sistemleri, bakım süresini ve maliyetlerini azaltır.',
+    mobile_crusher_faq_q4: 'MOBİL KIRICI ÖZELLEŞTİRİLEBİLİR Mİ?',
+    mobile_crusher_faq_a4: 'Evet, makine belirli endüstri gereksinimlerine ve malzeme türlerine uygun çeşitli bıçak konfigürasyonları, boyutlar ve ek özellikler ile özelleştirilebilir.',
+    mobile_crusher_faq_q5: 'MOBİL KIRICI\'NIN KAPASİTE ARALIĞI NEDİR?',
+    mobile_crusher_faq_a5: 'Kapasite aralığı modele bağlı olarak değişir. Küçük ölçekli operasyonlardan büyük ölçekli endüstriyel uygulamalara kadar çeşitli kapasitelerde mevcuttur.',
+    mobile_crusher_faq_q6: 'MOBİL KIRICI\'NIN ENERJİ VERİMLİLİĞİ NASIL SAĞLANIR?',
+    mobile_crusher_faq_a6: 'İnvertör kontrollü motorlar ve otomatik geri vites özellikleri, enerji verimliliğini artırır ve makinenin performansını optimize eder. Bu, enerji tüketimini azaltırken yüksek verimlilik sağlar.',
+    mobile_crusher_faq_q7: 'MOBİL KIRICI\'NIN GÜVENLİK ÖZELLİKLERİ NELERDİR?',
+    mobile_crusher_faq_a7: 'Acil durdurma butonları, koruyucu kaplamalar ve otomatik geri vites özellikleri gibi güvenlik önlemleri ile donatılmıştır. Bu özellikler, operatör güvenliğini sağlar.',
+    mobile_crusher_video_title: 'Mobil Kırıcı Video',
+    mobile_crusher_watch_video: 'Videoyu İzle',
+    mobile_crusher_similar_products: 'Benzer Ürünler',
   },
   en: {
     // Header & Navigation
@@ -1167,10 +1158,6 @@ const translations = {
     // Metal Shredder Product Detail Page
     metal_main_title: 'Metal Shredder',
     metal_subtitle: 'Specialized Design and Power for Metal Waste',
-    
-    // Mobile Shredder Product Detail Page
-    mobile_main_title: 'Mobile Crusher',
-    mobile_subtitle: 'Portable Shredding Power Anywhere',
     
     // Pallet Shredder Product Detail Page
     pallet_main_title: 'Pallet Shredder',
@@ -1739,11 +1726,6 @@ const translations = {
     organic_similar_products: 'Similar Products',
     organic_watch_video: 'Watch Video',
     
-    mobile_faq_title: 'Frequently Asked Questions - Mobile Shredder',
-    mobile_video_title: 'Mobile Shredder Videos',
-    mobile_similar_products: 'Similar Products',
-    mobile_watch_video: 'Watch Video',
-    
     harddisk_faq_title: 'Frequently Asked Questions - Hard Disk Shredder',
     harddisk_video_title: 'Hard Disk Shredder Videos',
     harddisk_similar_products: 'Similar Products',
@@ -2065,24 +2047,24 @@ const translations = {
     mobile_adv_4_desc: 'The mobile crusher made of high quality steel offers long life and continuous operation.',
     
     // Mobile Crusher FAQ
-    mobile_faq_title: 'Mobile Crusher F.A.Q.',
-    mobile_faq_q1: 'WHAT MATERIALS CAN THE MOBILE CRUSHER PROCESS?',
-    mobile_faq_a1: 'It can process a wide range of materials such as plastic, metal, rubber, wood, paper, textiles, electronic waste, construction and demolition waste, household waste, green waste, pallets and bales.',
-    mobile_faq_q2: 'IN WHICH INDUSTRIES IS THE MOBILE CRUSHER USED?',
-    mobile_faq_a2: 'It is used in various industries such as recycling facilities, waste management, construction and demolition projects, agriculture, forest management, municipal waste processing facilities and industrial waste management.',
-    mobile_faq_q3: 'WHAT ARE THE MAINTENANCE REQUIREMENTS OF THE MOBILE CRUSHER?',
-    mobile_faq_a3: 'It has low maintenance requirements with long maintenance intervals. Regular inspection and maintenance of blades and other components should be performed. Automatic lubrication units and hydraulic opening screen systems reduce maintenance time and costs.',
-    mobile_faq_q4: 'CAN THE MOBILE CRUSHER BE CUSTOMIZED?',
-    mobile_faq_a4: 'Yes, the machine can be customized with various blade configurations, sizes and additional features suitable for specific industry requirements and material types.',
-    mobile_faq_q5: 'WHAT IS THE CAPACITY RANGE OF THE MOBILE CRUSHER?',
-    mobile_faq_a5: 'The capacity range varies depending on the model. It is available in various capacities from small-scale operations to large-scale industrial applications.',
-    mobile_faq_q6: 'HOW IS ENERGY EFFICIENCY ACHIEVED IN THE MOBILE CRUSHER?',
-    mobile_faq_a6: 'Inverter-controlled motors and automatic reverse features increase energy efficiency and optimize machine performance. This provides high efficiency while reducing energy consumption.',
-    mobile_faq_q7: 'WHAT ARE THE SAFETY FEATURES OF THE MOBILE CRUSHER?',
-    mobile_faq_a7: 'It is equipped with safety measures such as emergency stop buttons, protective covers and automatic reverse features. These features ensure operator safety.',
-    mobile_video_title: 'Mobile Crusher Video',
-    mobile_watch_video: 'Watch Video',
-    mobile_similar_products: 'Similar Products',
+    mobile_crusher_faq_title: 'Mobile Crusher F.A.Q.',
+    mobile_crusher_faq_q1: 'WHAT MATERIALS CAN THE MOBILE CRUSHER PROCESS?',
+    mobile_crusher_faq_a1: 'It can process a wide range of materials such as plastic, metal, rubber, wood, paper, textiles, electronic waste, construction and demolition waste, household waste, green waste, pallets and bales.',
+    mobile_crusher_faq_q2: 'IN WHICH INDUSTRIES IS THE MOBILE CRUSHER USED?',
+    mobile_crusher_faq_a2: 'It is used in various industries such as recycling facilities, waste management, construction and demolition projects, agriculture, forest management, municipal waste processing facilities and industrial waste management.',
+    mobile_crusher_faq_q3: 'WHAT ARE THE MAINTENANCE REQUIREMENTS OF THE MOBILE CRUSHER?',
+    mobile_crusher_faq_a3: 'It has low maintenance requirements with long maintenance intervals. Regular inspection and maintenance of blades and other components should be performed. Automatic lubrication units and hydraulic opening screen systems reduce maintenance time and costs.',
+    mobile_crusher_faq_q4: 'CAN THE MOBILE CRUSHER BE CUSTOMIZED?',
+    mobile_crusher_faq_a4: 'Yes, the machine can be customized with various blade configurations, sizes and additional features suitable for specific industry requirements and material types.',
+    mobile_crusher_faq_q5: 'WHAT IS THE CAPACITY RANGE OF THE MOBILE CRUSHER?',
+    mobile_crusher_faq_a5: 'The capacity range varies depending on the model. It is available in various capacities from small-scale operations to large-scale industrial applications.',
+    mobile_crusher_faq_q6: 'HOW IS ENERGY EFFICIENCY ACHIEVED IN THE MOBILE CRUSHER?',
+    mobile_crusher_faq_a6: 'Inverter-controlled motors and automatic reverse features increase energy efficiency and optimize machine performance. This provides high efficiency while reducing energy consumption.',
+    mobile_crusher_faq_q7: 'WHAT ARE THE SAFETY FEATURES OF THE MOBILE CRUSHER?',
+    mobile_crusher_faq_a7: 'It is equipped with safety measures such as emergency stop buttons, protective covers and automatic reverse features. These features ensure operator safety.',
+    mobile_crusher_video_title: 'Mobile Crusher Video',
+    mobile_crusher_watch_video: 'Watch Video',
+    mobile_crusher_similar_products: 'Similar Products',
   },
   ru: {
     // Header & Navigation
@@ -2178,10 +2160,6 @@ const translations = {
     // Metal Shredder Product Detail Page
     metal_main_title: 'Дробилка для металла',
     metal_subtitle: 'Специализированный дизайн и мощность для металлических отходов',
-    
-    // Mobile Shredder Product Detail Page
-    mobile_main_title: 'Мобильная дробилка',
-    mobile_subtitle: 'Портативная мощность измельчения в любом месте',
     
     // Pallet Shredder Product Detail Page
     pallet_main_title: 'Дробилка для поддонов',
@@ -2385,11 +2363,6 @@ const translations = {
     organic_video_title: 'Видео измельчителя органических отходов',
     organic_similar_products: 'Похожие продукты',
     organic_watch_video: 'Смотреть видео',
-    
-    mobile_faq_title: 'Часто задаваемые вопросы - Мобильная дробилка',
-    mobile_video_title: 'Видео мобильной дробилки',
-    mobile_similar_products: 'Похожие продукты',
-    mobile_watch_video: 'Смотреть видео',
     
     harddisk_faq_title: 'Часто задаваемые вопросы - Уничтожитель жестких дисков',
     harddisk_video_title: 'Видео уничтожителя жестких дисков',
@@ -2836,24 +2809,24 @@ const translations = {
     mobile_adv_4_desc: 'Мобильная дробилка из высококачественной стали обеспечивает длительный срок службы и непрерывную работу.',
     
     // Mobile Crusher FAQ
-    mobile_faq_title: 'Часто задаваемые вопросы о мобильной дробилке',
-    mobile_faq_q1: 'КАКИЕ МАТЕРИАЛЫ МОЖЕТ ОБРАБАТЫВАТЬ МОБИЛЬНАЯ ДРОБИЛКА?',
-    mobile_faq_a1: 'Может обрабатывать широкий спектр материалов, таких как пластик, металл, резина, дерево, бумага, текстиль, электронные отходы, строительные и сносные отходы, бытовые отходы, зеленые отходы, поддоны и тюки.',
-    mobile_faq_q2: 'В КАКИХ ОТРАСЛЯХ ИСПОЛЬЗУЕТСЯ МОБИЛЬНАЯ ДРОБИЛКА?',
-    mobile_faq_a2: 'Используется в различных отраслях, таких как предприятия по переработке, управление отходами, строительные и сносные проекты, сельское хозяйство, лесное хозяйство, муниципальные предприятия по переработке отходов и промышленное управление отходами.',
-    mobile_faq_q3: 'КАКОВЫ ТРЕБОВАНИЯ К ОБСЛУЖИВАНИЮ МОБИЛЬНОЙ ДРОБИЛКИ?',
-    mobile_faq_a3: 'Имеет низкие требования к обслуживанию с длительными интервалами обслуживания. Должна проводиться регулярная проверка и обслуживание лезвий и других компонентов. Автоматические блоки смазки и гидравлические открывающиеся системы сит сокращают время и затраты на обслуживание.',
-    mobile_faq_q4: 'МОЖНО ЛИ НАСТРОИТЬ МОБИЛЬНУЮ ДРОБИЛКУ?',
+    mobile_crusher_faq_title: 'Часто задаваемые вопросы о мобильной дробилке',
+    mobile_crusher_faq_q1: 'КАКИЕ МАТЕРИАЛЫ МОЖЕТ ОБРАБАТЫВАТЬ МОБИЛЬНАЯ ДРОБИЛКА?',
+    mobile_crusher_faq_a1: 'Может обрабатывать широкий спектр материалов, таких как пластик, металл, резина, дерево, бумага, текстиль, электронные отходы, строительные и сносные отходы, бытовые отходы, зеленые отходы, поддоны и тюки.',
+    mobile_crusher_faq_q2: 'В КАКИХ ОТРАСЛЯХ ИСПОЛЬЗУЕТСЯ МОБИЛЬНАЯ ДРОБИЛКА?',
+    mobile_crusher_faq_a2: 'Используется в различных отраслях, таких как предприятия по переработке, управление отходами, строительные и сносные проекты, сельское хозяйство, лесное хозяйство, муниципальные предприятия по переработке отходов и промышленное управление отходами.',
+    mobile_crusher_faq_q3: 'КАКОВЫ ТРЕБОВАНИЯ К ОБСЛУЖИВАНИЮ МОБИЛЬНОЙ ДРОБИЛКИ?',
+    mobile_crusher_faq_a3: 'Имеет низкие требования к обслуживанию с длительными интервалами обслуживания. Должна проводиться регулярная проверка и обслуживание лезвий и других компонентов. Автоматические блоки смазки и гидравлические открывающиеся системы сит сокращают время и затраты на обслуживание.',
+    mobile_crusher_faq_q4: 'МОЖНО ЛИ НАСТРОИТЬ МОБИЛЬНУЮ ДРОБИЛКУ?',
     mobile_faq_a4: 'Да, машина может быть настроена с различными конфигурациями лезвий, размерами и дополнительными функция��и, подходящими для конкретных требований отрасли и типов материалов.',
-    mobile_faq_q5: 'КАКОВ ДИАПАЗОН ПРОИЗВОДИТЕЛЬНОСТИ МОБИЛЬНОЙ ДРОБИЛКИ?',
-    mobile_faq_a5: 'Диапазон производительности варьируется в зависимости от модели. Доступна в различных мощностях от малых операций до крупных промышленных применений.',
-    mobile_faq_q6: 'КАК ДОСТИГАЕТСЯ ЭНЕРГОЭФФЕКТИВНОСТЬ В МОБИЛЬНОЙ ДРОБИЛКЕ?',
-    mobile_faq_a6: 'Двигатели с инверторным управлением и функции автоматического реверса повышают энергоэффективность и оптимизируют производительность машины. Это обеспечивает высокую эффективность при снижении энергопотребления.',
-    mobile_faq_q7: 'КАКОВЫ ФУНКЦИИ БЕЗОПАСНОСТИ МОБИЛЬНОЙ ДРОБИЛКИ?',
-    mobile_faq_a7: 'Оснащена мерами безопасности, такими как кнопки аварийной остановки, защитные крышки и функции автоматического реверса. Эти функции обеспечивают безопасность оператора.',
-    mobile_video_title: 'Видео мобильной дробилки',
-    mobile_watch_video: 'Смотреть видео',
-    mobile_similar_products: 'Похожие продукты',
+    mobile_crusher_faq_q5: 'КАКОВ ДИАПАЗОН ПРОИЗВОДИТЕЛЬНОСТИ МОБИЛЬНОЙ ДРОБИЛКИ?',
+    mobile_crusher_faq_a5: 'Диапазон производительности варьируется в зависимости от модели. Доступна в различных мощностях от малых операций до крупных промышленных применений.',
+    mobile_crusher_faq_q6: 'КАК ДОСТИГАЕТСЯ ЭНЕРГОЭФФЕКТИВНОСТЬ В МОБИЛЬНОЙ ДРОБИЛКЕ?',
+    mobile_crusher_faq_a6: 'Двигатели с инверторным управлением и функции автоматического реверса повышают энергоэффективность и оптимизируют производительность машины. Это обеспечивает высокую эффективность при снижении энергопотребления.',
+    mobile_crusher_faq_q7: 'КАКОВЫ ФУНКЦИИ БЕЗОПАСНОСТИ МОБИЛЬНОЙ ДРОБИЛКИ?',
+    mobile_crusher_faq_a7: 'Оснащена мерами безопасности, такими как кнопки аварийной остановки, защитные крышки и функции автоматического реверса. Эти функции обеспечивают безопасность оператора.',
+    mobile_crusher_video_title: 'Видео мобильной дробилки',
+    mobile_crusher_watch_video: 'Смотреть видео',
+    mobile_crusher_similar_products: 'Похожие продукты',
   },
   ar: {
     // Header & Navigation
@@ -2949,10 +2922,6 @@ const translations = {
     // Metal Shredder Product Detail Page
     metal_main_title: 'آلة تقطيع المعادن',
     metal_subtitle: 'تصميم متخصص وقوة للنفايات المعدنية',
-    
-    // Mobile Shredder Product Detail Page
-    mobile_main_title: 'آلة التكسير المتنقلة',
-    mobile_subtitle: 'قوة التقطيع المحمولة في أي مكان',
     
     // Pallet Shredder Product Detail Page
     pallet_main_title: 'آلة تقطيع المنصات',
@@ -3156,11 +3125,6 @@ const translations = {
     organic_video_title: 'فيديوهات آلة تقطيع النفايات العضوية',
     organic_similar_products: 'منتجات مماثلة',
     organic_watch_video: 'مشاهدة الفيديو',
-    
-    mobile_faq_title: 'الأسئلة المتكررة - آلة التقطيع المتنقلة',
-    mobile_video_title: 'فيديوهات آلة التقطيع المتنقلة',
-    mobile_similar_products: 'منتجات مماثلة',
-    mobile_watch_video: 'مشاهدة الفيديو',
     
     harddisk_faq_title: 'الأسئلة المتكررة - آلة تدمير الأقراص الصلبة',
     harddisk_video_title: 'فيديوهات آلة تدمير الأقراص الصلبة',
@@ -3485,24 +3449,24 @@ const translations = {
     mobile_adv_4_desc: 'الكسارة المتنقلة المصنوعة من الفولاذ عالي الجودة توفر عمر طويل وتشغيل مستمر.',
     
     // Mobile Crusher FAQ
-    mobile_faq_title: 'الأسئلة الشائعة حول الكسارة المتنقلة',
-    mobile_faq_q1: 'ما هي المواد التي يمكن للكسارة المتنقلة معالجتها؟',
-    mobile_faq_a1: 'يمكنها معالجة مجموعة واسعة من المواد مثل البلاستيك والمعدن والمطاط والخشب والورق والمنسوجات والنفايات الإلكترونية ونفايات البناء والهدم والنفايات المنزلية والنفايات الخضراء والمنصات والبالات.',
-    mobile_faq_q2: 'في أي صناعات تستخدم الكسارة المتنقلة؟',
-    mobile_faq_a2: 'تستخدم في صناعات مختلفة مثل مرافق إعادة التدوير وإدارة النفايات ومشاريع البناء والهدم والزراعة وإدارة الغابات ومرافق معالجة النفايات البلدية وإدارة النفايات الصناعية.',
-    mobile_faq_q3: 'ما هي متطلبات صيانة الكسارة المتنقلة؟',
-    mobile_faq_a3: 'لديها متطلبات صيانة منخفضة مع فترات صيانة طويلة. يجب إجراء فحص وصيانة منتظمة للشفرات والمكونات الأخرى. وحدات التشحيم التلقائي وأنظمة الشاشة المفتوحة الهيدروليكية تقلل من وقت وتكاليف الصيانة.',
-    mobile_faq_q4: 'هل يمكن تخصيص الكسارة المتنقلة؟',
-    mobile_faq_a4: 'نعم، يمكن تخصيص الآلة بتكوينات شفرات مختلفة وأحجام وميزات إضافية مناسبة لمتطلبات صناعية محددة وأنواع المواد.',
-    mobile_faq_q5: 'ما هو نطاق سعة الكسارة المتنقلة؟',
-    mobile_faq_a5: 'يختلف نطاق الس��ة حسب الطراز. متاح في سعات مختلفة من العمليات الصغيرة إلى التطبيقات الصناعية الكبيرة.',
-    mobile_faq_q6: 'كيف يتم تحقيق كفاءة الطاقة في الكسارة المتنقلة؟',
-    mobile_faq_a6: 'المحركات المتحكم فيها بالعاكس وميزات الرجوع التلقائي تزيد من كفاءة الطاقة وتحسن أداء الآلة. وهذا يوفر كفاءة عالية مع تقليل استهلاك الطاقة.',
-    mobile_faq_q7: 'ما هي ميزات السلامة للكسارة المتنقلة؟',
-    mobile_faq_a7: 'مجهزة بتدابير السلامة مثل أزرار التوقف في حالات الطوارئ والأغطية الواقية وميزات الرجوع التلقائي. هذه الميزات تضمن سلامة المشغل.',
-    mobile_video_title: 'فيديو الكسارة المتنقلة',
-    mobile_watch_video: 'مشاهدة الفيديو',
-    mobile_similar_products: 'منتجات مماثلة',
+    mobile_crusher_faq_title: 'الأسئلة الشائعة حول الكسارة المتنقلة',
+    mobile_crusher_faq_q1: 'ما هي المواد التي يمكن للكسارة المتنقلة معالجتها؟',
+    mobile_crusher_faq_a1: 'يمكنها معالجة مجموعة واسعة من المواد مثل البلاستيك والمعدن والمطاط والخشب والورق والمنسوجات والنفايات الإلكترونية ونفايات البناء والهدم والنفايات المنزلية والنفايات الخضراء والمنصات والبالات.',
+    mobile_crusher_faq_q2: 'في أي صناعات تستخدم الكسارة المتنقلة؟',
+    mobile_crusher_faq_a2: 'تستخدم في صناعات مختلفة مثل مرافق إعادة التدوير وإدارة النفايات ومشاريع البناء والهدم والزراعة وإدارة الغابات ومرافق معالجة النفايات البلدية وإدارة النفايات الصناعية.',
+    mobile_crusher_faq_q3: 'ما هي متطلبات صيانة الكسارة المتنقلة؟',
+    mobile_crusher_faq_a3: 'لديها متطلبات صيانة منخفضة مع فترات صيانة طويلة. يجب إجراء فحص وصيانة منتظمة للشفرات والمكونات الأخرى. وحدات التشحيم التلقائي وأنظمة الشاشة المفتوحة الهيدروليكية تقلل من وقت وتكاليف الصيانة.',
+    mobile_crusher_faq_q4: 'هل يمكن تخصيص الكسارة المتنقلة؟',
+    mobile_crusher_faq_a4: 'نعم، يمكن تخصيص الآلة بتكوينات شفرات مختلفة وأحجام وميزات إضافية مناسبة لمتطلبات صناعية محددة وأنواع المواد.',
+    mobile_crusher_faq_q5: 'ما هو نطاق سعة الكسارة المتنقلة؟',
+    mobile_crusher_faq_a5: 'يختلف نطاق السعة حسب الطراز. متاح في سعات مختلفة من العمليات الصغيرة إلى التطبيقات الصناعية الكبيرة.',
+    mobile_crusher_faq_q6: 'كيف يتم تحقيق كفاءة الطاقة في الكسارة المتنقلة؟',
+    mobile_crusher_faq_a6: 'المحركات المتحكم فيها بالعاكس وميزات الرجوع التلقائي تزيد من كفاءة الطاقة وتحسن أداء الآلة. وهذا يوفر كفاءة عالية مع تقليل استهلاك الطاقة.',
+    mobile_crusher_faq_q7: 'ما هي ميزات السلامة للكسارة المتنقلة؟',
+    mobile_crusher_faq_a7: 'مجهزة بتدابير السلامة مثل أزرار التوقف في حالات الطوارئ والأغطية الواقية وميزات الرجوع التلقائي. هذه الميزات تضمن سلامة المشغل.',
+    mobile_crusher_video_title: 'فيديو الكسارة المتنقلة',
+    mobile_crusher_watch_video: 'مشاهدة الفيديو',
+    mobile_crusher_similar_products: 'منتجات مماثلة',
     
     // About Page
     about_page_title: 'معلومات عنا',
