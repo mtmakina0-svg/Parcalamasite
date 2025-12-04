@@ -639,11 +639,6 @@ const translations = {
     harddisk_similar_products: 'Benzer Ürünler',
     harddisk_watch_video: 'Video İzle',
     
-    tree_root_faq_title: 'Sıkça Sorulan Sorular - Ağaç Kökü Parçalama Makinesi',
-    tree_root_video_title: 'Ağaç Kökü Parçalama Makinesi Videoları',
-    tree_root_similar_products: 'Benzer Ürünler',
-    tree_root_watch_video: 'Video İzle',
-    
     wood_grinder_faq_title: 'Sıkça Sorulan Sorular - Ahşap Öğütücü',
     wood_grinder_video_title: 'Ahşap Öğütücü Videoları',
     wood_grinder_similar_products: 'Benzer Ürünler',
@@ -1754,11 +1749,6 @@ const translations = {
     harddisk_similar_products: 'Similar Products',
     harddisk_watch_video: 'Watch Video',
     
-    tree_root_faq_title: 'Frequently Asked Questions - Tree Root Shredder',
-    tree_root_video_title: 'Tree Root Shredder Videos',
-    tree_root_similar_products: 'Similar Products',
-    tree_root_watch_video: 'Watch Video',
-    
     wood_grinder_faq_title: 'Frequently Asked Questions - Wood Grinder',
     wood_grinder_video_title: 'Wood Grinder Videos',
     wood_grinder_similar_products: 'Similar Products',
@@ -2405,11 +2395,6 @@ const translations = {
     harddisk_video_title: 'Видео уничтожителя жестких дисков',
     harddisk_similar_products: 'Похожие продукты',
     harddisk_watch_video: 'Смотреть видео',
-    
-    tree_root_faq_title: 'Часто задаваемые вопросы - Измельчитель корней деревьев',
-    tree_root_video_title: 'Видео измельчителя корней деревьев',
-    tree_root_similar_products: 'Похожие продукты',
-    tree_root_watch_video: 'Смотреть видео',
     
     wood_grinder_faq_title: 'Часто задаваемые вопросы - Дробилка для древесины',
     wood_grinder_video_title: 'Видео дробилки для древесины',
@@ -3181,11 +3166,6 @@ const translations = {
     harddisk_video_title: 'فيديوهات آلة تدمير الأقراص الصلبة',
     harddisk_similar_products: 'منتجات مماثلة',
     harddisk_watch_video: 'مشاهدة الفيديو',
-    
-    tree_root_faq_title: 'الأسئلة المتكررة - آلة تقطيع جذور الأشجار',
-    tree_root_video_title: 'فيديوهات آلة تقطيع جذور الأشجار',
-    tree_root_similar_products: 'منتجات مماثلة',
-    tree_root_watch_video: 'مشاهدة الفيديو',
     
     wood_grinder_faq_title: 'الأسئلة المتكررة - طاحونة الخشب',
     wood_grinder_video_title: 'فيديوهات طاحونة الخشب',

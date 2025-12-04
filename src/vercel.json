@@ -1,4 +1,8 @@
 {
+  "framework": null,
+  "outputDirectory": "public",
+  "installCommand": "echo 'No install needed'",
+  "buildCommand": "echo 'Using Figma Make build'",
   "headers": [
     {
       "source": "/sitemap.xml",
