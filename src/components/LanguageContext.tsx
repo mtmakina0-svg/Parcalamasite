@@ -62,8 +62,8 @@ const translations = {
     waste_aty: 'ATY Atıkları',
 
     // Hero
-    hero_title: 'Parçalama Makinelerinde Endüstriyel Güç',
-    hero_subtitle: 'Yüksek verimlilik, uzun ömür ve güvenli çalışma ile çevre dostu üretim.',
+    hero_title: 'Endüstriyel Atık Parçalama ve Geri Dönüşüm Teknolojileri',
+    hero_subtitle: 'Tek Şaftlı ve Çift Şaftlı Shredder (Parçalayıcı) Çözümleriyle Atıklarınızı Değere Dönüştürün.',
     hero_subtitle_systems: 'Farklı endüstrilere özel yüksek performanslı sistemler',
     hero_cta_title: 'Makinenizi Bizimle Planlayın',
     hero_cta_desc: 'Yüksek verimli, uzun ömürlü ve çevre dostu sistemler üretiyoruz.',
@@ -517,10 +517,9 @@ const translations = {
     glass_watch_video: 'Video İzle',
 
     // Tree Root Product Detail Page
-    tree_root_main_title: 'Ağaç Kökü Parçalama Makinesi ile Daha Yeşil Bir Gelecek İçin Adım Atın',
-    tree_root_subtitle: 'Ağaç Kökleri, Odunsu Atıklar ve Hurda Tahta Parçalama İçin Yüksek Performanslı Çözüm',
-    tree_root_description_1: 'Günümüzde atık yönetimi ve geri dönüşüm süreçleri, doğal kaynakların korunması ve çevresel sürdürülebilirlik açısından büyük önem taşımaktadır. Ağaç kökü parçalama makinesi, ağaç kökleri, odunsu atıklar ve hurda tahtaların verimli bir şekilde parçalanmasını sağlayarak bu süreçlerde kritik bir rol oynar. MT Makina, yenilikçi ağaç kökü parçalama makinası ile yüksek performans, dayanıklılık ve kullanıcı dostu çözümler sunarak atık yönetiminde çığır açmaktadır. Ağaç kökü parçalama makinesi, çok bıçaklı rotor yapısıyla yüksek performans ve dayanıklılığı bir araya getirir. Besleme haznesine monte edilmiş besleme dişleri, malzemelerin istenilen hızda işlenmesini sağlar. Rotor aşırı yüklendiğinde, besleme haznesi ters yönde dönerek sıkışmayı önler ve kök parçalama makinası kesintisiz çalışmasını sağlar.',
-    tree_root_description_2: 'Ağaç kökü parçalama makinesi, yüksek tork ve düşük hız kombinasyonuyla donatılmış olup, malzemelerin hızlı ve etkili bir şekilde parçalanmasını sağlar. Yüksek enerji verimliliği sunan motorları, işletme maliyetlerini düşürür ve çevresel etkileri azaltır. Dayanıklı yapısı ve uzun ömürlü bıçakları sayesinde uzun süreli ve kesintisiz kullanım sağlar. Ağaç kökü parçalama makinası, kullanıcı dostu kontrol panelleri ile operatörlerin makineyi kolayca kullanabilmesine imkan tanır. Beslemeye yardımcı olan haznenin iç duvarına monte edilmiş besleme dişleri, rotor aşırı yüklendiğinde besleme haznesinin ters yönde dönmesini sağlayarak sıkışmayı önler ve operasyonun kesintisiz devam etmesini sağlar.',
+    tree_root_main_title: 'Ağaç ve Kök Parçalama Makinesi (Wood Shredder)',
+    tree_root_description_1: 'Biyokütle (Biomass) enerji santralleri ve kompost tesisleri için tasarlanan Ağaç Parçalama Makinesi; ağaç kökleri, kütük, dal ve palet atıklarını yüksek kapasitede öğütür.',
+    tree_root_description_2: 'Yatay besleme sistemi ve agresif rotor yapısı ile hacimli odunsu atıkları (Wood Waste) hızla cips haline getirir. Mobil veya sabit seçenekleriyle orman sahalarında yüksek performans gösterir.',
     tree_root_description_3: 'Ağaç kökü parçalama makinesi, çevresel sürdürülebilirliği destekleyen endüstriyel bir makinedir. Yüksek verimlilik, uzun ömürlü bıçaklar, düşük gürültü seviyesi ve kullanıcı dostu tasarımı ile odunsu atıkların işlenmesinde önemli bir rol oynar. Mobil ağaç kökü parçalama makinesi, farklı lokasyonlarda kullanılabilen tasarımı sayesinde tarım ve orman yönetimi gibi alanlarda büyük avantaj sağlar. Mobil kırıcı özelliği ile yerinde esneklik sunar ve çevresel etkilere duyarlı çözüm sağlar. Ağaç kökü parçalama makinası fiyatları, kullanıcı ihtiyaçlarına göre değişiklik gösterebilir. Kök parçalama makinası ve odun parçalama makinesi ile atık yönetimi süreçlerini optimize ederek çevresel sürdürülebilirliğe katkıda bulunabilirsiniz. Ağaç parçalama makinesi ve ağaç öğütme makinaları, atıkların geri dönüştürülmesinde etkin çözümler sunarak işletmelere hem maliyet hem de çevresel açıdan avantaj sağlar.',
     tree_root_application_title: 'Ağaç Kökü Parçalama Makinesi Uygulama Alanları',
     tree_root_application_desc: 'Ağaç kökü parçalama makinesi, geniş bir uygulama yelpazesi ile dikkat çeker. Ağaç kökü parçalama makinası, sadece ağaç kökleri ve odunsu atıkları değil, aynı zamanda hurda tahta, ahşap, palet, MDF, sunta, tahta atıkları ve saman balyaları gibi çeşitli geri dönüşüm malzemelerini de işleyebilir. Bu esneklik, ağaç kökü parçalama makinasının çeşitli endüstrilerde kullanılmasına olanak tanır ve atık yönetimi süreçlerinde büyük avantaj sağlar.',
@@ -673,7 +672,7 @@ const translations = {
     product_glass: 'Cam Şişe Kırma Makinesi',
 
     // Single Shaft Product Detail Page
-    single_shaft_main_title: 'Tek Şaftlı Katı Atık Parçalama Makinesi',
+    single_shaft_main_title: 'Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder)',
     single_shaft_subtitle: 'Geniş Atık Yelpazesinde Yüksek Verim, Güçlü Performans',
 
     // Dual Shaft Product Detail Page
@@ -694,9 +693,9 @@ const translations = {
     products_page_title: 'Parçalama Makinesi Çözümlerimiz',
     products_page_subtitle: 'Farklı endüstrilere özel yüksek performanslı sistemler',
 
-    single_shaft_description_1: 'Tek şaftlı katı atık parçalama makinesi; evsel, endüstriyel, plastik, kâğıt, tekstil, alüminyum ve ambalaj atıklarının etkili şekilde parçalanmasını sağlar. MT Makina mühendisliğiyle geliştirilen bu sistemler, yüksek torklu şaft tasarımı ve enerji verimli hidrolik sistemiyle uzun ömürlü kullanım sunar.',
-    single_shaft_description_2: 'PLC kontrollü otomasyon sistemi sayesinde, aşırı yüklenme durumlarında otomatik ters çalışma fonksiyonu devreye girer. Bu özellik hem kesici bıçakların ömrünü uzatır hem de bakım ihtiyacını minimuma indirir.',
-    single_shaft_description_3: 'MT Makina\'nın tek şaftlı kırıcıları, yüksek dayanım gerektiren sanayi uygulamaları için optimize edilmiştir. 800 – 1500 mm rotor uzunluğu, değiştirilebilir bıçak modülleri ve otomatik besleme kontrol sistemi ile maksimum verimlilik elde edilir.',
+    single_shaft_description_1: 'MT Makina Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder); plastik takoz, kâğıt bobin, tekstil, alüminyum, ahşap palet ve endüstriyel atıkların hassas boyutlandırılması için tasarlanmıştır. Yüksek torklu rotor tasarımı ve akıllı hidrolik itici (Hydraulic Ram) sistemi sayesinde zorlu malzemeleri sıkışmadan parçalar.',
+    single_shaft_description_2: 'PLC kontrollü otomasyon sistemi, makine aşırı yüklendiğinde (Overload) otomatik ters çalışma (Auto-Reverse) fonksiyonunu devreye sokar. Bu teknoloji, hem kesici döner bıçakların ömrünü uzatır hem de bakım maliyetlerini minimize eder.',
+    single_shaft_description_3: 'Endüstriyel geri dönüşüm tesisleri için üretilen bu kırıcılar, değiştirilebilir elek (Screen) sistemi ile istenilen granül boyutunda çıkış almanızı sağlar. 800 mm ile 1500 mm arasında değişen rotor seçenekleri ile her kapasiteye uygun çözüm sunar.',
     single_shaft_advantages_title: 'Tek Şaftlı Katı Atık Parçalama Makinesi Avantajları',
     single_shaft_adv_1_title: 'Yüksek Torklu Şaft Sistemi',
     single_shaft_adv_1_desc: 'Ağır hizmet tipi malzemelerde bile güçlü ve kararlı performans.',
@@ -766,11 +765,10 @@ const translations = {
     single_shaft_advantage_4_desc: 'Hızlı bıçak değişimi ve basit servis erişimi',
 
     // Dual Shaft Product Detail Page
-    dual_shaft_main_title: 'Çift Şaftlı Parçalama Makinesi ile Endüstriyel Atık Yönetiminde Yüksek Verimlilik',
-    dual_shaft_subtitle: 'Plastik, Metal, Lastik, Ahşap, Cam ve Evsel Atık İçin Güçlü Çift Şaftlı Katı Atık Parçalama Çözümü',
-    dual_shaft_description_1: 'Endüstriyel atık yönetimi ve geri dönüşüm süreçlerinde karşılaşılan en büyük zorluklardan biri, farklı malzeme türlerinin verimli bir şekilde işlenmesidir. Çift şaftlı parçalama makinesi, bu zorluğu aşmak için yüksek tork ve düşük hız kombinasyonu ile en zorlu malzemeleri bile etkili bir şekilde parçalar. Plastik parçalama makinesi, metal parçalama makinesi, lastik parçalama makinesi, ahşap parçalama makinesi, cam parçalama makinesi ve evsel atık parçalama makinesi gibi geniş bir kullanım yelpazesi sunan bu sistem, geri dönüşüm süreçlerinde kritik bir rol oynar.',
-    dual_shaft_description_2: 'CS-Serisi çift şaftlı parçalama makinesi, sağlam çelik bıçakları ve güçlü motorları ile hurda plastik kırma makinası, kağıt parçalama makinesi ve palet parçalama makinası gibi makinelerde farklı atık türlerini verimli bir şekilde işleyerek dayanıklı bir performans sunar. Parçalama makinesi, düşük hızda çalışarak titreşimleri azaltır ve çevre dostu bir çözüm sunar. Hurda lastik parçalama makinası ve pvc kırma makinası gibi makinelerdeki uygulamalarda düşük devir hızı ile toz emisyonlarını minimumda tutarak çevreyi korur.',
-    dual_shaft_description_3: 'Çift şaftlı katı atık parçalama makinesi, modüler rotor ve rulman tasarımı ile bakım süreçlerini kolaylaştırır. Metal parçalama makinesi, palet parçalama makinası ve kumaş parçalama makinesi gibi farklı makinelerde verimliliği artırır ve işletme maliyetlerini düşürür. Enerji verimliliği sunan invertör kontrollü motorları ve otomatik geri dönüş özellikleri sayesinde, parçalama makinesi enerji maliyetlerini optimize ederek işletmelere ekonomik avantajlar sağlar.',
+    dual_shaft_main_title: 'Çift Şaftlı Parçalama Makinesi (Double Shaft Shredder)',
+    dual_shaft_description_1: 'Endüstriyel atık yönetiminin en güçlü oyuncusu olan Çift Şaftlı Parçalama Makinesi (Double Shaft Shredder/Dual Shear); metal hurda, ömrünü tamamlamış lastik (ÖTL), elektronik atık (E-Waste), varil ve beyaz eşya gibi hacimli atıkları makaslama prensibiyle parçalar.',
+    dual_shaft_description_2: 'Düşük devir ve yüksek tork (Low Speed High Torque) teknolojisi ile çalışan CS Serisi, birbirine zıt dönen özel alaşımlı bıçakları sayesinde en sert materyalleri bile zorlanmadan işler. Tozuma yapmaz ve gürültü seviyesi düşüktür.',
+    dual_shaft_description_3: 'Modüler bıçak tasarımı sayesinde bakım süreleri kısadır. Metal geri dönüşüm tesisleri, lastik granül tesisleri ve atıktan türetilmiş yakıt (ATY/RDF) hazırlama tesislerinde birincil kırıcı (Primary Shredder) olarak maksimum verimlilik sağlar.',
     dual_shaft_description_4: 'Geri dönüşüm kırma makinası, pet şişe parçalama makinası ve balya parçalama makinası gibi makineler, plastik, metal, lastik, ahşap, cam ve evsel atık gibi çeşitli malzemeleri işleyebilme kapasitesi ile dikkat çeker. Metal parçalama makinesi, hurda demir parçalama makinası ve hurda araba parçalama makinası gibi makineler endüstriyel atık yönetiminde sürdürülebilirliği teşvik eder. Ayrıca, parçalama makinesi fiyatları, metal parçalama makinası fiyatları ve hurda demir parçalama makinası fiyatları açısından ekonomik çözümler sunar.',
     dual_shaft_description_5: 'Çift şaftlı parçalama makinesi, işletmelere yüksek performans sunarken çevresel sürdürülebilirliği teşvik eder ve modern atık yönetiminde vazgeçilmez bir araç haline gelir.',
     dual_shaft_advantages_title: 'Çift Şaftlı Parçalama Makinelerinin Avantajları',
@@ -811,11 +809,9 @@ const translations = {
     dual_shaft_ecatalog_btn: 'E-Katalog',
 
     // Quad Shaft Product Detail Page
-    quad_shaft_main_title: 'Dört Şaftlı Katı Atık Parçalama Makinesi ile Hacimli Atıkların Verimli İşlenmesi',
-    quad_shaft_subtitle: 'Plastik, Metal, Ahşap, Kağıt ve Elektronik Atıklar İçin Yüksek Performanslı Dört Şaftlı Parçalama Çözümü',
-    quad_shaft_description_1: 'Dört şaftlı katı atık parçalama makinesi, çeşitli atıkların etkili ve verimli bir şekilde parçalanması için tasarlanmış yüksek performanslı bir ekipmandır. Endüstriyel ve ticari atık yönetimi, geri dönüşüm ve diğer uygulamalarda üstün dayanıklılık ve verimlilik sunar. Dört şaftlı katı atık parçalama makinesi, modüler tasarımı ve esnek kullanım özellikleri ile geniş bir malzeme yelpazesini parçalama kapasitesine sahiptir.',
-    quad_shaft_description_2: 'Dört şaftlı katı atık parçalama makinesi, plastik varil, metal varil, boya varil, evsel çöp, tıbbi atık, plastik çerçeve, plastik blok, plastik kutu, alüminyum profil, yağ filtresi, metal tank, gazete, karton kağıt, oluklu kağıt, fotokopi kağıdı, buzdolabı, devre kartı, TV kasası, cam yünü, cam bardak ve cam şişe gibi hacimli atıkları verimli bir şekilde parçalama özelliği sunar.',
-    quad_shaft_description_3: 'Dört şaftlı katı atık parçalama makinesi, çoklu sızdırmazlık yapısı ile malzeme kirliliğini etkili bir şekilde önler ve dayanıklı yatakları ile uzun ömürlü kullanım sağlar. Büyük ve içi boş ürünlerin işlenmesi için ideal olan dört şaftlı katı atık parçalama makinesi, verimi artırır ve geri dönüşüm süreçlerinde büyük katkı sağlar. Dört şaftlı katı atık parçalama makinesi, endüstriyel atık yönetimi ve geri dönüşüm süreçlerinde sürdürülebilir ve çevre dostu bir çözüm olarak öne çıkar.',
+    quad_shaft_main_title: 'Dört Şaftlı Parçalama Makinesi (Quad Shaft Shredder)',
+    quad_shaft_description_1: 'Hassas boyutlandırma gerektiren uygulamalar için geliştirilen Dört Şaftlı Parçalama Makinesi (Quad Shaft Shredder), malzemeyi hem parçalar hem de elek sistemi sayesinde istenilen ebatlara gelene kadar sistem içinde tutar (Recirculation).',
+    quad_shaft_description_2: 'Özellikle elektronik atık geri dönüşümü, sert disk (HDD) imhası ve tehlikeli atık varillerinin parçalanmasında kullanılır. Dört şaftın senkronize çalışması, malzemenin kaçmasını engeller ve homojen bir çıkış ürünü sağlar.',
     quad_shaft_description_4: 'Dört şaftlı katı atık parçalama makinesi, lastik parçalama makinesi, balya parçalama makinesi, hayvan parçalama makinesi, palet parçalama makinesi, ahşap parçalama makinesi, hurda parçalama makinesi, elektronik atık parçalama makinesi, hdd parçalama makinesi gibi çeşitli endüstriyel uygulamalara uyum sağlar. Ayrıca, karton parçalama makinesi, kağıt parçalama makinesi, hurda lastik parçalama makinesi ve harddisk imha makinesi gibi farklı atık işleme ihtiyaçları için idealdir. Dört şaftlı katı atık parçalama makinesi, katı atık parçalayıcı ve parçalayıcı makine olarak da kullanılarak sürdürülebilir geri dönüşüm süreçlerinde önemli bir rol oynar ve atık hacmini azaltarak çevreye katkı sağlar.',
     quad_shaft_adv_1_title: 'Hidrolik Baskı ile Etkili Parçalama',
     quad_shaft_adv_1_desc: 'Dört şaftlı parçalama makinesi, şaftlara uygulanan hidrolik baskı sayesinde malzemeleri hızlı ve etkili bir şekilde parçalar.',
@@ -935,10 +931,9 @@ const translations = {
     metal_optional_8: 'Besleme ve Boşaltma Konveyörü',
 
     // Harddisk İmha Makinesi Ürün Sayfası
-    harddisk_main_title: 'Harddisk İmha Parçalama Makinesi',
-    harddisk_subtitle: 'Çok Aşamalı Parçalama Teknolojisi ile Güvenli Veri İmhası',
-    harddisk_description_1: 'Harddisk imha parçalama makineleri, sabit disk, SSD, devre kartı ve diğer dijital depolama cihazlarının fiziksel olarak imhası için tasarlanmış endüstriyel makinelerdir. MT Makina DATABER serisi, verilerin kalıcı olarak kurtarılamaz hale gelmesini sağlamak için tekli, ikili ve üçlü aşamalı parçalama seçenekleri sunar.',
-    harddisk_description_2: 'Bu makineler, PLC kontrol sistemleri, otomatik besleme mekanizmaları ve en sert elektronik bileşenleri bile parçalayabilen sertleştirilmiş çelik bıçaklarla donatılmıştır. Çok aşamalı parçalama işlemi, malzemeleri toz benzeri parçacıklara indirerek tam veri imhasını garanti eder.',
+    harddisk_main_title: 'Harddisk ve Veri İmha Makinesi (HDD Shredder)',
+    harddisk_description_1: 'Veri güvenliğinin kritik olduğu çağımızda, Harddisk Parçalama Makinesi (HDD Shredder); sunucu diskleri, SSD, USB ve CD/DVD gibi dijital medyaları fiziksel olarak parçalayarak (Physical Destruction) verilerin geri getirilemez olmasını sağlar.',
+    harddisk_description_2: 'KVKK ve GDPR standartlarına uygun imha işlemi yapar. İki aşamalı kırma sistemi, medyayı tanınmaz hale getirir. Bankalar, veri merkezleri ve devlet kurumları için en güvenilir imha yöntemidir.',
     harddisk_description_3: 'MT Makina harddisk parçalama makineleri, veri merkezleri, BT geri dönüşüm tesisleri, devlet kurumları ve hassas bilgilerin güvenli bir şekilde imha edilmesini gerektiren organizasyonlar için idealdir. Opsiyonel özellikler arasında soğutma sistemleri, otomatik yağlama, kamera kaydı ve barkod okuma yetenekleri bulunur.',
     harddisk_advantages_title: 'Temel Özellikler',
     harddisk_adv_1_title: 'İki Aşamalı Parçalama',
@@ -956,10 +951,9 @@ const translations = {
     harddisk_ecatalog_btn: 'E-Katalog',
 
     // Mobile Crusher Product Category Page
-    mobile_main_title: 'Yüksek Kapasiteli Mobil Kırıcılar ile Endüstriyel Geri Dönüşümde Güçlü Çözüm',
-    mobile_subtitle: 'Geri dönüşüm ve atık yönetimi süreçlerinde geniş malzeme yelpazesini işleyebilme kapasitesi ve taşınabilirlik özellikleriyle öne çıkar.',
-    mobile_description_1: 'Taşınabilir Mobil Kırıcı ile Geri Dönüşümde Esneklik Sağlayın. Mobil kırıcılar, sahada yerinde parçalama yaparak lojistik maliyetlerini azaltan, yüksek kapasiteli ve esnek geri dönüşüm çözümleridir.',
-    mobile_description_2: 'MT Makina mobil kırıcı serisi, inşaat atıkları, ahşap, plastik, metal hurdalar ve endüstriyel atıkların yerinde işlenmesi için tasarlanmıştır. Tekerlekli veya paletli sistemler ile zorlu arazi koşullarında bile çalışabilir.',
+    mobile_main_title: 'Mobil Kırıcı ve Parçalayıcı (Mobile Shredder)',
+    mobile_description_1: 'Atığın olduğu yere çözüm götürün. Mobil Kırıcı (Mobile Shredder) serimiz, paletli veya tekerlekli şasi üzerine entegre edilmiş, kendi jeneratörü ile çalışan bağımsız bir geri dönüşüm istasyonudur.',
+    mobile_description_2: 'İnşaat ve yıkım atıkları (Rubble), orman temizliği ve saha atıklarının yerinde bertaraf edilmesi için tasarlanmıştır. Lojistik maliyetlerini sıfıra indirir ve atığı yerinde değere dönüştürür.',
     mobile_description_3: 'Dizel motor veya jeneratör opsiyonları ile elektrik bağlantısı olmayan alanlarda bile kesintisiz çalışma sağlar. Uzaktan kumanda sistemi, otomatik yağlama ve rotor soğutma ile operatör güvenliği ve makine ömrü maksimize edilir.',
     mobile_adv_1_title: 'Yüksek Verimlilik',
     mobile_adv_1_desc: 'Geniş malzeme yelpazesini hızlı ve etkili bir şekilde işleyerek geri dönüşüm sürecini hızlandırır.',
