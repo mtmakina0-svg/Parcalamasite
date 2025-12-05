@@ -379,32 +379,6 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       capacity: '2000 x 1800 mm'
     }
   },
-  'wood': {
-    'TSY-100': {
-      motorPower: '55–90 kW (2x)',
-      rotorLength: '1000 mm',
-      rotorDiameter: 'Yatay Tasarım',
-      bladeCount: 'Çok Bıçaklı Rotor',
-      weight: 'Orta Ölçekli',
-      capacity: 'Orta Kapasite'
-    },
-    'TSY-150': {
-      motorPower: '75–110 kW (2x)',
-      rotorLength: '1500 mm',
-      rotorDiameter: 'Yatay Tasarım',
-      bladeCount: 'Sertleştirilmiş Çelik',
-      weight: 'Büyük Ölçekli',
-      capacity: 'Yüksek Kapasite'
-    },
-    'TSY-200': {
-      motorPower: '90–200 kW (2x)',
-      rotorLength: '2000 mm',
-      rotorDiameter: 'Yatay Tasarım',
-      bladeCount: 'Ultra Dayanıklı',
-      weight: 'Endüstriyel',
-      capacity: 'Mega Kapasite'
-    }
-  }
 };
 
 // Available models for each product type
