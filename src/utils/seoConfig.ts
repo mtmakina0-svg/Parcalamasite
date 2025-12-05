@@ -380,6 +380,28 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['آلة تمزيق عمود واحد', 'سلسلة TSH', 'كسارة بلاستيك', 'كسارة خشب', 'كسارة ورق', 'آلة تمزيق صناعية'],
       }
     },
+    'glass': {
+      tr: {
+        title: 'Cam Şişe Kırma Makinesi | Sıvı Ayrıştırmalı | MT Makina',
+        description: 'Sıvı ayrıştırmalı cam şişe kırma makinesi - MT Makina. Oteller, restoranlar ve geri dönüşüm tesisleri için ideal. %80 hacim küçültme, sıvı tahliyesi. ✓ CE Belgeli ✓ Sessiz Çalışma',
+        keywords: ['cam şişe kırma makinesi', 'glass crusher', 'cam kırıcı', 'şişe kırma makinesi', 'sıvı ayrıştırmalı kırıcı', 'geri dönüşüm makinesi', 'cam atık yönetimi']
+      },
+      en: {
+        title: 'Glass Bottle Crusher | Liquid Separator | MT Makina',
+        description: 'Liquid separating glass bottle crusher - MT Makina. Ideal for hotels, restaurants and recycling facilities. 80% volume reduction, liquid drainage. ✓ CE Certified ✓ Quiet Operation',
+        keywords: ['glass bottle crusher', 'glass crusher', 'bottle shredder', 'liquid separator crusher', 'glass recycling machine', 'waste glass management']
+      },
+      ru: {
+        title: 'Дробилка для Стеклянных Бутылок | С Сепарацией Жидкости | MT Makina',
+        description: 'Дробилка для стеклянных бутылок с отделением жидкости - MT Makina. Идеально для отелей, ресторанов. Сокращение объема на 80%. ✓ Сертификат CE ✓ Тихая Работа',
+        keywords: ['дробилка для стекла', 'измельчитель бутылок', 'дробилка с сепарацией', 'переработка стекла']
+      },
+      ar: {
+        title: 'آلة كسارة الزجاج | مع فصل السوائل | MT Makina',
+        description: 'آلة كسارة زجاجات الزجاج مع فصل السوائل - MT Makina. مثالية للفنادق والمطاعم. تقليل الحجم بنسبة 80٪. ✓ معتمد من CE ✓ تشغيل صامت',
+        keywords: ['كسارة زجاج', 'آلة تكسير الزجاج', 'إعادة تدوير الزجاج', 'فصل السوائل']
+      }
+    },
     // ... Add other categories similarly (using generic fallback for now to save space, but structure supports all)
   };
 

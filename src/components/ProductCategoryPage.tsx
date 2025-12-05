@@ -102,23 +102,25 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
 };
 
 // Dynamic content mapping for product types
-const productContentKeys: { [key: string]: { 
-  title: string; 
-  subtitle: string; 
-  desc1: string; 
-  desc2: string; 
-  desc3: string;
-  desc4?: string;
-  desc5?: string;
-  adv1Title: string;
-  adv1Desc: string;
-  adv2Title: string;
-  adv2Desc: string;
-  adv3Title: string;
-  adv3Desc: string;
-  adv4Title: string;
-  adv4Desc: string;
-} } = {
+const productContentKeys: {
+  [key: string]: {
+    title: string;
+    subtitle: string;
+    desc1: string;
+    desc2: string;
+    desc3: string;
+    desc4?: string;
+    desc5?: string;
+    adv1Title: string;
+    adv1Desc: string;
+    adv2Title: string;
+    adv2Desc: string;
+    adv3Title: string;
+    adv3Desc: string;
+    adv4Title: string;
+    adv4Desc: string;
+  }
+} = {
   'single-saft': {
     title: 'single_shaft_main_title',
     subtitle: 'single_shaft_subtitle',
@@ -256,6 +258,23 @@ const productContentKeys: { [key: string]: {
     adv3Desc: 'wood_adv_3_desc',
     adv4Title: 'wood_adv_4_title',
     adv4Desc: 'wood_adv_4_desc'
+  },
+  'glass': {
+    title: 'glass_main_title',
+    subtitle: 'glass_subtitle',
+    desc1: 'glass_description_1',
+    desc2: 'glass_description_2',
+    desc3: 'glass_description_3',
+    desc4: 'glass_description_4',
+    desc5: 'glass_description_5',
+    adv1Title: 'glass_adv_1_title',
+    adv1Desc: 'glass_adv_1_desc',
+    adv2Title: 'glass_adv_2_title',
+    adv2Desc: 'glass_adv_2_desc',
+    adv3Title: 'glass_adv_3_title',
+    adv3Desc: 'glass_adv_3_desc',
+    adv4Title: 'glass_adv_4_title',
+    adv4Desc: 'glass_adv_4_desc'
   }
 };
 
@@ -268,7 +287,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
 
   const models = availableModels[productType] || [];
   const fallbackImage = getFallbackImage(productType);
-  
+
   // Get content keys for this product type
   const contentKeys = productContentKeys[productType] || productContentKeys['single-saft'];
 
@@ -472,7 +491,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                     {/* Model Info */}
                     <div className="p-6">
                       <h3 className="text-[#45474B] mb-4 text-2xl font-bold">{model}</h3>
-                      
+
                       {info && (
                         <div className="space-y-2 mb-6">
                           <div className="flex justify-between items-center text-sm">

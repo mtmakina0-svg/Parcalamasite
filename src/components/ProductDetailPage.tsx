@@ -417,7 +417,6 @@ const availableModels: { [key: string]: string[] } = {
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'tree-root': ['TW-100', 'TW-150', 'TW-200'],
-  'tree-root': ['TW-100', 'TW-150', 'TW-200'],
   'wood': ['TSY-100', 'TSY-150', 'TSY-200'],
   'glass': ['CK-200', 'CK-400', 'CKS-400']
 };
@@ -432,7 +431,8 @@ const productTitleKeys: { [key: string]: { title: string; subtitle: string } } =
   'mobile': { title: 'mobile_main_title', subtitle: 'mobile_subtitle' },
   'pallet': { title: 'pallet_main_title', subtitle: 'pallet_subtitle' },
   'tree-root': { title: 'tree_root_main_title', subtitle: 'tree_root_subtitle' },
-  'wood': { title: 'wood_main_title', subtitle: 'wood_subtitle' }
+  'wood': { title: 'wood_main_title', subtitle: 'wood_subtitle' },
+  'glass': { title: 'glass_main_title', subtitle: 'glass_subtitle' }
 };
 
 // Description keys mapping for each product type
@@ -593,8 +593,8 @@ export const ProductDetailPage = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`px-4 py-2 rounded-lg transition-all ${model === modelName
-                        ? 'bg-[#F4CE14] text-[#1E1E1E]'
-                        : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
+                      ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                      : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
                       }`}
                   >
                     {model}
@@ -1345,8 +1345,8 @@ export const ProductDetailPage = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`px-4 py-2 rounded-lg transition-all ${model === modelName
-                        ? 'bg-[#F4CE14] text-[#1E1E1E]'
-                        : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
+                      ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                      : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
                       }`}
                   >
                     {model}
@@ -1851,8 +1851,8 @@ export const ProductDetailPage = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`px-4 py-2 rounded-lg transition-all ${model === modelName
-                        ? 'bg-[#F4CE14] text-[#1E1E1E]'
-                        : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
+                      ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                      : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
                       }`}
                   >
                     {model}
@@ -2315,8 +2315,8 @@ export const ProductDetailPage = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`px-4 py-2 rounded-lg transition-all ${model === modelName
-                        ? 'bg-[#F4CE14] text-[#1E1E1E]'
-                        : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
+                      ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                      : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
                       }`}
                   >
                     {model}
