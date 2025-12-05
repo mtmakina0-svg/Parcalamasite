@@ -988,21 +988,21 @@ const translations = {
 
 
 
-    // Wood Products (Added for consistency)
-    wood_main_title: 'Ahşap Öğütme ve Cips Makinesi',
-    wood_subtitle: 'MDF, Sunta, Tomruk ve Ahşap Atıklar için Yüksek Kapasiteli Çözümler',
-    wood_description_1: 'Ahşap öğütme makinelerimiz, büyük boyutlu ahşap atıkları, tomrukları, MDF ve sunta levhaları istenilen yonga boyutuna (chips) getirmek için tasarlanmıştır.',
-    wood_description_2: 'Biyokütle enerji santralleri, pelet ve briket üreticileri için idealdir. Yatay besleme veya dikey besleme (Huni) seçenekleri mevcuttur.',
-    wood_description_3: 'Yüksek verimli rotor yapısı ve değiştirilebilir elek sistemi ile nihai ürün kalitesi garanti altındadır. Toz emme sistemleri ile entegre çalışabilir.',
-    wood_advantages_title: 'Öne Çıkan Özellikler',
+    // Ağaç Parçalama ve Öğütme Makinesi (Wood Grinder)
+    wood_main_title: 'Ağaç Parçalama ve Öğütme Makinesi',
+    wood_subtitle: 'MDF, Sunta, Tomruk ve Orman Atıkları İçin Yüksek Kapasiteli Endüstriyel Çözümler',
+    wood_description_1: 'Ağaç parçalama ve öğütme makinelerimiz, büyük çaplı tomruklar, kökler, MDF levhalar, suntalar ve endüstriyel ahşap atıklarını yüksek hızda işleyerek istenilen boyutta yonga (chips) ve talaş haline getirir. Biyokütle enerji santralleri ve pelet tesisleri için ideal hammadde üretimi sağlar.',
+    wood_description_2: 'Güçlü rotor yapısı ve özel tasarım bıçak teknolojisi sayesinde, ıslak veya kuru her türlü ağaç atığını zorlanmadan parçalar. Yatay ve dikey besleme seçenekleri ile tesisinize en uygun konfigürasyonu sunar. PLC kontrollü akıllı besleme sistemi, motor yükünü optimize ederek enerji tasarrufu sağlar.',
+    wood_description_3: 'MT Makina ağaç öğütücüleri, orman ürünleri endüstrisi, mobilya fabrikaları ve geri dönüşüm tesisleri için tasarlanmıştır. Yüksek verimli toz emme sistemi entegrasyonu ile temiz bir çalışma ortamı sunar. Değiştirilebilir elek sistemi ile çıkış boyutu hassas bir şekilde ayarlanabilir.',
+    wood_advantages_title: 'Teknik Üstünlükler',
     wood_adv_1_title: 'Yüksek Kapasite',
-    wood_adv_1_desc: 'Saatte 1 tondan 20 tona kadar öğütme kapasitesi',
-    wood_adv_2_title: 'Homojen Ürün',
-    wood_adv_2_desc: 'Özel elek tasarımı ile istenilen boyutta (10-100mm) homojen yonga çıkışı',
-    wood_adv_3_title: 'Dayanıklı Bıçaklar',
-    wood_adv_3_desc: 'Zorlu ahşap türleri için sertleştirilmiş özel alaşım bıçaklar',
-    wood_adv_4_title: 'Otomatik Besleme',
-    wood_adv_4_desc: 'Akıllı hidrolik besleme sistemi ile motor yüküne göre besleme hızı ayarlanır',
+    wood_adv_1_desc: 'Saatte 3 tondan 30 tona kadar kesintisiz ağaç ve tomruk öğütme kapasitesi.',
+    wood_adv_2_title: 'Homojen Çıktı',
+    wood_adv_2_desc: 'Gelişmiş elek teknolojisi ile standart boyutlarda kaliteli yonga ve talaş üretimi.',
+    wood_adv_3_title: 'Akıllı Otomasyon',
+    wood_adv_3_desc: 'Aşırı yük koruması, otomatik geri dönüş ve anlık performans takibi sağlayan PLC sistemi.',
+    wood_adv_4_title: 'Dayanıklı Tasarım',
+    wood_adv_4_desc: 'Hardox zırhlı gövde ve ısıl işlem görmüş özel alaşımlı bıçaklar ile uzun kullanım ömrü.',
     wood_tech_specs_title: 'Teknik Özellikler',
     wood_optional_features_title: 'Opsiyonel Donanımlar',
     wood_optional_1: 'Manyetik Metal Ayırıcı',
@@ -2127,6 +2127,22 @@ const translations = {
     quad_shaft_adv_4_title: 'Wide Material Processing Capacity',
     quad_shaft_adv_4_desc: 'The quad shaft shredder can process many different materials such as plastic, metal, wood and electronic waste.',
 
+    // Wood Grinder (English)
+    wood_main_title: 'Tree Shredding and Grinding Machine',
+    wood_subtitle: 'High Capacity Industrial Solutions for MDF, Chipboard, Logs and Forest Waste',
+    wood_description_1: 'Our tree shredding and grinding machines process large diameter logs, roots, MDF boards, chipboards and industrial wood waste at high speed, turning them into chips and sawdust of desired size. Provides ideal raw material production for biomass power plants and pellet facilities.',
+    wood_description_2: 'Thanks to its powerful rotor structure and special design blade technology, it shreds all kinds of wet or dry wood waste without difficulty. Offers the most suitable configuration for your facility with horizontal and vertical feeding options. PLC controlled intelligent feeding system saves energy by optimizing motor load.',
+    wood_description_3: 'MT Makina wood grinders are designed for the forest products industry, furniture factories and recycling facilities. Offers a clean working environment with high efficiency dust extraction system integration. Output size can be precisely adjusted with replaceable screen system.',
+    wood_advantages_title: 'Technical Advantages',
+    wood_adv_1_title: 'High Capacity',
+    wood_adv_1_desc: 'Continuous tree and log grinding capacity from 3 tons to 30 tons per hour.',
+    wood_adv_2_title: 'Homogeneous Output',
+    wood_adv_2_desc: 'Quality chip and sawdust production in standard sizes with advanced screen technology.',
+    wood_adv_3_title: 'Smart Automation',
+    wood_adv_3_desc: 'PLC system providing overload protection, automatic reverse and instant performance monitoring.',
+    wood_adv_4_title: 'Durable Design',
+    wood_adv_4_desc: 'Long service life with Hardox armored body and heat-treated special alloy blades.',
+
     // Glass Crusher Product Page
     glass_main_title: 'Liquid Separating Glass Bottle Crusher (CS)',
     glass_subtitle: 'Innovation in Waste Management with Glass Bottle Crusher',
@@ -2840,6 +2856,22 @@ const translations = {
     quad_shaft_adv_3_desc: 'Четырехвальный измельчитель идеально подходит для крупных и сложных материалов, легко обрабатывая крупногабаритные отходы.',
     quad_shaft_adv_4_title: 'Широкие возможности обработки материалов',
     quad_shaft_adv_4_desc: 'Четырехвальный измельчитель может обрабатывать множество различных материалов, таких как пластик, металл, дерево и электронные отходы.',
+
+    // Wood Grinder (Russian)
+    wood_main_title: 'Машина для Измельчения Дерева и Щепы',
+    wood_subtitle: 'Высокопроизводительные Промышленные Решения для МДФ, ДСП, Бревен и Лесных Отходов',
+    wood_description_1: 'Наши машины для измельчения и дробления деревьев на высокой скорости перерабатывают бревна большого диаметра, корни, плиты МДФ, ДСП и промышленные древесные отходы, превращая их в щепу и опилки нужного размера. Обеспечивает идеальное сырье для биомассовых электростанций и заводов по производству пеллет.',
+    wood_description_2: 'Благодаря мощной конструкции ротора и специальной технологии ножей, без труда измельчает любые влажные или сухие древесные отходы. Предлагает наиболее подходящую конфигурацию для вашего предприятия с вариантами горизонтальной и вертикальной подачи. Интеллектуальная система подачи с ПЛК экономит энергию, оптимизируя нагрузку двигателя.',
+    wood_description_3: 'Дробилки MT Makina предназначены для лесной промышленности, мебельных фабрик и предприятий по переработке. Обеспечивает чистую рабочую среду благодаря интеграции высокоэффективной системы пылеудаления. Размер на выходе можно точно регулировать с помощью сменной системы сит.',
+    wood_advantages_title: 'Технические Преимущества',
+    wood_adv_1_title: 'Высокая Производительность',
+    wood_adv_1_desc: 'Непрерывная мощность измельчения деревьев и бревен от 3 до 30 тонн в час.',
+    wood_adv_2_title: 'Однородный Выход',
+    wood_adv_2_desc: 'Производство качественной щепы и опилок стандартных размеров с передовой технологией сит.',
+    wood_adv_3_title: 'Умная Автоматизация',
+    wood_adv_3_desc: 'Система ПЛК, обеспечивающая защиту от перегрузки, автоматический реверс и мгновенный мониторинг производительности.',
+    wood_adv_4_title: 'Прочная Конструкция',
+    wood_adv_4_desc: 'Долгий срок службы благодаря корпусу, армированному Hardox, и ножам из специального сплава с термообработкой.',
 
     // Glass Crusher Product Page (RU)
     glass_main_title: 'Измельчитель стеклянных бутылок с отделением жидкости',
@@ -3579,6 +3611,22 @@ const translations = {
     quad_shaft_adv_3_desc: 'آلة التمزيق رباعية العمود مثالية للمواد الكبيرة والصعبة، معالجة النفايات الضخمة بسهولة.',
     quad_shaft_adv_4_title: 'قدرة واسعة على معالجة المواد',
     quad_shaft_adv_4_desc: 'آلة التمزيق رباعية العمود يمكنها معالجة العديد من المواد المختلفة مثل البلاستيك والمعدن والخشب والنفايات الإلكترونية.',
+
+    // Wood Grinder (Arabic)
+    wood_main_title: 'آلة تكسير وطحن الأشجار',
+    wood_subtitle: 'حلول صناعية عالية السعة لـ MDF واللوح الحبيبي وجذوع الأشجار ونفايات الغابات',
+    wood_description_1: 'تقوم آلات تكسير وطحن الأشجار لدينا بمعالجة جذوع الأشجار كبيرة القطر والجذور وألواح MDF والألواح الحبيبية ونفايات الخشب الصناعية بسرعة عالية، وتحويلها إلى رقائق ونشارة الخشب بالحجم المطلوب. يوفر إنتاج مواد خام مثالية لمحطات طاقة الكتلة الحيوية ومرافق الحبيبات.',
+    wood_description_2: 'بفضل هيكل الدوار القوي وتكنولوجيا الشفرات ذات التصميم الخاص، تقوم بتمزيق جميع أنواع نفايات الخشب الرطبة أو الجافة دون صعوبة. توفر التكوين الأنسب لمنشأتك مع خيارات التغذية الأفقية والرأسية. يوفر نظام التغذية الذكي الذي يتحكم فيه PLC الطاقة عن طريق تحسين حمل المحرك.',
+    wood_description_3: 'تم تصميم مطاحن الخشب MT Makina لصناعة منتجات الغابات ومصانع الأثاث ومرافق إعادة التدوير. توفر بيئة عمل نظيفة مع تكامل نظام استخلاص الغبار عالي الكفاءة. يمكن ضبط حجم المخرجات بدقة باستخدام نظام الغربال القابل للاستبدال.',
+    wood_advantages_title: 'المزايا التقنية',
+    wood_adv_1_title: 'سعة عالية',
+    wood_adv_1_desc: 'سعة طحن الأشجار وجذوع الأشجار المستمرة من 3 أطنان إلى 30 طنًا في الساعة.',
+    wood_adv_2_title: 'مخرجات متجانسة',
+    wood_adv_2_desc: 'إنتاج رقائق ونشارة خشب عالية الجودة بأحجام قياسية مع تقنية الغربال المتقدمة.',
+    wood_adv_3_title: 'الأتمتة الذكية',
+    wood_adv_3_desc: 'نظام PLC يوفر حماية من الحمل الزائد والرجوع التلقائي ومراقبة الأداء الفوري.',
+    wood_adv_4_title: 'تصميم متين',
+    wood_adv_4_desc: 'عمر خدمة طويل مع جسم مدرع بـ Hardox وشفرات سبائك خاصة معالجة بالحرارة.',
 
     // Glass Crusher Product Page (AR)
     glass_main_title: 'كسارة زجاجات الزجاج مع فصل السوائل',

@@ -402,6 +402,28 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['كسارة زجاج', 'آلة تكسير الزجاج', 'إعادة تدوير الزجاج', 'فصل السوائل']
       }
     },
+    'wood': {
+      tr: {
+        title: 'Ağaç Parçalama Makinesi | Wood Grinder | MT Makina TSY Serisi',
+        description: 'Endüstriyel ağaç parçalama ve öğütme makinesi - MT Makina TSY Serisi 2-12 ton/saat kapasite. Biyokütle, palet, kütük ve orman atığı parçalama. ✓ 3 Farklı Model ✓ Yüksek Performans ✓ 2 Yıl Garanti',
+        keywords: ['ağaç parçalama makinesi', 'wood grinder', 'kütük kırma makinesi', 'dal parçalama', 'biyokütle makinesi', 'mobil ağaç kırıcı', 'TSY serisi', 'odun yongalama', 'talaş makinesi']
+      },
+      en: {
+        title: 'Wood Grinder Machine | Industrial Wood Shredder | MT Makina TSY Series',
+        description: 'Industrial wood grinder and shredder machine - MT Makina TSY Series 2-12 tons/h capacity. Biomass, pallet, log and forestry waste shredding. ✓ 3 Models ✓ High Performance ✓ 2 Years Warranty',
+        keywords: ['wood grinder', 'wood shredder', 'log splitter', 'biomass shredder', 'pallet shredder', 'industrial wood chipper', 'forestry mulcher', 'wood waste recycling']
+      },
+      ru: {
+        title: 'Измельчитель Древесины | Промышленный Шредер | MT Makina Серия TSY',
+        description: 'Промышленный измельчитель древесины - MT Makina Серия TSY производительность 2-12 т/ч. Дробилка для бревен, поддонов, веток и лесных отходов. ✓ 3 Модели ✓ Высокая Эффективность ✓ Гарантия',
+        keywords: ['измельчитель древесины', 'дробилка дерева', 'щепорез', 'шредер для поддонов', 'биомасса', 'промышленный шредер дерева', 'переработка древесных отходов']
+      },
+      ar: {
+        title: 'آلة طحن الخشب | كسارة الخشب الصناعية | MT Makina سلسلة TSY',
+        description: 'آلة طحن وتمزيق الخشب الصناعية - MT Makina سلسلة TSY سعة 2-12 طن/ساعة. تكسير الكتلة الحيوية، المنصات، الجذوع ونفايات الغابات. ✓ 3 موديلات ✓ أداء عالي ✓ ضمان سنتين',
+        keywords: ['آلة طحن الخشب', 'كسارة خشب', 'تمزيق الجذوع', 'آلة نشارة الخشب', 'إعادة تدوير الخشب', 'طاحونة الكتلة الحيوية', 'نشارة الغابات']
+      }
+    },
     // ... Add other categories similarly (using generic fallback for now to save space, but structure supports all)
   };
 
@@ -448,6 +470,142 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
         }
       },
       // ... other models
+    },
+    'wood': {
+      'TSY-100': {
+        tr: {
+          title: 'TSY-100 Ağaç Parçalama Makinesi | 45-55 kW | 2-4 Ton/Saat',
+          description: 'TSY-100 Yatay Ağaç Parçalama Makinesi - 45-55 kW motor, 1000mm rotor. Palet, dal ve marangoz atıkları için ideal. Kompakt tasarım, yüksek verimlilik.',
+          keywords: ['TSY-100', 'ağaç parçalama makinesi fiyat', 'orta boy ağaç kırıcı', 'palet kırma makinesi', '55kw shredder']
+        },
+        en: {
+          title: 'TSY-100 Wood Shredder | 45-55 kW | 2-4 Tons/Hour',
+          description: 'TSY-100 Horizontal Wood Shredder - 45-55 kW motor, 1000mm rotor. Ideal for pallets, branches and carpentry waste. Compact design, high efficiency.',
+          keywords: ['TSY-100', 'wood shredder price', 'medium wood grinder', 'pallet crusher', '55kw shredder']
+        },
+        ru: {
+          title: 'Шредер Дерева TSY-100 | 45-55 кВт | 2-4 Тонн/Час',
+          description: 'Горизонтальный шредер дерева TSY-100 - двигатель 45-55 кВт, ротор 1000 мм. Идеально для поддонов, веток и столярных отходов. Компактный дизайн.',
+          keywords: ['TSY-100', 'цена шредера дерева', 'дробилка для поддонов', 'шредер 55квт']
+        },
+        ar: {
+          title: 'آلة تمزيق الخشب TSY-100 | 45-55 كيلوواط | 2-4 طن/ساعة',
+          description: 'آلة تمزيق الخشب الأفقية TSY-100 - محرك 45-55 كيلوواط، دوار 1000 مم. مثالية للمنصات والفروع ونفايات النجارة. تصميم مدمج.',
+          keywords: ['TSY-100', 'سعر كسارة الخشب', 'طاحونة خشب متوسطة', 'كسارة منصات']
+        }
+      },
+      'TSY-150': {
+        tr: {
+          title: 'TSY-150 Endüstriyel Ağaç Parçalama | 75-110 kW | 4-6 Ton/Saat',
+          description: 'TSY-150 Profesyonel Ağaç Parçalama - 75-110 kW çift motor, 1500mm rotor. Kütük, orman atığı ve biyokütle için. Yüksek kapasite, ağır hizmet tipi.',
+          keywords: ['TSY-150', 'endüstriyel ağaç parçalama', 'kütük parçalama makinesi', 'biyokütle kırıcı', 'orman atığı parçalama']
+        },
+        en: {
+          title: 'TSY-150 Industrial Wood Shredder | 75-110 kW | 4-6 Tons/Hour',
+          description: 'TSY-150 Professional Wood Shredder - 75-110 kW dual motor, 1500mm rotor. For logs, forestry waste and biomass. High capacity, heavy duty.',
+          keywords: ['TSY-150', 'industrial wood shredder', 'log shredder', 'biomass grinder', 'forestry waste shredder']
+        },
+        ru: {
+          title: 'Промышленный Шредер TSY-150 | 75-110 кВт | 4-6 Тонн/Час',
+          description: 'Профессиональный шредер дерева TSY-150 - два двигателя 75-110 кВт, ротор 1500 мм. Для бревен, лесных отходов и биомассы. Высокая производительность.',
+          keywords: ['TSY-150', 'промышленный шредер', 'измельчитель бревен', 'биомасса']
+        },
+        ar: {
+          title: 'آلة تمزيق الخشب الصناعية TSY-150 | 75-110 كيلوواط | 4-6 طن/ساعة',
+          description: 'آلة تمزيق الخشب الاحترافية TSY-150 - محرك مزدوج 75-110 كيلوواط، دوار 1500 مم. للجذوع ونفايات الغابات والكتلة الحيوية. سعة عالية.',
+          keywords: ['TSY-150', 'كسارة خشب صناعية', 'تمزيق جذوع', 'طاحونة كتلة حيوية']
+        }
+      },
+      'TSY-200': {
+        tr: {
+          title: 'TSY-200 Premium Ağaç Öğütme | 90-200 kW | 8-12 Ton/Saat',
+          description: 'TSY-200 Yüksek Kapasiteli Ağaç Öğütme - 90-200 kW ultra güçlü motorlar, 2000mm rotor. Enerji santralleri ve büyük tesisler için. Maksimum performans.',
+          keywords: ['TSY-200', 'ağaç öğütme makinesi', 'biyokütle santrali kırıcı', 'dev ağaç parçalama', '200kw shredder']
+        },
+        en: {
+          title: 'TSY-200 Premium Wood Grinder | 90-200 kW | 8-12 Tons/Hour',
+          description: 'TSY-200 High Capacity Wood Grinder - 90-200 kW ultra powerful motors, 2000mm rotor. For power plants and large facilities. Maximum performance.',
+          keywords: ['TSY-200', 'wood grinder machine', 'biomass plant shredder', 'huge wood shredder', '200kw shredder']
+        },
+        ru: {
+          title: 'Премиум Шредер TSY-200 | 90-200 кВт | 8-12 Тонн/Час',
+          description: 'Высокопроизводительный шредер TSY-200 - двигатели 90-200 кВт, ротор 2000 мм. Для электростанций и крупных объектов. Максимальная производительность.',
+          keywords: ['TSY-200', 'измельчитель дерева премиум', 'дробилка для электростанций', 'мощный шредер']
+        },
+        ar: {
+          title: 'طاحونة الخشب الممتازة TSY-200 | 90-200 كيلوواط | 8-12 طن/ساعة',
+          description: 'طاحونة خشب عالية السعة TSY-200 - محركات فائقة القوة 90-200 كيلوواط، دوار 2000 مم. لمحطات الطاقة والمرافق الكبيرة. أقصى أداء.',
+          keywords: ['TSY-200', 'آلة طحن خشب', 'كسارة محطة كتلة حيوية', 'كسارة خشب ضخمة']
+        }
+      }
+    },
+    'glass': {
+      'CK-200': {
+        tr: {
+          title: 'CK-200 Cam Şişe Kırma Makinesi | Otel & Restoran Tipi',
+          description: 'CK-200 Kompakt Cam Kırıcı - 100-200 kg/saat. Oteller ve restoranlar için sessiz, güvenli, sıvı ayrıştırmalı. %80 hacim tasarrufu.',
+          keywords: ['CK-200', 'otel tipi cam kırıcı', 'şişe kırma makinesi', 'sessiz cam kırıcı', 'restoran geri dönüşüm']
+        },
+        en: {
+          title: 'CK-200 Glass Bottle Crusher | Hotel & Restaurant Type',
+          description: 'CK-200 Compact Glass Crusher - 100-200 kg/h. Quiet, safe, with liquid separation for hotels and restaurants. 80% volume saving.',
+          keywords: ['CK-200', 'hotel glass crusher', 'bottle crushing machine', 'quiet glass crusher', 'restaurant recycling']
+        },
+        ru: {
+          title: 'Дробилка Стеклянных Бутылок CK-200 | Для Отелей',
+          description: 'Компактная дробилка CK-200 - 100-200 кг/ч. Тихая, безопасная, с отделением жидкости. Экономия объема 80%.',
+          keywords: ['CK-200', 'дробилка для отелей', 'измельчитель бутылок', 'тихая дробилка']
+        },
+        ar: {
+          title: 'كسارة زجاجات CK-200 | نوع الفنادق والمطاعم',
+          description: 'كسارة زجاج مدمجة CK-200 - 100-200 كجم/ساعة. هادئة، آمنة، مع فصل السوائل. توفير 80٪ في الحجم.',
+          keywords: ['CK-200', 'كسارة زجاج فنادق', 'آلة تكسير قوارير', 'كسارة زجاج هادئة']
+        }
+      },
+      'CK-400': {
+        tr: {
+          title: 'CK-400 Şişe ve Kavanoz Kırma Makinesi | 300-500 kg/saat',
+          description: 'CK-400 Orta Boy Cam Kırıcı - 4-5.5 kW. 300-500 kg/saat kapasite. Büyük oteller, hastaneler ve AVM\'ler için güçlü çözüm.',
+          keywords: ['CK-400', 'kavanoz kırma makinesi', 'cam atık makinesi', 'hastane atık kırıcı']
+        },
+        en: {
+          title: 'CK-400 Bottle & Jar Crusher | 300-500 kg/hour',
+          description: 'CK-400 Medium Glass Crusher - 4-5.5 kW. 300-500 kg/h capacity. Powerful solution for large hotels, hospitals and malls.',
+          keywords: ['CK-400', 'jar crusher', 'glass waste machine', 'hospital waste crusher']
+        },
+        ru: {
+          title: 'Дробилка Бутылок и Банок CK-400 | 300-500 кг/час',
+          description: 'Средняя дробилка CK-400 - 4-5.5 кВт. 300-500 кг/ч. Мощное решение для крупных отелей, больниц и ТЦ.',
+          keywords: ['CK-400', 'дробилка банок', 'машина для отходов стекла']
+        },
+        ar: {
+          title: 'كسارة الزجاجات والجرار CK-400 | 300-500 كجم/ساعة',
+          description: 'كسارة زجاج متوسطة CK-400 - قوة 4-5.5 كيلوواط. سعة 300-500 كجم/ساعة. حل قوي للفنادق الكبيرة والمستشفيات.',
+          keywords: ['CK-400', 'كسارة جرار', 'آلة نفايات الزجاج']
+        }
+      },
+      'CKS-400': {
+        tr: {
+          title: 'CKS-400 Endüstriyel Cam Parçalama | 600-800 kg/saat',
+          description: 'CKS-400 Sanayi Tipi Cam Kırıcı - 5.5-7.5 kW. Konveyörlü besleme, yüksek kapasite. Geri dönüşüm tesisleri ve dolum fabrikaları için.',
+          keywords: ['CKS-400', 'endüstriyel cam kırıcı', 'cam geri dönüşüm tesisi makinesi', 'otomatik cam kırma']
+        },
+        en: {
+          title: 'CKS-400 Industrial Glass Shredder | 600-800 kg/hour',
+          description: 'CKS-400 Industrial Glass Crusher - 5.5-7.5 kW. Conveyor feeding, high capacity. For recycling plants and bottling factories.',
+          keywords: ['CKS-400', 'industrial glass crusher', 'glass recycling plant machine', 'automatic glass crushing']
+        },
+        ru: {
+          title: 'Промышленный Шредер Стекла CKS-400 | 600-800 кг/час',
+          description: 'Промышленная дробилка CKS-400 - 5.5-7.5 кВт. Конвейерная подача. Для перерабатывающих заводов.',
+          keywords: ['CKS-400', 'промышленная дробилка стекла', 'завод по переработке стекла']
+        },
+        ar: {
+          title: 'تمزيق الزجاج الصناعي CKS-400 | 600-800 كجم/ساعة',
+          description: 'كسارة زجاج صناعية CKS-400 - قوة 5.5-7.5 كيلوواط. تغذية بالناقل. لمصانع إعادة التدوير ومصانع التعبئة.',
+          keywords: ['CKS-400', 'كسارة زجاج صناعية', 'آلة مصنع إعادة تدوير الزجاج']
+        }
+      }
     }
   };
 

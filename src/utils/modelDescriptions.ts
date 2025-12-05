@@ -972,31 +972,31 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       }
     }
   },
-  'wood': {
+    'wood': {
     'TSY-100': {
       tr: {
-        intro: 'TSY-100 yatay ağaç parçalama makinesi, 1000 mm rotor boyu ve 55-90 kW (2X) çift motor gücü ile orta ölçekli işletmeler için güçlü bir çözümdür.',
-        paragraph1: 'TSY-100 model, 55-90 kW (2X) çift motor konfigürasyonu ile ağaç dalları, hurma lifli atıklar, bahçe budama artıkları ve odunsu malzemelerin güçlü parçalanmasını sağlar. 1000 mm rotor boyu ile orta ölçekli tarım kooperatifleri, belediye park bakım işletmeleri, biyokütle yakıt üretim tesisleri için ideal performans sunar. Yatay beslemeli hidrolik piston sistemi, uzun dalların kolayca işlenmesini sağlar.',
-        paragraph2: 'TSY-100, özel tasarım rotor bıçakları ile lifli ve nemli malzemelerde yüksek performans gösterir. PLC kontrollü akıllı besleme sistemi, otomatik yük algılama ve ters çalışma fonksiyonu ile sıkışmaları önler. Değiştirilebilir elek sistemi ile farklı çıkış boyutları elde edilir. Hidrolik açılan elek sistemi bakım süresini minimize eder.',
-        paragraph3: 'MT Makina TSY-100, çift motorlu tasarım standardında gelir. Opsiyonel özellikler: Kayış kasnaklı hidrolik kaplin, volanlı tasarım, rotor soğutma sistemi, otomatik yağlama ünitesi, farklı ölçülerde elek, hidrolik açılan elek sistemi, çıkış için helezon/konveyör/taşıma fanı uygulamaları. CE sertifikalı.'
+        intro: 'TSY-100 yatay ağaç parçalama makinesi, kompakt tasarımı ve 45-55 kW motor gücü ile orta ölçekli işletmeler için ideal bir çözümdür.',
+        paragraph1: 'TSY-100 model, 45-55 kW güçlü motoru ile paletler, mobilya atıkları, ince dallar ve marangozhane atıklarını verimli bir şekilde parçalar. 1000 mm rotor boyu ve optimize edilmiş besleme sistemi ile saatte 2-4 ton kapasite sunar. Biyokütle tesisleri ve mobilya fabrikaları için mükemmel bir hammadde hazırlama makinesidir.',
+        paragraph2: 'Özel tasarım rotor bıçakları ve Hardox zırhlı gövdesi ile zorlu çalışma koşullarına dayanıklıdır. PLC kontrollü otomasyon sistemi, motor yükünü sürekli izler ve aşırı yüklenme durumunda otomatik geri dönüş yaparak sistemi korur. Hidrolik açılır elek sistemi sayesinde bakım ve temizlik işlemleri hızlıca yapılır.',
+        paragraph3: 'MT Makina TSY-100, enerji verimliliği ve düşük işletme maliyeti ile öne çıkar. Toz emme sistemi entegrasyonu ile temiz bir çalışma ortamı sağlar. Farklı elek seçenekleri ile istenilen boyutta yonga ve talaş üretimi mümkündür. CE sertifikalı iş güvenliği standartlarına sahiptir.'
       },
       en: {
-        intro: 'TSY-100 horizontal wood shredder is an excellent entry-level solution for small and medium-sized businesses.',
-        paragraph1: 'TSY-100 model provides efficient shredding of tree branches, palm fibrous waste, garden pruning residues and woody materials up to 20 cm diameter with 37-55 kW motor power. With a processing capacity of 2-3 tons per hour, it is ideal for small-scale agricultural cooperatives, municipal park maintenance operations, small biomass fuel production facilities and local farms. The horizontal feed hydraulic piston system allows easy processing of long branches and maximizes operator safety.',
-        paragraph2: 'Despite its compact structure, TSY-100 offers industrial durability and shows high performance in fibrous and moist materials with special design rotor blades with 2-3 mm wall thickness. The PLC-controlled intelligent feeding system prevents jamming and ensures uninterrupted production with automatic load detection and reverse function. Different output sizes can be obtained with the replaceable 30-50 mm screen system. The hydraulically opening screen box minimizes maintenance time.',
-        paragraph3: 'MT Makina TSY-100 wood shredder can be installed even in limited spaces thanks to its compact dimensions (approximately 2.5x1.8x2.2 m). Higher efficiency is achieved with dual motor design option. Automatic lubrication unit, rotor cooling system and dust suppression spray system are offered optionally. It is an economical and reliable solution for palm tree shredding, palm branch processing, garden waste recycling and small-scale biomass fuel production. CE certified, 2 years warranty.'
+        intro: 'TSY-100 horizontal wood shredder is an ideal solution for medium-sized enterprises with its compact design and 45-55 kW motor power.',
+        paragraph1: 'TSY-100 model efficiently shreds pallets, furniture waste, thin branches and carpentry waste with its 45-55 kW powerful motor. It offers 2-4 tons capacity per hour with 1000 mm rotor length and optimized feeding system. It is a perfect raw material preparation machine for biomass plants and furniture factories.',
+        paragraph2: 'It is resistant to tough working conditions with specially designed rotor blades and Hardox armored body. PLC controlled automation system continuously monitors motor load and protects the system by automatically reversing in case of overload. Maintenance and cleaning operations are done quickly thanks to the hydraulically opening screen system.',
+        paragraph3: 'MT Makina TSY-100 stands out with energy efficiency and low operating cost. Provides a clean working environment with dust extraction system integration. Chip and sawdust production of desired size is possible with different screen options. Has CE certified occupational safety standards.'
       },
       ru: {
-        intro: 'Горизонтальный измельчитель древесины TSY-100 - отличное начальное решение для малых и средних предприятий.',
-        paragraph1: 'Модель TSY-100 обеспечивает эффективное измельчение веток деревьев, волокнистых отходов пальм, садовых обрезков и древесных материалов диаметром до 20 см при мощности двигателя 37-55 кВт. При производительности 2-3 тонны в час идеально подходит для мелкомасштабных сельскохозяйственных кооперативов, муниципальных парковых служб, небольших заводов по производству биомассового топлива и местных ферм. Горизонтальная система подачи с гидравлическим поршнем обеспечивает легкую обработку длинных веток и максимальную безопасность оператора.',
-        paragraph2: 'Несмотря на компактную конструкцию, TSY-100 обладает промышленной прочностью и показывает высокую производительность на волокнистых и влажных материалах благодаря специальным роторным ножам толщиной стенки 2-3 мм. Интеллектуальная система подачи с ПЛК-управлением предотвращает заклинивание и обеспечивает бесперебойное производство с автоматическим определением нагрузки и функцией реверса. Различные размеры на выходе можно получить с заменяемой системой сит 30-50 мм. Гидравлически открывающийся ящик сита минимизирует время обслуживания.',
-        paragraph3: 'Измельчитель древесины MT Makina TSY-100 может быть установлен даже в ограниченном пространстве благодаря компактным размерам (примерно 2.5x1.8x2.2 м). Более высокая эффективность достигается с опцией двухмоторной конструкции. Автоматический блок смазки, система охлаждения ротора и система подавления пыли предлагаются опционально. Это экономичное и надежное решение для измельчения пальм, обработки пальмовых веток, переработки садовых отходов и мелкомасштабного производства биомассового топлива. Сертифицировано CE, гарантия 2 года.'
+        intro: 'Горизонтальный измельчитель древесины TSY-100 - идеальное решение для средних предприятий благодаря компактной конструкции и мощности двигателя 45-55 кВт.',
+        paragraph1: 'Модель TSY-100 эффективно измельчает поддоны, мебельные отходы, тонкие ветки и столярные отходы с помощью мощного двигателя 45-55 кВт. Предлагает производительность 2-4 тонны в час с длиной ротора 1000 мм и оптимизированной системой подачи. Это идеальная машина для подготовки сырья для биомассовых установок и мебельных фабрик.',
+        paragraph2: 'Устойчив к тяжелым условиям работы благодаря специально разработанным роторным ножам и корпусу, армированному Hardox. Система автоматизации с управлением от ПЛК непрерывно контролирует нагрузку на двигатель и защищает систему, автоматически реверсируя в случае перегрузки. Операции по техническому обслуживанию и очистке выполняются быстро благодаря гидравлически открывающейся системе сит.',
+        paragraph3: 'MT Makina TSY-100 выделяется энергоэффективностью и низкими эксплуатационными расходами. Обеспечивает чистую рабочую среду благодаря интеграции системы пылеудаления. Производство щепы и опилок желаемого размера возможно с различными вариантами сит. Имеет сертифицированные стандарты безопасности труда CE.'
       },
       ar: {
-        intro: 'آلة تقطيع الخشب الأفقية TSY-100 هي حل ممتاز للمبتدئين للشركات الصغيرة والمتوسطة.',
-        paragraph1: 'يوفر طراز TSY-100 تقطيعًا فعالاً لأغصان الأشجار ونفايات النخيل الليفية وبقايا تقليم الحدائق والمواد الخشبية بقطر يصل إلى 20 سم بقوة محرك 37-55 كيلووات. بسعة معالجة 2-3 طن في الساعة، فهو مثالي للتعاونيات الزراعية صغيرة النطاق وعمليات صيانة المتنزهات البلدية ومرافق إنتاج وقود الكتلة الحيوية الصغيرة والمزارع المحلية. يتيح نظام المكبس الهيدروليكي للتغذية الأفقية معالجة سهلة للفروع الطويلة ويزيد من سلامة المشغل إلى أقصى حد.',
-        paragraph2: 'على الرغم من هيكلها المدمج، تقدم TSY-100 متانة صناعية وتظهر أداءً عاليًا في المواد الليفية والرطبة مع شفرات دوار ذات تصميم خاص بسمك جدار 2-3 مم. يمنع نظام التغذية الذكي المتحكم فيه بواسطة PLC الانحشار ويضمن إنتاجًا مستمرًا مع الكشف التلقائي عن الحمل ووظيفة الرجوع. يمكن الحصول على أحجام مخرجات مختلفة مع نظام الشاشة القابل للاستبدال 30-50 مم. يقلل صندوق الشاشة الذي يفتح هيدروليكيًا من وقت الصيانة إلى الحد الأدنى.',
-        paragraph3: 'يمكن تركيب آلة تقطيع الخشب MT Makina TSY-100 حتى في المساحات المحدودة بفضل أبعادها المدمجة (تقريبًا 2.5×1.8×2.2 م). يتم تحقيق كفاءة أعلى مع خيار التصميم ثنائي المحرك. يتم تقديم وحدة التشحيم التلقائي ونظام تبريد الدوار ونظام قمع الغبار بالرش اختياريًا. إنه حل اقتصادي وموثوق لتقطيع أشجار النخيل ومعالجة فروع النخيل وإعادة تدوير نفايات الحدائق وإنتاج وقود الكتلة الحيوية على نطاق صغير. معتمد CE، ضمان لمدة عامين.'
+        intro: 'آلة تقطيع الخشب الأفقية TSY-100 هي حل مثالي للمؤسسات متوسطة الحجم بفضل تصميمها المدمج وقوة المحرك 45-55 كيلووات.',
+        paragraph1: 'يقوم طراز TSY-100 بتقطيع المنصات ونفايات الأثاث والفروع الرقيقة ونفايات النجارة بكفاءة بمحرك قوي 45-55 كيلووات. يوفر سعة 2-4 طن في الساعة مع طول دوار 1000 ملم ونظام تغذية محسن. إنها آلة تحضير مواد خام مثالية لمحطات الكتلة الحيوية ومصانع الأثاث.',
+        paragraph2: 'مقاوم لظروف العمل الصعبة مع شفرات دوار مصممة خصيصًا وجسم مدرع بـ Hardox. يراقب نظام الأتمتة الذي يتحكم فيه PLC حمل المحرك باستمرار ويحمي النظام من خلال الرجوع التلقائي في حالة الحمل الزائد. يتم إجراء عمليات الصيانة والتنظيف بسرعة بفضل نظام الشاشة الذي يفتح هيدروليكيًا.',
+        paragraph3: 'تتميز MT Makina TSY-100 بكفاءة الطاقة وتكلفة تشغيل منخفضة. توفر بيئة عمل نظيفة مع تكامل نظام استخلاص الغبار. إنتاج الرقائق ونشارة الخشب بالحجم المطلوب ممكن مع خيارات غربال مختلفة. لديها معايير السلامة المهنية المعتمدة من CE.'
       }
     },
     'TSY-150': {
@@ -1052,86 +1052,87 @@ export const modelDescriptions: { [productType: string]: { [modelName: string]: 
       }
     }
   },
-  'glass': {
-    'CK-200': {
-      tr: {
-        intro: 'CK-200 Kompakt Cam Şişe Kırma Makinesi, oteller, barlar, restoranlar ve sınırlı alana sahip işletmeler için özel olarak tasarlanmış sessiz ve verimli bir geri dönüşüm çözümüdür.',
+
+'glass': {
+  'CK-200': {
+    tr: {
+      intro: 'CK-200 Kompakt Cam Şişe Kırma Makinesi, oteller, barlar, restoranlar ve sınırlı alana sahip işletmeler için özel olarak tasarlanmış sessiz ve verimli bir geri dönüşüm çözümüdür.',
         paragraph1: 'CK-200 model, 1.5-3 kW optimize edilmiş motor gücü ile 200 mm rotor genişliğine sahiptir. 100-200 kg/saat işleme kapasitesi ile saatte yaklaşık 600-800 adet cam şişeyi parçalayabilir. Düşük gürültü seviyesi (65-70 dB) sayesinde müşteri alanlarına yakın noktalarda, mutfak arkalarında veya otel servis koridorlarında rahatsızlık vermeden çalışır. Atık cam hacmini %80 oranında azaltarak depolama alanından tasarruf sağlar.',
-        paragraph2: 'Entegre sıvı ayrıştırma haznesi sayesinde, dolu veya yarım dolu şişelerdeki sıvılar güvenli bir şekilde alt hazneye süzülür ve drenaj sistemi ile tahliye edilir. Paslanmaya dayanıklı bileşenler ve özel alaşımlı cam kırma çekiçleri ile uzun ömürlü kullanım sunar. Tekerlekli mobil tasarımı sayesinde işletme içinde kolayca taşınabilir.',
-        paragraph3: 'MT Makina CK-200, atık toplama maliyetlerini düşürmek ve çevre dostu "Sıfır Atık" hedeflerine ulaşmak isteyen HORECA (Otel, Restoran, Kafe) sektörü için idealdir. Tak-çalıştır özelliği, basit kullanımı ve bakım gerektirmeyen yapısı ile operasyonel yük getirmez. CE sertifikası ve iş güvenliği sensörleri ile tam koruma sağlar.'
-      },
-      en: {
-        intro: 'CK-200 Compact Glass Bottle Crusher is a quiet and efficient recycling solution specially designed for hotels, bars, restaurants and businesses with limited space.',
+          paragraph2: 'Entegre sıvı ayrıştırma haznesi sayesinde, dolu veya yarım dolu şişelerdeki sıvılar güvenli bir şekilde alt hazneye süzülür ve drenaj sistemi ile tahliye edilir. Paslanmaya dayanıklı bileşenler ve özel alaşımlı cam kırma çekiçleri ile uzun ömürlü kullanım sunar. Tekerlekli mobil tasarımı sayesinde işletme içinde kolayca taşınabilir.',
+            paragraph3: 'MT Makina CK-200, atık toplama maliyetlerini düşürmek ve çevre dostu "Sıfır Atık" hedeflerine ulaşmak isteyen HORECA (Otel, Restoran, Kafe) sektörü için idealdir. Tak-çalıştır özelliği, basit kullanımı ve bakım gerektirmeyen yapısı ile operasyonel yük getirmez. CE sertifikası ve iş güvenliği sensörleri ile tam koruma sağlar.'
+    },
+    en: {
+      intro: 'CK-200 Compact Glass Bottle Crusher is a quiet and efficient recycling solution specially designed for hotels, bars, restaurants and businesses with limited space.',
         paragraph1: 'CK-200 model features 1.5-3 kW optimized motor power with 200 mm rotor width. With 100-200 kg/hour processing capacity, it can crush approximately 600-800 glass bottles per hour. Thanks to its low noise level (65-70 dB), it operates near customer areas, behind kitchens or in hotel service corridors without causing disturbance. It saves storage space by reducing waste glass volume by 80%.',
-        paragraph2: 'Thanks to the integrated liquid separation chamber, liquids in full or half-full bottles are safely drained into the lower chamber and discharged via the drainage system. It offers long-lasting use with corrosion-resistant components and special alloy glass crushing hammers. Thanks to its wheeled mobile design, it can be easily moved within the facility.',
-        paragraph3: 'MT Makina CK-200 is ideal for the HORECA (Hotel, Restaurant, Cafe) sector wanting to reduce waste collection costs and achieve eco-friendly "Zero Waste" goals. With plug-and-play feature, simple operation and maintenance-free structure, it brings no operational burden. Provides full protection with CE certification and occupational safety sensors.'
-      },
-      ru: {
-        intro: 'Компактная дробилка для стеклянных бутылок CK-200 - это тихое и эффективное решение для переработки, специально разработанное для отелей, баров, ресторанов.',
+          paragraph2: 'Thanks to the integrated liquid separation chamber, liquids in full or half-full bottles are safely drained into the lower chamber and discharged via the drainage system. It offers long-lasting use with corrosion-resistant components and special alloy glass crushing hammers. Thanks to its wheeled mobile design, it can be easily moved within the facility.',
+            paragraph3: 'MT Makina CK-200 is ideal for the HORECA (Hotel, Restaurant, Cafe) sector wanting to reduce waste collection costs and achieve eco-friendly "Zero Waste" goals. With plug-and-play feature, simple operation and maintenance-free structure, it brings no operational burden. Provides full protection with CE certification and occupational safety sensors.'
+    },
+    ru: {
+      intro: 'Компактная дробилка для стеклянных бутылок CK-200 - это тихое и эффективное решение для переработки, специально разработанное для отелей, баров, ресторанов.',
         paragraph1: 'Модель CK-200 оснащена оптимизированным двигателем мощностью 1,5-3 кВт с шириной ротора 200 мм. С производительностью 100-200 кг/час она может измельчать примерно 600-800 стеклянных бутылок в час. Благодаря низкому уровню шума (65-70 дБ) она работает рядом с зонами для клиентов, не мешая им. Экономит место для хранения, уменьшая объем отходов стекла на 80%.',
-        paragraph2: 'Благодаря встроенной камере разделения жидкости, жидкости в полных или полуполных бутылках безопасно стекают в нижнюю камеру и удаляются через дренажную систему. Обеспечивает длительное использование благодаря коррозионностойким компонентам. Благодаря колесной мобильной конструкции легко перемещается внутри предприятия.',
-        paragraph3: 'MT Makina CK-200 идеально подходит для сектора HORECA (отели, рестораны, кафе), желающего снизить асходы на вывоз мусора. Благодаря функции plug-and-play, простому управлению и конструкции, не требующей обслуживания, она не создает эксплуатационной нагрузки. Обеспечивает полную защиту благодаря сертификации CE.'
-      },
-      ar: {
-        intro: 'كسارة الزجاجات المدمجة CK-200 هي حل إعادة تدوير هادئ وفعال مصمم خصيصًا للفنادق والبارات والمطاعم والشركات ذات المساحة المحدودة.',
+          paragraph2: 'Благодаря встроенной камере разделения жидкости, жидкости в полных или полуполных бутылках безопасно стекают в нижнюю камеру и удаляются через дренажную систему. Обеспечивает длительное использование благодаря коррозионностойким компонентам. Благодаря колесной мобильной конструкции легко перемещается внутри предприятия.',
+            paragraph3: 'MT Makina CK-200 идеально подходит для сектора HORECA (отели, рестораны, кафе), желающего снизить асходы на вывоз мусора. Благодаря функции plug-and-play, простому управлению и конструкции, не требующей обслуживания, она не создает эксплуатационной нагрузки. Обеспечивает полную защиту благодаря сертификации CE.'
+    },
+    ar: {
+      intro: 'كسارة الزجاجات المدمجة CK-200 هي حل إعادة تدوير هادئ وفعال مصمم خصيصًا للفنادق والبارات والمطاعم والشركات ذات المساحة المحدودة.',
         paragraph1: 'يتميز طراز CK-200 بمحرك محسن بقوة 1.5-3 كيلووات مع عرض دوار 200 مم. بسعة معالجة 100-200 كجم/ساعة، يمكنه سحق ما يقرب من 600-800 زجاجة زجاجية في الساعة. بفضل مستوى الضوضاء المنخفض (65-70 ديسيبل)، يعمل بالقرب من مناطق العملاء دون إزعاج. يوفر مساحة التخزين عن طريق تقليل حجم نفايات الزجاج بنسبة 80٪.',
-        paragraph2: 'بفضل غرفة فصل السائل المدمجة، يتم تصريف السوائل الموجودة في الزجاجات الممتلئة أو نصف الممتلئة بأمان إلى الغرفة السفلية وتصريفها عبر نظام الصرف. يوفر استخدامًا طويل الأمد مع مكونات مقاومة للتآكل ومطارق سحق زجاجية من سبائك خاصة. بفضل تصميمه المحمول بعجلات، يمكن نقله بسهولة داخل المنشأة.',
-        paragraph3: 'MT Makina CK-200 مثالي لقطاع HORECA الراغب في تقليل تكاليف جمع النفايات وتحقيق أهداف "النفايات الصفرية" الصديقة للبيئة. مع ميزة التشغيل الفوري والتشغيل البسيط والهيكل الخالي من الصيانة، لا يجلب أي عبء تشغيلي. يوفر حماية كاملة مع شهادة CE وأجهزة استشعار السلامة المهنية.'
-      }
-    },
-    'CK-400': {
-      tr: {
-        intro: 'CK-400 Endüstriyel Cam Şişe Kırma Makinesi, alışveriş merkezleri, tatil köyleri ve büyük ölçekli tesisler için yüksek kapasiteli atık cam yönetim çözümüdür.',
-        paragraph1: 'CK-400 model, 3-7.5 kW güçlendirilmiş motor ve 400 mm geniş rotor yapısı ile donatılmıştır. 200-400 kg/saat (yaklaşık 1200-1500 şişe/saat) işleme kapasitesi ile yoğun cam atığı üreten işletmelerin ihtiyacını karşılar. Şampanya şişeleri, kalın tabanlı şişeler ve çeşitli cam kavanozları zorlanmadan parçalar.',
-        paragraph2: 'Geliştirilmiş sıvı toplama havuzu ve filtreleme sistemi, büyük miktarda sıvının sistemden hızla tahliye edilmesini sağlar. Paslanmaz çelik iç hazne opsiyonu ile asidik veya şekerli sıvıların korozyon etkisi minimize edilir. Güvenlik kapakları ve otomatik durdurma sensörleri, operatör güvenliğini maksimum seviyede tutar.',
-        paragraph3: 'CK-400, belediye atık toplama merkezleri, büyük kantinler, askeri tesisler ve gemiler için idealdir. Atık hacmini küçülterek nakliye maliyetlerinde %75 üzerinde tasarruf sağlar. Geri dönüşüm firmaları için saf ve işlenmiş "cullet" (cam kırığı) hammadde kaynağı oluşturur. Dayanıklı şase yapısı ile zorlu çalışma koşullarına uygundur.'
-      },
-      en: {
-        intro: 'CK-400 Industrial Glass Bottle Crusher is a high-capacity waste glass management solution for shoppig malls, holiday resorts and large-scale facilities.',
-        paragraph1: 'CK-400 model is equipped with 3-7.5 kW reinforced motor and 400 mm wide rotor structure. With 200-400 kg/hour (approx. 1200-1500 bottles/hour) processing capacity, it meets the needs of businesses generating intense glass waste. It easily crushes champagne bottles, thick-bottomed bottles and various glass jars.',
-        paragraph2: 'Improved liquid collection pool and filtration system ensures rapid discharge of large amounts of liquid from the system. Stainless steel inner chamber option minimizes corrosion effect of acidic or sugary liquids. Safety covers and automatic stop sensors keep operator safety at maximum level.',
-        paragraph3: 'CK-400 is ideal for municipal waste collection centers, large canteens, military facilities and ships. It saves over 75% in transport costs by reducing waste volume. Creates pure and processed "cullet" raw material source for recycling companies. Suitable for tough working conditions with durable chassis structure.'
-      },
-      ru: {
-        intro: 'Промышленная дробилка для стеклянных бутылок CK-400 - это высокопроизводительное решение для управления отходами стекла для торговых центров, курортов.',
-        paragraph1: 'Модель CK-400 оснащена усиленным двигателем 3-7,5 кВт и широким ротором 400 мм. С производительностью 200-400 кг/час (ок. 1200-1500 бутылок/час) она отвечает потребностям предприятий с большим количеством отходов стекла. Легко измельчает бутылки из-под шампанского, бутылки с толстым дном и различные стеклянные банки.',
-        paragraph2: 'Улучшенный бассейн для сбора жидкости и система фильтрации обеспечивают быстрый слив большого количества жидкости из системы. Опция внутренней камеры из нержавеющей стали минимизирует коррозионное воздействие. Защитные крышки и датчики автоматической остановки обеспечивают максимальную безопасность оператора.',
-        paragraph3: 'CK-400 идеально подходит для муниципальных центров сбора отходов, крупных столовых, военных объектов и судов. Экономит более 75% транспортных расходов. Создает источник чистого сырья "стеклобой" для перерабатывающих компаний.'
-      },
-      ar: {
-        intro: 'كسارة الزجاجات الصناعية CK-400 هي حل إدارة نفايات الزجاج عالي السعة لمراكز التسوق والمنتجعات والمرافق واسعة النطاق.',
-        paragraph1: 'طراز CK-400 مجهز بمحرك معزز بقوة 3-7.5 كيلووات وهيكل دوار عريض 400 مم. بسعة معالجة 200-400 كجم/ساعة (حوالي 1200-1500 زجاجة/ساعة)، يلبي احتياجات الشركات التي تولد نفايات زجاجية مكثفة. يسحق بسهولة زجاجات الشمبانيا والزجاجات ذات القاع السميك والجرار الزجاجية المختلفة.',
-        paragraph2: 'يضمن حوض تجميع السوائل المحسن ونظام الترشيح تصريفًا سريعًا لكميات كبيرة من السائل من النظام. يقلل خيار الغرفة الداخلية من الفولاذ المقاوم للصدأ من تأثير التآكل للسوائل الحمضية. تحافظ أغطية السلامة وأجهزة استشعار التوقف التلقائي على سلامة المشغل عند الحد الأقصى.',
-        paragraph3: 'CK-400 مثالي لمراكز جمع النفايات البلدية والمقاصف الكبيرة والمرافق العسكرية والسفن. يوفر أكثر من 75٪ من تكاليف النقل عن طريق تقليل حجم النفايات. ينشئ مصدر مواد خام "زجاج مكسور" نقي ومعالج لشركات إعادة التدوير.'
-      }
-    },
-    'CKS-400': {
-      tr: {
-        intro: 'CKS-400 Sıvı Ayrıştırmalı Profesyonel Cam Kırıcı, tam otomatik sıvı geri kazanımı ve maksimum hijyen gerektiren endüstriyel tesisler için geliştirilmiş premium bir modeldir.',
-        paragraph1: 'CKS-400 model, 3-7.5 kW Heavy Duty motor ve özel tasarım AISI 304 paslanmaz çelik gövde bileşenleri ile donatılmıştır. Standart CK-400 ile aynı kapasitede (200-400 kg/saat) olmasına rağmen, %25 daha ağır ve sağlam gövde yapısı (650 kg) ile 7/24 kesintisiz endüstriyel operasyonlar için tasarlanmıştır. İçecek dolum tesisleri, bira fabrikaları ve gıda işleme tesislerindeki hatalı ürün imhası için mükemmeldir.',
-        paragraph2: 'Gelişmiş "Sıvı-Cam Ayrıştırma Teknolojisi" sayesinde, kırılan şişelerin içindeki sıvı %99 oranında ayrıştırılır ve entegre pompa sistemi ile otomatik olarak depolama tanklarına aktarılır. Bu özellik, özellikle alkollü içeceklerin veya değerli sıvıların geri kazanımı veya kontrollü imhası için kritiktir. Yıkanabilir iç hazne ve sızdırmazlık contaları hijyen standartlarını korur.',
-        paragraph3: 'MT Makina CKS-400, konveyör hatlarına ve otomatik besleme sistemlerine tam uyumludur. SCADA üzerinden izlenebilir sıvı doluluk sensörleri ve tork kontrolü mevcuttur. İş güvenliği açısından en üst donanıma sahip olan bu model, atık yönetimini bir gelir kalemine dönüştürmek isteyen profesyonel işletmelerin tercihidir.'
-      },
-      en: {
-        intro: 'CKS-400 Liquid Separating Professional Glass Crusher is a premium model developed for industrial facilities requiring fully automatic liquid recovery and maximum hygiene.',
-        paragraph1: 'CKS-400 model is equipped with 3-7.5 kW Heavy Duty motor and special design AISI 304 stainless steel body components. Although having same capacity as standard CK-400 (200-400 kg/hour), it is designated for 24/7 continuous industrial operations with 25% heavier and more robust body structure (650 kg). Perfect for faulty product destruction in beverage filling plants, breweries and food processing facilities.',
-        paragraph2: 'Thanks to advanced "Liquid-Glass Separation Technology", liquid inside crushed bottles is separated by 99% and automatically transferred to storage tanks via integrated pump system. This feature is critical especially for recovery or controlled destruction of alcoholic beverages or valuable liquids. Washable inner chamber and sealing gaskets maintain hygiene standards.',
-        paragraph3: 'MT Makina CKS-400 is fully compatible with conveyor lines and automatic feeding systems. SCADA-monitored liquid level sensors and torque control are available. Equipped with top safety gear, this model is the choice of professional businesses wanting to turn waste management into a revenue stream.'
-      },
-      ru: {
-        intro: 'Профессиональная дробилка с разделением жидкости CKS-400 - модель премиум-класса для промышленных объектов, трбующих полного извлечения жидкости.',
-        paragraph1: 'Модель CKS-400 оснащена двигателем Heavy Duty 3-7,5 кВт и компонентами корпуса из нержавеющей стали AISI 304. Несмотря на ту же производительность, что и у стандартного CK-400 (200-400 кг/час), она предназначена для круглосуточных непрерывных операций. Идеально подходит для уничтожения бракованной продукции на заводах по розливу напитков, пивоварнях.',
-        paragraph2: 'Благодаря передовой "Технологии разделения жидкости и стекла", жидкость отделяется на 99% и автоматически перекачивается в резервуары хранения. Эта функция критически важна для извлечения или контролируемого уничтожения алкогольных напитков. Моющаяся внутренняя камера поддерживает гигиенические стандарты.',
-        paragraph3: 'MT Makina CKS-400 полностью совместим с конвейерными линиями. Доступны датчики уровня жидкости, контролируемые SCADA. Эта модель является выбором профессиональных предприятий.'
-      },
-      ar: {
-        intro: 'كسارة الزجاج المهنية لفصل السوائل CKS-400 هي طراز ممتاز تم تطويره للمرافق الصناعية التي تتطلب استعادة السوائل تلقائيًا بالكامل.',
-        paragraph1: 'تم تجهيز طراز CKS-400 بمحرك للخدمة الشاقة 3-7.5 كيلووات ومكونات جسم من الفولاذ المقاوم للصدأ AISI 304. على الرغم من أن لها نفس سعة CK-400 القياسية، إلا أنها مخصصة للعمليات الصناعية المستمرة 7/24 بهيكل أثقل وأكثر قوة بنسبة 25٪. مثالي لتدمير المنتجات المعيبة في مصانع تعبئة المشروبات ومصانع الجعة.',
-        paragraph2: 'بفضل "تقنية فصل السوائل والزجاج" المتقدمة، يتم فصل السائل بنسبة 99٪ ونقله تلقائيًا إلى خزانات التخزين عبر نظام مضخة مدمج. هذه الميزة ضرورية بشكل خاص لاستعادة أو التدمير الخاضع للرقابة للمشروبات الكحولية. تحافظ الغرفة الداخلية القابلة للغسل على معايير النظافة.',
-        paragraph3: 'MT Makina CKS-400 متوافق تمامًا مع خطوط النقل وأنظمة التغذية التلقائية. تتوفر أجهزة استشعار مستوى السائل التي تراقبه SCADA. هذا النموذج هو خيار الشركات المحترفة التي ترغب في تحويل إدارة النفايات إلى تدفق إيرادات.'
-      }
+          paragraph2: 'بفضل غرفة فصل السائل المدمجة، يتم تصريف السوائل الموجودة في الزجاجات الممتلئة أو نصف الممتلئة بأمان إلى الغرفة السفلية وتصريفها عبر نظام الصرف. يوفر استخدامًا طويل الأمد مع مكونات مقاومة للتآكل ومطارق سحق زجاجية من سبائك خاصة. بفضل تصميمه المحمول بعجلات، يمكن نقله بسهولة داخل المنشأة.',
+            paragraph3: 'MT Makina CK-200 مثالي لقطاع HORECA الراغب في تقليل تكاليف جمع النفايات وتحقيق أهداف "النفايات الصفرية" الصديقة للبيئة. مع ميزة التشغيل الفوري والتشغيل البسيط والهيكل الخالي من الصيانة، لا يجلب أي عبء تشغيلي. يوفر حماية كاملة مع شهادة CE وأجهزة استشعار السلامة المهنية.'
     }
   },
+  'CK-400': {
+    tr: {
+      intro: 'CK-400 Endüstriyel Cam Şişe Kırma Makinesi, alışveriş merkezleri, tatil köyleri ve büyük ölçekli tesisler için yüksek kapasiteli atık cam yönetim çözümüdür.',
+        paragraph1: 'CK-400 model, 3-7.5 kW güçlendirilmiş motor ve 400 mm geniş rotor yapısı ile donatılmıştır. 200-400 kg/saat (yaklaşık 1200-1500 şişe/saat) işleme kapasitesi ile yoğun cam atığı üreten işletmelerin ihtiyacını karşılar. Şampanya şişeleri, kalın tabanlı şişeler ve çeşitli cam kavanozları zorlanmadan parçalar.',
+          paragraph2: 'Geliştirilmiş sıvı toplama havuzu ve filtreleme sistemi, büyük miktarda sıvının sistemden hızla tahliye edilmesini sağlar. Paslanmaz çelik iç hazne opsiyonu ile asidik veya şekerli sıvıların korozyon etkisi minimize edilir. Güvenlik kapakları ve otomatik durdurma sensörleri, operatör güvenliğini maksimum seviyede tutar.',
+            paragraph3: 'CK-400, belediye atık toplama merkezleri, büyük kantinler, askeri tesisler ve gemiler için idealdir. Atık hacmini küçülterek nakliye maliyetlerinde %75 üzerinde tasarruf sağlar. Geri dönüşüm firmaları için saf ve işlenmiş "cullet" (cam kırığı) hammadde kaynağı oluşturur. Dayanıklı şase yapısı ile zorlu çalışma koşullarına uygundur.'
+    },
+    en: {
+      intro: 'CK-400 Industrial Glass Bottle Crusher is a high-capacity waste glass management solution for shoppig malls, holiday resorts and large-scale facilities.',
+        paragraph1: 'CK-400 model is equipped with 3-7.5 kW reinforced motor and 400 mm wide rotor structure. With 200-400 kg/hour (approx. 1200-1500 bottles/hour) processing capacity, it meets the needs of businesses generating intense glass waste. It easily crushes champagne bottles, thick-bottomed bottles and various glass jars.',
+          paragraph2: 'Improved liquid collection pool and filtration system ensures rapid discharge of large amounts of liquid from the system. Stainless steel inner chamber option minimizes corrosion effect of acidic or sugary liquids. Safety covers and automatic stop sensors keep operator safety at maximum level.',
+            paragraph3: 'CK-400 is ideal for municipal waste collection centers, large canteens, military facilities and ships. It saves over 75% in transport costs by reducing waste volume. Creates pure and processed "cullet" raw material source for recycling companies. Suitable for tough working conditions with durable chassis structure.'
+    },
+    ru: {
+      intro: 'Промышленная дробилка для стеклянных бутылок CK-400 - это высокопроизводительное решение для управления отходами стекла для торговых центров, курортов.',
+        paragraph1: 'Модель CK-400 оснащена усиленным двигателем 3-7,5 кВт и широким ротором 400 мм. С производительностью 200-400 кг/час (ок. 1200-1500 бутылок/час) она отвечает потребностям предприятий с большим количеством отходов стекла. Легко измельчает бутылки из-под шампанского, бутылки с толстым дном и различные стеклянные банки.',
+          paragraph2: 'Улучшенный бассейн для сбора жидкости и система фильтрации обеспечивают быстрый слив большого количества жидкости из системы. Опция внутренней камеры из нержавеющей стали минимизирует коррозионное воздействие. Защитные крышки и датчики автоматической остановки обеспечивают максимальную безопасность оператора.',
+            paragraph3: 'CK-400 идеально подходит для муниципальных центров сбора отходов, крупных столовых, военных объектов и судов. Экономит более 75% транспортных расходов. Создает источник чистого сырья "стеклобой" для перерабатывающих компаний.'
+    },
+    ar: {
+      intro: 'كسارة الزجاجات الصناعية CK-400 هي حل إدارة نفايات الزجاج عالي السعة لمراكز التسوق والمنتجعات والمرافق واسعة النطاق.',
+        paragraph1: 'طراز CK-400 مجهز بمحرك معزز بقوة 3-7.5 كيلووات وهيكل دوار عريض 400 مم. بسعة معالجة 200-400 كجم/ساعة (حوالي 1200-1500 زجاجة/ساعة)، يلبي احتياجات الشركات التي تولد نفايات زجاجية مكثفة. يسحق بسهولة زجاجات الشمبانيا والزجاجات ذات القاع السميك والجرار الزجاجية المختلفة.',
+          paragraph2: 'يضمن حوض تجميع السوائل المحسن ونظام الترشيح تصريفًا سريعًا لكميات كبيرة من السائل من النظام. يقلل خيار الغرفة الداخلية من الفولاذ المقاوم للصدأ من تأثير التآكل للسوائل الحمضية. تحافظ أغطية السلامة وأجهزة استشعار التوقف التلقائي على سلامة المشغل عند الحد الأقصى.',
+            paragraph3: 'CK-400 مثالي لمراكز جمع النفايات البلدية والمقاصف الكبيرة والمرافق العسكرية والسفن. يوفر أكثر من 75٪ من تكاليف النقل عن طريق تقليل حجم النفايات. ينشئ مصدر مواد خام "زجاج مكسور" نقي ومعالج لشركات إعادة التدوير.'
+    }
+  },
+  'CKS-400': {
+    tr: {
+      intro: 'CKS-400 Sıvı Ayrıştırmalı Profesyonel Cam Kırıcı, tam otomatik sıvı geri kazanımı ve maksimum hijyen gerektiren endüstriyel tesisler için geliştirilmiş premium bir modeldir.',
+        paragraph1: 'CKS-400 model, 3-7.5 kW Heavy Duty motor ve özel tasarım AISI 304 paslanmaz çelik gövde bileşenleri ile donatılmıştır. Standart CK-400 ile aynı kapasitede (200-400 kg/saat) olmasına rağmen, %25 daha ağır ve sağlam gövde yapısı (650 kg) ile 7/24 kesintisiz endüstriyel operasyonlar için tasarlanmıştır. İçecek dolum tesisleri, bira fabrikaları ve gıda işleme tesislerindeki hatalı ürün imhası için mükemmeldir.',
+          paragraph2: 'Gelişmiş "Sıvı-Cam Ayrıştırma Teknolojisi" sayesinde, kırılan şişelerin içindeki sıvı %99 oranında ayrıştırılır ve entegre pompa sistemi ile otomatik olarak depolama tanklarına aktarılır. Bu özellik, özellikle alkollü içeceklerin veya değerli sıvıların geri kazanımı veya kontrollü imhası için kritiktir. Yıkanabilir iç hazne ve sızdırmazlık contaları hijyen standartlarını korur.',
+            paragraph3: 'MT Makina CKS-400, konveyör hatlarına ve otomatik besleme sistemlerine tam uyumludur. SCADA üzerinden izlenebilir sıvı doluluk sensörleri ve tork kontrolü mevcuttur. İş güvenliği açısından en üst donanıma sahip olan bu model, atık yönetimini bir gelir kalemine dönüştürmek isteyen profesyonel işletmelerin tercihidir.'
+    },
+    en: {
+      intro: 'CKS-400 Liquid Separating Professional Glass Crusher is a premium model developed for industrial facilities requiring fully automatic liquid recovery and maximum hygiene.',
+        paragraph1: 'CKS-400 model is equipped with 3-7.5 kW Heavy Duty motor and special design AISI 304 stainless steel body components. Although having same capacity as standard CK-400 (200-400 kg/hour), it is designated for 24/7 continuous industrial operations with 25% heavier and more robust body structure (650 kg). Perfect for faulty product destruction in beverage filling plants, breweries and food processing facilities.',
+          paragraph2: 'Thanks to advanced "Liquid-Glass Separation Technology", liquid inside crushed bottles is separated by 99% and automatically transferred to storage tanks via integrated pump system. This feature is critical especially for recovery or controlled destruction of alcoholic beverages or valuable liquids. Washable inner chamber and sealing gaskets maintain hygiene standards.',
+            paragraph3: 'MT Makina CKS-400 is fully compatible with conveyor lines and automatic feeding systems. SCADA-monitored liquid level sensors and torque control are available. Equipped with top safety gear, this model is the choice of professional businesses wanting to turn waste management into a revenue stream.'
+    },
+    ru: {
+      intro: 'Профессиональная дробилка с разделением жидкости CKS-400 - модель премиум-класса для промышленных объектов, трбующих полного извлечения жидкости.',
+        paragraph1: 'Модель CKS-400 оснащена двигателем Heavy Duty 3-7,5 кВт и компонентами корпуса из нержавеющей стали AISI 304. Несмотря на ту же производительность, что и у стандартного CK-400 (200-400 кг/час), она предназначена для круглосуточных непрерывных операций. Идеально подходит для уничтожения бракованной продукции на заводах по розливу напитков, пивоварнях.',
+          paragraph2: 'Благодаря передовой "Технологии разделения жидкости и стекла", жидкость отделяется на 99% и автоматически перекачивается в резервуары хранения. Эта функция критически важна для извлечения или контролируемого уничтожения алкогольных напитков. Моющаяся внутренняя камера поддерживает гигиенические стандарты.',
+            paragraph3: 'MT Makina CKS-400 полностью совместим с конвейерными линиями. Доступны датчики уровня жидкости, контролируемые SCADA. Эта модель является выбором профессиональных предприятий.'
+    },
+    ar: {
+      intro: 'كسارة الزجاج المهنية لفصل السوائل CKS-400 هي طراز ممتاز تم تطويره للمرافق الصناعية التي تتطلب استعادة السوائل تلقائيًا بالكامل.',
+        paragraph1: 'تم تجهيز طراز CKS-400 بمحرك للخدمة الشاقة 3-7.5 كيلووات ومكونات جسم من الفولاذ المقاوم للصدأ AISI 304. على الرغم من أن لها نفس سعة CK-400 القياسية، إلا أنها مخصصة للعمليات الصناعية المستمرة 7/24 بهيكل أثقل وأكثر قوة بنسبة 25٪. مثالي لتدمير المنتجات المعيبة في مصانع تعبئة المشروبات ومصانع الجعة.',
+          paragraph2: 'بفضل "تقنية فصل السوائل والزجاج" المتقدمة، يتم فصل السائل بنسبة 99٪ ونقله تلقائيًا إلى خزانات التخزين عبر نظام مضخة مدمج. هذه الميزة ضرورية بشكل خاص لاستعادة أو التدمير الخاضع للرقابة للمشروبات الكحولية. تحافظ الغرفة الداخلية القابلة للغسل على معايير النظافة.',
+            paragraph3: 'MT Makina CKS-400 متوافق تمامًا مع خطوط النقل وأنظمة التغذية التلقائية. تتوفر أجهزة استشعار مستوى السائل التي تراقبه SCADA. هذا النموذج هو خيار الشركات المحترفة التي ترغب في تحويل إدارة النفايات إلى تدفق إيرادات.'
+    }
+  }
+},
   // Bu modeller için çeviri metinleri gerektiğinde eklenecektir
 };
 
