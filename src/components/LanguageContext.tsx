@@ -1050,6 +1050,7 @@ const translations = {
     metal_optional_7: 'Elektrik Motoru Tahrik Sistemi',
     metal_optional_8: 'Besleme ve Boşaltma Konveyörü',
 
+
     // Harddisk İmha Makinesi Ürün Sayfası
     harddisk_main_title: 'Harddisk ve Veri İmha Makinesi (HDD Shredder)',
     harddisk_description_1: 'Veri güvenliğinin kritik olduğu çağımızda, Harddisk Parçalama Makinesi (HDD Shredder); sunucu diskleri, SSD, USB ve CD/DVD gibi dijital medyaları fiziksel olarak parçalayarak (Physical Destruction) verilerin geri getirilemez olmasını sağlar.',
@@ -1092,9 +1093,10 @@ const translations = {
 
     // Mobile Crusher Product Category Page
     mobile_main_title: 'Mobil Kırıcı ve Parçalayıcı (Mobile Shredder)',
-    mobile_description_1: 'Atığın olduğu yere çözüm götürün. Mobil Kırıcı (Mobile Shredder) serimiz, paletli veya tekerlekli şasi üzerine entegre edilmiş, kendi jeneratörü ile çalışan bağımsız bir geri dönüşüm istasyonudur.',
-    mobile_description_2: 'İnşaat ve yıkım atıkları (Rubble), orman temizliği ve saha atıklarının yerinde bertaraf edilmesi için tasarlanmıştır. Lojistik maliyetlerini sıfıra indirir ve atığı yerinde değere dönüştürür.',
-    mobile_description_3: 'Dizel motor veya jeneratör opsiyonları ile elektrik bağlantısı olmayan alanlarda bile kesintisiz çalışma sağlar. Uzaktan kumanda sistemi, otomatik yağlama ve rotor soğutma ile operatör güvenliği ve makine ömrü maksimize edilir.',
+    mobile_subtitle: 'Her türlü arazide üstün performans gösteren mobil parçalama makineleri ile atıklarınızı yerinde ve hızla geri dönüştürün.',
+    mobile_description_1: 'Mobil kırıcı ve parçalama makineleri, atık yönetimi süreçlerini optimize etmek ve lojistik maliyetlerini düşürmek için tasarlanmıştır. Bu mobil parçalama tesisi, inşaat ve yıkım atıklarından orman atıklarına kadar geniş bir yelpazede yerinde geri dönüşüm imkanı sunar.',
+    mobile_description_2: 'Güçlü dizel motoru ve paletli yürüyüş takımı sayesinde en zorlu arazi koşullarında bile kesintisiz çalışan bu parçalama makineleri, yüksek kapasiteli kırma ve öğütme performansı sağlar. Mobil shredder teknolojisi, atıkların taşınmasına gerek kalmadan, olduğu yerde ekonomik bir şekilde işlenmesine olanak tanır.',
+    mobile_description_3: 'Mobil atık parçalama çözümlerimiz, modern geri dönüşüm projelerinin vazgeçilmez bir parçasıdır. Metal, plastik, ahşap ve moloz gibi atıkların boyutunu küçülterek hacimden tasarruf sağlayan bu makineler, hem zamandan hem de yakıttan tasarruf etmenize yardımcı olur. Çevre dostu ve yüksek verimli mobil kırıcılarımızla projelerinize değer katın.',
     mobile_adv_1_title: 'Yüksek Verimlilik',
     mobile_adv_1_desc: 'Geniş malzeme yelpazesini hızlı ve etkili bir şekilde işleyerek geri dönüşüm sürecini hızlandırır.',
     mobile_adv_2_title: 'Taşınabilirlik',
@@ -2241,11 +2243,11 @@ const translations = {
     harddisk_ecatalog_btn: 'E-Catalog',
 
     // Mobile Crusher Product Category Page
-    mobile_main_title: 'Powerful Solutions in Industrial Recycling with High Capacity Mobile Crushers',
-    mobile_subtitle: 'Stands out with its capacity to process a wide range of materials and mobility features in recycling and waste management processes.',
-    mobile_description_1: 'Provide Flexibility in Recycling with Mobile Crushers. Mobile crushers are high-capacity and flexible recycling solutions that reduce logistics costs by shredding on-site.',
-    mobile_description_2: 'MT Makina mobile crusher series is designed for on-site processing of construction waste, wood, plastic, metal scrap and industrial waste. It can work even in challenging terrain conditions with wheeled or tracked systems.',
-    mobile_description_3: 'Provides uninterrupted operation even in areas without electrical connection with diesel engine or generator options. Operator safety and machine life are maximized with remote control system, automatic lubrication and rotor cooling.',
+    mobile_main_title: 'Mobile Crusher and Shredder',
+    mobile_subtitle: 'Recycle your waste effectively on-site with mobile shredding machines that offer superior performance on all types of terrain.',
+    mobile_description_1: 'Mobile crushers and shredding machines are designed to optimize waste management processes and reduce logistics costs. This mobile shredding plant offers on-site recycling opportunities for a wide range of materials, from construction and demolition waste to forest waste.',
+    mobile_description_2: 'Thanks to its powerful diesel engine and tracked undercarriage, these shredding machines operate uninterrupted even in the toughest terrain conditions, providing high-capacity crushing and grinding performance. Mobile shredder technology allows waste to be processed economically where it is, without the need for transportation.',
+    mobile_description_3: 'Our mobile waste shredding solutions are an indispensable part of modern recycling projects. These machines, which save volume by reducing the size of waste such as metal, plastic, wood, and rubble, help you save both time and fuel. Add value to your projects with our eco-friendly and high-efficiency mobile crushers.',
     mobile_adv_1_title: 'High Efficiency',
     mobile_adv_1_desc: 'Accelerates the recycling process by processing a wide range of materials quickly and effectively.',
     mobile_adv_2_title: 'Mobility',
@@ -2968,11 +2970,11 @@ const translations = {
     harddisk_ecatalog_btn: 'Электронный каталог',
 
     // Mobile Crusher Product Category Page
-    mobile_main_title: 'Мощные решения в промышленной переработке с высокопроизводительными мобильными дробилками',
-    mobile_subtitle: 'Выделяется способностью обрабатывать широкий спектр материалов и мобильностью в процессах переработки и управления отходами.',
-    mobile_description_1: 'Обеспечьте гибкость в переработке с мобильными дробилками. Мобильные дробилки - это высокопроизводительные и гибкие решения для переработки, снижающие логистические затраты за счет измельчения на месте.',
-    mobile_description_2: 'Серия мобильных дробилок MT Makina предназначена для обработки на месте строительных отходов, древесины, пластика, металлолома и промышленных отходов. Может работать даже в сложных условиях местности с колесными или гусеничными системами.',
-    mobile_description_3: 'Обеспечивает бесперебойную работу даже в местах без электрического подключения с дизельным двигателем или вариантами генератора. Безопасность оператора и срок службы машины максимизируются с системой дистанционного управления, автоматической смазкой и охлаждением ротора.',
+    mobile_main_title: 'Мобильный Дробилка и Измельчитель (Mobile Shredder)',
+    mobile_subtitle: 'Эффективно перерабатывайте отходы на месте с помощью мобильных измельчителей, которые обеспечивают превосходную производительность на любой местности.',
+    mobile_description_1: 'Мобильные дробилки и измельчители предназначены для оптимизации процессов управления отходами и снижения логистических затрат. Эта мобильная измельчительная установка предлагает возможности переработки на месте для широкого спектра материалов, от строительных отходов и отходов сноса до лесных отходов.',
+    mobile_description_2: 'Благодаря мощному дизельному двигателю и гусеничному ходу эти измельчители работают бесперебойно даже в самых сложных условиях местности, обеспечивая высокую производительность дробления и измельчения. Технология мобильных шредеров позволяет экономично перерабатывать отходы на месте, без необходимости их транспортировки.',
+    mobile_description_3: 'Наши мобильные решения для измельчения отходов являются неотъемлемой частью современных проектов по переработке. Эти машины, которые экономят объем за счет уменьшения размера отходов, таких как металл, пластик, дерево и щебень, помогают вам сэкономить время и топливо. Добавьте ценность своим проектам с помощью наших экологически чистых и высокоэффективных мобильных дробилок.',
     mobile_adv_1_title: 'Высокая эффективность',
     mobile_adv_1_desc: 'Ускоряет процесс переработки, быстро и эффективно обрабатывая широкий спектр материалов.',
     mobile_adv_2_title: 'Мобильность',
@@ -3685,11 +3687,11 @@ const translations = {
     harddisk_ecatalog_btn: 'الكتالوج الإلكتروني',
 
     // Mobile Crusher Product Category Page
-    mobile_main_title: 'حلول قوية في إعادة التدوير الصناعي مع الكسارات المتنقلة عالية السعة',
-    mobile_subtitle: 'تتميز بقدرتها على معالجة مجموعة واسعة من المواد وميزات التنقل في عمليات إعادة التدوير وإدارة النفايات.',
-    mobile_description_1: 'توفير المرونة في إعادة التدوير مع الكسارات المتنقلة. الكسارات المتنقلة هي حلول إعادة تدوير عالية السعة ومرنة تقلل من تكاليف اللوجستيات عن طريق التمزيق في الموقع.',
-    mobile_description_2: 'تم تصميم سلسلة الكسارات المتنقلة MT Makina للمعالجة في الموقع لنفايات البناء والخشب والبلاستيك وخردة المعادن والنفايات الصناعية. يمكن أن تعمل حتى في ظروف التضاريس الصعبة مع أنظمة العجلات أو الجنزير.',
-    mobile_description_3: 'توفر تشغيل متواصل حتى في المناطق بدون اتصال كهربائي مع محرك ديزل أو خيارات المولد. يتم زيادة سلامة المشغل وعمر الآلة إلى أقصى حد مع نظام التحكم عن بعد والتشحيم التلقائي وتبريد الدوار.',
+    mobile_main_title: 'كسارة ومقطعة متنقلة (Mobile Shredder)',
+    mobile_subtitle: 'أعد تدوير نفاياتك بفعالية في الموقع باستخدام آلات التمزيق المتنقلة التي توفر أداءً فائقًا على جميع أنواع التضاريس.',
+    mobile_description_1: 'تم تصميم الكسارات المتنقلة وآلات التمزيق لتحسين عمليات إدارة النفايات وتقليل تكاليف الخدمات اللوجستية. توفر محطة التمزيق المتنقلة هذه فرص إعادة التدوير في الموقع لمجموعة واسعة من المواد، من مخلفات البناء والهدم إلى مخلفات الغابات.',
+    mobile_description_2: 'بفضل محرك الديزل القوي والهيكل السفلي المجنزر، تعمل آلات التمزيق هذه دون انقطاع حتى في أصعب تضاريس الأرض، مما يوفر أداءً عاليًا في التكسير والطحن. تسمح تقنية التمزيق المتنقل بمعالجة النفايات اقتصاديًا في مكانها، دون الحاجة إلى النقل.',
+    mobile_description_3: 'حلولنا المتنقلة لتمزيق النفايات هي جزء لا يتجزأ من مشاريع إعادة التدوير الحديثة. هذه الآلات، التي توفر الحجم عن طريق تقليل حجم النفايات مثل المعادن والبلاستيك والخشب والركام، تساعدك على توفير الوقت والوقود. أضف قيمة إلى مشاريعك من خلال كساراتنا المتنقلة الصديقة للبيئة وعالية الكفاءة.',
     mobile_adv_1_title: 'كفاءة عالية',
     mobile_adv_1_desc: 'تسريع عملية إعادة التدوير من خلال معالجة مجموعة واسعة من المواد بسرعة وفعالية.',
     mobile_adv_2_title: 'التنقل',
