@@ -4,6 +4,7 @@
  */
 
 import { generateUrl, type Language } from './seoConfig';
+import { modelDescriptions } from './modelDescriptions';
 
 interface SitemapUrl {
   loc: string;
@@ -14,32 +15,32 @@ interface SitemapUrl {
 }
 
 // All product types and their models
-const products: { [key: string]: string[] } = {
-  'single-saft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
-  'dual-saft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-saft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
-  'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
-  'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
-  'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
-  'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
-  'tree-root': ['TRS-100'],
-  'wood': ['WG-50'],
-  'glass': ['GC-30'],
-  'granulator': ['GR-400', 'GR-600', 'GR-800'],
-  'baler': ['BP-60', 'BP-100'],
-  'conveyor': ['CV-3M', 'CV-5M', 'CV-10M'],
-  'separator': ['MS-1', 'MS-2']
-};
+// All product types and their models derived from modelDescriptions or manually augmented if needed
+// We use a mapping or just keys from modelDescriptions
+const products: { [key: string]: string[] } = {};
 
+// Populate products from modelDescriptions
+Object.keys(modelDescriptions).forEach(type => {
+  products[type] = Object.keys(modelDescriptions[type]);
+});
+
+// Update waste categories to match WasteCategoriesPage.tsx
 const wasteCategories = [
-  'plastik',
-  'kagit-karton', 
-  'metal',
+  'evsel',
   'elektronik',
-  'ahsap',
   'lastik',
+  'metal',
+  'cam',
+  'kagit',
+  'plastik',
+  'organik',
+  'tibbi',
+  'agac',
+  'hayvan',
+  'ambalaj',
+  'palet',
   'tekstil',
-  'organik'
+  'aty'
 ];
 
 const languages: Language[] = ['tr', 'en', 'ru', 'ar'];
@@ -50,7 +51,7 @@ const languages: Language[] = ['tr', 'en', 'ru', 'ar'];
 export function generateSitemapUrls(): SitemapUrl[] {
   const baseUrl = 'https://www.parcalamamakinesi.com';
   const today = new Date().toISOString().split('T')[0];
-  
+
   const urls: SitemapUrl[] = [];
 
   // For each language, generate all pages
@@ -237,15 +238,15 @@ export function generateSitemapUrls(): SitemapUrl[] {
  */
 export function generateSitemapXML(): string {
   const urls = generateSitemapUrls();
-  
+
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
-  
+
   urls.forEach(url => {
     xml += '  <url>\n';
     xml += `    <loc>${url.loc}</loc>\n`;
-    
+
     // Add hreflang alternate links
     if (url.alternates) {
       url.alternates.forEach(alt => {
@@ -254,7 +255,7 @@ export function generateSitemapXML(): string {
       // Add x-default
       xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${url.alternates[0].url}"/>\n`;
     }
-    
+
     if (url.lastmod) {
       xml += `    <lastmod>${url.lastmod}</lastmod>\n`;
     }
@@ -266,9 +267,9 @@ export function generateSitemapXML(): string {
     }
     xml += '  </url>\n';
   });
-  
+
   xml += '</urlset>';
-  
+
   return xml;
 }
 
@@ -277,7 +278,7 @@ export function generateSitemapXML(): string {
  */
 export function generateRobotsTxt(): string {
   const baseUrl = 'https://www.parcalamamakinesi.com';
-  
+
   let content = '# MT Makina Robots.txt\n\n';
   content += 'User-agent: *\n';
   content += 'Allow: /\n\n';
@@ -288,7 +289,7 @@ export function generateRobotsTxt(): string {
   content += `Sitemap: ${baseUrl}/sitemap.xml\n\n`;
   content += '# Crawl-delay\n';
   content += 'Crawl-delay: 1\n';
-  
+
   return content;
 }
 
@@ -298,11 +299,11 @@ export function generateRobotsTxt(): string {
 export function getSitemapStats() {
   const urls = generateSitemapUrls();
   const byLanguage: { [key: string]: number } = {};
-  
+
   languages.forEach(lang => {
     byLanguage[lang] = urls.filter(url => url.loc.includes(`/${lang}/`)).length;
   });
-  
+
   return {
     total: urls.length,
     byLanguage,

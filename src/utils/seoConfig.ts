@@ -16,7 +16,7 @@ export interface SEOMetadata {
 export type Language = 'tr' | 'en' | 'ru' | 'ar';
 
 // Multi-language URL slugs for each page type
-const slugsByLanguage = {
+export const slugsByLanguage = {
   home: { tr: '', en: '', ru: '', ar: '' },
   about: { tr: 'kurumsal', en: 'about', ru: 'o-kompanii', ar: 'about' },
   products: { tr: 'urunler', en: 'products', ru: 'produkty', ar: 'products' },
@@ -29,7 +29,7 @@ const slugsByLanguage = {
 };
 
 // Product category slugs by language
-const productCategorySlugs = {
+export const productCategorySlugs = {
   'single-saft': {
     tr: 'tek-saftli-parcalama-makinesi',
     en: 'single-shaft-shredder',
@@ -132,7 +132,7 @@ export const generateUrl = {
   technology: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.technology[lang]}`,
   references: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.references[lang]}`,
   certificates: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.certificates[lang]}`,
-  waste: (category: string | undefined, lang: Language = 'tr') => 
+  waste: (category: string | undefined, lang: Language = 'tr') =>
     category ? `/${lang}/${slugsByLanguage.waste[lang]}/${category}` : `/${lang}/${slugsByLanguage.waste[lang]}`,
   contact: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.contact[lang]}`,
   ecatalog: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.ecatalog[lang]}`
@@ -495,7 +495,7 @@ const updateMetaTag = (property: string, content: string) => {
 export const generateProductStructuredData = (type: string, model: string) => {
   const categorySEO = getProductCategorySEO(type);
   const modelSEO = getProductModelSEO(type, model);
-  
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",

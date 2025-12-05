@@ -33,7 +33,10 @@ import {
   insertStructuredData,
   generateOrganizationStructuredData,
   generateLocalBusinessStructuredData,
-  type Language
+  slugsByLanguage,
+  productCategorySlugs,
+  type Language,
+  type SEOMetadata
 } from './utils/seoConfig';
 import { SEOHead } from './components/SEOHead';
 
@@ -41,113 +44,77 @@ type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overvie
 type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood' | 'glass' | null;
 
 // Parse URL and determine current page (Multi-language support)
+// Parse URL and determine current page (Multi-language support)
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
   const path = window.location.pathname;
-  console.log('parseUrl - Parsing path:', path);
 
   // Extract language prefix if present
   const langMatch = path.match(/^\/(tr|en|ru|ar)/);
   const pathWithoutLang = langMatch ? path.substring(3) : path; // Remove /tr, /en, etc.
-  console.log('parseUrl - Path without lang:', pathWithoutLang);
+  const cleanPath = pathWithoutLang.replace(/^\//, ''); // Remove leading slash for matching
 
   // Home page
-  if (path === '/' || pathWithoutLang === '' || pathWithoutLang === '/' || path.match(/^\/(tr|en|ru|ar)\/?$/)) {
-    console.log('parseUrl - Detected: main/home page');
+  if (path === '/' || cleanPath === '') {
     return { page: 'main' };
   }
 
-  // Multi-language page detection
-  // About page (kurumsal, about, o-kompanii)
-  if (pathWithoutLang.match(/^\/(kurumsal|about|o-kompanii)$/)) {
-    console.log('parseUrl - Detected: about page');
-    return { page: 'about' };
-  }
+  // Check static pages defined in slugsByLanguage
+  // We skip 'waste' here because it has sub-routes (categories) which we handle separately
+  for (const [pageKey, slugs] of Object.entries(slugsByLanguage)) {
+    if (pageKey === 'home' || pageKey === 'waste') continue;
 
-  // Products Overview (urunler, products, produkty)
-  if (pathWithoutLang.match(/^\/(urunler|products|produkty)$/)) {
-    console.log('parseUrl - Detected: products-overview page');
-    return { page: 'products-overview' };
-  }
+    // Check if current path matches any of the language slugs for this page
+    const slugValues = Object.values(slugs);
+    if (slugValues.includes(cleanPath)) {
+      // Map legacy page keys to PageView type if needed, or ensure strict typing
+      // Our PageView type matches keys in slugsByLanguage mostly:
+      // about -> about
+      // products -> products-overview
+      // references -> references-overview
+      // technology -> technology
+      // certificates -> certificates
+      // contact -> contact
+      // ecatalog -> ecatalog
 
-  // Product Categories - Multi-language slugs
-  const productCategoryPatterns: { pattern: RegExp; type: ProductType }[] = [
-    { pattern: /^\/(tek-saftli-parcalama-makinesi|single-shaft-shredder|odnovalnaya-drobilka)/, type: 'single-saft' },
-    { pattern: /^\/(cift-saftli-parcalama-makinesi|dual-shaft-shredder|dvukhvalnaya-drobilka)/, type: 'dual-saft' },
-    { pattern: /^\/(dort-saftli-parcalama-makinesi|quad-shaft-shredder|chetyrekhvalnaya-drobilka)/, type: 'quad-saft' },
-    { pattern: /^\/(metal-parcalama-makinesi|metal-shredder|drobilka-metalla)/, type: 'metal' },
-    { pattern: /^\/(mobil-kirici|mobile-shredder|mobilnaya-drobilka)/, type: 'mobile' },
-    { pattern: /^\/(palet-parcalama-makinesi|pallet-shredder|drobilka-poddonov)/, type: 'pallet' },
-    { pattern: /^\/(harddisk-imha-makinesi|harddisk-destroyer|unichtozhitel-zhestkikh-diskov)/, type: 'harddisk' },
-    { pattern: /^\/(agac-koku-parcalama-makinesi|tree-root-shredder|drobilka-kornej-derevev)/, type: 'tree-root' },
-    { pattern: /^\/(agac-parcalama-ogutme-makinesi|wood-grinder|drobilka-drevesiny)/, type: 'wood' },
-    { pattern: /^\/(cam-sise-kirma-makinesi|glass-crusher|drobilka-stekla)/, type: 'glass' }
-  ];
-
-  // Check product categories and details
-  for (const { pattern, type } of productCategoryPatterns) {
-    const match = pathWithoutLang.match(pattern);
-    if (match) {
-      const matchedSlug = match[0];
-      // Check if it's just the category page
-      if (pathWithoutLang === matchedSlug) {
-        console.log('parseUrl - Detected: product-category page, product:', type);
-        return { page: 'product-category', product: type };
-      }
-      // Check if it's a product detail page (has model after category)
-      if (pathWithoutLang.startsWith(matchedSlug + '/')) {
-        const model = pathWithoutLang.substring(matchedSlug.length + 1).toUpperCase();
-        console.log('parseUrl - Detected: product-detail page, product:', type, 'model:', model);
-        return { page: 'product-detail', product: type, model };
+      switch (pageKey) {
+        case 'products': return { page: 'products-overview' };
+        case 'references': return { page: 'references-overview' };
+        default: return { page: pageKey as PageView };
       }
     }
   }
 
-  // Technology (teknoloji, technology, tekhnologiya)
-  if (pathWithoutLang.match(/^\/(teknoloji|technology|tekhnologiya)$/)) {
-    console.log('parseUrl - Detected: technology page');
-    return { page: 'technology' };
-  }
-
-  // References (referanslar, references, referencii)
-  if (pathWithoutLang.match(/^\/(referanslar|references|referencii)$/)) {
-    console.log('parseUrl - Detected: references-overview page');
-    return { page: 'references-overview' };
-  }
-
-  // Certificates (sertifikalar, certificates, sertifikaty)
-  if (pathWithoutLang.match(/^\/(sertifikalar|certificates|sertifikaty)$/)) {
-    console.log('parseUrl - Detected: certificates page');
-    return { page: 'certificates' };
-  }
-
-  // Contact (iletisim, contact, kontakty)
-  if (pathWithoutLang.match(/^\/(iletisim|contact|kontakty)$/)) {
-    console.log('parseUrl - Detected: contact page');
-    return { page: 'contact' };
-  }
-
-  // E-Catalog (e-katalog, e-catalog)
-  if (pathWithoutLang.match(/^\/(e-katalog|e-catalog)$/)) {
-    console.log('parseUrl - Detected: ecatalog page');
-    return { page: 'ecatalog' };
-  }
-
-  // Waste Types (atik-turleri, waste-types, tipy-otkhodov)
-  if (pathWithoutLang.match(/^\/(atik-turleri|waste-types|tipy-otkhodov)$/)) {
-    console.log('parseUrl - Detected: waste-categories page');
-    return { page: 'waste-categories' };
-  }
-  if (pathWithoutLang.match(/^\/(atik-turleri|waste-types|tipy-otkhodov)\//)) {
-    const match = pathWithoutLang.match(/^\/(atik-turleri|waste-types|tipy-otkhodov)\/(.+)$/);
-    if (match) {
-      const category = match[2];
-      console.log('parseUrl - Detected: waste-detail page, category:', category);
+  // Check Waste Pages (Category & Detail)
+  const wasteSlugs = Object.values(slugsByLanguage.waste);
+  for (const wSlug of wasteSlugs) {
+    if (cleanPath === wSlug) {
+      return { page: 'waste-categories' };
+    }
+    if (cleanPath.startsWith(wSlug + '/')) {
+      const category = cleanPath.substring(wSlug.length + 1);
       return { page: 'waste-detail', wasteCategory: category };
     }
   }
 
+  // Check Product Pages (Category & Detail)
+  for (const [type, slugs] of Object.entries(productCategorySlugs)) {
+    const slugValues = Object.values(slugs);
+
+    // Check for Category Page match
+    if (slugValues.includes(cleanPath)) {
+      return { page: 'product-category', product: type as ProductType };
+    }
+
+    // Check for Detail Page match
+    for (const slug of slugValues) {
+      if (cleanPath.startsWith(slug + '/')) {
+        const model = cleanPath.substring(slug.length + 1).toUpperCase();
+        return { page: 'product-detail', product: type as ProductType, model };
+      }
+    }
+  }
+
   // Default to main page
-  console.log('parseUrl - No match found, defaulting to main page');
   return { page: 'main' };
 }
 
@@ -165,55 +132,69 @@ function AppContent() {
     const langMatch = path.match(/^\/(tr|en|ru|ar)/);
     const currentLang: Language = (langMatch?.[1] as Language) || language || 'tr';
 
-    let seoData = seoMetadata.home;
+    // Explicitly define the type to handle both Function and Object based metadata
+    let seoDataSource: SEOMetadata | ((lang?: Language) => SEOMetadata) = seoMetadata.home;
+
     let pageTypeForHreflang: any = 'home';
-    let productTypeForHreflang = undefined;
-    let modelForHreflang = undefined;
-    let wasteCategoryForHreflang = undefined;
+    let productTypeForHreflang: string | undefined = undefined;
+    let modelForHreflang: string | undefined = undefined;
+    let wasteCategoryForHreflang: string | undefined = undefined;
 
     if (currentPage === 'product-category' && selectedProduct) {
-      seoData = getProductCategorySEO(selectedProduct, currentLang);
+      seoDataSource = getProductCategorySEO(selectedProduct, currentLang);
       pageTypeForHreflang = 'product-category';
       productTypeForHreflang = selectedProduct;
     } else if (currentPage === 'product-detail' && selectedProduct && selectedModelName) {
-      seoData = getProductModelSEO(selectedProduct, selectedModelName, currentLang);
+      seoDataSource = getProductModelSEO(selectedProduct, selectedModelName, currentLang);
       pageTypeForHreflang = 'product-detail';
       productTypeForHreflang = selectedProduct;
       modelForHreflang = selectedModelName;
     } else if (currentPage === 'about') {
-      seoData = seoMetadata.about;
+      seoDataSource = seoMetadata.about;
       pageTypeForHreflang = 'about';
     } else if (currentPage === 'products-overview') {
-      seoData = seoMetadata.products;
+      seoDataSource = seoMetadata.products;
       pageTypeForHreflang = 'products';
     } else if (currentPage === 'technology') {
-      seoData = seoMetadata.technology;
+      seoDataSource = seoMetadata.technology;
       pageTypeForHreflang = 'technology';
     } else if (currentPage === 'references-overview') {
-      seoData = seoMetadata.references;
+      seoDataSource = seoMetadata.references;
       pageTypeForHreflang = 'references';
     } else if (currentPage === 'certificates') {
-      seoData = seoMetadata.certificates;
+      seoDataSource = seoMetadata.certificates;
       pageTypeForHreflang = 'certificates';
     } else if (currentPage === 'contact') {
-      seoData = seoMetadata.contact;
+      seoDataSource = seoMetadata.contact;
       pageTypeForHreflang = 'contact';
     } else if (currentPage === 'ecatalog') {
-      seoData = seoMetadata.ecatalog;
+      seoDataSource = seoMetadata.ecatalog;
       pageTypeForHreflang = 'ecatalog';
     } else if (currentPage === 'waste-categories') {
+      // Waste categories uses generic data or specific? Assuming it defaults to home or has specific
+      // Assuming waste categories might not have dedicated seoMetadata entry yet in the snippet provided
+      // falling back to home or implementing if available.
+      // Checking seoConfig content, waste is there in slugs but maybe not in metadata structure explicitly
+      // Actually seoMetadata has 'waste-categories'? No, it has keys matching slugs?
+      // seoMetadata keys: home, about, products, technology, references, certificates, contact, ecatalog.
+      // waste is missing! I should probably default to products or add it.
+      // For now, let's use products SEO as fallback or home
+      seoDataSource = seoMetadata.products;
       pageTypeForHreflang = 'waste-categories';
     } else if (currentPage === 'waste-detail' && selectedWasteCategory) {
+      // Similar for waste detail
+      seoDataSource = seoMetadata.products;
       pageTypeForHreflang = 'waste-detail';
       wasteCategoryForHreflang = selectedWasteCategory;
     }
 
-    if (typeof seoData === 'function') {
-      seoData = seoData();
-    }
+    // Resolve the SEO Data
+    const resolvedSEO: SEOMetadata = (typeof seoDataSource === 'function')
+      ? seoDataSource(currentLang)
+      : seoDataSource;
 
     return {
-      ...seoData,
+      ...resolvedSEO,
       pageType: pageTypeForHreflang,
       productType: productTypeForHreflang,
       model: modelForHreflang,
