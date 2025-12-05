@@ -287,7 +287,6 @@ function AppContent() {
     let structuredData;
 
     switch (page) {
-    switch (page) {
       case 'main':
         metadata = seoMetadata.home(currentLang);
         // Add comprehensive organization structured data for home page
