@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import React, { useEffect, useState } from 'react';
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { Header } from './components/Header';
@@ -530,6 +531,16 @@ function AppContent() {
   if (currentPage === 'contact') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -553,6 +564,16 @@ function AppContent() {
   if (currentPage === 'ecatalog') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -576,6 +597,16 @@ function AppContent() {
   if (currentPage === 'product-detail' && selectedProduct) {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -605,6 +636,16 @@ function AppContent() {
   if (currentPage === 'certificates') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -628,6 +669,16 @@ function AppContent() {
   if (currentPage === 'technology') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -651,6 +702,16 @@ function AppContent() {
   if (currentPage === 'products-overview') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -677,6 +738,16 @@ function AppContent() {
   if (currentPage === 'about') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -700,6 +771,16 @@ function AppContent() {
   if (currentPage === 'references-overview') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -723,6 +804,16 @@ function AppContent() {
   if (currentPage === 'waste-categories') {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -749,6 +840,16 @@ function AppContent() {
   if (currentPage === 'waste-detail' && selectedWasteCategory) {
     return (
       <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
@@ -775,6 +876,16 @@ function AppContent() {
   // Main homepage
   return (
     <>
+      <SEOHead
+        title={currentSEOData.title}
+        description={currentSEOData.description}
+        keywords={currentSEOData.keywords}
+        canonical={currentSEOData.canonical}
+        pageType={currentSEOData.pageType}
+        productType={currentSEOData.productType}
+        model={currentSEOData.model}
+        wasteCategory={currentSEOData.wasteCategory}
+      />
       {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
 
       {!showIntro && (
@@ -813,8 +924,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <HelmetProvider> {/* <-- BURAYA EKLEDİK */}
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </HelmetProvider>
   );
 }
