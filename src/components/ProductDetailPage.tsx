@@ -345,6 +345,32 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       capacity: '8-15 ton/saat'
     }
   },
+  'glass': {
+    'CK-200': {
+      motorPower: '1.5-3 kW',
+      rotorLength: '200 mm',
+      rotorDiameter: '200 x 200 mm',
+      bladeCount: '12 adet',
+      weight: '400 kg',
+      capacity: '100-200 kg/saat'
+    },
+    'CK-400': {
+      motorPower: '3-7.5 kW',
+      rotorLength: '400 mm',
+      rotorDiameter: '400 x 400 mm',
+      bladeCount: '24 adet',
+      weight: '600 kg',
+      capacity: '200-400 kg/saat'
+    },
+    'CKS-400': {
+      motorPower: '3-7.5 kW',
+      rotorLength: '400 mm',
+      rotorDiameter: '400 x 400 mm',
+      bladeCount: '24 adet',
+      weight: '650 kg',
+      capacity: '200-400 kg/saat'
+    }
+  },
   'mobile': {
     'TSM-150': {
       motorPower: '400 HP',
@@ -391,7 +417,9 @@ const availableModels: { [key: string]: string[] } = {
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'tree-root': ['TW-100', 'TW-150', 'TW-200'],
-  'wood': ['TSY-100', 'TSY-150', 'TSY-200']
+  'tree-root': ['TW-100', 'TW-150', 'TW-200'],
+  'wood': ['TSY-100', 'TSY-150', 'TSY-200'],
+  'glass': ['CK-200', 'CK-400', 'CKS-400']
 };
 
 // Title/Subtitle mapping for each product type
@@ -417,18 +445,20 @@ const productDescriptionKeys: { [key: string]: string } = {
   'mobile': 'mobile',
   'pallet': 'pallet',
   'tree-root': 'tree_root',
-  'wood': 'wood'
+  'tree-root': 'tree_root',
+  'wood': 'wood',
+  'glass': 'glass'
 };
 
-export const ProductDetailPage = ({ 
-  productType, 
-  modelName, 
-  onBackToMain, 
-  onECatalogClick, 
-  onProductDetailClick 
+export const ProductDetailPage = ({
+  productType,
+  modelName,
+  onBackToMain,
+  onECatalogClick,
+  onProductDetailClick
 }: ProductDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
-  
+
   // DEBUG - Check what productType we're receiving
   console.log('🔍 ProductDetailPage Rendered:', { productType, modelName, language });
 
@@ -437,10 +467,10 @@ export const ProductDetailPage = ({
 
   // Get dynamic image paths based on model from GitHub
   const images = getModelImages(productType, defaultModelName);
-  
+
   // Get fallback image for this product type
   const fallbackImage = getFallbackImage(productType);
-  
+
   // Debug: Log image paths (only in development)
   React.useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
@@ -452,17 +482,17 @@ export const ProductDetailPage = ({
 
   // Get current model specs
   const currentSpecs = modelSpecifications[productType]?.[defaultModelName];
-  
+
   // Get available models for current product type
   const models = availableModels[productType] || [];
-  
+
   // Get model-specific description with current language
   const modelDesc = getModelDescription(productType, defaultModelName, language);
   const hasCustomDesc = hasModelDescription(productType, defaultModelName);
-  
+
   // Get product title based on type
   const getProductTitle = () => {
-    switch(productType) {
+    switch (productType) {
       case 'single-saft':
         return t('single_shaft_main_title');
       case 'dual-saft':
@@ -487,12 +517,12 @@ export const ProductDetailPage = ({
         return t('single_shaft_main_title');
     }
   };
-  
+
   // Get product subtitle based on type
   const getProductSubtitle = () => {
     if (hasCustomDesc && modelDesc) return modelDesc.intro;
-    
-    switch(productType) {
+
+    switch (productType) {
       case 'single-saft':
         return t('single_shaft_subtitle');
       case 'dual-saft':
@@ -530,8 +560,8 @@ export const ProductDetailPage = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [productType, defaultModelName]);
 
-  // Single Shaft, Harddisk, Mobile, Tree Root, and Wood Product Data (using same layout)
-  if (productType === 'single-saft' || productType === 'harddisk' || productType === 'mobile' || productType === 'tree-root' || productType === 'wood') {
+  // Single Shaft, Harddisk, Mobile, Tree Root, Wood, and Glass Product Data (using same layout)
+  if (productType === 'single-saft' || productType === 'harddisk' || productType === 'mobile' || productType === 'tree-root' || productType === 'wood' || productType === 'glass') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -562,11 +592,10 @@ export const ProductDetailPage = ({
                     onClick={() => handleModelChange(model)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 rounded-lg transition-all ${
-                      model === modelName
+                    className={`px-4 py-2 rounded-lg transition-all ${model === modelName
                         ? 'bg-[#F4CE14] text-[#1E1E1E]'
                         : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
-                    }`}
+                      }`}
                   >
                     {model}
                   </motion.button>
@@ -684,7 +713,7 @@ export const ProductDetailPage = ({
             <div className="absolute top-0 left-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -692,10 +721,10 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#1E1E1E] mb-16 text-3xl font-bold"
             >
-              {t(productType === 'tree-root' ? 'tree_root_advantages_title' : productType === 'wood' ? 'wood_advantages_title' : productType === 'harddisk' ? 'harddisk_advantages_title' : 'single_shaft_advantages_title')}
+              {t(productType === 'tree-root' ? 'tree_root_advantages_title' : productType === 'wood' ? 'wood_advantages_title' : productType === 'harddisk' ? 'harddisk_advantages_title' : productType === 'glass' ? 'glass_advantages_title' : 'single_shaft_advantages_title')}
             </motion.h2>
 
-            <div className={`grid grid-cols-1 ${productType === 'harddisk' || productType === 'tree-root' || productType === 'wood' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
+            <div className={`grid grid-cols-1 ${productType === 'harddisk' || productType === 'tree-root' || productType === 'wood' || productType === 'glass' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8`}>
               {/* Advantage 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -708,8 +737,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   <Settings size={32} className="text-[#F4CE14]" />
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_1_title' : productType === 'wood' ? 'wood_adv_1_title' : productType === 'harddisk' ? 'harddisk_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_1_desc' : productType === 'wood' ? 'wood_adv_1_desc' : productType === 'harddisk' ? 'harddisk_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_1_title' : productType === 'wood' ? 'wood_adv_1_title' : productType === 'harddisk' ? 'harddisk_adv_1_title' : productType === 'glass' ? 'glass_adv_1_title' : 'single_shaft_adv_1_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_1_desc' : productType === 'wood' ? 'wood_adv_1_desc' : productType === 'harddisk' ? 'harddisk_adv_1_desc' : productType === 'glass' ? 'glass_adv_1_desc' : 'single_shaft_adv_1_desc')}</p>
               </motion.div>
 
               {/* Advantage 2 */}
@@ -724,8 +753,8 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   {productType === 'tree-root' ? <Zap size={32} className="text-[#F4CE14]" /> : <RotateCcw size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_2_title' : productType === 'wood' ? 'wood_adv_2_title' : productType === 'harddisk' ? 'harddisk_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_2_desc' : productType === 'wood' ? 'wood_adv_2_desc' : productType === 'harddisk' ? 'harddisk_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_2_title' : productType === 'wood' ? 'wood_adv_2_title' : productType === 'harddisk' ? 'harddisk_adv_2_title' : productType === 'glass' ? 'glass_adv_2_title' : 'single_shaft_adv_2_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_2_desc' : productType === 'wood' ? 'wood_adv_2_desc' : productType === 'harddisk' ? 'harddisk_adv_2_desc' : productType === 'glass' ? 'glass_adv_2_desc' : 'single_shaft_adv_2_desc')}</p>
               </motion.div>
 
               {/* Advantage 3 */}
@@ -740,12 +769,12 @@ export const ProductDetailPage = ({
                 <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                   {productType === 'tree-root' ? <Shield size={32} className="text-[#F4CE14]" /> : <Volume2 size={32} className="text-[#F4CE14]" />}
                 </div>
-                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_3_title' : productType === 'wood' ? 'wood_adv_3_title' : productType === 'harddisk' ? 'harddisk_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
-                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_3_desc' : productType === 'wood' ? 'wood_adv_3_desc' : productType === 'harddisk' ? 'harddisk_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
+                <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_3_title' : productType === 'wood' ? 'wood_adv_3_title' : productType === 'harddisk' ? 'harddisk_adv_3_title' : productType === 'glass' ? 'glass_adv_3_title' : 'single_shaft_adv_3_title')}</h3>
+                <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_3_desc' : productType === 'wood' ? 'wood_adv_3_desc' : productType === 'harddisk' ? 'harddisk_adv_3_desc' : productType === 'glass' ? 'glass_adv_3_desc' : 'single_shaft_adv_3_desc')}</p>
               </motion.div>
 
-              {/* Advantage 4 - For harddisk, tree-root and wood */}
-              {(productType === 'harddisk' || productType === 'tree-root' || productType === 'wood') && (
+              {/* Advantage 4 - For harddisk, tree-root, wood and glass */}
+              {(productType === 'harddisk' || productType === 'tree-root' || productType === 'wood' || productType === 'glass') && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -757,8 +786,8 @@ export const ProductDetailPage = ({
                   <div className="w-16 h-16 bg-[#45474B] rounded-xl flex items-center justify-center mb-6">
                     {productType === 'tree-root' ? <Wrench size={32} className="text-[#F4CE14]" /> : <Zap size={32} className="text-[#F4CE14]" />}
                   </div>
-                  <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_4_title' : productType === 'wood' ? 'wood_adv_4_title' : 'harddisk_adv_4_title')}</h3>
-                  <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_4_desc' : productType === 'wood' ? 'wood_adv_4_desc' : 'harddisk_adv_4_desc')}</p>
+                  <h3 className="text-[#1E1E1E] mb-4">{t(productType === 'tree-root' ? 'tree_root_adv_4_title' : productType === 'wood' ? 'wood_adv_4_title' : productType === 'glass' ? 'glass_adv_4_title' : 'harddisk_adv_4_title')}</h3>
+                  <p className="text-[#45474B]">{t(productType === 'tree-root' ? 'tree_root_adv_4_desc' : productType === 'wood' ? 'wood_adv_4_desc' : productType === 'glass' ? 'glass_adv_4_desc' : 'harddisk_adv_4_desc')}</p>
                 </motion.div>
               )}
             </div>
@@ -786,7 +815,7 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.1 }}
                 className="group"
               >
-                <motion.div 
+                <motion.div
                   className="overflow-hidden rounded-2xl shadow-lg mb-4"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
@@ -809,7 +838,7 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.2 }}
                 className="group"
               >
-                <motion.div 
+                <motion.div
                   className="overflow-hidden rounded-2xl shadow-lg mb-4"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
@@ -832,7 +861,7 @@ export const ProductDetailPage = ({
                 transition={{ delay: 0.3 }}
                 className="group"
               >
-                <motion.div 
+                <motion.div
                   className="overflow-hidden rounded-2xl shadow-lg mb-4"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
@@ -860,9 +889,9 @@ export const ProductDetailPage = ({
                 viewport={{ once: true }}
                 className="text-center text-[#F4CE14] mb-12 text-3xl font-bold"
               >
-                {defaultModelName === 'TW-100' ? t('tw100_highlights_title') : 
-                 defaultModelName === 'TW-150' ? t('tw150_highlights_title') : 
-                 t('tw200_highlights_title')}
+                {defaultModelName === 'TW-100' ? t('tw100_highlights_title') :
+                  defaultModelName === 'TW-150' ? t('tw150_highlights_title') :
+                    t('tw200_highlights_title')}
               </motion.h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1117,7 +1146,7 @@ export const ProductDetailPage = ({
                         <p className="text-[#1E1E1E]">Farklı Besleme ve Çıkış Seçenekleri</p>
                       </div>
                     </motion.div>
-                    
+
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
@@ -1129,7 +1158,7 @@ export const ProductDetailPage = ({
                         <p className="text-[#1E1E1E]">Farklı Rotor Tasarımları</p>
                       </div>
                     </motion.div>
-                    
+
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
@@ -1141,7 +1170,7 @@ export const ProductDetailPage = ({
                         <p className="text-[#1E1E1E]">Çift Motorlu Tasarım</p>
                       </div>
                     </motion.div>
-                    
+
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="bg-white rounded-xl p-6 shadow-lg border-2 border-[#F4CE14]/20 hover:border-[#F4CE14] transition-all"
@@ -1187,16 +1216,16 @@ export const ProductDetailPage = ({
                   const answerKey = `${normalizedProductType}_faq_a${num}`;
                   const question = t(questionKey);
                   const answer = t(answerKey);
-                  
+
                   // Skip if translation returns the key itself (meaning it doesn't exist)
                   if (question === questionKey || answer === answerKey) {
                     return null;
                   }
 
                   return (
-                    <AccordionItem 
-                      key={`item-${num}`} 
-                      value={`item-${num}`} 
+                    <AccordionItem
+                      key={`item-${num}`}
+                      value={`item-${num}`}
                       className="bg-[#F5F7F8] rounded-xl px-6 border-none"
                     >
                       <AccordionTrigger className="text-[#45474B] hover:text-[#F4CE14]">
@@ -1273,7 +1302,7 @@ export const ProductDetailPage = ({
               {t(`${productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_')}_similar_products`)}
             </motion.h2>
 
-            <SimilarProductsSection 
+            <SimilarProductsSection
               currentProductType={productType}
               onProductClick={onProductDetailClick}
             />
@@ -1315,11 +1344,10 @@ export const ProductDetailPage = ({
                     onClick={() => handleModelChange(model)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 rounded-lg transition-all ${
-                      model === modelName
+                    className={`px-4 py-2 rounded-lg transition-all ${model === modelName
                         ? 'bg-[#F4CE14] text-[#1E1E1E]'
                         : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
-                    }`}
+                      }`}
                   >
                     {model}
                   </motion.button>
@@ -1408,7 +1436,7 @@ export const ProductDetailPage = ({
             <div className="absolute top-0 left-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -1489,89 +1517,89 @@ export const ProductDetailPage = ({
 
         {/* Performance Section with 3 Images - Only for dual-saft */}
         {productType !== 'pallet' && (
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-16 text-3xl font-bold"
-            >
-              {t('dual_shaft_performance_title')}
-            </motion.h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Performance Image 1 */}
-              <motion.div
+          <section className="py-20 bg-white">
+            <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+              <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="group"
+                className="text-center text-[#45474B] mb-16 text-3xl font-bold"
               >
-                <motion.div 
-                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <ImageWithFallback
-                    src={images.main}
-                    alt={t('dual_shaft_perf_1')}
-                    className="w-full h-64 object-cover"
-                    fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  />
-                </motion.div>
-                <p className="text-center text-[#45474B]">{t('dual_shaft_perf_1')}</p>
-              </motion.div>
+                {t('dual_shaft_performance_title')}
+              </motion.h2>
 
-              {/* Performance Image 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="group"
-              >
-                <motion.div 
-                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Performance Image 1 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="group"
                 >
-                  <ImageWithFallback
-                    src={images.detail1}
-                    alt={t('dual_shaft_perf_2')}
-                    className="w-full h-64 object-cover"
-                    fallbackSrc="https://images.unsplash.com/photo-1721745250100-7d777c1c48ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHNocmVkZGVyJTIwaW5kdXN0cmlhbHxlbnwxfHx8fDE3NjIxNjc1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  />
+                  <motion.div
+                    className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ImageWithFallback
+                      src={images.main}
+                      alt={t('dual_shaft_perf_1')}
+                      className="w-full h-64 object-cover"
+                      fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    />
+                  </motion.div>
+                  <p className="text-center text-[#45474B]">{t('dual_shaft_perf_1')}</p>
                 </motion.div>
-                <p className="text-center text-[#45474B]">{t('dual_shaft_perf_2')}</p>
-              </motion.div>
 
-              {/* Performance Image 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="group"
-              >
-                <motion.div 
-                  className="overflow-hidden rounded-2xl shadow-lg mb-4"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                {/* Performance Image 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="group"
                 >
-                  <ImageWithFallback
-                    src={images.detail2}
-                    alt={t('dual_shaft_perf_3')}
-                    className="w-full h-64 object-cover"
-                    fallbackSrc="https://images.unsplash.com/photo-1738918929491-3c102ce11c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWF2eSUyMG1hY2hpbmVyeSUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYyMTY3NTI5fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  />
+                  <motion.div
+                    className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ImageWithFallback
+                      src={images.detail1}
+                      alt={t('dual_shaft_perf_2')}
+                      className="w-full h-64 object-cover"
+                      fallbackSrc="https://images.unsplash.com/photo-1721745250100-7d777c1c48ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHNocmVkZGVyJTIwaW5kdXN0cmlhbHxlbnwxfHx8fDE3NjIxNjc1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    />
+                  </motion.div>
+                  <p className="text-center text-[#45474B]">{t('dual_shaft_perf_2')}</p>
                 </motion.div>
-                <p className="text-center text-[#45474B]">{t('dual_shaft_perf_3')}</p>
-              </motion.div>
+
+                {/* Performance Image 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="group"
+                >
+                  <motion.div
+                    className="overflow-hidden rounded-2xl shadow-lg mb-4"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ImageWithFallback
+                      src={images.detail2}
+                      alt={t('dual_shaft_perf_3')}
+                      className="w-full h-64 object-cover"
+                      fallbackSrc="https://images.unsplash.com/photo-1738918929491-3c102ce11c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWF2eSUyMG1hY2hpbmVyeSUyMGZhY3Rvcnl8ZW58MXx8fHwxNzYyMTY3NTI5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    />
+                  </motion.div>
+                  <p className="text-center text-[#45474B]">{t('dual_shaft_perf_3')}</p>
+                </motion.div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         )}
 
         {/* Technical Specifications Table */}
@@ -1780,7 +1808,7 @@ export const ProductDetailPage = ({
               {t('dual_shaft_similar_products')}
             </motion.h2>
 
-            <SimilarProductsSection 
+            <SimilarProductsSection
               currentProductType="dual-saft"
               onProductClick={onProductDetailClick}
             />
@@ -1822,11 +1850,10 @@ export const ProductDetailPage = ({
                     onClick={() => handleModelChange(model)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 rounded-lg transition-all ${
-                      model === modelName
+                    className={`px-4 py-2 rounded-lg transition-all ${model === modelName
                         ? 'bg-[#F4CE14] text-[#1E1E1E]'
                         : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
-                    }`}
+                      }`}
                   >
                     {model}
                   </motion.button>
@@ -1915,7 +1942,7 @@ export const ProductDetailPage = ({
             <div className="absolute top-0 left-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -2244,8 +2271,8 @@ export const ProductDetailPage = ({
             >
               {t('quad_shaft_similar_products')}
             </motion.h2>
-            
-            <SimilarProductsSection 
+
+            <SimilarProductsSection
               currentProductType="quad-saft"
               onProductClick={onProductDetailClick}
             />
@@ -2287,11 +2314,10 @@ export const ProductDetailPage = ({
                     onClick={() => handleModelChange(model)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 rounded-lg transition-all ${
-                      model === modelName
+                    className={`px-4 py-2 rounded-lg transition-all ${model === modelName
                         ? 'bg-[#F4CE14] text-[#1E1E1E]'
                         : 'bg-[#2F3032] text-[#F5F7F8] hover:bg-[#F4CE14]/20 hover:text-[#F4CE14]'
-                    }`}
+                      }`}
                   >
                     {model}
                   </motion.button>
@@ -2367,7 +2393,7 @@ export const ProductDetailPage = ({
             <div className="absolute top-0 left-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#45474B] rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -2613,8 +2639,8 @@ export const ProductDetailPage = ({
             >
               Benzer Ürünler
             </motion.h2>
-            
-            <SimilarProductsSection 
+
+            <SimilarProductsSection
               currentProductType="metal"
               onProductClick={onProductDetailClick}
             />
