@@ -1128,6 +1128,11 @@ const translations = {
     mobile_crusher_faq_a9: 'Evet, uzman ekibimiz tarafından sahada kurulum ve eğitim verilmektedir.',
     mobile_crusher_faq_q10: 'YEDEK PARÇA BULUNABİLİRLİĞİ NASIL?',
     mobile_crusher_faq_a10: 'Stoklu yedek parça sistemimizle hızlı gönderim sağlıyoruz.',
+    mobile_crusher_video_title: 'Mobil Kırıcı Videosu',
+    mobile_crusher_watch_video: 'Videoyu İzle',
+    mobile_crusher_similar_products: 'Benzer Ürünler',
+    youtube_channel_title: 'YouTube Kanalımız',
+    youtube_channel_description: 'Daha fazla video için kanalımızı ziyaret edin.',
   },
   en: {
     // Header & Navigation
@@ -2276,6 +2281,8 @@ const translations = {
     mobile_crusher_video_title: 'Mobile Crusher Video',
     mobile_crusher_watch_video: 'Watch Video',
     mobile_crusher_similar_products: 'Similar Products',
+    youtube_channel_title: 'Our YouTube Channel',
+    youtube_channel_description: 'Visit our channel for more videos.',
   },
   ru: {
     // Header & Navigation
@@ -3003,6 +3010,8 @@ const translations = {
     mobile_crusher_video_title: 'Видео мобильной дробилки',
     mobile_crusher_watch_video: 'Смотреть видео',
     mobile_crusher_similar_products: 'Похожие продукты',
+    youtube_channel_title: 'Наш YouTube канал',
+    youtube_channel_description: 'Посетите наш канал для просмотра большего количества видео.',
     // Full FAQ Section (Inserted from Standardized List)
     single_saft_faq_title: 'Часто задаваемые вопросы - Одновальная дробилка',
     single_saft_faq_q1: 'ДЛЯ ЧЕГО ИСПОЛЬЗУЕТСЯ ОДНОВАЛЬНАЯ ДРОБИЛКА?',
@@ -3720,6 +3729,8 @@ const translations = {
     mobile_crusher_video_title: 'فيديو الكسارة المتنقلة',
     mobile_crusher_watch_video: 'مشاهدة الفيديو',
     mobile_crusher_similar_products: 'منتجات مماثلة',
+    youtube_channel_title: 'قناتنا على اليوتيوب',
+    youtube_channel_description: 'قم بزيارة قناتنا لمزيد من مقاطع الفيديو.',
 
     // About Page
     about_page_title: 'معلومات عنا',
