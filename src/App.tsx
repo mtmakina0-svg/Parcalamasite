@@ -22,11 +22,11 @@ import { ProductCategoryPage } from './components/ProductCategoryPage';
 import { ECatalogPage } from './components/ECatalogPage';
 import { ContactPage } from './components/ContactPage';
 import { IntroLoader } from './components/IntroLoader';
-import { 
-  generateUrl, 
-  seoMetadata, 
-  getProductCategorySEO, 
-  getProductModelSEO, 
+import {
+  generateUrl,
+  seoMetadata,
+  getProductCategorySEO,
+  getProductModelSEO,
   updateSEOMetadata,
   generateProductStructuredData,
   generateBreadcrumbStructuredData,
@@ -44,31 +44,31 @@ type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile
 function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
   const path = window.location.pathname;
   console.log('parseUrl - Parsing path:', path);
-  
+
   // Extract language prefix if present
   const langMatch = path.match(/^\/(tr|en|ru|ar)/);
   const pathWithoutLang = langMatch ? path.substring(3) : path; // Remove /tr, /en, etc.
   console.log('parseUrl - Path without lang:', pathWithoutLang);
-  
+
   // Home page
   if (path === '/' || pathWithoutLang === '' || pathWithoutLang === '/' || path.match(/^\/(tr|en|ru|ar)\/?$/)) {
     console.log('parseUrl - Detected: main/home page');
     return { page: 'main' };
   }
-  
+
   // Multi-language page detection
   // About page (kurumsal, about, o-kompanii)
   if (pathWithoutLang.match(/^\/(kurumsal|about|o-kompanii)$/)) {
     console.log('parseUrl - Detected: about page');
     return { page: 'about' };
   }
-  
+
   // Products Overview (urunler, products, produkty)
   if (pathWithoutLang.match(/^\/(urunler|products|produkty)$/)) {
     console.log('parseUrl - Detected: products-overview page');
     return { page: 'products-overview' };
   }
-  
+
   // Product Categories - Multi-language slugs
   const productCategoryPatterns: { pattern: RegExp; type: ProductType }[] = [
     { pattern: /^\/(tek-saftli-parcalama-makinesi|single-shaft-shredder|odnovalnaya-drobilka)/, type: 'single-saft' },
@@ -82,7 +82,7 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     { pattern: /^\/(agac-parcalama-ogutme-makinesi|wood-grinder|drobilka-drevesiny)/, type: 'wood' },
     { pattern: /^\/(cam-sise-kirma-makinesi|glass-crusher|drobilka-stekla)/, type: 'glass' }
   ];
-  
+
   // Check product categories and details
   for (const { pattern, type } of productCategoryPatterns) {
     const match = pathWithoutLang.match(pattern);
@@ -101,37 +101,37 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
       }
     }
   }
-  
+
   // Technology (teknoloji, technology, tekhnologiya)
   if (pathWithoutLang.match(/^\/(teknoloji|technology|tekhnologiya)$/)) {
     console.log('parseUrl - Detected: technology page');
     return { page: 'technology' };
   }
-  
+
   // References (referanslar, references, referencii)
   if (pathWithoutLang.match(/^\/(referanslar|references|referencii)$/)) {
     console.log('parseUrl - Detected: references-overview page');
     return { page: 'references-overview' };
   }
-  
+
   // Certificates (sertifikalar, certificates, sertifikaty)
   if (pathWithoutLang.match(/^\/(sertifikalar|certificates|sertifikaty)$/)) {
     console.log('parseUrl - Detected: certificates page');
     return { page: 'certificates' };
   }
-  
+
   // Contact (iletisim, contact, kontakty)
   if (pathWithoutLang.match(/^\/(iletisim|contact|kontakty)$/)) {
     console.log('parseUrl - Detected: contact page');
     return { page: 'contact' };
   }
-  
+
   // E-Catalog (e-katalog, e-catalog)
   if (pathWithoutLang.match(/^\/(e-katalog|e-catalog)$/)) {
     console.log('parseUrl - Detected: ecatalog page');
     return { page: 'ecatalog' };
   }
-  
+
   // Waste Types (atik-turleri, waste-types, tipy-otkhodov)
   if (pathWithoutLang.match(/^\/(atik-turleri|waste-types|tipy-otkhodov)$/)) {
     console.log('parseUrl - Detected: waste-categories page');
@@ -145,7 +145,7 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
       return { page: 'waste-detail', wasteCategory: category };
     }
   }
-  
+
   // Default to main page
   console.log('parseUrl - No match found, defaulting to main page');
   return { page: 'main' };
@@ -158,19 +158,19 @@ function AppContent() {
   const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>(null);
   const [selectedModelName, setSelectedModelName] = useState<string>('TSH-60');
-  
+
   // SEO Head data based on current page
   const getSEOData = () => {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/(tr|en|ru|ar)/);
     const currentLang: Language = (langMatch?.[1] as Language) || language || 'tr';
-    
+
     let seoData = seoMetadata.home;
     let pageTypeForHreflang: any = 'home';
     let productTypeForHreflang = undefined;
     let modelForHreflang = undefined;
     let wasteCategoryForHreflang = undefined;
-    
+
     if (currentPage === 'product-category' && selectedProduct) {
       seoData = getProductCategorySEO(selectedProduct, currentLang);
       pageTypeForHreflang = 'product-category';
@@ -207,11 +207,11 @@ function AppContent() {
       pageTypeForHreflang = 'waste-detail';
       wasteCategoryForHreflang = selectedWasteCategory;
     }
-    
+
     if (typeof seoData === 'function') {
       seoData = seoData();
     }
-    
+
     return {
       ...seoData,
       pageType: pageTypeForHreflang,
@@ -224,7 +224,7 @@ function AppContent() {
   // Initialize from URL on mount
   useEffect(() => {
     console.log('App.tsx - Initializing, current pathname:', window.location.pathname);
-    
+
     // Check if there's a saved redirect path from 404 page
     const savedPath = sessionStorage.getItem('spa_redirect_path');
     if (savedPath) {
@@ -233,15 +233,15 @@ function AppContent() {
       // Use replaceState to update URL without reloading and without adding to history
       window.history.replaceState({}, '', savedPath);
     }
-    
+
     const urlState = parseUrl();
     console.log('App.tsx - Parsed URL state:', urlState);
-    
+
     setCurrentPage(urlState.page);
     if (urlState.product) setSelectedProduct(urlState.product);
     if (urlState.model) setSelectedModelName(urlState.model);
     if (urlState.wasteCategory) setSelectedWasteCategory(urlState.wasteCategory);
-    
+
     // Update SEO based on initial page
     updatePageSEO(urlState.page, urlState.product, urlState.model);
   }, []);
@@ -282,13 +282,14 @@ function AppContent() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/(tr|en|ru|ar)/);
     const currentLang: Language = (langMatch?.[1] as Language) || 'tr';
-    
+
     let metadata;
     let structuredData;
 
     switch (page) {
+    switch (page) {
       case 'main':
-        metadata = typeof seoMetadata.home === 'function' ? seoMetadata.home() : seoMetadata.home;
+        metadata = seoMetadata.home(currentLang);
         // Add comprehensive organization structured data for home page
         structuredData = {
           "@context": "https://schema.org",
@@ -326,7 +327,7 @@ function AppContent() {
           ]
         };
         break;
-      
+
       case 'product-category':
         if (product) {
           metadata = getProductCategorySEO(product, currentLang);
@@ -350,15 +351,15 @@ function AppContent() {
           };
         }
         break;
-      
+
       case 'about':
-        metadata = typeof seoMetadata.about === 'function' ? seoMetadata.about() : seoMetadata.about;
+        metadata = seoMetadata.about(currentLang);
         break;
-      
+
       case 'products-overview':
-        metadata = typeof seoMetadata.products === 'function' ? seoMetadata.products() : seoMetadata.products;
+        metadata = seoMetadata.products(currentLang);
         break;
-      
+
       case 'product-detail':
         if (product && model) {
           metadata = getProductModelSEO(product, model, currentLang);
@@ -375,35 +376,35 @@ function AppContent() {
           };
         }
         break;
-      
+
       case 'technology':
-        metadata = typeof seoMetadata.technology === 'function' ? seoMetadata.technology() : seoMetadata.technology;
+        metadata = seoMetadata.technology(currentLang);
         break;
-      
+
       case 'references-overview':
-        metadata = typeof seoMetadata.references === 'function' ? seoMetadata.references() : seoMetadata.references;
+        metadata = seoMetadata.references(currentLang);
         break;
-      
+
       case 'certificates':
-        metadata = typeof seoMetadata.certificates === 'function' ? seoMetadata.certificates() : seoMetadata.certificates;
+        metadata = seoMetadata.certificates(currentLang);
         break;
-      
+
       case 'contact':
-        metadata = typeof seoMetadata.contact === 'function' ? seoMetadata.contact() : seoMetadata.contact;
+        metadata = seoMetadata.contact(currentLang);
         break;
-      
+
       case 'ecatalog':
-        metadata = typeof seoMetadata.ecatalog === 'function' ? seoMetadata.ecatalog() : seoMetadata.ecatalog;
+        metadata = seoMetadata.ecatalog(currentLang);
         break;
-      
+
       default:
-        metadata = typeof seoMetadata.home === 'function' ? seoMetadata.home() : seoMetadata.home;
+        metadata = seoMetadata.home(currentLang);
     }
 
     if (metadata) {
       updateSEOMetadata(metadata);
     }
-    
+
     if (structuredData) {
       insertStructuredData(structuredData);
     }
@@ -461,16 +462,16 @@ function AppContent() {
 
   const handleNavigateToProductDetail = (productType: string, modelName?: string) => {
     const model = modelName || (
-      productType === 'single-saft' ? 'TSH-60' : 
-      productType === 'dual-saft' ? 'CS-20' : 
-      productType === 'quad-saft' ? 'DS-80' : 
-      productType === 'metal' ? 'RDM-100' :
-      productType === 'pallet' ? 'TSV-140' :
-      productType === 'harddisk' ? 'DATABER-S' :
-      productType === 'mobile' ? 'TSM-150' :
-      productType === 'tree-root' ? 'TW-100' :
-      productType === 'wood' ? 'TSY-100' :
-      'TSH-60'
+      productType === 'single-saft' ? 'TSH-60' :
+        productType === 'dual-saft' ? 'CS-20' :
+          productType === 'quad-saft' ? 'DS-80' :
+            productType === 'metal' ? 'RDM-100' :
+              productType === 'pallet' ? 'TSV-140' :
+                productType === 'harddisk' ? 'DATABER-S' :
+                  productType === 'mobile' ? 'TSM-150' :
+                    productType === 'tree-root' ? 'TW-100' :
+                      productType === 'wood' ? 'TSY-100' :
+                        'TSH-60'
     );
     const url = generateUrl.productDetail(productType, model, language as Language);
     navigateWithUrl('product-detail', url, { product: productType as ProductType, model });
@@ -507,7 +508,7 @@ function AppContent() {
 
   // Get SEO data for current page
   const currentSEOData = getSEOData();
-  
+
   // Render different pages based on current view
   if (currentPage === 'product-category' && selectedProduct) {
     return (
@@ -522,7 +523,7 @@ function AppContent() {
           model={currentSEOData.model}
           wasteCategory={currentSEOData.wasteCategory}
         />
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -536,7 +537,7 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ProductCategoryPage 
+        <ProductCategoryPage
           productType={selectedProduct}
           onBackToMain={handleBackFromCategory}
           onModelSelect={(modelName) => handleNavigateToProductDetail(selectedProduct, modelName)}
@@ -549,7 +550,7 @@ function AppContent() {
   if (currentPage === 'contact') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -572,7 +573,7 @@ function AppContent() {
   if (currentPage === 'ecatalog') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -595,7 +596,7 @@ function AppContent() {
   if (currentPage === 'product-detail' && selectedProduct) {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -609,7 +610,7 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ProductDetailPage 
+        <ProductDetailPage
           productType={selectedProduct}
           modelName={selectedModelName}
           onBackToMain={handleBackFromProductDetail}
@@ -624,7 +625,7 @@ function AppContent() {
   if (currentPage === 'certificates') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -647,7 +648,7 @@ function AppContent() {
   if (currentPage === 'technology') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -670,7 +671,7 @@ function AppContent() {
   if (currentPage === 'products-overview') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -684,7 +685,7 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ProductsOverviewPage 
+        <ProductsOverviewPage
           onBackToMain={handleNavigateToMain}
           onProductClick={handleNavigateToProductDetail}
         />
@@ -696,7 +697,7 @@ function AppContent() {
   if (currentPage === 'about') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -719,7 +720,7 @@ function AppContent() {
   if (currentPage === 'references-overview') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -742,7 +743,7 @@ function AppContent() {
   if (currentPage === 'waste-categories') {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -768,7 +769,7 @@ function AppContent() {
   if (currentPage === 'waste-detail' && selectedWasteCategory) {
     return (
       <>
-        <Header 
+        <Header
           onWasteClick={handleNavigateToWasteCategories}
           onWasteDetailClick={handleNavigateToWasteDetail}
           onMainClick={handleNavigateToMain}
@@ -795,10 +796,10 @@ function AppContent() {
   return (
     <>
       {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
-      
+
       {!showIntro && (
         <div className="min-h-screen bg-white">
-          <Header 
+          <Header
             onWasteClick={handleNavigateToWasteCategories}
             onWasteDetailClick={handleNavigateToWasteDetail}
             onMainClick={handleNavigateToMain}
@@ -812,7 +813,7 @@ function AppContent() {
             onProductDetailClick={handleNavigateToProductDetail}
             onContactClick={handleNavigateToContact}
           />
-          
+
           <main>
             <HeroSection />
             <IntroSection />
