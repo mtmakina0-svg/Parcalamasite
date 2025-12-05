@@ -799,9 +799,6 @@ const translations = {
 
     // Harddisk Destroyer Product Detail Page
 
-    // Glass Crusher Product Detail Page
-    glass_main_title: 'Cam Şişe Kırma Makinesi',
-    glass_subtitle: 'Cam Geri Dönüşümünde Yüksek Verimlilik',
 
     // Products Overview Page
     products_page_title: 'Parçalama Makinesi Çözümlerimiz',
@@ -1249,9 +1246,7 @@ const translations = {
 
     // Harddisk Destroyer Product Detail Page
 
-    // Glass Crusher Product Detail Page
-    glass_main_title: 'Glass Bottle Crusher',
-    glass_subtitle: 'High Efficiency in Glass Recycling',
+
 
     // Products Overview Page
     products_page_title: 'Our Shredding Machine Solutions',
@@ -2408,9 +2403,7 @@ const translations = {
 
     // Harddisk Destroyer Product Detail Page
 
-    // Glass Crusher Product Detail Page
-    glass_main_title: 'Дробилка для стекла',
-    glass_subtitle: 'Высокая эффективность при переработке стекла',
+
 
     // Products Overview Page
     products_page_title: 'Наши решения для измельчительных машин',
@@ -2459,43 +2452,7 @@ const translations = {
     single_saft_similar_products: 'Похожие продукты',
     single_saft_watch_video: 'Смотреть видео',
 
-    // Single Shaft FAQ
-    single_saft_faq_q1: 'ДЛЯ ЧЕГО ИСПОЛЬЗУЕТСЯ ОДНОВАЛЬНЫЙ ИЗМЕЛЬЧИТЕЛЬ?',
-    single_saft_faq_a1: 'Одновальный измельчитель - это промышленная машина, предназначенная для эффективного измельчения различных материалов, работающая с комбинацией высокого крутящего момента и низкой скорости. Используется в переработке, управлении отходами и промышленных применениях.',
-    single_saft_faq_q2: 'КАКИЕ МАТЕРИАЛЫ МОГУТ ОБРАБАТЫВАТЬСЯ В ОДНОВАЛЬНЫХ ИЗМЕЛЬЧИТЕЛЯХ?',
-    single_saft_faq_a2: 'Могут обрабатываться различные материалы, такие как текстильные отходы, пластик, волокнистые пленки, древесина, ДСП, МДФ плиты, бытовые отходы и муниципальные отходы.',
-    single_saft_faq_q3: 'КАК РАБОТАЮТ ОДНОВАЛЬНЫЕ ИЗМЕЛЬЧИТЕЛИ?',
-    single_saft_faq_a3: 'Наши машины измельчают материалы лезвиями, вращающимися вокруг главного вала, работающего при высоком крутящем моменте и низкой скорости. Материалы разрезаются лезвиями на валу и разделяются на мелкие части.',
-    single_saft_faq_q4: 'КАКОВЫ ЭНЕРГОСБЕРЕГАЮЩИЕ ХАРАКТЕРИСТИКИ ОДНОВАЛЬНЫХ ИЗМЕЛЬЧИТЕЛЕЙ?',
-    single_saft_faq_a4: 'Обеспечивает низкое энергопотребление благодаря энергоэффективным двигателям и специальной конструкции лезвий. Кроме того, двигатель автоматически отключается, если материал не подается в течение определенного периода времени.',
 
-    dual_saft_faq_title: 'Часто задаваемые вопросы - Двухвальный измельчитель',
-    dual_saft_video_title: 'Видео двухвального измельчителя',
-    dual_saft_similar_products: 'Похожие продукты',
-    dual_saft_watch_video: 'Смотреть видео',
-
-    quad_saft_faq_title: 'Часто задаваемые вопросы - Четырехвальный измельчитель',
-    quad_saft_video_title: 'Видео четырехвального измельчителя',
-    quad_saft_similar_products: 'Похожие продукты',
-    quad_saft_watch_video: 'Смотреть видео',
-
-    metal_faq_title: 'Часто задаваемые вопросы - Измельчитель металла',
-    metal_video_title: 'Видео измельчителя металла',
-    metal_similar_products: 'Похожие продукты',
-    metal_watch_video: 'Смотреть видео',
-
-    pallet_similar_products: 'Похожие продукты',
-    pallet_watch_video: 'Смотреть видео',
-
-    plastic_faq_title: 'Часто задаваемые вопросы - Измельчитель пластика',
-    plastic_video_title: 'Видео измельчителя пластика',
-    plastic_similar_products: 'Похожие продукты',
-    plastic_watch_video: 'Смотреть видео',
-
-    glass_faq_title: 'Часто задаваемые вопросы - Дробилка стекла',
-    glass_video_title: 'Видео дробилки стекла',
-    glass_similar_products: 'Похожие продукты',
-    glass_watch_video: 'Смотреть видео',
 
     // Tree Root Product Detail Page
     tree_root_main_title: 'Шаг к более зеленому будущему с измельчителем корней деревьев',
@@ -3257,9 +3214,7 @@ const translations = {
 
     // Harddisk Destroyer Product Detail Page
 
-    // Glass Crusher Product Detail Page
-    glass_main_title: 'آلة تكسير الزجاج',
-    glass_subtitle: 'كفاءة عالية في إعادة تدوير الزجاج',
+
 
     // Products Overview Page
     products_page_title: 'حلولنا لآلات التقطيع',
@@ -3907,56 +3862,7 @@ const translations = {
     certificates_footer_pallet: 'تمزيق المنصات',
     certificates_footer_tire: 'تمزيق الإطارات',
     certificates_footer_contact: 'اتصل بنا',
-    // Arabic FAQs
-    single_saft_faq_title: 'الأسئلة الشائعة - محطم عمود واحد',
-    single_saft_faq_q1: 'ما هي استخدامات محطم العمود الواحد؟',
-    single_saft_faq_a1: 'هي آلة صناعية مصممة لتمزيق مواد مختلفة بكفاءة، تعمل بعزم دوران عالي وسرعة منخفضة. تستخدم في إعادة التدوير وإدارة النفايات.',
-    single_saft_faq_q2: 'ما هي المواد التي يمكن معالجتها؟',
-    single_saft_faq_a2: 'النفايات النسيجية، البلاستيك، الخشب، الألواح الخشبية، النفايات المنزلية والبلدية.',
-    single_saft_faq_q3: 'كيف تعمل؟',
-    single_saft_faq_a3: 'تقوم بتمزيق المواد بواسطة شفرات تدور حول عمود رئيسي.',
-    single_saft_faq_q4: 'ما هي ميزات توفير الطاقة؟',
-    single_saft_faq_a4: 'محركات موفرة للطاقة وتصميم خاص للشفرات يقلل الاستهلاك.',
-    single_saft_faq_q5: 'ما هي فترة الضمان؟',
-    single_saft_faq_a5: 'الضمان الميكانيكي لمدة سنتين. ضمان توفر قطع الغيار لمدة 10 سنوات.',
-    single_saft_faq_q6: 'هل توفرون التركيب والتدريب؟',
-    single_saft_faq_a6: 'نعم، مجاناً من قبل فريقنا الخبير.',
-    single_saft_faq_q7: 'كيف هي خدمة الصيانة؟',
-    single_saft_faq_a7: 'لدينا شبكة خدمة عالمية.',
-    single_saft_faq_q8: 'ما هو وقت التسليم؟',
-    single_saft_faq_a8: '4-6 أسابيع للموديلات القياسية.',
-    single_saft_faq_q9: 'ما هي إجراءات السلامة؟',
-    single_saft_faq_a9: 'مطابقة لمعايير CE، أزرار توقف الطوارئ، نظام عكس تلقائي.',
-    single_saft_faq_q10: 'هل تصنعون مقاسات خاصة؟',
-    single_saft_faq_a10: 'نعم، نصمم حسب الطلب.',
 
-    dual_saft_faq_title: 'الأسئلة الشائعة - محطم ثنائي العمود',
-    dual_saft_faq_q1: 'ما هي المواد المناسبة؟',
-    dual_saft_faq_a1: 'المعادن، الإطارات، النفايات الإلكترونية، البراميل، البلاستيك الصلب.',
-    dual_saft_faq_q2: 'ما الفرق عن العمود الواحد؟',
-    dual_saft_faq_a2: 'سرعة أقل وعزم دوران أعلى بكثير. تعتمد على التمزيق والقص.',
-    dual_saft_faq_q3: 'كيف تتم الصيانة؟',
-    dual_saft_faq_a3: 'صيانة منخفضة بفضل نظام التزييت التلقائي.',
-
-    quad_saft_faq_title: 'الأسئلة الشائعة - محطم رباعي العمود',
-    quad_saft_faq_q1: 'لماذا اختار رباعي العمود؟',
-    quad_saft_faq_a1: 'للحصول على حجم محدد في تمريرة واحدة.',
-
-    metal_faq_title: 'الأسئلة الشائعة - محطم المعادن',
-    metal_faq_q1: 'ما هي المعادن التي يعالجها؟',
-    metal_faq_a1: 'الألمنيوم، النحاس، الحديد، الخردة الإلكترونية.',
-
-    pallet_faq_title: 'الأسئلة الشائعة - محطم المنصات',
-    pallet_faq_q1: 'هل يكسر المسامير؟',
-    pallet_faq_a1: 'نعم، يصمم لكسر المسامير وفصلها مغناطيسياً.',
-
-    wood_faq_title: 'الأسئلة الشائعة - محطم الخشب',
-    wood_faq_q1: 'أنواع الخشب؟',
-    wood_faq_a1: 'جميع أنواع الأخشاب والجذور والمنصات.',
-
-    mobile_crusher_faq_title: 'الأسئلة الشائعة - الكسارة المتنقلة',
-    mobile_crusher_faq_q1: 'المواد؟',
-    mobile_crusher_faq_a1: 'النفايات البلاستيكية والمعدنية والخشبية في الموقع.',
   },
 };
 
@@ -4052,7 +3958,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.tr] || key;
+    return (translations[language] as Record<string, string>)[key] || key;
   };
 
   const isRTL = language === 'ar';
