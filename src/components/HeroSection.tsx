@@ -8,16 +8,16 @@ export const HeroSection = () => {
   const { t } = useLanguage();
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.9]);
+
 
   return (
     <motion.section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#45474B]"
-      style={{ 
+      style={{
         fontFamily: 'Mulish, sans-serif',
         opacity,
-        scale
+
       }}
     >
       {/* Background Video */}
@@ -36,7 +36,7 @@ export const HeroSection = () => {
         </video>
         {/* Dark Overlay with gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
-        
+
         {/* Animated gradient overlay for shimmer effect */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F4CE14]/5 to-transparent"
@@ -57,7 +57,7 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
+          transition={{
             duration: 0.8,
             type: 'spring',
             stiffness: 100
@@ -65,8 +65,7 @@ export const HeroSection = () => {
           className="mb-12 flex justify-center"
         >
           <motion.div
-            whileHover={{ scale: 1.05, rotate: [0, -2, 2, -2, 0] }}
-            transition={{ duration: 0.5 }}
+
           >
             <Logo
               variant="light"
@@ -80,8 +79,8 @@ export const HeroSection = () => {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.8, 
+          transition={{
+            duration: 0.8,
             delay: 0.2,
             type: 'spring',
             stiffness: 80
@@ -102,7 +101,7 @@ export const HeroSection = () => {
               repeatDelay: 2,
               ease: 'easeInOut',
             }}
-            style={{ 
+            style={{
               mixBlendMode: 'overlay',
               pointerEvents: 'none'
             }}
@@ -113,8 +112,8 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ 
-            duration: 0.7, 
+          transition={{
+            duration: 0.7,
             delay: 0.4,
             type: 'spring',
             stiffness: 100
@@ -139,8 +138,8 @@ export const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.8, 
+          transition={{
+            duration: 0.8,
             delay: 0.6,
             type: 'spring',
             stiffness: 80
@@ -155,8 +154,8 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.8, 
+          transition={{
+            duration: 0.8,
             delay: 0.8,
             type: 'spring',
             stiffness: 80
@@ -164,7 +163,7 @@ export const HeroSection = () => {
           className="mt-16 max-w-2xl mx-auto"
         >
           {/* CTA Title */}
-          <motion.h2 
+          <motion.h2
             className="text-[32px] text-white mb-6 drop-shadow-lg"
             style={{ fontWeight: 700 }}
             initial={{ opacity: 0 }}
@@ -175,7 +174,7 @@ export const HeroSection = () => {
           </motion.h2>
 
           {/* CTA Description */}
-          <motion.p 
+          <motion.p
             className="text-[18px] text-white/90 mb-8 leading-relaxed drop-shadow-lg"
             style={{ fontWeight: 400 }}
             initial={{ opacity: 0 }}
@@ -194,13 +193,13 @@ export const HeroSection = () => {
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
+            transition={{
               delay: 1.2,
               type: 'spring',
               stiffness: 150,
               damping: 10
             }}
-            whileHover={{ 
+            whileHover={{
               scale: 1.08,
               boxShadow: '0 20px 40px rgba(244, 206, 20, 0.4)',
             }}
@@ -247,7 +246,7 @@ export const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[30px] h-[50px] border-2 border-white/70 rounded-[50px] cursor-pointer transition-all z-20 group"
-        whileHover={{ 
+        whileHover={{
           borderColor: '#F4CE14',
           scale: 1.1,
           boxShadow: '0 0 20px rgba(244, 206, 20, 0.5)'
