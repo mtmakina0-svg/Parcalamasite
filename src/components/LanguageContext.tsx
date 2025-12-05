@@ -144,12 +144,6 @@ const translations = {
     ref_cta_button: 'İletişime Geçin',
     
     // Waste Categories Page
-    waste_categories_title: 'Atık Türleri',
-    waste_categories_subtitle: 'Farklı atık türleri için özel parçalama çözümleri sunuyoruz. Her atık türü için en uygun makine ve sistem çözümlerini keşfedin.',
-    waste_management_title: 'Profesyonel Atık Yönetimi Çözümleri',
-    waste_management_para1: 'MT Makina olarak, geri dönüşüm ve atık yönetimi sektöründe 15 yılı aşkın deneyimimizle, her türlü atık için özel parçalama sistemleri sunuyoruz. Çevre dostu teknolojilerimiz ile sürdürülebilir bir gelecek için çalışıyoruz.',
-    waste_management_para2: 'Endüstriyel atıklardan evsel atıklara, plastikten metale kadar geniş bir yelpazede çözümler sunuyoruz. Tüm makinelerimiz, yüksek verimlilik ve düşük işletme maliyeti sağlayacak şekilde tasarlanmıştır.',
-    waste_management_para3: 'Atık yönetimi ihtiyaçlarınız için en uygun çözümü bulmak üzere uzman ekibimizle iletişime geçin. Size özel projelendirme ve danışmanlık hizmetimizden faydalanabilirsiniz.',
     
     // Waste Detail Page - Common
     waste_back_button: 'Tüm Atık Türleri',
@@ -508,8 +502,6 @@ const translations = {
     metal_similar_products: 'Benzer Ürünler',
     metal_watch_video: 'Video İzle',
     
-    pallet_faq_title: 'Sıkça Sorulan Sorular - Palet Parçalama Makinesi',
-    pallet_video_title: 'Palet Parçalama Makinesi Videoları',
     pallet_similar_products: 'Benzer Ürünler',
     pallet_watch_video: 'Video İzle',
     
@@ -627,10 +619,6 @@ const translations = {
     organic_similar_products: 'Benzer Ürünler',
     organic_watch_video: 'Video İzle',
     
-    harddisk_faq_title: 'Sıkça Sorulan Sorular - Sabit Disk Parçalama Makinesi',
-    harddisk_video_title: 'Sabit Disk Parçalama Makinesi Videoları',
-    harddisk_similar_products: 'Benzer Ürünler',
-    harddisk_watch_video: 'Video İzle',
     
     wood_grinder_faq_title: 'Sıkça Sorulan Sorular - Ahşap Öğütücü',
     wood_grinder_video_title: 'Ahşap Öğütücü Videoları',
@@ -678,7 +666,6 @@ const translations = {
     product_quad_shaft: 'Dört Şaftlı Parçalama Makinesi',
     product_metal: 'Metal Parçalama Makinesi',
     product_mobile: 'Mobil Kırıcı',
-    product_pallet: 'Palet Parçalama Makinesi',
     product_harddisk: 'Harddisk İmha Makinesi',
     product_tree_root: 'Ağaç Kökü Parçalama Makinesi',
     product_wood_grinder: 'Ağaç Parçalama Öğütme Makinesi',
@@ -689,24 +676,14 @@ const translations = {
     single_shaft_subtitle: 'Geniş Atık Yelpazesinde Yüksek Verim, Güçlü Performans',
     
     // Dual Shaft Product Detail Page
-    dual_shaft_main_title: 'Çift Şaftlı Parçalama Makinesi',
-    dual_shaft_subtitle: 'Ağır Hizmet Tipi Malzemeler için Çift Güç',
     
     // Quad Shaft Product Detail Page
-    quad_shaft_main_title: 'Dört Şaftlı Parçalama Makinesi',
-    quad_shaft_subtitle: 'Ultra Yüksek Verimlilik ve Homojen Parçalama',
     
     // Metal Shredder Product Detail Page
-    metal_main_title: 'Metal Parçalama Makinesi',
-    metal_subtitle: 'Metal Atıkları için Özel Tasarım ve Güç',
     
     // Pallet Shredder Product Detail Page
-    pallet_main_title: 'Palet Parçalama Makinesi',
-    pallet_subtitle: 'Ahşap Paletler için Özelleştirilmiş Çözüm',
     
     // Harddisk Destroyer Product Detail Page
-    harddisk_main_title: 'Harddisk İmha Parçalama Makinesi',
-    harddisk_subtitle: 'Güvenli Veri İmha Çözümleri',
     
     // Glass Crusher Product Detail Page
     glass_main_title: 'Cam Şişe Kırma Makinesi',
@@ -757,26 +734,14 @@ const translations = {
     single_shaft_faq_q3: 'Bakım gereksinimleri nelerdir?',
     single_shaft_faq_a3: 'Düzenli bıçak kontrolü, hidrolik sistem kontrolü ve yağlama işlemleri önerilir. Ortalama 500 çalışma saatinde bir genel kontrol yapılması yeterlidir.',
     single_shaft_faq_q4: 'Rotor ve bıçak ömrü ne kadardır?',
-    single_shaft_faq_a4: 'Bıçaklar dayanıklı alaşım çelikten üretilir ve işlenen malzeme tipine göre 2000-5000 saat arası kullanım ömrü sunar. Rotor ömrü ise 10 yılın üzerindedir.',
-    single_shaft_faq_q5: 'Makine kapasitesi neye göre değişir?',
-    single_shaft_faq_a5: 'Kapasite; işlenen malzemenin cinsi, nem oranı, yoğunluğu ve parçalama boyutuna göre değişkenlik gösterir. Plastik ve kâğıt gibi hafif malzemeler daha yüksek kapasitede işlenebilir.',
     youtube_channel_title: 'YouTube Kanalımızı İnceleyin',
     youtube_channel_description: 'Tüm makinelerimizin çalışma videolarını, müşteri referanslarını ve üretim süreçlerimizi YouTube kanalımızda bulabilirsiniz.',
-    visit_youtube: 'YouTube Kanalına Git',
     
     // Product Category Page
-    about_our_machines: 'Makinelerimiz Hakkında',
-    key_features: 'Temel Özellikler',
-    our_models: 'Modellerimiz',
-    select_model_description: 'İhtiyacınıza uygun modeli seçin ve detaylı teknik özellikleri inceleyin',
     single_shaft_video_title: 'Tek Şaftlı Parçalama Makinesi Video',
     single_shaft_watch_video: 'Videoyu İzle',
     single_shaft_similar_products: 'Benzer Ürünler',
     single_shaft_ecatalog_btn: 'E-Katalog',
-    need_help_choosing: 'Model Seçiminde Yardıma mı İhtiyacınız Var?',
-    contact_us_for_consultation: 'Uzman ekibimiz size en uygun makineyi seçmenizde yardımcı olacaktır',
-    contact_us: 'Bize Ulaşın',
-    single_shaft_advantage_1_title: 'BAKIM GEREKSİNİMLER�� NELERDİR?',
     single_shaft_faq_a4: 'Düzenli bıçak kontrolü ve keskinleştirme, hidrolik sistem bakımı, elek temizliği ve yağlama işlemleri gereklidir. Modüler tasarımı sayesinde bakım işlemleri kolay ve hızlı yapılabilir. Ortalama 800-1000 saat kullanımda bıçak kontrolü önerilir.',
     single_shaft_faq_q5: 'HANGİ SEKTÖRLERDE KULLANILIR?',
     single_shaft_faq_a5: 'Plastik geri dönüşüm tesisleri, kağıt ve karton işleme tesisleri, ambalaj endüstrisi, otomotiv sektörü, elektronik atık tesisleri, tekstil geri dönüşüm merkezleri ve belediye atık yönetim tesislerinde yaygın olarak kullanılır.',
@@ -905,17 +870,6 @@ const translations = {
     pallet_advantage_4_desc: 'Mobil palet parçalama makinesi seçeneği, farklı sahalarda kullanılabilme esnekliği sağlar, böylece iş sahasında daha fazla verimlilik elde edilir.',
     pallet_adv_4_title: 'Mobil Opsiyon',
     pallet_adv_4_desc: 'Mobil palet parçalama makinesi seçeneği, farklı sahalarda kullanılabilme esnekliği sağlar, böylece iş sahasında daha fazla verimlilik elde edilir.',
-    pallet_faq_title: 'PALET PARÇALAMA MAKİNESİ S.S.S.',
-    pallet_faq_1_q: 'PALET PARÇALAMA MAKİNESİ NE İŞE YARAR?',
-    pallet_faq_1_a: 'Palet parçalama makinesi, ahşap ve plastik paletlerin küçük parçalara ayrılmasını sağlayan endüstriyel bir cihazdır. Bu makineler, paletlerin geri dönüşümü ve atık yönetimi süreçlerinde önemli bir rol oynar.',
-    pallet_faq_2_q: 'PALET PARÇALAMA MAKİNELERİNİN BAŞLICA AVANTAJLARI NELERDİR?',
-    pallet_faq_2_a: 'Palet parçalama makineleri, yüksek verimlilik, enerji tasarrufu, düşük işletme maliyetleri ve çevresel sürdürülebilirlik sağlar. Ayrıca, bu makineler sağlam yapıları ve dayanıklı bıçakları ile uzun ömürlü kullanım sunar.',
-    pallet_faq_3_q: 'PALET PARÇALAMA MAKİNELERİ HANGİ TÜR PALETLERİ İŞLEYEBİLİR?',
-    pallet_faq_3_a: 'Palet parçalama makineleri, hem ahşap hem de plastik paletleri işleyebilir. Ayrıca, içinde çivi gibi metaller bulunan paletleri de etkili bir şekilde parçalayabilirler.',
-    pallet_faq_4_q: 'MOBİL PALET PARÇALAMA MAKİNELERİNİN AVANTAJLARI NELERDİR?',
-    pallet_faq_4_a: 'Mobil palet parçalayıcılar, sahada kolay taşınabilirlik sağlar ve yerinde parçalama işlemi yapılmasına olanak tanır. Bu makineler, büyük yüklerde sert malzemeleri işlemek üzere tasarlanmıştır ve demirli malzemeleri ayırabilen çapraz bant mıknatıs gibi aksesuarlarla donatılabilir.',
-    pallet_faq_5_q: 'PALET PARÇALAMA MAKİNELERİNİN ENERJİ VERİMLİLİĞİ NASILDIR?',
-    pallet_faq_5_a: 'Yüksek enerji verimliliği sağlayan motor ve sistemler, işletme maliyetlerini düşürür ve çevresel etkileri azaltır. Bu makineler, düşük hızda yüksek tork ile çalışarak enerji tasarrufu sağlar.',
     pallet_tech_specs_title: 'TSV Serisi Teknik Özellikler',
     
     // Pallet Optional Features
@@ -1108,35 +1062,22 @@ const translations = {
     product_quad_shaft: 'Quad Shaft Shredder',
     product_metal: 'Metal Shredder',
     product_mobile: 'Mobile Crusher',
-    product_pallet: 'Pallet Shredder',
     product_harddisk: 'Hard Disk Destroyer',
     product_tree_root: 'Tree Root Shredder',
     product_wood_grinder: 'Wood Grinding Machine',
     product_glass: 'Glass Bottle Crusher',
     
     // Single Shaft Product Detail Page
-    single_shaft_main_title: 'Single Shaft Solid Waste Shredder',
-    single_shaft_subtitle: 'High Efficiency and Powerful Performance Across a Wide Range of Waste',
     
     // Dual Shaft Product Detail Page
-    dual_shaft_main_title: 'Dual Shaft Shredder',
-    dual_shaft_subtitle: 'Double Power for Heavy-Duty Materials',
     
     // Quad Shaft Product Detail Page
-    quad_shaft_main_title: 'Quad Shaft Shredder',
-    quad_shaft_subtitle: 'Ultra High Efficiency and Homogeneous Shredding',
     
     // Metal Shredder Product Detail Page
-    metal_main_title: 'Metal Shredder',
-    metal_subtitle: 'Specialized Design and Power for Metal Waste',
     
     // Pallet Shredder Product Detail Page
-    pallet_main_title: 'Pallet Shredder',
-    pallet_subtitle: 'Customized Solution for Wooden Pallets',
     
     // Harddisk Destroyer Product Detail Page
-    harddisk_main_title: 'Hard Disk Destruction Shredder',
-    harddisk_subtitle: 'Secure Data Destruction Solutions',
     
     // Glass Crusher Product Detail Page
     glass_main_title: 'Glass Bottle Crusher',
@@ -1576,8 +1517,6 @@ const translations = {
     metal_similar_products: 'Similar Products',
     metal_watch_video: 'Watch Video',
     
-    pallet_faq_title: 'Frequently Asked Questions - Pallet Shredder',
-    pallet_video_title: 'Pallet Shredder Videos',
     pallet_similar_products: 'Similar Products',
     pallet_watch_video: 'Watch Video',
     
@@ -1695,10 +1634,6 @@ const translations = {
     organic_similar_products: 'Similar Products',
     organic_watch_video: 'Watch Video',
     
-    harddisk_faq_title: 'Frequently Asked Questions - Hard Disk Shredder',
-    harddisk_video_title: 'Hard Disk Shredder Videos',
-    harddisk_similar_products: 'Similar Products',
-    harddisk_watch_video: 'Watch Video',
     
     wood_grinder_faq_title: 'Frequently Asked Questions - Wood Grinder',
     wood_grinder_video_title: 'Wood Grinder Videos',
@@ -2097,35 +2032,22 @@ const translations = {
     product_quad_shaft: 'Четырехвальная дробилка',
     product_metal: 'Дробилка для металла',
     product_mobile: 'Мобильная дробилка',
-    product_pallet: 'Дробилка для поддонов',
     product_harddisk: 'Уничтожитель жестких дисков',
     product_tree_root: 'Дробилка корней деревьев',
     product_wood_grinder: 'Измельчитель древесины',
     product_glass: 'Дробилка для стекла',
     
     // Single Shaft Product Detail Page
-    single_shaft_main_title: 'Одновальная дробилка твердых отходов',
-    single_shaft_subtitle: 'Высокая эффективность и мощная производительность для широкого спектра отходов',
     
     // Dual Shaft Product Detail Page
-    dual_shaft_main_title: 'Двухвальная дробилка',
-    dual_shaft_subtitle: 'Двойная мощность для тяжелых материалов',
     
     // Quad Shaft Product Detail Page
-    quad_shaft_main_title: 'Четырехвальная дробилка',
-    quad_shaft_subtitle: 'Сверхвысокая эффективность и однородное измельчение',
     
     // Metal Shredder Product Detail Page
-    metal_main_title: 'Дробилка для металла',
-    metal_subtitle: 'Специализированный дизайн и мощность для металлических отходов',
     
     // Pallet Shredder Product Detail Page
-    pallet_main_title: 'Дробилка для поддонов',
-    pallet_subtitle: 'Индивидуальное решение для деревянных поддонов',
     
     // Harddisk Destroyer Product Detail Page
-    harddisk_main_title: 'Уничтожитель жестких дисков',
-    harddisk_subtitle: 'Безопасные решения для уничтожения данных',
     
     // Glass Crusher Product Detail Page
     glass_main_title: 'Дробилка для стекла',
@@ -2203,8 +2125,6 @@ const translations = {
     metal_similar_products: 'Похожие продукты',
     metal_watch_video: 'Смотреть видео',
     
-    pallet_faq_title: 'Часто задаваемые вопросы - Измельчитель поддонов',
-    pallet_video_title: 'Видео измельчителя поддонов',
     pallet_similar_products: 'Похожие продукты',
     pallet_watch_video: 'Смотреть видео',
     
@@ -2322,10 +2242,6 @@ const translations = {
     organic_similar_products: 'Похожие продукты',
     organic_watch_video: 'Смотреть видео',
     
-    harddisk_faq_title: 'Часто задаваемые вопросы - Уничтожитель жестких дисков',
-    harddisk_video_title: 'Видео уничтожителя жестких дисков',
-    harddisk_similar_products: 'Похожие продукты',
-    harddisk_watch_video: 'Смотреть видео',
     
     wood_grinder_faq_title: 'Часто задаваемые вопросы - Дробилка для древесины',
     wood_grinder_video_title: 'Видео дробилки для древесины',
@@ -2840,39 +2756,18 @@ const translations = {
     
     // Products
     product_single_shaft: 'آلة التقطيع أحادية العمود',
-    product_dual_shaft: 'آلة التقطيع ثنائية العمود',
-    product_quad_shaft: 'آلة التقطيع رباعية العمود',
-    product_metal: 'آلة تقطيع المعادن',
-    product_mobile: 'آلة التكسير المتنقلة',
-    product_pallet: 'آلة تقطيع المنصات',
-    product_harddisk: 'آلة إتلاف الأقراص الصلبة',
-    product_tree_root: 'آلة تقطيع جذور الأشجار',
-    product_wood_grinder: 'آلة طحن الخشب',
-    product_glass: 'آلة تكسير الزجاج',
     
     // Single Shaft Product Detail Page
-    single_shaft_main_title: 'آلة تقطيع النفايات الصلبة أحادية العمود',
-    single_shaft_subtitle: 'كفاءة عالية وأداء قوي لمجموعة واسعة من النفايات',
     
     // Dual Shaft Product Detail Page
-    dual_shaft_main_title: 'آلة التقطيع ثنائية العمود',
-    dual_shaft_subtitle: 'قوة مزدوجة للمواد الثقيلة',
     
     // Quad Shaft Product Detail Page
-    quad_shaft_main_title: 'آلة التقطيع رباعية العمود',
-    quad_shaft_subtitle: 'كفاءة فائقة وتقطيع متجانس',
     
     // Metal Shredder Product Detail Page
-    metal_main_title: 'آلة تقطيع المعادن',
-    metal_subtitle: 'تصميم متخصص وقوة للنفايات المعدنية',
     
     // Pallet Shredder Product Detail Page
-    pallet_main_title: 'آلة تقطيع المنصات',
-    pallet_subtitle: 'حل مخصص للمنصات الخشبية',
     
     // Harddisk Destroyer Product Detail Page
-    harddisk_main_title: 'آلة إتلاف الأقراص الصلبة',
-    harddisk_subtitle: 'حلول آمنة لإتلاف البيانات',
     
     // Glass Crusher Product Detail Page
     glass_main_title: 'آلة تكسير الزجاج',
@@ -2950,8 +2845,6 @@ const translations = {
     metal_similar_products: 'منتجات مماثلة',
     metal_watch_video: 'مشاهدة الفيديو',
     
-    pallet_faq_title: 'الأسئلة المتكررة - آلة تقطيع المنصات',
-    pallet_video_title: 'فيديوهات آلة تقطيع المنصات',
     pallet_similar_products: 'منتجات مماثلة',
     pallet_watch_video: 'مشاهدة الفيديو',
     
@@ -3069,10 +2962,6 @@ const translations = {
     organic_similar_products: 'منتجات مماثلة',
     organic_watch_video: 'مشاهدة الفيديو',
     
-    harddisk_faq_title: 'الأسئلة المتكررة - آلة تدمير الأقراص الصلبة',
-    harddisk_video_title: 'فيديوهات آلة تدمير الأقراص الصلبة',
-    harddisk_similar_products: 'منتجات مماثلة',
-    harddisk_watch_video: 'مشاهدة الفيديو',
     
     wood_grinder_faq_title: 'الأسئلة المتكررة - طاحونة الخشب',
     wood_grinder_video_title: 'فيديوهات طاحونة الخشب',
@@ -3103,12 +2992,10 @@ const translations = {
     footer_website: 'www.mtmakina.com.tr',
     
     // Single Shaft Product Detail Page
-    single_shaft_main_title: 'آلة تمزيق أحادية العمود',
     product_dual_shaft: 'آلة تمزيق ثنائية العمود',
     product_quad_shaft: 'آلة تمزيق رباعية العمود',
     product_metal: 'آلة تمزيق المعادن',
     product_mobile: 'كسارة متنقلة',
-    product_pallet: 'آلة تمزيق المنصات',
     product_harddisk: 'آلة تدمير القرص الصلب',
     product_tree_root: 'آلة تمزيق جذور الأشجار',
     product_wood_grinder: 'آلة طحن الخشب',
