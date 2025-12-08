@@ -461,9 +461,9 @@ const productDescriptionKeys: { [key: string]: string } = {
 
 const getTranslationKeyPrefix = (type: string) => {
   if (type === 'mobile') return 'mobile_crusher';
-  if (type === 'single-saft') return 'single_shaft';
-  if (type === 'dual-saft') return 'dual_shaft';
-  if (type === 'quad-saft') return 'quad_shaft';
+  if (type === 'single-shaft') return 'single_shaft';
+  if (type === 'dual-shaft') return 'dual_shaft';
+  if (type === 'quad-shaft') return 'quad_shaft';
   return type.replace(/-/g, '_');
 };
 
@@ -479,10 +479,8 @@ export const ProductDetailPage = ({
   const { t, isRTL, language } = useLanguage();
 
   // Normalize legacy product type keys
-  const currentProductType = (productType === 'single-saft' ? 'single-shaft' :
-    productType === 'dual-saft' ? 'dual-shaft' :
-      productType === 'quad-saft' ? 'quad-shaft' :
-        productType);
+  // Normalize legacy product type keys
+  const currentProductType = productType;
 
   // DEBUG - Check what productType we're receiving
   console.log('🔍 ProductDetailPage Rendered:', { productType, modelName, language });

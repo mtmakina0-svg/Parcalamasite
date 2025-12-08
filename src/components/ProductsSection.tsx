@@ -7,7 +7,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const products = [
   {
-    id: 'single-saft',
+    id: 'single-shaft',
     titleTR: 'Tek Şaftlı Parçalama Makinesi',
     titleEN: 'Single Shaft Shredder',
     titleRU: 'Одновальный измельчитель',
@@ -15,7 +15,7 @@ const products = [
     image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
   },
   {
-    id: 'dual-saft',
+    id: 'dual-shaft',
     titleTR: 'Çift Şaftlı Parçalama Makinesi',
     titleEN: 'Double Shaft Shredder',
     titleRU: 'Двухвальный измельчитель',
@@ -23,7 +23,7 @@ const products = [
     image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
   },
   {
-    id: 'quad-saft',
+    id: 'quad-shaft',
     titleTR: 'Dört Şaftlı Parçalama Makinesi',
     titleEN: 'Quad Shaft Shredder',
     titleRU: 'Четырехвальный измельчитель',

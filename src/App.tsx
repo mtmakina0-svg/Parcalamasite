@@ -43,7 +43,7 @@ import {
 import { SEOHead } from './components/SEOHead';
 
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact' | 'not-found';
-type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood' | 'glass' | null;
+type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood' | 'glass' | null;
 
 // Parse URL and determine current page (Multi-language support)
 // Parse URL and determine current page (Multi-language support)
@@ -444,9 +444,9 @@ function AppContent() {
 
   const handleNavigateToProductDetail = (productType: string, modelName?: string) => {
     const model = modelName || (
-      productType === 'single-saft' ? 'TSH-60' :
-        productType === 'dual-saft' ? 'CS-20' :
-          productType === 'quad-saft' ? 'DS-80' :
+      productType === 'single-shaft' ? 'TSH-60' :
+        productType === 'dual-shaft' ? 'CS-20' :
+          productType === 'quad-shaft' ? 'DS-80' :
             productType === 'metal' ? 'RDM-100' :
               productType === 'pallet' ? 'TSV-140' :
                 productType === 'harddisk' ? 'DATABER-S' :

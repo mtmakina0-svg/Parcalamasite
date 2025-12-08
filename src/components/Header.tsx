@@ -59,15 +59,15 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
 
   // Product models for mega menu - TÜM ÜRÜNLER
   const productModels: { [key: string]: { label: string, models: string[] } } = {
-    'single-saft': {
+    'single-shaft': {
       label: t('product_single_shaft'),
       models: ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200']
     },
-    'dual-saft': {
+    'dual-shaft': {
       label: t('product_dual_shaft'),
       models: ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200']
     },
-    'quad-saft': {
+    'quad-shaft': {
       label: t('product_quad_shaft'),
       models: ['DS-80', 'DS-100', 'DS-150', 'DS-200']
     },
@@ -100,14 +100,14 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
       models: ['GB-300']
     }
   };
-  
+
   // Primary products (main shredders) - displayed in columns
   const primaryProducts = [
-    { key: 'product_single_shaft', action: 'single-saft', hasModels: true },
-    { key: 'product_dual_shaft', action: 'dual-saft', hasModels: true },
-    { key: 'product_quad_shaft', action: 'quad-saft', hasModels: true }
+    { key: 'product_single_shaft', action: 'single-shaft', hasModels: true },
+    { key: 'product_dual_shaft', action: 'dual-shaft', hasModels: true },
+    { key: 'product_quad_shaft', action: 'quad-shaft', hasModels: true }
   ];
-  
+
   // Secondary products - displayed below primary
   const secondaryProducts = [
     { key: 'product_metal', action: 'metal', hasModels: true },
@@ -118,9 +118,9 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { key: 'product_wood_grinder', action: 'wood', hasModels: true },
     { key: 'product_glass', action: 'glass', hasModels: true }
   ];
-  
+
   const productsDropdown = [...primaryProducts, ...secondaryProducts];
-  
+
   const wastesDropdown = [
     { key: 'waste_household', action: 'evsel' },
     { key: 'waste_electronic', action: 'elektronik' },
@@ -193,11 +193,10 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-[#45474B]/95 backdrop-blur-md shadow-lg'
           : 'bg-[#45474B]/90 backdrop-blur-sm'
-      }`}
+        }`}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -216,7 +215,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
             className="flex items-center cursor-pointer"
           >
             <Logo
-              alt="MT Makina" 
+              alt="MT Makina"
               className="h-12 w-auto"
             />
           </motion.a>
@@ -281,11 +280,10 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     transition={{ duration: 0.2 }}
                     onMouseEnter={handleDropdownEnter}
                     onMouseLeave={handleDropdownLeave}
-                    className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 z-[9999] ${
-                      item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px] overflow-hidden' : 
-                      item.key === 'nav_products' ? 'min-w-[320px] overflow-visible' : 
-                      'min-w-[240px] overflow-hidden'
-                    }`}
+                    className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 z-[9999] ${item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px] overflow-hidden' :
+                        item.key === 'nav_products' ? 'min-w-[320px] overflow-visible' :
+                          'min-w-[240px] overflow-hidden'
+                      }`}
                     role="menu"
                     aria-label={`${item.label || t(item.key)} alt menü`}
                   >
@@ -377,7 +375,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                             e.preventDefault();
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                             setOpenDropdown(null);
-                            
+
                             if (item.key === 'nav_corporate') {
                               if (subItem.action === 'about' && onAboutClick) {
                                 onAboutClick();
@@ -389,9 +387,8 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                             }
                           }}
                           whileHover={{ backgroundColor: 'rgba(244,206,20,0.1)' }}
-                          className={`block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors ${
-                            item.key === 'nav_wastes' ? 'whitespace-normal leading-tight' : ''
-                          }`}
+                          className={`block px-4 py-2 text-sm text-[#F5F7F8] hover:text-[#F4CE14] transition-colors ${item.key === 'nav_wastes' ? 'whitespace-normal leading-tight' : ''
+                            }`}
                         >
                           {subItem.label || t(subItem.key || subItem)}
                         </motion.a>
@@ -416,7 +413,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                 title="WhatsApp ile iletişime geçin"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                 </svg>
                 {t('btn_quote')}
               </Button>
@@ -486,12 +483,12 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     onClick={(e) => {
                       e.preventDefault();
                       window.scrollTo({ top: 0, behavior: 'smooth' });
-                      
+
                       // Don't close menu if clicking on products dropdown
                       if (item.key !== 'nav_products' && !item.dropdown) {
                         setMobileMenuOpen(false);
                       }
-                      
+
                       if (item.action === 'home' && onMainClick) {
                         onMainClick();
                         setMobileMenuOpen(false);
@@ -609,7 +606,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                   )}
                 </div>
               ))}
-              <Button 
+              <Button
                 onClick={() => {
                   window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
                   setMobileMenuOpen(false);
@@ -626,9 +623,8 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                       setLanguage(lang.code);
                       setMobileMenuOpen(false);
                     }}
-                    className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${
-                      language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
-                    }`}
+                    className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
+                      }`}
                   >
                     {lang.code.toUpperCase()}
                   </button>

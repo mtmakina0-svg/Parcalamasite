@@ -30,19 +30,19 @@ export const slugsByLanguage = {
 
 // Product category slugs by language
 export const productCategorySlugs = {
-  'single-saft': {
+  'single-shaft': {
     tr: 'tek-saftli-parcalama-makinesi',
     en: 'single-shaft-shredder',
     ru: 'odnovalnaya-drobilka',
     ar: 'single-shaft-shredder'
   },
-  'dual-saft': {
+  'dual-shaft': {
     tr: 'cift-saftli-parcalama-makinesi',
     en: 'dual-shaft-shredder',
     ru: 'dvukhvalnaya-drobilka',
     ar: 'dual-shaft-shredder'
   },
-  'quad-saft': {
+  'quad-shaft': {
     tr: 'dort-saftli-parcalama-makinesi',
     en: 'quad-shaft-shredder',
     ru: 'chetyrekhvalnaya-drobilka',
@@ -358,7 +358,7 @@ export const seoMetadata: { [key: string]: (lang?: Language) => SEOMetadata } = 
 export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOMetadata => {
   // Fallback to English if language not found, or construct generic
   const categoryData: { [key: string]: { [key in Language]: Omit<SEOMetadata, 'canonical'> } } = {
-    'single-saft': {
+    'single-shaft': {
       tr: {
         title: 'Tek Şaftlı Parçalama Makinesi | Single Shaft Shredder | MT Makina TSH Serisi',
         description: 'Tek şaftlı parçalama makinesi, single shaft shredder - MT Makina TSH Serisi 500-6000 kg/saat. Plastik kırma, ahşap parçalama, kağıt shredder. ✓ 6 Model ✓ CE Belgeli ✓ Hızlı Teslimat ✓ Garanti',
@@ -446,7 +446,7 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
 export const getProductModelSEO = (type: string, model: string, lang: Language = 'tr'): SEOMetadata => {
   // Simplified model details for brevity, ideally this would be fully populated
   const modelDetails: { [key: string]: { [model: string]: { [key in Language]: Omit<SEOMetadata, 'canonical'> } } } = {
-    'single-saft': {
+    'single-shaft': {
       'TSH-60': {
         tr: {
           title: 'TSH-60 Parçalama Makinesi | 15-30 kW | 500-800 kg/saat | Fiyat Teklifi',
