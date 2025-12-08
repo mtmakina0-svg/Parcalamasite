@@ -114,7 +114,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Animated Background Pattern */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 opacity-5"
         animate={{
           backgroundPosition: ['0% 0%', '100% 100%'],
@@ -126,7 +126,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
           ease: 'linear',
         }}
       >
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: 'radial-gradient(circle at 20% 50%, #F4CE14 1px, transparent 1px), radial-gradient(circle at 80% 80%, #F4CE14 1px, transparent 1px)',
@@ -175,7 +175,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
             <span className="text-[#F4CE14]">Premium Products</span>
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             className="relative text-4xl md:text-5xl lg:text-6xl text-[#F4CE14] mb-6"
             style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
             initial={{ opacity: 0, y: 20 }}
@@ -195,14 +195,14 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                 repeatDelay: 3,
                 ease: 'easeInOut',
               }}
-              style={{ 
+              style={{
                 mixBlendMode: 'overlay',
                 pointerEvents: 'none'
               }}
             />
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             className="text-base md:text-lg text-[#F5F7F8]/90 max-w-4xl mx-auto mb-4 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -210,7 +210,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
           >
             {t('products_description')}
           </motion.p>
-          <motion.p 
+          <motion.p
             className="text-lg md:text-xl text-[#F5F7F8] max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -227,14 +227,14 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
               key={product.id}
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.1,
                 type: 'spring',
                 stiffness: 100
               }}
-              whileHover={{ 
-                y: -15, 
+              whileHover={{
+                y: -15,
                 scale: 1.03,
                 transition: { duration: 0.3, type: 'spring', stiffness: 300 }
               }}
@@ -254,8 +254,8 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                       className="w-full h-full"
                     >
                       <ImageWithFallback
-                        src={product.image} 
-                        alt={getProductTitle(product)}
+                        src={product.image}
+                        alt={`${getProductTitle(product)} - MT Makina`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                         fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
@@ -264,15 +264,15 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#F4CE14] to-[#F4CE14]/70"></div>
                   )}
-                  
+
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/95 group-hover:from-black/10 group-hover:via-black/40 group-hover:to-black/95 transition-all duration-300"></div>
-                  
+
                   {/* Hover shimmer effect */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F4CE14]/0 to-transparent"
                     initial={{ x: '-100%', opacity: 0 }}
-                    whileHover={{ 
+                    whileHover={{
                       x: '100%',
                       opacity: [0, 0.3, 0],
                     }}
@@ -284,9 +284,9 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                 <div className="relative z-10 h-full flex flex-col">
                   {/* Spacer to push content down */}
                   <div className="flex-1"></div>
-                  
+
                   {/* Text Content - Bottom */}
-                  <motion.div 
+                  <motion.div
                     className="p-6 text-center bg-gradient-to-b from-transparent to-black/40"
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.3 }}
@@ -297,7 +297,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                   </motion.div>
 
                   {/* Yellow Footer Band with glow effect */}
-                  <motion.div 
+                  <motion.div
                     className="relative bg-[#F4CE14] p-4 flex items-center justify-center overflow-hidden"
                     whileHover={{ backgroundColor: '#FFD700' }}
                   >

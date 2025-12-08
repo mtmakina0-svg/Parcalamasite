@@ -22,6 +22,7 @@ import { ProductDetailPage } from './components/ProductDetailPage';
 import { ProductCategoryPage } from './components/ProductCategoryPage';
 import { ECatalogPage } from './components/ECatalogPage';
 import { ContactPage } from './components/ContactPage';
+import { NotFoundPage } from './components/NotFoundPage';
 import { IntroLoader } from './components/IntroLoader';
 import {
   generateUrl,
@@ -41,7 +42,7 @@ import {
 } from './utils/seoConfig';
 import { SEOHead } from './components/SEOHead';
 
-type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact';
+type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact' | 'not-found';
 type ProductType = 'single-saft' | 'dual-saft' | 'quad-saft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood' | 'glass' | null;
 
 // Parse URL and determine current page (Multi-language support)
@@ -115,8 +116,8 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     }
   }
 
-  // Default to main page
-  return { page: 'main' };
+  // Default to not found page for unknown routes
+  return { page: 'not-found' };
 }
 
 function AppContent() {
@@ -868,6 +869,36 @@ function AppContent() {
           categoryId={selectedWasteCategory}
           onBack={handleBackFromWasteDetail}
         />
+        <ChatWidget />
+      </>
+    );
+  }
+
+  if (currentPage === 'not-found') {
+    return (
+      <>
+        <SEOHead
+          title="Sayfa Bulunamadı - MT Makina"
+          description="Aradığınız sayfa mevcut değil."
+          keywords={[]}
+          canonical={'https://www.parcalamamakinesi.com' + window.location.pathname}
+          noindex={true}
+        />
+        <Header
+          onWasteClick={handleNavigateToWasteCategories}
+          onWasteDetailClick={handleNavigateToWasteDetail}
+          onMainClick={handleNavigateToMain}
+          onProductsClick={handleNavigateToProducts}
+          onAboutClick={handleNavigateToAbout}
+          onReferencesClick={handleNavigateToReferences}
+          onTechnologyClick={handleNavigateToTechnology}
+          onCertificatesClick={handleNavigateToCertificates}
+          onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
+          onProductDetailClick={handleNavigateToProductDetail}
+          onContactClick={handleNavigateToContact}
+        />
+        <NotFoundPage onBackToMain={handleNavigateToMain} />
         <ChatWidget />
       </>
     );

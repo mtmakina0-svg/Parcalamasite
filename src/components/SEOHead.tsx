@@ -21,6 +21,7 @@ interface SEOHeadProps {
   productType?: string;
   model?: string;
   wasteCategory?: string;
+  structuredDataKey?: string; // Key to identify different structured data scripts
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -35,7 +36,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   pageType,
   productType,
   model,
-  wasteCategory
+  wasteCategory,
+  ...props // Capture other props including structuredDataKey
 }) => {
   const { language } = useContext(LanguageContext);
 
@@ -45,7 +47,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
     // Set language attribute on html element
     document.documentElement.lang = language;
-    
+
     // Set dir attribute for RTL languages
     if (language === 'ar') {
       document.documentElement.dir = 'rtl';
@@ -70,19 +72,19 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     updateMetaTag('meta[name="description"]', 'name', description);
     updateMetaTag('meta[name="keywords"]', 'name', keywords.join(', '));
     updateMetaTag('meta[name="author"]', 'name', 'MT Makina - Industrial Shredding Solutions');
-    
+
     // Robots meta tag - optimized for Google
-    const robotsContent = noindex 
-      ? 'noindex, nofollow' 
+    const robotsContent = noindex
+      ? 'noindex, nofollow'
       : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
     updateMetaTag('meta[name="robots"]', 'name', robotsContent);
     updateMetaTag('meta[name="googlebot"]', 'name', noindex ? 'noindex, nofollow' : 'index, follow');
-    
+
     // Additional Google optimization tags
     updateMetaTag('meta[name="google"]', 'name', 'notranslate'); // Prevent auto-translation
     updateMetaTag('meta[name="google-site-verification"]', 'name', 'YOUR_GOOGLE_VERIFICATION_CODE_HERE');
     updateMetaTag('meta[name="viewport"]', 'name', 'width=device-width, initial-scale=1, maximum-scale=5');
-    
+
     // Charset
     let charset = document.querySelector('meta[charset]');
     if (!charset) {
@@ -90,13 +92,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       charset.setAttribute('charset', 'UTF-8');
       document.head.insertBefore(charset, document.head.firstChild);
     }
-    
+
     // Mobile optimization
     updateMetaTag('meta[name="theme-color"]', 'name', '#F4CE14'); // Brand yellow
     updateMetaTag('meta[name="mobile-web-app-capable"]', 'name', 'yes');
     updateMetaTag('meta[name="apple-mobile-web-app-capable"]', 'name', 'yes');
     updateMetaTag('meta[name="apple-mobile-web-app-status-bar-style"]', 'name', 'black-translucent');
-    
+
     // Open Graph tags - optimized for social sharing
     updateMetaTag('meta[property="og:title"]', 'property', title);
     updateMetaTag('meta[property="og:description"]', 'property', description);
@@ -107,7 +109,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     updateMetaTag('meta[property="og:image:height"]', 'property', '630');
     updateMetaTag('meta[property="og:image:alt"]', 'property', 'MT Makina - Industrial Shredding Machines');
     updateMetaTag('meta[property="og:site_name"]', 'property', 'MT Makina');
-    
+
     // Language-specific locale
     const localeMap: { [key: string]: string } = {
       'tr': 'tr_TR',
@@ -116,7 +118,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       'ar': 'ar_SA'
     };
     updateMetaTag('meta[property="og:locale"]', 'property', localeMap[language] || 'tr_TR');
-    
+
     // Alternate locales
     const alternateLocales = Object.values(localeMap).filter(loc => loc !== localeMap[language]);
     alternateLocales.forEach((locale, index) => {
@@ -145,13 +147,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     // Generate correct URLs for each language based on page type
     const baseUrl = 'https://www.parcalamamakinesi.com';
     const supportedLanguages: Language[] = ['tr', 'en', 'ru', 'ar'];
-    
+
     const generateHreflangUrls = () => {
       const urls: { code: string; url: string }[] = [];
-      
+
       supportedLanguages.forEach(lang => {
         let url = baseUrl;
-        
+
         if (pageType === 'home') {
           url += generateUrl.home(lang);
         } else if (pageType === 'about') {
@@ -180,24 +182,24 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
           // Fallback: use current canonical
           url = canonical.replace(/\/(tr|en|ru|ar)\//, `/${lang}/`);
         }
-        
+
         urls.push({ code: lang, url });
       });
-      
+
       // Add x-default (defaults to Turkish)
-      urls.push({ 
-        code: 'x-default', 
-        url: urls.find(u => u.code === 'tr')?.url || canonical 
+      urls.push({
+        code: 'x-default',
+        url: urls.find(u => u.code === 'tr')?.url || canonical
       });
-      
+
       return urls;
     };
-    
+
     const hreflangUrls = generateHreflangUrls();
-    
+
     // Remove old hreflang tags
     document.querySelectorAll('link[hreflang]').forEach(link => link.remove());
-    
+
     hreflangUrls.forEach(({ code, url }) => {
       const hreflangLink = document.createElement('link');
       hreflangLink.setAttribute('rel', 'alternate');
@@ -207,13 +209,16 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     });
 
     // Add structured data (JSON-LD) for rich snippets
+    const structuredDataKey = props.structuredDataKey || 'main'; // Default key
+
     if (structuredData) {
-      // Remove existing structured data
-      document.querySelectorAll('script[type="application/ld+json"]').forEach(script => script.remove());
-      
+      // Remove existing structured data with this key
+      document.querySelectorAll(`script[type="application/ld+json"][data-key="${structuredDataKey}"]`).forEach(script => script.remove());
+
       // Add new structured data
       const script = document.createElement('script');
       script.type = 'application/ld+json';
+      script.setAttribute('data-key', structuredDataKey);
       script.text = JSON.stringify(structuredData);
       document.head.appendChild(script);
     }
@@ -225,7 +230,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       'https://fonts.googleapis.com',
       'https://fonts.gstatic.com'
     ];
-    
+
     preconnectDomains.forEach(domain => {
       let preconnect = document.querySelector(`link[rel="preconnect"][href="${domain}"]`);
       if (!preconnect) {
@@ -249,7 +254,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       }
     });
 
-  }, [title, description, keywords, canonical, ogImage, ogType, structuredData, noindex, language, pageType, productType, model, wasteCategory]);
+  }, [title, description, keywords, canonical, ogImage, ogType, structuredData, noindex, language, pageType, productType, model, wasteCategory, props.structuredDataKey]);
 
   return null; // This component doesn't render anything
 };

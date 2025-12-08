@@ -338,7 +338,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
           >
             <ImageWithFallback
               src={getModelImages(productType, models[0] || 'TSH-60').main}
-              alt={t(contentKeys.title)}
+              alt={`${t(contentKeys.title)} - MT Makina`}
               className="w-full rounded-2xl shadow-2xl"
               fallbackSrc={fallbackImage}
             />
@@ -481,7 +481,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                     <div className="relative overflow-hidden h-64">
                       <ImageWithFallback
                         src={images.main}
-                        alt={model}
+                        alt={`${model} - ${t(contentKeys.title)} - MT Makina`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         fallbackSrc={fallbackImage}
                       />
