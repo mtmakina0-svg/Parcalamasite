@@ -58,24 +58,24 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                             <div className="relative h-[400px] w-full">
                                 <div className="absolute inset-0 bg-black/40 z-10 w-full h-full"></div>
                                 <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                                <div className="absolute bottom-0 left-0 right-0 z-20 p-8 md:p-12 bg-gradient-to-t from-black/90 to-transparent">
+                                <div className="absolute bottom-0 left-0 right-0 z-20 p-8 md:p-12 bg-gradient-to-t from-black via-black/70 to-transparent">
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {post.tags.map(tag => (
-                                            <span key={tag} className="bg-[#F4CE14] text-black text-xs font-bold px-3 py-1 rounded-full">
+                                            <span key={tag} className="bg-[#F4CE14] text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight drop-shadow-md">
+                                    <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8)' }}>
                                         {post.title}
                                     </h1>
-                                    <div className="flex items-center text-white font-medium space-x-6 text-sm md:text-base">
+                                    <div className="flex items-center text-white font-medium space-x-6 text-sm md:text-base" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.9)' }}>
                                         <div className="flex items-center">
-                                            <Calendar size={18} className="mr-2 text-[#F4CE14]" />
+                                            <Calendar size={18} className="mr-2 text-[#F4CE14]" style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.8))' }} />
                                             {post.date}
                                         </div>
                                         <div className="flex items-center">
-                                            <User size={18} className="mr-2 text-[#F4CE14]" />
+                                            <User size={18} className="mr-2 text-[#F4CE14]" style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.8))' }} />
                                             {post.author}
                                         </div>
                                     </div>
