@@ -477,6 +477,7 @@ const translations = {
     single_shaft_video_title: 'Tek Şaftlı Parçalama Makinesi Videoları',
     single_shaft_similar_products: 'Benzer Ürünler',
     single_shaft_watch_video: 'Video İzle',
+    single_shaft_ecatalog_btn: 'E-Katalog',
 
     // Single Shaft FAQ
     single_shaft_faq_q1: 'TEK ŞAFTLI PARÇALAMA MAKİNESİ NE İŞE YARAR?',
@@ -886,6 +887,7 @@ const translations = {
     dual_shaft_watch_video: 'Videoyu İzle',
     dual_shaft_similar_products: 'Benzer Ürünler',
     dual_shaft_ecatalog_btn: 'E-Katalog',
+    metal_ecatalog_btn: 'E-Katalog',
 
     // Quad Shaft Product Detail Page
     quad_shaft_main_title: 'Dört Şaftlı Parçalama Makinesi (Quad Shaft Shredder)',
@@ -1216,6 +1218,7 @@ const translations = {
     product_tree_root: 'Tree Root Shredder',
     product_wood_grinder: 'Wood Grinding Machine',
     product_glass: 'Glass Bottle Crusher',
+
 
     // Single Shaft Product Detail Page
 
@@ -2219,6 +2222,7 @@ const translations = {
     metal_optional_6: 'Bolted Removable Blade Design',
     metal_optional_7: 'Electric Motor Drive System',
     metal_optional_8: 'Feeding and Discharge Conveyor',
+    metal_ecatalog_btn: 'E-Catalog',
 
     // Pallet Optional Features
     pallet_optional_features_title: 'Optional Features',
@@ -2911,6 +2915,7 @@ const translations = {
     metal_optional_6: 'Съемная конструкция ножей на болтах',
     metal_optional_7: 'Система привода электродвигателя',
     metal_optional_8: 'Конвейер подачи и разгрузки',
+    metal_ecatalog_btn: 'Электронный каталог',
 
     // Pallet Optional Features
     pallet_optional_features_title: 'Дополнительные функции',
@@ -3629,6 +3634,7 @@ const translations = {
     metal_optional_6: 'تصميم شفرات قابلة للإزالة بمسامير',
     metal_optional_7: 'نظام محرك كهربائي',
     metal_optional_8: 'ناقل التغذية والتفريغ',
+    metal_ecatalog_btn: 'الكتالوج الإلكتروني',
 
     // Pallet Optional Features
     pallet_optional_features_title: 'الميزات الاختيارية',

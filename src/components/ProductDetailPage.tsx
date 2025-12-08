@@ -2604,7 +2604,7 @@ export const ProductDetailPage = ({
                 className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
-                E-Katalog İndir
+                {t('metal_ecatalog_btn')}
               </Button>
             </motion.div>
           </div>
