@@ -371,6 +371,14 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       bladeCount: '24 adet',
       weight: '650 kg',
       capacity: '200-400 kg/saat'
+    },
+    'GB-300': {
+      motorPower: '3-4 kW',
+      rotorLength: '300 mm',
+      rotorDiameter: '300 x 300 mm',
+      bladeCount: '16 adet',
+      weight: '450 kg',
+      capacity: '250-450 kg/saat'
     }
   },
   'mobile': {
@@ -420,7 +428,7 @@ const availableModels: { [key: string]: string[] } = {
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
   'tree-root': ['TW-100', 'TW-150', 'TW-200'],
   'wood': ['TSY-100', 'TSY-150', 'TSY-200'],
-  'glass': ['CK-200', 'CK-400', 'CKS-400']
+  'glass': ['CK-200', 'CK-400', 'CKS-400', 'GB-300']
 };
 
 // Title/Subtitle mapping for each product type
