@@ -38,12 +38,10 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                 title={`${post.title} | MT Makina Blog`}
                 description={post.summary}
                 keywords={post.tags}
-                ogTitle={post.title}
-                ogDescription={post.summary}
                 canonical={`https://www.parcalamamakinesi.com/blog/${post.slug}`}
             />
 
-            <article className="min-h-screen bg-gray-50 pt-24 pb-20">
+            <article className="min-h-screen bg-white pt-24 pb-20">
                 {/* Article Hero */}
                 <div className="container mx-auto px-4 max-w-[1440px]">
                     <motion.div
@@ -51,27 +49,27 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <a href="/blog" className="inline-flex items-center text-gray-500 hover:text-[#F4CE14] mb-8 transition-colors">
+                        <a href="/blog" className="inline-flex items-center text-gray-600 hover:text-[#F4CE14] mb-8 transition-colors font-medium">
                             <ArrowLeft size={20} className="mr-2" />
                             Blog'a Dön
                         </a>
 
-                        <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+                        <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12 border border-gray-100">
                             <div className="relative h-[400px] w-full">
-                                <div className="absolute inset-0 bg-black/30 z-10 w-full h-full"></div>
+                                <div className="absolute inset-0 bg-black/40 z-10 w-full h-full"></div>
                                 <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                                 <div className="absolute bottom-0 left-0 right-0 z-20 p-8 md:p-12 bg-gradient-to-t from-black/90 to-transparent">
-                                    <div className="flexflex-wrap gap-2 mb-4">
+                                    <div className="flex flex-wrap gap-2 mb-4">
                                         {post.tags.map(tag => (
                                             <span key={tag} className="bg-[#F4CE14] text-[#1E1E1E] text-xs font-bold px-3 py-1 rounded-full">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-md">
                                         {post.title}
                                     </h1>
-                                    <div className="flex items-center text-white/80 space-x-6 text-sm md:text-base">
+                                    <div className="flex items-center text-white/90 space-x-6 text-sm md:text-base font-medium">
                                         <div className="flex items-center">
                                             <Calendar size={18} className="mr-2 text-[#F4CE14]" />
                                             {post.date}
@@ -85,9 +83,14 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                             </div>
 
                             {/* Content Body */}
-                            <div className="p-8 md:p-12">
+                            <div className="p-8 md:p-12 bg-white">
                                 <div
-                                    className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-[#1E1E1E] prose-a:text-[#F4CE14] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl"
+                                    className="prose prose-lg max-w-none 
+                                    prose-headings:font-bold prose-headings:text-gray-900 
+                                    prose-p:text-gray-800 prose-p:leading-relaxed
+                                    prose-li:text-gray-800 prose-strong:text-gray-900
+                                    prose-a:text-[#E31E24] prose-a:no-underline hover:prose-a:underline hover:prose-a:text-[#F4CE14] 
+                                    prose-img:rounded-xl prose-img:shadow-lg"
                                     dangerouslySetInnerHTML={{ __html: post.content }}
                                 />
                             </div>

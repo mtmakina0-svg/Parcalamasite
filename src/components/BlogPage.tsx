@@ -14,7 +14,7 @@ export const BlogPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-20">
+        <div className="min-h-screen bg-white pt-20">
             {/* Hero Section */}
             <section className="bg-[#1E1E1E] text-white py-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
@@ -86,7 +86,7 @@ export const BlogPage = () => {
                                         {post.title}
                                     </h2>
 
-                                    <p className="text-gray-600 mb-6 line-clamp-3 flex-grow leading-relaxed">
+                                    <p className="text-gray-700 mb-6 line-clamp-3 flex-grow leading-relaxed">
                                         {post.summary}
                                     </p>
 
