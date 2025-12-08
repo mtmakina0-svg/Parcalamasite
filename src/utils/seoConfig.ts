@@ -681,9 +681,21 @@ export const generateProductStructuredData = (type: string, model: string) => {
     "@type": "Product",
     "name": `${model} ${categorySEO.title.split('|')[0].trim()}`,
     "description": modelSEO.description,
+    "image": ["https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png"], // Google Rich Results requires an image
+    "sku": model,
+    "mpn": model,
     "brand": {
       "@type": "Brand",
       "name": "MT Makina"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": modelSEO.canonical,
+      "priceCurrency": "USD",
+      "price": "0", // Contact for price
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
     },
     "manufacturer": {
       "@type": "Organization",

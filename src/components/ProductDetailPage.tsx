@@ -1004,51 +1004,51 @@ export const ProductDetailPage = ({
         {/* Technical Specifications */}
         <section className="py-20 bg-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
+            <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+              className="text-center text-[#45474B] mb-8 text-3xl font-bold"
             >
               {t(productType === 'tree-root' ? 'tree_root_tech_specs_title' : productType === 'wood' ? 'wood_tech_specs_title' : 'single_shaft_tech_specs_title')}
-            </motion.h2>
+            </motion.h3>
 
             {currentSpecs && (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
               >
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Model</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
+                <table className="w-full text-left border-collapse">
+                  <tbody className="divide-y divide-gray-100">
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold w-1/3">Model</th>
+                      <td className="px-8 py-5 text-[#45474B]">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Motor Gücü</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Motor Gücü</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Uzunluğu</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Rotor Uzunluğu</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Parçalama Alanı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Parçalama Alanı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Bıçak Sayısı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Bıçak Sayısı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Ağırlık</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Ağırlık</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.weight}</td>
                     </tr>
-                    <tr>
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Kapasite</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Kapasite</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1605,57 +1605,57 @@ export const ProductDetailPage = ({
         {/* Technical Specifications Table */}
         <section className="py-20 bg-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
+            <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+              className="text-center text-[#45474B] mb-8 text-3xl font-bold"
             >
               {t(productType === 'pallet' ? 'pallet_tech_specs_title' : 'dual_shaft_tech_specs_title')}
-            </motion.h2>
+            </motion.h3>
 
             {currentSpecs && (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
               >
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Model</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
+                <table className="w-full text-left border-collapse">
+                  <tbody className="divide-y divide-gray-100">
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold w-1/3">Model</th>
+                      <td className="px-8 py-5 text-[#45474B]">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Motor Gücü</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Motor Gücü</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Uzunluğu</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Rotor Uzunluğu</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Parçalama Alanı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Parçalama Alanı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Bıçak Sayısı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Bıçak Sayısı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Ağırlık</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Ağırlık</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
-                      <tr className="border-b border-[#F5F7F8]">
-                        <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Elek Boyutu</td>
-                        <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.screenSize}</td>
+                      <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                        <th className="px-8 py-5 text-[#45474B] font-semibold">Elek Boyutu</th>
+                        <td className="px-8 py-5 text-[#45474B]">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
-                    <tr>
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Kapasite</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Kapasite</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2024,57 +2024,57 @@ export const ProductDetailPage = ({
         {/* Technical Specifications */}
         <section className="py-20 bg-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
+            <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+              className="text-center text-[#45474B] mb-8 text-3xl font-bold"
             >
               {t('quad_shaft_tech_specs')}
-            </motion.h2>
+            </motion.h3>
 
             {currentSpecs && (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
               >
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Model</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
+                <table className="w-full text-left border-collapse">
+                  <tbody className="divide-y divide-gray-100">
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold w-1/3">Model</th>
+                      <td className="px-8 py-5 text-[#45474B]">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Motor Gücü</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Motor Gücü</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Boyu</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Rotor Boyu</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Parçalama Alanı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Parçalama Alanı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Bıçak Sayısı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Bıçak Sayısı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Ağırlık</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Ağırlık</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
-                      <tr className="border-b border-[#F5F7F8]">
-                        <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Elek Boyutu</td>
-                        <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.screenSize}</td>
+                      <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                        <th className="px-8 py-5 text-[#45474B] font-semibold">Elek Boyutu</th>
+                        <td className="px-8 py-5 text-[#45474B]">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
-                    <tr>
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Kapasite</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Kapasite</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2475,51 +2475,51 @@ export const ProductDetailPage = ({
         {/* Technical Specifications */}
         <section className="py-20 bg-[#F5F7F8]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-            <motion.h2
+            <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center text-[#45474B] mb-12 text-3xl font-bold"
+              className="text-center text-[#45474B] mb-8 text-3xl font-bold"
             >
               {t('metal_tech_specs_title')}
-            </motion.h2>
+            </motion.h3>
 
             {currentSpecs && (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
               >
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Model</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{modelName}</td>
+                <table className="w-full text-left border-collapse">
+                  <tbody className="divide-y divide-gray-100">
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold w-1/3">Model</th>
+                      <td className="px-8 py-5 text-[#45474B]">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Motor Gücü</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.motorPower}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Motor Gücü</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Rotor Uzunluğu</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorLength}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Rotor Uzunluğu</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Parçalama Alanı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.rotorDiameter}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Parçalama Alanı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Bıçak Sayısı</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.bladeCount}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Bıçak Sayısı</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-[#F5F7F8]">
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Ağırlık</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.weight}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Ağırlık</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.weight}</td>
                     </tr>
-                    <tr>
-                      <td className="px-8 py-4 text-[#1E1E1E] bg-[#F4CE14] font-semibold">Kapasite</td>
-                      <td className="px-8 py-4 text-[#1E1E1E]">{currentSpecs.capacity}</td>
+                    <tr className="hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
+                      <th className="px-8 py-5 text-[#45474B] font-semibold">Kapasite</th>
+                      <td className="px-8 py-5 text-[#45474B]">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
