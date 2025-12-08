@@ -1,9 +1,11 @@
 import { motion } from 'motion/react';
-import { blogPosts } from '../data/blogPosts';
+import { blogPosts, getLocalizedValue, Language } from '../data/blogPosts';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 export const BlogPage = () => {
-    // const { language } = useLanguage(); - Unused
+    const { language, t } = useLanguage();
+    const lang = language as Language;
 
     const handlePostClick = (slug: string) => {
         window.location.href = `/blog/${slug}`;
@@ -22,10 +24,10 @@ export const BlogPage = () => {
                         className="max-w-3xl"
                     >
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#F4CE14]">
-                            Blog & Haberler
+                            {t('blog_title')}
                         </h1>
                         <p className="text-xl text-gray-300 leading-relaxed">
-                            Endüstriyel atık yönetimi, geri dönüşüm teknolojileri ve sektörden en güncel haberler.
+                            {t('blog_subtitle')}
                         </p>
                     </motion.div>
                 </div>
@@ -50,13 +52,13 @@ export const BlogPage = () => {
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10 w-full h-full"></div>
                                     <img
                                         src={post.image}
-                                        alt={post.title}
+                                        alt={getLocalizedValue(post.title, lang)}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
                                     <div className="absolute top-4 left-4 z-20 flex gap-2">
-                                        {post.tags.slice(0, 2).map(tag => (
-                                            <span key={tag} className="bg-[#F4CE14] text-[#1E1E1E] text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                                                {tag}
+                                        {post.tags.slice(0, 2).map((tag, idx) => (
+                                            <span key={idx} className="bg-[#F4CE14] text-[#1E1E1E] text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                                {getLocalizedValue(tag, lang)}
                                             </span>
                                         ))}
                                     </div>
@@ -77,7 +79,7 @@ export const BlogPage = () => {
                                         </div>
                                         <div className="flex items-center">
                                             <User size={16} className="mr-2 !text-[#F4CE14]" />
-                                            {post.author}
+                                            {getLocalizedValue(post.author, lang)}
                                         </div>
                                     </div>
 
@@ -85,18 +87,18 @@ export const BlogPage = () => {
                                         className="text-2xl font-bold !text-black mb-4 group-hover:!text-[#F4CE14] transition-colors cursor-pointer line-clamp-2"
                                         onClick={() => handlePostClick(post.slug)}
                                     >
-                                        {post.title}
+                                        {getLocalizedValue(post.title, lang)}
                                     </h2>
 
                                     <p className="!text-black mb-6 line-clamp-3 flex-grow leading-relaxed font-normal">
-                                        {post.summary}
+                                        {getLocalizedValue(post.summary, lang)}
                                     </p>
 
                                     <button
                                         onClick={() => handlePostClick(post.slug)}
                                         className="flex items-center !text-black font-bold group/btn self-start mt-auto hover:!text-[#F4CE14] transition-colors"
                                     >
-                                        Devamını Oku
+                                        {t('blog_read_more')}
                                         <ArrowRight size={20} className="ml-2 transform group-hover/btn:translate-x-2 transition-transform" />
                                     </button>
                                 </div>

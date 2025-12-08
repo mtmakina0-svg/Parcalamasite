@@ -1,16 +1,18 @@
 
-
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { blogPosts } from '../data/blogPosts';
+import { blogPosts, getLocalizedValue, Language } from '../data/blogPosts';
 import { Calendar, User, ArrowLeft, Share2 } from 'lucide-react';
 import { SEOHead } from './SEOHead';
+import { useLanguage } from './LanguageContext';
 
 interface BlogPostPageProps {
     slug: string;
 }
 
 export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
+    const { language, t } = useLanguage();
+    const lang = language as Language;
     const post = blogPosts.find(p => p.slug === slug);
 
     // Scroll to top on mount
@@ -23,21 +25,25 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
             <div className="min-h-screen flex items-center justify-center bg-gray-50">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-[#1E1E1E] mb-4">404</h1>
-                    <p className="text-xl text-gray-600 mb-8">Aradığınız yazı bulunamadı.</p>
-                    <a href="/blog" className="text-[#F4CE14] font-bold hover:underline">Blog Anasayfasına Dön</a>
+                    <p className="text-xl text-gray-600 mb-8">{t('blog_not_found')}</p>
+                    <a href="/blog" className="text-[#F4CE14] font-bold hover:underline">{t('blog_back_home')}</a>
                 </div>
             </div>
         );
     }
 
     const otherPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 3);
+    const localizedTitle = getLocalizedValue(post.title, lang);
+    const localizedSummary = getLocalizedValue(post.summary, lang);
+    const localizedContent = getLocalizedValue(post.content, lang);
+    const localizedAuthor = getLocalizedValue(post.author, lang);
 
     return (
         <>
             <SEOHead
-                title={`${post.title} | MT Makina Blog`}
-                description={post.summary}
-                keywords={post.tags}
+                title={`${localizedTitle} | MT Makina Blog`}
+                description={localizedSummary}
+                keywords={post.tags.map(tag => getLocalizedValue(tag, lang))}
                 canonical={`https://www.parcalamamakinesi.com/blog/${post.slug}`}
             />
 
@@ -51,23 +57,23 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                     >
                         <a href="/blog" className="inline-flex items-center text-gray-600 hover:text-[#F4CE14] mb-8 transition-colors font-medium">
                             <ArrowLeft size={20} className="mr-2" />
-                            Blog'a Dön
+                            {t('blog_back')}
                         </a>
 
                         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12 border border-gray-100">
                             <div className="relative h-[400px] w-full">
                                 <div className="absolute inset-0 bg-black/40 z-10 w-full h-full"></div>
-                                <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                                <img src={post.image} alt={localizedTitle} className="w-full h-full object-cover" />
                                 <div className="absolute bottom-0 left-0 right-0 z-20 p-8 md:p-12 bg-gradient-to-t from-black via-black/70 to-transparent">
                                     <div className="flex flex-wrap gap-2 mb-4">
-                                        {post.tags.map(tag => (
-                                            <span key={tag} className="bg-[#F4CE14] text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                                                {tag}
+                                        {post.tags.map((tag, idx) => (
+                                            <span key={idx} className="bg-[#F4CE14] text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                                {getLocalizedValue(tag, lang)}
                                             </span>
                                         ))}
                                     </div>
                                     <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8)' }}>
-                                        {post.title}
+                                        {localizedTitle}
                                     </h1>
                                     <div className="flex items-center text-white font-medium space-x-6 text-sm md:text-base" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.9)' }}>
                                         <div className="flex items-center">
@@ -76,7 +82,7 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                                         </div>
                                         <div className="flex items-center">
                                             <User size={18} className="mr-2 text-[#F4CE14]" style={{ filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.8))' }} />
-                                            {post.author}
+                                            {localizedAuthor}
                                         </div>
                                     </div>
                                 </div>
@@ -111,17 +117,17 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                                 <div
                                     id="blog-content-wrapper"
                                     className="prose prose-lg max-w-none text-black"
-                                    dangerouslySetInnerHTML={{ __html: post.content }}
+                                    dangerouslySetInnerHTML={{ __html: localizedContent }}
                                 />
                             </div>
 
                             {/* Footer of Article */}
                             <div className="bg-gray-50 p-8 border-t border-gray-200 mt-8">
                                 <div className="flex justify-between items-center">
-                                    <span className="font-bold text-black">Bu yazıyı paylaş:</span>
+                                    <span className="font-bold text-black">{t('blog_share')}:</span>
                                     <button className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-[#F4CE14] hover:text-black transition-colors">
                                         <Share2 size={18} />
-                                        Paylaş
+                                        {t('blog_share_btn')}
                                     </button>
                                 </div>
                             </div>
@@ -132,16 +138,16 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                 {/* Read Next */}
                 {otherPosts.length > 0 && (
                     <div className="container mx-auto px-4 max-w-[1440px] mt-20">
-                        <h3 className="text-3xl font-bold text-[#1E1E1E] mb-10 text-center">İlginizi Çekebilecek Diğer Yazılar</h3>
+                        <h3 className="text-3xl font-bold text-[#1E1E1E] mb-10 text-center">{t('blog_related')}</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {otherPosts.map((op) => (
                                 <a key={op.id} href={`/blog/${op.slug}`} className="group block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                                     <div className="h-48 overflow-hidden">
-                                        <img src={op.image} alt={op.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        <img src={op.image} alt={getLocalizedValue(op.title, lang)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     </div>
                                     <div className="p-6">
-                                        <h4 className="text-xl font-bold text-[#1E1E1E] mb-2 group-hover:text-[#F4CE14] transition-colors line-clamp-2">{op.title}</h4>
-                                        <p className="text-gray-600 text-sm line-clamp-3">{op.summary}</p>
+                                        <h4 className="text-xl font-bold text-[#1E1E1E] mb-2 group-hover:text-[#F4CE14] transition-colors line-clamp-2">{getLocalizedValue(op.title, lang)}</h4>
+                                        <p className="text-gray-600 text-sm line-clamp-3">{getLocalizedValue(op.summary, lang)}</p>
                                     </div>
                                 </a>
                             ))}
