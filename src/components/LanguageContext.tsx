@@ -338,6 +338,17 @@ const translations = {
     about_contact_address: 'Adres',
     about_contact_phone: 'Telefon',
     about_contact_email: 'E-Posta',
+
+    // Product Main Titles (Missing)
+
+
+    // Subtitles
+
+
+    // Legacy / Typo Aliases (Fixing "product_dual-saft" bug)
+    'product_single-saft': 'Tek Şaftlı Parçalama Makinesi',
+    'product_dual-saft': 'Çift Şaftlı Parçalama Makinesi',
+    'product_quad-saft': 'Dört Şaftlı Parçalama Makinesi',
     // New aliases for consistency
     about_leadership_title: 'Yönetim Kadromuz',
     about_profile_photo: 'Profil Fotoğrafı',
@@ -1408,6 +1419,17 @@ const translations = {
     waste_tibbi_system3: 'HEPA filtered air cleaning systems',
     waste_tibbi_system4: 'Automatic feeding and safe discharge mechanisms',
 
+    // Product Main Titles
+
+
+    // Subtitles
+
+
+    // Legacy / Typo Aliases
+    'product_single-saft': 'Single Shaft Shredder',
+    'product_dual-saft': 'Double Shaft Shredder',
+    'product_quad-saft': 'Quad Shaft Shredder',
+
     // Tree Root Waste
     waste_agac_intro: 'Shredding tree roots and garden waste provides valuable raw material for biomass energy.',
     waste_agac_para1: 'MT Makina produces high-torque machines for shredding tree roots, branches and landscape waste.',
@@ -2131,7 +2153,7 @@ const translations = {
     pallet_advantage_4_desc: 'The mobile pallet shredder option provides flexibility to be used in different sites, thus achieving more efficiency on the job site.',
     pallet_adv_4_title: 'Mobile Option',
     pallet_adv_4_desc: 'The mobile pallet shredder option provides flexibility to be used in different sites, thus achieving more efficiency on the job site.',
-    pallet_faq_title: 'PALLET SHREDDER F.A.Q.',
+
     pallet_faq_1_q: 'WHAT IS A PALLET SHREDDER USED FOR?',
     pallet_faq_1_a: 'A pallet shredder is an industrial device that enables wooden and plastic pallets to be separated into small pieces. These machines play an important role in pallet recycling and waste management processes.',
     pallet_faq_2_q: 'WHAT ARE THE MAIN ADVANTAGES OF PALLET SHREDDERS?',
@@ -2143,7 +2165,7 @@ const translations = {
     pallet_faq_5_q: 'WHAT IS THE ENERGY EFFICIENCY OF PALLET SHREDDERS?',
     pallet_faq_5_a: 'Motors and systems that provide high energy efficiency reduce operating costs and reduce environmental impacts. These machines provide energy savings by operating at low speed with high torque.',
     pallet_tech_specs_title: 'TSV Series Technical Specifications',
-    pallet_video_title: 'Pallet Shredder Video',
+
 
     // Metal Shredder (Redmonster) Product Page
     metal_main_title: 'High Efficiency in Recycling with Redmonster Scrap Metal Shredder',
@@ -2208,7 +2230,7 @@ const translations = {
     harddisk_adv_3_desc: 'The harddisk destruction shredder is resistant to wear with high-quality steel blades and provides long-term use.',
     harddisk_adv_4_title: 'Large Processing Capacity',
     harddisk_adv_4_desc: 'The harddisk destruction shredder can quickly process digital storage devices and circuit boards of different sizes and types.',
-    harddisk_faq_title: 'Harddisk Destruction Shredder F.A.Q.',
+
     harddisk_video_title: 'Harddisk Destruction Shredder Video',
     harddisk_watch_video: 'Watch Video',
     harddisk_similar_products: 'Similar Products',
@@ -2248,8 +2270,7 @@ const translations = {
     mobile_crusher_video_title: 'Mobile Crusher Video',
     mobile_crusher_watch_video: 'Watch Video',
     mobile_crusher_similar_products: 'Similar Products',
-    youtube_channel_title: 'Our YouTube Channel',
-    youtube_channel_description: 'Visit our channel for more videos.',
+
   },
   ru: {
     // Header & Navigation
@@ -2328,6 +2349,11 @@ const translations = {
     product_tree_root: 'Дробилка корней деревьев',
     product_wood_grinder: 'Измельчитель древесины',
     product_glass: 'Дробилка для стекла',
+
+    // Legacy / Typo Aliases
+    'product_single-saft': 'Одновальная дробилка',
+    'product_dual-saft': 'Двухвальная дробилка',
+    'product_quad-saft': 'Четырехвальная дробилка',
 
     // Single Shaft Product Detail Page
 
@@ -2642,24 +2668,11 @@ const translations = {
     single_shaft_tech_control_value: 'ПЛК – Автоматический реверс',
     single_shaft_tech_capacity: 'Производительность',
     single_shaft_tech_capacity_value: '800 – 3000 кг/ч',
-    single_shaft_faq_title: 'Часто задаваемые вопросы об одновальном измельчителе',
-    single_shaft_faq_q1: 'Какие отходы обрабатывает одновальный измельчитель?',
-    single_shaft_faq_a1: 'Одновальные измельчители могут использоваться для широкого спектра, включая бытовые отходы, пластик, бумагу, картон, текстиль, алюминиевую упаковку, деревянные поддоны и органические отходы.',
-    single_shaft_faq_q2: 'Как работает система автоматического реверса?',
-    single_shaft_faq_a2: 'Благодаря системе управления ПЛК, когда машина обнаруживает перегрузку или заклинивание, она автоматически запускает ротор в обратном направлении для обеспечения правильного измельчения и продления срока службы лезвия.',
-    single_shaft_faq_q3: 'Каковы требования к техническому обслуживанию?',
-    single_shaft_faq_a3: 'Рекомендуется регулярная проверка лезвий, проверка гидравлической системы и смазка. Достаточно общего осмотра каждые 500 часов работы.',
-    single_shaft_faq_q4: 'Каков срок службы ротора и лезвий?',
-    single_shaft_faq_a4: 'Лезвия изготовлены из прочной легированной стали и обеспечивают 2000-5000 часов использования в зависимости от типа обрабатываемого материала. Срок службы ротора превышает 10 лет.',
-    single_shaft_faq_q5: 'От чего зависит производительность машины?',
-    single_shaft_faq_a5: 'Производительность варьируется в зависимости от типа, содержания влаги, плотности и размера измельчения обрабатываемого материала. Легкие материалы, такие как пластик и бумага, могут обрабатываться с более высокой производительностью.',
+
     single_shaft_video_title: 'Видео одновального измельчителя',
     single_shaft_watch_video: 'Смотреть видео',
     single_shaft_similar_products: 'Похожие продукты',
-    single_shaft_ecatalog_btn: 'Электронный каталог',
-    youtube_channel_title: 'Посетите наш канал на YouTube',
-    youtube_channel_description: 'Все видео работы наших машин, отзывы клиентов и производственные процессы на нашем канале YouTube.',
-    visit_youtube: 'Перейти на канал YouTube',
+
 
     // Product Category Page
     about_our_machines: 'О наших машинах',
@@ -2794,19 +2807,7 @@ const translations = {
     pallet_advantage_4_desc: 'Вариант мобильного измельчителя поддонов обеспечивает гибкость использования на различных площадках, тем самым достигая большей эффективности на рабочем месте.',
     pallet_adv_4_title: 'Мобильный вариант',
     pallet_adv_4_desc: 'Вариант мобильного измельчителя поддонов обеспечивает гибкость использования на различных площадках, тем самым достигая большей эффективности на рабочем месте.',
-    pallet_faq_title: 'ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ ОБ ИЗМЕЛЬЧИТЕЛЕ ПОДДОНОВ',
-    pallet_faq_1_q: 'ДЛЯ ЧЕГО ИСПОЛЬЗУЕТСЯ ИЗМЕЛЬЧИТЕЛЬ ПОДДОНОВ?',
-    pallet_faq_1_a: 'Измельчитель поддонов - это промышленное устройство, которое позволяет разделять деревянные и пластиковые поддоны на мелкие кусочки. Эти машины играют важную роль в процессах переработки поддонов и управления отходами.',
-    pallet_faq_2_q: 'КАКОВЫ ОСНОВНЫЕ ПРЕИМУЩЕСТВА ИЗМЕЛЬЧИТЕЛЕЙ ПОДДОНОВ?',
-    pallet_faq_2_a: 'Измельчители поддонов обеспечивают высокую эффективность, экономию энергии, низкие эксплуатационные расходы и экологическую устойчивость. Кроме того, эти машины предлагают длительное использование благодаря своей прочной конструкции и прочным лезвиям.',
-    pallet_faq_3_q: 'КАКИЕ ТИПЫ ПОДДОНОВ МОГУТ ОБРАБАТЫВАТЬ ИЗМЕЛЬЧИТЕЛИ ПОДДОНОВ?',
-    pallet_faq_3_a: 'Измельчители поддонов могут обрабатывать как деревянные, так и пластиковые поддоны. Они также могут эффективно измельчать поддоны, содержащие металлы, такие как гвозди.',
-    pallet_faq_4_q: 'КАКОВЫ ПРЕИМУЩЕСТВА МОБИЛЬНЫХ ИЗМЕЛЬЧИТЕЛЕЙ ПОДДОНОВ?',
-    pallet_faq_4_a: 'Мобильные измельчители поддонов обеспечивают легкую переносимость в полевых условиях и позволяют измельчать на месте. Эти машины предназначены для обработки твердых материалов в больших нагрузках и могут быть оснащены аксессуарами, такими как поперечные ленточные магниты, которые могут отделять металлические материалы.',
-    pallet_faq_5_q: 'КАКОВА ЭНЕРГОЭФФЕКТИВНОСТЬ ИЗМЕЛЬЧИТЕЛЕЙ ПОДДОНОВ?',
-    pallet_faq_5_a: 'Двигатели и системы, обеспечивающие высокую энергоэффективность, снижают эксплуатационные расходы и уменьшают воздействие на окружающую среду. Эти машины обеспечивают энергосбережение, работая на низкой скорости с высоким крутящим моментом.',
-    pallet_tech_specs_title: 'Технические характеристики серии TSV',
-    pallet_video_title: 'Видео об измельчителе поддонов',
+
 
     // Metal Shredder (Redmonster) Product Page
     metal_main_title: 'Высокая эффективность переработки с измельчителем металлолома Redmonster',
@@ -3296,6 +3297,11 @@ const translations = {
     product_plastic: 'آلة تمزيق البلاستيك',
     product_organic: 'آلة تمزيق النفايات العضوية',
     product_tire: 'آلة تمزيق الإطارات',
+
+    // Legacy / Typo Aliases
+    'product_single-saft': 'آلة التقطيع أحادية العمود',
+    'product_dual-saft': 'آلة تمزيق ثنائية العمود',
+    'product_quad-saft': 'آلة تمزيق رباعية العمود',
 
     // Single Shaft Product Detail Page
     single_shaft_main_title: 'آلة تمزيق النفايات الصلبة أحادية العمود',

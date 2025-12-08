@@ -15,9 +15,9 @@ interface ProductCategoryPageProps {
 
 // Available models for each product type
 const availableModels: { [key: string]: string[] } = {
-  'single-saft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
-  'dual-saft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-saft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
+  'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
+  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
   'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
@@ -39,7 +39,7 @@ interface ModelCardInfo {
 }
 
 const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
-  'single-saft': {
+  'single-shaft': {
     'TSH-60': { capacity: '500-800 kg/saat', power: '15–30 kW', rotorLength: '600 mm' },
     'TSH-80': { capacity: '800-1200 kg/saat', power: '22–45 kW', rotorLength: '800 mm' },
     'TSH-100': { capacity: '1200-1800 kg/saat', power: '30–75 kW', rotorLength: '1000 mm' },
@@ -47,7 +47,7 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'TSH-160': { capacity: '3500-4500 kg/saat', power: '55–132 kW (2x)', rotorLength: '1600 mm' },
     'TSH-200': { capacity: '4500-6000 kg/saat', power: '75–160 kW (2x)', rotorLength: '2000 mm' }
   },
-  'dual-saft': {
+  'dual-shaft': {
     'CS-20': { capacity: '200 x 200 mm', power: '2,2–11 kW', rotorLength: '200 mm' },
     'CS-40': { capacity: '400 x 400 mm', power: '5,5–22 kW', rotorLength: '400 mm' },
     'CS-60': { capacity: '600 x 600 mm', power: '11–45 kW (2x)', rotorLength: '600 mm' },
@@ -58,7 +58,7 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'CS-180': { capacity: '1800 x 1500 mm', power: '55–132 kW (2x)', rotorLength: '1800 mm' },
     'CS-200': { capacity: '2000 x 1800 mm', power: '75–200 kW (2x)', rotorLength: '2000 mm' }
   },
-  'quad-saft': {
+  'quad-shaft': {
     'DS-80': { capacity: '800 x 800 mm', power: '11–22 kW (4x)', rotorLength: '800 mm' },
     'DS-100': { capacity: '1000 x 1000 mm', power: '22–45 kW (4x)', rotorLength: '1000 mm' },
     'DS-150': { capacity: '1500 x 1500 mm', power: '45–132 kW (4x)', rotorLength: '1500 mm' },
@@ -121,7 +121,7 @@ const productContentKeys: {
     adv4Desc: string;
   }
 } = {
-  'single-saft': {
+  'single-shaft': {
     title: 'single_shaft_main_title',
     subtitle: 'single_shaft_subtitle',
     desc1: 'single_shaft_description_1',
@@ -136,7 +136,7 @@ const productContentKeys: {
     adv4Title: 'single_shaft_advantage_4_title',
     adv4Desc: 'single_shaft_advantage_4_desc'
   },
-  'dual-saft': {
+  'dual-shaft': {
     title: 'dual_shaft_main_title',
     subtitle: 'dual_shaft_subtitle',
     desc1: 'dual_shaft_description_1',
@@ -153,7 +153,7 @@ const productContentKeys: {
     adv4Title: 'dual_shaft_adv_4_title',
     adv4Desc: 'dual_shaft_adv_4_desc'
   },
-  'quad-saft': {
+  'quad-shaft': {
     title: 'quad_shaft_main_title',
     subtitle: 'quad_shaft_subtitle',
     desc1: 'quad_shaft_description_1',
@@ -289,7 +289,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   const fallbackImage = getFallbackImage(productType);
 
   // Get content keys for this product type
-  const contentKeys = productContentKeys[productType] || productContentKeys['single-saft'];
+  const contentKeys = productContentKeys[productType] || productContentKeys['single-shaft'];
 
   // Scroll to top when component mounts
   React.useEffect(() => {

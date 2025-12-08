@@ -20,15 +20,15 @@ interface SimilarProductsSectionProps {
 // Define similar products mapping for each product type
 // Using real product cover images from imageConfig.ts
 const similarProductsMap: { [key: string]: SimilarProduct[] } = {
-  'single-saft': [
+  'single-shaft': [
     {
-      productType: 'dual-saft',
+      productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
       fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
-      productType: 'quad-saft',
+      productType: 'quad-shaft',
       translationKey: 'product_quad_shaft',
       defaultModel: 'DS-80',
       fallbackImage: 'https://i.ibb.co/Gf8mjXGm/1-1.png'
@@ -40,15 +40,15 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
     }
   ],
-  'dual-saft': [
+  'dual-shaft': [
     {
-      productType: 'single-saft',
+      productType: 'single-shaft',
       translationKey: 'product_single_shaft',
       defaultModel: 'TSH-60',
       fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
     },
     {
-      productType: 'quad-saft',
+      productType: 'quad-shaft',
       translationKey: 'product_quad_shaft',
       defaultModel: 'DS-80',
       fallbackImage: 'https://i.ibb.co/Gf8mjXGm/1-1.png'
@@ -60,15 +60,15 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
     }
   ],
-  'quad-saft': [
+  'quad-shaft': [
     {
-      productType: 'single-saft',
+      productType: 'single-shaft',
       translationKey: 'product_single_shaft',
       defaultModel: 'TSH-60',
       fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
     },
     {
-      productType: 'dual-saft',
+      productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
       fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
@@ -82,19 +82,19 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
   ],
   'metal': [
     {
-      productType: 'single-saft',
+      productType: 'single-shaft',
       translationKey: 'product_single_shaft',
       defaultModel: 'TSH-60',
       fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
     },
     {
-      productType: 'dual-saft',
+      productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
       fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
-      productType: 'quad-saft',
+      productType: 'quad-shaft',
       translationKey: 'product_quad_shaft',
       defaultModel: 'DS-80',
       fallbackImage: 'https://i.ibb.co/Gf8mjXGm/1-1.png'
@@ -102,13 +102,13 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
   ],
   'granulator': [
     {
-      productType: 'single-saft',
+      productType: 'single-shaft',
       translationKey: 'product_single_shaft',
       defaultModel: 'TSH-60',
       fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
     },
     {
-      productType: 'dual-saft',
+      productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
       fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
@@ -122,13 +122,13 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
   ],
   'baler': [
     {
-      productType: 'single-saft',
+      productType: 'single-shaft',
       translationKey: 'product_single_shaft',
       defaultModel: 'TSH-60',
       fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
     },
     {
-      productType: 'dual-saft',
+      productType: 'dual-shaft',
       translationKey: 'product_dual_shaft',
       defaultModel: 'CS-20',
       fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
@@ -142,7 +142,7 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
   ],
   'conveyor': [
     {
-      productType: 'single-saft',
+      productType: 'single-shaft',
       translationKey: 'product_single_shaft',
       defaultModel: 'TSH-60',
       fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
@@ -168,7 +168,7 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
     },
     {
-      productType: 'single-saft',
+      productType: 'single-shaft',
       translationKey: 'product_single_shaft',
       defaultModel: 'TSH-60',
       fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
@@ -187,9 +187,9 @@ export const SimilarProductsSection: React.FC<SimilarProductsSectionProps> = ({
   onProductClick
 }) => {
   const { t, isRTL } = useLanguage();
-  
+
   // Get similar products for current product type
-  const similarProducts = similarProductsMap[currentProductType] || similarProductsMap['single-saft'];
+  const similarProducts = similarProductsMap[currentProductType] || similarProductsMap['single-shaft'];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
