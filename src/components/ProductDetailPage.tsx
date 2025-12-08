@@ -1020,37 +1020,43 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
+                className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden"
               >
                 <table className="w-full text-left border-collapse">
+                  <thead className="bg-[#45474B] text-white">
+                    <tr>
+                      <th className="p-4 font-bold text-left">Teknik Özellik</th>
+                      <th className="p-4 font-bold text-left">Değer</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold w-1/3 align-top">Model</th>
-                      <td className="p-4 text-gray-600 align-top">{modelName}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top w-1/3 transition-transform duration-300 group-hover:translate-x-2">Model</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Motor Gücü</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.motorPower}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Motor Gücü</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Rotor Uzunluğu</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorLength}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Rotor Uzunluğu</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Parçalama Alanı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorDiameter}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Parçalama Alanı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Bıçak Sayısı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.bladeCount}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Bıçak Sayısı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Ağırlık</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.weight}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Ağırlık</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.weight}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Kapasite</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.capacity}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Kapasite</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1621,43 +1627,49 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
+                className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden"
               >
                 <table className="w-full text-left border-collapse">
+                  <thead className="bg-[#45474B] text-white">
+                    <tr>
+                      <th className="p-4 font-bold text-left">Teknik Özellik</th>
+                      <th className="p-4 font-bold text-left">Değer</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold w-1/3 align-top">Model</th>
-                      <td className="p-4 text-gray-600 align-top">{modelName}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top w-1/3 transition-transform duration-300 group-hover:translate-x-2">Model</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Motor Gücü</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.motorPower}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Motor Gücü</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Rotor Uzunluğu</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorLength}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Rotor Uzunluğu</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Parçalama Alanı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorDiameter}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Parçalama Alanı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Bıçak Sayısı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.bladeCount}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Bıçak Sayısı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Ağırlık</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.weight}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Ağırlık</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                        <th className="p-4 text-gray-700 font-semibold align-top">Elek Boyutu</th>
-                        <td className="p-4 text-gray-600 align-top">{currentSpecs.screenSize}</td>
+                      <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                        <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Elek Boyutu</th>
+                        <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Kapasite</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.capacity}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Kapasite</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1701,7 +1713,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(productType === 'pallet' ? 'pallet_faq_title' : 'dual_shaft_faq_title')}
+              {t('Sıkça Sorulan Sorular')}
             </motion.h2>
 
             <motion.div
@@ -2050,43 +2062,49 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
+                className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden"
               >
                 <table className="w-full text-left border-collapse">
+                  <thead className="bg-[#45474B] text-white">
+                    <tr>
+                      <th className="p-4 font-bold text-left">Teknik Özellik</th>
+                      <th className="p-4 font-bold text-left">Değer</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold w-1/3 align-top">Model</th>
-                      <td className="p-4 text-gray-600 align-top">{modelName}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top w-1/3 transition-transform duration-300 group-hover:translate-x-2">Model</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Motor Gücü</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.motorPower}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Motor Gücü</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Rotor Boyu</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorLength}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Rotor Boyu</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Parçalama Alanı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorDiameter}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Parçalama Alanı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Bıçak Sayısı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.bladeCount}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Bıçak Sayısı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Ağırlık</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.weight}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Ağırlık</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                        <th className="p-4 text-gray-700 font-semibold align-top">Elek Boyutu</th>
-                        <td className="p-4 text-gray-600 align-top">{currentSpecs.screenSize}</td>
+                      <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                        <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Elek Boyutu</th>
+                        <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Kapasite</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.capacity}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Kapasite</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2167,7 +2185,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t('quad_shaft_faq_title')}
+              {t('Sıkça Sorulan Sorular')}
             </motion.h2>
 
             <motion.div
@@ -2512,37 +2530,43 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
+                className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden"
               >
                 <table className="w-full text-left border-collapse">
+                  <thead className="bg-[#45474B] text-white">
+                    <tr>
+                      <th className="p-4 font-bold text-left">Teknik Özellik</th>
+                      <th className="p-4 font-bold text-left">Değer</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold w-1/3 align-top">Model</th>
-                      <td className="p-4 text-gray-600 align-top">{modelName}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top w-1/3 transition-transform duration-300 group-hover:translate-x-2">Model</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{modelName}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Motor Gücü</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.motorPower}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Motor Gücü</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Rotor Uzunluğu</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorLength}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Rotor Uzunluğu</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Parçalama Alanı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.rotorDiameter}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Parçalama Alanı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Bıçak Sayısı</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.bladeCount}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Bıçak Sayısı</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Ağırlık</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.weight}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Ağırlık</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.weight}</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors odd:bg-white even:bg-gray-50">
-                      <th className="p-4 text-gray-700 font-semibold align-top">Kapasite</th>
-                      <td className="p-4 text-gray-600 align-top">{currentSpecs.capacity}</td>
+                    <tr className="group transition-all duration-300 border-l-4 border-transparent odd:bg-white even:bg-gray-50 hover:bg-yellow-50 hover:border-[#F4CE14]">
+                      <th className="p-4 text-gray-700 font-bold align-top transition-transform duration-300 group-hover:translate-x-2">Kapasite</th>
+                      <td className="p-4 text-gray-700 font-normal align-top transition-transform duration-300 group-hover:translate-x-2">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
