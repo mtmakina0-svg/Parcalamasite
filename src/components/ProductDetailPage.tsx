@@ -455,7 +455,6 @@ const productDescriptionKeys: { [key: string]: string } = {
   'mobile': 'mobile',
   'pallet': 'pallet',
   'tree-root': 'tree_root',
-  'tree-root': 'tree_root',
   'wood': 'wood',
   'glass': 'glass'
 };
@@ -1030,41 +1029,35 @@ export const ProductDetailPage = ({
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full text-left border-collapse">
-                  <thead className="bg-[#45474B] text-white">
-                    <tr>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Teknik Özellik</th>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Değer</th>
-                    </tr>
-                  </thead>
+                <table className="w-full">
                   <tbody>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top w-1/3" style={{ color: '#111827' }}>Model</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{modelName}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Motor Gücü</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.motorPower}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Rotor Uzunluğu</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorLength}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Uzunluğu</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Parçalama Alanı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorDiameter}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Bıçak Sayısı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.bladeCount}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Ağırlık</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.weight}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Kapasite</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.capacity}</td>
+                    <tr>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1637,47 +1630,41 @@ export const ProductDetailPage = ({
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full text-left border-collapse">
-                  <thead className="bg-[#45474B] text-white">
-                    <tr>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Teknik Özellik</th>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Değer</th>
-                    </tr>
-                  </thead>
+                <table className="w-full">
                   <tbody>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top w-1/3" style={{ color: '#111827' }}>Model</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{modelName}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Motor Gücü</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.motorPower}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Rotor Uzunluğu</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorLength}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Uzunluğu</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Parçalama Alanı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorDiameter}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Bıçak Sayısı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.bladeCount}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Ağırlık</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.weight}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
-                      <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                        <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Elek Boyutu</th>
-                        <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.screenSize}</td>
+                      <tr className="border-b border-gray-200">
+                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Elek Ölçüsü</td>
+                        <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Kapasite</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.capacity}</td>
+                    <tr>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2072,47 +2059,41 @@ export const ProductDetailPage = ({
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full text-left border-collapse">
-                  <thead className="bg-[#45474B] text-white">
-                    <tr>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Teknik Özellik</th>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Değer</th>
-                    </tr>
-                  </thead>
+                <table className="w-full">
                   <tbody>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top w-1/3" style={{ color: '#111827' }}>Model</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{modelName}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Motor Gücü</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.motorPower}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Rotor Boyu</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorLength}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Boyu</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Parçalama Alanı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorDiameter}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Bıçak Sayısı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.bladeCount}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Ağırlık</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.weight}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
-                      <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                        <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Elek Boyutu</th>
-                        <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.screenSize}</td>
+                      <tr className="border-b border-gray-200">
+                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Elek Boyutu</td>
+                        <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Kapasite</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.capacity}</td>
+                    <tr>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2540,41 +2521,35 @@ export const ProductDetailPage = ({
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full text-left border-collapse">
-                  <thead className="bg-[#45474B] text-white">
-                    <tr>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Teknik Özellik</th>
-                      <th className="bg-[#45474B] text-white py-4 px-6 text-left font-bold uppercase tracking-wider border-b border-[#F4CE14]/30">Değer</th>
-                    </tr>
-                  </thead>
+                <table className="w-full">
                   <tbody>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top w-1/3" style={{ color: '#111827' }}>Model</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{modelName}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Motor Gücü</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.motorPower}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Rotor Uzunluğu</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorLength}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Uzunluğu</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Parçalama Alanı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.rotorDiameter}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Bıçak Sayısı</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.bladeCount}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Ağırlık</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.weight}</td>
+                    <tr className="border-b border-gray-200">
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
-                    <tr className="group relative transition-all duration-300 hover:bg-gradient-to-r hover:from-[#F4CE14]/20 hover:via-white hover:to-white hover:shadow-[0_4px_20px_-5px_rgba(244,206,20,0.4)] border-l-4 border-transparent hover:border-[#F4CE14]">
-                      <th className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors font-bold align-top" style={{ color: '#111827' }}>Kapasite</th>
-                      <td className="!text-gray-900 py-4 px-6 border-b border-gray-100 group-hover:!text-black transition-colors align-top" style={{ color: '#111827' }}>{currentSpecs.capacity}</td>
+                    <tr>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
                 </table>
