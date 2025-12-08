@@ -118,7 +118,7 @@ export const productCategorySlugs = {
 
 // URL Path Generator with Multi-language Support
 export const generateUrl = {
-  home: (lang: Language = 'tr') => `/${lang}`,
+  home: (lang: Language = 'tr') => lang === 'tr' ? '/' : `/${lang}`,
   about: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.about[lang]}`,
   products: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.products[lang]}`,
   productCategory: (type: string, lang: Language = 'tr') => {
