@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     summary: 'Hastaneler ve sağlık kuruluşları için tıbbi atık yönetimi ve güvenli imha süreçleri hakkında kapsamlı rehber.',
     date: '2025-12-08',
     author: 'MT Makina Mühendislik Ekibi',
-    image: 'https://images.unsplash.com/photo-1516937941348-c09e554b98eb?auto=format&fit=crop&q=80&w=1000',
+    image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=1000',
     tags: ['Tıbbi Atık', 'Atık Yönetimi', 'İmha Fırını', 'Çevre Güvenliği'],
     content: `
       <h1>Tıbbi Atık İmhasında Dikkat Edilmesi Gerekenler</h1>
@@ -134,3 +134,4 @@ export const blogPosts: BlogPost[] = [
     `
   }
 ];
+
