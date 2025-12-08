@@ -63,14 +63,20 @@ export const BlogPage = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-8 flex flex-col flex-grow">
-                                    <div className="flex items-center text-sm text-gray-600 mb-4 space-x-4">
+                                <div className="p-8 flex flex-col flex-grow blog-card-content">
+                                    <style>{`
+                                        .blog-card-content * { color: #000000 !important; }
+                                        .blog-card-content h2 { color: #000000 !important; font-weight: 800 !important; }
+                                        .blog-card-content p { color: #000000 !important; }
+                                        .blog-card-content button { color: #000000 !important; font-weight: 700 !important; }
+                                    `}</style>
+                                    <div className="flex items-center text-sm !text-black mb-4 space-x-4">
                                         <div className="flex items-center">
-                                            <Calendar size={16} className="mr-2 text-[#F4CE14]" />
+                                            <Calendar size={16} className="mr-2 !text-[#F4CE14]" />
                                             {post.date}
                                         </div>
                                         <div className="flex items-center">
-                                            <User size={16} className="mr-2 text-[#F4CE14]" />
+                                            <User size={16} className="mr-2 !text-[#F4CE14]" />
                                             {post.author}
                                         </div>
                                     </div>

@@ -1,27 +1,27 @@
 
 export interface BlogPost {
-    id: string;
-    slug: string;
-    title: string;
-    summary: string;
-    content: string; // HTML content
-    date: string;
-    author: string;
-    image: string;
-    tags: string[];
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  content: string; // HTML content
+  date: string;
+  author: string;
+  image: string;
+  tags: string[];
 }
 
 export const blogPosts: BlogPost[] = [
-    {
-        id: '1',
-        slug: 'tibbi-atik-imhasinda-dikkat-edilmesi-gerekenler',
-        title: 'Tıbbi Atık İmhasında Dikkat Edilmesi Gerekenler',
-        summary: 'Hastaneler ve sağlık kuruluşları için tıbbi atık yönetimi ve güvenli imha süreçleri hakkında kapsamlı rehber.',
-        date: '2025-12-08',
-        author: 'MT Makina Mühendislik Ekibi',
-        image: 'https://images.unsplash.com/photo-1584036561566-b45238f2e121?auto=format&fit=crop&q=80&w=1000',
-        tags: ['Tıbbi Atık', 'Atık Yönetimi', 'İmha Fırını', 'Çevre Güvenliği'],
-        content: `
+  {
+    id: '1',
+    slug: 'tibbi-atik-imhasinda-dikkat-edilmesi-gerekenler',
+    title: 'Tıbbi Atık İmhasında Dikkat Edilmesi Gerekenler',
+    summary: 'Hastaneler ve sağlık kuruluşları için tıbbi atık yönetimi ve güvenli imha süreçleri hakkında kapsamlı rehber.',
+    date: '2025-12-08',
+    author: 'MT Makina Mühendislik Ekibi',
+    image: 'https://images.unsplash.com/photo-1516937941348-c09e554b98eb?auto=format&fit=crop&q=80&w=1000',
+    tags: ['Tıbbi Atık', 'Atık Yönetimi', 'İmha Fırını', 'Çevre Güvenliği'],
+    content: `
       <h1>Tıbbi Atık İmhasında Dikkat Edilmesi Gerekenler</h1>
       <p>Sağlık kuruluşlarında ortaya çıkan atıkların yönetimi, hem halk sağlığı hem de çevre güvenliği açısından kritik bir öneme sahiptir. Tıbbi atıklar, enfeksiyöz risk taşıyan materyallerden kesici-delici aletlere kadar geniş bir yelpazeyi kapsar. Bu yazımızda, tıbbi atıkların güvenli bir şekilde nasıl imha edilmesi gerektiğini ve <strong>MT Makina</strong> olarak sunduğumuz çözümleri inceleyeceğiz.</p>
 
@@ -53,17 +53,17 @@ export const blogPosts: BlogPost[] = [
 
       <p>Tıbbi atık yönetimi projeniz için profesyonel bir çözüm arıyorsanız, <a href="/tr/iletisim" class="text-blue-600 hover:underline">bizimle iletişime geçebilirsiniz</a>.</p>
     `
-    },
-    {
-        id: '2',
-        slug: 'cift-saftli-parcalama-makinesi-hangi-atiklar-icin-uygundur',
-        title: 'Çift Şaftlı Parçalama Makinesi Hangi Atıklar İçin Uygundur?',
-        summary: 'Endüstriyel atıkların hacmini küçültmek için kullanılan çift şaftlı parçalama makinelerinin (shredder) kullanım alanları ve avantajları.',
-        date: '2025-12-07',
-        author: 'MT Makina Teknik Servis',
-        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=1000',
-        tags: ['Shredder', 'Geri Dönüşüm', 'Çift Şaftlı', 'Endüstriyel Makine'],
-        content: `
+  },
+  {
+    id: '2',
+    slug: 'cift-saftli-parcalama-makinesi-hangi-atiklar-icin-uygundur',
+    title: 'Çift Şaftlı Parçalama Makinesi Hangi Atıklar İçin Uygundur?',
+    summary: 'Endüstriyel atıkların hacmini küçültmek için kullanılan çift şaftlı parçalama makinelerinin (shredder) kullanım alanları ve avantajları.',
+    date: '2025-12-07',
+    author: 'MT Makina Teknik Servis',
+    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=1000',
+    tags: ['Shredder', 'Geri Dönüşüm', 'Çift Şaftlı', 'Endüstriyel Makine'],
+    content: `
       <h1>Çift Şaftlı Parçalama Makinesi Hangi Atıklar İçin Uygundur?</h1>
       <p>Endüstriyel geri dönüşüm sektörünün vazgeçilmezi olan <strong>Çift Şaftlı Parçalama Makineleri (Double Shaft Shredders)</strong>, yüksek torklu ve düşük devirli çalışma prensibiyle en zorlu atıkları bile kolayca parçalayabilir. "Parçalayıcı" veya "Shredder" olarak da bilinen bu makineler, atık hacmini küçültmek ve geri dönüşüm sürecini hazırlamak için kullanılır.</p>
 
@@ -94,17 +94,17 @@ export const blogPosts: BlogPost[] = [
 
       <p>İşletmeniz için en uygun kapasiteyi belirlemek ve özel tasarım çift şaftlı parçalama makinelerimizi incelemek için <a href="/tr/iletisim" class="text-blue-600 hover:underline">satış ekibimizle iletişime geçin</a>.</p>
     `
-    },
-    {
-        id: '3',
-        slug: 'mobil-atik-yakma-firinlarinin-avantajlari-nelerdir',
-        title: 'Mobil Atık Yakma Fırınlarının Avantajları Nelerdir?',
-        summary: 'Afet bölgeleri, şantiyeler ve uzak tesisler için taşınabilir (mobil) atık yakma fırınlarının sağladığı operasyonel kolaylıklar.',
-        date: '2025-12-05',
-        author: 'MT Makina Ar-Ge',
-        image: 'https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?auto=format&fit=crop&q=80&w=1000',
-        tags: ['Mobil Fırın', 'İnsineratör', 'Afet Yönetimi', 'Şantiye'],
-        content: `
+  },
+  {
+    id: '3',
+    slug: 'mobil-atik-yakma-firinlarinin-avantajlari-nelerdir',
+    title: 'Mobil Atık Yakma Fırınlarının Avantajları Nelerdir?',
+    summary: 'Afet bölgeleri, şantiyeler ve uzak tesisler için taşınabilir (mobil) atık yakma fırınlarının sağladığı operasyonel kolaylıklar.',
+    date: '2025-12-05',
+    author: 'MT Makina Ar-Ge',
+    image: 'https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?auto=format&fit=crop&q=80&w=1000',
+    tags: ['Mobil Fırın', 'İnsineratör', 'Afet Yönetimi', 'Şantiye'],
+    content: `
       <h1>Mobil Atık Yakma Fırınlarının Avantajları Nelerdir?</h1>
       <p>Atık yönetimi her zaman sabit tesislerde yapılmak zorunda değildir. Bazı durumlarda hizmeti atığın kaynağına götürmek çok daha verimli, ekonomik ve güvenlidir. İşte bu noktada <strong>Mobil Atık Yakma Fırınları</strong> devreye girer. Römork üzerine veya konteyner içine monte edilmiş bu sistemler, tam teşekküllü bir atık bertaraf tesisi gibi çalışır.</p>
 
@@ -132,5 +132,5 @@ export const blogPosts: BlogPost[] = [
 
       <p>MT Makina olarak, ihtiyacınıza özel kapasitelerde (50 kg/saat - 500 kg/saat) mobil atık yakma sistemleri tasarlıyoruz. Detaylı teknik özellikler ve fiyat teklifi için <a href="/tr/iletisim" class="text-blue-600 hover:underline">bize ulaşın</a>.</p>
     `
-    }
+  }
 ];
