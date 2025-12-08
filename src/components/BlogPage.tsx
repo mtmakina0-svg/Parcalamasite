@@ -76,19 +76,19 @@ export const BlogPage = () => {
                                     </div>
 
                                     <h2
-                                        className="text-2xl font-bold text-black mb-4 group-hover:text-[#F4CE14] transition-colors cursor-pointer line-clamp-2"
+                                        className="text-2xl font-bold !text-black mb-4 group-hover:!text-[#F4CE14] transition-colors cursor-pointer line-clamp-2"
                                         onClick={() => handlePostClick(post.slug)}
                                     >
                                         {post.title}
                                     </h2>
 
-                                    <p className="text-black mb-6 line-clamp-3 flex-grow leading-relaxed font-normal">
+                                    <p className="!text-black mb-6 line-clamp-3 flex-grow leading-relaxed font-normal">
                                         {post.summary}
                                     </p>
 
                                     <button
                                         onClick={() => handlePostClick(post.slug)}
-                                        className="flex items-center text-black font-bold group/btn self-start mt-auto hover:text-[#F4CE14] transition-colors"
+                                        className="flex items-center !text-black font-bold group/btn self-start mt-auto hover:!text-[#F4CE14] transition-colors"
                                     >
                                         Devamını Oku
                                         <ArrowRight size={20} className="ml-2 transform group-hover/btn:translate-x-2 transition-transform" />

@@ -83,14 +83,14 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                             </div>
 
                             {/* Content Body */}
-                            <div className="p-8 md:p-12 bg-white text-black">
+                            <div className="p-8 md:p-12 bg-white !text-black">
                                 <div
-                                    className="prose prose-lg max-w-none text-black
-                                    prose-headings:font-bold prose-headings:text-black 
-                                    prose-p:text-black prose-p:leading-relaxed prose-p:font-normal
-                                    prose-li:text-black prose-strong:text-black prose-strong:font-bold
-                                    prose-a:text-[#E31E24] prose-a:no-underline hover:prose-a:underline hover:prose-a:text-[#F4CE14] 
-                                    prose-img:rounded-xl prose-img:shadow-lg [&_*]:text-black"
+                                    className="prose prose-lg max-w-none !text-black
+                                    prose-headings:font-bold prose-headings:!text-black 
+                                    prose-p:!text-black prose-p:leading-relaxed prose-p:font-normal
+                                    prose-li:!text-black prose-strong:!text-black prose-strong:font-bold
+                                    prose-a:!text-[#E31E24] prose-a:no-underline hover:prose-a:underline hover:prose-a:!text-[#F4CE14] 
+                                    prose-img:rounded-xl prose-img:shadow-lg [&_*]:!text-black"
                                     dangerouslySetInnerHTML={{ __html: post.content }}
                                 />
                             </div>
