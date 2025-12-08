@@ -1,9 +1,9 @@
 
-import React, { useEffect } from 'react';
+
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { blogPosts, BlogPost } from '../data/blogPosts';
-import { Calendar, User, Tag, ArrowLeft, Share2 } from 'lucide-react';
-import { generateUrl } from '../utils/seoConfig';
+import { blogPosts } from '../data/blogPosts';
+import { Calendar, User, ArrowLeft, Share2 } from 'lucide-react';
 import { SEOHead } from './SEOHead';
 
 interface BlogPostPageProps {
@@ -61,15 +61,15 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                                 <div className="absolute bottom-0 left-0 right-0 z-20 p-8 md:p-12 bg-gradient-to-t from-black/90 to-transparent">
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {post.tags.map(tag => (
-                                            <span key={tag} className="bg-[#F4CE14] text-[#1E1E1E] text-xs font-bold px-3 py-1 rounded-full">
+                                            <span key={tag} className="bg-[#F4CE14] text-black text-xs font-bold px-3 py-1 rounded-full">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-md">
+                                    <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight drop-shadow-md">
                                         {post.title}
                                     </h1>
-                                    <div className="flex items-center text-white/90 space-x-6 text-sm md:text-base font-medium">
+                                    <div className="flex items-center text-white font-medium space-x-6 text-sm md:text-base">
                                         <div className="flex items-center">
                                             <Calendar size={18} className="mr-2 text-[#F4CE14]" />
                                             {post.date}
@@ -83,23 +83,23 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                             </div>
 
                             {/* Content Body */}
-                            <div className="p-8 md:p-12 bg-white">
+                            <div className="p-8 md:p-12 bg-white text-black">
                                 <div
-                                    className="prose prose-lg max-w-none 
-                                    prose-headings:font-bold prose-headings:text-gray-900 
-                                    prose-p:text-gray-800 prose-p:leading-relaxed
-                                    prose-li:text-gray-800 prose-strong:text-gray-900
+                                    className="prose prose-lg max-w-none text-black
+                                    prose-headings:font-bold prose-headings:text-black 
+                                    prose-p:text-black prose-p:leading-relaxed prose-p:font-normal
+                                    prose-li:text-black prose-strong:text-black prose-strong:font-bold
                                     prose-a:text-[#E31E24] prose-a:no-underline hover:prose-a:underline hover:prose-a:text-[#F4CE14] 
-                                    prose-img:rounded-xl prose-img:shadow-lg"
+                                    prose-img:rounded-xl prose-img:shadow-lg [&_*]:text-black"
                                     dangerouslySetInnerHTML={{ __html: post.content }}
                                 />
                             </div>
 
                             {/* Footer of Article */}
-                            <div className="bg-gray-50 p-8 border-t border-gray-100 mt-8">
+                            <div className="bg-gray-50 p-8 border-t border-gray-200 mt-8">
                                 <div className="flex justify-between items-center">
-                                    <span className="font-bold text-gray-700">Bu yazıyı paylaş:</span>
-                                    <button className="flex items-center gap-2 bg-[#1E1E1E] text-white px-4 py-2 rounded-lg hover:bg-[#F4CE14] hover:text-[#1E1E1E] transition-colors">
+                                    <span className="font-bold text-black">Bu yazıyı paylaş:</span>
+                                    <button className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-[#F4CE14] hover:text-black transition-colors">
                                         <Share2 size={18} />
                                         Paylaş
                                     </button>
@@ -114,7 +114,7 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                     <div className="container mx-auto px-4 max-w-[1440px] mt-20">
                         <h3 className="text-3xl font-bold text-[#1E1E1E] mb-10 text-center">İlginizi Çekebilecek Diğer Yazılar</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {otherPosts.map((op, idx) => (
+                            {otherPosts.map((op) => (
                                 <a key={op.id} href={`/blog/${op.slug}`} className="group block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                                     <div className="h-48 overflow-hidden">
                                         <img src={op.image} alt={op.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />

@@ -1,13 +1,9 @@
-
-import React from 'react';
 import { motion } from 'motion/react';
-import { useLanguage } from './LanguageContext';
 import { blogPosts } from '../data/blogPosts';
-import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
-import { generateUrl } from '../utils/seoConfig';
+import { Calendar, User, ArrowRight } from 'lucide-react';
 
 export const BlogPage = () => {
-    const { t, language } = useLanguage();
+    // const { language } = useLanguage(); - Unused
 
     const handlePostClick = (slug: string) => {
         window.location.href = `/blog/${slug}`;
@@ -68,7 +64,7 @@ export const BlogPage = () => {
 
                                 {/* Content */}
                                 <div className="p-8 flex flex-col flex-grow">
-                                    <div className="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+                                    <div className="flex items-center text-sm text-gray-600 mb-4 space-x-4">
                                         <div className="flex items-center">
                                             <Calendar size={16} className="mr-2 text-[#F4CE14]" />
                                             {post.date}
@@ -80,19 +76,19 @@ export const BlogPage = () => {
                                     </div>
 
                                     <h2
-                                        className="text-2xl font-bold text-[#1E1E1E] mb-4 group-hover:text-[#F4CE14] transition-colors cursor-pointer line-clamp-2"
+                                        className="text-2xl font-bold text-black mb-4 group-hover:text-[#F4CE14] transition-colors cursor-pointer line-clamp-2"
                                         onClick={() => handlePostClick(post.slug)}
                                     >
                                         {post.title}
                                     </h2>
 
-                                    <p className="text-gray-700 mb-6 line-clamp-3 flex-grow leading-relaxed">
+                                    <p className="text-black mb-6 line-clamp-3 flex-grow leading-relaxed font-normal">
                                         {post.summary}
                                     </p>
 
                                     <button
                                         onClick={() => handlePostClick(post.slug)}
-                                        className="flex items-center text-[#1E1E1E] font-bold group/btn self-start mt-auto hover:text-[#F4CE14] transition-colors"
+                                        className="flex items-center text-black font-bold group/btn self-start mt-auto hover:text-[#F4CE14] transition-colors"
                                     >
                                         Devamını Oku
                                         <ArrowRight size={20} className="ml-2 transform group-hover/btn:translate-x-2 transition-transform" />
