@@ -7,6 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <title>MT Makina | Endüstriyel Parçalama Makinesi & Mobil Yakma Fırını</title>
   <meta name="description"
     content="MT Makina; Tek ve Çift Şaftlı Parçalama Makineleri (Shredder), Mobil Tıbbi Atık Yakma Fırınları ve Geri Dönüşüm Tesisleri üreticisi. Global ihracat." />
@@ -19,6 +20,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#2c3e50" />
+
   <meta property="og:title" content="MT Makina - Shredder ve Yakma Fırını Çözümleri" />
   <meta property="og:description"
     content="Dünya standartlarında endüstriyel atık yönetimi, parçalama ve yakma sistemleri." />
@@ -66,50 +68,65 @@
       ]
     }
     </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #app-loading-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #e67e22;
+      /* Turuncu Marka Rengi */
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    .loading-text {
+      color: #2c3e50;
+      /* Koyu Mavi Marka Rengi */
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div id="root">
-
-    <header>
-      <nav>
-        <h1>MT Makina - Endüstriyel Çözümler</h1>
-      </nav>
-    </header>
-
-    <main>
-      <section id="hero">
-        <h2>Shredder ve Incinerator Sistemleri</h2>
-        <p>MT Makina, <strong>Endüstriyel Parçalama Makineleri (Shredder)</strong> ve <strong>Mobil Atık Yakma
-            Fırınları</strong> konusunda lider üreticidir.</p>
-      </section>
-
-      <section id="products">
-        <h2>Ürün Gruplarımız</h2>
-        <ul>
-          <li>
-            <h3>Tek Şaftlı Parçalama Makinesi</h3>
-            <p>Single Shaft Shredder - Plastik, ahşap ve kağıt atıklar için yüksek torklu çözüm.</p>
-          </li>
-          <li>
-            <h3>Çift Şaftlı Parçalama Makinesi</h3>
-            <p>Double Shaft Shredder - Metal, lastik ve zorlu endüstriyel atıklar için güçlü parçalama.</p>
-          </li>
-          <li>
-            <h3>Tıbbi Atık Yakma Fırını</h3>
-            <p>Medical Waste Incinerator - Hastane ve laboratuvar atıkları için sterilizasyon odaklı imha.</p>
-          </li>
-        </ul>
-      </section>
-
-      <section id="contact">
-        <h2>İletişim</h2>
-        <address>
-          İstanbul, Türkiye - Tel: +90 850 259 01 66
-        </address>
-      </section>
-    </main>
-
+    <div id="app-loading-wrapper">
+      <div class="spinner"></div>
+      <div class="loading-text">MT Makina</div>
+    </div>
   </div>
 
   <script type="module" src="/src/main.tsx"></script>
