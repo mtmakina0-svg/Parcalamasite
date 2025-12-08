@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.parcalamamakinesi.com/tr</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr"/>
+    <loc>https://www.parcalamamakinesi.com/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/"/>
     <lastmod>2025-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -839,11 +839,11 @@
   </url>
   <url>
     <loc>https://www.parcalamamakinesi.com/en</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/"/>
     <lastmod>2025-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -1675,11 +1675,11 @@
   </url>
   <url>
     <loc>https://www.parcalamamakinesi.com/ru</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/"/>
     <lastmod>2025-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -2511,11 +2511,11 @@
   </url>
   <url>
     <loc>https://www.parcalamamakinesi.com/ar</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.parcalamamakinesi.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.parcalamamakinesi.com/en"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.parcalamamakinesi.com/ru"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.parcalamamakinesi.com/ar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/tr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.parcalamamakinesi.com/"/>
     <lastmod>2025-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>

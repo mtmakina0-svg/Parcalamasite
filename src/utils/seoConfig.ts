@@ -25,7 +25,8 @@ export const slugsByLanguage = {
   certificates: { tr: 'sertifikalar', en: 'certificates', ru: 'sertifikaty', ar: 'certificates' },
   waste: { tr: 'atik-turleri', en: 'waste-types', ru: 'tipy-otkhodov', ar: 'waste-types' },
   contact: { tr: 'iletisim', en: 'contact', ru: 'kontakty', ar: 'contact' },
-  ecatalog: { tr: 'e-katalog', en: 'e-catalog', ru: 'e-katalog', ar: 'e-catalog' }
+  ecatalog: { tr: 'e-katalog', en: 'e-catalog', ru: 'e-katalog', ar: 'e-catalog' },
+  blog: { tr: 'blog', en: 'blog', ru: 'blog', ar: 'blog' }
 };
 
 // Product category slugs by language
@@ -135,7 +136,8 @@ export const generateUrl = {
   waste: (category: string | undefined, lang: Language = 'tr') =>
     category ? `/${lang}/${slugsByLanguage.waste[lang]}/${category}` : `/${lang}/${slugsByLanguage.waste[lang]}`,
   contact: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.contact[lang]}`,
-  ecatalog: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.ecatalog[lang]}`
+  ecatalog: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.ecatalog[lang]}`,
+  blog: (lang: Language = 'tr') => `/blog`
 };
 
 // Multilingual SEO Data
@@ -311,9 +313,30 @@ const multilingualData = {
       keywords: ['каталог pdf', 'каталог продукции', 'каталог шредеров', 'каталог MT Makina']
     },
     ar: {
-      title: 'الكتالوج الإلكتروني - تحميل كتالوج منتجات MT Makina PDF',
       description: 'قم بتنزيل كتالوج منتجات MT Makina بصيغة PDF. جميع موديلات آلات التمزيق والمواصفات الفنية ومعلومات الأسعار.',
       keywords: ['كتالوج pdf', 'كتالوج المنتجات', 'كتالوج آلة التمزيق', 'كتالوج MT Makina']
+    }
+  },
+  blog: {
+    tr: {
+      title: 'Blog & Haberler - MT Makina | Endüstriyel Geri Dönüşüm',
+      description: 'Atık yönetimi, geri dönüşüm teknolojileri ve MT Makina\'dan en güncel haberler. Tıbbi atık imhası, shredder kullanımı ve dahası.',
+      keywords: ['geri dönüşüm blog', 'atık yönetimi makaleleri', 'parçalama makinesi blog', 'MT Makina haberler']
+    },
+    en: {
+      title: 'Blog & News - MT Makina | Industrial Recycling',
+      description: 'Latest news on waste management, recycling technologies from MT Makina. Medical waste disposal, shredder usage and more.',
+      keywords: ['recycling blog', 'waste management articles', 'shredder blog', 'MT Makina news']
+    },
+    ru: {
+      title: 'Блог и Новости - MT Makina | Промышленная Переработка',
+      description: 'Последние новости об управлении отходами, технологиях переработки от MT Makina. Утилизация медицинских отходов, использование шредеров и многое другое.',
+      keywords: ['блог о переработке', 'статьи об управлении отходами', 'блог о шредерах', 'новости MT Makina']
+    },
+    ar: {
+      title: 'المدونة والأخبار - MT Makina | إعادة التدوير الصناعي',
+      description: 'آخر الأخبار حول إدارة النفايات وتقنيات إعادة التدوير من MT Makina. التخلص من النفايات الطبية واستخدام آلات التمزيق والمزيد.',
+      keywords: ['مدونة إعادة التدوير', 'مقالات إدارة النفايات', 'مدونة آلة التمزيق', 'أخبار MT Makina']
     }
   }
 };
@@ -351,6 +374,10 @@ export const seoMetadata: { [key: string]: (lang?: Language) => SEOMetadata } = 
   ecatalog: (lang = 'tr') => ({
     ...multilingualData.ecatalog[lang],
     canonical: `https://www.parcalamamakinesi.com${generateUrl.ecatalog(lang)}`
+  }),
+  blog: (lang = 'tr') => ({
+    ...multilingualData.blog[lang],
+    canonical: `https://www.parcalamamakinesi.com/blog`
   })
 };
 

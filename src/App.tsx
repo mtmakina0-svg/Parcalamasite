@@ -23,6 +23,8 @@ import { ProductCategoryPage } from './components/ProductCategoryPage';
 import { ECatalogPage } from './components/ECatalogPage';
 import { ContactPage } from './components/ContactPage';
 import { NotFoundPage } from './components/NotFoundPage';
+import { BlogPage } from './components/BlogPage';
+import { BlogPostPage } from './components/BlogPostPage';
 import { IntroLoader } from './components/IntroLoader';
 import {
   generateUrl,
@@ -42,7 +44,7 @@ import {
 } from './utils/seoConfig';
 import { SEOHead } from './components/SEOHead';
 
-type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact' | 'not-found';
+type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact' | 'blog' | 'blog-post' | 'not-found';
 type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood' | 'glass' | null;
 
 // Parse URL and determine current page (Multi-language support)
@@ -114,6 +116,14 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
         return { page: 'product-detail', product: type as ProductType, model };
       }
     }
+  }
+
+  // Check for Blog pages
+  if (path === '/blog') {
+    return { page: 'blog' };
+  }
+  if (path.startsWith('/blog/')) {
+    return { page: 'blog-post' };
   }
 
   // Default to not found page for unknown routes
@@ -900,6 +910,77 @@ function AppContent() {
         />
         <NotFoundPage onBackToMain={handleNavigateToMain} />
         <ChatWidget />
+      </>
+    );
+  }
+
+  if (currentPage === 'blog') {
+    return (
+      <>
+        <SEOHead
+          title={currentSEOData.title}
+          description={currentSEOData.description}
+          keywords={currentSEOData.keywords}
+          canonical={currentSEOData.canonical}
+          pageType={currentSEOData.pageType}
+          productType={currentSEOData.productType}
+          model={currentSEOData.model}
+          wasteCategory={currentSEOData.wasteCategory}
+        />
+        <Header
+          onWasteClick={handleNavigateToWasteCategories}
+          onWasteDetailClick={handleNavigateToWasteDetail}
+          onMainClick={handleNavigateToMain}
+          onProductsClick={handleNavigateToProducts}
+          onAboutClick={handleNavigateToAbout}
+          onReferencesClick={handleNavigateToReferences}
+          onTechnologyClick={handleNavigateToTechnology}
+          onCertificatesClick={handleNavigateToCertificates}
+          onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
+          onProductDetailClick={handleNavigateToProductDetail}
+          onContactClick={handleNavigateToContact}
+          onBlogClick={() => {
+            window.history.pushState({}, '', '/blog');
+            setCurrentPage('blog');
+            window.scrollTo(0, 0);
+          }}
+        />
+        <BlogPage />
+        <ChatWidget />
+        <Footer />
+      </>
+    );
+  }
+
+  if (currentPage === 'blog-post') {
+    const path = window.location.pathname;
+    const slug = path.split('/').pop() || '';
+
+    return (
+      <>
+        <Header
+          onWasteClick={handleNavigateToWasteCategories}
+          onWasteDetailClick={handleNavigateToWasteDetail}
+          onMainClick={handleNavigateToMain}
+          onProductsClick={handleNavigateToProducts}
+          onAboutClick={handleNavigateToAbout}
+          onReferencesClick={handleNavigateToReferences}
+          onTechnologyClick={handleNavigateToTechnology}
+          onCertificatesClick={handleNavigateToCertificates}
+          onECatalogClick={handleNavigateToECatalog}
+          onProductCategoryClick={handleNavigateToProductCategory}
+          onProductDetailClick={handleNavigateToProductDetail}
+          onContactClick={handleNavigateToContact}
+          onBlogClick={() => {
+            window.history.pushState({}, '', '/blog');
+            setCurrentPage('blog');
+            window.scrollTo(0, 0);
+          }}
+        />
+        <BlogPostPage slug={slug} />
+        <ChatWidget />
+        <Footer />
       </>
     );
   }

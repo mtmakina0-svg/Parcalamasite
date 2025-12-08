@@ -18,9 +18,10 @@ interface HeaderProps {
   onProductCategoryClick?: (productType: string) => void;
   onProductDetailClick?: (productType: string, modelName?: string) => void;
   onContactClick?: () => void;
+  onBlogClick?: () => void;
 }
 
-export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProductsClick, onAboutClick, onReferencesClick, onTechnologyClick, onCertificatesClick, onECatalogClick, onProductCategoryClick, onProductDetailClick, onContactClick }: HeaderProps = {}) => {
+export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProductsClick, onAboutClick, onReferencesClick, onTechnologyClick, onCertificatesClick, onECatalogClick, onProductCategoryClick, onProductDetailClick, onContactClick, onBlogClick }: HeaderProps = {}) => {
   const { language, setLanguage, t, isRTL } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -146,6 +147,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { key: 'nav_wastes', href: '#', dropdown: wastesDropdown, action: 'wastes' },
     { key: 'nav_technology', href: '#technology', action: 'technology' },
     { key: 'nav_references', href: '#references', action: 'references' },
+    { key: 'blog', href: '/blog', action: 'blog', label: 'Blog' },
     { key: 'nav_contact', href: '#contact', action: 'contact' },
     { key: 'nav_ecatalog', href: '#', action: 'ecatalog' },
   ];
@@ -194,8 +196,8 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-[#45474B]/95 backdrop-blur-md shadow-lg'
-          : 'bg-[#45474B]/90 backdrop-blur-sm'
+        ? 'bg-[#45474B]/95 backdrop-blur-md shadow-lg'
+        : 'bg-[#45474B]/90 backdrop-blur-sm'
         }`}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
@@ -258,6 +260,10 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     } else if (item.action === 'ecatalog' && onECatalogClick) {
                       e.preventDefault();
                       onECatalogClick();
+                    } else if (item.action === 'blog') {
+                      e.preventDefault();
+                      if (onBlogClick) onBlogClick();
+                      else window.location.href = '/blog';
                     }
                   }}
                   initial={{ opacity: 0, y: -20 }}
@@ -281,8 +287,8 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     onMouseEnter={handleDropdownEnter}
                     onMouseLeave={handleDropdownLeave}
                     className={`absolute ${isRTL ? 'right-0' : 'left-0'} mt-2 bg-[#2F3032] rounded-lg shadow-xl border border-[#F4CE14]/20 z-[9999] ${item.key === 'nav_wastes' ? 'grid grid-cols-2 gap-1 p-2 min-w-[420px] overflow-hidden' :
-                        item.key === 'nav_products' ? 'min-w-[320px] overflow-visible' :
-                          'min-w-[240px] overflow-hidden'
+                      item.key === 'nav_products' ? 'min-w-[320px] overflow-visible' :
+                        'min-w-[240px] overflow-hidden'
                       }`}
                     role="menu"
                     aria-label={`${item.label || t(item.key)} alt menü`}
@@ -516,6 +522,10 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                         setMobileMenuOpen(false);
                       } else if (item.action === 'ecatalog' && onECatalogClick) {
                         onECatalogClick();
+                        setMobileMenuOpen(false);
+                      } else if (item.action === 'blog') {
+                        if (onBlogClick) onBlogClick();
+                        else window.location.href = '/blog';
                         setMobileMenuOpen(false);
                       }
                     }}
