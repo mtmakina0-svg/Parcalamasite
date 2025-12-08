@@ -38,7 +38,7 @@ interface ModelSpecs {
 }
 
 const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } } = {
-  'single-saft': {
+  'single-shaft': {
     'TSH-60': {
       motorPower: '15–30 kW',
       rotorLength: '600 mm',
@@ -88,7 +88,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       capacity: '4500-6000 kg/saat'
     }
   },
-  'dual-saft': {
+  'dual-shaft': {
     'CS-20': {
       motorPower: '2 x 7.5 kW',
       rotorLength: '400 mm',
@@ -171,7 +171,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       screenSize: '150-350 mm'
     }
   },
-  'quad-saft': {
+  'quad-shaft': {
     'DS-80': {
       motorPower: '11–22 kW (4x)',
       rotorLength: '800 mm',
@@ -419,9 +419,9 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
 
 // Available models for each product type
 const availableModels: { [key: string]: string[] } = {
-  'single-saft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
-  'dual-saft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-saft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
+  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
+  'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
+  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
   'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
@@ -433,9 +433,9 @@ const availableModels: { [key: string]: string[] } = {
 
 // Title/Subtitle mapping for each product type
 const productTitleKeys: { [key: string]: { title: string; subtitle: string } } = {
-  'single-saft': { title: 'single_saft_main_title', subtitle: 'single_saft_subtitle' },
-  'dual-saft': { title: 'dual_shaft_main_title', subtitle: 'dual_shaft_subtitle' },
-  'quad-saft': { title: 'quad_saft_main_title', subtitle: 'quad_saft_subtitle' },
+  'single-shaft': { title: 'single_shaft_main_title', subtitle: 'single_shaft_subtitle' },
+  'dual-shaft': { title: 'dual_shaft_main_title', subtitle: 'dual_shaft_subtitle' },
+  'quad-shaft': { title: 'quad_shaft_main_title', subtitle: 'quad_shaft_subtitle' },
   'metal': { title: 'metal_main_title', subtitle: 'metal_subtitle' },
   'harddisk': { title: 'harddisk_main_title', subtitle: 'harddisk_subtitle' },
   'mobile': { title: 'mobile_main_title', subtitle: 'mobile_subtitle' },
@@ -447,9 +447,9 @@ const productTitleKeys: { [key: string]: { title: string; subtitle: string } } =
 
 // Description keys mapping for each product type
 const productDescriptionKeys: { [key: string]: string } = {
-  'single-saft': 'single_shaft',
-  'dual-saft': 'dual_shaft',
-  'quad-saft': 'quad_saft',
+  'single-shaft': 'single_shaft',
+  'dual-shaft': 'dual_shaft',
+  'quad-shaft': 'quad_shaft',
   'metal': 'metal',
   'harddisk': 'harddisk',
   'mobile': 'mobile',
@@ -458,6 +458,16 @@ const productDescriptionKeys: { [key: string]: string } = {
   'wood': 'wood',
   'glass': 'glass'
 };
+
+const getTranslationKeyPrefix = (type: string) => {
+  if (type === 'mobile') return 'mobile_crusher';
+  if (type === 'single-saft') return 'single_shaft';
+  if (type === 'dual-saft') return 'dual_shaft';
+  if (type === 'quad-saft') return 'quad_shaft';
+  return type.replace(/-/g, '_');
+};
+
+
 
 export const ProductDetailPage = ({
   productType,
@@ -468,6 +478,12 @@ export const ProductDetailPage = ({
 }: ProductDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
 
+  // Normalize legacy product type keys
+  const currentProductType = (productType === 'single-saft' ? 'single-shaft' :
+    productType === 'dual-saft' ? 'dual-shaft' :
+      productType === 'quad-saft' ? 'quad-shaft' :
+        productType);
+
   // DEBUG - Check what productType we're receiving
   console.log('🔍 ProductDetailPage Rendered:', { productType, modelName, language });
 
@@ -475,10 +491,10 @@ export const ProductDetailPage = ({
   const defaultModelName = modelName || (productType === 'tree-root' ? 'TW-100' : productType === 'wood' ? 'TSY-100' : 'TSH-60');
 
   // Get dynamic image paths based on model from GitHub
-  const images = getModelImages(productType, defaultModelName);
+  const images = getModelImages(currentProductType, defaultModelName);
 
   // Get fallback image for this product type
-  const fallbackImage = getFallbackImage(productType);
+  const fallbackImage = getFallbackImage(currentProductType);
 
   // Debug: Log image paths (only in development)
   React.useEffect(() => {
@@ -490,23 +506,23 @@ export const ProductDetailPage = ({
   }, [defaultModelName]);
 
   // Get current model specs
-  const currentSpecs = modelSpecifications[productType]?.[defaultModelName];
+  const currentSpecs = modelSpecifications[currentProductType]?.[defaultModelName];
 
   // Get available models for current product type
-  const models = availableModels[productType] || [];
+  const models = availableModels[currentProductType] || [];
 
   // Get model-specific description with current language
-  const modelDesc = getModelDescription(productType, defaultModelName, language);
-  const hasCustomDesc = hasModelDescription(productType, defaultModelName);
+  const modelDesc = getModelDescription(currentProductType, defaultModelName, language);
+  const hasCustomDesc = hasModelDescription(currentProductType, defaultModelName);
 
   // Get product title based on type
   const getProductTitle = () => {
-    switch (productType) {
-      case 'single-saft':
+    switch (currentProductType) {
+      case 'single-shaft':
         return t('single_shaft_main_title');
-      case 'dual-saft':
+      case 'dual-shaft':
         return t('dual_shaft_main_title');
-      case 'quad-saft':
+      case 'quad-shaft':
         return t('quad_shaft_main_title');
       case 'metal':
         return t('metal_main_title');
@@ -531,12 +547,12 @@ export const ProductDetailPage = ({
   const getProductSubtitle = () => {
     if (hasCustomDesc && modelDesc) return modelDesc.intro;
 
-    switch (productType) {
-      case 'single-saft':
+    switch (currentProductType) {
+      case 'single-shaft':
         return t('single_shaft_subtitle');
-      case 'dual-saft':
+      case 'dual-shaft':
         return t('dual_shaft_subtitle');
-      case 'quad-saft':
+      case 'quad-shaft':
         return t('quad_shaft_subtitle');
       case 'metal':
         return t('metal_subtitle');
@@ -570,7 +586,7 @@ export const ProductDetailPage = ({
   }, [productType, defaultModelName]);
 
   // Single Shaft, Harddisk, Mobile, Tree Root, Wood, and Glass Product Data (using same layout)
-  if (productType === 'single-saft' || productType === 'harddisk' || productType === 'mobile' || productType === 'tree-root' || productType === 'wood' || productType === 'glass') {
+  if (currentProductType === 'single-shaft' || productType === 'harddisk' || productType === 'mobile' || productType === 'tree-root' || productType === 'wood' || productType === 'glass') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -1207,7 +1223,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(`${productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_')}_faq_title`)}
+              {t(`${getTranslationKeyPrefix(productType)}_faq_title`)}
             </motion.h2>
 
             <motion.div
@@ -1220,7 +1236,7 @@ export const ProductDetailPage = ({
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => {
                   // Check if FAQ exists for this number
                   // Replace hyphens with underscores for translation keys
-                  const normalizedProductType = productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_');
+                  const normalizedProductType = getTranslationKeyPrefix(productType);
                   const questionKey = `${normalizedProductType}_faq_q${num}`;
                   const answerKey = `${normalizedProductType}_faq_a${num}`;
                   const question = t(questionKey);
@@ -1260,7 +1276,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(productType === 'pallet' ? 'pallet_video_title' : productType === 'harddisk' ? 'harddisk_video_title' : productType === 'mobile' ? 'mobile_crusher_video_title' : `${productType.replace(/-/g, '_')}_video_title`)}
+              {t(`${getTranslationKeyPrefix(productType)}_video_title`)}
             </motion.h2>
 
             <motion.div
@@ -1289,7 +1305,7 @@ export const ProductDetailPage = ({
                 <Button
                   className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
                 >
-                  {t(`${productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_')}_watch_video`)}
+                  {t(`${getTranslationKeyPrefix(productType)}_watch_video`)}
                 </Button>
               </motion.div>
             </motion.div>
@@ -1308,7 +1324,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(`${productType === 'mobile' ? 'mobile_crusher' : productType.replace(/-/g, '_')}_similar_products`)}
+              {t(`${getTranslationKeyPrefix(productType)}_similar_products`)}
             </motion.h2>
 
             <SimilarProductsSection
@@ -1322,7 +1338,7 @@ export const ProductDetailPage = ({
   }
 
   // Dual Shaft and Pallet Product Pages (using same layout)
-  if (productType === 'dual-saft' || productType === 'pallet') {
+  if (currentProductType === 'dual-shaft' || productType === 'pallet') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -1838,7 +1854,7 @@ export const ProductDetailPage = ({
   }
 
   // Quad-Shaft (Dört Şaftlı) Product Data
-  if (productType === 'quad-saft') {
+  if (currentProductType === 'quad-shaft') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
@@ -2313,7 +2329,7 @@ export const ProductDetailPage = ({
   }
 
   // Metal Parçalama Makinesi (Redmonster) Product Data
-  if (productType === 'metal') {
+  if (currentProductType === 'metal') {
     return (
       <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
