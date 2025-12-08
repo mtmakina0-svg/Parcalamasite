@@ -83,14 +83,34 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                             </div>
 
                             {/* Content Body */}
-                            <div className="p-8 md:p-12 bg-white !text-black">
+                            <div className="p-8 md:p-12 bg-white">
+                                <style>{`
+                                    #blog-content-wrapper {
+                                        color: #000000 !important;
+                                    }
+                                    #blog-content-wrapper * {
+                                        color: #000000 !important;
+                                    }
+                                    #blog-content-wrapper h1, 
+                                    #blog-content-wrapper h2, 
+                                    #blog-content-wrapper h3, 
+                                    #blog-content-wrapper h4, 
+                                    #blog-content-wrapper strong {
+                                        font-weight: 700 !important;
+                                        color: #000000 !important;
+                                    }
+                                    #blog-content-wrapper a {
+                                        color: #E31E24 !important;
+                                        text-decoration: none !important;
+                                    }
+                                    #blog-content-wrapper a:hover {
+                                        color: #F4CE14 !important;
+                                        text-decoration: underline !important;
+                                    }
+                                `}</style>
                                 <div
-                                    className="prose prose-lg max-w-none !text-black
-                                    prose-headings:font-bold prose-headings:!text-black 
-                                    prose-p:!text-black prose-p:leading-relaxed prose-p:font-normal
-                                    prose-li:!text-black prose-strong:!text-black prose-strong:font-bold
-                                    prose-a:!text-[#E31E24] prose-a:no-underline hover:prose-a:underline hover:prose-a:!text-[#F4CE14] 
-                                    prose-img:rounded-xl prose-img:shadow-lg [&_*]:!text-black"
+                                    id="blog-content-wrapper"
+                                    className="prose prose-lg max-w-none text-black"
                                     dangerouslySetInnerHTML={{ __html: post.content }}
                                 />
                             </div>
