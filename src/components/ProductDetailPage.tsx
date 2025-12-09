@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, ChevronRight, Zap, Wind, Shield, Wrench } from 'lucide-react';
+import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, Zap, Wind, Shield, Wrench, Truck } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
@@ -579,6 +579,19 @@ export const ProductDetailPage = ({
     }
   };
 
+  // Generate SEO-optimized image alt text
+  const getImageAlt = (context?: string) => {
+    const productName = `${defaultModelName} ${getProductTitle()}`;
+    if (language === 'en') {
+      return context
+        ? `${productName} ${context} - Industrial Shredder Manufacturer Turkey`
+        : `${productName} - Industrial Shredder Manufacturer Turkey`;
+    }
+    return context
+      ? `${productName} ${context} - MT Makina`
+      : `${productName} - MT Makina`;
+  };
+
   // Scroll to top when component mounts
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -677,7 +690,7 @@ export const ProductDetailPage = ({
             >
               <ImageWithFallback
                 src={images.main}
-                alt={`${defaultModelName} ${getProductTitle()} - MT Makina`}
+                alt={getImageAlt()}
                 className="w-full rounded-2xl shadow-2xl"
                 fallbackSrc={fallbackImage}
               />
@@ -1232,6 +1245,35 @@ export const ProductDetailPage = ({
                 )}
               </div>
             </motion.div>
+
+            {/* Global Shipping & Installation - EN only */}
+            {language === 'en' && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="max-w-4xl mx-auto mt-16 bg-gradient-to-r from-[#45474B] to-[#2F3032] rounded-2xl p-8 shadow-xl"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-[#F4CE14] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Truck size={32} className="text-[#1E1E1E]" />
+                  </div>
+                  <div>
+                    <h3 className="text-[#F4CE14] text-2xl font-bold mb-4">Global Shipping & Installation</h3>
+                    <p className="text-[#F5F7F8] text-lg leading-relaxed">
+                      MT Makina provides worldwide shipping, on-site installation, and 24/7 technical support for all {defaultModelName} {getProductTitle()} models.
+                      Our expert team ensures seamless setup and training at your facility, backed by comprehensive warranty coverage.
+                    </p>
+                    <div className="flex flex-wrap gap-4 mt-6">
+                      <span className="bg-[#F4CE14]/20 text-[#F4CE14] px-4 py-2 rounded-lg text-sm font-medium">✓ Worldwide Export</span>
+                      <span className="bg-[#F4CE14]/20 text-[#F4CE14] px-4 py-2 rounded-lg text-sm font-medium">✓ On-site Installation</span>
+                      <span className="bg-[#F4CE14]/20 text-[#F4CE14] px-4 py-2 rounded-lg text-sm font-medium">✓ 24/7 Technical Support</span>
+                      <span className="bg-[#F4CE14]/20 text-[#F4CE14] px-4 py-2 rounded-lg text-sm font-medium">✓ CE Certified</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
         </section>
 
