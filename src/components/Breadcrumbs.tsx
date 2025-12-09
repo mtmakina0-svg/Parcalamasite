@@ -56,7 +56,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
                     <li className="flex items-center">
                         <a
                             href={`/${language}`}
-                            className="flex items-center gap-1 text-gray-500 hover:text-[#F4CE14] transition-colors"
+                            className="flex items-center gap-1 text-gray-300 hover:text-[#F4CE14] transition-colors"
                             aria-label={t.home}
                         >
                             <Home size={14} className="flex-shrink-0" />
@@ -81,8 +81,8 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
                                         }
                                     }}
                                     className={`transition-colors ${index === items.length - 1
-                                            ? 'text-gray-700 font-medium cursor-default pointer-events-none'
-                                            : 'text-gray-500 hover:text-[#F4CE14]'
+                                        ? 'text-[#F4CE14] font-medium cursor-default pointer-events-none'
+                                        : 'text-gray-300 hover:text-[#F4CE14]'
                                         }`}
                                     aria-current={index === items.length - 1 ? 'page' : undefined}
                                 >
@@ -90,7 +90,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
                                 </a>
                             ) : (
                                 <span
-                                    className="text-gray-700 font-medium"
+                                    className="text-[#F4CE14] font-medium"
                                     aria-current="page"
                                 >
                                     {item.label}

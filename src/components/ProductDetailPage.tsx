@@ -603,7 +603,7 @@ export const ProductDetailPage = ({
         </div>
 
         {/* Breadcrumb Navigation */}
-        <div className="bg-white border-b border-gray-200">
+        <div className="bg-[#45474B]">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
             <Breadcrumbs
               items={[
