@@ -740,5 +740,388 @@ export const blogPosts: BlogPost[] = [
       <p>أنظمة <a href="/ar/products">المحرقة المتنقلة</a> لدينا تمكن من التخلص في الموقع.</p>
     `
     }
+  },
+  {
+    id: '6',
+    slug: 'endustriyel-shredder-bicak-omrunu-uzatmanin-5-yolu',
+    title: {
+      tr: 'Endüstriyel Shredder Bıçak Ömrünü Uzatmanın 5 Yolu',
+      en: '5 Ways to Extend Industrial Shredder Blade Life',
+      ru: '5 способов продлить срок службы лезвий промышленного шредера',
+      ar: '5 طرق لإطالة عمر شفرات آلة التقطيع الصناعية'
+    },
+    summary: {
+      tr: 'Shredder bıçak bakımı, parçalama makinesi servisi, rotor kaplama ve hardox bıçak teknolojileri hakkında kapsamlı teknik rehber.',
+      en: 'Comprehensive technical guide on shredder blade maintenance, shredding machine service, rotor coating, and hardox blade technologies.',
+      ru: 'Полное техническое руководство по обслуживанию лезвий шредера, сервису дробильных машин, покрытию ротора и технологиям лезвий hardox.',
+      ar: 'دليل تقني شامل حول صيانة شفرات آلة التقطيع وخدمة آلة التكسير وطلاء الدوار وتقنيات شفرات هاردوكس.'
+    },
+    date: '2025-12-09',
+    author: {
+      tr: 'MT Makina Teknik Ekibi',
+      en: 'MT Makina Technical Team',
+      ru: 'Техническая команда MT Makina',
+      ar: 'فريق MT Makina التقني'
+    },
+    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Bıçak Bakımı', en: 'Blade Maintenance', ru: 'Обслуживание лезвий', ar: 'صيانة الشفرات' },
+      { tr: 'Teknik Servis', en: 'Technical Service', ru: 'Техническое обслуживание', ar: 'الخدمة الفنية' },
+      { tr: 'Hardox', en: 'Hardox', ru: 'Hardox', ar: 'هاردوكس' },
+      { tr: 'Rotor', en: 'Rotor', ru: 'Ротор', ar: 'الدوار' }
+    ],
+    content: {
+      tr: `
+      <h1>Endüstriyel Shredder Bıçak Ömrünü Uzatmanın 5 Yolu</h1>
+      <p>Endüstriyel parçalama makinelerinde bıçaklar, sistemin en kritik ve en çok aşınmaya maruz kalan parçalarıdır. Düzenli <strong>shredder bıçak bakımı</strong> yapmak, hem makine performansını korur hem de işletme maliyetlerini önemli ölçüde düşürür. Bu yazıda, <strong>parçalama makinesi servisi</strong> konusunda uzman MT Makina ekibinin önerilerini sizlerle paylaşıyoruz.</p>
+
+      <h2>1. Düzenli Bileme ve Keskinlik Kontrolü</h2>
+      <p>Bıçak keskinliği, parçalama verimliliğini doğrudan etkiler. Körleşmiş bıçaklar:</p>
+      <ul>
+        <li>Motor yükünü %30-50 oranında artırır</li>
+        <li>Enerji tüketimini yükseltir</li>
+        <li>Parçalama kapasitesini düşürür</li>
+        <li>Malzeme sıkışmalarına neden olur</li>
+      </ul>
+      <p><strong>Öneri:</strong> Bıçakları her 500-1000 çalışma saatinde kontrol edin. Profesyonel bileme hizmeti için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina servis ekibi</a> ile iletişime geçebilirsiniz.</p>
+
+      <h3>Bileme Zamanı Nasıl Anlaşılır?</h3>
+      <ul>
+        <li>Parçalama süresi normalin üzerinde uzuyorsa</li>
+        <li>Motor akımı yükseliyorsa</li>
+        <li>Çıktı boyutu düzensizleşiyorsa</li>
+        <li>Anormal sesler geliyorsa</li>
+      </ul>
+
+      <h2>2. Hardox Bıçak Kullanımı</h2>
+      <p><strong>Hardox bıçak</strong> teknolojisi, standart çelik bıçaklara kıyasla 3-4 kat daha uzun ömür sunar. Hardox 450 ve Hardox 500 kalite çelikleri, özellikle aşındırıcı malzemelerin parçalanmasında üstün performans gösterir.</p>
+
+      <h3>Hardox Avantajları</h3>
+      <table>
+        <tr><th>Özellik</th><th>Standart Çelik</th><th>Hardox 500</th></tr>
+        <tr><td>Sertlik (HB)</td><td>250-300</td><td>450-530</td></tr>
+        <tr><td>Aşınma Direnci</td><td>Normal</td><td>4x Daha Yüksek</td></tr>
+        <tr><td>Darbe Dayanımı</td><td>Orta</td><td>Yüksek</td></tr>
+        <tr><td>Ortalama Ömür</td><td>6 ay</td><td>18-24 ay</td></tr>
+      </table>
+
+      <h2>3. Rotor Kaplama Uygulamaları</h2>
+      <p><strong>Rotor kaplama</strong>, bıçak ve rotor yüzeylerinin aşınmaya karşı korunması için uygulanan özel bir prosedürdür. Tungsten karbür veya krom karbür kaplamalar:</p>
+      <ul>
+        <li>Yüzey sertliğini 60-70 HRC seviyesine çıkarır</li>
+        <li>Korozyon direncini artırır</li>
+        <li>Sürtünme katsayısını düşürür</li>
+        <li>Isı dağılımını iyileştirir</li>
+      </ul>
+
+      <h2>4. Periyodik Yağlama ve Temizlik</h2>
+      <p>Yatak yağlaması ve genel temizlik, bıçak ömrünü dolaylı yoldan uzatır:</p>
+      <ol>
+        <li><strong>Günlük:</strong> Bıçak çevresindeki malzeme birikintilerini temizleyin</li>
+        <li><strong>Haftalık:</strong> Yatak yağlarını kontrol edin</li>
+        <li><strong>Aylık:</strong> Hidrolik sistem basıncını kontrol edin</li>
+        <li><strong>3 Aylık:</strong> Kapsamlı servis bakımı yaptırın</li>
+      </ol>
+
+      <h2>5. Doğru Malzeme Besleme Tekniği</h2>
+      <p>Bıçak aşınmasının büyük bölümü yanlış besleme tekniklerinden kaynaklanır:</p>
+      <ul>
+        <li>Makine kapasitesinin üzerinde malzeme beslemeyin</li>
+        <li>Yabancı metal parçalarını ayıklayın</li>
+        <li>Homojen besleme yapın</li>
+        <li>Aşırı büyük parçaları ön kesime tabi tutun</li>
+      </ul>
+
+      <h2>MT Makina Servis Desteği</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> olarak, satış sonrası servis ve yedek parça konusunda kapsamlı destek sunuyoruz. <a href="/tr/cift-saftli-parcalama-makinesi">Çift Şaftlı</a> ve <a href="/tr/tek-saftli-parcalama-makinesi">Tek Şaftlı Parçalama Makineleri</a> için orijinal yedek parça temin ediyoruz. Uzman teknik ekibimiz, yerinde servis hizmeti ve operatör eğitimi vermektedir.</p>
+
+      <h3>İletişim</h3>
+      <p>Servis ve yedek parça talepleriniz için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">www.mtmakina.com.tr</a> adresinden bize ulaşabilirsiniz.</p>
+    `,
+      en: `
+      <h1>5 Ways to Extend Industrial Shredder Blade Life</h1>
+      <p>In industrial shredding machines, blades are the most critical and wear-prone components. Regular <strong>shredder blade maintenance</strong> both maintains machine performance and significantly reduces operating costs.</p>
+
+      <h2>1. Regular Sharpening and Edge Control</h2>
+      <p>Blade sharpness directly affects shredding efficiency. Dull blades increase motor load by 30-50%, raise energy consumption, and reduce shredding capacity.</p>
+      <p><strong>Recommendation:</strong> Check blades every 500-1000 operating hours. Contact the <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina service team</a> for professional sharpening.</p>
+
+      <h2>2. Using Hardox Blades</h2>
+      <p><strong>Hardox blade</strong> technology offers 3-4 times longer life compared to standard steel blades. Hardox 450 and Hardox 500 quality steels show superior performance in shredding abrasive materials.</p>
+
+      <h2>3. Rotor Coating Applications</h2>
+      <p><strong>Rotor coating</strong> is a special procedure applied to protect blade and rotor surfaces against wear. Tungsten carbide or chromium carbide coatings increase surface hardness to 60-70 HRC.</p>
+
+      <h2>4. Periodic Lubrication and Cleaning</h2>
+      <p>Bearing lubrication and general cleaning indirectly extend blade life. Daily, weekly, and monthly maintenance schedules are essential.</p>
+
+      <h2>5. Proper Material Feeding Technique</h2>
+      <p>Most blade wear comes from incorrect feeding techniques. Don't exceed machine capacity, remove foreign metal parts, and ensure homogeneous feeding.</p>
+
+      <h2>MT Makina Service Support</h2>
+      <p>At <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a>, we provide comprehensive after-sales service and spare parts support for our <a href="/en/dual-shaft-shredder">Dual Shaft</a> and <a href="/en/single-shaft-shredder">Single Shaft Shredders</a>.</p>
+    `,
+      ru: `
+      <h1>5 способов продлить срок службы лезвий промышленного шредера</h1>
+      <p>В промышленных измельчителях лезвия являются наиболее критичными и изнашиваемыми компонентами. Регулярное <strong>обслуживание лезвий шредера</strong> поддерживает производительность машины и снижает эксплуатационные расходы.</p>
+
+      <h2>1. Регулярная заточка</h2>
+      <p>Острота лезвий напрямую влияет на эффективность измельчения.</p>
+
+      <h2>2. Использование лезвий Hardox</h2>
+      <p>Технология <strong>лезвий Hardox</strong> обеспечивает в 3-4 раза больший срок службы.</p>
+
+      <h2>3. Покрытие ротора</h2>
+      <p><strong>Покрытие ротора</strong> защищает поверхности от износа.</p>
+
+      <h2>Поддержка MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> предоставляет полную сервисную поддержку для <a href="/ru/dvukhvalnaya-drobilka">Двухвальных</a> и <a href="/ru/odnovalnaya-drobilka">Одновальных шредеров</a>.</p>
+    `,
+      ar: `
+      <h1>5 طرق لإطالة عمر شفرات آلة التقطيع الصناعية</h1>
+      <p>في آلات التقطيع الصناعية، تعد الشفرات أكثر المكونات أهمية وتعرضاً للتآكل. <strong>صيانة شفرات آلة التقطيع</strong> المنتظمة تحافظ على أداء الآلة.</p>
+
+      <h2>1. الشحذ المنتظم</h2>
+      <p>حدة الشفرة تؤثر مباشرة على كفاءة التقطيع.</p>
+
+      <h2>2. استخدام شفرات Hardox</h2>
+      <p>توفر تقنية <strong>شفرات Hardox</strong> عمراً أطول بـ 3-4 مرات.</p>
+
+      <h2>دعم MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> توفر دعماً شاملاً لـ <a href="/ar/dual-shaft-shredder">آلات التقطيع ذات العمودين</a> و <a href="/ar/single-shaft-shredder">ذات العمود الواحد</a>.</p>
+    `
+    }
+  },
+  {
+    id: '7',
+    slug: 'tek-saftli-mi-cift-saftli-mi-hangi-shredder-sizin-icin-uygun',
+    title: {
+      tr: 'Tek Şaftlı mı Çift Şaftlı mı? Hangi Shredder Sizin İçin Uygun?',
+      en: 'Single Shaft or Dual Shaft? Which Shredder is Right for You?',
+      ru: 'Одновальный или двухвальный? Какой шредер подходит вам?',
+      ar: 'عمود واحد أم عمودان؟ أي آلة تقطيع مناسبة لك؟'
+    },
+    summary: {
+      tr: 'Tek şaftlı vs çift şaftlı karşılaştırması, plastik kırma makinesi seçimi ve shredder alırken dikkat edilmesi gerekenler hakkında kapsamlı teknik rehber.',
+      en: 'Comprehensive technical guide on single shaft vs dual shaft comparison, plastic shredder selection, and things to consider when buying a shredder.',
+      ru: 'Полное техническое руководство по сравнению одновального и двухвального шредера, выбору пластикового измельчителя.',
+      ar: 'دليل تقني شامل للمقارنة بين العمود الواحد والعمودين واختيار آلة تقطيع البلاستيك.'
+    },
+    date: '2025-12-09',
+    author: {
+      tr: 'MT Makina Satış Mühendisliği',
+      en: 'MT Makina Sales Engineering',
+      ru: 'Инженерный отдел продаж MT Makina',
+      ar: 'هندسة المبيعات MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Tek Şaftlı', en: 'Single Shaft', ru: 'Одновальный', ar: 'عمود واحد' },
+      { tr: 'Çift Şaftlı', en: 'Dual Shaft', ru: 'Двухвальный', ar: 'عمودان' },
+      { tr: 'Karşılaştırma', en: 'Comparison', ru: 'Сравнение', ar: 'مقارنة' },
+      { tr: 'Rehber', en: 'Guide', ru: 'Руководство', ar: 'دليل' }
+    ],
+    content: {
+      tr: `
+      <h1>Tek Şaftlı mı Çift Şaftlı mı? Hangi Shredder Sizin İçin Uygun?</h1>
+      <p>Endüstriyel atık yönetimi ve geri dönüşüm sektöründe doğru makine seçimi, yatırımın geri dönüşünü doğrudan etkiler. <strong>Tek şaftlı vs çift şaftlı</strong> karşılaştırması yaparken, işlenecek malzeme türü, kapasite ihtiyacı ve çıktı boyutu gibi faktörleri dikkatlice değerlendirmek gerekir. Bu rehberde, <strong>plastik kırma makinesi seçimi</strong> ve <strong>shredder alırken dikkat edilmesi gerekenler</strong> konularında size yol gösteriyoruz.</p>
+
+      <h2>Temel Farklar: Tek Şaftlı vs Çift Şaftlı</h2>
+      
+      <h3>Çalışma Prensibi</h3>
+      <p><strong><a href="/tr/tek-saftli-parcalama-makinesi">Tek Şaftlı Parçalama Makinesi</a>:</strong> Tek bir dönen rotor ve sabit karşı bıçaklar arasında malzemeyi keser. Yüksek hızda çalışır (80-120 RPM) ve homojen çıktı boyutu üretir.</p>
+      <p><strong><a href="/tr/cift-saftli-parcalama-makinesi">Çift Şaftlı Parçalama Makinesi</a>:</strong> İki adet birbirine zıt yönde dönen rotor ile malzemeyi çeker ve parçalar. Düşük hızda (15-30 RPM) yüksek torkla çalışır.</p>
+
+      <h2>Karşılaştırma Tablosu</h2>
+      <table>
+        <tr>
+          <th>Özellik</th>
+          <th>Tek Şaftlı</th>
+          <th>Çift Şaftlı</th>
+        </tr>
+        <tr>
+          <td><strong>Çalışma Hızı</strong></td>
+          <td>80-120 RPM</td>
+          <td>15-30 RPM</td>
+        </tr>
+        <tr>
+          <td><strong>Tork</strong></td>
+          <td>Orta</td>
+          <td>Çok Yüksek</td>
+        </tr>
+        <tr>
+          <td><strong>Çıktı Boyutu</strong></td>
+          <td>Homojen (elek ile kontrol)</td>
+          <td>Değişken</td>
+        </tr>
+        <tr>
+          <td><strong>Gürültü Seviyesi</strong></td>
+          <td>Orta-Yüksek</td>
+          <td>Düşük</td>
+        </tr>
+        <tr>
+          <td><strong>Enerji Tüketimi</strong></td>
+          <td>Orta</td>
+          <td>Düşük</td>
+        </tr>
+        <tr>
+          <td><strong>Bakım Maliyeti</strong></td>
+          <td>Orta</td>
+          <td>Düşük</td>
+        </tr>
+        <tr>
+          <td><strong>İlk Yatırım</strong></td>
+          <td>Orta</td>
+          <td>Yüksek</td>
+        </tr>
+      </table>
+
+      <h2>Hangi Malzeme İçin Hangi Makine?</h2>
+
+      <h3>Tek Şaftlı İçin Uygun Malzemeler</h3>
+      <ul>
+        <li><strong>Plastik:</strong> Film, şişe, kasa, boru</li>
+        <li><strong>Kağıt/Karton:</strong> Ambalaj malzemeleri</li>
+        <li><strong>Tekstil:</strong> Kumaş parçaları, halı</li>
+        <li><strong>Ahşap:</strong> Palet, mobilya atıkları</li>
+      </ul>
+
+      <h3>Çift Şaftlı İçin Uygun Malzemeler</h3>
+      <ul>
+        <li><strong>Lastik:</strong> Araba lastikleri, konveyör bantları</li>
+        <li><strong>E-Atık:</strong> Elektronik cihazlar</li>
+        <li><strong>Metal İçeren:</strong> Kompozit malzemeler</li>
+        <li><strong>Büyük Hacimli:</strong> Konteynerler, tanklar</li>
+        <li><strong>Tıbbi Atık:</strong> Enfeksiyöz malzemeler</li>
+      </ul>
+
+      <h2>Shredder Alırken Dikkat Edilmesi Gerekenler</h2>
+      <ol>
+        <li><strong>Malzeme Analizi:</strong> İşlenecek atık türünü ve özelliklerini belirleyin</li>
+        <li><strong>Kapasite Hesabı:</strong> Günlük/aylık işleme ihtiyacınızı hesaplayın</li>
+        <li><strong>Çıktı Boyutu:</strong> Son ürün için gereken parça boyutunu belirleyin</li>
+        <li><strong>Enerji Maliyeti:</strong> Uzun vadeli işletme giderlerini değerlendirin</li>
+        <li><strong>Servis Ağı:</strong> Satış sonrası destek ve yedek parça temini</li>
+        <li><strong>Genişleme Potansiyeli:</strong> Gelecekteki kapasite artışını göz önünde bulundurun</li>
+      </ol>
+
+      <h2>Hibrit Çözümler</h2>
+      <p>Bazı uygulamalarda her iki makine tipinin kombinasyonu en iyi sonucu verir:</p>
+      <ul>
+        <li><strong>Ön Parçalama:</strong> Çift şaftlı ile büyük parçaları kırma</li>
+        <li><strong>İnce Öğütme:</strong> Tek şaftlı ile istenilen boyuta indirgeme</li>
+      </ul>
+
+      <h2>MT Makina Çözümleri</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> olarak, her iki makine tipinde de geniş bir ürün yelpazesi sunuyoruz:</p>
+      <ul>
+        <li><a href="/tr/tek-saftli-parcalama-makinesi">Tek Şaftlı Parçalama Makineleri</a> - CS Serisi</li>
+        <li><a href="/tr/cift-saftli-parcalama-makinesi">Çift Şaftlı Parçalama Makineleri</a> - CV Serisi</li>
+      </ul>
+      <p>Uzman satış mühendislerimiz, işletmenize en uygun çözümü belirlemede size yardımcı olur. Ücretsiz keşif ve fizibilite çalışması için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">www.mtmakina.com.tr</a> adresinden bize ulaşın.</p>
+
+      <h3>Neden MT Makina?</h3>
+      <ul>
+        <li>Türkiye'nin lider parçalama makinesi üreticisi</li>
+        <li>20+ yıllık sektör deneyimi</li>
+        <li>Anahtar teslimi proje çözümleri</li>
+        <li>Yerli üretim avantajı</li>
+        <li>Hızlı yedek parça temini</li>
+      </ul>
+    `,
+      en: `
+      <h1>Single Shaft or Dual Shaft? Which Shredder is Right for You?</h1>
+      <p>In industrial waste management and recycling, choosing the right machine directly affects ROI. When comparing <strong>single shaft vs dual shaft</strong>, factors like material type, capacity needs, and output size must be carefully evaluated.</p>
+
+      <h2>Basic Differences: Single Shaft vs Dual Shaft</h2>
+      
+      <h3>Operating Principle</h3>
+      <p><strong><a href="/en/single-shaft-shredder">Single Shaft Shredder</a>:</strong> Cuts material between a single rotating rotor and fixed counter blades. Operates at high speed (80-120 RPM) and produces homogeneous output.</p>
+      <p><strong><a href="/en/dual-shaft-shredder">Dual Shaft Shredder</a>:</strong> Pulls and shreds material with two counter-rotating rotors. Operates at low speed (15-30 RPM) with high torque.</p>
+
+      <h2>Comparison Table</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Single Shaft</th>
+          <th>Dual Shaft</th>
+        </tr>
+        <tr>
+          <td><strong>Operating Speed</strong></td>
+          <td>80-120 RPM</td>
+          <td>15-30 RPM</td>
+        </tr>
+        <tr>
+          <td><strong>Torque</strong></td>
+          <td>Medium</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <td><strong>Output Size</strong></td>
+          <td>Homogeneous</td>
+          <td>Variable</td>
+        </tr>
+        <tr>
+          <td><strong>Noise Level</strong></td>
+          <td>Medium-High</td>
+          <td>Low</td>
+        </tr>
+      </table>
+
+      <h2>Which Material for Which Machine?</h2>
+
+      <h3>Single Shaft - Suitable Materials</h3>
+      <ul>
+        <li><strong>Plastics:</strong> Film, bottles, crates, pipes</li>
+        <li><strong>Paper/Cardboard:</strong> Packaging materials</li>
+        <li><strong>Textiles:</strong> Fabric pieces, carpets</li>
+      </ul>
+
+      <h3>Dual Shaft - Suitable Materials</h3>
+      <ul>
+        <li><strong>Tires:</strong> Car tires, conveyor belts</li>
+        <li><strong>E-Waste:</strong> Electronic devices</li>
+        <li><strong>Metal-Containing:</strong> Composite materials</li>
+      </ul>
+
+      <h2>MT Makina Solutions</h2>
+      <p>At <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a>, we offer a wide range of both machine types:</p>
+      <ul>
+        <li><a href="/en/single-shaft-shredder">Single Shaft Shredders</a> - CS Series</li>
+        <li><a href="/en/dual-shaft-shredder">Dual Shaft Shredders</a> - CV Series</li>
+      </ul>
+      <p>Contact us at <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">www.mtmakina.com.tr</a> for a free consultation.</p>
+    `,
+      ru: `
+      <h1>Одновальный или двухвальный? Какой шредер подходит вам?</h1>
+      <p>При сравнении <strong>одновального и двухвального</strong> шредера необходимо учитывать тип материала, потребности в производительности и размер выхода.</p>
+
+      <h2>Основные различия</h2>
+      <p><strong><a href="/ru/odnovalnaya-drobilka">Одновальный шредер</a>:</strong> Работает на высокой скорости (80-120 об/мин) и производит однородный выход.</p>
+      <p><strong><a href="/ru/dvukhvalnaya-drobilka">Двухвальный шредер</a>:</strong> Работает на низкой скорости (15-30 об/мин) с высоким крутящим моментом.</p>
+
+      <h2>Решения MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> предлагает широкий ассортимент обоих типов машин:</p>
+      <ul>
+        <li><a href="/ru/odnovalnaya-drobilka">Одновальные шредеры</a></li>
+        <li><a href="/ru/dvukhvalnaya-drobilka">Двухвальные шредеры</a></li>
+      </ul>
+    `,
+      ar: `
+      <h1>عمود واحد أم عمودان؟ أي آلة تقطيع مناسبة لك؟</h1>
+      <p>عند مقارنة <strong>العمود الواحد مقابل العمودين</strong>، يجب مراعاة نوع المادة واحتياجات السعة وحجم المخرجات.</p>
+
+      <h2>الاختلافات الأساسية</h2>
+      <p><strong><a href="/ar/single-shaft-shredder">آلة التقطيع ذات العمود الواحد</a>:</strong> تعمل بسرعة عالية (80-120 دورة/دقيقة).</p>
+      <p><strong><a href="/ar/dual-shaft-shredder">آلة التقطيع ذات العمودين</a>:</strong> تعمل بسرعة منخفضة (15-30 دورة/دقيقة) مع عزم دوران عالٍ.</p>
+
+      <h2>حلول MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> تقدم مجموعة واسعة من كلا النوعين:</p>
+      <ul>
+        <li><a href="/ar/single-shaft-shredder">آلات التقطيع ذات العمود الواحد</a></li>
+        <li><a href="/ar/dual-shaft-shredder">آلات التقطيع ذات العمودين</a></li>
+      </ul>
+    `
+    }
   }
 ];
