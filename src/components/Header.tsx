@@ -147,7 +147,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     { key: 'nav_wastes', href: '#', dropdown: wastesDropdown, action: 'wastes' },
     { key: 'nav_technology', href: '#technology', action: 'technology' },
     { key: 'nav_references', href: '#references', action: 'references' },
-    { key: 'blog', href: '/blog', action: 'blog', label: 'Blog' },
+    { key: 'blog', href: `/${language}/blog`, action: 'blog', label: 'Blog' },
     { key: 'nav_contact', href: '#contact', action: 'contact' },
     { key: 'nav_ecatalog', href: '#', action: 'ecatalog' },
   ];
@@ -263,7 +263,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                     } else if (item.action === 'blog') {
                       e.preventDefault();
                       if (onBlogClick) onBlogClick();
-                      else window.location.href = '/blog';
+                      else window.location.href = `/${language}/blog`;
                     }
                   }}
                   initial={{ opacity: 0, y: -20 }}
@@ -525,7 +525,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
                         setMobileMenuOpen(false);
                       } else if (item.action === 'blog') {
                         if (onBlogClick) onBlogClick();
-                        else window.location.href = '/blog';
+                        else window.location.href = `/${language}/blog`;
                         setMobileMenuOpen(false);
                       }
                     }}

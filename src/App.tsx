@@ -227,6 +227,16 @@ function AppContent() {
       window.history.replaceState({}, '', savedPath);
     }
 
+    // Redirect /blog to /tr/blog (default language)
+    const currentPath = window.location.pathname;
+    if (currentPath === '/blog' || currentPath === '/blog/') {
+      window.history.replaceState({}, '', '/tr/blog');
+    } else if (currentPath.startsWith('/blog/') && !currentPath.match(/^\/(tr|en|ru|ar)\/blog/)) {
+      // Handle /blog/slug -> /tr/blog/slug
+      const slug = currentPath.substring(6); // Remove '/blog/'
+      window.history.replaceState({}, '', `/tr/blog/${slug}`);
+    }
+
     const urlState = parseUrl();
     console.log('App.tsx - Parsed URL state:', urlState);
 

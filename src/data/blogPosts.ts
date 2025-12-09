@@ -457,7 +457,7 @@ export const blogPosts: BlogPost[] = [
       ru: 'Инженерная команда MT Makina',
       ar: 'فريق هندسة MT Makina'
     },
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=1000',
+    image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1000',
     tags: [
       { tr: 'Lastik Geri Dönüşüm', en: 'Tire Recycling', ru: 'Переработка шин', ar: 'إعادة تدوير الإطارات' },
       { tr: 'Kauçuk Tozu', en: 'Rubber Crumb', ru: 'Резиновая крошка', ar: 'مسحوق المطاط' },
