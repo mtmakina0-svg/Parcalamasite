@@ -13,6 +13,7 @@ export interface BlogPost {
   slug: string;
   title: LocalizedContent;
   summary: LocalizedContent;
+  metaDescription?: LocalizedContent;
   content: LocalizedContent;
   date: string;
   author: LocalizedContent;
@@ -1119,6 +1120,353 @@ export const blogPosts: BlogPost[] = [
       <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> تقدم مجموعة واسعة من كلا النوعين:</p>
       <ul>
         <li><a href="/ar/single-shaft-shredder">آلات التقطيع ذات العمود الواحد</a></li>
+        <li><a href="/ar/dual-shaft-shredder">آلات التقطيع ذات العمودين</a></li>
+      </ul>
+    `
+    }
+  },
+  {
+    id: '8',
+    slug: 'elektronik-atik-geri-donusumunde-veri-guvenligi',
+    title: {
+      tr: 'Elektronik Atık (E-Waste) Geri Dönüşümünde Veri Güvenliği',
+      en: 'Data Security in Electronic Waste (E-Waste) Recycling',
+      ru: 'Безопасность данных при переработке электронных отходов',
+      ar: 'أمان البيانات في إعادة تدوير النفايات الإلكترونية'
+    },
+    summary: {
+      tr: 'Harddisk imha makinesi, KVKK veri imhası, elektronik atık parçalama ve bilgisayar geri dönüşüm süreçleri hakkında kapsamlı rehber.',
+      en: 'Comprehensive guide on hard disk destruction machines, GDPR data destruction, e-waste shredding, and computer recycling processes.',
+      ru: 'Полное руководство по машинам для уничтожения жестких дисков, уничтожению данных GDPR, измельчению электронных отходов.',
+      ar: 'دليل شامل حول آلات تدمير الأقراص الصلبة وتدمير البيانات وتقطيع النفايات الإلكترونية.'
+    },
+    metaDescription: {
+      tr: 'KVKK uyumlu harddisk imha makinesi ile veri güvenliğinizi sağlayın. Elektronik atık parçalama ve bilgisayar geri dönüşüm çözümleri.',
+      en: 'Ensure data security with GDPR-compliant hard disk destruction machines. E-waste shredding and computer recycling solutions.',
+      ru: 'Обеспечьте безопасность данных с помощью машин для уничтожения жестких дисков. Решения по переработке электронных отходов.',
+      ar: 'تأمين بياناتك مع آلات تدمير الأقراص الصلبة. حلول تقطيع النفايات الإلكترونية وإعادة تدوير الكمبيوتر.'
+    },
+    date: '2025-12-09',
+    author: {
+      tr: 'MT Makina Veri Güvenliği Uzmanları',
+      en: 'MT Makina Data Security Experts',
+      ru: 'Эксперты по безопасности данных MT Makina',
+      ar: 'خبراء أمن البيانات MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Veri Güvenliği', en: 'Data Security', ru: 'Безопасность данных', ar: 'أمن البيانات' },
+      { tr: 'E-Atık', en: 'E-Waste', ru: 'Электронные отходы', ar: 'النفايات الإلكترونية' },
+      { tr: 'KVKK', en: 'GDPR', ru: 'GDPR', ar: 'اللائحة العامة لحماية البيانات' },
+      { tr: 'Harddisk İmha', en: 'Hard Disk Destruction', ru: 'Уничтожение дисков', ar: 'تدمير القرص الصلب' }
+    ],
+    content: {
+      tr: `
+      <h1>Elektronik Atık (E-Waste) Geri Dönüşümünde Veri Güvenliği</h1>
+      <p>Dijital çağda işletmelerin en kritik varlıklarından biri verilerdir. Kullanım ömrünü tamamlayan bilgisayarlar, sunucular ve depolama cihazları bertaraf edilirken, içerdikleri verilerin güvenli şekilde imha edilmesi yasal bir zorunluluktur. <strong>KVKK veri imhası</strong> kapsamında, şirketlerin kişisel verileri geri dönülemez şekilde yok etmesi gerekmektedir. Bu yazıda, <strong>harddisk imha makinesi</strong> kullanımı ve <strong>elektronik atık parçalama</strong> süreçlerini detaylı olarak inceliyoruz.</p>
+
+      <h2>Veri Silme Yeterli mi?</h2>
+      <p>Birçok işletme, hard disklerdeki verileri yazılımsal olarak silmenin yeterli olduğunu düşünür. Ancak bu büyük bir yanılgıdır:</p>
+      <ul>
+        <li><strong>Format atma:</strong> Veriler kolayca kurtarılabilir</li>
+        <li><strong>Dosya silme:</strong> Silinmiş alanlar forensic araçlarla okunabilir</li>
+        <li><strong>Yazılımsal temizleme:</strong> %100 garanti sağlamaz</li>
+        <li><strong>Manyetik imha (Degaussing):</strong> SSD'lerde işe yaramaz</li>
+      </ul>
+      <p><strong>Tek güvenli yöntem:</strong> Fiziksel olarak parçalama!</p>
+
+      <h2>KVKK ve Veri İmha Zorunluluğu</h2>
+      <p><strong>KVKK veri imhası</strong>, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında zorunlu tutulmaktadır. Kanuna göre:</p>
+      <ol>
+        <li>Kişisel veriler, işleme amacı ortadan kalktığında imha edilmelidir</li>
+        <li>İmha işlemi, verilerin geri getirilemez şekilde yok edilmesini gerektirir</li>
+        <li>İmha kayıtları en az 3 yıl saklanmalıdır</li>
+        <li>Veri ihlali durumunda ağır para cezaları uygulanır (1.500.000 TL'ye kadar)</li>
+      </ol>
+
+      <h3>Hangi Sektörler Risk Altında?</h3>
+      <ul>
+        <li><strong>Bankacılık ve Finans:</strong> Müşteri hesap bilgileri, kredi kartı verileri</li>
+        <li><strong>Sağlık:</strong> Hasta kayıtları, tıbbi geçmiş</li>
+        <li><strong>Hukuk:</strong> Dava dosyaları, müvekkil bilgileri</li>
+        <li><strong>Kamu:</strong> Vatandaş verileri, nüfus kayıtları</li>
+        <li><strong>E-ticaret:</strong> Ödeme bilgileri, adres veritabanları</li>
+      </ul>
+
+      <h2>Harddisk İmha Makinesi Nasıl Çalışır?</h2>
+      <p><a href="/tr/harddisk-imha-makinesi">Harddisk İmha Makinesi</a>, depolama cihazlarını fiziksel olarak parçalayarak verilerin geri kurtarılmasını imkansız hale getirir. İşlem aşamaları:</p>
+      <ol>
+        <li><strong>Besleme:</strong> Diskler otomatik veya manuel olarak makineye verilir</li>
+        <li><strong>Parçalama:</strong> Özel tasarlanmış bıçaklar diski 10-20 mm parçalara ayırır</li>
+        <li><strong>Ayrıştırma:</strong> Metal, plastik ve elektronik bileşenler ayrılır</li>
+        <li><strong>Belgeleme:</strong> Sertifikalı imha raporu oluşturulur</li>
+      </ol>
+
+      <h3>Parçalama Boyutu Standartları</h3>
+      <table>
+        <tr><th>Güvenlik Seviyesi</th><th>Parça Boyutu</th><th>Uygulama Alanı</th></tr>
+        <tr><td>DIN 66399 H-3</td><td>≤ 160 mm²</td><td>Genel işletme verileri</td></tr>
+        <tr><td>DIN 66399 H-4</td><td>≤ 30 mm²</td><td>Hassas kişisel veriler</td></tr>
+        <tr><td>DIN 66399 H-5</td><td>≤ 10 mm²</td><td>Gizli devlet/askeri veriler</td></tr>
+      </table>
+
+      <h2>Elektronik Atık Parçalama Süreci</h2>
+      <p><strong>Elektronik atık parçalama</strong>, sadece hard disklerle sınırlı değildir. İşlenebilecek cihazlar:</p>
+      <ul>
+        <li>Masaüstü ve dizüstü bilgisayarlar</li>
+        <li>Sunucular ve RAID sistemleri</li>
+        <li>Akıllı telefonlar ve tabletler</li>
+        <li>USB bellekler, SD kartlar</li>
+        <li>Fotokopi ve yazıcı hard diskleri</li>
+        <li>POS cihazları, ATM'ler</li>
+        <li>Tıbbi görüntüleme cihazları</li>
+      </ul>
+
+      <h2>Bilgisayar Geri Dönüşüm Ekonomisi</h2>
+      <p><strong>Bilgisayar geri dönüşüm</strong> sadece veri güvenliği değil, değerli metallerin geri kazanımı açısından da önemlidir:</p>
+      <ul>
+        <li><strong>Altın:</strong> 1 ton e-atıktan ~250 gram</li>
+        <li><strong>Gümüş:</strong> 1 ton e-atıktan ~500 gram</li>
+        <li><strong>Bakır:</strong> 1 ton e-atıktan ~50 kg</li>
+        <li><strong>Paladyum:</strong> 1 ton e-atıktan ~100 gram</li>
+      </ul>
+
+      <h2>MT Makina E-Atık Çözümleri</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> olarak, <a href="/tr/harddisk-imha-makinesi">Harddisk İmha Makineleri</a> ile KVKK uyumlu veri imha çözümleri sunuyoruz. Sistemlerimiz:</p>
+      <ul>
+        <li>DIN 66399 standardına uygun parçalama</li>
+        <li>Otomatik sayaç ve raporlama</li>
+        <li>Düşük gürültü seviyesi</li>
+        <li>Kompakt tasarım, ofis içi kullanıma uygun</li>
+        <li>Yüksek kapasite modelleri (saatte 1000+ disk)</li>
+      </ul>
+      <p>Ücretsiz demo ve fiyat teklifi için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">www.mtmakina.com.tr</a> adresinden bize ulaşın.</p>
+    `,
+      en: `
+      <h1>Data Security in Electronic Waste (E-Waste) Recycling</h1>
+      <p>In the digital age, data is one of the most critical assets for businesses. When computers, servers, and storage devices reach end-of-life, secure data destruction is a legal requirement. Under <strong>GDPR data destruction</strong> regulations, companies must irreversibly destroy personal data.</p>
+
+      <h2>Is Data Wiping Enough?</h2>
+      <p>Many businesses believe software-based data wiping is sufficient. This is a dangerous misconception:</p>
+      <ul>
+        <li><strong>Formatting:</strong> Data can be easily recovered</li>
+        <li><strong>File deletion:</strong> Forensic tools can read deleted areas</li>
+        <li><strong>Software wiping:</strong> Doesn't provide 100% guarantee</li>
+        <li><strong>Degaussing:</strong> Doesn't work on SSDs</li>
+      </ul>
+      <p><strong>The only secure method:</strong> Physical destruction!</p>
+
+      <h2>How Does a Hard Disk Destruction Machine Work?</h2>
+      <p>The <a href="/en/harddisk-destroyer">Hard Disk Destruction Machine</a> physically shreds storage devices, making data recovery impossible.</p>
+
+      <h2>E-Waste Shredding Process</h2>
+      <p><strong>Electronic waste shredding</strong> isn't limited to hard disks. Processable devices include computers, servers, smartphones, USB drives, and medical imaging devices.</p>
+
+      <h2>MT Makina E-Waste Solutions</h2>
+      <p>At <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a>, our <a href="/en/harddisk-destroyer">Hard Disk Destruction Machines</a> provide GDPR-compliant data destruction solutions.</p>
+    `,
+      ru: `
+      <h1>Безопасность данных при переработке электронных отходов</h1>
+      <p>В цифровую эпоху данные являются одним из важнейших активов бизнеса. Согласно требованиям <strong>GDPR по уничтожению данных</strong>, компании обязаны безвозвратно уничтожать персональные данные.</p>
+
+      <h2>Как работает машина для уничтожения жестких дисков?</h2>
+      <p><a href="/ru/unichtozhitel-zhestkikh-diskov">Машина для уничтожения жестких дисков</a> физически измельчает устройства хранения данных.</p>
+
+      <h2>Решения MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> предлагает <a href="/ru/unichtozhitel-zhestkikh-diskov">машины для уничтожения жестких дисков</a>.</p>
+    `,
+      ar: `
+      <h1>أمان البيانات في إعادة تدوير النفايات الإلكترونية</h1>
+      <p>في العصر الرقمي، تعد البيانات من أهم أصول الشركات. وفقاً لمتطلبات <strong>إتلاف بيانات GDPR</strong>، يجب على الشركات تدمير البيانات الشخصية بشكل لا رجعة فيه.</p>
+
+      <h2>كيف تعمل آلة تدمير القرص الصلب؟</h2>
+      <p><a href="/ar/harddisk-destroyer">آلة تدمير القرص الصلب</a> تقطع أجهزة التخزين فيزيائياً.</p>
+
+      <h2>حلول MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> تقدم <a href="/ar/harddisk-destroyer">آلات تدمير الأقراص الصلبة</a>.</p>
+    `
+    }
+  },
+  {
+    id: '9',
+    slug: 'hurda-metal-islemede-hacim-kucultme-avantajlari',
+    title: {
+      tr: 'Hurda Metal İşlemede Hacim Küçültme Avantajları',
+      en: 'Advantages of Volume Reduction in Scrap Metal Processing',
+      ru: 'Преимущества уменьшения объема при переработке металлолома',
+      ar: 'مزايا تقليل الحجم في معالجة الخردة المعدنية'
+    },
+    summary: {
+      tr: 'Metal talaş kırıcı, alüminyum geri dönüşüm ve hurda hacim küçültme ile nakliye maliyetlerini düşürme stratejileri.',
+      en: 'Strategies for reducing transportation costs with metal chip crushers, aluminum recycling, and scrap volume reduction.',
+      ru: 'Стратегии снижения транспортных расходов с помощью дробилок металлической стружки и переработки алюминия.',
+      ar: 'استراتيجيات خفض تكاليف النقل مع كسارات رقائق المعادن وإعادة تدوير الألومنيوم.'
+    },
+    metaDescription: {
+      tr: 'Metal talaş kırıcı ile hurda hacim küçültme yaparak nakliye maliyetlerinizi %70 azaltın. Alüminyum geri dönüşüm çözümleri.',
+      en: 'Reduce transportation costs by 70% with scrap volume reduction using metal chip crushers. Aluminum recycling solutions.',
+      ru: 'Сократите транспортные расходы на 70% с уменьшением объема лома. Решения по переработке алюминия.',
+      ar: 'خفض تكاليف النقل بنسبة 70٪ مع تقليل حجم الخردة. حلول إعادة تدوير الألومنيوم.'
+    },
+    date: '2025-12-09',
+    author: {
+      tr: 'MT Makina Metal İşleme Uzmanları',
+      en: 'MT Makina Metal Processing Experts',
+      ru: 'Эксперты по обработке металла MT Makina',
+      ar: 'خبراء معالجة المعادن MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Metal Geri Dönüşüm', en: 'Metal Recycling', ru: 'Переработка металла', ar: 'إعادة تدوير المعادن' },
+      { tr: 'Hurda İşleme', en: 'Scrap Processing', ru: 'Обработка лома', ar: 'معالجة الخردة' },
+      { tr: 'Alüminyum', en: 'Aluminum', ru: 'Алюминий', ar: 'الألومنيوم' },
+      { tr: 'Hacim Küçültme', en: 'Volume Reduction', ru: 'Уменьшение объема', ar: 'تقليل الحجم' }
+    ],
+    content: {
+      tr: `
+      <h1>Hurda Metal İşlemede Hacim Küçültme Avantajları</h1>
+      <p>Metal işleme endüstrisi, hammadde maliyetlerinin yanı sıra lojistik giderlerle de boğuşmaktadır. Döküm fabrikaları, alüminyum ekstrüzyon tesisleri ve CNC torna atölyeleri günlük tonlarca metal talaşı üretir. Bu atıkların <strong>hurda hacim küçültme</strong> işlemine tabi tutulması, işletmelere önemli maliyet avantajları sağlar. Bu yazıda, <strong>metal talaş kırıcı</strong> kullanımı ve <strong>alüminyum geri dönüşüm</strong> süreçlerini inceliyoruz.</p>
+
+      <h2>Hacim Küçültmenin Ekonomik Faydaları</h2>
+      <p>Ham metal talaşı, son derece hacimli ve verimsiz bir malzemedir. <strong>Hurda hacim küçültme</strong> ile:</p>
+      
+      <h3>1. Nakliye Maliyetlerinde Dramatik Düşüş</h3>
+      <ul>
+        <li>Ham talaş yoğunluğu: 150-250 kg/m³</li>
+        <li>Parçalanmış talaş yoğunluğu: 800-1200 kg/m³</li>
+        <li><strong>Sonuç:</strong> Aynı tonaj için %70-80 daha az kamyon seferi</li>
+      </ul>
+
+      <h3>2. Depolama Alanı Tasarrufu</h3>
+      <ul>
+        <li>Ham talaş 4-5 kat daha fazla alan kaplar</li>
+        <li>Parçalanmış talaş düzenli istiflenir</li>
+        <li>Depo alanı kapasitesi 3-4 kat artar</li>
+      </ul>
+
+      <h3>3. Daha Yüksek Satış Fiyatı</h3>
+      <table>
+        <tr><th>Malzeme Durumu</th><th>Fiyat ($/ton)</th><th>Fark</th></tr>
+        <tr><td>Ham alüminyum talaş</td><td>800-1000</td><td>-</td></tr>
+        <tr><td>Parçalanmış alüminyum</td><td>1200-1500</td><td>+%50</td></tr>
+        <tr><td>Briketlenmiş alüminyum</td><td>1500-1800</td><td>+%80</td></tr>
+      </table>
+
+      <h2>Metal Talaş Kırıcı Nasıl Çalışır?</h2>
+      <p><strong>Metal talaş kırıcı</strong>, yüksek torklu çift şaftlı sistem ile metal talaşlarını küçük parçalara ayırır. İşlem aşamaları:</p>
+      <ol>
+        <li><strong>Besleme:</strong> Konveyör veya vinç ile ham talaş beslenir</li>
+        <li><strong>Parçalama:</strong> Özel bıçaklar talaşı 20-50 mm boyutuna indirger</li>
+        <li><strong>Yağ/Soğutucu Ayrıştırma:</strong> Talaşlara yapışmış kesme yağları santrifüj ile alınır</li>
+        <li><strong>Manyetik Ayrıştırma:</strong> Demir içeren metaller ayrılır</li>
+        <li><strong>Çıktı:</strong> Homojen, temiz, değeri artmış talaş</li>
+      </ol>
+
+      <h3>İşlenebilir Metal Türleri</h3>
+      <ul>
+        <li><strong>Alüminyum:</strong> Talaş, shredded, kapak, profil hurda</li>
+        <li><strong>Çelik:</strong> Tornalama talaşı, saç kesim atıkları</li>
+        <li><strong>Bakır:</strong> Kablo atıkları, boru kesikleri</li>
+        <li><strong>Pirinç:</strong> Döküm çapakları, talaşlar</li>
+        <li><strong>Paslanmaz Çelik:</strong> CNC talaşları, kesim atıkları</li>
+      </ul>
+
+      <h2>Alüminyum Geri Dönüşüm Süreci</h2>
+      <p><strong>Alüminyum geri dönüşüm</strong>, enerji açısından son derece verimli bir süreçtir:</p>
+      <ul>
+        <li>Geri dönüşüm, birincil üretimden <strong>%95 daha az enerji</strong> kullanır</li>
+        <li>Alüminyum sonsuz kez geri dönüştürülebilir</li>
+        <li>Ham cevherden üretimde 1 kg karbon emisyonu; geri dönüşümde sadece 0.05 kg</li>
+      </ul>
+
+      <h3>Geri Dönüşüm Zinciri</h3>
+      <ol>
+        <li><strong>Toplama:</strong> Fabrikalardan, atık işleme tesislerinden</li>
+        <li><strong>Parçalama:</strong> <a href="/tr/metal-parcalama-makinesi">Metal Parçalama Makineleri</a> ile hacim küçültme</li>
+        <li><strong>Tasnif:</strong> Alaşım türüne göre ayrıştırma</li>
+        <li><strong>Eritme:</strong> 660°C'de füzyon</li>
+        <li><strong>Döküm:</strong> İngot veya blok halinde yeniden kullanıma hazır</li>
+      </ol>
+
+      <h2>MT Makina Metal İşleme Çözümleri</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> olarak, metal geri dönüşüm sektörüne özel çözümler sunuyoruz:</p>
+      <ul>
+        <li><a href="/tr/metal-parcalama-makinesi">Metal Parçalama Makineleri</a> - Yüksek kapasiteli hurda parçalama</li>
+        <li><a href="/tr/cift-saftli-parcalama-makinesi">Çift Şaftlı Parçalama Makineleri</a> - Ağır hizmet uygulamaları</li>
+        <li>Briketleme sistemleri</li>
+        <li>Konveyör ve besleme sistemleri</li>
+      </ul>
+
+      <h3>Maliyet Avantajı Hesabı</h3>
+      <p>Yıllık 5000 ton alüminyum talaş işleyen bir tesis için:</p>
+      <ul>
+        <li><strong>Nakliye tasarrufu:</strong> ~150.000 $/yıl</li>
+        <li><strong>Fiyat farkı:</strong> ~500.000 $/yıl</li>
+        <li><strong>Toplam:</strong> ~650.000 $/yıl ekstra kazanç</li>
+        <li><strong>Yatırım geri dönüş:</strong> 8-14 ay</li>
+      </ul>
+      <p>Ücretsiz fizibilite çalışması için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">www.mtmakina.com.tr</a> adresinden bize ulaşın.</p>
+    `,
+      en: `
+      <h1>Advantages of Volume Reduction in Scrap Metal Processing</h1>
+      <p>The metal processing industry struggles with logistics costs alongside raw material expenses. Foundries, aluminum extrusion plants, and CNC workshops produce tons of metal chips daily. <strong>Scrap volume reduction</strong> processing provides significant cost advantages.</p>
+
+      <h2>Economic Benefits of Volume Reduction</h2>
+      <p>Raw metal chips are extremely bulky and inefficient. With <strong>scrap volume reduction</strong>:</p>
+      
+      <h3>1. Dramatic Reduction in Transportation Costs</h3>
+      <ul>
+        <li>Raw chip density: 150-250 kg/m³</li>
+        <li>Shredded chip density: 800-1200 kg/m³</li>
+        <li><strong>Result:</strong> 70-80% fewer truck trips for the same tonnage</li>
+      </ul>
+
+      <h3>2. Storage Space Savings</h3>
+      <p>Raw chips occupy 4-5 times more space. Warehouse capacity increases 3-4 times.</p>
+
+      <h3>3. Higher Selling Price</h3>
+      <p>Shredded aluminum sells for 50% more than raw chips; briquetted aluminum sells for 80% more.</p>
+
+      <h2>MT Makina Metal Processing Solutions</h2>
+      <p>At <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a>, we offer specialized solutions:</p>
+      <ul>
+        <li><a href="/en/metal-shredder">Metal Shredders</a> - High capacity scrap shredding</li>
+        <li><a href="/en/dual-shaft-shredder">Dual Shaft Shredders</a> - Heavy duty applications</li>
+      </ul>
+    `,
+      ru: `
+      <h1>Преимущества уменьшения объема при переработке металлолома</h1>
+      <p>Металлообрабатывающая промышленность борется с логистическими расходами. <strong>Уменьшение объема лома</strong> обеспечивает значительные преимущества по затратам.</p>
+
+      <h2>Экономические преимущества</h2>
+      <ul>
+        <li>На 70-80% меньше рейсов грузовиков</li>
+        <li>Емкость склада увеличивается в 3-4 раза</li>
+        <li>Измельченный алюминий продается на 50% дороже</li>
+      </ul>
+
+      <h2>Решения MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> предлагает:</p>
+      <ul>
+        <li><a href="/ru/drobilka-metalla">Дробилки металла</a></li>
+        <li><a href="/ru/dvukhvalnaya-drobilka">Двухвальные шредеры</a></li>
+      </ul>
+    `,
+      ar: `
+      <h1>مزايا تقليل الحجم في معالجة الخردة المعدنية</h1>
+      <p>تكافح صناعة معالجة المعادن مع تكاليف اللوجستيات. <strong>تقليل حجم الخردة</strong> يوفر مزايا تكلفة كبيرة.</p>
+
+      <h2>الفوائد الاقتصادية</h2>
+      <ul>
+        <li>رحلات شاحنات أقل بنسبة 70-80٪</li>
+        <li>تزيد سعة المستودع 3-4 مرات</li>
+        <li>يباع الألومنيوم المقطع بسعر أعلى بنسبة 50٪</li>
+      </ul>
+
+      <h2>حلول MT Makina</h2>
+      <p><a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> تقدم:</p>
+      <ul>
+        <li><a href="/ar/metal-shredder">آلات تقطيع المعادن</a></li>
         <li><a href="/ar/dual-shaft-shredder">آلات التقطيع ذات العمودين</a></li>
       </ul>
     `
