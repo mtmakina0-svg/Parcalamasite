@@ -26,6 +26,7 @@ import { NotFoundPage } from './components/NotFoundPage';
 import { BlogPage } from './components/BlogPage';
 import { BlogPostPage } from './components/BlogPostPage';
 import { IntroLoader } from './components/IntroLoader';
+import { MobileStickyBar } from './components/MobileStickyBar';
 import {
   generateUrl,
   seoMetadata,
@@ -1038,6 +1039,7 @@ function AppContent() {
           </main>
           <Footer />
           <ChatWidget />
+          <MobileStickyBar />
         </div>
       )}
     </>

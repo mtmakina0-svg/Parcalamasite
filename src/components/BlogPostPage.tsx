@@ -5,6 +5,7 @@ import { blogPosts, getLocalizedValue, Language } from '../data/blogPosts';
 import { Calendar, User, ArrowLeft, Share2 } from 'lucide-react';
 import { SEOHead } from './SEOHead';
 import { useLanguage } from './LanguageContext';
+import { Breadcrumbs } from './Breadcrumbs';
 
 interface BlogPostPageProps {
     slug: string;
@@ -55,10 +56,24 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <a href={`/${language}/blog`} className="inline-flex items-center text-gray-600 hover:text-[#F4CE14] mb-8 transition-colors font-medium">
+                        <a href={`/${language}/blog`} className="inline-flex items-center text-gray-600 hover:text-[#F4CE14] mb-4 transition-colors font-medium">
                             <ArrowLeft size={20} className="mr-2" />
                             {t('blog_back')}
                         </a>
+
+                        {/* Breadcrumb Navigation */}
+                        <Breadcrumbs
+                            items={[
+                                {
+                                    label: 'Blog',
+                                    href: `/${language}/blog`
+                                },
+                                {
+                                    label: localizedTitle
+                                }
+                            ]}
+                            className="mb-6"
+                        />
 
                         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12 border border-gray-100">
                             <div className="relative h-[400px] w-full">

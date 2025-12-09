@@ -15,7 +15,8 @@ import { getModelDescription, hasModelDescription } from '../utils/modelDescript
 import { YouTubeChannelSection } from './YouTubeChannelSection';
 import { SimilarProductsSection } from './SimilarProductsSection';
 import { StructuredData } from './StructuredData';
-import { generateFAQStructuredData } from '../utils/seoConfig';
+import { generateFAQStructuredData, productCategorySlugs } from '../utils/seoConfig';
+import { Breadcrumbs } from './Breadcrumbs';
 
 interface ProductDetailPageProps {
   productType: string;
@@ -598,6 +599,28 @@ export const ProductDetailPage = ({
               <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
               <span>{t('nav_home')}</span>
             </motion.button>
+          </div>
+        </div>
+
+        {/* Breadcrumb Navigation */}
+        <div className="bg-white border-b border-gray-200">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <Breadcrumbs
+              items={[
+                {
+                  label: t('nav_products'),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || 'urunler'}`.replace(/\/[^/]+$/, ''),
+                  onClick: onBackToMain
+                },
+                {
+                  label: getProductTitle(),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || currentProductType}`
+                },
+                {
+                  label: defaultModelName
+                }
+              ]}
+            />
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import { ArrowLeft, ChevronRight, Settings, Zap, Shield, Wrench } from 'lucide-r
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
-import { modelDescriptions } from '../utils/modelDescriptions';
+import { Breadcrumbs } from './Breadcrumbs';
 
 interface ProductCategoryPageProps {
   productType: string;
@@ -309,6 +309,23 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
             <span>{t('nav_home')}</span>
           </motion.button>
+        </div>
+      </div>
+
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+          <Breadcrumbs
+            items={[
+              {
+                label: t('nav_products'),
+                onClick: onBackToMain
+              },
+              {
+                label: t(contentKeys.title)
+              }
+            ]}
+          />
         </div>
       </div>
 
