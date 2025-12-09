@@ -15,7 +15,7 @@ export const MobileStickyBar: React.FC = () => {
     const localT = translations[language as keyof typeof translations] || translations.tr;
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-[9999] md:hidden bg-white border-t border-gray-200 shadow-lg pb-safe">
+        <div className="fixed bottom-0 left-0 right-0 z-[9999] block lg:hidden bg-white border-t border-gray-200 shadow-lg pb-safe">
             <div className="flex items-stretch h-16">
                 {/* WhatsApp Button */}
                 <a
