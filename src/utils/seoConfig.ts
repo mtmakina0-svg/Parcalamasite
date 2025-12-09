@@ -149,9 +149,9 @@ const multilingualData = {
       keywords: ['parçalama makinesi', 'shredder machine', 'shredder', 'plastik kırma makinesi', 'metal parçalama makinesi', 'ahşap kırma makinesi', 'tek şaftlı parçalama', 'çift şaftlı parçalama', 'TSH parçalama', 'endüstriyel shredder', 'geri dönüşüm makinesi', 'atık kırma makinesi', 'hurda parçalama', 'MT Makina']
     },
     en: {
-      title: 'Shredder Machine | Industrial Shredding Systems | MT Makina - #1 Manufacturer',
-      description: 'Industrial shredder machines, plastic shredder, metal shredder, wood crusher - MT Makina shredding systems. Single shaft, dual shaft TSH series. ✓ CE Certified ✓ Warranty ✓ Service',
-      keywords: ['shredder machine', 'industrial shredder', 'plastic shredder', 'metal shredder', 'wood crusher', 'single shaft shredder', 'dual shaft shredder', 'recycling machine', 'waste shredder', 'scrap shredder', 'MT Makina']
+      title: 'Industrial Shredder & Waste Incinerator Manufacturer | MT Makina Turkey',
+      description: 'Global manufacturer of Double Shaft Shredders, Medical Waste Incinerators, and Tire Recycling Plants. Heavy duty, high capacity, CE certified solutions exporting worldwide from Turkey.',
+      keywords: ['industrial shredder manufacturer', 'shredder machine Turkey', 'waste incinerator manufacturer', 'plastic shredder for sale', 'metal shredder machine', 'wood crusher manufacturer', 'recycling machine Turkey', 'scrap shredder', 'MT Makina', 'Turkish machinery']
     },
     ru: {
       title: 'Промышленный Шредер | Дробилка | MT Makina - Производитель №1',
@@ -171,9 +171,9 @@ const multilingualData = {
       keywords: ['MT Makina', 'parçalama makinesi üreticisi', 'endüstriyel makine üretimi', 'Türkiye makine sanayi', 'geri dönüşüm ekipmanları']
     },
     en: {
-      title: 'Corporate - About MT Makina | 20+ Years Experience',
-      description: 'MT Makina has been manufacturing industrial shredding systems for over 20 years. Your reliable solution partner in Turkey and the world market.',
-      keywords: ['MT Makina', 'shredder manufacturer', 'industrial machine production', 'Turkey machinery industry', 'recycling equipment']
+      title: 'About MT Makina | Industrial Shredder Manufacturer Turkey | 20+ Years',
+      description: 'MT Makina - Leading Turkish manufacturer of industrial shredding systems for 20+ years. Turnkey recycling projects, CE certified machinery, exporting to 50+ countries worldwide.',
+      keywords: ['MT Makina', 'shredder manufacturer Turkey', 'industrial machine manufacturer', 'Turkish machinery', 'recycling equipment manufacturer', 'turnkey project']
     },
     ru: {
       title: 'О компании - MT Makina | 20+ Лет Опыта',
@@ -193,9 +193,9 @@ const multilingualData = {
       keywords: ['parçalama makinesi modelleri', 'shredder çeşitleri', 'endüstriyel makine kataloğu', 'geri dönüşüm ekipmanları']
     },
     en: {
-      title: 'Our Products - MT Makina Shredder Machines Catalog',
-      description: 'MT Makina\'s wide product range: Single shaft, dual shaft, quad shaft shredders, granulators, baling systems and more.',
-      keywords: ['shredder models', 'shredder types', 'industrial machine catalog', 'recycling equipment']
+      title: 'Industrial Shredding Machines & Scrap Metal Shredders | For Sale | MT Makina',
+      description: 'Heavy duty industrial shredders for sale: Single shaft, dual shaft, quad shaft shredders, scrap metal shredders, tire recycling machines. High efficiency, cost-effective solutions from Turkey.',
+      keywords: ['shredder for sale', 'industrial shredder machine', 'scrap metal shredder', 'shredder manufacturer', 'recycling equipment for sale', 'heavy duty shredder']
     },
     ru: {
       title: 'Продукция - Каталог Шредеров MT Makina',
@@ -392,9 +392,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['tek şaftlı parçalama makinesi', 'single shaft shredder', 'TSH serisi', 'plastik kırma makinesi', 'ahşap parçalama makinesi', 'kağıt parçalama', 'plastik shredder', 'ahşap kırıcı', 'tek şaft shredder', 'endüstriyel parçalama'],
       },
       en: {
-        title: 'Single Shaft Shredder | TSH Series | MT Makina',
-        description: 'Single shaft shredder - MT Makina TSH Series 500-6000 kg/h. Plastic shredder, wood shredder, paper shredder. ✓ 6 Models ✓ CE Certified ✓ Fast Delivery ✓ Warranty',
-        keywords: ['single shaft shredder', 'TSH series', 'plastic shredder', 'wood shredder', 'paper shredder', 'industrial shredder'],
+        title: 'Single Shaft Shredder Manufacturer | Industrial Shredder For Sale | MT Makina Turkey',
+        description: 'Heavy duty single shaft shredder manufacturer from Turkey. TSH Series 500-6000 kg/h capacity. High efficiency plastic, wood, paper shredders. Cost-effective solutions, CE certified. ✓ 6 Models ✓ Worldwide Export',
+        keywords: ['single shaft shredder manufacturer', 'industrial shredder for sale', 'TSH series', 'plastic shredder machine', 'wood shredder Turkey', 'shredder manufacturer Turkey', 'heavy duty shredder'],
       },
       ru: {
         title: 'Одновальный Шредер | Серия TSH | MT Makina',
@@ -414,9 +414,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['cam şişe kırma makinesi', 'glass crusher', 'cam kırıcı', 'şişe kırma makinesi', 'sıvı ayrıştırmalı kırıcı', 'geri dönüşüm makinesi', 'cam atık yönetimi']
       },
       en: {
-        title: 'Glass Bottle Crusher | Liquid Separator | MT Makina',
-        description: 'Liquid separating glass bottle crusher - MT Makina. Ideal for hotels, restaurants and recycling facilities. 80% volume reduction, liquid drainage. ✓ CE Certified ✓ Quiet Operation',
-        keywords: ['glass bottle crusher', 'glass crusher', 'bottle shredder', 'liquid separator crusher', 'glass recycling machine', 'waste glass management']
+        title: 'Glass Bottle Crusher Manufacturer | Liquid Separator | MT Makina Turkey',
+        description: 'Industrial glass bottle crusher manufacturer from Turkey. Heavy duty, liquid separating models. High efficiency solution for hotels, restaurants and recycling plants. 80% volume reduction.',
+        keywords: ['glass bottle crusher manufacturer', 'glass crusher for sale', 'bottle shredder', 'liquid separator crusher', 'glass recycling machine Turkey', 'industrial glass crusher']
       },
       ru: {
         title: 'Дробилка для Стеклянных Бутылок | С Сепарацией Жидкости | MT Makina',
@@ -436,9 +436,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['ağaç parçalama makinesi', 'wood grinder', 'kütük kırma makinesi', 'dal parçalama', 'biyokütle makinesi', 'mobil ağaç kırıcı', 'TSY serisi', 'odun yongalama', 'talaş makinesi']
       },
       en: {
-        title: 'Wood Grinder Machine | Industrial Wood Shredder | MT Makina TSY Series',
-        description: 'Industrial wood grinder and shredder machine - MT Makina TSY Series 2-12 tons/h capacity. Biomass, pallet, log and forestry waste shredding. ✓ 3 Models ✓ High Performance ✓ 2 Years Warranty',
-        keywords: ['wood grinder', 'wood shredder', 'log splitter', 'biomass shredder', 'pallet shredder', 'industrial wood chipper', 'forestry mulcher', 'wood waste recycling']
+        title: 'Industrial Wood Grinder Manufacturer | Wood Shredder For Sale | MT Makina Turkey',
+        description: 'Heavy duty wood grinder and shredder manufacturer from Turkey. TSY Series 2-12 tons/h capacity. High efficiency biomass, pallet, log shredding. Cost-effective turnkey solutions. ✓ CE Certified ✓ Worldwide Export',
+        keywords: ['wood grinder manufacturer', 'wood shredder for sale', 'industrial wood chipper', 'biomass shredder Turkey', 'pallet shredder manufacturer', 'forestry mulcher', 'heavy duty wood shredder']
       },
       ru: {
         title: 'Измельчитель Древесины | Промышленный Шредер | MT Makina Серия TSY',
@@ -481,9 +481,9 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
           keywords: ['TSH-60', 'parçalama makinesi fiyat', 'plastik kırma makinesi', 'ahşap kırıcı', '600mm shredder', 'küçük parçalama makinesi', 'tek şaftlı shredder'],
         },
         en: {
-          title: 'TSH-60 Shredder Machine | 15-30 kW | 500-800 kg/h | Get Quote',
-          description: 'TSH-60 single shaft shredder - 15-30 kW motor, 600x1100mm shredding area, 500-800 kg/h. For plastic, wood, paper. ✓ In Stock ✓ Fast Delivery ✓ Get Quote',
-          keywords: ['TSH-60', 'shredder price', 'plastic shredder', 'wood crusher', '600mm shredder', 'small shredder', 'single shaft shredder'],
+          title: 'TSH-60 Single Shaft Shredder Manufacturer | 15-30 kW | MT Makina Turkey',
+          description: 'Heavy duty TSH-60 single shaft shredder - 15-30 kW motor, 600x1100mm shredding area, 500-800 kg/h. High efficiency plastic, wood, paper shredder. Cost-effective solution. ✓ CE Certified ✓ Fast Delivery',
+          keywords: ['TSH-60', 'shredder manufacturer', 'single shaft shredder Turkey', 'plastic shredder for sale', 'industrial shredder', 'heavy duty shredder'],
         },
         ru: {
           title: 'Шредер TSH-60 | 15-30 кВт | 500-800 кг/ч | Запросить Цену',
@@ -506,9 +506,9 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
           keywords: ['TSY-100', 'ağaç parçalama makinesi fiyat', 'orta boy ağaç kırıcı', 'palet kırma makinesi', '55kw shredder']
         },
         en: {
-          title: 'TSY-100 Wood Shredder | 45-55 kW | 2-4 Tons/Hour',
-          description: 'TSY-100 Horizontal Wood Shredder - 45-55 kW motor, 1000mm rotor. Ideal for pallets, branches and carpentry waste. Compact design, high efficiency.',
-          keywords: ['TSY-100', 'wood shredder price', 'medium wood grinder', 'pallet crusher', '55kw shredder']
+          title: 'TSY-100 Wood Shredder Manufacturer | 45-55 kW | MT Makina Turkey',
+          description: 'Heavy duty TSY-100 horizontal wood shredder - 45-55 kW motor, 1000mm rotor. High efficiency solution for pallets, branches and carpentry waste. Cost-effective, compact design.',
+          keywords: ['TSY-100', 'wood shredder manufacturer', 'wood grinder Turkey', 'pallet crusher for sale', 'industrial wood shredder']
         },
         ru: {
           title: 'Шредер Дерева TSY-100 | 45-55 кВт | 2-4 Тонн/Час',
@@ -528,9 +528,9 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
           keywords: ['TSY-150', 'endüstriyel ağaç parçalama', 'kütük parçalama makinesi', 'biyokütle kırıcı', 'orman atığı parçalama']
         },
         en: {
-          title: 'TSY-150 Industrial Wood Shredder | 75-110 kW | 4-6 Tons/Hour',
-          description: 'TSY-150 Professional Wood Shredder - 75-110 kW dual motor, 1500mm rotor. For logs, forestry waste and biomass. High capacity, heavy duty.',
-          keywords: ['TSY-150', 'industrial wood shredder', 'log shredder', 'biomass grinder', 'forestry waste shredder']
+          title: 'TSY-150 Industrial Wood Shredder Manufacturer | 75-110 kW | MT Makina Turkey',
+          description: 'Heavy duty TSY-150 professional wood shredder - 75-110 kW dual motor, 1500mm rotor. High efficiency for logs, forestry waste and biomass. Turnkey project solutions.',
+          keywords: ['TSY-150', 'industrial wood shredder manufacturer', 'log shredder Turkey', 'biomass grinder for sale', 'heavy duty wood shredder']
         },
         ru: {
           title: 'Промышленный Шредер TSY-150 | 75-110 кВт | 4-6 Тонн/Час',
@@ -550,9 +550,9 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
           keywords: ['TSY-200', 'ağaç öğütme makinesi', 'biyokütle santrali kırıcı', 'dev ağaç parçalama', '200kw shredder']
         },
         en: {
-          title: 'TSY-200 Premium Wood Grinder | 90-200 kW | 8-12 Tons/Hour',
-          description: 'TSY-200 High Capacity Wood Grinder - 90-200 kW ultra powerful motors, 2000mm rotor. For power plants and large facilities. Maximum performance.',
-          keywords: ['TSY-200', 'wood grinder machine', 'biomass plant shredder', 'huge wood shredder', '200kw shredder']
+          title: 'TSY-200 Premium Wood Grinder Manufacturer | 90-200 kW | MT Makina Turkey',
+          description: 'Heavy duty TSY-200 high capacity wood grinder - 90-200 kW ultra powerful motors, 2000mm rotor. High efficiency for power plants and large facilities. Cost-effective turnkey projects.',
+          keywords: ['TSY-200', 'wood grinder manufacturer', 'biomass plant shredder Turkey', 'industrial wood grinder for sale', 'heavy duty wood shredder']
         },
         ru: {
           title: 'Премиум Шредер TSY-200 | 90-200 кВт | 8-12 Тонн/Час',
