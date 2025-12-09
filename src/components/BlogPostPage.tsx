@@ -89,29 +89,244 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                             </div>
 
                             {/* Content Body */}
-                            <div className="p-8 md:p-12 bg-white">
+                            <div className="p-6 sm:p-8 md:p-12 lg:p-16 bg-white">
                                 <style>{`
                                     #blog-content-wrapper {
-                                        color: #000000 !important;
+                                        color: #1a1a1a !important;
+                                        font-size: 1.125rem;
+                                        line-height: 1.9;
+                                        letter-spacing: 0.01em;
                                     }
+                                    
                                     #blog-content-wrapper * {
-                                        color: #000000 !important;
+                                        color: #1a1a1a !important;
                                     }
-                                    #blog-content-wrapper h1, 
-                                    #blog-content-wrapper h2, 
-                                    #blog-content-wrapper h3, 
-                                    #blog-content-wrapper h4, 
+                                    
+                                    /* Headings */
+                                    #blog-content-wrapper h1 {
+                                        font-size: 2.25rem;
+                                        font-weight: 800 !important;
+                                        color: #000000 !important;
+                                        margin-top: 2.5rem;
+                                        margin-bottom: 1.5rem;
+                                        line-height: 1.3;
+                                        border-bottom: 3px solid #F4CE14;
+                                        padding-bottom: 0.75rem;
+                                    }
+                                    
+                                    #blog-content-wrapper h2 {
+                                        font-size: 1.75rem;
+                                        font-weight: 700 !important;
+                                        color: #000000 !important;
+                                        margin-top: 2.5rem;
+                                        margin-bottom: 1.25rem;
+                                        line-height: 1.4;
+                                        padding-left: 1rem;
+                                        border-left: 4px solid #E31E24;
+                                    }
+                                    
+                                    #blog-content-wrapper h3 {
+                                        font-size: 1.375rem;
+                                        font-weight: 600 !important;
+                                        color: #1a1a1a !important;
+                                        margin-top: 2rem;
+                                        margin-bottom: 1rem;
+                                        line-height: 1.4;
+                                    }
+                                    
+                                    #blog-content-wrapper h4 {
+                                        font-size: 1.125rem;
+                                        font-weight: 600 !important;
+                                        color: #1a1a1a !important;
+                                        margin-top: 1.5rem;
+                                        margin-bottom: 0.75rem;
+                                    }
+                                    
                                     #blog-content-wrapper strong {
                                         font-weight: 700 !important;
                                         color: #000000 !important;
                                     }
+                                    
+                                    /* Paragraphs */
+                                    #blog-content-wrapper p {
+                                        margin-bottom: 1.5rem;
+                                        text-align: justify;
+                                        text-justify: inter-word;
+                                    }
+                                    
+                                    /* Links */
                                     #blog-content-wrapper a {
                                         color: #E31E24 !important;
                                         text-decoration: none !important;
+                                        font-weight: 500;
+                                        border-bottom: 2px solid transparent;
+                                        transition: all 0.3s ease;
                                     }
+                                    
                                     #blog-content-wrapper a:hover {
                                         color: #F4CE14 !important;
-                                        text-decoration: underline !important;
+                                        border-bottom-color: #F4CE14 !important;
+                                    }
+                                    
+                                    /* Lists */
+                                    #blog-content-wrapper ul,
+                                    #blog-content-wrapper ol {
+                                        margin: 1.5rem 0;
+                                        padding-left: 1.5rem;
+                                    }
+                                    
+                                    #blog-content-wrapper ul {
+                                        list-style-type: none;
+                                    }
+                                    
+                                    #blog-content-wrapper ul li {
+                                        position: relative;
+                                        padding-left: 1.5rem;
+                                        margin-bottom: 0.875rem;
+                                        line-height: 1.7;
+                                    }
+                                    
+                                    #blog-content-wrapper ul li::before {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0.6em;
+                                        width: 8px;
+                                        height: 8px;
+                                        background: linear-gradient(135deg, #E31E24 0%, #F4CE14 100%);
+                                        border-radius: 50%;
+                                    }
+                                    
+                                    #blog-content-wrapper ol {
+                                        list-style-type: decimal;
+                                        counter-reset: item;
+                                    }
+                                    
+                                    #blog-content-wrapper ol li {
+                                        margin-bottom: 0.875rem;
+                                        line-height: 1.7;
+                                        padding-left: 0.5rem;
+                                    }
+                                    
+                                    #blog-content-wrapper ol li::marker {
+                                        color: #E31E24;
+                                        font-weight: 700;
+                                    }
+                                    
+                                    /* Tables */
+                                    #blog-content-wrapper table {
+                                        width: 100%;
+                                        margin: 2rem 0;
+                                        border-collapse: separate;
+                                        border-spacing: 0;
+                                        border-radius: 12px;
+                                        overflow: hidden;
+                                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                                    }
+                                    
+                                    #blog-content-wrapper th {
+                                        background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+                                        color: #ffffff !important;
+                                        font-weight: 600;
+                                        padding: 1rem 1.25rem;
+                                        text-align: left;
+                                        font-size: 0.9375rem;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.05em;
+                                    }
+                                    
+                                    #blog-content-wrapper td {
+                                        padding: 1rem 1.25rem;
+                                        border-bottom: 1px solid #e5e7eb;
+                                        font-size: 1rem;
+                                    }
+                                    
+                                    #blog-content-wrapper tr:last-child td {
+                                        border-bottom: none;
+                                    }
+                                    
+                                    #blog-content-wrapper tr:nth-child(even) {
+                                        background-color: #f9fafb;
+                                    }
+                                    
+                                    #blog-content-wrapper tr:hover {
+                                        background-color: #fef9c3;
+                                        transition: background-color 0.2s ease;
+                                    }
+                                    
+                                    /* Blockquotes */
+                                    #blog-content-wrapper blockquote {
+                                        margin: 2rem 0;
+                                        padding: 1.5rem 2rem;
+                                        background: linear-gradient(135deg, #fef9c3 0%, #fef3c7 100%);
+                                        border-left: 4px solid #F4CE14;
+                                        border-radius: 0 12px 12px 0;
+                                        font-style: italic;
+                                    }
+                                    
+                                    /* First paragraph emphasis */
+                                    #blog-content-wrapper > p:first-of-type {
+                                        font-size: 1.25rem;
+                                        font-weight: 500;
+                                        color: #374151 !important;
+                                        line-height: 1.8;
+                                    }
+                                    
+                                    /* Responsive adjustments */
+                                    @media (max-width: 768px) {
+                                        #blog-content-wrapper {
+                                            font-size: 1rem;
+                                            line-height: 1.8;
+                                        }
+                                        
+                                        #blog-content-wrapper h1 {
+                                            font-size: 1.75rem;
+                                        }
+                                        
+                                        #blog-content-wrapper h2 {
+                                            font-size: 1.5rem;
+                                        }
+                                        
+                                        #blog-content-wrapper h3 {
+                                            font-size: 1.25rem;
+                                        }
+                                        
+                                        #blog-content-wrapper p {
+                                            text-align: left;
+                                        }
+                                        
+                                        #blog-content-wrapper table {
+                                            display: block;
+                                            overflow-x: auto;
+                                        }
+                                        
+                                        #blog-content-wrapper th,
+                                        #blog-content-wrapper td {
+                                            padding: 0.75rem;
+                                            font-size: 0.875rem;
+                                        }
+                                    }
+                                    
+                                    /* RTL Support for Arabic */
+                                    [dir="rtl"] #blog-content-wrapper {
+                                        text-align: right;
+                                    }
+                                    
+                                    [dir="rtl"] #blog-content-wrapper h2 {
+                                        padding-left: 0;
+                                        padding-right: 1rem;
+                                        border-left: none;
+                                        border-right: 4px solid #E31E24;
+                                    }
+                                    
+                                    [dir="rtl"] #blog-content-wrapper ul li {
+                                        padding-left: 0;
+                                        padding-right: 1.5rem;
+                                    }
+                                    
+                                    [dir="rtl"] #blog-content-wrapper ul li::before {
+                                        left: auto;
+                                        right: 0;
                                     }
                                 `}</style>
                                 <div
