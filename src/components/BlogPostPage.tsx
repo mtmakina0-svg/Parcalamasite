@@ -26,7 +26,7 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-[#1E1E1E] mb-4">404</h1>
                     <p className="text-xl text-gray-600 mb-8">{t('blog_not_found')}</p>
-                    <a href="/blog" className="text-[#F4CE14] font-bold hover:underline">{t('blog_back_home')}</a>
+                    <a href={`/${language}/blog`} className="text-[#F4CE14] font-bold hover:underline">{t('blog_back_home')}</a>
                 </div>
             </div>
         );
@@ -55,7 +55,7 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <a href="/blog" className="inline-flex items-center text-gray-600 hover:text-[#F4CE14] mb-8 transition-colors font-medium">
+                        <a href={`/${language}/blog`} className="inline-flex items-center text-gray-600 hover:text-[#F4CE14] mb-8 transition-colors font-medium">
                             <ArrowLeft size={20} className="mr-2" />
                             {t('blog_back')}
                         </a>
@@ -141,7 +141,7 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                         <h3 className="text-3xl font-bold text-[#1E1E1E] mb-10 text-center">{t('blog_related')}</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {otherPosts.map((op) => (
-                                <a key={op.id} href={`/blog/${op.slug}`} className="group block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                                <a key={op.id} href={`/${language}/blog/${op.slug}`} className="group block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                                     <div className="h-48 overflow-hidden">
                                         <img src={op.image} alt={getLocalizedValue(op.title, lang)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     </div>

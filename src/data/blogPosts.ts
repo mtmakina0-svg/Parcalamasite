@@ -433,5 +433,312 @@ export const blogPosts: BlogPost[] = [
       <p>يمكن دمج محارقنا المتنقلة مع آلة تقطيع متنقلة عند الحاجة لتقديم حل هجين.</p>
     `
     }
+  },
+  {
+    id: '4',
+    slug: 'omrunu-tamamlamis-lastik-geri-donusumu-ve-karliligi',
+    title: {
+      tr: 'Ömrünü Tamamlamış Lastik (ÖTL) Geri Dönüşümü ve Karlılığı',
+      en: 'End-of-Life Tire Recycling and Profitability',
+      ru: 'Переработка Изношенных Шин и Прибыльность',
+      ar: 'إعادة تدوير الإطارات المستهلكة والربحية'
+    },
+    summary: {
+      tr: 'Lastik geri dönüşüm tesisi maliyeti, araba lastiği parçalama süreçleri ve kauçuk tozu üretiminin ekonomik getirisi hakkında kapsamlı rehber.',
+      en: 'Comprehensive guide on tire recycling plant costs, car tire shredding processes, and the economic returns of rubber crumb production.',
+      ru: 'Полное руководство по стоимости завода по переработке шин, процессам измельчения автомобильных шин и экономической отдаче производства резиновой крошки.',
+      ar: 'دليل شامل حول تكاليف مصنع إعادة تدوير الإطارات وعمليات تقطيع إطارات السيارات والعوائد الاقتصادية لإنتاج مسحوق المطاط.'
+    },
+    date: '2025-12-09',
+    author: {
+      tr: 'MT Makina Mühendislik Ekibi',
+      en: 'MT Makina Engineering Team',
+      ru: 'Инженерная команда MT Makina',
+      ar: 'فريق هندسة MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Lastik Geri Dönüşüm', en: 'Tire Recycling', ru: 'Переработка шин', ar: 'إعادة تدوير الإطارات' },
+      { tr: 'Kauçuk Tozu', en: 'Rubber Crumb', ru: 'Резиновая крошка', ar: 'مسحوق المطاط' },
+      { tr: 'ÖTL İşleme', en: 'ELT Processing', ru: 'Обработка ОШ', ar: 'معالجة الإطارات المستهلكة' },
+      { tr: 'Çevre', en: 'Environment', ru: 'Экология', ar: 'البيئة' }
+    ],
+    content: {
+      tr: `
+      <h1>Ömrünü Tamamlamış Lastik (ÖTL) Geri Dönüşümü ve Karlılığı</h1>
+      <p>Dünya genelinde her yıl milyarlarca lastik ömrünü tamamlayarak atık haline gelmektedir. Bu devasa atık hacmi, çevre için ciddi bir tehdit oluşturduğu kadar, doğru teknolojilerle işlendiğinde büyük bir ekonomik fırsat da sunmaktadır. <strong>Lastik geri dönüşüm tesisi maliyeti</strong> yatırımı yapmayı düşünenler için, bu sektörün sunduğu karlılık potansiyelini ve teknik gereksinimleri anlamak büyük önem taşır.</p>
+
+      <h2>Lastik Geri Dönüşümü Neden Önemlidir?</h2>
+      <p>Ömrünü tamamlamış lastikler (ÖTL), doğada yüzyıllarca bozunmadan kalabilir. Çöp sahalarına gömüldüğünde yangın riski oluştururken, açık alanlarda bırakıldığında zararlı böceklere ev sahipliği yapar. Türkiye'de yılda yaklaşık 450.000 ton ÖTL oluşmaktadır ve bu rakam her geçen yıl artmaktadır.</p>
+
+      <h3>Çevresel Faydalar</h3>
+      <ul>
+        <li>Düzenli depolama alanlarındaki yükün azaltılması</li>
+        <li>Hammadde olarak doğal kaynakların korunması</li>
+        <li>Karbon ayak izinin düşürülmesi</li>
+        <li>Yasadışı lastik yakımının önlenmesi</li>
+      </ul>
+
+      <h2>Araba Lastiği Parçalama Süreci Nasıl İşler?</h2>
+      <p><strong>Araba lastiği parçalama</strong> işlemi, çeşitli aşamalardan oluşan sistematik bir süreçtir. Bu sürecin kalbinde güçlü parçalama makineleri yer alır. <a href="/tr/cift-saftli-parcalama-makinesi">Çift Şaftlı Parçalama Makinesi</a>, yüksek torklu çalışma prensibiyle lastikleri 50-100 mm boyutunda parçalara ayırır. Bu ön parçalama aşamasından sonra malzeme, granülatör ve öğütme sistemlerinden geçerek istenilen boyuta indirgenir.</p>
+
+      <h3>Parçalama Aşamaları</h3>
+      <ol>
+        <li><strong>Ön Parçalama:</strong> Lastikler çift şaftlı makinelerde 50-100 mm boyutuna küçültülür.</li>
+        <li><strong>İkincil Parçalama:</strong> Granülatörler malzemeyi 10-20 mm boyutuna indirger.</li>
+        <li><strong>Öğütme:</strong> İnce öğütücüler ile 0.5-4 mm kauçuk granül elde edilir.</li>
+        <li><strong>Ayırma:</strong> Manyetik separatörler çeliği, hava sınıflandırıcılar ise tekstil lifleri ayırır.</li>
+      </ol>
+
+      <h2>Kauçuk Tozu Üretimi ve Pazar Değeri</h2>
+      <p><strong>Kauçuk tozu üretimi</strong>, lastik geri dönüşümünün en değerli çıktısıdır. Elde edilen kauçuk granülleri şu alanlarda kullanılır:</p>
+      <ul>
+        <li><strong>Spor Zeminleri:</strong> Futbol, basketbol ve tenis sahaları için sentetik çim dolgu malzemesi</li>
+        <li><strong>Oyun Alanları:</strong> Çocuk parklarında güvenlik zeminleri</li>
+        <li><strong>Asfalt Modifikasyonu:</strong> Kauçuk katkılı asfalt üretimi</li>
+        <li><strong>Otomotiv Sektörü:</strong> Paspas, conta ve titreşim damperleri</li>
+      </ul>
+
+      <h3>Ekonomik Getiri Hesabı</h3>
+      <p>Orta ölçekli bir tesis (yıllık 10.000 ton kapasite) için yaklaşık yatırım maliyeti 2-5 milyon Euro arasında değişmektedir. Buna karşılık:</p>
+      <ul>
+        <li>1 ton lastikten yaklaşık 650 kg kauçuk granül elde edilir</li>
+        <li>Kauçuk granül ton fiyatı 200-400 Euro arasındadır</li>
+        <li>Ek gelir olarak çelik tel (150 kg/ton) ve tekstil lifi (200 kg/ton) satışı yapılır</li>
+        <li>Yatırımın geri dönüş süresi ortalama 3-5 yıldır</li>
+      </ul>
+
+      <h2>Lastik Geri Dönüşüm Tesisi Kurulum Maliyetleri</h2>
+      <p><strong>Lastik geri dönüşüm tesisi maliyeti</strong> hesaplanırken dikkat edilmesi gereken kalemler:</p>
+      <ol>
+        <li><strong>Makine ve Ekipman:</strong> Parçalayıcı, granülatör, separatörler, konveyörler</li>
+        <li><strong>Arazi ve İnşaat:</strong> Tesis binası, hammadde depolama, sevkiyat alanları</li>
+        <li><strong>Lisans ve İzinler:</strong> Çevre izni, atık işleme lisansı</li>
+        <li><strong>İşletme Sermayesi:</strong> İlk 6 aylık işletme giderleri</li>
+      </ol>
+
+      <h2>MT Makina Çözümleri</h2>
+      <p>MT Makina olarak, lastik geri dönüşüm sektörüne özel <a href="/tr/cift-saftli-parcalama-makinesi">Çift Şaftlı Parçalama Makineleri</a> üretiyoruz. Yüksek torklu motorlarımız, en dayanıklı lastikleri bile verimli şekilde parçalarken, otomatik geri dönüş sistemi makine ömrünü uzatır. CE belgeli sistemlerimiz, Türkiye ve dünya pazarında güvenle kullanılmaktadır.</p>
+    `,
+      en: `
+      <h1>End-of-Life Tire Recycling and Profitability</h1>
+      <p>Billions of tires worldwide reach the end of their useful life every year, becoming waste. While this massive waste volume poses a serious environmental threat, when processed with the right technologies, it also presents a significant economic opportunity. For those considering investing in <strong>tire recycling plant costs</strong>, understanding the profitability potential and technical requirements of this sector is crucial.</p>
+
+      <h2>Why is Tire Recycling Important?</h2>
+      <p>End-of-life tires (ELT) can remain undegraded in nature for centuries. When buried in landfills, they create fire hazards, and when left in open areas, they serve as breeding grounds for harmful insects. Approximately 450,000 tons of ELT are generated annually in Turkey, and this figure increases every year.</p>
+
+      <h3>Environmental Benefits</h3>
+      <ul>
+        <li>Reduction of burden on landfills</li>
+        <li>Conservation of natural resources as raw materials</li>
+        <li>Reduction of carbon footprint</li>
+        <li>Prevention of illegal tire burning</li>
+      </ul>
+
+      <h2>How Does the Car Tire Shredding Process Work?</h2>
+      <p><strong>Car tire shredding</strong> is a systematic process consisting of various stages. At the heart of this process are powerful shredding machines. The <a href="/en/dual-shaft-shredder">Dual Shaft Shredder</a> breaks down tires into 50-100 mm pieces with its high-torque operating principle.</p>
+
+      <h3>Shredding Stages</h3>
+      <ol>
+        <li><strong>Pre-Shredding:</strong> Tires are reduced to 50-100 mm size in dual shaft machines.</li>
+        <li><strong>Secondary Shredding:</strong> Granulators reduce the material to 10-20 mm.</li>
+        <li><strong>Grinding:</strong> Fine grinders produce 0.5-4 mm rubber granules.</li>
+        <li><strong>Separation:</strong> Magnetic separators remove steel; air classifiers separate textile fibers.</li>
+      </ol>
+
+      <h2>Rubber Crumb Production and Market Value</h2>
+      <p><strong>Rubber crumb production</strong> is the most valuable output of tire recycling. The obtained rubber granules are used in sports surfaces, playgrounds, asphalt modification, and automotive industry.</p>
+
+      <h2>MT Makina Solutions</h2>
+      <p>At MT Makina, we manufacture <a href="/en/dual-shaft-shredder">Dual Shaft Shredders</a> specifically for the tire recycling sector. Our high-torque motors efficiently shred even the most durable tires.</p>
+    `,
+      ru: `
+      <h1>Переработка Изношенных Шин и Прибыльность</h1>
+      <p>Ежегодно во всем мире миллиарды шин достигают конца срока службы, превращаясь в отходы. Для тех, кто рассматривает инвестиции в <strong>стоимость завода по переработке шин</strong>, понимание потенциала прибыльности имеет решающее значение.</p>
+
+      <h2>Почему переработка шин важна?</h2>
+      <p>Изношенные шины могут оставаться в природе нетронутыми веками. В Турции ежегодно образуется около 450 000 тонн изношенных шин.</p>
+
+      <h2>Как работает процесс измельчения шин?</h2>
+      <p><a href="/ru/dvukhvalnaya-drobilka">Двухвальный шредер</a> разбивает шины на куски размером 50-100 мм благодаря принципу работы с высоким крутящим моментом.</p>
+
+      <h2>Решения MT Makina</h2>
+      <p>В MT Makina мы производим <a href="/ru/dvukhvalnaya-drobilka">Двухвальные шредеры</a> специально для сектора переработки шин.</p>
+    `,
+      ar: `
+      <h1>إعادة تدوير الإطارات المستهلكة والربحية</h1>
+      <p>تصل مليارات الإطارات حول العالم إلى نهاية عمرها الافتراضي كل عام. بالنسبة لأولئك الذين يفكرون في الاستثمار في <strong>تكاليف مصنع إعادة تدوير الإطارات</strong>، فإن فهم إمكانات الربحية أمر بالغ الأهمية.</p>
+
+      <h2>كيف تعمل عملية تقطيع الإطارات؟</h2>
+      <p><a href="/ar/dual-shaft-shredder">آلة التقطيع ذات العمودين</a> تكسر الإطارات إلى قطع بحجم 50-100 مم بفضل مبدأ التشغيل عالي العزم.</p>
+
+      <h2>حلول MT Makina</h2>
+      <p>في MT Makina، نصنع <a href="/ar/dual-shaft-shredder">آلات التقطيع ذات العمودين</a> خصيصاً لقطاع إعادة تدوير الإطارات.</p>
+    `
+    }
+  },
+  {
+    id: '5',
+    slug: 'hastane-ve-kliniklerde-tibbi-atik-yonetimi',
+    title: {
+      tr: 'Hastane ve Kliniklerde Tıbbi Atık Yönetimi Nasıl Yapılmalı?',
+      en: 'How Should Medical Waste Management Be Handled in Hospitals and Clinics?',
+      ru: 'Как должно осуществляться управление медицинскими отходами в больницах и клиниках?',
+      ar: 'كيف يجب إدارة النفايات الطبية في المستشفيات والعيادات؟'
+    },
+    summary: {
+      tr: 'Tıbbi atık yakma fırını yönetmeliği, klinik atık bertarafı ve tehlikeli atık imhası konularında kapsamlı bilgi ve yasal zorunluluklar.',
+      en: 'Comprehensive information on medical waste incineration regulations, clinical waste disposal, and hazardous waste destruction along with legal requirements.',
+      ru: 'Полная информация о правилах сжигания медицинских отходов, утилизации клинических отходов и уничтожении опасных отходов.',
+      ar: 'معلومات شاملة حول لوائح حرق النفايات الطبية والتخلص من النفايات السريرية وتدمير النفايات الخطرة.'
+    },
+    date: '2025-12-09',
+    author: {
+      tr: 'MT Makina Çevre Mühendisliği',
+      en: 'MT Makina Environmental Engineering',
+      ru: 'Экологический инжиниринг MT Makina',
+      ar: 'الهندسة البيئية MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Tıbbi Atık', en: 'Medical Waste', ru: 'Медицинские отходы', ar: 'النفايات الطبية' },
+      { tr: 'Atık Yakma', en: 'Waste Incineration', ru: 'Сжигание отходов', ar: 'حرق النفايات' },
+      { tr: 'Hastane', en: 'Hospital', ru: 'Больница', ar: 'المستشفى' },
+      { tr: 'Yasal Düzenleme', en: 'Regulation', ru: 'Регулирование', ar: 'التنظيم' }
+    ],
+    content: {
+      tr: `
+      <h1>Hastane ve Kliniklerde Tıbbi Atık Yönetimi Nasıl Yapılmalı?</h1>
+      <p>Sağlık kuruluşlarında ortaya çıkan tıbbi atıklar, hem çevre hem de insan sağlığı için ciddi riskler taşır. <strong>Tıbbi atık yakma fırını yönetmeliği</strong> çerçevesinde hareket etmek, sadece yasal bir zorunluluk değil, aynı zamanda toplumsal sorumluluktur. Bu rehberde, hastane ve kliniklerde tıbbi atık yönetiminin nasıl yapılması gerektiğini, <strong>klinik atık bertarafı</strong> süreçlerini ve <strong>tehlikeli atık imhası</strong> konusundaki güncel uygulamaları detaylı şekilde inceleyeceğiz.</p>
+
+      <h2>Tıbbi Atık Nedir ve Nasıl Sınıflandırılır?</h2>
+      <p>Tıbbi atıklar, sağlık hizmetleri sırasında ortaya çıkan ve enfeksiyon riski taşıyan atıklardır. Türkiye'de yürürlükte olan Tıbbi Atıkların Kontrolü Yönetmeliği'ne göre bu atıklar şöyle sınıflandırılır:</p>
+
+      <h3>Enfeksiyöz Atıklar</h3>
+      <ul>
+        <li>Kan ve kan ürünleri ile kontamine olmuş malzemeler</li>
+        <li>Ameliyat ve otopsi atıkları</li>
+        <li>Doku ve organ parçaları</li>
+        <li>Laboratuvar kültürleri ve suşları</li>
+        <li>Bulaşıcı hastalık tanısı konmuş hastaların atıkları</li>
+      </ul>
+
+      <h3>Kesici-Delici Atıklar</h3>
+      <ul>
+        <li>İğneler, bistüriler, lancetler</li>
+        <li>Kırık cam tüpler ve ampuller</li>
+        <li>Kontamine pipetler ve petri kapları</li>
+      </ul>
+
+      <h3>Patolojik Atıklar</h3>
+      <p>İnsan vücudundan çıkarılan doku, organ ve vücut parçalarını içerir. Bu atıklar özel bertaraf prosedürlerine tabidir.</p>
+
+      <h2>Klinik Atık Bertarafı: Temel İlkeler</h2>
+      <p><strong>Klinik atık bertarafı</strong> sürecinde uyulması gereken temel ilkeler şunlardır:</p>
+
+      <h3>1. Kaynağında Ayrıştırma</h3>
+      <p>Tıbbi atıklar, oluştuğu noktada ayrıştırılmalıdır. Kırmızı torbalar enfeksiyöz atıklar, sarı kesici delici kutuları ise iğne ve benzeri malzemeler için kullanılır.</p>
+
+      <h3>2. Güvenli Toplama ve Taşıma</h3>
+      <p>Atıklar, sızdırmaz ve yırtılmaya dayanıklı kaplar içinde, özel araçlarla taşınmalıdır.</p>
+
+      <h3>3. Geçici Depolama</h3>
+      <p>Tıbbi atıklar, 48 saatten fazla bekletilemez. Depolama alanı +4°C'de tutulmalıdır.</p>
+
+      <h2>Tehlikeli Atık İmhası: Yakma Yöntemi</h2>
+      <p><strong>Tehlikeli atık imhası</strong> için en etkili yöntem, yüksek sıcaklıkta yakma (insinerasyon) işlemidir. Bu yöntemle:</p>
+      <ul>
+        <li>Atık hacmi %90-95 oranında azalır</li>
+        <li>Tüm patojenler tamamen yok edilir</li>
+        <li>Atıklar tanınmaz hale gelir</li>
+        <li>Kontrol altında emisyon gerçekleşir</li>
+      </ul>
+
+      <h3>Mobil İncinerator Çözümleri</h3>
+      <p>Büyük hastaneler, salgın dönemleri veya afet bölgeleri için <a href="/tr/urunler">Mobil İncinerator (Yakma Fırını)</a> sistemleri büyük avantaj sağlar. Bu sistemler atığın oluştuğu yerde imha edilmesini sağlar, nakliye riskini ortadan kaldırır ve hızlı kurulum imkanı sunar.</p>
+
+      <h2>Tıbbi Atık Yakma Fırını Yönetmeliği: Yasal Çerçeve</h2>
+      <p><strong>Tıbbi atık yakma fırını yönetmeliği</strong> kapsamında dikkat edilmesi gereken yasal hususlar:</p>
+
+      <h3>Emisyon Standartları</h3>
+      <p>Yakma tesisleri, Çevre ve Şehircilik Bakanlığı tarafından belirlenen emisyon sınır değerlerine uymak zorundadır.</p>
+
+      <h3>Lisanslama Gereksinimleri</h3>
+      <ol>
+        <li>Çevre İzin ve Lisansı başvurusu</li>
+        <li>ÇED (Çevresel Etki Değerlendirmesi) süreci</li>
+        <li>İşletme ruhsatı ve kapasite raporu</li>
+        <li>Personel sertifikaları ve eğitim belgeleri</li>
+      </ol>
+
+      <h2>MT Makina'nın Sağlık Sektörüne Çözümleri</h2>
+      <p>MT Makina olarak, hastane ve kliniklerin tıbbi atık yönetimi ihtiyaçlarına yönelik kapsamlı çözümler sunuyoruz. <a href="/tr/urunler">Mobil İncinerator (Yakma Fırını)</a> sistemlerimiz, yerinde imha imkanı sağlayarak hem maliyetleri düşürür hem de çevresel riskleri minimize eder.</p>
+
+      <h3>Neden MT Makina?</h3>
+      <ul>
+        <li>20+ yıllık sektör deneyimi</li>
+        <li>Anahtar teslimi proje çözümleri</li>
+        <li>7/24 teknik destek ve servis</li>
+        <li>Yedek parça garantisi</li>
+        <li>Operatör eğitimi</li>
+      </ul>
+    `,
+      en: `
+      <h1>How Should Medical Waste Management Be Handled in Hospitals and Clinics?</h1>
+      <p>Medical waste generated in healthcare facilities poses serious risks to both the environment and human health. Acting within the framework of <strong>medical waste incineration regulations</strong> is not only a legal requirement but also a social responsibility.</p>
+
+      <h2>What is Medical Waste and How is it Classified?</h2>
+      <p>Medical waste is waste generated during healthcare services that carries infection risk.</p>
+
+      <h3>Infectious Waste</h3>
+      <ul>
+        <li>Materials contaminated with blood and blood products</li>
+        <li>Surgery and autopsy waste</li>
+        <li>Tissue and organ fragments</li>
+        <li>Laboratory cultures and strains</li>
+      </ul>
+
+      <h3>Sharps Waste</h3>
+      <ul>
+        <li>Needles, scalpels, lancets</li>
+        <li>Broken glass tubes and ampoules</li>
+      </ul>
+
+      <h2>Clinical Waste Disposal: Basic Principles</h2>
+      <p>The basic principles in the <strong>clinical waste disposal</strong> process include segregation at source, safe collection and transportation, and proper temporary storage.</p>
+
+      <h2>Hazardous Waste Destruction: Incineration Method</h2>
+      <p>The most effective method for <strong>hazardous waste destruction</strong> is high-temperature incineration.</p>
+
+      <h3>Mobile Incinerator Solutions</h3>
+      <p>For large hospitals, epidemic periods, or disaster areas, <a href="/en/products">Mobile Incinerator</a> systems provide great advantages.</p>
+
+      <h2>MT Makina's Solutions for the Healthcare Sector</h2>
+      <p>At MT Makina, we offer comprehensive solutions for the medical waste management needs of hospitals and clinics. Our <a href="/en/products">Mobile Incinerator</a> systems enable on-site disposal.</p>
+    `,
+      ru: `
+      <h1>Как должно осуществляться управление медицинскими отходами в больницах и клиниках?</h1>
+      <p>Медицинские отходы представляют серьезную опасность для окружающей среды и здоровья человека. Действия в рамках <strong>правил сжигания медицинских отходов</strong> — это юридическое требование.</p>
+
+      <h2>Что такое медицинские отходы?</h2>
+      <p>Медицинские отходы — это отходы, образующиеся в процессе оказания медицинских услуг.</p>
+
+      <h2>Уничтожение опасных отходов</h2>
+      <p>Наиболее эффективным методом является высокотемпературное сжигание.</p>
+
+      <h2>Решения MT Makina</h2>
+      <p>Наши системы <a href="/ru/produkty">Мобильных инсинераторов</a> обеспечивают утилизацию на месте.</p>
+    `,
+      ar: `
+      <h1>كيف يجب إدارة النفايات الطبية في المستشفيات والعيادات؟</h1>
+      <p>تشكل النفايات الطبية مخاطر جسيمة على البيئة وصحة الإنسان. العمل ضمن إطار <strong>لوائح حرق النفايات الطبية</strong> مطلب قانوني.</p>
+
+      <h2>ما هي النفايات الطبية؟</h2>
+      <p>النفايات الطبية هي نفايات ناتجة أثناء خدمات الرعاية الصحية.</p>
+
+      <h2>حلول MT Makina</h2>
+      <p>أنظمة <a href="/ar/products">المحرقة المتنقلة</a> لدينا تمكن من التخلص في الموقع.</p>
+    `
+    }
   }
 ];

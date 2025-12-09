@@ -3825,6 +3825,16 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         }
       }
 
+      // Check blog routes (blog URL stays the same, just change language prefix)
+      if (!pageFound && firstPart === 'blog') {
+        newPath = `/${newLang}/blog`;
+        // If there's a slug (second part), append it
+        if (pathParts.length > 1) {
+          newPath += `/${pathParts[1]}`;
+        }
+        pageFound = true;
+      }
+
       // If no match found, just replace language prefix
       if (!pageFound) {
         newPath = currentPath.replace(/^\/(tr|en|ru|ar)/, `/${newLang}`);

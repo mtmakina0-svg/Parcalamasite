@@ -8,7 +8,7 @@ export const BlogPage = () => {
     const lang = language as Language;
 
     const handlePostClick = (slug: string) => {
-        window.location.href = `/blog/${slug}`;
+        window.location.href = `/${language}/blog/${slug}`;
     };
 
     return (

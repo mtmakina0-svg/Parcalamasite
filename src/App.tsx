@@ -118,11 +118,11 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     }
   }
 
-  // Check for Blog pages
-  if (path === '/blog') {
+  // Check for Blog pages (using cleanPath for language-agnostic matching)
+  if (cleanPath === 'blog') {
     return { page: 'blog' };
   }
-  if (path.startsWith('/blog/')) {
+  if (cleanPath.startsWith('blog/')) {
     return { page: 'blog-post' };
   }
 
