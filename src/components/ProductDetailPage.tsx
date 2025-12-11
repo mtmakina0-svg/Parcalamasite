@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from './LanguageContext';
-import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, Zap, Wind, Shield, Wrench, Truck } from 'lucide-react';
+import { Settings, RotateCcw, Volume2, FileDown, Play, ArrowLeft, Zap, Wind, Shield, Wrench, Truck, FileText } from 'lucide-react';
+import { QuoteRequestModal } from './QuoteRequestModal';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import {
@@ -478,6 +479,7 @@ export const ProductDetailPage = ({
   onProductDetailClick
 }: ProductDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   // Normalize legacy product type keys
   // Normalize legacy product type keys
@@ -1119,7 +1121,7 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button
                 onClick={onECatalogClick}
@@ -1128,6 +1130,25 @@ export const ProductDetailPage = ({
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
                 {t('single_shaft_ecatalog_btn')}
               </Button>
+
+              {/* Quote Request Button */}
+              <button
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-8 py-6 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  background: 'linear-gradient(to right, #dc2626, #b91c1c)',
+                  color: '#ffffff'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #b91c1c, #991b1b)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #dc2626, #b91c1c)';
+                }}
+              >
+                <FileText size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
+                {language === 'tr' ? 'Teklif İste' : language === 'en' ? 'Request Quote' : language === 'ru' ? 'Запросить цену' : 'طلب عرض سعر'}
+              </button>
             </motion.div>
 
             {/* Optional Features */}
@@ -1396,6 +1417,14 @@ export const ProductDetailPage = ({
             />
           </div>
         </section>
+
+        {/* Quote Request Modal */}
+        <QuoteRequestModal
+          isOpen={isQuoteModalOpen}
+          onClose={() => setIsQuoteModalOpen(false)}
+          productType={productType}
+          modelName={defaultModelName}
+        />
       </div>
     );
   }

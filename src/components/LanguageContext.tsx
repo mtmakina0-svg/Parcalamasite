@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+﻿import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { slugsByLanguage, productCategorySlugs } from '../utils/seoConfig';
 
 export type Language = 'tr' | 'en' | 'ru' | 'ar';
@@ -961,7 +961,7 @@ const translations = {
     product_pallet: 'Palet Parçalama Makinesi',
     pallet_main_title: 'Palet Parçalama Makinesi: Ahşap ve Plastik Palet Geri Dönüşümünde Verimli Çözümler',
     pallet_subtitle: 'Ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır.',
-    pallet_description_1: 'Palet par��alama makinesi, ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır. Palet kırma makinası, paletleri küçük parçalara ayırarak geri dönüşüm sürecini hızlandırır ve atık yönetimini kolaylaştırır.',
+    pallet_description_1: 'Palet parçalama makinesi, ahşap ve plastik paletlerin geri dönüşüm sürecinde çevresel sürdürülebilirlik ve verimli atık yönetimi sağlayan önemli bir ekipmandır. Palet kırma makinası, paletleri küçük parçalara ayırarak geri dönüşüm sürecini hızlandırır ve atık yönetimini kolaylaştırır.',
     pallet_description_2: 'Lojistik ve depolama süreçlerinde kullanılan paletler, kullanım ömrünü tamamladığında büyük miktarda palet hurdası oluşturabilir. Palet parçalama makinesi, bu atıkları geri dönüştürerek çevreye duyarlı bir çözüm sunar ve doğal kaynakların korunmasına katkıda bulunur.',
     pallet_description_3: 'Palet parçalama makinesi, ahşap palet geri dönüşümü, plastik palet geri dönüşümü ve hurda palet geri dönüşümü gibi işlemlerde etkin bir rol oynar. Aynı zamanda satılık hurda palet işlemlerini kolaylaştırır.',
     pallet_advantages_title: 'Temel Özellikler',
@@ -4079,3 +4079,4 @@ export const useLanguage = () => {
   }
   return context;
 };
+

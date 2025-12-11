@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion, useInView } from 'motion/react';
 import { useLanguage } from './LanguageContext';
 import { Card } from './ui/card';
@@ -34,7 +34,7 @@ const products = [
     id: 'metal',
     titleTR: 'Metal Parçalama Makinesi',
     titleEN: 'Metal Shredder',
-    titleRU: 'Металлический измельчит��ль',
+    titleRU: 'Металлический измельчитель',
     titleAR: 'آلة تقطيع المعادن',
     image: 'https://i.ibb.co/m5xLp46J/1-1.png',
   },
