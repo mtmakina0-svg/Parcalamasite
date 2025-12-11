@@ -297,7 +297,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   }, [productType]);
 
   return (
-    <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-[#F5F7F8] pt-20" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Back Button */}
       <div className="bg-[#45474B] py-4">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -313,7 +313,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
       </div>
 
       {/* Breadcrumb Navigation */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-[#45474B]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <Breadcrumbs
             items={[

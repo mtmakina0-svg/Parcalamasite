@@ -125,6 +125,29 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       updateMetaTag(`meta[property="og:locale:alternate"][data-index="${index}"]`, 'property', locale);
     });
 
+    // Geo-targeting meta tags for regional SEO (helps with local rankings)
+    const geoTargetingMap: { [key: string]: { region: string; placename: string; position: string } } = {
+      'tr': { region: 'TR', placename: 'Istanbul, Turkey', position: '41.0082;28.9784' },
+      'en': { region: 'TR', placename: 'Istanbul, Turkey', position: '41.0082;28.9784' }, // Primary market is Turkey
+      'ru': { region: 'RU', placename: 'Moscow, Russia', position: '55.7558;37.6173' },
+      'ar': { region: 'SA', placename: 'Riyadh, Saudi Arabia', position: '24.7136;46.6753' }
+    };
+
+    const geoData = geoTargetingMap[language] || geoTargetingMap['tr'];
+    updateMetaTag('meta[name="geo.region"]', 'name', geoData.region);
+    updateMetaTag('meta[name="geo.placename"]', 'name', geoData.placename);
+    updateMetaTag('meta[name="geo.position"]', 'name', geoData.position);
+    updateMetaTag('meta[name="ICBM"]', 'name', geoData.position); // Legacy geo tag, still used by some search engines
+
+    // Content-Language header equivalent
+    const contentLanguageMap: { [key: string]: string } = {
+      'tr': 'tr-TR',
+      'en': 'en-US',
+      'ru': 'ru-RU',
+      'ar': 'ar-SA'
+    };
+    updateMetaTag('meta[http-equiv="Content-Language"]', 'http-equiv', contentLanguageMap[language] || 'tr-TR');
+
     // Twitter Card tags - optimized for Twitter/X sharing
     updateMetaTag('meta[name="twitter:card"]', 'name', 'summary_large_image');
     updateMetaTag('meta[name="twitter:title"]', 'name', title);

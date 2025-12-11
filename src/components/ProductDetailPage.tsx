@@ -600,7 +600,7 @@ export const ProductDetailPage = ({
   // Single Shaft, Harddisk, Mobile, Tree Root, Wood, and Glass Product Data (using same layout)
   if (currentProductType === 'single-shaft' || productType === 'harddisk' || productType === 'mobile' || productType === 'tree-root' || productType === 'wood' || productType === 'glass') {
     return (
-      <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="min-h-screen bg-[#F5F7F8] pt-20" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
         <div className="bg-[#45474B] py-4">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -1403,7 +1403,7 @@ export const ProductDetailPage = ({
   // Dual Shaft and Pallet Product Pages (using same layout)
   if (currentProductType === 'dual-shaft' || productType === 'pallet') {
     return (
-      <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="min-h-screen bg-[#F5F7F8] pt-20" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
         <div className="bg-[#45474B] py-4">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -1415,6 +1415,28 @@ export const ProductDetailPage = ({
               <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
               <span>{t('nav_home')}</span>
             </motion.button>
+          </div>
+        </div>
+
+        {/* Breadcrumb Navigation */}
+        <div className="bg-[#45474B]">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <Breadcrumbs
+              items={[
+                {
+                  label: t('nav_products'),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || 'urunler'}`.replace(/\/[^/]+$/, ''),
+                  onClick: onBackToMain
+                },
+                {
+                  label: getProductTitle(),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || currentProductType}`
+                },
+                {
+                  label: defaultModelName
+                }
+              ]}
+            />
           </div>
         </div>
 
@@ -1919,7 +1941,7 @@ export const ProductDetailPage = ({
   // Quad-Shaft (Dört Şaftlı) Product Data
   if (currentProductType === 'quad-shaft') {
     return (
-      <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="min-h-screen bg-[#F5F7F8] pt-20" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
         <div className="bg-[#45474B] py-4">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -1931,6 +1953,28 @@ export const ProductDetailPage = ({
               <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
               <span>{t('nav_home')}</span>
             </motion.button>
+          </div>
+        </div>
+
+        {/* Breadcrumb Navigation */}
+        <div className="bg-[#45474B]">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <Breadcrumbs
+              items={[
+                {
+                  label: t('nav_products'),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || 'urunler'}`.replace(/\/[^/]+$/, ''),
+                  onClick: onBackToMain
+                },
+                {
+                  label: getProductTitle(),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || currentProductType}`
+                },
+                {
+                  label: defaultModelName
+                }
+              ]}
+            />
           </div>
         </div>
 
@@ -2394,7 +2438,7 @@ export const ProductDetailPage = ({
   // Metal Parçalama Makinesi (Redmonster) Product Data
   if (currentProductType === 'metal') {
     return (
-      <div className="min-h-screen bg-[#F5F7F8]" dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="min-h-screen bg-[#F5F7F8] pt-20" dir={isRTL ? 'rtl' : 'ltr'}>
         {/* Back Button */}
         <div className="bg-[#45474B] py-4">
           <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -2406,6 +2450,28 @@ export const ProductDetailPage = ({
               <ArrowLeft size={20} className={isRTL ? 'rotate-180' : ''} />
               <span>{t('nav_home')}</span>
             </motion.button>
+          </div>
+        </div>
+
+        {/* Breadcrumb Navigation */}
+        <div className="bg-[#45474B]">
+          <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+            <Breadcrumbs
+              items={[
+                {
+                  label: t('nav_products'),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || 'urunler'}`.replace(/\/[^/]+$/, ''),
+                  onClick: onBackToMain
+                },
+                {
+                  label: getProductTitle(),
+                  href: `/${language}/${productCategorySlugs[currentProductType as keyof typeof productCategorySlugs]?.[language as 'tr' | 'en' | 'ru' | 'ar'] || currentProductType}`
+                },
+                {
+                  label: defaultModelName
+                }
+              ]}
+            />
           </div>
         </div>
 

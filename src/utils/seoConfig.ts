@@ -451,7 +451,161 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['آلة طحن الخشب', 'كسارة خشب', 'تمزيق الجذوع', 'آلة نشارة الخشب', 'إعادة تدوير الخشب', 'طاحونة الكتلة الحيوية', 'نشارة الغابات']
       }
     },
-    // ... Add other categories similarly (using generic fallback for now to save space, but structure supports all)
+    'dual-shaft': {
+      tr: {
+        title: 'Çift Şaftlı Parçalama Makinesi | Dual Shaft Shredder | MT Makina CS Serisi',
+        description: 'Çift şaftlı parçalama makinesi, dual shaft shredder - MT Makina CS Serisi. Metal parçalama, hurda parçalama makinesi, plastik parçalama. ✓ 9 Model ✓ CE Belgeli ✓ 2 Yıl Garanti',
+        keywords: ['çift şaftlı parçalama makinesi', 'dual shaft shredder', 'metal parçalama makinesi', 'hurda parçalama makinesi', 'plastik parçalama makinesi', 'CS serisi', 'endüstriyel shredder', 'parçalama makinesi']
+      },
+      en: {
+        title: 'Dual Shaft Shredder Manufacturer | Metal Shredder For Sale | MT Makina Turkey',
+        description: 'Heavy duty dual shaft shredder manufacturer from Turkey. CS Series for metal, plastic, tire shredding. Scrap metal shredder, industrial shredder machine. ✓ 9 Models ✓ CE Certified ✓ Worldwide Export',
+        keywords: ['dual shaft shredder manufacturer', 'metal shredder', 'scrap metal shredder', 'metal shredder machine', 'shredder machine', 'industrial shredder for sale', 'shredder']
+      },
+      ru: {
+        title: 'Двухвальный Шредер | Дробилка Металла | MT Makina Серия CS',
+        description: 'Двухвальный шредер - MT Makina Серия CS. Измельчение металла, шин, пластика. ✓ 9 Моделей ✓ Сертификат CE ✓ Гарантия',
+        keywords: ['двухвальный шредер', 'дробилка металла', 'измельчитель металлолома', 'серия CS', 'промышленный шредер']
+      },
+      ar: {
+        title: 'آلة تمزيق عمود مزدوج | كسارة معادن | MT Makina سلسلة CS',
+        description: 'آلة تمزيق عمود مزدوج - MT Makina سلسلة CS. تمزيق المعادن، الإطارات، البلاستيك. ✓ 9 موديلات ✓ معتمد من CE ✓ ضمان',
+        keywords: ['آلة تمزيق عمود مزدوج', 'كسارة معادن', 'سلسلة CS', 'آلة تمزيق صناعية']
+      }
+    },
+    'quad-shaft': {
+      tr: {
+        title: 'Dört Şaftlı Parçalama Makinesi | Quad Shaft Shredder | MT Makina DS Serisi',
+        description: 'Dört şaftlı parçalama makinesi, quad shaft shredder - MT Makina DS Serisi. İnce parçalama, homojen çıkış. Plastik parçalama, metal parçalama. ✓ 4 Model ✓ Yüksek Verimlilik',
+        keywords: ['dört şaftlı parçalama makinesi', 'quad shaft shredder', 'ince parçalama makinesi', 'DS serisi', 'plastik parçalama makinesi', 'parçalama makinesi', 'shredder']
+      },
+      en: {
+        title: 'Quad Shaft Shredder Manufacturer | Fine Shredding | MT Makina Turkey',
+        description: 'Quad shaft shredder manufacturer from Turkey. DS Series for fine shredding with uniform output. Scrap shredder, metal shredder machines. ✓ 4 Models ✓ CE Certified ✓ High Efficiency',
+        keywords: ['quad shaft shredder manufacturer', 'scrap shredder', 'metal shredder machines', 'fine shredder', 'shredder machine', 'industrial shredder']
+      },
+      ru: {
+        title: 'Четырехвальный Шредер | Дробилка | MT Makina Серия DS',
+        description: 'Четырехвальный шредер - MT Makina Серия DS. Мелкое измельчение, однородный выход. ✓ 4 Модели ✓ Высокая Эффективность',
+        keywords: ['четырехвальный шредер', 'серия DS', 'мелкое измельчение', 'промышленный шредер']
+      },
+      ar: {
+        title: 'آلة تمزيق أربعة أعمدة | تمزيق دقيق | MT Makina سلسلة DS',
+        description: 'آلة تمزيق أربعة أعمدة - MT Makina سلسلة DS. تمزيق دقيق، مخرج متجانس. ✓ 4 موديلات ✓ كفاءة عالية',
+        keywords: ['آلة تمزيق أربعة أعمدة', 'سلسلة DS', 'تمزيق دقيق', 'آلة تمزيق صناعية']
+      }
+    },
+    'metal': {
+      tr: {
+        title: 'Metal Parçalama Makinesi | Hurda Parçalama | Redmonster | MT Makina',
+        description: 'Metal parçalama makinesi Redmonster - hurda parçalama makinesi, hurda kırma makinesi, demir parçalama makinesi. Otomobil hurda, beyaz eşya, ELV için. ✓ 4 Model ✓ Ağır Hizmet',
+        keywords: ['metal parçalama makinesi', 'hurda parçalama makinesi', 'hurda kırma makinesi', 'demir parçalama makinesi', 'demir öğütme makinesi', 'redmonster', 'hurda öğütücü', 'metal shredder']
+      },
+      en: {
+        title: 'Metal Shredder Machine Manufacturer | Scrap Metal Crusher | MT Makina Turkey',
+        description: 'Heavy duty metal shredder machine manufacturer from Turkey. Redmonster series for scrap metal, ELV, white goods. Scrap metal shredder, scrap metal crusher. ✓ 4 Models ✓ High Capacity',
+        keywords: ['metal shredder machine', 'scrap metal shredder', 'scrap metal crusher', 'metal crusher machine', 'scrap car shredder', 'baled scrap shredder', 'metal shredder']
+      },
+      ru: {
+        title: 'Шредер Металла | Дробилка Металлолома | Redmonster | MT Makina',
+        description: 'Шредер металла Redmonster - дробилка металлолома, измельчитель автомобилей. ✓ 4 Модели ✓ Высокая Мощность',
+        keywords: ['шредер металла', 'дробилка металлолома', 'измельчитель автомобилей', 'redmonster']
+      },
+      ar: {
+        title: 'آلة تمزيق المعادن | كسارة الخردة | Redmonster | MT Makina',
+        description: 'آلة تمزيق المعادن Redmonster - كسارة خردة المعادن، تمزيق السيارات. ✓ 4 موديلات ✓ سعة عالية',
+        keywords: ['آلة تمزيق المعادن', 'كسارة خردة المعادن', 'تمزيق السيارات', 'redmonster']
+      }
+    },
+    'mobile': {
+      tr: {
+        title: 'Mobil Parçalama Makinesi | Mobil Kırıcı | MT Makina TSM/CSM Serisi',
+        description: 'Mobil parçalama makinesi, mobil kırıcı - MT Makina TSM/CSM Serisi. Saha içi parçalama, taşınabilir shredder. ✓ 4 Model ✓ Dizel Motor ✓ Yüksek Mobilite',
+        keywords: ['mobil parçalama makinesi', 'mobil kırıcı', 'taşınabilir shredder', 'saha içi parçalama', 'TSM serisi', 'CSM serisi', 'mobile shredder']
+      },
+      en: {
+        title: 'Mobile Shredder Manufacturer | Portable Shredder | MT Makina Turkey',
+        description: 'Mobile shredder manufacturer from Turkey. TSM/CSM Series for on-site shredding. Diesel powered, high mobility. ✓ 4 Models ✓ Heavy Duty ✓ Worldwide Export',
+        keywords: ['mobile shredder manufacturer', 'portable shredder', 'on-site shredder', 'mobile crusher', 'mobile drum screen', 'shredder machine car']
+      },
+      ru: {
+        title: 'Мобильный Шредер | Передвижная Дробилка | MT Makina',
+        description: 'Мобильный шредер - MT Makina Серия TSM/CSM. Измельчение на месте. ✓ 4 Модели ✓ Дизельный Двигатель',
+        keywords: ['мобильный шредер', 'передвижная дробилка', 'измельчение на месте']
+      },
+      ar: {
+        title: 'آلة تمزيق متنقلة | كسارة متنقلة | MT Makina',
+        description: 'آلة تمزيق متنقلة - MT Makina سلسلة TSM/CSM. تمزيق في الموقع. ✓ 4 موديلات ✓ محرك ديزل',
+        keywords: ['آلة تمزيق متنقلة', 'كسارة متنقلة', 'تمزيق في الموقع']
+      }
+    },
+    'pallet': {
+      tr: {
+        title: 'Palet Parçalama Makinesi | Odun Parçalama | MT Makina TSV Serisi',
+        description: 'Palet parçalama makinesi - MT Makina TSV Serisi. Ahşap palet, odun parçalama makinesi, odun öğütme makinesi. Wood chipper, chipper machine. ✓ 3 Model ✓ Yüksek Kapasite',
+        keywords: ['palet parçalama makinesi', 'odun parçalama makinesi', 'odun öğütme makinesi', 'ahşap palet kırıcı', 'wood chipper', 'chipper machine', 'TSV serisi']
+      },
+      en: {
+        title: 'Pallet Shredder Manufacturer | Wood Chipper | MT Makina Turkey',
+        description: 'Pallet shredder and wood chipper manufacturer from Turkey. TSV Series for wooden pallets, wood shredding. Chipper machine, wood grinder. ✓ 3 Models ✓ High Efficiency',
+        keywords: ['pallet shredder manufacturer', 'wood chipper', 'chipper machine', 'wood shredder', 'pallet crusher', 'wood grinder']
+      },
+      ru: {
+        title: 'Шредер Поддонов | Дробилка Дерева | MT Makina Серия TSV',
+        description: 'Шредер поддонов - MT Makina Серия TSV. Для деревянных поддонов. ✓ 3 Модели ✓ Высокая Эффективность',
+        keywords: ['шредер поддонов', 'дробилка дерева', 'серия TSV']
+      },
+      ar: {
+        title: 'آلة تمزيق المنصات | كسارة الخشب | MT Makina سلسلة TSV',
+        description: 'آلة تمزيق المنصات - MT Makina سلسلة TSV. للمنصات الخشبية. ✓ 3 موديلات ✓ كفاءة عالية',
+        keywords: ['آلة تمزيق المنصات', 'كسارة الخشب', 'سلسلة TSV']
+      }
+    },
+    'tree-root': {
+      tr: {
+        title: 'Ağaç Kökü Parçalama Makinesi | Kök Parçalama | MT Makina TW Serisi',
+        description: 'Ağaç kökü parçalama makinesi - MT Makina TW Serisi. Kök parçalama makinesi, ağaç parçalama makinesi, ağaç öğütme makinesi, ağaç kırma makinası. ✓ 3 Model',
+        keywords: ['ağaç kökü parçalama makinesi', 'kök parçalama makinesi', 'ağaç parçalama makinesi', 'ağaç öğütme makinesi', 'ağaç kırma makinası', 'TW serisi', 'orman atığı parçalama']
+      },
+      en: {
+        title: 'Tree Root Shredder Manufacturer | Stump Grinder | MT Makina Turkey',
+        description: 'Tree root shredder manufacturer from Turkey. TW Series for roots, stumps, forestry waste. Heavy duty tree shredder. ✓ 3 Models ✓ High Power',
+        keywords: ['tree root shredder manufacturer', 'stump grinder', 'tree shredder', 'forestry shredder', 'root crusher']
+      },
+      ru: {
+        title: 'Шредер Корней Деревьев | Дробилка Пней | MT Makina Серия TW',
+        description: 'Шредер корней - MT Makina Серия TW. Для корней, пней, лесных отходов. ✓ 3 Модели ✓ Высокая Мощность',
+        keywords: ['шредер корней', 'дробилка пней', 'серия TW']
+      },
+      ar: {
+        title: 'آلة تمزيق جذور الأشجار | طاحونة الجذوع | MT Makina سلسلة TW',
+        description: 'آلة تمزيق جذور الأشجار - MT Makina سلسلة TW. للجذور والجذوع ونفايات الغابات. ✓ 3 موديلات ✓ قوة عالية',
+        keywords: ['آلة تمزيق جذور الأشجار', 'طاحونة الجذوع', 'سلسلة TW']
+      }
+    },
+    'harddisk': {
+      tr: {
+        title: 'Harddisk İmha Makinesi | Veri İmha | DATABER | MT Makina',
+        description: 'Harddisk imha makinesi DATABER - veri güvenliği için profesyonel çözüm. Hurda parçalama makinesi, elektronik atık imha. ✓ 3 Model ✓ GDPR Uyumlu',
+        keywords: ['harddisk imha makinesi', 'veri imha makinesi', 'DATABER', 'elektronik atık parçalama', 'hurda parçalama makinesi', 'güvenli veri imha']
+      },
+      en: {
+        title: 'Hard Disk Shredder Manufacturer | Data Destruction | DATABER | MT Makina',
+        description: 'Hard disk shredder manufacturer from Turkey. DATABER series for secure data destruction. GDPR compliant, NSA/CSS certified. ✓ 3 Models',
+        keywords: ['hard disk shredder manufacturer', 'data destruction machine', 'DATABER', 'e-waste shredder', 'secure shredder']
+      },
+      ru: {
+        title: 'Шредер Жестких Дисков | Уничтожение Данных | DATABER | MT Makina',
+        description: 'Шредер жестких дисков DATABER - безопасное уничтожение данных. ✓ 3 Модели ✓ GDPR Совместимый',
+        keywords: ['шредер жестких дисков', 'уничтожение данных', 'DATABER']
+      },
+      ar: {
+        title: 'آلة تمزيق الأقراص الصلبة | تدمير البيانات | DATABER | MT Makina',
+        description: 'آلة تمزيق الأقراص الصلبة DATABER - لتدمير البيانات بشكل آمن. ✓ 3 موديلات ✓ متوافق مع GDPR',
+        keywords: ['آلة تمزيق الأقراص الصلبة', 'تدمير البيانات', 'DATABER']
+      }
+    }
+    // End of category data
   };
 
   // Default generic data if specific translation missing
@@ -795,15 +949,34 @@ export const generateOrganizationStructuredData = () => {
   };
 };
 
-// Generate LocalBusiness structured data
-export const generateLocalBusinessStructuredData = () => {
+// Generate LocalBusiness structured data with international targeting
+export const generateLocalBusinessStructuredData = (language: Language = 'tr') => {
+  // Language-specific business descriptions
+  const businessNames: { [key in Language]: string } = {
+    tr: 'MT Makina - Endüstriyel Parçalama Makineleri',
+    en: 'MT Makina - Industrial Shredding Machines',
+    ru: 'MT Makina - Промышленные Измельчители',
+    ar: 'MT Makina - آلات التكسير الصناعية'
+  };
+
+  const descriptions: { [key in Language]: string } = {
+    tr: 'Türkiye\'nin lider parçalama makinesi üreticisi. Tek şaftlı, çift şaftlı, metal parçalama makineleri.',
+    en: 'Turkey\'s leading shredder manufacturer. Single-shaft, dual-shaft, metal shredding machines with worldwide shipping.',
+    ru: 'Ведущий турецкий производитель шредеров. Одновальные, двухвальные, металлические измельчители.',
+    ar: 'الشركة الرائدة في تركيا لتصنيع ماكينات التقطيع. ماكينات تقطيع أحادية وثنائية.'
+  };
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "MT Makina - Parçalama Makineleri",
+    "@id": "https://www.parcalamamakinesi.com/#localbusiness",
+    "name": businessNames[language],
+    "alternateName": ["MT Makina", "MT Makına", "MTMakina"],
+    "description": descriptions[language],
     "image": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
     "telephone": "+90-542-310-99-30",
     "email": "info@mtmakina.com.tr",
+    "url": "https://www.parcalamamakinesi.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Kat: 7 D: 85 - 86",
@@ -817,13 +990,81 @@ export const generateLocalBusinessStructuredData = () => {
       "latitude": 41.0082,
       "longitude": 28.9784
     },
+    // International targeting - key for regional SEO rankings
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Turkey",
+        "sameAs": "https://en.wikipedia.org/wiki/Turkey"
+      },
+      {
+        "@type": "Country",
+        "name": "Russia",
+        "sameAs": "https://en.wikipedia.org/wiki/Russia"
+      },
+      {
+        "@type": "Country",
+        "name": "Saudi Arabia",
+        "sameAs": "https://en.wikipedia.org/wiki/Saudi_Arabia"
+      },
+      {
+        "@type": "GeoCircle",
+        "name": "Middle East",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.2048,
+          "longitude": 55.2708
+        },
+        "geoRadius": "2000 km"
+      },
+      {
+        "@type": "GeoCircle",
+        "name": "Europe",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 48.8566,
+          "longitude": 2.3522
+        },
+        "geoRadius": "2500 km"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Industrial Shredding Machines",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Single Shaft Shredders"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Dual Shaft Shredders"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Metal Shredders"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Mobile Shredders"
+        }
+      ]
+    },
     "priceRange": "$$",
+    "currenciesAccepted": "USD, EUR, TRY",
+    "paymentAccepted": "Cash, Bank Transfer, Letter of Credit",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "09:00",
       "closes": "18:00"
-    }
+    },
+    "sameAs": [
+      "https://www.facebook.com/mtmakina",
+      "https://www.instagram.com/mtmakina",
+      "https://www.linkedin.com/company/mtmakina",
+      "https://www.youtube.com/@mtmakina"
+    ]
   };
 };
 
