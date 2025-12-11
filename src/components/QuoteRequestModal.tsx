@@ -22,7 +22,7 @@ interface FormData {
 }
 
 // EmailJS Configuration - You need to set up at emailjs.com
-const EMAILJS_SERVICE_ID = 'service_r1ibs1b'; // Replace with your service ID
+const EMAILJS_SERVICE_ID = 'service_kyr9ruo'; // Replace with your service ID
 const EMAILJS_TEMPLATE_ID = 'template_eh7wdyi'; // Replace with your template ID
 const EMAILJS_PUBLIC_KEY = 'MoLBZYJn5CFL1TC9z'; // Replace with your public key
 

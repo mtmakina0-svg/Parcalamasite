@@ -1123,19 +1123,31 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button
+              <button
                 onClick={onECatalogClick}
-                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  padding: '16px 32px',
+                  backgroundColor: '#F4CE14',
+                  color: '#1E1E1E'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#e0b912';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F4CE14';
+                }}
               >
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
                 {t('single_shaft_ecatalog_btn')}
-              </Button>
+              </button>
 
               {/* Quote Request Button */}
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-8 py-6 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
                 style={{
+                  padding: '16px 32px',
                   background: 'linear-gradient(to right, #dc2626, #b91c1c)',
                   color: '#ffffff'
                 }}
