@@ -110,7 +110,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
     <section
       id="products"
       ref={ref}
-      className="py-32 bg-[#45474B] relative overflow-hidden"
+      className="py-12 md:py-32 bg-[#45474B] relative overflow-hidden"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Animated Background Pattern */}
@@ -163,7 +163,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 80 }}
-          className="text-center mb-20"
+          className="text-center mb-8 md:mb-20"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}

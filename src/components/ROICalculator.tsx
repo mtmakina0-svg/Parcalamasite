@@ -336,8 +336,8 @@ export const ROICalculator: React.FC = () => {
                             {txt.results}
                         </h3>
 
-                        {/* 2x2 Grid Layout - Single column on mobile */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+                        {/* 2x2 Grid Layout - Single column until large screen */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6">
                             {/* Annual Savings */}
                             <motion.div
                                 whileHover={{ scale: 1.02, borderColor: 'rgba(244,206,20,0.6)' }}
