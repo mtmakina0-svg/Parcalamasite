@@ -993,6 +993,19 @@ const translations = {
     pallet_optional_6: 'Farklı Ölçülerde Elek',
     pallet_optional_7: 'Çıkış İçin Konveyör/Helezon Uygulamaları',
 
+    // Palet Parçalama Makinesi FAQ
+    pallet_faq_title: 'Sıkça Sorulan Sorular',
+    pallet_faq_1_q: 'PALET PARÇALAMA MAKİNESİ NE İÇİN KULLANILIR?',
+    pallet_faq_1_a: 'Palet parçalama makinesi, ahşap ve plastik paletlerin küçük parçalara ayrılmasını sağlayan endüstriyel bir cihazdır. Bu makineler, palet geri dönüşümü ve atık yönetimi süreçlerinde önemli bir rol oynar.',
+    pallet_faq_2_q: 'PALET PARÇALAMA MAKİNELERİNİN TEMEL AVANTAJLARI NELERDİR?',
+    pallet_faq_2_a: 'Palet parçalama makineleri, yüksek verimlilik, enerji tasarrufu, düşük işletme maliyetleri ve çevresel sürdürülebilirlik sağlar. Ayrıca bu makineler, sağlam yapıları ve dayanıklı bıçakları ile uzun ömürlü kullanım sunar.',
+    pallet_faq_3_q: 'PALET PARÇALAMA MAKİNELERİ HANGİ TÜR PALETLERİ İŞLEYEBİLİR?',
+    pallet_faq_3_a: 'Palet parçalama makineleri, hem ahşap hem de plastik paletleri işleyebilir. Ayrıca çivi gibi metal içeren paletleri de etkili bir şekilde parçalayabilir.',
+    pallet_faq_4_q: 'MOBİL PALET PARÇALAMA MAKİNELERİNİN AVANTAJLARI NELERDİR?',
+    pallet_faq_4_a: 'Mobil palet parçalama makineleri, sahada kolay taşınabilirlik sağlar ve yerinde parçalama imkanı sunar. Bu makineler, büyük yüklerdeki sert malzemeleri işlemek için tasarlanmıştır ve metal malzemeleri ayırabilecek çapraz bant mıknatısları gibi aksesuarlarla donatılabilir.',
+    pallet_faq_5_q: 'PALET PARÇALAMA MAKİNELERİ ÇEVRE DOSTU MU?',
+    pallet_faq_5_a: 'Evet, palet parçalama makineleri çevre dostudur. Bu makineler, atık paletlerin geri dönüştürülmesini sağlayarak doğal kaynakların korunmasına katkıda bulunur ve çöp depolama alanlarına giden atık miktarını azaltır.',
+
 
 
     // Ağaç Parçalama ve Öğütme Makinesi (Wood Grinder)
