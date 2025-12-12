@@ -173,7 +173,7 @@ export const ROICalculator: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-8 md:mb-16"
                 >
                     <motion.div
                         whileHover={{ scale: 1.05 }}
@@ -215,7 +215,7 @@ export const ROICalculator: React.FC = () => {
                                         min="1"
                                         value={inputs.dailyCapacity || ''}
                                         onChange={(e) => handleInputChange('dailyCapacity', e.target.value || '1')}
-                                        className="w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-3 py-2 text-[#F4CE14] text-center font-bold focus:border-[#F4CE14] focus:outline-none"
+                                        className="w-20 md:w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-2 md:px-3 py-2 text-[#F4CE14] text-center font-bold text-sm md:text-base focus:border-[#F4CE14] focus:outline-none"
                                     />
                                 </div>
                             </div>
@@ -240,7 +240,7 @@ export const ROICalculator: React.FC = () => {
                                         min="1"
                                         value={inputs.currentDisposalCost || ''}
                                         onChange={(e) => handleInputChange('currentDisposalCost', e.target.value || '1')}
-                                        className="w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-3 py-2 text-[#F4CE14] text-center font-bold focus:border-[#F4CE14] focus:outline-none"
+                                        className="w-20 md:w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-2 md:px-3 py-2 text-[#F4CE14] text-center font-bold text-sm md:text-base focus:border-[#F4CE14] focus:outline-none"
                                     />
                                 </div>
                             </div>
@@ -265,7 +265,7 @@ export const ROICalculator: React.FC = () => {
                                         min="1"
                                         value={inputs.workingDaysPerYear || ''}
                                         onChange={(e) => handleInputChange('workingDaysPerYear', e.target.value || '1')}
-                                        className="w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-3 py-2 text-[#F4CE14] text-center font-bold focus:border-[#F4CE14] focus:outline-none"
+                                        className="w-20 md:w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-2 md:px-3 py-2 text-[#F4CE14] text-center font-bold text-sm md:text-base focus:border-[#F4CE14] focus:outline-none"
                                     />
                                 </div>
                             </div>
@@ -291,7 +291,7 @@ export const ROICalculator: React.FC = () => {
                                         min="1000"
                                         value={inputs.machineInvestment || ''}
                                         onChange={(e) => handleInputChange('machineInvestment', e.target.value || '1000')}
-                                        className="w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-2 py-2 text-[#F4CE14] text-center font-bold focus:border-[#F4CE14] focus:outline-none text-sm"
+                                        className="w-20 md:w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-1 md:px-2 py-2 text-[#F4CE14] text-center font-bold text-xs md:text-sm focus:border-[#F4CE14] focus:outline-none"
                                     />
                                 </div>
                             </div>
@@ -316,7 +316,7 @@ export const ROICalculator: React.FC = () => {
                                         min="1"
                                         value={inputs.operatingCostPerTon || ''}
                                         onChange={(e) => handleInputChange('operatingCostPerTon', e.target.value || '1')}
-                                        className="w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-3 py-2 text-[#F4CE14] text-center font-bold focus:border-[#F4CE14] focus:outline-none"
+                                        className="w-20 md:w-28 bg-[#2A2C2F] border-2 border-[#F4CE14]/30 rounded-lg px-2 md:px-3 py-2 text-[#F4CE14] text-center font-bold text-sm md:text-base focus:border-[#F4CE14] focus:outline-none"
                                     />
                                 </div>
                             </div>

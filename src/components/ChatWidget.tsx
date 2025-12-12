@@ -20,9 +20,21 @@ const isWithinWorkingHours = (): boolean => {
   return isWeekday && isWorkingHour;
 };
 
+// Check if on homepage
+const isHomePage = (): boolean => {
+  const path = window.location.pathname;
+  return path === '/' || path === '/tr' || path === '/en' || path === '/ru' || path === '/ar' || path === '';
+};
+
+// Check if mobile
+const isMobileDevice = (): boolean => {
+  return window.innerWidth < 768;
+};
+
 export const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(false);
+  const [hideOnMobileHome, setHideOnMobileHome] = useState(false);
   const { language } = useLanguage();
 
   // Check working hours on mount and every minute
@@ -32,6 +44,24 @@ export const ChatWidget = () => {
       setIsOnline(isWithinWorkingHours());
     }, 60000); // Check every minute
     return () => clearInterval(interval);
+  }, []);
+
+  // Check if should hide on mobile homepage
+  useEffect(() => {
+    const checkHideOnMobileHome = () => {
+      setHideOnMobileHome(isHomePage() && isMobileDevice());
+    };
+
+    checkHideOnMobileHome();
+    window.addEventListener('resize', checkHideOnMobileHome);
+
+    // Also check on route changes (popstate)
+    window.addEventListener('popstate', checkHideOnMobileHome);
+
+    return () => {
+      window.removeEventListener('resize', checkHideOnMobileHome);
+      window.removeEventListener('popstate', checkHideOnMobileHome);
+    };
   }, []);
 
   // Translations for offline message
@@ -104,6 +134,11 @@ export const ChatWidget = () => {
   const txt = isOnline
     ? (onlineText[language as keyof typeof onlineText] || onlineText.tr)
     : (offlineText[language as keyof typeof offlineText] || offlineText.tr);
+
+  // Hide on mobile homepage to prevent overlap with bottom bar
+  if (hideOnMobileHome) {
+    return null;
+  }
 
   return (
     <>
