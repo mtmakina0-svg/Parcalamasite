@@ -495,11 +495,15 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden pb-4 max-h-[calc(100vh-80px)] overflow-y-auto"
-            style={{ WebkitOverflowScrolling: 'touch' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="lg:hidden pb-4 overflow-y-scroll overscroll-contain"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              maxHeight: 'calc(100vh - 80px)',
+              touchAction: 'pan-y'
+            }}
           >
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
