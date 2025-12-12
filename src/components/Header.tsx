@@ -43,19 +43,12 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.top = `-${window.scrollY}px`;
     } else {
-      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      }
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [mobileMenuOpen]);
 
   // Cleanup timeouts on unmount
@@ -492,179 +485,177 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Full Screen Overlay */}
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="lg:hidden pb-4 overflow-y-scroll overscroll-contain"
-            style={{
-              WebkitOverflowScrolling: 'touch',
-              maxHeight: 'calc(100vh - 80px)',
-              touchAction: 'pan-y'
-            }}
+            className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-[#45474B] z-40 overflow-y-auto"
+            style={{ WebkitOverflowScrolling: 'touch' }}
           >
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <div key={item.key}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
+            <div className="px-4 py-4">
+              <nav className="flex flex-col space-y-4">
+                {navItems.map((item) => (
+                  <div key={item.key}>
+                    <a
+                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-                      // Don't close menu if clicking on products dropdown
-                      if (item.key !== 'nav_products' && !item.dropdown) {
-                        setMobileMenuOpen(false);
-                      }
-
-                      if (item.action === 'home' && onMainClick) {
-                        onMainClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'products' && onProductsClick) {
-                        onProductsClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'references' && onReferencesClick) {
-                        onReferencesClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'technology' && onTechnologyClick) {
-                        onTechnologyClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'contact') {
-                        if (onContactClick) {
-                          onContactClick();
-                        } else {
-                          const contactSection = document.getElementById('contact');
-                          if (contactSection) {
-                            contactSection.scrollIntoView({ behavior: 'smooth' });
-                          }
+                        // Don't close menu if clicking on products dropdown
+                        if (item.key !== 'nav_products' && !item.dropdown) {
+                          setMobileMenuOpen(false);
                         }
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'wastes' && onWasteClick) {
-                        onWasteClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'ecatalog' && onECatalogClick) {
-                        onECatalogClick();
-                        setMobileMenuOpen(false);
-                      } else if (item.action === 'blog') {
-                        if (onBlogClick) onBlogClick();
-                        else window.location.href = `/${language}/blog`;
-                        setMobileMenuOpen(false);
-                      }
-                    }}
-                    className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
-                  >
-                    {item.label || t(item.key)}
-                  </a>
-                  {item.dropdown && item.key === 'nav_products' && (
-                    <div className="pl-4 mt-2 space-y-2">
-                      {item.dropdown.map((subItem: any) => (
-                        <div key={subItem.key} className="space-y-1">
-                          <div className="flex items-center justify-between">
-                            <a
-                              href="#"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                                setMobileMenuOpen(false);
-                                if (subItem.action && onProductCategoryClick) {
-                                  onProductCategoryClick(subItem.action);
-                                }
-                              }}
-                              className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block flex-1"
-                            >
-                              {productModels[subItem.action]?.label || subItem.label || t(subItem.key)}
-                            </a>
-                            {subItem.hasModels && (
-                              <button
-                                onClick={() => setMobileExpandedProduct(mobileExpandedProduct === subItem.action ? null : subItem.action)}
-                                className="px-2 py-1 text-[#F4CE14]"
+
+                        if (item.action === 'home' && onMainClick) {
+                          onMainClick();
+                          setMobileMenuOpen(false);
+                        } else if (item.action === 'products' && onProductsClick) {
+                          onProductsClick();
+                          setMobileMenuOpen(false);
+                        } else if (item.action === 'references' && onReferencesClick) {
+                          onReferencesClick();
+                          setMobileMenuOpen(false);
+                        } else if (item.action === 'technology' && onTechnologyClick) {
+                          onTechnologyClick();
+                          setMobileMenuOpen(false);
+                        } else if (item.action === 'contact') {
+                          if (onContactClick) {
+                            onContactClick();
+                          } else {
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection) {
+                              contactSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }
+                          setMobileMenuOpen(false);
+                        } else if (item.action === 'wastes' && onWasteClick) {
+                          onWasteClick();
+                          setMobileMenuOpen(false);
+                        } else if (item.action === 'ecatalog' && onECatalogClick) {
+                          onECatalogClick();
+                          setMobileMenuOpen(false);
+                        } else if (item.action === 'blog') {
+                          if (onBlogClick) onBlogClick();
+                          else window.location.href = `/${language}/blog`;
+                          setMobileMenuOpen(false);
+                        }
+                      }}
+                      className="text-[#F5F7F8] hover:text-[#F4CE14] transition-colors py-2 block"
+                    >
+                      {item.label || t(item.key)}
+                    </a>
+                    {item.dropdown && item.key === 'nav_products' && (
+                      <div className="pl-4 mt-2 space-y-2">
+                        {item.dropdown.map((subItem: any) => (
+                          <div key={subItem.key} className="space-y-1">
+                            <div className="flex items-center justify-between">
+                              <a
+                                href="#"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                  setMobileMenuOpen(false);
+                                  if (subItem.action && onProductCategoryClick) {
+                                    onProductCategoryClick(subItem.action);
+                                  }
+                                }}
+                                className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block flex-1"
                               >
-                                <ChevronDown size={16} className={`transition-transform ${mobileExpandedProduct === subItem.action ? 'rotate-180' : ''}`} />
-                              </button>
+                                {productModels[subItem.action]?.label || subItem.label || t(subItem.key)}
+                              </a>
+                              {subItem.hasModels && (
+                                <button
+                                  onClick={() => setMobileExpandedProduct(mobileExpandedProduct === subItem.action ? null : subItem.action)}
+                                  className="px-2 py-1 text-[#F4CE14]"
+                                >
+                                  <ChevronDown size={16} className={`transition-transform ${mobileExpandedProduct === subItem.action ? 'rotate-180' : ''}`} />
+                                </button>
+                              )}
+                            </div>
+                            {subItem.hasModels && mobileExpandedProduct === subItem.action && productModels[subItem.action] && (
+                              <div className="pl-4 space-y-1">
+                                {productModels[subItem.action].models.map((model) => (
+                                  <a
+                                    key={model}
+                                    href="#"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                      setMobileMenuOpen(false);
+                                      setMobileExpandedProduct(null);
+                                      if (onProductDetailClick) {
+                                        onProductDetailClick(subItem.action, model);
+                                      }
+                                    }}
+                                    className="text-[#F5F7F8]/60 hover:text-[#F4CE14] transition-colors py-1 text-xs block"
+                                  >
+                                    {model}
+                                  </a>
+                                ))}
+                              </div>
                             )}
                           </div>
-                          {subItem.hasModels && mobileExpandedProduct === subItem.action && productModels[subItem.action] && (
-                            <div className="pl-4 space-y-1">
-                              {productModels[subItem.action].models.map((model) => (
-                                <a
-                                  key={model}
-                                  href="#"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    setMobileMenuOpen(false);
-                                    setMobileExpandedProduct(null);
-                                    if (onProductDetailClick) {
-                                      onProductDetailClick(subItem.action, model);
-                                    }
-                                  }}
-                                  className="text-[#F5F7F8]/60 hover:text-[#F4CE14] transition-colors py-1 text-xs block"
-                                >
-                                  {model}
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_wastes') && (
-                    <div className="pl-4 mt-2 space-y-2">
-                      {item.dropdown.map((subItem: any) => (
-                        <a
-                          key={subItem.key}
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                            setMobileMenuOpen(false);
-                            if (item.key === 'nav_corporate') {
-                              if (subItem.action === 'about' && onAboutClick) {
-                                onAboutClick();
-                              } else if (subItem.action === 'certificates' && onCertificatesClick) {
-                                onCertificatesClick();
+                        ))}
+                      </div>
+                    )}
+                    {item.dropdown && (item.key === 'nav_corporate' || item.key === 'nav_wastes') && (
+                      <div className="pl-4 mt-2 space-y-2">
+                        {item.dropdown.map((subItem: any) => (
+                          <a
+                            key={subItem.key}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                              setMobileMenuOpen(false);
+                              if (item.key === 'nav_corporate') {
+                                if (subItem.action === 'about' && onAboutClick) {
+                                  onAboutClick();
+                                } else if (subItem.action === 'certificates' && onCertificatesClick) {
+                                  onCertificatesClick();
+                                }
+                              } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
+                                onWasteDetailClick(subItem.action);
                               }
-                            } else if (item.key === 'nav_wastes' && subItem.action && onWasteDetailClick) {
-                              onWasteDetailClick(subItem.action);
-                            }
-                          }}
-                          className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block"
-                        >
-                          {subItem.label || t(subItem.key)}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <Button
-                onClick={() => {
-                  window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
-                  setMobileMenuOpen(false);
-                }}
-                className="bg-[#25D366] text-white hover:bg-[#25D366]/90 w-full"
-              >
-                {t('btn_quote')}
-              </Button>
-              <div className="flex items-center justify-around pt-2 border-t border-[#F4CE14]/30">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
-                      }`}
-                  >
-                    {lang.code.toUpperCase()}
-                  </button>
+                            }}
+                            className="text-[#F5F7F8]/80 hover:text-[#F4CE14] transition-colors py-1 text-sm block"
+                          >
+                            {subItem.label || t(subItem.key)}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
-              </div>
-            </nav>
+                <Button
+                  onClick={() => {
+                    window.open('https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20bir%20ürün%20hakkında%20teklif%20almak%20istiyorum.', '_blank');
+                    setMobileMenuOpen(false);
+                  }}
+                  className="bg-[#25D366] text-white hover:bg-[#25D366]/90 w-full"
+                >
+                  {t('btn_quote')}
+                </Button>
+                <div className="flex items-center justify-around pt-2 border-t border-[#F4CE14]/30">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`px-3 py-2 rounded-lg transition-all text-[#F5F7F8] ${language === lang.code ? 'bg-[#F4CE14]/30 text-[#F4CE14]' : ''
+                        }`}
+                    >
+                      {lang.code.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              </nav>
+            </div>
           </motion.div>
         )}
       </div>
