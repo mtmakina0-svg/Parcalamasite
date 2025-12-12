@@ -678,18 +678,9 @@ export const ProductDetailPage = ({
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
                 {defaultModelName} {getProductTitle()}
               </h1>
-              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto mb-8">
+              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
                 {getProductSubtitle()}
               </p>
-              <motion.button
-                onClick={() => setIsQuoteModalOpen(true)}
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(244,206,20,0.5)' }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg rounded-xl flex items-center gap-3 mx-auto hover:bg-[#F4CE14]/90 transition-all shadow-lg"
-              >
-                <FileText size={24} />
-                {t('request_quote')}
-              </motion.button>
             </motion.div>
 
             {/* Main Product Image - Enlarged */}
@@ -1529,18 +1520,9 @@ export const ProductDetailPage = ({
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
                 {t(productTitleKeys[productType]?.title || 'product_' + productType)}
               </h1>
-              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto mb-8">
+              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
                 {t(productTitleKeys[productType]?.subtitle || 'product_' + productType + '_subtitle')}
               </p>
-              <motion.button
-                onClick={() => setIsQuoteModalOpen(true)}
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(244,206,20,0.5)' }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg rounded-xl flex items-center gap-3 mx-auto hover:bg-[#F4CE14]/90 transition-all shadow-lg"
-              >
-                <FileText size={24} />
-                {t('request_quote')}
-              </motion.button>
             </motion.div>
 
             {/* Main Product Image - Enlarged */}
@@ -2115,18 +2097,9 @@ export const ProductDetailPage = ({
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
                 {modelName} Dört Şaftlı Katı Atık Parçalama Makinesi
               </h1>
-              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto mb-8">
+              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
                 Hidrolik baskı ile etkili parçalama, hacimli malzemeler için ideal çözüm
               </p>
-              <motion.button
-                onClick={() => setIsQuoteModalOpen(true)}
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(244,206,20,0.5)' }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg rounded-xl flex items-center gap-3 mx-auto hover:bg-[#F4CE14]/90 transition-all shadow-lg"
-              >
-                <FileText size={24} />
-                {t('request_quote')}
-              </motion.button>
             </motion.div>
 
             {/* Main Product Image */}
@@ -2660,18 +2633,9 @@ export const ProductDetailPage = ({
               <h1 className="text-[#F4CE14] mb-6 text-2xl md:text-3xl lg:text-4xl font-bold" style={{ lineHeight: '1.2' }}>
                 {t(`metal_${modelName.toLowerCase().replace('-', '')}_title`)}
               </h1>
-              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto mb-8">
+              <p className="text-[#F5F7F8] text-xl max-w-3xl mx-auto">
                 {t(`metal_${modelName.toLowerCase().replace('-', '')}_subtitle`)}
               </p>
-              <motion.button
-                onClick={() => setIsQuoteModalOpen(true)}
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(244,206,20,0.5)' }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg rounded-xl flex items-center gap-3 mx-auto hover:bg-[#F4CE14]/90 transition-all shadow-lg"
-              >
-                <FileText size={24} />
-                {t('request_quote')}
-              </motion.button>
             </motion.div>
 
             {/* Main Product Image */}
