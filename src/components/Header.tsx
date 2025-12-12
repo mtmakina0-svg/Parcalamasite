@@ -479,7 +479,8 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden pb-4"
+            className="lg:hidden pb-4 max-h-[calc(100vh-80px)] overflow-y-auto"
+            style={{ WebkitOverflowScrolling: 'touch' }}
           >
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
