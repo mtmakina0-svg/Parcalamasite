@@ -1818,15 +1818,46 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button
+              <button
                 onClick={onECatalogClick}
-                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  padding: '16px 32px',
+                  backgroundColor: '#F4CE14',
+                  color: '#1E1E1E'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#e0b912';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F4CE14';
+                }}
               >
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
                 {t('dual_shaft_ecatalog_btn')}
-              </Button>
+              </button>
+
+              {/* Quote Request Button */}
+              <button
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  padding: '16px 32px',
+                  background: 'linear-gradient(to right, #dc2626, #b91c1c)',
+                  color: '#ffffff'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #b91c1c, #991b1b)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #dc2626, #b91c1c)';
+                }}
+              >
+                <FileText size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
+                {language === 'tr' ? 'Teklif İste' : language === 'en' ? 'Request Quote' : language === 'ru' ? 'Запросить цену' : 'طلب عرض سعر'}
+              </button>
             </motion.div>
           </div>
         </section>
@@ -1975,6 +2006,14 @@ export const ProductDetailPage = ({
             />
           </div>
         </section>
+
+        {/* Quote Request Modal */}
+        <QuoteRequestModal
+          isOpen={isQuoteModalOpen}
+          onClose={() => setIsQuoteModalOpen(false)}
+          productType={productType}
+          modelName={defaultModelName}
+        />
       </div>
     );
   }
@@ -2305,15 +2344,46 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button
+              <button
                 onClick={onECatalogClick}
-                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  padding: '16px 32px',
+                  backgroundColor: '#F4CE14',
+                  color: '#1E1E1E'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#e0b912';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F4CE14';
+                }}
               >
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
                 {t('quad_shaft_ecatalog_btn')}
-              </Button>
+              </button>
+
+              {/* Quote Request Button */}
+              <button
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  padding: '16px 32px',
+                  background: 'linear-gradient(to right, #dc2626, #b91c1c)',
+                  color: '#ffffff'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #b91c1c, #991b1b)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #dc2626, #b91c1c)';
+                }}
+              >
+                <FileText size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
+                {language === 'tr' ? 'Teklif İste' : language === 'en' ? 'Request Quote' : language === 'ru' ? 'Запросить цену' : 'طلب عرض سعر'}
+              </button>
             </motion.div>
           </div>
         </section>
@@ -2472,6 +2542,14 @@ export const ProductDetailPage = ({
             />
           </div>
         </section>
+
+        {/* Quote Request Modal */}
+        <QuoteRequestModal
+          isOpen={isQuoteModalOpen}
+          onClose={() => setIsQuoteModalOpen(false)}
+          productType={productType}
+          modelName={defaultModelName}
+        />
       </div>
     );
   }
@@ -2783,15 +2861,46 @@ export const ProductDetailPage = ({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button
+              <button
                 onClick={onECatalogClick}
-                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-8 py-6 rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  padding: '16px 32px',
+                  backgroundColor: '#F4CE14',
+                  color: '#1E1E1E'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#e0b912';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F4CE14';
+                }}
               >
                 <FileDown size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
                 {t('metal_ecatalog_btn')}
-              </Button>
+              </button>
+
+              {/* Quote Request Button */}
+              <button
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
+                style={{
+                  padding: '16px 32px',
+                  background: 'linear-gradient(to right, #dc2626, #b91c1c)',
+                  color: '#ffffff'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #b91c1c, #991b1b)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(to right, #dc2626, #b91c1c)';
+                }}
+              >
+                <FileText size={24} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
+                {language === 'tr' ? 'Teklif İste' : language === 'en' ? 'Request Quote' : language === 'ru' ? 'Запросить цену' : 'طلب عرض سعر'}
+              </button>
             </motion.div>
           </div>
         </section>
@@ -2862,6 +2971,14 @@ export const ProductDetailPage = ({
             />
           </div>
         </section>
+
+        {/* Quote Request Modal */}
+        <QuoteRequestModal
+          isOpen={isQuoteModalOpen}
+          onClose={() => setIsQuoteModalOpen(false)}
+          productType={productType}
+          modelName={defaultModelName}
+        />
       </div>
     );
   }

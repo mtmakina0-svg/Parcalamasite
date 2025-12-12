@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X, Clock } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 // Helper function to check if within working hours (Turkey time, Mon-Fri 09:00-18:00)
 const isWithinWorkingHours = (): boolean => {
@@ -240,7 +241,10 @@ export const ChatWidget = () => {
             {/* Footer */}
             <div className="p-4 border-t border-[#F5F7F8]">
               <button
-                onClick={() => window.open('https://wa.me/905423109930', '_blank')}
+                onClick={() => {
+                  trackWhatsAppClick(isOnline ? 'online' : 'offline');
+                  window.open('https://wa.me/905423109930', '_blank');
+                }}
                 className="w-full py-3 rounded-lg flex items-center justify-center gap-2 transition-all text-white font-medium"
                 style={{
                   backgroundColor: isOnline ? '#25D366' : '#45474B'

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, Send, CheckCircle, Loader2, Building2, User, Mail, Phone, MessageSquare, Scale, Trash2 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import emailjs from '@emailjs/browser';
+import { trackQuoteSubmission } from '../utils/analytics';
 
 interface QuoteRequestModalProps {
     isOpen: boolean;
@@ -176,6 +177,9 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                 },
                 EMAILJS_PUBLIC_KEY
             );
+
+            // Track successful submission in GA4
+            trackQuoteSubmission(productType || 'unknown', modelName || 'unknown');
 
             setIsSuccess(true);
             setFormData({

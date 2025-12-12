@@ -1041,6 +1041,9 @@ const translations = {
     wood_faq_a9: 'Tüm makinelerimiz CE standartlarına uygundur. Acil stop butonları, huni güvenlik sensörleri, bakım kapaklarında güvenlik switchleri ve PLC kontrollü otomatik geri dönüş (anti-jam) sistemi standarttır.',
     wood_faq_q10: 'ÖZEL KAPASİTE VE BOYUTLARDA ÜRETİM YAPIYOR MUSUNUZ?',
     wood_faq_a10: 'Evet, projenizin ihtiyaçlarına göre özel boyutlarda ve kapasitelerde makine tasarımı ve üretimi yapabilmekteyiz. Mühendislik ekibimiz size özel çözümler sunar.',
+    wood_video_title: 'Ağaç Parçalama Öğütme Makinesi Videoları',
+    wood_similar_products: 'Benzer Ürünler',
+    wood_watch_video: 'Video İzle',
 
     // Metal Parçalama Makinesi (Redmonster) Ürün Sayfası
     metal_main_title: 'Redmonster Hurda Metal Parçalama Makinesi ile Geri Dönüşümde Yüksek Verimlilik',
@@ -1854,6 +1857,9 @@ const translations = {
     wood_faq_a9: 'CE compliant, emergency stops, safety switches, anti-jam PLC.',
     wood_faq_q10: 'CUSTOM SIZES?',
     wood_faq_a10: 'Yes, we build custom engineered solutions.',
+    wood_video_title: 'Wood Shredding Machine Videos',
+    wood_similar_products: 'Similar Products',
+    wood_watch_video: 'Watch Video',
 
     plastic_faq_title: 'Frequently Asked Questions - Plastic Shredder',
     plastic_video_title: 'Plastic Shredder Videos',
@@ -3149,6 +3155,9 @@ const translations = {
     wood_faq_a3: 'Да, до 40-50% влажности.',
     wood_faq_q4: 'ЗАМЕНА НОЖЕЙ?',
     wood_faq_a4: 'Болтовое крепление, легкая замена и поворот.',
+    wood_video_title: 'Видео измельчителя древесины',
+    wood_similar_products: 'Похожие продукты',
+    wood_watch_video: 'Смотреть видео',
 
     glass_faq_title: 'Часто задаваемые вопросы - Дробилка стекла',
     glass_faq_q1: 'КАКОЕ СТЕКЛО?',
@@ -3437,6 +3446,11 @@ const translations = {
     metal_video_title: 'فيديوهات آلة تقطيع المعادن',
     metal_similar_products: 'منتجات مماثلة',
     metal_watch_video: 'مشاهدة الفيديو',
+
+    wood_faq_title: 'الأسئلة المتكررة - آلة طحن الخشب',
+    wood_video_title: 'فيديوهات آلة طحن الخشب',
+    wood_similar_products: 'منتجات مماثلة',
+    wood_watch_video: 'مشاهدة الفيديو',
 
     pallet_similar_products: 'منتجات مماثلة',
     pallet_watch_video: 'مشاهدة الفيديو',

@@ -1,5 +1,6 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import React, { useEffect, useState } from 'react';
+import { initGA, trackPageView } from './utils/analytics';
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -217,6 +218,9 @@ function AppContent() {
 
   // Initialize from URL on mount
   useEffect(() => {
+    // Initialize Google Analytics
+    initGA();
+
     console.log('App.tsx - Initializing, current pathname:', window.location.pathname);
 
     // Check if there's a saved redirect path from 404 page
@@ -248,6 +252,9 @@ function AppContent() {
 
     // Update SEO based on initial page
     updatePageSEO(urlState.page, urlState.product, urlState.model);
+
+    // Track initial page view
+    trackPageView(window.location.pathname);
   }, []);
 
   // Update document direction based on language
@@ -421,6 +428,9 @@ function AppContent() {
     if (extraState?.wasteCategory) setSelectedWasteCategory(extraState.wasteCategory);
     window.history.pushState({ page, ...extraState }, '', url);
     updatePageSEO(page, extraState?.product, extraState?.model);
+
+    // Track page view in GA4
+    trackPageView(url);
   };
 
   const handleNavigateToMain = () => {
