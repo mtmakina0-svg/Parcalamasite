@@ -1164,6 +1164,12 @@ const translations = {
     mobile_crusher_video_title: 'Mobil Kırıcı Videosu',
     mobile_crusher_watch_video: 'Videoyu İzle',
     mobile_crusher_similar_products: 'Benzer Ürünler',
+
+    // Quad Shaft translations
+    quad_shaft_video_title: 'Dört Şaftlı Parçalama Makinesi Videoları',
+    quad_shaft_similar_products: 'Benzer Ürünler',
+    quad_shaft_watch_video: 'Videoyu İzle',
+
     youtube_channel_title: 'YouTube Kanalımız',
     youtube_channel_description: 'Daha fazla video için kanalımızı ziyaret edin.',
   },
