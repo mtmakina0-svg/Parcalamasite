@@ -28,6 +28,7 @@ import { BlogPage } from './components/BlogPage';
 import { BlogPostPage } from './components/BlogPostPage';
 import { IntroLoader } from './components/IntroLoader';
 import { MobileStickyBar } from './components/MobileStickyBar';
+import { ROICalculator } from './components/ROICalculator';
 import {
   generateUrl,
   seoMetadata,
@@ -1042,6 +1043,7 @@ function AppContent() {
             <HeroSection />
             <IntroSection />
             <ProductsSection onProductClick={handleNavigateToProductCategory} />
+            <ROICalculator />
             <TechnologySection />
             <ReferencesSection />
             <ContactSection />
