@@ -145,7 +145,7 @@ export const ROICalculator: React.FC = () => {
     return (
         <section
             id="roi-calculator"
-            className="py-32 bg-gradient-to-b from-[#45474B] via-[#3A3C3F] to-[#45474B] text-white relative overflow-hidden"
+            className="py-16 md:py-32 bg-gradient-to-b from-[#45474B] via-[#3A3C3F] to-[#45474B] text-white relative overflow-hidden"
             dir={isRTL ? 'rtl' : 'ltr'}
         >
             {/* Animated Background Elements - Same as TechnologySection */}
@@ -336,15 +336,15 @@ export const ROICalculator: React.FC = () => {
                             {txt.results}
                         </h3>
 
-                        {/* 2x2 Grid Layout */}
-                        <div className="grid grid-cols-2 gap-6 mb-6">
+                        {/* 2x2 Grid Layout - Single column on mobile */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                             {/* Annual Savings */}
                             <motion.div
                                 whileHover={{ scale: 1.02, borderColor: 'rgba(244,206,20,0.6)' }}
-                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
+                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-4 md:p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
                             >
-                                <div className="text-[#F5F7F8]/70 text-sm mb-2">{txt.annualSavings}</div>
-                                <div className="text-3xl md:text-4xl font-bold text-green-400">
+                                <div className="text-[#F5F7F8]/70 text-xs md:text-sm mb-1 md:mb-2">{txt.annualSavings}</div>
+                                <div className="text-xl md:text-3xl lg:text-4xl font-bold text-green-400 truncate">
                                     {formatCurrency(results.annualSavings)}
                                 </div>
                             </motion.div>
@@ -352,21 +352,21 @@ export const ROICalculator: React.FC = () => {
                             {/* Payback Period */}
                             <motion.div
                                 whileHover={{ scale: 1.02, borderColor: 'rgba(244,206,20,0.6)' }}
-                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
+                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-4 md:p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
                             >
-                                <div className="text-[#F5F7F8]/70 text-sm mb-2">{txt.paybackPeriod}</div>
-                                <div className="text-3xl md:text-4xl font-bold text-[#F4CE14]">
-                                    {results.paybackMonths < 999 ? results.paybackMonths.toFixed(1) : '∞'} <span className="text-xl">{txt.months}</span>
+                                <div className="text-[#F5F7F8]/70 text-xs md:text-sm mb-1 md:mb-2">{txt.paybackPeriod}</div>
+                                <div className="text-xl md:text-3xl lg:text-4xl font-bold text-[#F4CE14]">
+                                    {results.paybackMonths < 999 ? results.paybackMonths.toFixed(1) : '∞'} <span className="text-sm md:text-xl">{txt.months}</span>
                                 </div>
                             </motion.div>
 
                             {/* 5-Year ROI */}
                             <motion.div
                                 whileHover={{ scale: 1.02, borderColor: 'rgba(244,206,20,0.6)' }}
-                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
+                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-4 md:p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
                             >
-                                <div className="text-[#F5F7F8]/70 text-sm mb-2">{txt.fiveYearROI}</div>
-                                <div className={`text-3xl md:text-4xl font-bold ${results.fiveYearProfit >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                                <div className="text-[#F5F7F8]/70 text-xs md:text-sm mb-1 md:mb-2">{txt.fiveYearROI}</div>
+                                <div className={`text-xl md:text-3xl lg:text-4xl font-bold truncate ${results.fiveYearProfit >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                                     {formatCurrency(results.fiveYearProfit)}
                                 </div>
                             </motion.div>
@@ -374,10 +374,10 @@ export const ROICalculator: React.FC = () => {
                             {/* ROI Percentage */}
                             <motion.div
                                 whileHover={{ scale: 1.02, borderColor: 'rgba(244,206,20,0.6)' }}
-                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
+                                className="bg-gradient-to-br from-[#45474B] to-[#3A3C3F] rounded-2xl p-4 md:p-6 border-2 border-[#F4CE14]/30 text-center transition-all"
                             >
-                                <div className="text-[#F5F7F8]/70 text-sm mb-2">{txt.roiPercentage}</div>
-                                <div className={`text-3xl md:text-4xl font-bold ${results.roiPercentage >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                                <div className="text-[#F5F7F8]/70 text-xs md:text-sm mb-1 md:mb-2">{txt.roiPercentage}</div>
+                                <div className={`text-xl md:text-3xl lg:text-4xl font-bold ${results.roiPercentage >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                                     {results.roiPercentage.toFixed(0)}%
                                 </div>
                             </motion.div>
