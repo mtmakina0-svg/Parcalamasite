@@ -917,16 +917,36 @@ export const insertStructuredData = (data: any) => {
   document.head.appendChild(script);
 };
 
-// Generate Organization structured data for homepage
+// Generate Organization structured data for homepage (Enhanced for Google Knowledge Panel)
 export const generateOrganizationStructuredData = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.parcalamamakinesi.com/#organization",
     "name": "MT Makina",
-    "alternateName": "MT Makina Parçalama Makineleri",
+    "alternateName": ["MT Makina Parçalama Makineleri", "MTMakina", "MT Makına"],
     "url": "https://www.parcalamamakinesi.com",
-    "logo": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
-    "description": "Türkiye'nin lider parçalama makinesi üreticisi. Tek şaftlı, çift şaftlı, metal parçalama makineleri, shredder sistemleri.",
+    "logo": {
+      "@type": "ImageObject",
+      "@id": "https://www.parcalamamakinesi.com/#logo",
+      "url": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
+      "contentUrl": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
+      "width": 600,
+      "height": 60,
+      "caption": "MT Makina - Industrial Shredder Manufacturer Logo"
+    },
+    "image": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png",
+    "description": "Türkiye'nin lider parçalama makinesi üreticisi. Tek şaftlı, çift şaftlı, metal parçalama makineleri, shredder sistemleri. 50+ ülkeye ihracat.",
+    "foundingDate": "2004",
+    "founder": {
+      "@type": "Person",
+      "name": "MT Makina"
+    },
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 50,
+      "maxValue": 100
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Kat: 7 D: 85 - 86",
@@ -935,17 +955,42 @@ export const generateOrganizationStructuredData = () => {
       "postalCode": "34512",
       "addressCountry": "TR"
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+90-542-310-99-30",
-      "contactType": "Sales",
-      "availableLanguage": ["tr", "en", "ru", "ar"]
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.0346,
+      "longitude": 28.6773
     },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90-542-310-99-30",
+        "contactType": "sales",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["Turkish", "English", "Russian", "Arabic"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90-850-259-0166",
+        "contactType": "customer service",
+        "areaServed": "TR",
+        "availableLanguage": ["Turkish", "English"]
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/mtmakina",
       "https://www.instagram.com/mtmakina",
-      "https://www.linkedin.com/company/mtmakina"
-    ]
+      "https://www.linkedin.com/company/mtmakina",
+      "https://www.youtube.com/@mtmakina"
+    ],
+    "knowsAbout": [
+      "Industrial Shredders",
+      "Waste Management",
+      "Recycling Equipment",
+      "Metal Shredding",
+      "Plastic Recycling",
+      "Medical Waste Incinerators"
+    ],
+    "slogan": "Türkiye'nin 1 Numaralı Parçalama Makinesi Üreticisi"
   };
 };
 
@@ -1079,6 +1124,120 @@ export const generateFAQStructuredData = (faqs: { question: string; answer: stri
       "acceptedAnswer": {
         "@type": "Answer",
         "text": faq.answer
+      }
+    }))
+  };
+};
+
+// Generate Product List structured data for Google Rich Results (All Products)
+export const generateProductListStructuredData = (language: Language = 'tr') => {
+  const baseUrl = 'https://www.parcalamamakinesi.com';
+
+  // Product data with multilingual support
+  const products = [
+    {
+      name: { tr: 'Tek Şaftlı Parçalama Makinesi', en: 'Single Shaft Shredder', ru: 'Одновальный Шредер', ar: 'آلة تمزيق عمود واحد' },
+      image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
+      slug: 'single-shaft',
+      description: { tr: 'Plastik, ahşap, kağıt parçalama için TSH serisi', en: 'TSH series for plastic, wood, paper shredding', ru: 'Серия TSH для пластика, дерева, бумаги', ar: 'سلسلة TSH للبلاستيك والخشب والورق' }
+    },
+    {
+      name: { tr: 'Çift Şaftlı Parçalama Makinesi', en: 'Double Shaft Shredder', ru: 'Двухвальный Шредер', ar: 'آلة تمزيق ثنائية العمود' },
+      image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
+      slug: 'dual-shaft',
+      description: { tr: 'Metal, lastik, hurda parçalama için CS serisi', en: 'CS series for metal, tire, scrap shredding', ru: 'Серия CS для металла, шин, металлолома', ar: 'سلسلة CS للمعادن والإطارات والخردة' }
+    },
+    {
+      name: { tr: 'Dört Şaftlı Parçalama Makinesi', en: 'Quad Shaft Shredder', ru: 'Четырехвальный Шредер', ar: 'آلة تمزيق أربعة أعمدة' },
+      image: 'https://i.ibb.co/SDjBQ9cq/1-9.png',
+      slug: 'quad-shaft',
+      description: { tr: 'İnce parçalama için DS serisi', en: 'DS series for fine shredding', ru: 'Серия DS для мелкого измельчения', ar: 'سلسلة DS للتمزيق الدقيق' }
+    },
+    {
+      name: { tr: 'Metal Parçalama Makinesi', en: 'Metal Shredder', ru: 'Шредер Металла', ar: 'آلة تمزيق المعادن' },
+      image: 'https://i.ibb.co/m5xLp46J/1-1.png',
+      slug: 'metal',
+      description: { tr: 'Hurda metal, araç parçalama Redmonster serisi', en: 'Redmonster series for scrap metal, car shredding', ru: 'Серия Redmonster для металлолома', ar: 'سلسلة Redmonster للخردة المعدنية' }
+    },
+    {
+      name: { tr: 'Mobil Kırıcı', en: 'Mobile Crusher', ru: 'Мобильная Дробилка', ar: 'كسارة متنقلة' },
+      image: 'https://i.ibb.co/Ndfqm2fm/organic-waste-shredder-2.png',
+      slug: 'mobile',
+      description: { tr: 'Saha içi parçalama için mobil sistemler', en: 'Mobile systems for on-site shredding', ru: 'Мобильные системы для измельчения', ar: 'أنظمة متنقلة للتمزيق في الموقع' }
+    },
+    {
+      name: { tr: 'Palet Parçalama Makinesi', en: 'Pallet Shredder', ru: 'Шредер Поддонов', ar: 'آلة تمزيق المنصات' },
+      image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
+      slug: 'pallet',
+      description: { tr: 'Ahşap palet parçalama için TSV serisi', en: 'TSV series for wooden pallet shredding', ru: 'Серия TSV для деревянных поддонов', ar: 'سلسلة TSV للمنصات الخشبية' }
+    },
+    {
+      name: { tr: 'Harddisk İmha Makinesi', en: 'Hard Disk Destroyer', ru: 'Уничтожитель Дисков', ar: 'آلة تدمير الأقراص الصلبة' },
+      image: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
+      slug: 'harddisk',
+      description: { tr: 'Veri güvenliği için DATABER serisi', en: 'DATABER series for data security', ru: 'Серия DATABER для безопасности данных', ar: 'سلسلة DATABER لأمن البيانات' }
+    },
+    {
+      name: { tr: 'Ağaç Kökü Parçalama Makinesi', en: 'Tree Root Shredder', ru: 'Шредер Корней', ar: 'آلة تمزيق جذور الأشجار' },
+      image: 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png',
+      slug: 'tree-root',
+      description: { tr: 'Ağaç kökü, kütük parçalama için TW serisi', en: 'TW series for tree root, stump shredding', ru: 'Серия TW для корней и пней', ar: 'سلسلة TW لجذور الأشجار والجذوع' }
+    },
+    {
+      name: { tr: 'Ağaç Parçalama Öğütme Makinesi', en: 'Wood Grinding Machine', ru: 'Измельчитель Древесины', ar: 'آلة طحن الخشب' },
+      image: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
+      slug: 'wood',
+      description: { tr: 'Biyokütle, dal parçalama için TSY serisi', en: 'TSY series for biomass, branch shredding', ru: 'Серия TSY для биомассы', ar: 'سلسلة TSY للكتلة الحيوية' }
+    },
+    {
+      name: { tr: 'Cam Şişe Kırma Makinesi', en: 'Glass Bottle Crusher', ru: 'Дробилка Стекла', ar: 'كسارة زجاجات' },
+      image: 'https://i.ibb.co/VW48hDXY/glass-bottle-crusher-1.png',
+      slug: 'glass',
+      description: { tr: 'Sıvı ayrıştırmalı cam kırma CK serisi', en: 'CK series glass crusher with liquid separation', ru: 'Серия CK с сепарацией жидкости', ar: 'سلسلة CK مع فصل السوائل' }
+    }
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": language === 'tr' ? 'MT Makina Endüstriyel Parçalama Makineleri' :
+      language === 'en' ? 'MT Makina Industrial Shredding Machines' :
+        language === 'ru' ? 'Промышленные Измельчители MT Makina' :
+          'آلات التمزيق الصناعية MT Makina',
+    "description": language === 'tr' ? 'Türkiye\'nin lider parçalama makinesi üreticisi MT Makina\'nın tüm ürünleri' :
+      language === 'en' ? 'All products from Turkey\'s leading shredder manufacturer MT Makina' :
+        language === 'ru' ? 'Все продукты ведущего турецкого производителя шредеров MT Makina' :
+          'جميع منتجات الشركة الرائدة في تركيا لتصنيع آلات التمزيق MT Makina',
+    "numberOfItems": products.length,
+    "itemListElement": products.map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "@id": `${baseUrl}${generateUrl.productCategory(product.slug, language)}`,
+        "name": product.name[language] || product.name.en,
+        "description": product.description[language] || product.description.en,
+        "image": product.image,
+        "url": `${baseUrl}${generateUrl.productCategory(product.slug, language)}`,
+        "brand": {
+          "@type": "Brand",
+          "name": "MT Makina"
+        },
+        "manufacturer": {
+          "@type": "Organization",
+          "@id": "https://www.parcalamamakinesi.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://www.parcalamamakinesi.com/#organization"
+          }
+        }
       }
     }))
   };

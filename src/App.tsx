@@ -40,6 +40,7 @@ import {
   insertStructuredData,
   generateOrganizationStructuredData,
   generateLocalBusinessStructuredData,
+  generateProductListStructuredData,
   slugsByLanguage,
   productCategorySlugs,
   type Language,
@@ -306,35 +307,22 @@ function AppContent() {
           "@context": "https://schema.org",
           "@graph": [
             generateOrganizationStructuredData(),
-            generateLocalBusinessStructuredData(),
+            generateLocalBusinessStructuredData(currentLang),
             {
               "@type": "WebSite",
+              "@id": "https://www.parcalamamakinesi.com/#website",
               "name": "MT Makina - Parçalama Makineleri",
               "url": "https://www.parcalamamakinesi.com",
+              "publisher": {
+                "@id": "https://www.parcalamamakinesi.com/#organization"
+              },
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://www.parcalamamakinesi.com/urunler?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             },
-            {
-              "@type": "ItemList",
-              "name": "Parçalama Makinesi Türleri",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Tek Şaftlı Parçalama Makinesi",
-                  "url": "https://www.parcalamamakinesi.com/tek-shaftli-parcalama-makinesi"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Çift Şaftlı Parçalama Makinesi",
-                  "url": "https://www.parcalamamakinesi.com/cift-shaftli-parcalama-makinesi"
-                }
-              ]
-            }
+            generateProductListStructuredData(currentLang)
           ]
         };
         break;
