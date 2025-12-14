@@ -2,9 +2,76 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
+import vitePrerender from 'vite-plugin-prerender';
+
+// Routes to pre-render for Google indexing
+const prerenderRoutes = [
+  // Home pages
+  '/',
+  '/en',
+  '/ru',
+  '/ar',
+
+  // Turkish routes
+  '/tr/kurumsal',
+  '/tr/urunler',
+  '/tr/teknoloji',
+  '/tr/referanslar',
+  '/tr/sertifikalar',
+  '/tr/iletisim',
+  '/tr/e-katalog',
+  '/tr/tek-saftli-parcalama-makinesi',
+  '/tr/cift-saftli-parcalama-makinesi',
+  '/tr/dort-saftli-parcalama-makinesi',
+  '/tr/metal-parcalama-makinesi',
+  '/tr/mobil-kirici',
+  '/tr/palet-parcalama-makinesi',
+  '/tr/harddisk-imha-makinesi',
+  '/tr/agac-koku-parcalama-makinesi',
+  '/tr/agac-parcalama-ogutme-makinesi',
+  '/tr/cam-sise-kirma-makinesi',
+
+  // English routes
+  '/en/about',
+  '/en/products',
+  '/en/technology',
+  '/en/references',
+  '/en/certificates',
+  '/en/contact',
+  '/en/e-catalog',
+  '/en/single-shaft-shredder',
+  '/en/dual-shaft-shredder',
+  '/en/quad-shaft-shredder',
+  '/en/metal-shredder',
+  '/en/mobile-shredder',
+  '/en/pallet-shredder',
+  '/en/harddisk-destroyer',
+  '/en/tree-root-shredder',
+  '/en/wood-grinder',
+  '/en/glass-crusher',
+
+  // Russian routes
+  '/ru/o-kompanii',
+  '/ru/produkty',
+  '/ru/tekhnologiya',
+  '/ru/referencii',
+  '/ru/sertifikaty',
+  '/ru/kontakty',
+  '/ru/odnovalnaya-drobilka',
+  '/ru/dvukhvalnaya-drobilka',
+  '/ru/chetyrekhvalnaya-drobilka',
+  '/ru/drobilka-metalla',
+  '/ru/mobilnaya-drobilka',
+];
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    vitePrerender({
+      staticDir: path.join(__dirname, 'build'),
+      routes: prerenderRoutes,
+    }),
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
