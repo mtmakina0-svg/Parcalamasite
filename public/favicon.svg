@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle with brand color -->
+  <circle cx="32" cy="32" r="30" fill="#45474B"/>
+  
+  <!-- MT Letters in brand yellow -->
+  <text x="32" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#F4CE14" text-anchor="middle">MT</text>
+  
+  <!-- Subtle gear/industrial accent -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#F4CE14" stroke-width="2" stroke-dasharray="4,4" opacity="0.3"/>
+</svg>
