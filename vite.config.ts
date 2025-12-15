@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import vitePrerender from 'vite-plugin-prerender';
 
+// Check if we're in a CI environment (Vercel, GitHub Actions, etc.)
+const isCI = process.env.CI || process.env.VERCEL || process.env.GITHUB_ACTIONS;
+
 // Routes to pre-render for Google indexing
 const prerenderRoutes = [
   // Home pages
@@ -64,14 +67,17 @@ const prerenderRoutes = [
   '/ru/mobilnaya-drobilka',
 ];
 
+// Build plugins array - exclude prerender in CI environments (Vercel doesn't have Chrome for Puppeteer)
+const prerenderPlugin = !isCI ? vitePrerender({
+  staticDir: path.join(__dirname, 'build'),
+  routes: prerenderRoutes,
+}) : null;
+
 export default defineConfig({
   plugins: [
     react(),
-    vitePrerender({
-      staticDir: path.join(__dirname, 'build'),
-      routes: prerenderRoutes,
-    }),
-  ],
+    prerenderPlugin,
+  ].filter(Boolean),
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
