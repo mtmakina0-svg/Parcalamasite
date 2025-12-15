@@ -50,10 +50,14 @@ const blogSlugs = [
 ];
 
 /**
- * XML header oluştur
+ * XML header oluştur (XSL stylesheet referansı ile)
  */
-function xmlHeader(): string {
-    return '<?xml version="1.0" encoding="UTF-8"?>\n';
+function xmlHeader(includeXsl: boolean = true): string {
+    let header = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    if (includeXsl) {
+        header += '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n';
+    }
+    return header;
 }
 
 /**
@@ -83,7 +87,7 @@ function urlToXml(url: SitemapUrl): string {
  * Sitemap dosyası oluştur
  */
 function createSitemap(urls: SitemapUrl[]): string {
-    let xml = xmlHeader();
+    let xml = xmlHeader(true);
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
     xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
 
@@ -99,7 +103,7 @@ function createSitemap(urls: SitemapUrl[]): string {
  * Sitemap Index dosyası oluştur
  */
 function createSitemapIndex(sitemaps: { name: string; lastmod: string }[]): string {
-    let xml = xmlHeader();
+    let xml = xmlHeader(true);
     xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
     sitemaps.forEach(sitemap => {
