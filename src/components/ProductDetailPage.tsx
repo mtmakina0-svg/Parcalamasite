@@ -1958,17 +1958,30 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-5xl mx-auto"
             >
-              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
-                  >
-                    <Play size={32} className="text-[#1E1E1E] ml-1" />
-                  </motion.div>
+              {/* YouTube Video Embed for Pallet Shredders */}
+              {productType === 'pallet' ? (
+                <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/Rbxx1cTcQYQ?rel=0&modestbranding=1"
+                    title="MT Makina Palet Parçalama Makinesi"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E]/50 to-transparent"></div>
-              </div>
+              ) : (
+                <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
+                    >
+                      <Play size={32} className="text-[#1E1E1E] ml-1" />
+                    </motion.div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E]/50 to-transparent"></div>
+                </div>
+              )}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -1976,9 +1989,10 @@ export const ProductDetailPage = ({
                 className="text-center mt-6"
               >
                 <Button
+                  onClick={() => window.open('https://www.youtube.com/@MTMakinaofficial', '_blank')}
                   className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
                 >
-                  {t('dual_shaft_watch_video')}
+                  {t(productType === 'pallet' ? 'pallet_watch_video' : 'dual_shaft_watch_video')}
                 </Button>
               </motion.div>
             </motion.div>
