@@ -1,4 +1,26 @@
 {
+    "redirects": [
+        {
+            "source": "/tr/home",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/en/home",
+            "destination": "/en",
+            "permanent": true
+        },
+        {
+            "source": "/ru/home",
+            "destination": "/ru",
+            "permanent": true
+        },
+        {
+            "source": "/ar/home",
+            "destination": "/ar",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",

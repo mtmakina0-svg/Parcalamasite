@@ -115,6 +115,89 @@
     }
     </script>
 
+  <!-- WebSite Schema with SearchAction -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.parcalamamakinesi.com/#website",
+      "name": "MT Makina - Parçalama Makinesi Üreticisi",
+      "alternateName": "MT Makina Industrial Shredder Manufacturer",
+      "url": "https://www.parcalamamakinesi.com",
+      "publisher": {
+        "@id": "https://www.parcalamamakinesi.com/#organization"
+      },
+      "inLanguage": ["tr", "en", "ru", "ar"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.parcalamamakinesi.com/tr/urunler?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+  <!-- SiteNavigationElement Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Ana Menü / Main Navigation",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "url": "https://www.parcalamamakinesi.com/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Ürünler",
+          "url": "https://www.parcalamamakinesi.com/tr/urunler"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Tek Şaftlı Parçalama Makinesi",
+          "url": "https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Çift Şaftlı Parçalama Makinesi",
+          "url": "https://www.parcalamamakinesi.com/tr/cift-saftli-parcalama-makinesi"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Metal Parçalama Makinesi",
+          "url": "https://www.parcalamamakinesi.com/tr/metal-parcalama-makinesi"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 6,
+          "name": "Kurumsal",
+          "url": "https://www.parcalamamakinesi.com/tr/kurumsal"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 7,
+          "name": "Referanslar",
+          "url": "https://www.parcalamamakinesi.com/tr/referanslar"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 8,
+          "name": "İletişim",
+          "url": "https://www.parcalamamakinesi.com/tr/iletisim"
+        }
+      ]
+    }
+    </script>
+
   <style>
     body {
       margin: 0;

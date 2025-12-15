@@ -234,8 +234,18 @@ function AppContent() {
       window.history.replaceState({}, '', savedPath);
     }
 
-    // Redirect /blog to /tr/blog (default language)
+    // Handle legacy /lang/home URLs - redirect to correct format
     const currentPath = window.location.pathname;
+    const legacyHomeMatch = currentPath.match(/^\/(tr|en|ru|ar)\/home\/?$/);
+    if (legacyHomeMatch) {
+      const lang = legacyHomeMatch[1];
+      const correctUrl = lang === 'tr' ? '/' : `/${lang}`;
+      console.log(`App.tsx - Redirecting legacy URL ${currentPath} to ${correctUrl}`);
+      window.location.replace(correctUrl);
+      return;
+    }
+
+    // Redirect /blog to /tr/blog (default language)
     if (currentPath === '/blog' || currentPath === '/blog/') {
       window.history.replaceState({}, '', '/tr/blog');
     } else if (currentPath.startsWith('/blog/') && !currentPath.match(/^\/(tr|en|ru|ar)\/blog/)) {
