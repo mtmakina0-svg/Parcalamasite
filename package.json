@@ -60,8 +60,9 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "vite build && npm run sitemap",
+        "build": "vite build && npm run sitemap-index",
         "sitemap": "tsx scripts/generate-sitemap.ts",
+        "sitemap-index": "tsx scripts/generate-sitemap-index.ts",
         "indexnow": "tsx scripts/indexnow-ping.ts"
     }
 }
