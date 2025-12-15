@@ -1,55 +1,14 @@
-# MT Makina Robots.txt - Optimized for SEO
+# MT Makina Robots.txt
 
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Disallow non-content paths
 Disallow: /admin/
 Disallow: /api/
 Disallow: /*.json$
-Disallow: /assets/*.js$
-Disallow: /assets/*.css$
 
-# Allow important assets for rendering
-Allow: /assets/*.png
-Allow: /assets/*.jpg
-Allow: /assets/*.svg
-Allow: /assets/*.webp
-
-# Crawl rate hints - be gentle with the server
-Crawl-delay: 1
-
-# Sitemaps - Primary
+# Sitemaps
 Sitemap: https://www.parcalamamakinesi.com/sitemap.xml
 
-# Host directive (helps some crawlers)
-Host: https://www.parcalamamakinesi.com
-
-# Google specific
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Bing specific
-User-agent: Bingbot
-Allow: /
+# Crawl-delay
 Crawl-delay: 1
-
-# Yandex specific
-User-agent: Yandex
-Allow: /
-Crawl-delay: 2
-
-# Social media crawlers - Allow for rich previews
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /

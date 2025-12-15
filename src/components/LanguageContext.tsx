@@ -994,7 +994,6 @@ const translations = {
     pallet_optional_7: 'Çıkış İçin Konveyör/Helezon Uygulamaları',
 
     // Palet Parçalama Makinesi FAQ
-    pallet_faq_title: 'Sıkça Sorulan Sorular',
     pallet_faq_1_q: 'PALET PARÇALAMA MAKİNESİ NE İÇİN KULLANILIR?',
     pallet_faq_1_a: 'Palet parçalama makinesi, ahşap ve plastik paletlerin küçük parçalara ayrılmasını sağlayan endüstriyel bir cihazdır. Bu makineler, palet geri dönüşümü ve atık yönetimi süreçlerinde önemli bir rol oynar.',
     pallet_faq_2_q: 'PALET PARÇALAMA MAKİNELERİNİN TEMEL AVANTAJLARI NELERDİR?',
@@ -1178,10 +1177,6 @@ const translations = {
     mobile_crusher_watch_video: 'Videoyu İzle',
     mobile_crusher_similar_products: 'Benzer Ürünler',
 
-    // Quad Shaft translations
-    quad_shaft_video_title: 'Dört Şaftlı Parçalama Makinesi Videoları',
-    quad_shaft_similar_products: 'Benzer Ürünler',
-    quad_shaft_watch_video: 'Videoyu İzle',
 
     youtube_channel_title: 'YouTube Kanalımız',
     youtube_channel_description: 'Daha fazla video için kanalımızı ziyaret edin.',
