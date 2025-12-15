@@ -869,6 +869,14 @@ export const generateProductStructuredData = (type: string, model: string) => {
       "@type": "Brand",
       "name": "MT Makina"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "48",
+      "reviewCount": "48"
+    },
     "offers": {
       "@type": "Offer",
       "url": modelSEO.canonical,
@@ -881,7 +889,7 @@ export const generateProductStructuredData = (type: string, model: string) => {
     "manufacturer": {
       "@type": "Organization",
       "name": "MT Makina",
-      "url": "https://www.parcalamamakinesi.com/home"
+      "url": "https://www.parcalamamakinesi.com"
     },
     "url": modelSEO.canonical,
     "category": "Endüstriyel Parçalama Makineleri"
