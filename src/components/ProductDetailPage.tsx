@@ -879,16 +879,13 @@ export const ProductDetailPage = ({
               >
                 <div className="prose prose-lg max-w-none text-[#1E1E1E]/90 leading-relaxed space-y-6">
                   <p style={{ lineHeight: '1.9' }}>
-                    Tek şaftlı katı atık parçalama makinesi, yüksek tork ve düşük hız kombinasyonu ile plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi gibi makinelerle farklı malzemelerin hızlı ve etkili bir şekilde parçalanmasını sağlar. Uzun rotor, geniş elek yüzeyi ve optimize edilmiş kesici geometrisi ile yüksek verimlilik sunan tek şaftlı parçalama makinesi, geri dönüşüm ve atık yönetiminde önemli bir rol oynar.
+                    {t('single_shaft_seo_p1')}
                   </p>
                   <p style={{ lineHeight: '1.9' }}>
-                    Tek şaftlı parçalama makinesi, güçlü tahrik motorları ve dayanıklı kesme aletleri sayesinde zorlu koşullarda bile güvenilir performans sergiler. Hidrolik baskı sistemi, malzemelerin daha sıkı bir şekilde bıçaklarla temas etmesini sağlayarak, büyük ve zorlu atıkların daha hızlı ve verimli şekilde işlenmesine olanak tanır. Bu sistem, palet parçalama makinası, hurda plastik kırma makinası ve plastik kırma makinesi gibi uygulamalarda yüksek performans sağlar.
+                    {t('single_shaft_seo_p2')}
                   </p>
                   <p style={{ lineHeight: '1.9' }}>
-                    Enerji verimliliği sunan özel bıçak tasarımı ve otomatik kapanma özelliği ile tek şaftlı katı atık parçalama makinesi, geri dönüşüm kırma makinası ve hurda lastik parçalama makinası gibi makinelerde enerji tüketimini minimumda tutar. Tahliye helezonları, konveyör bantları, metal ayırıcılar ve boru mıknatısları gibi sistemlerle uyumlu olan bu makine, katı atık parçalama makinası fiyatları açısından da ekonomik çözümler sunar.
-                  </p>
-                  <p style={{ lineHeight: '1.9' }}>
-                    Tek şaftlı katı atık parçalama makinesi, atık yönetiminde sürdürülebilirlik sağlar ve geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik sunar. Plastik hurda kırma makinası, balya parçalama makinası, kauçuk parçalama makinası gibi makinelerle farklı sektörlerde de etkili çözümler sunar.
+                    {t('single_shaft_seo_p3')}
                   </p>
                 </div>
               </motion.div>
@@ -1728,13 +1725,13 @@ export const ProductDetailPage = ({
               >
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg space-y-6">
                   <p className="text-[#45474B] leading-relaxed">
-                    Çift şaftlı katı atık parçalama makinesi, farklı malzemeleri işleyebilme kapasitesi sayesinde geniş bir kullanım yelpazesi sunar. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi, kağıt parçalama makinesi, tıbbi atık ve elektronik atıklar gibi çeşitli endüstriler için uygundur. Dayanıklı yapısı ve uzun bakım aralıkları sayesinde kesintisiz çalışma sunarak işletme maliyetlerini düşürür ve verimliliği artırır. Plastik parçalama makinası, palet parçalama makinası gibi makinelerde bulunan kolay değiştirilebilir bıçaklar sayesinde, bakım işlemleri hızlı ve verimli bir şekilde gerçekleştirilir.
+                    {t('dual_shaft_seo_p1')}
                   </p>
                   <p className="text-[#45474B] leading-relaxed">
-                    Yüksek işlem kapasitesine sahip olan çift şaftlı parçalama makinesi, plastik kırma makinesi, pet şişe parçalama makinası, hurda plastik kırma makinası gibi uygulamalarda operasyonel verimliliği artırırken arıza süresini ve bakım maliyetlerini minimuma indirir. Kağıt parçalama makinası ve pvc kırma makinası gibi makinelerle çalışan bu sistem, gelişmiş güvenlik özellikleri ile operatör güvenliğini en üst düzeyde tutar.
+                    {t('dual_shaft_seo_p2')}
                   </p>
                   <p className="text-[#45474B] leading-relaxed">
-                    Karton parçalama makinesi, gıda parçalama makinası, hurda lastik parçalama makinası gibi atık azaltma ve geri dönüşüm süreçlerinde çift şaftlı parçalama makinesi, çevresel sürdürülebilirliği teşvik eder ve atık yönetimi için güçlü bir çözüm sunar. Parçalama makinesi, balya parçalama makinası, metal parçalama makinesi gibi uygulamalarda da uzun ömürlü ve güvenilir bir performans sergiler. Ayrıca, katı atık parçalama makinası fiyatları, palet parçalama makinası fiyatı ve hurda demir parçalama makinası fiyatları açısından ekonomik avantajlar sağlar. Parçalama makinesi, geri dönüşüm ve atık yönetimi süreçlerinde yüksek verimlilik ve sürdürülebilirlik sunarak, çevre dostu bir yaklaşım benimsemek isteyen işletmelere ideal bir çözüm sunar.
+                    {t('dual_shaft_seo_p3')}
                   </p>
                 </div>
               </motion.div>
@@ -2348,19 +2345,13 @@ export const ProductDetailPage = ({
             >
               <div className="prose prose-lg max-w-none text-[#45474B]">
                 <p className="mb-6">
-                  Dört şaftlı katı atık parçalama makinesi, geniş malzeme işleme kapasitesi ile plastik, metal, ahşap, kağıt, cam ve elektronik atıklar gibi çok çeşitli malzemeleri etkili bir şekilde parçalayabilir. Dört şaftlı parçalama makinesi, endüstriyel atık yönetiminde verimliliği artırarak, farklı sektörlerde kullanım için ideal bir çözüm sunar.
+                  {t('quad_shaft_seo_p1')}
                 </p>
                 <p className="mb-6">
-                  Modüler yapısı sayesinde dört şaftlı katı atık parçalama makinesi, bileşenlerin kolayca değiştirilebilmesini sağlar. Bu özellik, bakım ve onarım sürelerini kısaltarak katı atık parçalayıcı işletme maliyetlerini önemli ölçüde azaltır. Yüksek kaliteli çelikten üretilen bıçakları ve sağlam yapısı ile dört şaftlı katı atık parçalama makinesi, zorlu çalışma koşullarında bile uzun ömürlü performans sunar.
-                </p>
-                <p className="mb-6">
-                  Aşınmaya dayanıklı bileşenler sayesinde, dört şaftlı katı atık parçalama makinesi verimliliği artırır ve yüksek işlem kapasitesi sağlar. Dört şaftlı tasarımı ile yüksek tork ve düşük hız kombinasyonu sunarak malzemelerin hızlı ve etkili bir şekilde işlenmesini mümkün kılar.
-                </p>
-                <p className="mb-6">
-                  Kullanıcı dostu kontrol paneli ve kolay işletim imkanı ile dört şaftlı katı atık parçalama makinesi, operatörlerin rahat kullanımını sağlar. Bıçakların hızlıca değiştirilebilmesi, bakım sürelerini azaltarak düşük işletme maliyetleri sunar. Bu özellikler, balya parçalama makinesi, lastik parçalama makinesi, hurda parçalama makinesi, palet parçalama makinesi gibi makinelerle verimli geri dönüşüm süreçleri sağlar.
+                  {t('quad_shaft_seo_p2')}
                 </p>
                 <p>
-                  Dört şaftlı katı atık parçalama makinesi, ayrıca HDD parçalama makinesi, HDD imha, kağıt parçalama makinesi, karton parçalama makinesi, harddisk imha makinesi, hurda lastik parçalama makinesi gibi uygulamalarda da yüksek performans sunarak, geniş bir endüstriyel kullanım yelpazesi sunar.
+                  {t('quad_shaft_seo_p3')}
                 </p>
               </div>
             </motion.div>
@@ -2886,6 +2877,26 @@ export const ProductDetailPage = ({
                 <p className="text-[#45474B]">{t('metal_adv_4_desc')}</p>
               </motion.div>
             </div>
+
+            {/* SEO Content Block with Shadow */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-gray-100 shadow-lg"
+            >
+              <div className="prose prose-lg max-w-none text-[#45474B]">
+                <p className="mb-6">
+                  {t('metal_seo_p1')}
+                </p>
+                <p className="mb-6">
+                  {t('metal_seo_p2')}
+                </p>
+                <p>
+                  {t('metal_seo_p3')}
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -3046,29 +3057,15 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-5xl mx-auto"
             >
-              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
-                  >
-                    <Play size={32} className="text-[#1E1E1E] ml-1" />
-                  </motion.div>
-                </div>
+              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/f6sWiv4kzCg?rel=0&modestbranding=1"
+                  title="MT Makina Redmonster Metal Parçalama Makinesi"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mt-6"
-            >
-              <Button
-                className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
-              >
-                Videoyu İzle
-              </Button>
             </motion.div>
 
             {/* YouTube Channel Section */}

@@ -858,6 +858,23 @@ const translations = {
     single_shaft_tech_capacity: 'Kapasite',
     single_shaft_tech_capacity_value: '800 – 3000 kg/sa',
 
+    // SEO Content Blocks
+    single_shaft_seo_p1: 'Tek şaftlı parçalama makinesi, geniş bir yelpazede malzemeleri parçalamak için tasarlanmış güçlü ve verimli bir sistemdir. Bu makine, plastik, ahşap, kauçuk, kağıt-karton ve hafif metal atıkların işlenmesinde yüksek performans sunar. Endüstriyel atık yönetimi ve geri dönüşüm süreçlerinde kritik bir rol oynayan tek şaftlı parçalama makinesi, hızlı kesim prensibi ile malzemeleri istenilen boyuta indirir.',
+    single_shaft_seo_p2: 'MT Makina tek şaftlı parçalama makinesi, modüler yapısı sayesinde farklı sektörlerin ihtiyaçlarına göre özelleştirilebilir. Yüksek torklu motor sistemi ve dayanıklı bıçak tasarımı ile zorlu çalışma koşullarında bile kesintisiz üretim sağlar. PLC kontrollü otomasyon sistemi, operatör güvenliğini ve işlem verimliliğini maksimize eder.',
+    single_shaft_seo_p3: 'Plastik geri dönüşüm tesisleri, kağıt-karton işleme merkezleri, ahşap atık yönetim tesisleri ve RDF üretim hatları için ideal olan tek şaftlı parçalama makinesi, düşük enerji tüketimi ve minimum bakım gereksinimleri ile işletme maliyetlerini optimize eder. CE sertifikalı güvenlik standartları ile Avrupa normlarına tam uyumludur.',
+
+    dual_shaft_seo_p1: 'Çift şaftlı parçalama makinesi, ağır ve zorlu malzemelerin parçalanmasında üstün performans sunan profesyonel bir sistemdir. İki şaftlı kesim mekanizması, plastik, lastik, elektronik atık, ahşap palet ve karışık atıkların etkili bir şekilde işlenmesini sağlar. Düşük hız-yüksek tork prensibi ile çalışan çift şaftlı parçalama makinesi, en zorlu malzemeleri bile kolayca parçalar.',
+    dual_shaft_seo_p2: 'MT Makina çift şaftlı parçalama makinesi, birbirine zıt yönde dönen iki rotor sistemi ile malzemeyi kavrar ve kontrollü bir şekilde parçalar. Bu özellik, özellikle esnek ve elastik malzemelerin işlenmesinde büyük avantaj sağlar. Hidrolik itici sistem ile sürekli besleme garantisi verir ve tıkanma riskini minimize eder.',
+    dual_shaft_seo_p3: 'Lastik geri dönüşüm tesisleri, e-atık işleme merkezleri, palet parçalama tesisleri ve endüstriyel atık yönetim merkezleri için optimize edilmiş çift şaftlı parçalama makinesi, modüler yapısı sayesinde mevcut üretim hatlarına kolayca entegre edilir. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, teknik danışmanlık ve satış sonrası destek hizmetleri sunmaktadır.',
+
+    quad_shaft_seo_p1: 'Dört şaftlı parçalama makinesi, partikül boyutunda hassas kontrol gerektiren uygulamalar için tasarlanmış ileri teknoloji bir sistemdir. Dört rotor sistemi ile malzemeyi çok aşamalı olarak parçalar ve homojen çıktı boyutu sağlar. RDF üretimi, endüstriyel atık işleme ve geri dönüşüm tesisleri için ideal bir çözümdür.',
+    quad_shaft_seo_p2: 'MT Makina dört şaftlı parçalama makinesi, HDD ve harddisk imha, kağıt-karton parçalama, gizli belge imha ve güvenlikli atık bertarafı uygulamalarında yüksek güvenlik ve performans sunar. Modüler bıçak sistemi sayesinde farklı malzeme türlerine göre kolayca uyarlanabilir ve bakım süreleri minimize edilir.',
+    quad_shaft_seo_p3: 'Veri merkezi güvenlik uygulamaları, devlet kurumları gizli belge imhası, bankacılık sektörü ve endüstriyel RDF üretim hatları için optimize edilmiş dört şaftlı parçalama makinesi, Endüstri 4.0 uyumlu otomasyon altyapısı ile üretim süreçlerine tam entegrasyon sağlar. CE ve ISO sertifikaları ile desteklenir.',
+
+    metal_seo_p1: 'Redmonster hurda metal parçalama makinesi, geniş bir yelpazede metal hurdalarını parçalamak için tasarlanmış güçlü makinelerden oluşur. Hurda metal parçalama makinesi, hurdalıklarda ve metal geri dönüşüm tesislerinde hurda metali etkili bir şekilde işleyerek, metallerin belirli bir boyutta parçalanmasını sağlar. Bu işlem, metallerin kolayca sınıflandırılıp geri dönüştürülmesini hızlandırır.',
+    metal_seo_p2: 'Hurda metal parçalama makinesi, metal geri dönüşüm ve atık yönetimi süreçlerinde yenilikçi ve etkili çözümler sunar. Yüksek verimlilik, dayanıklılık ve kullanıcı dostu özellikleri ile hurda metal parçalama makinesi, metal atıkların işlenmesinde çevresel sürdürülebilirliği destekler. Redmonster serisi, işletmelerin atık yönetim süreçlerini optimize ederek çevreye olan olumsuz etkileri minimize eder.',
+    metal_seo_p3: 'Araba parçalayıcı, araba parçalama makinesi ve hurda araba parçalama makinesi gibi makineler, özellikle hurda araba parçalama süreçlerinde yüksek performans sunar. Demir parçalama makinesi ve alüminyum parçalama makinesi gibi çeşitli metal türlerini işleyebilme kapasitesine sahiptir. Hurda demir parçalama makinası, dayanıklı yapısı ve güçlü motorları ile zorlu çalışma koşullarında bile yüksek verimlilik sağlar.',
+
     visit_youtube: 'YouTube Kanalına Git',
 
     // Product Category Page
@@ -2060,6 +2077,23 @@ const translations = {
     single_shaft_tech_capacity: 'Capacity',
     single_shaft_tech_capacity_value: '800 – 3000 kg/h',
 
+    // SEO Content Blocks
+    single_shaft_seo_p1: 'Single shaft shredder is a powerful and efficient system designed to shred a wide range of materials. This machine offers high performance in processing plastic, wood, rubber, paper-cardboard and light metal waste. Playing a critical role in industrial waste management and recycling processes, single shaft shredder reduces materials to desired size with high-speed cutting principle.',
+    single_shaft_seo_p2: 'MT Makina single shaft shredder can be customized according to the needs of different sectors thanks to its modular structure. With high torque motor system and durable blade design, it provides uninterrupted production even in harsh working conditions. PLC controlled automation system maximizes operator safety and process efficiency.',
+    single_shaft_seo_p3: 'Ideal for plastic recycling facilities, paper-cardboard processing centers, wood waste management facilities and RDF production lines, single shaft shredder optimizes operating costs with low energy consumption and minimum maintenance requirements. CE certified safety standards fully comply with European norms.',
+
+    dual_shaft_seo_p1: 'Dual shaft shredder is a professional system that offers superior performance in shredding heavy and challenging materials. The two-shaft cutting mechanism enables effective processing of plastic, tires, electronic waste, wooden pallets and mixed waste. Operating with low speed-high torque principle, dual shaft shredder easily shreds even the toughest materials.',
+    dual_shaft_seo_p2: 'MT Makina dual shaft shredder grabs and shreds material in a controlled manner with two rotors rotating in opposite directions. This feature provides great advantage especially in processing flexible and elastic materials. Hydraulic pusher system guarantees continuous feeding and minimizes clogging risk.',
+    dual_shaft_seo_p3: 'Optimized for tire recycling facilities, e-waste processing centers, pallet shredding facilities and industrial waste management centers, dual shaft shredder can be easily integrated into existing production lines thanks to its modular structure. MT Makina, Turkey\'s leading shredder manufacturer, provides technical consultancy and after-sales support services.',
+
+    quad_shaft_seo_p1: 'Quad shaft shredder is an advanced technology system designed for applications requiring precise particle size control. With four rotor system, it shreds material in multiple stages and provides homogeneous output size. It is an ideal solution for RDF production, industrial waste processing and recycling facilities.',
+    quad_shaft_seo_p2: 'MT Makina quad shaft shredder offers high security and performance in HDD and hard disk destruction, paper-cardboard shredding, confidential document destruction and secure waste disposal applications. Thanks to modular blade system, it can be easily adapted to different material types and maintenance times are minimized.',
+    quad_shaft_seo_p3: 'Optimized for data center security applications, government agencies confidential document destruction, banking sector and industrial RDF production lines, quad shaft shredder provides full integration into production processes with Industry 4.0 compatible automation infrastructure. Supported by CE and ISO certificates.',
+
+    metal_seo_p1: 'Redmonster scrap metal shredder consists of powerful machines designed to shred metal scrap across a wide range. Scrap metal shredder effectively processes scrap metal in scrapyards and metal recycling facilities, ensuring metals are shredded to a specific size. This process accelerates the classification and recycling of metals.',
+    metal_seo_p2: 'Scrap metal shredder offers innovative and effective solutions in metal recycling and waste management processes. With high efficiency, durability and user-friendly features, scrap metal shredder supports environmental sustainability in processing metal waste. Redmonster series optimizes enterprises\' waste management processes and minimizes negative environmental impacts.',
+    metal_seo_p3: 'Machines such as car shredder and scrap car shredder offer high performance especially in scrap car shredding processes. It has the capacity to process various metal types such as iron shredder and aluminum shredder. Scrap iron shredder provides high efficiency even in harsh working conditions with its durable structure and powerful motors.',
+
     single_shaft_ecatalog_btn: 'E-Catalog',
     youtube_channel_title: 'Check Out Our YouTube Channel',
     youtube_channel_description: 'Find all our machine operation videos, customer testimonials and production processes on our YouTube channel.',
@@ -2831,6 +2865,23 @@ const translations = {
     single_shaft_tech_control_value: 'ПЛК – Автоматический реверс',
     single_shaft_tech_capacity: 'Производительность',
     single_shaft_tech_capacity_value: '800 – 3000 кг/ч',
+
+    // SEO Content Blocks
+    single_shaft_seo_p1: 'Одновальный измельчитель - это мощная и эффективная система, предназначенная для измельчения широкого спектра материалов. Эта машина обеспечивает высокую производительность при обработке пластика, дерева, резины, бумаги-картона и легких металлических отходов. Играя критическую роль в промышленном управлении отходами и процессах переработки, одновальный измельчитель измельчает материалы до нужного размера по принципу высокоскоростной резки.',
+    single_shaft_seo_p2: 'Одновальный измельчитель MT Makina может быть настроен в соответствии с потребностями различных секторов благодаря модульной конструкции. Высокомоментная моторная система и прочная конструкция лезвий обеспечивают бесперебойное производство даже в тяжелых рабочих условиях. Система автоматизации ПЛК максимизирует безопасность оператора и эффективность процесса.',
+    single_shaft_seo_p3: 'Идеально подходящий для предприятий по переработке пластика, центров обработки бумаги-картона, предприятий по управлению древесными отходами и линий производства RDF, одновальный измельчитель оптимизирует эксплуатационные затраты благодаря низкому энергопотреблению и минимальным требованиям к обслуживанию.',
+
+    dual_shaft_seo_p1: 'Двухвальный измельчитель - это профессиональная система, обеспечивающая превосходную производительность при измельчении тяжелых и сложных материалов. Двухвальный режущий механизм обеспечивает эффективную обработку пластика, шин, электронных отходов, деревянных поддонов и смешанных отходов.',
+    dual_shaft_seo_p2: 'Двухвальный измельчитель MT Makina захватывает и измельчает материал контролируемым образом с помощью двух роторов, вращающихся в противоположных направлениях. Эта особенность дает большое преимущество особенно при обработке гибких и эластичных материалов.',
+    dual_shaft_seo_p3: 'Оптимизированный для предприятий по переработке шин, центров обработки электронных отходов, предприятий по измельчению поддонов и центров управления промышленными отходами, двухвальный измельчитель может быть легко интегрирован в существующие производственные линии благодаря модульной конструкции.',
+
+    quad_shaft_seo_p1: 'Четырехвальный измельчитель - это система передовых технологий, предназначенная для применений, требующих точного контроля размера частиц. С четырехроторной системой он измельчает материал в несколько этапов и обеспечивает однородный размер выхода.',
+    quad_shaft_seo_p2: 'Четырехвальный измельчитель MT Makina предлагает высокую безопасность и производительность в применениях уничтожения HDD и жестких дисков, измельчения бумаги-картона, уничтожения конфиденциальных документов и безопасной утилизации отходов.',
+    quad_shaft_seo_p3: 'Оптимизированный для применений безопасности центров обработки данных, уничтожения конфиденциальных документов государственных органов, банковского сектора и промышленных линий производства RDF, четырехвальный измельчитель обеспечивает полную интеграцию в производственные процессы с инфраструктурой автоматизации, совместимой с Индустрией 4.0.',
+
+    metal_seo_p1: 'Измельчитель металлолома Redmonster состоит из мощных машин, предназначенных для измельчения металлолома широкого спектра. Измельчитель металлолома эффективно перерабатывает металлолом на свалках и предприятиях по переработке металла, обеспечивая измельчение металлов до определенного размера.',
+    metal_seo_p2: 'Измельчитель металлолома предлагает инновационные и эффективные решения в процессах переработки металла и управления отходами. Благодаря высокой эффективности, долговечности и удобным функциям, измельчитель металлолома поддерживает экологическую устойчивость при обработке металлических отходов.',
+    metal_seo_p3: 'Такие машины, как измельчитель автомобилей и измельчитель металлолома, предлагают высокую производительность особенно в процессах измельчения автомобильного металлолома. Они способны обрабатывать различные типы металлов, такие как железо и алюминий.',
 
     single_shaft_video_title: 'Видео одновального измельчителя',
     single_shaft_watch_video: 'Смотреть видео',
@@ -3630,6 +3681,23 @@ const translations = {
     single_shaft_tech_control_value: 'PLC – الرجوع التلقائي',
     single_shaft_tech_capacity: 'السعة',
     single_shaft_tech_capacity_value: '800 – 3000 كجم/س',
+
+    // SEO Content Blocks
+    single_shaft_seo_p1: 'آلة التمزيق أحادية العمود هي نظام قوي وفعال مصمم لتمزيق مجموعة واسعة من المواد. توفر هذه الآلة أداءً عالياً في معالجة البلاستيك والخشب والمطاط والورق والكرتون ونفايات المعادن الخفيفة. تلعب آلة التمزيق أحادية العمود دوراً حاسماً في إدارة النفايات الصناعية وعمليات إعادة التدوير.',
+    single_shaft_seo_p2: 'يمكن تخصيص آلة التمزيق أحادية العمود MT Makina وفقاً لاحتياجات القطاعات المختلفة بفضل هيكلها المعياري. يوفر نظام المحرك عالي العزم وتصميم الشفرة المتين إنتاجاً متواصلاً حتى في ظروف العمل القاسية. يعمل نظام الأتمتة PLC على تحقيق أقصى درجات سلامة المشغل وكفاءة العملية.',
+    single_shaft_seo_p3: 'مثالية لمرافق إعادة تدوير البلاستيك ومراكز معالجة الورق والكرتون ومرافق إدارة نفايات الخشب وخطوط إنتاج RDF، تعمل آلة التمزيق أحادية العمود على تحسين تكاليف التشغيل بفضل انخفاض استهلاك الطاقة والحد الأدنى من متطلبات الصيانة.',
+
+    dual_shaft_seo_p1: 'آلة التمزيق ثنائية العمود هي نظام احترافي يوفر أداءً فائقاً في تمزيق المواد الثقيلة والصعبة. تتيح آلية القطع ثنائية العمود المعالجة الفعالة للبلاستيك والإطارات والنفايات الإلكترونية والمنصات الخشبية والنفايات المختلطة.',
+    dual_shaft_seo_p2: 'تقوم آلة التمزيق ثنائية العمود MT Makina بإمساك وتمزيق المواد بطريقة متحكمة باستخدام دورتين تدوران في اتجاهين متعاكسين. توفر هذه الميزة ميزة كبيرة خاصة في معالجة المواد المرنة والمطاطية.',
+    dual_shaft_seo_p3: 'محسّنة لمرافق إعادة تدوير الإطارات ومراكز معالجة النفايات الإلكترونية ومرافق تمزيق المنصات ومراكز إدارة النفايات الصناعية، يمكن دمج آلة التمزيق ثنائية العمود بسهولة في خطوط الإنتاج الحالية بفضل هيكلها المعياري.',
+
+    quad_shaft_seo_p1: 'آلة التمزيق رباعية العمود هي نظام تكنولوجي متقدم مصمم للتطبيقات التي تتطلب تحكماً دقيقاً في حجم الجسيمات. مع نظام الدوار الرباعي، تقوم بتمزيق المواد على مراحل متعددة وتوفر حجم إخراج متجانس.',
+    quad_shaft_seo_p2: 'توفر آلة التمزيق رباعية العمود MT Makina أماناً وأداءً عالياً في تطبيقات تدمير الأقراص الصلبة HDD وتمزيق الورق والكرتون وتدمير المستندات السرية والتخلص الآمن من النفايات.',
+    quad_shaft_seo_p3: 'محسّنة لتطبيقات أمان مراكز البيانات وتدمير المستندات السرية للهيئات الحكومية والقطاع المصرفي وخطوط إنتاج RDF الصناعية، توفر آلة التمزيق رباعية العمود تكاملاً كاملاً في عمليات الإنتاج مع بنية أتمتة متوافقة مع الصناعة 4.0.',
+
+    metal_seo_p1: 'يتكون مفرمة الخردة المعدنية Redmonster من آلات قوية مصممة لتمزيق الخردة المعدنية عبر نطاق واسع. تقوم مفرمة الخردة المعدنية بمعالجة الخردة المعدنية بفعالية في ساحات الخردة ومرافق إعادة تدوير المعادن، مما يضمن تمزيق المعادن إلى حجم محدد.',
+    metal_seo_p2: 'تقدم مفرمة الخردة المعدنية حلولاً مبتكرة وفعالة في عمليات إعادة تدوير المعادن وإدارة النفايات. بفضل الكفاءة العالية والمتانة والميزات سهلة الاستخدام، تدعم مفرمة الخردة المعدنية الاستدامة البيئية في معالجة النفايات المعدنية.',
+    metal_seo_p3: 'تقدم آلات مثل مفرمة السيارات ومفرمة سيارات الخردة أداءً عالياً خاصة في عمليات تمزيق سيارات الخردة. لديها القدرة على معالجة أنواع مختلفة من المعادن مثل مفرمة الحديد ومفرمة الألمنيوم.',
 
     single_shaft_ecatalog_btn: 'الكتالوج الإلكتروني',
 
