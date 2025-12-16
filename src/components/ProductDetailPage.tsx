@@ -718,9 +718,24 @@ export const ProductDetailPage = ({
                   <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
                     {modelDesc.paragraph2}
                   </p>
-                  <p className="text-[#45474B] leading-relaxed text-lg" style={{ lineHeight: '1.8' }}>
+                  <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
                     {modelDesc.paragraph3}
                   </p>
+                  {modelDesc.paragraph4 && (
+                    <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
+                      {modelDesc.paragraph4}
+                    </p>
+                  )}
+                  {modelDesc.paragraph5 && (
+                    <p className="text-[#45474B] leading-relaxed mb-6 text-lg" style={{ lineHeight: '1.8' }}>
+                      {modelDesc.paragraph5}
+                    </p>
+                  )}
+                  {modelDesc.paragraph6 && (
+                    <p className="text-[#45474B] leading-relaxed text-lg" style={{ lineHeight: '1.8' }}>
+                      {modelDesc.paragraph6}
+                    </p>
+                  )}
                 </>
               ) : (
                 <>
@@ -852,6 +867,32 @@ export const ProductDetailPage = ({
                 </motion.div>
               )}
             </div>
+
+            {/* SEO Content Block - Single Shaft Only */}
+            {currentProductType === 'single-shaft' && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="mt-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg"
+              >
+                <div className="prose prose-lg max-w-none text-[#1E1E1E]/90 leading-relaxed space-y-6">
+                  <p style={{ lineHeight: '1.9' }}>
+                    Tek şaftlı katı atık parçalama makinesi, yüksek tork ve düşük hız kombinasyonu ile plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi gibi makinelerle farklı malzemelerin hızlı ve etkili bir şekilde parçalanmasını sağlar. Uzun rotor, geniş elek yüzeyi ve optimize edilmiş kesici geometrisi ile yüksek verimlilik sunan tek şaftlı parçalama makinesi, geri dönüşüm ve atık yönetiminde önemli bir rol oynar.
+                  </p>
+                  <p style={{ lineHeight: '1.9' }}>
+                    Tek şaftlı parçalama makinesi, güçlü tahrik motorları ve dayanıklı kesme aletleri sayesinde zorlu koşullarda bile güvenilir performans sergiler. Hidrolik baskı sistemi, malzemelerin daha sıkı bir şekilde bıçaklarla temas etmesini sağlayarak, büyük ve zorlu atıkların daha hızlı ve verimli şekilde işlenmesine olanak tanır. Bu sistem, palet parçalama makinası, hurda plastik kırma makinası ve plastik kırma makinesi gibi uygulamalarda yüksek performans sağlar.
+                  </p>
+                  <p style={{ lineHeight: '1.9' }}>
+                    Enerji verimliliği sunan özel bıçak tasarımı ve otomatik kapanma özelliği ile tek şaftlı katı atık parçalama makinesi, geri dönüşüm kırma makinası ve hurda lastik parçalama makinası gibi makinelerde enerji tüketimini minimumda tutar. Tahliye helezonları, konveyör bantları, metal ayırıcılar ve boru mıknatısları gibi sistemlerle uyumlu olan bu makine, katı atık parçalama makinası fiyatları açısından da ekonomik çözümler sunar.
+                  </p>
+                  <p style={{ lineHeight: '1.9' }}>
+                    Tek şaftlı katı atık parçalama makinesi, atık yönetiminde sürdürülebilirlik sağlar ve geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik sunar. Plastik hurda kırma makinası, balya parçalama makinası, kauçuk parçalama makinası gibi makinelerle farklı sektörlerde de etkili çözümler sunar.
+                  </p>
+                </div>
+              </motion.div>
+            )}
           </div>
         </section>
 
@@ -1381,17 +1422,30 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-5xl mx-auto"
             >
-              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer" style={{ height: '400px' }}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
-                  >
-                    <Play size={32} className="text-[#1E1E1E] ml-1" />
-                  </motion.div>
+              {/* YouTube Video Embed for Single-Shaft */}
+              {currentProductType === 'single-shaft' ? (
+                <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/KPQKVfynZHU?rel=0&modestbranding=1"
+                    title="MT Makina Tek Şaftlı Parçalama Makinesi"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E]/50 to-transparent"></div>
-              </div>
+              ) : (
+                <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer" style={{ height: '400px' }}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
+                    >
+                      <Play size={32} className="text-[#1E1E1E] ml-1" />
+                    </motion.div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E]/50 to-transparent"></div>
+                </div>
+              )}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -1663,6 +1717,28 @@ export const ProductDetailPage = ({
                 <p className="text-[#45474B]">{t(productType === 'pallet' ? 'pallet_adv_4_desc' : 'dual_shaft_adv_4_desc')}</p>
               </motion.div>
             </div>
+
+            {/* SEO Content for Dual-Shaft - Only show for dual-shaft productType */}
+            {productType === 'dual-shaft' && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-16 max-w-5xl mx-auto"
+              >
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg space-y-6">
+                  <p className="text-[#45474B] leading-relaxed">
+                    Çift şaftlı katı atık parçalama makinesi, farklı malzemeleri işleyebilme kapasitesi sayesinde geniş bir kullanım yelpazesi sunar. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi, kağıt parçalama makinesi, tıbbi atık ve elektronik atıklar gibi çeşitli endüstriler için uygundur. Dayanıklı yapısı ve uzun bakım aralıkları sayesinde kesintisiz çalışma sunarak işletme maliyetlerini düşürür ve verimliliği artırır. Plastik parçalama makinası, palet parçalama makinası gibi makinelerde bulunan kolay değiştirilebilir bıçaklar sayesinde, bakım işlemleri hızlı ve verimli bir şekilde gerçekleştirilir.
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed">
+                    Yüksek işlem kapasitesine sahip olan çift şaftlı parçalama makinesi, plastik kırma makinesi, pet şişe parçalama makinası, hurda plastik kırma makinası gibi uygulamalarda operasyonel verimliliği artırırken arıza süresini ve bakım maliyetlerini minimuma indirir. Kağıt parçalama makinası ve pvc kırma makinası gibi makinelerle çalışan bu sistem, gelişmiş güvenlik özellikleri ile operatör güvenliğini en üst düzeyde tutar.
+                  </p>
+                  <p className="text-[#45474B] leading-relaxed">
+                    Karton parçalama makinesi, gıda parçalama makinası, hurda lastik parçalama makinası gibi atık azaltma ve geri dönüşüm süreçlerinde çift şaftlı parçalama makinesi, çevresel sürdürülebilirliği teşvik eder ve atık yönetimi için güçlü bir çözüm sunar. Parçalama makinesi, balya parçalama makinası, metal parçalama makinesi gibi uygulamalarda da uzun ömürlü ve güvenilir bir performans sergiler. Ayrıca, katı atık parçalama makinası fiyatları, palet parçalama makinası fiyatı ve hurda demir parçalama makinası fiyatları açısından ekonomik avantajlar sağlar. Parçalama makinesi, geri dönüşüm ve atık yönetimi süreçlerinde yüksek verimlilik ve sürdürülebilirlik sunarak, çevre dostu bir yaklaşım benimsemek isteyen işletmelere ideal bir çözüm sunar.
+                  </p>
+                </div>
+              </motion.div>
+            )}
           </div>
         </section>
 
@@ -1949,7 +2025,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="text-center text-[#45474B] mb-12 text-3xl font-bold"
             >
-              {t(productType === 'pallet' ? 'pallet_video_title' : 'dual_shaft_video_title')}
+              {t(productType === 'pallet' ? 'pallet_video_title' : productType === 'single-shaft' ? 'single_shaft_video_title' : 'dual_shaft_video_title')}
             </motion.h2>
 
             <motion.div
@@ -1958,7 +2034,7 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-5xl mx-auto"
             >
-              {/* YouTube Video Embed for Pallet Shredders */}
+              {/* YouTube Video Embed for Pallet and Single-Shaft Shredders */}
               {productType === 'pallet' ? (
                 <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl aspect-video">
                   <iframe
@@ -1969,17 +2045,25 @@ export const ProductDetailPage = ({
                     className="absolute inset-0 w-full h-full"
                   />
                 </div>
+              ) : productType === 'single-shaft' ? (
+                <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/KPQKVfynZHU?rel=0&modestbranding=1"
+                    title="MT Makina Tek Şaftlı Parçalama Makinesi"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
               ) : (
-                <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
-                    >
-                      <Play size={32} className="text-[#1E1E1E] ml-1" />
-                    </motion.div>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E]/50 to-transparent"></div>
+                <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/tyKJc-bC8NY?rel=0&modestbranding=1"
+                    title="MT Makina Çift Şaftlı Parçalama Makinesi"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
                 </div>
               )}
               <motion.div
@@ -1992,7 +2076,7 @@ export const ProductDetailPage = ({
                   onClick={() => window.open('https://www.youtube.com/@MTMakinaofficial', '_blank')}
                   className="bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] px-6 py-3 rounded-xl"
                 >
-                  {t(productType === 'pallet' ? 'pallet_watch_video' : 'dual_shaft_watch_video')}
+                  {t(productType === 'pallet' ? 'pallet_watch_video' : productType === 'single-shaft' ? 'single_shaft_watch_video' : 'dual_shaft_watch_video')}
                 </Button>
               </motion.div>
             </motion.div>
@@ -2254,6 +2338,32 @@ export const ProductDetailPage = ({
                 <p className="text-[#45474B]">Dört şaftlı parçalama makinesi, plastik, metal, ahşap ve elektronik atıklar gibi birçok farklı malzemeyi işleyebilir.</p>
               </motion.div>
             </div>
+
+            {/* SEO Content Block with Shadow */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-gray-100 shadow-lg"
+            >
+              <div className="prose prose-lg max-w-none text-[#45474B]">
+                <p className="mb-6">
+                  Dört şaftlı katı atık parçalama makinesi, geniş malzeme işleme kapasitesi ile plastik, metal, ahşap, kağıt, cam ve elektronik atıklar gibi çok çeşitli malzemeleri etkili bir şekilde parçalayabilir. Dört şaftlı parçalama makinesi, endüstriyel atık yönetiminde verimliliği artırarak, farklı sektörlerde kullanım için ideal bir çözüm sunar.
+                </p>
+                <p className="mb-6">
+                  Modüler yapısı sayesinde dört şaftlı katı atık parçalama makinesi, bileşenlerin kolayca değiştirilebilmesini sağlar. Bu özellik, bakım ve onarım sürelerini kısaltarak katı atık parçalayıcı işletme maliyetlerini önemli ölçüde azaltır. Yüksek kaliteli çelikten üretilen bıçakları ve sağlam yapısı ile dört şaftlı katı atık parçalama makinesi, zorlu çalışma koşullarında bile uzun ömürlü performans sunar.
+                </p>
+                <p className="mb-6">
+                  Aşınmaya dayanıklı bileşenler sayesinde, dört şaftlı katı atık parçalama makinesi verimliliği artırır ve yüksek işlem kapasitesi sağlar. Dört şaftlı tasarımı ile yüksek tork ve düşük hız kombinasyonu sunarak malzemelerin hızlı ve etkili bir şekilde işlenmesini mümkün kılar.
+                </p>
+                <p className="mb-6">
+                  Kullanıcı dostu kontrol paneli ve kolay işletim imkanı ile dört şaftlı katı atık parçalama makinesi, operatörlerin rahat kullanımını sağlar. Bıçakların hızlıca değiştirilebilmesi, bakım sürelerini azaltarak düşük işletme maliyetleri sunar. Bu özellikler, balya parçalama makinesi, lastik parçalama makinesi, hurda parçalama makinesi, palet parçalama makinesi gibi makinelerle verimli geri dönüşüm süreçleri sağlar.
+                </p>
+                <p>
+                  Dört şaftlı katı atık parçalama makinesi, ayrıca HDD parçalama makinesi, HDD imha, kağıt parçalama makinesi, karton parçalama makinesi, harddisk imha makinesi, hurda lastik parçalama makinesi gibi uygulamalarda da yüksek performans sunarak, geniş bir endüstriyel kullanım yelpazesi sunar.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -2508,15 +2618,14 @@ export const ProductDetailPage = ({
               viewport={{ once: true }}
               className="max-w-5xl mx-auto"
             >
-              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer aspect-video">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-20 h-20 bg-[#F4CE14] rounded-full flex items-center justify-center"
-                  >
-                    <Play size={32} className="text-[#1E1E1E] ml-1" />
-                  </motion.div>
-                </div>
+              <div className="relative bg-[#45474B] rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/t9rOc_t4El4?rel=0&modestbranding=1"
+                  title="MT Makina Dört Şaftlı Parçalama Makinesi"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
               </div>
             </motion.div>
 

@@ -929,6 +929,7 @@ const translations = {
     quad_shaft_adv_4_desc: 'Dört şaftlı parçalama makinesi, plastik, metal, ahşap ve elektronik atıklar gibi birçok farklı malzemeyi işleyebilir.',
 
 
+    quad_shaft_video_title: 'Dört Şaftlı Parçalama Makinesi Videoları',
     quad_shaft_watch_video: 'Videoyu İzle',
     quad_shaft_similar_products: 'Benzer Ürünler',
     quad_shaft_ecatalog_btn: 'E-Katalog İndir',

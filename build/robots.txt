@@ -1,5 +1,5 @@
 # MT Makina Robots.txt
-# Updated: 2025-12-15
+# Updated: 2025-12-16
 
 User-agent: *
 Allow: /
