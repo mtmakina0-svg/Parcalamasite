@@ -465,7 +465,7 @@ const ThreeViewer: React.FC<ThreeViewerProps> = ({
 
             {/* 3D Canvas */}
             <Canvas
-                camera={{ position: [5, 3, 5], fov: 50 }}
+                camera={{ position: [3, 2, 3], fov: 45 }}
                 gl={{ preserveDrawingBuffer: true, antialias: qualitySettings[quality].antialias }}
                 dpr={qualitySettings[quality].pixelRatio}
                 shadows={qualitySettings[quality].shadows}
@@ -484,7 +484,7 @@ const ThreeViewer: React.FC<ThreeViewerProps> = ({
                 {viewMode === 'solid' && background === 'studio' && <Environment preset="city" />}
                 {viewMode === 'blueprint' && <Grid cellSize={0.5} cellThickness={0.5} cellColor="#FFFFFF" sectionSize={2} sectionColor="#FFFFFF" fadeDistance={30} infiniteGrid />}
 
-                <Bounds fit clip observe margin={1.5}>
+                <Bounds fit clip observe margin={1.1}>
                     <Suspense fallback={<Loader />}>
                         <Model
                             modelPath={modelPath}
