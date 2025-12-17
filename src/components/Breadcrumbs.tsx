@@ -17,15 +17,26 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
     const { language, isRTL } = useLanguage();
 
     // Generate JSON-LD Schema for breadcrumbs
+    // Google requires 'item' field for all ListItem elements
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const baseUrl = 'https://www.parcalamamakinesi.com';
+
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": items.map((item, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "name": item.label,
-            "item": item.href ? `https://www.parcalamamakinesi.com${item.href}` : undefined
-        }))
+        "itemListElement": items.map((item, index) => {
+            // Last item should use current page URL if no href provided
+            const itemUrl = item.href
+                ? `${baseUrl}${item.href}`
+                : (index === items.length - 1 ? currentUrl || `${baseUrl}/${language}` : `${baseUrl}/${language}`);
+
+            return {
+                "@type": "ListItem",
+                "position": index + 1,
+                "name": item.label,
+                "item": itemUrl
+            };
+        })
     };
 
     const translations = {

@@ -18,6 +18,7 @@ import { SimilarProductsSection } from './SimilarProductsSection';
 import { StructuredData } from './StructuredData';
 import { generateFAQStructuredData, productCategorySlugs } from '../utils/seoConfig';
 import { Breadcrumbs } from './Breadcrumbs';
+import ThreeViewer, { hasGLBModel, getGLBModelPath, getGLBModelDimensions } from './ThreeViewer';
 
 interface ProductDetailPageProps {
   productType: string;
@@ -683,19 +684,31 @@ export const ProductDetailPage = ({
               </p>
             </motion.div>
 
-            {/* Main Product Image - Enlarged */}
+            {/* Main Product Image or 3D Viewer */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               className="max-w-6xl mx-auto"
             >
-              <ImageWithFallback
-                src={images.main}
-                alt={getImageAlt()}
-                className="w-full rounded-2xl shadow-2xl"
-                fallbackSrc={fallbackImage}
-              />
+              {hasGLBModel(modelName) ? (
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <ThreeViewer
+                    modelPath={getGLBModelPath(modelName) || ''}
+                    alt={`${modelName} 3D Model - MT Makina`}
+                    height="500px"
+                    modelName={modelName}
+                    dimensions={getGLBModelDimensions(modelName) || undefined}
+                  />
+                </div>
+              ) : (
+                <ImageWithFallback
+                  src={images.main}
+                  alt={getImageAlt()}
+                  className="w-full rounded-2xl shadow-2xl"
+                  fallbackSrc={fallbackImage}
+                />
+              )}
             </motion.div>
           </div>
         </section>
@@ -1576,19 +1589,31 @@ export const ProductDetailPage = ({
               </p>
             </motion.div>
 
-            {/* Main Product Image - Enlarged */}
+            {/* Main Product Image or 3D Viewer */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               className="max-w-6xl mx-auto"
             >
-              <ImageWithFallback
-                src={images.main}
-                alt={`${modelName} ${t(productTitleKeys[productType]?.title || 'product_' + productType)}`}
-                className="w-full rounded-2xl shadow-2xl"
-                fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-              />
+              {hasGLBModel(modelName) ? (
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <ThreeViewer
+                    modelPath={getGLBModelPath(modelName) || ''}
+                    alt={`${modelName} 3D Model - MT Makina`}
+                    height="500px"
+
+                    modelName={modelName}
+                  />
+                </div>
+              ) : (
+                <ImageWithFallback
+                  src={images.main}
+                  alt={`${modelName} ${t(productTitleKeys[productType]?.title || 'product_' + productType)}`}
+                  className="w-full rounded-2xl shadow-2xl"
+                  fallbackSrc="https://images.unsplash.com/photo-1622621944707-e2e31c4e5695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXN0ZSUyMHJlY3ljbGluZyUyMG1hY2hpbmV8ZW58MXx8fHwxNzYyMTY3NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                />
+              )}
             </motion.div>
           </div>
         </section>
@@ -2197,19 +2222,31 @@ export const ProductDetailPage = ({
               </p>
             </motion.div>
 
-            {/* Main Product Image */}
+            {/* Main Product Image or 3D Viewer */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               className="max-w-6xl mx-auto"
             >
-              <ImageWithFallback
-                src={images.main}
-                alt={`${modelName} Dört Şaftlı Katı Atık Parçalama Makinesi`}
-                className="w-full rounded-2xl shadow-2xl"
-                fallbackSrc={fallbackImage}
-              />
+              {hasGLBModel(modelName) ? (
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <ThreeViewer
+                    modelPath={getGLBModelPath(modelName) || ''}
+                    alt={`${modelName} 3D Model - MT Makina`}
+                    height="500px"
+
+                    modelName={modelName}
+                  />
+                </div>
+              ) : (
+                <ImageWithFallback
+                  src={images.main}
+                  alt={`${modelName} Dört Şaftlı Katı Atık Parçalama Makinesi`}
+                  className="w-full rounded-2xl shadow-2xl"
+                  fallbackSrc={fallbackImage}
+                />
+              )}
             </motion.div>
           </div>
         </section>
@@ -2752,19 +2789,31 @@ export const ProductDetailPage = ({
               </p>
             </motion.div>
 
-            {/* Main Product Image */}
+            {/* Main Product Image or 3D Viewer */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               className="max-w-6xl mx-auto"
             >
-              <ImageWithFallback
-                src={images.main}
-                alt={t(`metal_${modelName.toLowerCase().replace('-', '')}_title`)}
-                className="w-full rounded-2xl shadow-2xl"
-                fallbackSrc={fallbackImage}
-              />
+              {hasGLBModel(modelName) ? (
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <ThreeViewer
+                    modelPath={getGLBModelPath(modelName) || ''}
+                    alt={`${modelName} 3D Model - MT Makina`}
+                    height="500px"
+
+                    modelName={modelName}
+                  />
+                </div>
+              ) : (
+                <ImageWithFallback
+                  src={images.main}
+                  alt={t(`metal_${modelName.toLowerCase().replace('-', '')}_title`)}
+                  className="w-full rounded-2xl shadow-2xl"
+                  fallbackSrc={fallbackImage}
+                />
+              )}
             </motion.div>
           </div>
         </section>
