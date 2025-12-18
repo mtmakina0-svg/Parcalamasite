@@ -1330,7 +1330,7 @@ export const ProductDetailPage = ({
                         <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
                           <Settings size={24} className="text-[#1E1E1E]" />
                         </div>
-                        <p className="text-[#1E1E1E]">Farklı Besleme ve Çıkış Seçenekleri</p>
+                        <p className="text-[#1E1E1E]">{t('opt_feed_options')}</p>
                       </div>
                     </motion.div>
 
@@ -1342,7 +1342,7 @@ export const ProductDetailPage = ({
                         <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
                           <RotateCcw size={24} className="text-[#1E1E1E]" />
                         </div>
-                        <p className="text-[#1E1E1E]">Farklı Rotor Tasarımları</p>
+                        <p className="text-[#1E1E1E]">{t('opt_rotor_designs')}</p>
                       </div>
                     </motion.div>
 
@@ -1354,7 +1354,7 @@ export const ProductDetailPage = ({
                         <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
                           <Zap size={24} className="text-[#1E1E1E]" />
                         </div>
-                        <p className="text-[#1E1E1E]">Çift Motorlu Tasarım</p>
+                        <p className="text-[#1E1E1E]">{t('opt_dual_motor')}</p>
                       </div>
                     </motion.div>
 
@@ -1366,7 +1366,7 @@ export const ProductDetailPage = ({
                         <div className="w-12 h-12 bg-[#F4CE14] rounded-lg flex items-center justify-center">
                           <Wind size={24} className="text-[#1E1E1E]" />
                         </div>
-                        <p className="text-[#1E1E1E]">Rotor Soğutma Sistemi</p>
+                        <p className="text-[#1E1E1E]">{t('opt_cooling_system')}</p>
                       </div>
                     </motion.div>
                   </>
@@ -2509,28 +2509,28 @@ export const ProductDetailPage = ({
               <h3 className="text-center text-[#45474B] mb-6 text-3xl font-bold">{t('quad_shaft_optional_features')}</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Kayış Kasnaklı Hidrolik Kaplin</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_hydraulic_coupling')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Rotor Soğutma Sistemi</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_cooling_system')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Otomatik Yağlama Ünitesi</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_auto_lubrication')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Hidrolik Baskı Ünitesi</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_hydraulic_press')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Farklı Ölçülerde Elek</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_screen_sizes')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Cıvatalı Sökülebilen Bıçak Tasarımı</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_blade_design')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Hidromotor Tahrik Sistemi</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_hydromotor')}</p>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-xl p-6 shadow-lg">
-                  <p className="text-[#1E1E1E]">• Çıkış İçin Konveyör Uygulamaları</p>
+                  <p className="text-[#1E1E1E]">• {t('opt_conveyor')}</p>
                 </motion.div>
               </div>
             </motion.div>
