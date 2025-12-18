@@ -324,6 +324,71 @@
             "source": "/dort-shaftli-parcalama-makinesi",
             "destination": "/tr/dort-saftli-parcalama-makinesi",
             "permanent": true
+        },
+        {
+            "source": "/ar/atiklar/:waste",
+            "destination": "/ar/anwa-alnfayat/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/ar/atiklar",
+            "destination": "/ar/anwa-alnfayat",
+            "permanent": true
+        },
+        {
+            "source": "/en/produkty/:rest*",
+            "destination": "/en/products/:rest*",
+            "permanent": true
+        },
+        {
+            "source": "/en/produkty",
+            "destination": "/en/products",
+            "permanent": true
+        },
+        {
+            "source": "/ru/urunler/:rest*",
+            "destination": "/ru/produkty/:rest*",
+            "permanent": true
+        },
+        {
+            "source": "/ru/urunler",
+            "destination": "/ru/produkty",
+            "permanent": true
+        },
+        {
+            "source": "/ar/blog/:slug",
+            "destination": "/blog/:slug",
+            "permanent": true
+        },
+        {
+            "source": "/ru/blog/:slug",
+            "destination": "/blog/:slug",
+            "permanent": true
+        },
+        {
+            "source": "/en/blog/:slug",
+            "destination": "/blog/:slug",
+            "permanent": true
+        },
+        {
+            "source": "/tr/blog/:slug",
+            "destination": "/blog/:slug",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/tibbi-atik-imhasinda-dikkat-edilmesi-gerekenler",
+            "destination": "/blog/tibbi-atik-imhasinda-dikkat-edilmesi-gerekenler",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/endustriyel-parca-lama-makineleri",
+            "destination": "/blog/endustriyel-parcalama-makineleri",
+            "permanent": true
+        },
+        {
+            "source": "/ar/atiklar/kagit-karton-atiklar",
+            "destination": "/ar/anwa-alnfayat/waraq-wa-karton",
+            "permanent": true
         }
     ],
     "rewrites": [
