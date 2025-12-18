@@ -776,8 +776,7 @@ const translations = {
     spec_rotor_diameter: 'Rotor Çapı',
     spec_feed_opening: 'Besleme Ağzı',
     spec_dimensions: 'Boyutlar',
-
-    // CTA
+    optional_features_title: 'Opsiyonel Özellikler',    // CTA
     cta_title: 'Makinenizi Bizimle Planlayın',
     cta_subtitle: 'Projenize uygun parçalama sistemini birlikte tasarlayalım.',
     cta_button: 'Hemen Teklif Al!',
@@ -2046,7 +2045,7 @@ const translations = {
     spec_rotor_diameter: 'Rotor Diameter',
     spec_feed_opening: 'Feed Opening',
     spec_dimensions: 'Dimensions',
-
+    optional_features_title: 'Optional Features',
     // CTA
     cta_title: 'Plan Your Machine With Us',
     cta_subtitle: 'Let\'s design the shredding system suitable for your project together.',

@@ -470,7 +470,51 @@ const getTranslationKeyPrefix = (type: string) => {
   return type.replace(/-/g, '_');
 };
 
+// Helper function to translate Turkish spec values based on current language
+const specValueTranslations: { [key: string]: { en: string; ru: string; ar: string } } = {
+  // Blade/Material types
+  'Sertleştirilmiş Çelik': { en: 'Hardened Steel', ru: 'Закаленная сталь', ar: 'فولاذ مقوى' },
+  'Sertleştirilmiş Çelik Bıçak': { en: 'Hardened Steel Blade', ru: 'Закаленный стальной нож', ar: 'شفرة فولاذية مقواة' },
+  'Hardox Özel Alaşım': { en: 'Hardox Special Alloy', ru: 'Специальный сплав Hardox', ar: 'سبيكة هاردوكس الخاصة' },
+  'Çok Bıçaklı Rotor': { en: 'Multi-Blade Rotor', ru: 'Многолезвийный ротор', ar: 'دوار متعدد الشفرات' },
 
+  // Shaft types
+  'Tek Şaftlı': { en: 'Single Shaft', ru: 'Одновальный', ar: 'عمود واحد' },
+  'Çift Şaftlı': { en: 'Dual Shaft', ru: 'Двухвальный', ar: 'عمود مزدوج' },
+
+  // Weight/Size descriptions
+  'Mobil Şase': { en: 'Mobile Chassis', ru: 'Мобильное шасси', ar: 'هيكل متنقل' },
+  'Kompakt': { en: 'Compact', ru: 'Компактный', ar: 'مضغوط' },
+  'Endüstriyel': { en: 'Industrial', ru: 'Промышленный', ar: 'صناعي' },
+  'Orta Ölçekli': { en: 'Medium Scale', ru: 'Среднего масштаба', ar: 'متوسط الحجم' },
+  'Büyük Ölçekli': { en: 'Large Scale', ru: 'Крупномасштабный', ar: 'واسع النطاق' },
+
+  // Design types
+  'Yatay Tasarım': { en: 'Horizontal Design', ru: 'Горизонтальная конструкция', ar: 'تصميم أفقي' },
+  'Tekli Parçalayıcı': { en: 'Single Shredder', ru: 'Одинарный измельчитель', ar: 'تقطيع فردي' },
+  '2 Parçalayıcı': { en: '2 Shredders', ru: '2 измельчителя', ar: 'وحدتين تقطيع' },
+  '3 Parçalayıcı': { en: '3 Shredders', ru: '3 измельчителя', ar: '3 وحدات تقطيع' },
+
+  // Capacity descriptions
+  'Orta Kapasite': { en: 'Medium Capacity', ru: 'Средняя мощность', ar: 'سعة متوسطة' },
+  'Yüksek Kapasite': { en: 'High Capacity', ru: 'Высокая мощность', ar: 'سعة عالية' },
+  'Tek Aşamalı İmha': { en: 'Single Stage Destruction', ru: 'Одноступенчатое уничтожение', ar: 'تدمير مرحلة واحدة' },
+  'İki Aşamalı İmha': { en: 'Two Stage Destruction', ru: 'Двухступенчатое уничтожение', ar: 'تدمير مرحلتين' },
+  'Üç Aşamalı İmha - Toz Boyutu': { en: 'Three Stage Destruction - Dust Size', ru: 'Трехступенчатое уничтожение - Размер пыли', ar: 'تدمير ثلاث مراحل - حجم الغبار' }
+};
+
+const translateSpecValue = (value: string | undefined, language: string): string => {
+  // Handle undefined values
+  if (!value) return '';
+
+  // If Turkish or value not in translation map, return original
+  if (language === 'tr' || !specValueTranslations[value]) {
+    return value;
+  }
+
+  const translations = specValueTranslations[value];
+  return translations[language as keyof typeof translations] || value;
+};
 
 export const ProductDetailPage = ({
   productType,
@@ -1148,19 +1192,19 @@ export const ProductDetailPage = ({
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1222,7 +1266,7 @@ export const ProductDetailPage = ({
               className="max-w-4xl mx-auto mt-16"
             >
               <h3 className="text-center text-[#45474B] mb-8 text-3xl font-bold">
-                {productType === 'pallet' ? t('pallet_optional_features_title') : productType === 'tree-root' ? t('tree_root_optional_features_title') : productType === 'wood' ? t('wood_optional_features_title') : 'Opsiyonel Özellikler'}
+                {productType === 'pallet' ? t('pallet_optional_features_title') : productType === 'tree-root' ? t('tree_root_optional_features_title') : productType === 'wood' ? t('wood_optional_features_title') : t('optional_features_title')}
               </h3>
               <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${productType === 'pallet' || productType === 'tree-root' || productType === 'wood' ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
                 {productType === 'pallet' ? (
@@ -1886,15 +1930,15 @@ export const ProductDetailPage = ({
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     {currentSpecs.screenSize && (
                       <tr className="border-b border-gray-200">
@@ -1904,7 +1948,7 @@ export const ProductDetailPage = ({
                     )}
                     <tr>
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2430,15 +2474,15 @@ export const ProductDetailPage = ({
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     {currentSpecs.screenSize && (
                       <tr className="border-b border-gray-200">
@@ -2448,7 +2492,7 @@ export const ProductDetailPage = ({
                     )}
                     <tr>
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2984,19 +3028,19 @@ export const ProductDetailPage = ({
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>
