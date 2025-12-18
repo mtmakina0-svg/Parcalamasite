@@ -150,9 +150,9 @@ const multilingualData = {
       keywords: ['parçalama makinesi', 'shredder machine', 'shredder', 'plastik kırma makinesi', 'metal parçalama makinesi', 'ahşap kırma makinesi', 'tek şaftlı parçalama', 'çift şaftlı parçalama', 'TSH parçalama', 'endüstriyel shredder', 'geri dönüşüm makinesi', 'atık kırma makinesi', 'hurda parçalama', 'MT Makina']
     },
     en: {
-      title: 'Industrial Shredder & Waste Incinerator Manufacturer | MT Makina Turkey',
-      description: 'Global manufacturer of Double Shaft Shredders, Medical Waste Incinerators, and Tire Recycling Plants. Heavy duty, high capacity, CE certified solutions exporting worldwide from Turkey.',
-      keywords: ['industrial shredder manufacturer', 'shredder machine Turkey', 'waste incinerator manufacturer', 'plastic shredder for sale', 'metal shredder machine', 'wood crusher manufacturer', 'recycling machine Turkey', 'scrap shredder', 'MT Makina', 'Turkish machinery']
+      title: 'Industrial Shredder Machine For Sale | Shredder Manufacturer Turkey | Best Price | MT Makina',
+      description: 'Leading industrial shredder manufacturer from Turkey. Single shaft, dual shaft, quad shaft shredders for sale. Heavy duty plastic shredder, metal crusher, wood grinder. Factory direct prices, worldwide shipping. ✓ CE Certified ✓ 50+ Countries',
+      keywords: ['industrial shredder for sale', 'shredder machine manufacturer Turkey', 'plastic shredder machine', 'metal shredder for sale', 'wood shredder manufacturer', 'buy industrial shredder', 'shredder factory Turkey', 'heavy duty shredder', 'recycling machine manufacturer']
     },
     ru: {
       title: 'Промышленный Шредер | Дробилка | MT Makina - Производитель №1',
@@ -194,9 +194,9 @@ const multilingualData = {
       keywords: ['parçalama makinesi modelleri', 'shredder çeşitleri', 'endüstriyel makine kataloğu', 'geri dönüşüm ekipmanları']
     },
     en: {
-      title: 'Industrial Shredding Machines & Scrap Metal Shredders | For Sale | MT Makina',
-      description: 'Heavy duty industrial shredders for sale: Single shaft, dual shaft, quad shaft shredders, scrap metal shredders, tire recycling machines. High efficiency, cost-effective solutions from Turkey.',
-      keywords: ['shredder for sale', 'industrial shredder machine', 'scrap metal shredder', 'shredder manufacturer', 'recycling equipment for sale', 'heavy duty shredder']
+      title: 'Industrial Shredding Machines For Sale | Scrap Metal Shredder | Best Price Turkey | MT Makina',
+      description: 'Heavy duty industrial shredders for sale from Turkey. Single shaft, dual shaft, quad shaft shredders. Scrap metal shredder, tire recycling machine, plastic crusher. Factory direct prices. ✓ CE Certified ✓ Worldwide Shipping',
+      keywords: ['shredder for sale', 'industrial shredder machine', 'scrap metal shredder for sale', 'buy shredder machine', 'shredder manufacturer Turkey', 'recycling equipment for sale', 'heavy duty shredder price']
     },
     ru: {
       title: 'Продукция - Каталог Шредеров MT Makina',
@@ -314,6 +314,7 @@ const multilingualData = {
       keywords: ['каталог pdf', 'каталог продукции', 'каталог шредеров', 'каталог MT Makina']
     },
     ar: {
+      title: 'الكتالوج الإلكتروني - تحميل كتالوج منتجات MT Makina PDF',
       description: 'قم بتنزيل كتالوج منتجات MT Makina بصيغة PDF. جميع موديلات آلات التمزيق والمواصفات الفنية ومعلومات الأسعار.',
       keywords: ['كتالوج pdf', 'كتالوج المنتجات', 'كتالوج آلة التمزيق', 'كتالوج MT Makina']
     }
@@ -393,9 +394,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['tek şaftlı parçalama makinesi', 'single shaft shredder', 'TSH serisi', 'plastik kırma makinesi', 'ahşap parçalama makinesi', 'kağıt parçalama', 'plastik shredder', 'ahşap kırıcı', 'tek şaft shredder', 'endüstriyel parçalama'],
       },
       en: {
-        title: 'Single Shaft Shredder Manufacturer | Industrial Shredder For Sale | MT Makina Turkey',
-        description: 'Heavy duty single shaft shredder manufacturer from Turkey. TSH Series 500-6000 kg/h capacity. High efficiency plastic, wood, paper shredders. Cost-effective solutions, CE certified. ✓ 6 Models ✓ Worldwide Export',
-        keywords: ['single shaft shredder manufacturer', 'industrial shredder for sale', 'TSH series', 'plastic shredder machine', 'wood shredder Turkey', 'shredder manufacturer Turkey', 'heavy duty shredder'],
+        title: 'Single Shaft Shredder For Sale | Industrial Shredder Manufacturer Turkey | Best Price | MT Makina',
+        description: 'Heavy duty single shaft shredder for sale from Turkey. TSH Series 500-6000 kg/h capacity. Best price plastic shredder, wood shredder, paper shredder. Factory direct, worldwide shipping. ✓ 6 Models ✓ CE Certified ✓ 2 Year Warranty',
+        keywords: ['single shaft shredder for sale', 'buy single shaft shredder', 'industrial shredder Turkey', 'plastic shredder machine price', 'wood shredder for sale', 'shredder manufacturer Turkey', 'heavy duty shredder best price'],
       },
       ru: {
         title: 'Одновальный Шредер | Серия TSH | MT Makina',
@@ -459,9 +460,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['çift şaftlı parçalama makinesi', 'dual shaft shredder', 'metal parçalama makinesi', 'hurda parçalama makinesi', 'plastik parçalama makinesi', 'CS serisi', 'endüstriyel shredder', 'parçalama makinesi']
       },
       en: {
-        title: 'Dual Shaft Shredder Manufacturer | Metal Shredder For Sale | MT Makina Turkey',
-        description: 'Heavy duty dual shaft shredder manufacturer from Turkey. CS Series for metal, plastic, tire shredding. Scrap metal shredder, industrial shredder machine. ✓ 9 Models ✓ CE Certified ✓ Worldwide Export',
-        keywords: ['dual shaft shredder manufacturer', 'metal shredder', 'scrap metal shredder', 'metal shredder machine', 'shredder machine', 'industrial shredder for sale', 'shredder']
+        title: 'Dual Shaft Shredder For Sale | Metal Shredder Manufacturer Turkey | Best Price | MT Makina',
+        description: 'Heavy duty dual shaft shredder for sale from Turkey. CS Series for metal, plastic, tire shredding. Best price scrap metal shredder. Factory direct, worldwide shipping. ✓ 9 Models ✓ CE Certified ✓ 2 Year Warranty',
+        keywords: ['dual shaft shredder for sale', 'metal shredder for sale', 'buy metal shredder', 'scrap metal shredder price', 'shredder machine Turkey', 'industrial shredder best price', 'shredder manufacturer'],
       },
       ru: {
         title: 'Двухвальный Шредер | Дробилка Металла | MT Makina Серия CS',
@@ -481,9 +482,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['dört şaftlı parçalama makinesi', 'quad shaft shredder', 'ince parçalama makinesi', 'DS serisi', 'plastik parçalama makinesi', 'parçalama makinesi', 'shredder']
       },
       en: {
-        title: 'Quad Shaft Shredder Manufacturer | Fine Shredding | MT Makina Turkey',
-        description: 'Quad shaft shredder manufacturer from Turkey. DS Series for fine shredding with uniform output. Scrap shredder, metal shredder machines. ✓ 4 Models ✓ CE Certified ✓ High Efficiency',
-        keywords: ['quad shaft shredder manufacturer', 'scrap shredder', 'metal shredder machines', 'fine shredder', 'shredder machine', 'industrial shredder']
+        title: 'Quad Shaft Shredder For Sale | Fine Shredder Manufacturer Turkey | Best Price | MT Makina',
+        description: 'Quad shaft shredder for sale from Turkey. DS Series for fine shredding with uniform output. Best price industrial shredder. Factory direct, worldwide shipping. ✓ 4 Models ✓ CE Certified ✓ High Efficiency',
+        keywords: ['quad shaft shredder for sale', 'buy quad shaft shredder', 'fine shredder price', 'scrap shredder Turkey', 'metal shredder machines for sale', 'industrial shredder best price'],
       },
       ru: {
         title: 'Четырехвальный Шредер | Дробилка | MT Makina Серия DS',
@@ -503,9 +504,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['metal parçalama makinesi', 'hurda parçalama makinesi', 'hurda kırma makinesi', 'demir parçalama makinesi', 'demir öğütme makinesi', 'redmonster', 'hurda öğütücü', 'metal shredder']
       },
       en: {
-        title: 'Metal Shredder Machine Manufacturer | Scrap Metal Crusher | MT Makina Turkey',
-        description: 'Heavy duty metal shredder machine manufacturer from Turkey. Redmonster series for scrap metal, ELV, white goods. Scrap metal shredder, scrap metal crusher. ✓ 4 Models ✓ High Capacity',
-        keywords: ['metal shredder machine', 'scrap metal shredder', 'scrap metal crusher', 'metal crusher machine', 'scrap car shredder', 'baled scrap shredder', 'metal shredder']
+        title: 'Metal Shredder Machine For Sale | Scrap Metal Crusher | Best Price Turkey | MT Makina',
+        description: 'Heavy duty metal shredder machine for sale from Turkey. Redmonster series for scrap metal, ELV, white goods. Best price scrap metal crusher. Factory direct, worldwide shipping. ✓ 4 Models ✓ High Capacity',
+        keywords: ['metal shredder for sale', 'buy metal shredder machine', 'scrap metal shredder price', 'metal crusher for sale', 'scrap car shredder Turkey', 'baled scrap shredder price', 'metal shredder best price'],
       },
       ru: {
         title: 'Шредер Металла | Дробилка Металлолома | Redmonster | MT Makina',
@@ -525,9 +526,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['mobil parçalama makinesi', 'mobil kırıcı', 'taşınabilir shredder', 'saha içi parçalama', 'TSM serisi', 'CSM serisi', 'mobile shredder']
       },
       en: {
-        title: 'Mobile Shredder Manufacturer | Portable Shredder | MT Makina Turkey',
-        description: 'Mobile shredder manufacturer from Turkey. TSM/CSM Series for on-site shredding. Diesel powered, high mobility. ✓ 4 Models ✓ Heavy Duty ✓ Worldwide Export',
-        keywords: ['mobile shredder manufacturer', 'portable shredder', 'on-site shredder', 'mobile crusher', 'mobile drum screen', 'shredder machine car']
+        title: 'Mobile Shredder For Sale | Portable Shredder Manufacturer Turkey | Best Price | MT Makina',
+        description: 'Mobile shredder for sale from Turkey. TSM/CSM Series for on-site shredding. Best price portable shredder, diesel powered. Factory direct, worldwide shipping. ✓ 4 Models ✓ Heavy Duty ✓ High Mobility',
+        keywords: ['mobile shredder for sale', 'buy portable shredder', 'on-site shredder price', 'mobile crusher Turkey', 'portable shredder best price', 'shredder machine manufacturer'],
       },
       ru: {
         title: 'Мобильный Шредер | Передвижная Дробилка | MT Makina',
@@ -547,9 +548,9 @@ export const getProductCategorySEO = (type: string, lang: Language = 'tr'): SEOM
         keywords: ['palet parçalama makinesi', 'odun parçalama makinesi', 'odun öğütme makinesi', 'ahşap palet kırıcı', 'wood chipper', 'chipper machine', 'TSV serisi']
       },
       en: {
-        title: 'Pallet Shredder Manufacturer | Wood Chipper | MT Makina Turkey',
-        description: 'Pallet shredder and wood chipper manufacturer from Turkey. TSV Series for wooden pallets, wood shredding. Chipper machine, wood grinder. ✓ 3 Models ✓ High Efficiency',
-        keywords: ['pallet shredder manufacturer', 'wood chipper', 'chipper machine', 'wood shredder', 'pallet crusher', 'wood grinder']
+        title: 'Pallet Shredder For Sale | Wood Chipper Manufacturer Turkey | Best Price | MT Makina',
+        description: 'Pallet shredder and wood chipper for sale from Turkey. TSV Series for wooden pallets, wood shredding. Best price chipper machine, wood grinder. Factory direct, worldwide shipping. ✓ 3 Models ✓ High Efficiency',
+        keywords: ['pallet shredder for sale', 'buy wood chipper', 'chipper machine price', 'wood shredder Turkey', 'pallet crusher for sale', 'wood grinder best price', 'pallet shredder manufacturer'],
       },
       ru: {
         title: 'Шредер Поддонов | Дробилка Дерева | MT Makina Серия TSV',
@@ -947,22 +948,26 @@ export const generateProductStructuredData = (type: string, model: string) => {
       "ratingCount": reviewData.count,
       "reviewCount": reviewData.count
     },
-    "offers": {
-      "@type": "Offer",
-      "url": modelSEO.canonical,
-      "priceCurrency": "USD",
-      "price": "0",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
-    },
     "manufacturer": {
       "@type": "Organization",
       "name": "MT Makina",
       "url": "https://www.parcalamamakinesi.com"
     },
     "url": modelSEO.canonical,
-    "category": "Endüstriyel Parçalama Makineleri"
+    "category": "Endüstriyel Parçalama Makineleri",
+    "potentialAction": {
+      "@type": "CommunicateAction",
+      "name": "Teklif Al / Get Quote",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.parcalamamakinesi.com/tr/iletisim",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "description": "Request a quote for this industrial shredding machine"
+    }
   };
 };
 
@@ -1304,17 +1309,6 @@ export const generateProductListStructuredData = (language: Language = 'tr') => 
         "manufacturer": {
           "@type": "Organization",
           "@id": "https://www.parcalamamakinesi.com/#organization"
-        },
-        "offers": {
-          "@type": "Offer",
-          "availability": "https://schema.org/InStock",
-          "price": "0",
-          "priceCurrency": "USD",
-          "priceValidUntil": "2026-12-31",
-          "seller": {
-            "@type": "Organization",
-            "@id": "https://www.parcalamamakinesi.com/#organization"
-          }
         }
       }
     }))
