@@ -99,6 +99,126 @@
             "source": "/sertifikalar",
             "destination": "/tr/sertifikalar",
             "permanent": true
+        },
+        {
+            "source": "/video-gallery",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/contact-us",
+            "destination": "/tr/iletisim",
+            "permanent": true
+        },
+        {
+            "source": "/en/contact-us",
+            "destination": "/en/contact",
+            "permanent": true
+        },
+        {
+            "source": "/product",
+            "destination": "/tr/urunler",
+            "permanent": true
+        },
+        {
+            "source": "/en/product",
+            "destination": "/en/products",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/products/:type",
+            "destination": "/:lang/:type",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/wastes/:waste",
+            "destination": "/:lang/waste-types/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/:waste",
+            "destination": "/tr/atik-turleri/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/otkhody/:waste",
+            "destination": "/:lang/tipy-otkhodov/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/otkhody",
+            "destination": "/:lang/tipy-otkhodov",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/atiklar/:waste",
+            "destination": "/:lang/atik-turleri/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/atiklar",
+            "destination": "/:lang/atik-turleri",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/urunler/:rest*",
+            "destination": "/:lang/:rest*",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/produkty/:rest*",
+            "destination": "/:lang/:rest*",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/:category/single-saft/:model",
+            "destination": "/:lang/tek-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/:category/dual-saft/:model",
+            "destination": "/:lang/cift-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/:category/quad-saft/:model",
+            "destination": "/:lang/dort-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/single-saft/:model",
+            "destination": "/:lang/tek-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/dual-saft/:model",
+            "destination": "/:lang/cift-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/quad-saft/:model",
+            "destination": "/:lang/dort-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/single-saft",
+            "destination": "/:lang/tek-saftli-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/dual-saft",
+            "destination": "/:lang/cift-saftli-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/quad-saft",
+            "destination": "/:lang/dort-saftli-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/dort-shaftli-parcalama-makinesi",
+            "destination": "/tr/dort-saftli-parcalama-makinesi",
+            "permanent": true
         }
     ],
     "rewrites": [
