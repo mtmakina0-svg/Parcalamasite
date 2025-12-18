@@ -86,6 +86,21 @@
             "permanent": true
         },
         {
+            "source": "/granulator-makinesi",
+            "destination": "/tr/granulator-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/tek-shaftli-parcalama-makinesi",
+            "destination": "/tr/tek-saftli-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/tek-shaftli-parcalama-makinesi/:model",
+            "destination": "/tr/tek-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
             "source": "/urunler",
             "destination": "/tr/urunler",
             "permanent": true
