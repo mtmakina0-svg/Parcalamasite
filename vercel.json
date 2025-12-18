@@ -6,8 +6,83 @@
             "permanent": true
         },
         {
+            "source": "/tr/",
+            "destination": "/",
+            "permanent": true
+        },
+        {
             "source": "/home",
             "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/aboutus",
+            "destination": "/tr/kurumsal",
+            "permanent": true
+        },
+        {
+            "source": "/ourreferences",
+            "destination": "/tr/referanslar",
+            "permanent": true
+        },
+        {
+            "source": "/ourdocuments",
+            "destination": "/tr/sertifikalar",
+            "permanent": true
+        },
+        {
+            "source": "/fair",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/news/:path*",
+            "destination": "/blog",
+            "permanent": true
+        },
+        {
+            "source": "/post/:path*",
+            "destination": "/blog",
+            "permanent": true
+        },
+        {
+            "source": "/product/:path*",
+            "destination": "/tr/urunler",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/blog/:slug",
+            "destination": "/blog/:slug",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/atiklar/:waste",
+            "destination": "/:lang/atik-turleri/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/en/waste-types/palet",
+            "destination": "/en/waste-types/pallet-waste",
+            "permanent": true
+        },
+        {
+            "source": "/en/waste-types/plastik",
+            "destination": "/en/waste-types/plastic-waste",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/elektronik",
+            "destination": "/tr/atik-turleri/elektronik-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/ambalaj",
+            "destination": "/tr/atik-turleri/ambalaj-atiklari",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/organik",
+            "destination": "/tr/atik-turleri/organik-atiklar",
             "permanent": true
         },
         {
