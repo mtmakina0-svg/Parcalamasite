@@ -513,18 +513,16 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                         <div className="space-y-2 mb-6">
                           <div className="flex justify-between items-center text-sm">
                             <span className="text-[#45474B]/70">
-                              {productType === 'tree-root' ? 'Parçalama Alanı:' : 'Kapasite:'}
+                              {productType === 'tree-root' ? t('spec_shredding_area') : t('spec_capacity')}:
                             </span>
                             <span className="text-[#45474B] font-semibold">{info.capacity}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm">
-                            <span className="text-[#45474B]/70">Motor Gücü:</span>
+                            <span className="text-[#45474B]/70">{t('spec_motor_power')}:</span>
                             <span className="text-[#45474B] font-semibold">{info.power}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm">
-                            <span className="text-[#45474B]/70">
-                              {productType === 'tree-root' ? 'Rotor Boyu:' : 'Rotor Uzunluğu:'}
-                            </span>
+                            <span className="text-[#45474B]/70">{t('spec_rotor_length')}:</span>
                             <span className="text-[#45474B] font-semibold">{info.rotorLength}</span>
                           </div>
                         </div>
@@ -534,7 +532,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                         onClick={() => onModelSelect(model)}
                         className="w-full bg-[#F4CE14] hover:bg-[#F4CE14]/90 text-[#1E1E1E] group/btn"
                       >
-                        <span>Detaylı İncele</span>
+                        <span>{t('btn_view_details')}</span>
                         <ChevronRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={20} />
                       </Button>
                     </div>
@@ -544,10 +542,10 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             })}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#45474B]">
+      < section className="py-20 bg-[#45474B]" >
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -575,7 +573,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             </a>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
