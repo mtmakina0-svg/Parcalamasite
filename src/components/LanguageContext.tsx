@@ -764,6 +764,19 @@ const translations = {
     baler_similar_products: 'Benzer Ürünler',
     baler_watch_video: 'Video İzle',
 
+    // Generic Technical Specification Labels
+    spec_model: 'Model',
+    spec_motor_power: 'Motor Gücü',
+    spec_rotor_length: 'Rotor Uzunluğu',
+    spec_shredding_area: 'Parçalama Alanı',
+    spec_blade_count: 'Bıçak Sayısı',
+    spec_weight: 'Ağırlık',
+    spec_capacity: 'Kapasite',
+    spec_screen_size: 'Elek Boyutu',
+    spec_rotor_diameter: 'Rotor Çapı',
+    spec_feed_opening: 'Besleme Ağzı',
+    spec_dimensions: 'Boyutlar',
+
     // CTA
     cta_title: 'Makinenizi Bizimle Planlayın',
     cta_subtitle: 'Projenize uygun parçalama sistemini birlikte tasarlayalım.',
@@ -2020,6 +2033,19 @@ const translations = {
     baler_video_title: 'Baler Machine Videos',
     baler_similar_products: 'Similar Products',
     baler_watch_video: 'Watch Video',
+
+    // Generic Technical Specification Labels
+    spec_model: 'Model',
+    spec_motor_power: 'Motor Power',
+    spec_rotor_length: 'Rotor Length',
+    spec_shredding_area: 'Shredding Area',
+    spec_blade_count: 'Blade Count',
+    spec_weight: 'Weight',
+    spec_capacity: 'Capacity',
+    spec_screen_size: 'Screen Size',
+    spec_rotor_diameter: 'Rotor Diameter',
+    spec_feed_opening: 'Feed Opening',
+    spec_dimensions: 'Dimensions',
 
     // CTA
     cta_title: 'Plan Your Machine With Us',

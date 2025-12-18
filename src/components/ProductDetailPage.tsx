@@ -1135,31 +1135,31 @@ export const ProductDetailPage = ({
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Uzunluğu</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
@@ -1873,37 +1873,37 @@ export const ProductDetailPage = ({
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Uzunluğu</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
                       <tr className="border-b border-gray-200">
-                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Elek Ölçüsü</td>
+                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_screen_size')}</td>
                         <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
@@ -2417,37 +2417,37 @@ export const ProductDetailPage = ({
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Boyu</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
                     {currentSpecs.screenSize && (
                       <tr className="border-b border-gray-200">
-                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Elek Boyutu</td>
+                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_screen_size')}</td>
                         <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
@@ -2971,31 +2971,31 @@ export const ProductDetailPage = ({
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">Model</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Motor Gücü</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Rotor Uzunluğu</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Parçalama Alanı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorDiameter}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Bıçak Sayısı</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.bladeCount}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Ağırlık</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.weight}</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">Kapasite</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
                       <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.capacity}</td>
                     </tr>
                   </tbody>
