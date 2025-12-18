@@ -101,6 +101,21 @@
             "permanent": true
         },
         {
+            "source": "/e-katalog",
+            "destination": "/tr/e-katalog",
+            "permanent": true
+        },
+        {
+            "source": "/atik-turleri",
+            "destination": "/tr/atik-turleri",
+            "permanent": true
+        },
+        {
+            "source": "/atik-turleri/:waste",
+            "destination": "/tr/atik-turleri/:waste",
+            "permanent": true
+        },
+        {
             "source": "/video-gallery",
             "destination": "/",
             "permanent": true
