@@ -1,7 +1,5 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 
@@ -15,9 +13,9 @@ const wasteCategories: WasteCategory[] = [
   { id: 'evsel', titleKey: 'waste_household', image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&q=80' },
   { id: 'elektronik', titleKey: 'waste_electronic', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80' },
   { id: 'lastik', titleKey: 'waste_tire', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80' },
-  { id: 'metal', titleKey: 'waste_metal', image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80' },
-  { id: 'cam', titleKey: 'waste_glass', image: 'https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=800&q=80' },
-  { id: 'kagit', titleKey: 'waste_paper', image: 'https://images.unsplash.com/photo-1585351650024-3a6d61c40b35?w=800&q=80' },
+  { id: 'metal', titleKey: 'waste_metal', image: 'https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=800&q=80' },
+  { id: 'cam', titleKey: 'waste_glass', image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&q=80' },
+  { id: 'kagit', titleKey: 'waste_paper', image: 'https://images.unsplash.com/photo-1604187350558-e18a18f09a77?w=800&q=80' },
   { id: 'plastik', titleKey: 'waste_plastic', image: 'https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=800&q=80' },
   { id: 'organik', titleKey: 'waste_organic', image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80' },
   { id: 'tibbi', titleKey: 'waste_medical', image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80' },
