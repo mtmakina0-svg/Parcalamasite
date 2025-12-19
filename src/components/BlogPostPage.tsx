@@ -48,6 +48,38 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                 canonical={`https://www.parcalamamakinesi.com/blog/${post.slug}`}
             />
 
+            {/* Article Structured Data for SEO */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "headline": localizedTitle,
+                        "description": localizedSummary,
+                        "image": post.image,
+                        "datePublished": post.date,
+                        "dateModified": post.date,
+                        "author": {
+                            "@type": "Person",
+                            "name": localizedAuthor
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "MT Makina",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png"
+                            }
+                        },
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": `https://www.parcalamamakinesi.com/blog/${post.slug}`
+                        }
+                    })
+                }}
+            />
+
             <article className="min-h-screen bg-white pt-24 pb-20">
                 {/* Article Hero */}
                 <div className="container mx-auto px-4 max-w-[1440px]">
