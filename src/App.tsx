@@ -1,5 +1,5 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import React, { useEffect, useState } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
+import { useEffect, useState } from 'react';
 import { initGA, trackPageView } from './utils/analytics';
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { Header } from './components/Header';
@@ -145,11 +145,16 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
 
 function AppContent() {
   const { isRTL, language } = useLanguage();
-  const [showIntro, setShowIntro] = useState(true);
-  const [currentPage, setCurrentPage] = useState<PageView>('main');
-  const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(null);
-  const [selectedProduct, setSelectedProduct] = useState<ProductType>(null);
-  const [selectedModelName, setSelectedModelName] = useState<string>('TSH-60');
+
+  // Parse initial URL to determine starting page
+  const initialUrlState = parseUrl();
+
+  // Only show intro on main homepage, not on other pages
+  const [showIntro, setShowIntro] = useState(initialUrlState.page === 'main');
+  const [currentPage, setCurrentPage] = useState<PageView>(initialUrlState.page);
+  const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(initialUrlState.wasteCategory || null);
+  const [selectedProduct, setSelectedProduct] = useState<ProductType>(initialUrlState.product || null);
+  const [selectedModelName, setSelectedModelName] = useState<string>(initialUrlState.model || 'TSH-60');
 
   // SEO Head data based on current page
   const getSEOData = () => {
