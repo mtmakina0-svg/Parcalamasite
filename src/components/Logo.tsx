@@ -8,8 +8,8 @@ interface LogoProps {
   variant?: 'light' | 'dark'; // light = beyaz yazı (header/footer), dark = siyah yazı (ana sayfa)
 }
 
-// Beyaz yazılı logo (Header ve Footer için)
-const LOGO_WHITE_URL = 'https://i.ibb.co/JW7NnXXC/Mt-Makina-logo-yaz-lar-beyaz.png';
+// Beyaz yazılı logo (Header ve Footer için) - koyu arka planlarda görünür
+const LOGO_WHITE_URL = '/mt-logo-white.png';
 
 // Siyah yazılı logo (Ana sayfa beyaz zemin için)
 const LOGO_DARK_URL = 'https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png';
@@ -25,8 +25,8 @@ const FALLBACK_LOGO_DARK = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZW
  * @param style - Inline styles
  * @param variant - 'light' for white text (header/footer) or 'dark' for black text (homepage)
  */
-export const Logo: React.FC<LogoProps> = ({ 
-  className = '', 
+export const Logo: React.FC<LogoProps> = ({
+  className = '',
   alt = 'MT Makina Logo',
   style,
   variant = 'light'
