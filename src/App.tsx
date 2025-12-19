@@ -47,6 +47,7 @@ import {
   type SEOMetadata
 } from './utils/seoConfig';
 import { SEOHead } from './components/SEOHead';
+import { availableModels } from './utils/productData';
 
 type PageView = 'main' | 'waste-categories' | 'waste-detail' | 'products-overview' | 'about' | 'references-overview' | 'technology' | 'certificates' | 'product-category' | 'product-detail' | 'ecatalog' | 'contact' | 'blog' | 'blog-post' | 'not-found';
 type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'mobile' | 'pallet' | 'harddisk' | 'tree-root' | 'wood' | 'glass' | null;
@@ -117,6 +118,14 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     for (const slug of slugValues) {
       if (cleanPath.startsWith(slug + '/')) {
         const model = cleanPath.substring(slug.length + 1).toUpperCase();
+
+        // Validate model exists in availableModels
+        const validModels = availableModels[type] || [];
+        if (!validModels.includes(model)) {
+          // Invalid model - return not-found
+          return { page: 'not-found' };
+        }
+
         return { page: 'product-detail', product: type as ProductType, model };
       }
     }
