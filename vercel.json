@@ -389,6 +389,206 @@
             "source": "/ar/atiklar/kagit-karton-atiklar",
             "destination": "/ar/anwa-alnfayat/waraq-wa-karton",
             "permanent": true
+        },
+        {
+            "source": "/parcalama-makineleri/:path*",
+            "destination": "/tr/tek-saftli-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/parcalama-makinalari/:path*",
+            "destination": "/tr/tek-saftli-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/parcalama-makineleri/:path*",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/parcalama-makinalari/:path*",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/teknik-ozellik",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/teknik-ozellik",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/blank-7",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/video-galeri",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/video-galeri",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/video-galeri-1",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/parcalama-makineleri-1",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/ayristirma-video-galeri",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/tbbi-atik-parcalama-makinesi",
+            "destination": "/tr/tek-saftli-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/agac-koku-parcalama-makinesi",
+            "destination": "/tr/agac-koku-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/agac-parcalama-makinesi",
+            "destination": "/tr/agac-parcalama-ogutme-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/hurda-metal-parcalayici",
+            "destination": "/tr/metal-parcalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/metal-shredders",
+            "destination": "/en/metal-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ayristirma-sistemleri/:path*",
+            "destination": "/tr/urunler",
+            "permanent": true
+        },
+        {
+            "source": "/balya-presleri/:path*",
+            "destination": "/tr/balyalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/pres-makineleri/:path*",
+            "destination": "/tr/balyalama-makinesi",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/pres-makineleri/:path*",
+            "destination": "/:lang",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/ayristirma-sistemleri/:path*",
+            "destination": "/:lang/urunler",
+            "permanent": true
+        },
+        {
+            "source": "/blog/tags/:tag*",
+            "destination": "/tr/blog",
+            "permanent": true
+        },
+        {
+            "source": "/ar/tek-saftli-parcalama-makinesi",
+            "destination": "/ar/single-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/organik-atik-parcalama-makinesi",
+            "destination": "/ar/single-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/lastik-parcalama-makinesi",
+            "destination": "/ar/single-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/harddisk-imha-makinesi",
+            "destination": "/ar/hard-disk-destroyer",
+            "permanent": true
+        },
+        {
+            "source": "/ar/hat-uzeri-parcalama-makinesi",
+            "destination": "/ar/single-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/kagit-karton-parcalama-makinesi",
+            "destination": "/ar/single-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/palet-parcalama-makinesi",
+            "destination": "/ar/pallet-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/agac-koku-parcalama-makinesi",
+            "destination": "/ar/tree-root-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/metal-parcalama-makinesi",
+            "destination": "/ar/metal-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/:lang/eddy-current-seperator",
+            "destination": "/:lang/urunler",
+            "permanent": true
+        },
+        {
+            "source": "/de/parcalama-makineleri/:path*",
+            "destination": "/de",
+            "permanent": true
+        },
+        {
+            "source": "/de/teknik-ozellik",
+            "destination": "/de",
+            "permanent": true
+        },
+        {
+            "source": "/ru/parcalama-makineleri/:path*",
+            "destination": "/ru",
+            "permanent": true
+        },
+        {
+            "source": "/ru/teknik-ozellik",
+            "destination": "/ru",
+            "permanent": true
+        },
+        {
+            "source": "/de",
+            "destination": "/en",
+            "permanent": true
+        },
+        {
+            "source": "/de/",
+            "destination": "/en",
+            "permanent": true
+        },
+        {
+            "source": "/de/:path*",
+            "destination": "/en/:path*",
+            "permanent": true
         }
     ],
     "rewrites": [
