@@ -940,6 +940,41 @@ export const generateProductStructuredData = (type: string, model: string) => {
       "@type": "Brand",
       "name": "MT Makina"
     },
+    "offers": {
+      "@type": "Offer",
+      "url": modelSEO.canonical,
+      "priceCurrency": "USD",
+      "price": "0",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "MT Makina"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "TR",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 14
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "TR"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 28,
+            "maxValue": 42,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": reviewData.rating,
