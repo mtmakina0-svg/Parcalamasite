@@ -296,17 +296,18 @@ const ThreeViewer: React.FC<ThreeViewerProps> = ({
         setBladeAnimating(false);
     }, []);
 
-    // Button styles
+    // Button styles - responsive for mobile
     const btnStyle = (active: boolean, color = '#F4CE14') => ({
-        padding: '6px 12px', borderRadius: '6px', border: 'none', cursor: 'pointer',
-        fontWeight: 600, fontSize: '12px', backdropFilter: 'blur(8px)',
+        padding: '4px 8px', borderRadius: '6px', border: 'none', cursor: 'pointer',
+        fontWeight: 600, fontSize: '11px', backdropFilter: 'blur(8px)',
         backgroundColor: active ? color : 'rgba(69, 71, 75, 0.85)',
         color: active && color === '#F4CE14' ? '#1E1E1E' : '#F5F7F8',
-        transition: 'all 0.2s ease', display: 'flex', alignItems: 'center', gap: '4px',
+        transition: 'all 0.2s ease', display: 'flex', alignItems: 'center', gap: '2px',
+        whiteSpace: 'nowrap' as const,
     });
 
     const iconBtn = (active = false) => ({
-        padding: '8px', borderRadius: '6px', border: 'none', cursor: 'pointer',
+        padding: '6px', borderRadius: '6px', border: 'none', cursor: 'pointer',
         backgroundColor: active ? '#F4CE14' : 'rgba(69, 71, 75, 0.85)',
         color: active ? '#1E1E1E' : '#F5F7F8', transition: 'all 0.2s ease',
         backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -317,28 +318,28 @@ const ThreeViewer: React.FC<ThreeViewerProps> = ({
             style={{ width: '100%', height: isFullscreen ? '100vh' : height, position: 'relative', borderRadius: isFullscreen ? '0' : '16px', overflow: 'hidden' }}>
 
             {/* Top Left - View Modes */}
-            <div style={{ position: 'absolute', top: '12px', left: '12px', zIndex: 10, display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                <button onClick={() => setViewMode('solid')} style={btnStyle(viewMode === 'solid')}>🎨 Solid</button>
-                <button onClick={() => setViewMode('wireframe')} style={btnStyle(viewMode === 'wireframe', '#E31E24')}>🔲 Wire</button>
-                <button onClick={() => setViewMode('xray')} style={btnStyle(viewMode === 'xray', '#00D4FF')}>🔷 X-Ray</button>
-                <button onClick={() => setViewMode('blueprint')} style={btnStyle(viewMode === 'blueprint', '#1a237e')}>📐 Blueprint</button>
+            <div style={{ position: 'absolute', top: '8px', left: '8px', zIndex: 10, display: 'flex', gap: '4px', flexWrap: 'wrap', maxWidth: 'calc(100% - 140px)' }}>
+                <button onClick={() => setViewMode('solid')} style={btnStyle(viewMode === 'solid')}>Solid</button>
+                <button onClick={() => setViewMode('wireframe')} style={btnStyle(viewMode === 'wireframe', '#E31E24')}>Wire</button>
+                <button onClick={() => setViewMode('xray')} style={btnStyle(viewMode === 'xray', '#00D4FF')}>X-Ray</button>
+                <button onClick={() => setViewMode('blueprint')} style={btnStyle(viewMode === 'blueprint', '#1a237e')}>BP</button>
             </div>
 
             {/* Top Right - Actions */}
-            <div style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10, display: 'flex', gap: '6px' }}>
-                <button onClick={() => setShowDimensions(!showDimensions)} style={iconBtn(showDimensions)} title="Boyutlar"><Ruler size={16} /></button>
-                <button onClick={() => setShowSettings(!showSettings)} style={iconBtn(showSettings)} title="Ayarlar"><Settings size={16} /></button>
-                <button onClick={resetView} style={iconBtn()} title="Sıfırla"><RotateCcw size={16} /></button>
-                <button onClick={downloadScreenshot} style={iconBtn()} title="İndir"><Download size={16} /></button>
-                <button onClick={toggleFullscreen} style={iconBtn()} title="Tam Ekran">{isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}</button>
+            <div style={{ position: 'absolute', top: '8px', right: '8px', zIndex: 10, display: 'flex', gap: '4px' }}>
+                <button onClick={() => setShowDimensions(!showDimensions)} style={iconBtn(showDimensions)} title="Boyutlar"><Ruler size={14} /></button>
+                <button onClick={() => setShowSettings(!showSettings)} style={iconBtn(showSettings)} title="Ayarlar"><Settings size={14} /></button>
+                <button onClick={resetView} style={iconBtn()} title="Sıfırla"><RotateCcw size={14} /></button>
+                <button onClick={downloadScreenshot} style={iconBtn()} title="İndir"><Download size={14} /></button>
+                <button onClick={toggleFullscreen} style={iconBtn()} title="Tam Ekran">{isFullscreen ? <Minimize2 size={14} /> : <Maximize2 size={14} />}</button>
             </div>
 
             {/* Camera Presets - Second Row */}
-            <div style={{ position: 'absolute', top: '52px', left: '12px', zIndex: 10, display: 'flex', gap: '4px' }}>
-                <Camera size={14} style={{ color: 'rgba(255,255,255,0.7)', marginRight: '4px', alignSelf: 'center' }} />
+            <div style={{ position: 'absolute', top: '40px', left: '8px', zIndex: 10, display: 'flex', gap: '3px', flexWrap: 'wrap', maxWidth: 'calc(100% - 16px)' }}>
+                <Camera size={12} style={{ color: 'rgba(255,255,255,0.7)', marginRight: '2px', alignSelf: 'center' }} />
                 {(['free', 'front', 'side', 'top', 'iso'] as CameraPreset[]).map(preset => (
                     <button key={preset} onClick={() => setCameraPreset(preset)} style={btnStyle(cameraPreset === preset)}>
-                        {preset === 'free' ? 'Serbest' : preset === 'front' ? 'Ön' : preset === 'side' ? 'Yan' : preset === 'top' ? 'Üst' : 'İzo'}
+                        {preset === 'free' ? 'Srb' : preset === 'front' ? 'Ön' : preset === 'side' ? 'Yan' : preset === 'top' ? 'Üst' : 'İzo'}
                     </button>
                 ))}
             </div>
