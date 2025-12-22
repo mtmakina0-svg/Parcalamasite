@@ -491,8 +491,12 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-[#45474B] z-40 overflow-y-auto"
-            style={{ WebkitOverflowScrolling: 'touch' }}
+            className="lg:hidden fixed left-0 right-0 bg-[#45474B] z-[9998] overflow-y-auto"
+            style={{
+              top: '80px',
+              height: 'calc(100vh - 80px)',
+              WebkitOverflowScrolling: 'touch'
+            }}
           >
             <div className="px-4 py-4">
               <nav className="flex flex-col space-y-4">
