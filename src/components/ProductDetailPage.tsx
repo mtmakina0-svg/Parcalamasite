@@ -1184,37 +1184,37 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
+                className="max-w-3xl mx-auto rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full">
+                <table className="w-full table-fixed">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/2 text-lg text-center">{t('spec_model')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_motor_power')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_rotor_length')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_shredding_area')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_blade_count')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_weight')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_capacity')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1922,43 +1922,43 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
+                className="max-w-3xl mx-auto rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full">
+                <table className="w-full table-fixed">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/2 text-lg text-center">{t('spec_model')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_motor_power')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_rotor_length')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_shredding_area')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_blade_count')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_weight')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     {currentSpecs.screenSize && (
                       <tr className="border-b border-gray-200">
-                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_screen_size')}</td>
-                        <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.screenSize}</td>
+                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_screen_size')}</td>
+                        <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_capacity')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2466,43 +2466,43 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
+                className="max-w-3xl mx-auto rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full">
+                <table className="w-full table-fixed">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/2 text-lg text-center">{t('spec_model')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_motor_power')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_rotor_length')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_shredding_area')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_blade_count')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_weight')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     {currentSpecs.screenSize && (
                       <tr className="border-b border-gray-200">
-                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_screen_size')}</td>
-                        <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.screenSize}</td>
+                        <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_screen_size')}</td>
+                        <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.screenSize}</td>
                       </tr>
                     )}
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_capacity')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -3020,37 +3020,37 @@ export const ProductDetailPage = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto min-w-full rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
+                className="max-w-3xl mx-auto rounded-xl overflow-hidden shadow-xl bg-white ring-1 ring-gray-100"
               >
-                <table className="w-full">
+                <table className="w-full table-fixed">
                   <tbody>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/3 text-lg">{t('spec_model')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{modelName}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold w-1/2 text-lg text-center">{t('spec_model')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{modelName}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_motor_power')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.motorPower}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_motor_power')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.motorPower}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_rotor_length')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{currentSpecs.rotorLength}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_rotor_length')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{currentSpecs.rotorLength}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_shredding_area')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_shredding_area')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.rotorDiameter, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_blade_count')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_blade_count')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.bladeCount, language)}</td>
                     </tr>
                     <tr className="border-b border-gray-200">
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_weight')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.weight, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_weight')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.weight, language)}</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg">{t('spec_capacity')}</td>
-                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white">{translateSpecValue(currentSpecs.capacity, language)}</td>
+                      <td className="px-6 py-4 bg-[#F4CE14] text-[#1E1E1E] font-bold text-lg text-center">{t('spec_capacity')}</td>
+                      <td className="px-6 py-4 text-[#1E1E1E] font-medium text-lg bg-white text-center">{translateSpecValue(currentSpecs.capacity, language)}</td>
                     </tr>
                   </tbody>
                 </table>

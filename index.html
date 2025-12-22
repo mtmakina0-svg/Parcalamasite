@@ -5,21 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Preconnect for critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+  <link rel="preconnect" href="https://i.ibb.co" crossorigin>
+
   <!-- DNS Prefetch for faster resource loading -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://res.cloudinary.com">
+  <link rel="dns-prefetch" href="https://i.ibb.co">
 
-  <!-- Preconnect for critical resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-
-  <!-- LCP Optimization: Preload hero video -->
-  <link rel="preload" as="video"
-    href="https://res.cloudinary.com/dutqyzxuz/video/upload/An_ultrarealistic_4k_202508261628_so1wo_y1a637.mp4"
-    type="video/mp4">
+  <!-- Preload critical font (LCP optimization) -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap">
+  </noscript>
 
   <title>MT Makina | Endüstriyel Parçalama Makinesi &amp; Mobil Yakma Fırını</title>
   <meta name="description"
@@ -51,8 +57,9 @@
   <meta name="msapplication-TileColor" content="#E31E24" />
   <meta name="theme-color" content="#45474B" />
 
-  <!-- Google Model Viewer for 3D models -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+  <!-- Google Model Viewer for 3D models - Defer loading -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+    defer></script>
 
   <!-- Google Analytics 4 - Deferred for performance -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6GK4L2520"></script>
