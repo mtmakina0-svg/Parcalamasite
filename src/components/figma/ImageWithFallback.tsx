@@ -5,6 +5,11 @@ const ERROR_IMG_SRC =
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackSrc?: string;
+  /** 
+   * Set to 'high' for LCP (above-the-fold) images, 'low' for below-the-fold.
+   * Default is 'auto'.
+   */
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 export function ImageWithFallback(props: ImageWithFallbackProps) {
@@ -19,7 +24,7 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
     }
   }
 
-  const { src, fallbackSrc, alt, style, className, ...rest } = props
+  const { src, fallbackSrc, alt, style, className, loading = 'lazy', fetchPriority = 'auto', ...rest } = props
 
   // Update currentSrc when src prop changes
   React.useEffect(() => {
@@ -37,6 +42,16 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
       </div>
     </div>
   ) : (
-    <img src={currentSrc} alt={alt} className={className} style={style} {...rest} onError={handleError} />
+    <img
+      src={currentSrc}
+      alt={alt}
+      className={className}
+      style={style}
+      loading={loading}
+      fetchPriority={fetchPriority}
+      {...rest}
+      onError={handleError}
+    />
   )
 }
+

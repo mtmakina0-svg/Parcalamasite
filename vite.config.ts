@@ -1,8 +1,8 @@
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import vitePrerender from 'vite-plugin-prerender';
+import tailwindcss from '@tailwindcss/vite';
 
 // Check if we're in a CI environment (Vercel, GitHub Actions, etc.)
 const isCI = process.env.CI || process.env.VERCEL || process.env.GITHUB_ACTIONS;
@@ -76,6 +76,7 @@ const prerenderPlugin = !isCI ? vitePrerender({
 export default defineConfig({
   plugins: [
     react(),
+    tailwindcss(),
     prerenderPlugin,
   ].filter(Boolean),
   resolve: {

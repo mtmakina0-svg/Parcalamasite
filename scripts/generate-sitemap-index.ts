@@ -14,7 +14,8 @@
 import fs from 'fs';
 import path from 'path';
 import { generateUrl, type Language } from '../src/utils/seoConfig';
-import { modelDescriptions } from '../src/utils/modelDescriptions';
+
+import { availableModels } from '../src/utils/modelConfig';
 
 const BASE_URL = 'https://www.parcalamamakinesi.com';
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
@@ -30,10 +31,7 @@ interface SitemapUrl {
 }
 
 // Ürün ve modellerini al
-const products: { [key: string]: string[] } = {};
-Object.keys(modelDescriptions).forEach(type => {
-    products[type] = Object.keys(modelDescriptions[type]);
-});
+const products = availableModels;
 
 // Atık kategorileri
 const wasteCategories = [

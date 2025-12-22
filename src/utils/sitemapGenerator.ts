@@ -4,7 +4,7 @@
  */
 
 import { generateUrl, type Language } from './seoConfig';
-import { modelDescriptions } from './modelDescriptions';
+import { availableModels } from './modelConfig';
 
 interface SitemapUrl {
   loc: string;
@@ -15,14 +15,7 @@ interface SitemapUrl {
 }
 
 // All product types and their models
-// All product types and their models derived from modelDescriptions or manually augmented if needed
-// We use a mapping or just keys from modelDescriptions
-const products: { [key: string]: string[] } = {};
-
-// Populate products from modelDescriptions
-Object.keys(modelDescriptions).forEach(type => {
-  products[type] = Object.keys(modelDescriptions[type]);
-});
+const products = availableModels;
 
 // Update waste categories to match WasteCategoriesPage.tsx
 const wasteCategories = [

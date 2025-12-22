@@ -12,7 +12,9 @@ import {
   AccordionTrigger,
 } from './ui/accordion';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
-import { getModelDescription, hasModelDescription } from '../utils/modelDescriptions';
+import { getModelDescriptionAsync, hasModelDescription } from '../utils/modelDescriptions';
+import { availableModels } from '../utils/modelConfig';
+import { ModelDescription } from '../types/descriptionTypes';
 import { YouTubeChannelSection } from './YouTubeChannelSection';
 import { SimilarProductsSection } from './SimilarProductsSection';
 import { StructuredData } from './StructuredData';
@@ -420,19 +422,7 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
   },
 };
 
-// Available models for each product type
-const availableModels: { [key: string]: string[] } = {
-  'single-shaft': ['TSH-60', 'TSH-80', 'TSH-100', 'TSH-130', 'TSH-160', 'TSH-200'],
-  'dual-shaft': ['CS-20', 'CS-40', 'CS-60', 'CS-80', 'CS-100', 'CS-120', 'CS-150', 'CS-180', 'CS-200'],
-  'quad-shaft': ['DS-80', 'DS-100', 'DS-150', 'DS-200'],
-  'metal': ['RDM-100', 'RDM-150', 'RDM-180', 'RDM-200'],
-  'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
-  'mobile': ['TSM-150', 'TSM-300', 'CSM-150', 'CSM-200'],
-  'pallet': ['TSV-140', 'TSV-200', 'TSVX-200'],
-  'tree-root': ['TW-100', 'TW-150', 'TW-200'],
-  'wood': ['TSY-100', 'TSY-150', 'TSY-200'],
-  'glass': ['CK-200', 'CK-400', 'CKS-400', 'GB-300']
-};
+
 
 // Title/Subtitle mapping for each product type
 const productTitleKeys: { [key: string]: { title: string; subtitle: string } } = {
@@ -525,6 +515,8 @@ export const ProductDetailPage = ({
 }: ProductDetailPageProps) => {
   const { t, isRTL, language } = useLanguage();
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [modelDesc, setModelDesc] = useState<ModelDescription | null>(null);
+  const [isLoadingDesc, setIsLoadingDesc] = useState(false);
 
   // Normalize legacy product type keys
   // Normalize legacy product type keys
@@ -558,7 +550,23 @@ export const ProductDetailPage = ({
   const models = availableModels[currentProductType] || [];
 
   // Get model-specific description with current language
-  const modelDesc = getModelDescription(currentProductType, defaultModelName, language);
+  // const modelDesc = getModelDescription(currentProductType, defaultModelName, language);
+  React.useEffect(() => {
+    let isMounted = true;
+    const fetchDesc = async () => {
+      setIsLoadingDesc(true);
+      try {
+        const desc = await getModelDescriptionAsync(currentProductType, defaultModelName, language);
+        if (isMounted) setModelDesc(desc);
+      } catch (error) {
+        console.error('Error loading description:', error);
+      } finally {
+        if (isMounted) setIsLoadingDesc(false);
+      }
+    };
+    fetchDesc();
+    return () => { isMounted = false; };
+  }, [currentProductType, defaultModelName, language]);
   const hasCustomDesc = hasModelDescription(currentProductType, defaultModelName);
 
   // Get product title based on type
@@ -751,6 +759,8 @@ export const ProductDetailPage = ({
                   alt={getImageAlt()}
                   className="w-full rounded-2xl shadow-2xl"
                   fallbackSrc={fallbackImage}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               )}
             </motion.div>

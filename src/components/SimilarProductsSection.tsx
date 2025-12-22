@@ -179,6 +179,126 @@ const similarProductsMap: { [key: string]: SimilarProduct[] } = {
       defaultModel: 'BP-60',
       fallbackImage: 'https://i.ibb.co/svR9Kdq7/1-7.png'
     }
+  ],
+  'harddisk': [
+    {
+      productType: 'single-shaft',
+      translationKey: 'product_single_shaft',
+      defaultModel: 'TSH-60',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'dual-shaft',
+      translationKey: 'product_dual_shaft',
+      defaultModel: 'CS-20',
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
+    },
+    {
+      productType: 'metal',
+      translationKey: 'product_metal',
+      defaultModel: 'RDM-100',
+      fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
+    }
+  ],
+  'mobile': [
+    {
+      productType: 'single-shaft',
+      translationKey: 'product_single_shaft',
+      defaultModel: 'TSH-60',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'dual-shaft',
+      translationKey: 'product_dual_shaft',
+      defaultModel: 'CS-20',
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
+    },
+    {
+      productType: 'wood',
+      translationKey: 'product_wood',
+      defaultModel: 'TSY-100',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    }
+  ],
+  'pallet': [
+    {
+      productType: 'wood',
+      translationKey: 'product_wood',
+      defaultModel: 'TSY-100',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'single-shaft',
+      translationKey: 'product_single_shaft',
+      defaultModel: 'TSH-60',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'dual-shaft',
+      translationKey: 'product_dual_shaft',
+      defaultModel: 'CS-20',
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
+    }
+  ],
+  'tree-root': [
+    {
+      productType: 'wood',
+      translationKey: 'product_wood',
+      defaultModel: 'TSY-100',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'pallet',
+      translationKey: 'product_pallet',
+      defaultModel: 'TSV-140',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'mobile',
+      translationKey: 'product_mobile',
+      defaultModel: 'TSM-150',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    }
+  ],
+  'wood': [
+    {
+      productType: 'tree-root',
+      translationKey: 'product_tree_root',
+      defaultModel: 'TW-100',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'pallet',
+      translationKey: 'product_pallet',
+      defaultModel: 'TSV-140',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'single-shaft',
+      translationKey: 'product_single_shaft',
+      defaultModel: 'TSH-60',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    }
+  ],
+  'glass': [
+    {
+      productType: 'single-shaft',
+      translationKey: 'product_single_shaft',
+      defaultModel: 'TSH-60',
+      fallbackImage: 'https://i.ibb.co/Hf47H3b1/1-1.png'
+    },
+    {
+      productType: 'dual-shaft',
+      translationKey: 'product_dual_shaft',
+      defaultModel: 'CS-20',
+      fallbackImage: 'https://i.ibb.co/B2yVNQF0/1-1.png'
+    },
+    {
+      productType: 'metal',
+      translationKey: 'product_metal',
+      defaultModel: 'RDM-100',
+      fallbackImage: 'https://i.ibb.co/m5xLp46J/1-1.png'
+    }
   ]
 };
 
