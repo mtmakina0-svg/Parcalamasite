@@ -1349,3 +1349,119 @@ export const generateProductListStructuredData = (language: Language = 'tr') => 
     }))
   };
 };
+
+// Organization Schema - Company Structured Data for AI SEO
+export const generateOrganizationSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "Manufacturer"],
+    "@id": "https://www.parcalamamakinesi.com/#organization",
+    "name": "MT Makina",
+    "alternateName": ["MT Makina Parçalama Makinesi", "MT Makina Industrial Shredders"],
+    "url": "https://www.parcalamamakinesi.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.parcalamamakinesi.com/logo.png",
+      "width": 300,
+      "height": 100
+    },
+    "image": "https://www.parcalamamakinesi.com/og-image.jpg",
+    "description": "Turkey's leading industrial shredder manufacturer. Producing single shaft, dual shaft, quad shaft shredders, metal shredders, mobile crushers for recycling industry since 2003. Exporting to 50+ countries.",
+    "foundingDate": "2003",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Konya, Turkey"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Organize Sanayi Bölgesi",
+      "addressLocality": "Konya",
+      "addressRegion": "Konya",
+      "postalCode": "42300",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "37.8746",
+      "longitude": "32.4932"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90-332-342-10-20",
+        "contactType": "sales",
+        "availableLanguage": ["Turkish", "English", "Russian", "Arabic"],
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90-332-342-10-20",
+        "contactType": "customer support",
+        "availableLanguage": ["Turkish", "English"]
+      }
+    ],
+    "email": "info@mtmakina.com.tr",
+    "sameAs": [
+      "https://www.youtube.com/@mtmakina",
+      "https://www.linkedin.com/company/mt-makina",
+      "https://www.facebook.com/mtmakina",
+      "https://www.instagram.com/mtmakina"
+    ],
+    "knowsAbout": [
+      "Industrial Shredders",
+      "Plastic Recycling Machines",
+      "Metal Shredders",
+      "Wood Grinders",
+      "Waste Management Equipment",
+      "Recycling Technology"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Industrial Shredding Machines",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Single Shaft Shredder",
+            "category": "Industrial Shredders"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Dual Shaft Shredder",
+            "category": "Industrial Shredders"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Metal Shredder",
+            "category": "Metal Processing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Mobile Shredder",
+            "category": "Mobile Equipment"
+          }
+        }
+      ]
+    },
+    "areaServed": {
+      "@type": "GeoShape",
+      "name": "Worldwide - 50+ Countries"
+    },
+    "award": [
+      "CE Certification",
+      "ISO 9001 Quality Management",
+      "ISO 14001 Environmental Management"
+    ],
+    "slogan": "Turkey's #1 Shredder Manufacturer"
+  };
+};
