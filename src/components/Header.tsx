@@ -110,7 +110,7 @@ export const Header = ({ onWasteClick, onWasteDetailClick, onMainClick, onProduc
     },
     'glass': {
       label: t('product_glass'),
-      models: ['GB-300']
+      models: ['CK-200', 'CK-400', 'CKS-400', 'GB-300']
     }
   };
 
