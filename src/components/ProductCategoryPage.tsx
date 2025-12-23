@@ -375,7 +375,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
             <h2 className="text-[#45474B] mb-8 text-2xl md:text-3xl font-bold text-center">
               {t('about_our_machines')}
