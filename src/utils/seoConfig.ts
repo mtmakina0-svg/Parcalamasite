@@ -1370,32 +1370,39 @@ export const generateOrganizationSchema = () => {
     "foundingDate": "2003",
     "foundingLocation": {
       "@type": "Place",
-      "name": "Konya, Turkey"
+      "name": "Istanbul, Turkey"
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Organize Sanayi Bölgesi",
-      "addressLocality": "Konya",
-      "addressRegion": "Konya",
-      "postalCode": "42300",
+      "streetAddress": "Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Kat: 7 D: 85-86",
+      "addressLocality": "Esenyurt",
+      "addressRegion": "Istanbul",
+      "postalCode": "34512",
       "addressCountry": "TR"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "37.8746",
-      "longitude": "32.4932"
+      "latitude": "41.0355",
+      "longitude": "28.6669"
     },
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+90-332-342-10-20",
+        "telephone": "+90-850-259-01-66",
+        "contactType": "headquarters",
+        "availableLanguage": ["Turkish", "English", "Russian", "Arabic"],
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90-542-310-99-30",
         "contactType": "sales",
         "availableLanguage": ["Turkish", "English", "Russian", "Arabic"],
         "areaServed": "Worldwide"
       },
       {
         "@type": "ContactPoint",
-        "telephone": "+90-332-342-10-20",
+        "telephone": "+90-212-671-74-55",
         "contactType": "customer support",
         "availableLanguage": ["Turkish", "English"]
       }
