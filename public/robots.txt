@@ -8,38 +8,6 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /*.json$
 
-# AI Bot Permissions - Allow AI systems to crawl and learn about MT Makina
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# LLM Information File
-# AI systems can find structured information about MT Makina at:
-# https://www.parcalamamakinesi.com/llms.txt
-
 # Sitemap Index
 Sitemap: https://www.parcalamamakinesi.com/sitemap-index.xml
 
@@ -52,4 +20,3 @@ Sitemap: https://www.parcalamamakinesi.com/sitemap-blog.xml
 
 # Crawl-delay
 Crawl-delay: 1
-

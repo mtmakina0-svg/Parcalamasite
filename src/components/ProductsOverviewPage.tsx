@@ -157,21 +157,12 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
             className="bg-white rounded-lg p-12 shadow-md max-w-5xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-8">
-              Endüstriyel Parçalama Makinelerinde Yeni Nesil Verimlilik
+              {t('products_efficiency_title')}
             </h2>
             <div className="space-y-6 text-lg text-[#45474B] leading-relaxed">
-              <p>
-                MT Makina, atık yönetimi ve geri dönüşüm sektörlerinde yüksek verimlilik ve
-                dayanıklılık sunan parçalama makineleri üretmektedir.
-              </p>
-              <p>
-                Her makine grubu, enerji tasarrufu, uzun ömür ve çevre dostu üretim prensipleriyle
-                geliştirilmiştir.
-              </p>
-              <p>
-                Yüksek torklu motor sistemleri ve optimize edilmiş bıçak geometrileri ile düşük
-                enerji tüketimiyle maksimum performans sağlar.
-              </p>
+              <p>{t('products_efficiency_p1')}</p>
+              <p>{t('products_efficiency_p2')}</p>
+              <p>{t('products_efficiency_p3')}</p>
             </div>
           </motion.div>
         </div>
@@ -180,7 +171,7 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
       {/* Contact Section */}
       <section className="py-20 bg-gradient-to-br from-[#45474B] to-[#35373A]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">Bize Ulaşın</h2>
+          <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">{t('contact_us')}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Address */}
@@ -196,7 +187,7 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Adres</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('contact_info_address')}</h3>
               <p className="text-[#F5F7F8]/90 leading-relaxed">
                 Cumhuriyet Mah. 1983 Sk. Kent Palas 2 K:7 D:85-86 PK:34512 Esenyurt / İstanbul / TÜRKİYE
               </p>
@@ -215,7 +206,7 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">Telefon</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('contact_info_phone')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">+90 212 613 31 82</p>
             </motion.div>
 
@@ -232,7 +223,7 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </div>
-              <h3 className="text-xl text-[#F5F7F8] mb-3">E-Posta</h3>
+              <h3 className="text-xl text-[#F5F7F8] mb-3">{t('contact_info_email')}</h3>
               <p className="text-[#F5F7F8]/90 text-lg">info@mtmakina.com.tr</p>
             </motion.div>
           </div>
@@ -245,30 +236,30 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             {/* Kurumsal */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Kurumsal</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('footer_corporate')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>Ana Sayfa</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Hakkımızda</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Misyonumuz</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Vizyonumuz</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>{t('footer_home')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_about')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_mission_title')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('about_vision_title')}</li>
               </ul>
             </div>
 
             {/* Ürünler */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Ürünler</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('footer_products')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Parçalama Makineleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Ayrıştırma Sistemleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Yakma Fırınları</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Balya Presleri</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">Tesisler</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_shredders')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_separation')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_incinerators')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_balers')}</li>
+                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('footer_facilities')}</li>
               </ul>
             </div>
 
             {/* Bize Ulaşın */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">Bize Ulaşın</h3>
+              <h3 className="text-xl text-[#F4CE14] mb-4">{t('contact_us')}</h3>
               <ul className="space-y-2 text-[#F5F7F8]/80">
                 <li>E: info@mtmakina.com.tr</li>
                 <li>T: +90 212 613 31 82</li>
@@ -299,7 +290,7 @@ export const ProductsOverviewPage = ({ onBackToMain, onProductClick }: ProductsO
                 </svg>
               </a>
             </div>
-            <p className="text-center text-[#F5F7F8]/60">© 2025 MT Makina Ltd. Şti. - Tüm Hakları Saklıdır</p>
+            <p className="text-center text-[#F5F7F8]/60">{t('footer_copyright')}</p>
           </div>
         </div>
       </footer>
