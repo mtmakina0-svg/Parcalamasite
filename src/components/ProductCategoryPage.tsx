@@ -111,6 +111,7 @@ const productContentKeys: {
     desc3: string;
     desc4?: string;
     desc5?: string;
+    desc6?: string;
     adv1Title: string;
     adv1Desc: string;
     adv2Title: string;
@@ -127,6 +128,9 @@ const productContentKeys: {
     desc1: 'single_shaft_description_1',
     desc2: 'single_shaft_description_2',
     desc3: 'single_shaft_description_3',
+    desc4: 'single_shaft_description_4',
+    desc5: 'single_shaft_description_5',
+    desc6: 'single_shaft_description_6',
     adv1Title: 'single_shaft_advantage_1_title',
     adv1Desc: 'single_shaft_advantage_1_desc',
     adv2Title: 'single_shaft_advantage_2_title',
@@ -383,6 +387,24 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
               <p className="text-[#45474B] leading-relaxed text-lg">
                 {t(contentKeys.desc2)}
               </p>
+              <p className="text-[#45474B] leading-relaxed text-lg">
+                {t(contentKeys.desc3)}
+              </p>
+              {contentKeys.desc4 && (
+                <p className="text-[#45474B] leading-relaxed text-lg">
+                  {t(contentKeys.desc4)}
+                </p>
+              )}
+              {contentKeys.desc5 && (
+                <p className="text-[#45474B] leading-relaxed text-lg">
+                  {t(contentKeys.desc5)}
+                </p>
+              )}
+              {contentKeys.desc6 && (
+                <p className="text-[#45474B] leading-relaxed text-lg">
+                  {t(contentKeys.desc6)}
+                </p>
+              )}
             </div>
           </motion.div>
         </div>
