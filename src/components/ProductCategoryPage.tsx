@@ -287,7 +287,7 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   onBackToMain,
   onModelSelect
 }) => {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
 
   const models = availableModels[productType] || [];
   const fallbackImage = getFallbackImage(productType);
@@ -323,10 +323,12 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
             items={[
               {
                 label: t('nav_products'),
+                href: `/${language}/urunler`,
                 onClick: onBackToMain
               },
               {
-                label: t(contentKeys.title)
+                label: t(contentKeys.title),
+                href: `/${language}/${productType}`
               }
             ]}
           />
