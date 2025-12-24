@@ -12,22 +12,31 @@ export const quadShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan DS-80 dört şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik ve çevresel faydalar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, dört şaftlı katı atık parçalama makinesi fiyat teklifi ve teknik danışmanlık hizmetleri sunmaktadır. Hurda lastik parçalama makinesi, kağıt parçalama makinesi, karton parçalama makinesi ve HDD imha makinesi ihtiyaçlarınız için bizimle iletişime geçin. CE sertifikası ve 2 yıl garanti ile desteklenir.'
         },
         en: {
-            intro: 'DS-80 four shaft shredder is a professional solution for applications requiring fine shredding and homogeneous output size.',
-            paragraph1: 'DS-80 model features 4x7.5 kW (total 30 kW) four motor system with 800 mm rotor length. With 600-1000 kg/hour processing capacity, it shows superior performance.',
-            paragraph2: 'Equipped with advanced PLC control system, four shaft synchronization, automatic overload detection, DS-80 guarantees uninterrupted operation.',
-            paragraph3: 'MT Makina DS-80 is ideal for plastic recycling facilities, e-waste pre-processing units, textile recycling.'
+            intro: 'DS-80 four shaft shredder is a professional solution for applications requiring fine shredding and homogeneous output size, offering precision shredding technology.',
+            paragraph1: 'DS-80 model features 4x7.5 kW (total 30 kW) four motor system with 800 mm rotor length. With 600-1000 kg/hour processing capacity, it shows superior performance in industrial plastic waste, electronic boards, cable waste, composite materials, paper and cardboard shredding applications.',
+            paragraph2: 'Equipped with advanced PLC control system, four shaft synchronization, automatic overload detection and automatic reverse function, DS-80 guarantees uninterrupted operation. With 48 premium quality blades and dual-stage screen system (5-25 mm), precise particle control is ensured.',
+            paragraph3: 'MT Makina DS-80 four shaft solid waste shredder is ideal for plastic recycling facilities, e-waste pre-processing units, textile recycling and electronic waste processing centers. Can be integrated with conveyor feeder and magnetic separator systems.',
+            paragraph4: 'With four shaft shredder technology, DS-80 provides excellent results in fine shredding applications requiring homogeneous output. The modular structure allows easy component replacement, reducing maintenance times and operating costs.',
+            paragraph5: 'DS-80 four shaft shredder offering energy efficiency provides high return on investment by minimizing operating costs. User-friendly control panel and easy operation provide comfortable use for operators. Supported by CE certified safety standards and 2-year warranty.',
+            paragraph6: 'DS-80 four shaft shredder providing sustainability in waste management offers high efficiency and environmental benefits to businesses by optimizing recycling processes. MT Makina, the leading shredder manufacturer in Turkey, offers four shaft solid waste shredder price quotes and technical consultancy services.'
         },
         ru: {
-            intro: 'Четырехвальный измельчитель DS-80 - профессиональное решение для тонкого измельчения.',
-            paragraph1: 'Модель DS-80 оснащена системой четырех двигателей 4x7,5 кВт (всего 30 кВт) с длиной ротора 800 мм.',
-            paragraph2: 'Оснащенный системой управления ПЛК, синхронизацией четырех валов, DS-80 гарантирует бесперебойную работу.',
-            paragraph3: 'MT Makina DS-80 идеально подходит для предприятий по переработке пластика.'
+            intro: 'Четырехвальный измельчитель DS-80 - профессиональное решение для тонкого измельчения и однородного размера на выходе, предлагающее технологию точного измельчения.',
+            paragraph1: 'Модель DS-80 оснащена системой четырех двигателей 4x7,5 кВт (всего 30 кВт) с длиной ротора 800 мм. С производительностью обработки 600-1000 кг/час демонстрирует превосходную эффективность в применениях измельчения промышленных пластиковых отходов, электронных плат, кабельных отходов.',
+            paragraph2: 'Оснащенный усовершенствованной системой управления ПЛК, синхронизацией четырех валов, автоматическим обнаружением перегрузки и функцией автоматического реверса, DS-80 гарантирует бесперебойную работу. С 48 ножами премиум качества обеспечивает точный контроль частиц.',
+            paragraph3: 'Четырехвальный измельчитель твердых отходов MT Makina DS-80 идеально подходит для предприятий по переработке пластика, подразделений предварительной обработки электронных отходов и центров переработки текстиля.',
+            paragraph4: 'С технологией четырехвального измельчителя DS-80 обеспечивает отличные результаты в применениях тонкого измельчения, требующих однородного выхода. Модульная структура позволяет легко заменять компоненты.',
+            paragraph5: 'Четырехвальный измельчитель DS-80, предлагающий энергоэффективность, обеспечивает высокую отдачу от инвестиций за счет минимизации эксплуатационных расходов. Поддерживается сертификатом CE и гарантией 2 года.',
+            paragraph6: 'Четырехвальный измельчитель DS-80 предлагает высокую эффективность и экологические преимущества предприятиям. MT Makina, ведущий производитель измельчителей в Турции, предлагает ценовые предложения и технические консультации.'
         },
         ar: {
-            intro: 'آلة التمزيق رباعية العمود DS-80 حل احترافي للتمزيق الدقيق.',
-            paragraph1: 'يتميز طراز DS-80 بنظام أربعة محركات 4×7.5 كيلووات (إجمالي 30 كيلووات).',
-            paragraph2: 'مجهز بنظام تحكم PLC ومزامنة أربعة أعمدة، يضمن DS-80 تشغيلاً متواصلاً.',
-            paragraph3: 'MT Makina DS-80 مثالي لمرافق إعادة تدوير البلاستيك.'
+            intro: 'آلة التمزيق رباعية العمود DS-80 حل احترافي للتمزيق الدقيق وحجم المخرجات المتجانس، تقدم تقنية التمزيق الدقيق.',
+            paragraph1: 'يتميز طراز DS-80 بنظام أربعة محركات 4×7.5 كيلووات (إجمالي 30 كيلووات) مع طول دوار 800 مم. بسعة معالجة 600-1000 كجم/ساعة، يظهر أداءً فائقاً في تطبيقات تمزيق النفايات البلاستيكية الصناعية والألواح الإلكترونية ونفايات الكابلات.',
+            paragraph2: 'مجهز بنظام تحكم PLC متطور ومزامنة أربعة أعمدة واكتشاف الحمل الزائد التلقائي ووظيفة العكس التلقائي، يضمن DS-80 تشغيلاً متواصلاً. مع 48 شفرة عالية الجودة يضمن التحكم الدقيق في الجسيمات.',
+            paragraph3: 'آلة تمزيق النفايات الصلبة رباعية العمود MT Makina DS-80 مثالية لمرافق إعادة تدوير البلاستيك ووحدات المعالجة المسبقة للنفايات الإلكترونية ومراكز إعادة تدوير المنسوجات.',
+            paragraph4: 'مع تقنية التمزيق رباعي العمود، توفر DS-80 نتائج ممتازة في تطبيقات التمزيق الدقيق التي تتطلب مخرجات متجانسة. يسمح الهيكل المعياري باستبدال المكونات بسهولة.',
+            paragraph5: 'آلة التمزيق رباعية العمود DS-80 التي توفر كفاءة الطاقة تحقق عائداً مرتفعاً على الاستثمار من خلال تقليل تكاليف التشغيل. مدعومة بمعايير السلامة المعتمدة CE وضمان سنتين.',
+            paragraph6: 'آلة التمزيق رباعية العمود DS-80 توفر كفاءة عالية وفوائد بيئية للشركات. MT Makina، الشركة الرائدة في تصنيع آلات التمزيق في تركيا، تقدم عروض أسعار وخدمات استشارية تقنية.'
         }
     },
     'DS-100': {
@@ -41,22 +50,31 @@ export const quadShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan DS-100 dört şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik, çevresel faydalar ve ekonomik avantajlar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, dört şaftlı katı atık parçalama makinesi fiyat teklifi ve teknik danışmanlık hizmetleri sunmaktadır. Hurda lastik parçalama makinesi, kağıt parçalama makinesi, karton parçalama makinesi ve HDD imha makinesi ihtiyaçlarınız için bizimle iletişime geçin. CE standartları ve 2 yıl garanti ile desteklenir.'
         },
         en: {
-            intro: 'DS-100 four shaft shredder is a powerful system offering high efficiency for medium-high capacity facilities.',
-            paragraph1: 'DS-100 model features 4x11 kW (total 44 kW) powerful four motor structure with 1000 mm wide rotor. With 1000-1800 kg/hour processing capacity.',
-            paragraph2: 'Equipped with Siemens PLC-based fully automatic control system, four shaft full synchronization, DS-100 has 7/24 operation capacity.',
-            paragraph3: 'DS-100 is optimized for medium-large plastic recycling facilities, electronic waste processing centers.'
+            intro: 'DS-100 four shaft shredder is a powerful system offering high efficiency, strong performance and homogeneous shredding output for medium-high capacity facilities.',
+            paragraph1: 'DS-100 model features 4x11 kW (total 44 kW) powerful four motor structure with 1000 mm wide rotor length. With 1000-1800 kg/hour processing capacity, it shows excellent performance in industrial plastic waste, electronic boards, cable waste, composite materials, paper and cardboard shredding applications.',
+            paragraph2: 'Equipped with Siemens PLC-based fully automatic control system, four shaft full synchronization and real-time motor load monitoring, DS-100 has 7/24 uninterrupted operation capacity. With 64 premium quality blades and dual-stage screen system (8-35 mm), precise particle control is ensured.',
+            paragraph3: 'MT Makina DS-100 four shaft solid waste shredder is optimized for medium-large plastic recycling facilities, electronic waste processing centers, e-waste pre-processing units and textile recycling facilities. Can be integrated with conveyor feeder, magnetic separator and screen systems.',
+            paragraph4: 'With four shaft shredder technology, DS-100 provides excellent results in fine shredding applications. The modular structure allows easy component replacement, significantly reducing maintenance times and operating costs. Wide material processing capacity enables effective shredding of plastic, metal, wood, paper, glass and electronic waste.',
+            paragraph5: 'DS-100 four shaft shredder offering energy efficiency provides high return on investment by minimizing operating costs. User-friendly control panel and easy operation provide comfortable use. Supported by CE certified safety standards and 2-year warranty.',
+            paragraph6: 'DS-100 four shaft shredder providing sustainability in waste management offers high efficiency, environmental benefits and economic advantages to businesses. MT Makina, the leading shredder manufacturer in Turkey, offers four shaft solid waste shredder price quotes and technical consultancy services.'
         },
         ru: {
-            intro: 'Четырехвальный измельчитель DS-100 - мощная система для предприятий средне-высокой производительности.',
-            paragraph1: 'Модель DS-100 оснащена четырехмоторной конструкцией 4x11 кВт (всего 44 кВт) с длиной ротора 1000 мм.',
-            paragraph2: 'Оснащенный системой управления Siemens PLC, полной синхронизацией четырех валов, DS-100 работает 7/24.',
-            paragraph3: 'DS-100 оптимизирован для средне-крупных предприятий по переработке пластика.'
+            intro: 'Четырехвальный измельчитель DS-100 - мощная система, обеспечивающая высокую эффективность, мощную производительность и однородный выход для предприятий средне-высокой производительности.',
+            paragraph1: 'Модель DS-100 оснащена четырехмоторной конструкцией 4x11 кВт (всего 44 кВт) с длиной ротора 1000 мм. С производительностью обработки 1000-1800 кг/час демонстрирует отличную эффективность в применениях измельчения промышленных пластиковых отходов, электронных плат и кабельных отходов.',
+            paragraph2: 'Оснащенный полностью автоматической системой управления Siemens PLC, полной синхронизацией четырех валов и мониторингом нагрузки двигателя в реальном времени, DS-100 работает 7/24. С 64 ножами премиум качества обеспечивает точный контроль частиц.',
+            paragraph3: 'Четырехвальный измельчитель твердых отходов MT Makina DS-100 оптимизирован для средне-крупных предприятий по переработке пластика, центров переработки электронных отходов и предприятий переработки текстиля.',
+            paragraph4: 'С технологией четырехвального измельчителя DS-100 обеспечивает отличные результаты в применениях тонкого измельчения. Модульная структура значительно сокращает время обслуживания и эксплуатационные расходы.',
+            paragraph5: 'Четырехвальный измельчитель DS-100, предлагающий энергоэффективность, обеспечивает высокую отдачу от инвестиций. Поддерживается сертификатом CE и гарантией 2 года.',
+            paragraph6: 'Четырехвальный измельчитель DS-100 предлагает высокую эффективность, экологические преимущества и экономические выгоды предприятиям. MT Makina предлагает ценовые предложения и технические консультации.'
         },
         ar: {
-            intro: 'آلة التمزيق رباعية العمود DS-100 نظام قوي لمرافق السعة المتوسطة-العالية.',
-            paragraph1: 'يتميز طراز DS-100 بهيكل أربعة محركات 4×11 كيلووات (إجمالي 44 كيلووات).',
-            paragraph2: 'مجهز بنظام تحكم Siemens PLC ومزامنة كاملة لأربعة أعمدة، يعمل DS-100 بقدرة 7/24.',
-            paragraph3: 'تم تحسين DS-100 لمرافق إعادة التدوير متوسطة-كبيرة الحجم.'
+            intro: 'آلة التمزيق رباعية العمود DS-100 نظام قوي يوفر كفاءة عالية وأداء قوي ومخرجات تمزيق متجانسة لمرافق السعة المتوسطة-العالية.',
+            paragraph1: 'يتميز طراز DS-100 بهيكل أربعة محركات 4×11 كيلووات (إجمالي 44 كيلووات) مع طول دوار عريض 1000 مم. بسعة معالجة 1000-1800 كجم/ساعة، يظهر أداءً ممتازاً في تطبيقات تمزيق النفايات البلاستيكية الصناعية والألواح الإلكترونية.',
+            paragraph2: 'مجهز بنظام تحكم Siemens PLC أوتوماتيكي بالكامل ومزامنة كاملة لأربعة أعمدة ومراقبة حمل المحرك في الوقت الفعلي، يعمل DS-100 بقدرة 7/24. مع 64 شفرة عالية الجودة يضمن التحكم الدقيق في الجسيمات.',
+            paragraph3: 'آلة تمزيق النفايات الصلبة رباعية العمود MT Makina DS-100 محسنة لمرافق إعادة تدوير البلاستيك المتوسطة-الكبيرة ومراكز معالجة النفايات الإلكترونية ومنشآت إعادة تدوير المنسوجات.',
+            paragraph4: 'مع تقنية التمزيق رباعي العمود، توفر DS-100 نتائج ممتازة في تطبيقات التمزيق الدقيق. يقلل الهيكل المعياري بشكل كبير من أوقات الصيانة وتكاليف التشغيل.',
+            paragraph5: 'آلة التمزيق رباعية العمود DS-100 التي توفر كفاءة الطاقة تحقق عائداً مرتفعاً على الاستثمار. مدعومة بمعايير CE وضمان سنتين.',
+            paragraph6: 'آلة التمزيق رباعية العمود DS-100 توفر كفاءة عالية وفوائد بيئية ومزايا اقتصادية للشركات. MT Makina تقدم عروض أسعار وخدمات استشارية تقنية.'
         }
     },
     'DS-150': {
@@ -70,51 +88,70 @@ export const quadShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan DS-150 dört şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik, çevresel liderlik ve ekonomik avantajlar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, dört şaftlı katı atık parçalama makinesi fiyat teklifi, turnkey proje çözümleri ve 7/24 teknik destek hizmetleri sunmaktadır. Hurda lastik parçalama makinesi, kağıt parçalama makinesi, karton parçalama makinesi ve HDD imha makinesi ihtiyaçlarınız için profesyonel danışmanlık ekibimizle iletişime geçin. ISO 9001 sertifikası ve 3 yıl garanti ile desteklenir.'
         },
         en: {
-            intro: 'DS-150 four shaft shredder is a professional system offering ultra-precise shredding for high-capacity facilities.',
-            paragraph1: 'DS-150 model features 4x18.5 kW (total 74 kW) high power four motor configuration with 1500 mm ultra-wide rotor.',
-            paragraph2: 'Equipped with industrial-grade Siemens S7 PLC automation, four shaft intelligent synchronization, DS-150 complies with Industry 4.0.',
-            paragraph3: 'DS-150 is designed for large capacity plastic recycling complexes, electronic waste factories.'
+            intro: 'DS-150 four shaft shredder is a professional system offering ultra-precise shredding, high capacity and Industry 4.0 compatible automation for high-capacity facilities.',
+            paragraph1: 'DS-150 model features 4x18.5 kW (total 74 kW) high power four motor configuration with 1500 mm ultra-wide rotor. With 2000-3500 kg/hour processing capacity, it shows maximum performance in plastic, metal, wood, paper, glass and electronic waste shredding applications.',
+            paragraph2: 'Equipped with industrial-grade Siemens S7 PLC automation, four shaft intelligent synchronization, SCADA integration and real-time data analysis, DS-150 complies with Industry 4.0 standards. With 96 ultra-durable special alloy blades and three-stage screen system (10-50 mm), fine and homogeneous output is guaranteed.',
+            paragraph3: 'MT Makina DS-150 four shaft solid waste shredder is designed for large capacity plastic recycling complexes, electronic waste factories, WEEE processing plants and mega-scale recycling facilities. Modular structure allows easy integration with conveyor feeders, separators and automatic sorting systems.',
+            paragraph4: 'With four shaft shredder technology, DS-150 provides maximum results in the most demanding fine shredding applications. Strong shaft structure, reinforced gearbox and premium blade system offer long life and high performance guarantee.',
+            paragraph5: 'DS-150 four shaft shredder with energy efficient design minimizes operating costs while providing maximum return on investment. Supported by CE, ISO 9001 certified safety standards with 3-year warranty. Provides 7/24 remote monitoring and proactive maintenance support.',
+            paragraph6: 'DS-150 four shaft shredder providing sustainability leadership in waste management offers maximum efficiency, environmental leadership and economic advantages. MT Makina offers turnkey project solutions, technical consultancy and 7/24 technical support services.'
         },
         ru: {
-            intro: 'Четырехвальный измельчитель DS-150 - профессиональная система для высокопроизводительных объектов.',
-            paragraph1: 'Модель DS-150 оснащена четырехмоторной конфигурацией 4x18,5 кВт (всего 74 кВт) с длиной ротора 1500 мм.',
-            paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, DS-150 соответствует стандартам Индустрии 4.0.',
-            paragraph3: 'DS-150 разработан для крупных комплексов переработки пластика.'
+            intro: 'Четырехвальный измельчитель DS-150 - профессиональная система, предлагающая ультраточное измельчение, высокую производительность и автоматизацию, совместимую с Индустрией 4.0.',
+            paragraph1: 'Модель DS-150 оснащена четырехмоторной конфигурацией 4x18,5 кВт (всего 74 кВт) с ультраширокой длиной ротора 1500 мм. С производительностью 2000-3500 кг/час демонстрирует максимальную эффективность в применениях измельчения пластика, металла, древесины, бумаги и электронных отходов.',
+            paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, интеллектуальной синхронизацией четырех валов, интеграцией SCADA и анализом данных в реальном времени, DS-150 соответствует стандартам Индустрии 4.0. С 96 сверхпрочными ножами гарантирует тонкий и однородный выход.',
+            paragraph3: 'Четырехвальный измельчитель MT Makina DS-150 разработан для крупных комплексов переработки пластика, заводов по переработке электронных отходов и мегамасштабных перерабатывающих предприятий.',
+            paragraph4: 'С технологией четырехвального измельчителя DS-150 обеспечивает максимальные результаты в самых требовательных применениях тонкого измельчения. Прочная конструкция вала, усиленный редуктор и система ножей премиум-класса.',
+            paragraph5: 'Четырехвальный измельчитель DS-150 с энергоэффективным дизайном минимизирует эксплуатационные расходы. Поддерживается сертификатами CE, ISO 9001 с гарантией 3 года.',
+            paragraph6: 'Четырехвальный измельчитель DS-150 предлагает максимальную эффективность и экологическое лидерство. MT Makina предлагает решения проектов под ключ, технические консультации и техническую поддержку 7/24.'
         },
         ar: {
-            intro: 'آلة التمزيق رباعية العمود DS-150 نظام احترافي للمرافق عالية السعة.',
-            paragraph1: 'يتميز طراز DS-150 بتكوين أربعة محركات 4×18.5 كيلووات (إجمالي 74 كيلووات).',
-            paragraph2: 'مجهز بأتمتة Siemens S7 PLC من الدرجة الصناعية، يتوافق DS-150 مع معايير الصناعة 4.0.',
-            paragraph3: 'تم تصميم DS-150 لمجمعات إعادة التدوير كبيرة السعة.'
+            intro: 'آلة التمزيق رباعية العمود DS-150 نظام احترافي يوفر التمزيق فائق الدقة والسعة العالية والأتمتة المتوافقة مع الصناعة 4.0.',
+            paragraph1: 'يتميز طراز DS-150 بتكوين أربعة محركات 4×18.5 كيلووات (إجمالي 74 كيلووات) مع دوار فائق العرض 1500 مم. بسعة 2000-3500 كجم/ساعة، يظهر أقصى أداء في تطبيقات تمزيق البلاستيك والمعادن والخشب والورق والنفايات الإلكترونية.',
+            paragraph2: 'مجهز بأتمتة Siemens S7 PLC الصناعية ومزامنة ذكية لأربعة أعمدة وتكامل SCADA وتحليل البيانات في الوقت الفعلي، يتوافق DS-150 مع معايير الصناعة 4.0. مع 96 شفرة فائقة المتانة يضمن مخرجات دقيقة ومتجانسة.',
+            paragraph3: 'آلة التمزيق رباعية العمود MT Makina DS-150 مصممة لمجمعات إعادة تدوير البلاستيك الكبيرة ومصانع النفايات الإلكترونية ومرافق إعادة التدوير الضخمة.',
+            paragraph4: 'مع تقنية التمزيق رباعي العمود، توفر DS-150 أقصى النتائج في تطبيقات التمزيق الدقيق الأكثر تطلباً. هيكل عمود قوي وعلبة تروس معززة ونظام شفرات متميز.',
+            paragraph5: 'آلة التمزيق رباعية العمود DS-150 ذات التصميم الموفر للطاقة تقلل تكاليف التشغيل. مدعومة بمعايير CE وISO 9001 مع ضمان 3 سنوات.',
+            paragraph6: 'آلة التمزيق رباعية العمود DS-150 توفر أقصى كفاءة وقيادة بيئية. MT Makina تقدم حلول مشاريع متكاملة واستشارات تقنية ودعم فني 7/24.'
         }
     },
     'DS-200': {
         tr: {
             intro: 'DS-200 dört şaftlı parçalama makinesi, MT Makina\'nın en gelişmiş modeli olup mega kapasiteli projeler için ultra hassas teknoloji, AI destekli otomasyon ve Endüstri 5.0 uyumluluğu sunan mühendislik şaheseridir.',
-            paragraph1: 'DS-200 dört şaftlı parçalama makinesi, 4x30 kW (toplam 120 kW) maksimum güç dört motor sistemi ile 2000 mm dev rotor uzunluğuna sahiptir. 3500-6000 kg/saat olağanüstü işleme kapasitesi ile dört şaftlı katı atık parçalama makinesi olarak büyük endüstriyel ekipmanlar, dev elektronik cihazlar, özel kompozit malzemeler, kağıt parçalama makinesi ve karton parçalama makinesi uygulamalarında dünya standardında performans gösterir. Dört şaftlı tasarımı sayesinde yüksek tork ve düşük hız kombinasyonu sunarak malzemelerin ultra hassas ve homojen şekilde işlenmesini garantiler.',
-            paragraph2: 'En ileri Siemens S7-1500 PLC otomasyon, yapay zeka destekli dört şaft senkronizasyonu, digital twin simülasyonu ve IoT sensör ağı ile donatılmış DS-200 dört şaftlı parçalama makinesi, Endüstri 5.0 standartlarının öncüsüdür. 96 adet ultra premium kalite bıçak ve dört kademeli akıllı elek sistemi (3-25 mm) ile maksimum hassasiyet garantisi verir. Balya parçalama makinesi, lastik parçalama makinesi, hurda parçalama makinesi ve palet parçalama makinesi uygulamalarında dünya lideri performans sunar.',
-            paragraph3: 'MT Makina DS-200 dört şaftlı katı atık parçalama makinası, global entegre geri dönüşüm kompleksleri, mega elektronik atık tesisleri, uluslararası e-atık işleme fabrikaları ve dünya ölçeğinde geri dönüşüm projeleri için turnkey çözüm olarak tasarlanmıştır. Tam otonom AI destekli üretim hattı, robotik sistemler, ERP-MES-SCADA entegrasyonu ve ileri ayırma teknolojileri ile entegre edilebilir. HDD parçalama makinesi, HDD imha, harddisk imha makinesi uygulamalarında global standartlarda performans sağlar.',
-            paragraph4: 'Dört şaftlı parçalama makinesi teknolojisi ile DS-200, modüler yapısı sayesinde bileşenlerin kolayca değiştirilebilmesini sağlar. Bu özellik, bakım ve onarım sürelerini kısaltarak katı atık parçalayıcı işletme maliyetlerini önemli ölçüde azaltır. Yüksek kaliteli çelikten üretilen bıçakları ve ultra sağlam yapısı ile zorlu çalışma koşullarında bile uzun ömürlü premium performans sunar. Geniş malzeme işleme kapasitesi ile plastik, metal, ahşap, kağıt, cam ve elektronik atıklar gibi çok çeşitli malzemeleri ultra hassas şekilde parçalayabilir.',
-            paragraph5: 'Enerji verimliliği sunan DS-200 dört şaftlı parçalama makinesi, next-gen VFD sistemi ve regeneratif enerji geri kazanımı ile işletme maliyetlerini minimize eder. Aşınmaya dayanıklı premium bileşenler sayesinde verimliliği artırır ve maksimum işlem kapasitesi sağlar. Kullanıcı dostu dokunmatik ekran kontrol paneli, predictive maintenance ve uzaktan izleme ile operatörlerin rahat kullanımını sağlar. Cloud tabanlı SCADA entegrasyonu ile 7/24 global operasyon desteği sunar.',
-            paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan DS-200 dört şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere dünya lideri verimlilik, karbon nötrlük hedefleri ve circular economy liderliği sunar. Türkiye\'nin ve dünyanın lider parçalama makinesi üreticisi MT Makina, dört şaftlı katı atık parçalama makinesi fiyat teklifi, global turnkey mega proje çözümleri, uluslararası mühendislik danışmanlığı ve 7/24 worldwide premium teknik destek hizmetleri sunmaktadır. Hurda lastik parçalama makinesi, kağıt parçalama makinesi, karton parçalama makinesi ve HDD imha makinesi mega projeleriniz için global satış ekibimizle iletişime geçin. 5 yıl platinum garanti + 7/24 global teknik destek ile desteklenir.'
+            paragraph1: 'DS-200 dört şaftlı parçalama makinesi, 4x30 kW (toplam 120 kW) maksimum güç dört motor sistemi ile 2000 mm dev rotor uzunluğuna sahiptir. 3500-6000 kg/saat olağanüstü işleme kapasitesi ile dünya standardında performans gösterir.',
+            paragraph2: 'En ileri Siemens S7-1500 PLC otomasyon, yapay zeka destekli dört şaft senkronizasyonu, digital twin simülasyonu ve IoT sensör ağı ile donatılmış DS-200, Endüstri 5.0 standartlarının öncüsüdür.',
+            paragraph3: 'MT Makina DS-200 dört şaftlı katı atık parçalama makinası, global entegre geri dönüşüm kompleksleri, mega elektronik atık tesisleri ve uluslararası e-atık işleme fabrikaları için turnkey çözüm olarak tasarlanmıştır.',
+            paragraph4: 'Dört şaftlı parçalama makinesi teknolojisi ile DS-200, modüler yapısı sayesinde bileşenlerin kolayca değiştirilebilmesini sağlar. Ultra sağlam yapısı ile zorlu çalışma koşullarında bile uzun ömürlü premium performans sunar.',
+            paragraph5: 'Enerji verimliliği sunan DS-200, next-gen VFD sistemi ve regeneratif enerji geri kazanımı ile işletme maliyetlerini minimize eder. Cloud tabanlı SCADA entegrasyonu ile 7/24 global operasyon desteği sunar.',
+            paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan DS-200, dünya lideri verimlilik ve circular economy liderliği sunar. 5 yıl platinum garanti + 7/24 global teknik destek ile desteklenir.'
         },
         en: {
-            intro: 'DS-200 four shaft shredder is MT Makina\'s most advanced model, an engineering masterpiece for mega-capacity projects.',
-            paragraph1: 'DS-200 model features 4x30 kW (total 120 kW) maximum power four motor system with 2000 mm giant rotor.',
-            paragraph2: 'Equipped with most advanced Siemens S7-1500 PLC automation, AI-assisted four shaft synchronization, DS-200 pioneers Industry 5.0.',
-            paragraph3: 'DS-200 is designed as turnkey solution for global recycling complexes. Supported by 5-year platinum warranty+24/7 support.'
+            intro: 'DS-200 four shaft shredder is MT Makina\'s most advanced model, an engineering masterpiece offering ultra-precision technology, AI-assisted automation and Industry 5.0 compatibility for mega-capacity projects.',
+            paragraph1: 'DS-200 model features 4x30 kW (total 120 kW) maximum power four motor system with 2000 mm giant rotor length. With 3500-6000 kg/hour extraordinary processing capacity, it shows world-class performance.',
+            paragraph2: 'Equipped with most advanced Siemens S7-1500 PLC automation, AI-assisted four shaft synchronization, digital twin simulation and IoT sensor network, DS-200 pioneers Industry 5.0 standards.',
+            paragraph3: 'MT Makina DS-200 four shaft solid waste shredder is designed as turnkey solution for global integrated recycling complexes, mega electronic waste facilities and international e-waste processing factories.',
+            paragraph4: 'With four shaft shredder technology, DS-200 allows easy component replacement thanks to its modular structure. Ultra-durable construction offers long-lasting premium performance even in challenging conditions.',
+            paragraph5: 'Energy efficient DS-200 minimizes operating costs with next-gen VFD system and regenerative energy recovery. Offers 7/24 global operation support with cloud-based SCADA integration.',
+            paragraph6: 'DS-200 providing sustainability in waste management offers world-leading efficiency and circular economy leadership. Supported by 5-year platinum warranty + 7/24 global technical support.'
         },
         ru: {
-            intro: 'Четырехвальный измельчитель DS-200 - самая передовая модель MT Makina, инженерный шедевр.',
-            paragraph1: 'Модель DS-200 оснащена системой четырех двигателей 4x30 кВт (всего 120 кВт) с длиной ротора 2000 мм.',
-            paragraph2: 'Оснащенный автоматизацией Siemens S7-1500 PLC с помощью ИИ, DS-200 является пионером Индустрии 5.0.',
-            paragraph3: 'DS-200 разработан как комплексное решение для глобальных комплексов переработки.'
+            intro: 'Четырехвальный измельчитель DS-200 - самая передовая модель MT Makina, инженерный шедевр, предлагающий ультраточную технологию, автоматизацию с ИИ и совместимость с Индустрией 5.0.',
+            paragraph1: 'Модель DS-200 оснащена системой четырех двигателей 4x30 кВт (всего 120 кВт) с гигантской длиной ротора 2000 мм. С производительностью 3500-6000 кг/час демонстрирует производительность мирового класса.',
+            paragraph2: 'Оснащенный самой передовой автоматизацией Siemens S7-1500 PLC, синхронизацией четырех валов с ИИ, симуляцией цифрового двойника и сетью датчиков IoT, DS-200 является пионером стандартов Индустрии 5.0.',
+            paragraph3: 'Четырехвальный измельчитель MT Makina DS-200 разработан как комплексное решение для глобальных интегрированных комплексов переработки и мега-установок электронных отходов.',
+            paragraph4: 'С технологией четырехвального измельчителя DS-200 позволяет легко заменять компоненты благодаря модульной структуре. Ультрапрочная конструкция обеспечивает долговечную премиальную производительность.',
+            paragraph5: 'Энергоэффективный DS-200 минимизирует эксплуатационные расходы с VFD-системой нового поколения. Предлагает глобальную поддержку операций 7/24 с облачной интеграцией SCADA.',
+            paragraph6: 'DS-200 обеспечивает мировую эффективность и лидерство в циркулярной экономике. Поддерживается 5-летней платиновой гарантией + глобальная техническая поддержка 7/24.'
         },
         ar: {
-            intro: 'آلة التمزيق رباعية العمود DS-200 الطراز الأكثر تقدمًا من MT Makina، تحفة هندسية.',
-            paragraph1: 'يتميز طراز DS-200 بنظام أربعة محركات 4×30 كيلووات (إجمالي 120 كيلووات).',
-            paragraph2: 'مجهز بأتمتة Siemens S7-1500 PLC بمساعدة الذكاء الاصطناعي، يرائد DS-200 الصناعة 5.0.',
-            paragraph3: 'تم تصميم DS-200 كحل تسليم مفتاح لمجمعات إعادة التدوير العالمية.'
+            intro: 'آلة التمزيق رباعية العمود DS-200 الطراز الأكثر تقدمًا من MT Makina، تحفة هندسية تقدم تقنية فائقة الدقة وأتمتة بمساعدة الذكاء الاصطناعي وتوافق الصناعة 5.0.',
+            paragraph1: 'يتميز طراز DS-200 بنظام أربعة محركات 4×30 كيلووات (إجمالي 120 كيلووات) مع طول دوار ضخم 2000 مم. بسعة معالجة استثنائية 3500-6000 كجم/ساعة، يظهر أداءً عالمياً.',
+            paragraph2: 'مجهز بأتمتة Siemens S7-1500 PLC الأكثر تقدماً ومزامنة أربعة أعمدة بمساعدة الذكاء الاصطناعي ومحاكاة التوأم الرقمي وشبكة أجهزة استشعار IoT، يريد DS-200 معايير الصناعة 5.0.',
+            paragraph3: 'تم تصميم آلة التمزيق رباعية العمود MT Makina DS-200 كحل تسليم مفتاح لمجمعات إعادة التدوير العالمية المتكاملة ومنشآت النفايات الإلكترونية الضخمة.',
+            paragraph4: 'مع تقنية التمزيق رباعي العمود، يسمح DS-200 باستبدال المكونات بسهولة بفضل هيكله المعياري. يوفر البناء فائق المتانة أداءً متميزاً طويل الأمد.',
+            paragraph5: 'DS-200 الموفر للطاقة يقلل تكاليف التشغيل مع نظام VFD من الجيل التالي. يوفر دعم التشغيل العالمي 7/24 مع تكامل SCADA السحابي.',
+            paragraph6: 'DS-200 يوفر كفاءة عالمية رائدة وقيادة الاقتصاد الدائري. مدعوم بضمان بلاتيني 5 سنوات + دعم تقني عالمي 7/24.'
         }
     }
 };
+
