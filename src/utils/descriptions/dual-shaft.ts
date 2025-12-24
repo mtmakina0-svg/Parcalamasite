@@ -1,4 +1,4 @@
-import { MultilingualModelDescription } from '../../types/descriptionTypes';
+﻿import { MultilingualModelDescription } from '../../types/descriptionTypes';
 
 export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDescription } = {
     'CS-20': {
@@ -12,22 +12,31 @@ export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CS-20 çift şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek küçük işletmelere yüksek verimlilik ve çevresel faydalar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı katı atık parçalama makinesi fiyat teklifi ve teknik danışmanlık hizmetleri sunmaktadır. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi ihtiyaçlarınız için bizimle iletişime geçin. CS-20, küçük ölçekli tesisler ve start-up projeler için mükemmel bir başlangıç yatırımıdır.'
         },
         en: {
-            intro: 'CS-20 dual shaft shredder is a compact and economical solution for small-scale recycling facilities.',
-            paragraph1: 'CS-20 model features 2x7.5 kW dual motor system with 400 mm rotor length and 200 mm rotor diameter. With 300-500 kg/hour processing capacity, it meets daily waste processing needs of small and medium-sized businesses.',
-            paragraph2: 'Equipped with easy-to-use control panel and safety systems, CS-20 operates efficiently even in limited spaces. With 32 replaceable blades and adjustable screen system (30-80 mm), it adapts to different material types.',
-            paragraph3: 'MT Makina CS-20 is ideal for small plastic recycling workshops, paper-cardboard collection centers, packaging waste processing units and local waste management centers.'
+            intro: 'CS-20 dual shaft shredder is a compact, economical and reliable shredding solution specially designed for small-scale recycling facilities, pilot projects and start-up businesses.',
+            paragraph1: 'CS-20 dual shaft shredder features 2x7.5 kW dual motor system with 400 mm rotor length and 200 mm rotor diameter. With 300-500 kg/hour processing capacity, it provides reliable performance in plastic shredder, fabric shredder, paper shredder and pallet shredder applications. Shows effective performance in shredding PET bottles, PP-PE materials, plastic film waste, cardboard-paper, light metal and small wood pieces.',
+            paragraph2: 'CS-20 dual shaft shredder equipped with easy-to-use control panel and safety systems operates efficiently even in limited spaces. With 32 replaceable blades and adjustable screen system (30-80 mm), it easily adapts to different material types. This system minimizes operating costs with low energy consumption. Automatic reverse function guarantees uninterrupted operation in case of jams.',
+            paragraph3: 'MT Makina CS-20 solid waste shredder is ideal for small plastic recycling workshops, paper-cardboard collection centers, packaging waste processing units and local waste management centers. As a plastic shredding machine and recycling crusher, its compact design offers easy assembly and quick installation.',
+            paragraph4: 'With dual shaft shredder technology, CS-20 also provides effective results in plastic scrap crusher, bale shredder and rubber shredder applications. Despite its compact dimensions, this system offers industrial durability with strong shaft structure and durable blade system, guaranteeing long life.',
+            paragraph5: 'CS-20 dual shaft shredder offering energy efficiency provides high return on investment by minimizing operating costs. This system is an ideal investment for small-scale recycling projects and pilot facilities. Can be integrated with discharge screws and conveyor belts. Supported by CE certified safety standards and 1-year warranty.',
+            paragraph6: 'CS-20 dual shaft shredder providing sustainability in waste management offers high efficiency and environmental benefits to small businesses by optimizing recycling processes. MT Makina, the leading shredder manufacturer in Turkey, offers dual shaft solid waste shredder price quotes and technical consultancy services. CS-20 is an excellent starter investment for small-scale facilities and start-up projects.'
         },
         ru: {
-            intro: 'Двухвальный измельчитель CS-20 - компактное и экономичное решение для малых предприятий по переработке.',
-            paragraph1: 'Модель CS-20 оснащена системой с двумя двигателями 2x7,5 кВт с длиной ротора 400 мм и диаметром ротора 200 мм. С производительностью обработки 300-500 кг/час она отвечает ежедневным потребностям малых и средних предприятий.',
-            paragraph2: 'Оснащенный простой панелью управления и системами безопасности, CS-20 эффективно работает даже в ограниченном пространстве. С 32 сменными ножами и регулируемой системой сит (30-80 мм) адаптируется к различным типам материалов.',
-            paragraph3: 'MT Makina CS-20 идеально подходит для небольших мастерских по переработке пластика, центров сбора бумаги и картона, подразделений по переработке упаковочных отходов.'
+            intro: 'Двухвальный измельчитель CS-20 - компактное, экономичное и надежное решение, специально разработанное для малых предприятий по переработке, пилотных проектов и стартапов.',
+            paragraph1: 'Двухвальный измельчитель CS-20 оснащен системой с двумя двигателями 2x7,5 кВт с длиной ротора 400 мм и диаметром ротора 200 мм. С производительностью обработки 300-500 кг/час обеспечивает надежную работу в применениях измельчителя пластика, ткани, бумаги и поддонов.',
+            paragraph2: 'Двухвальный измельчитель CS-20, оснащенный простой панелью управления и системами безопасности, эффективно работает даже в ограниченном пространстве. С 32 сменными ножами и регулируемой системой сит (30-80 мм) легко адаптируется к различным типам материалов.',
+            paragraph3: 'Измельчитель твердых отходов MT Makina CS-20 идеально подходит для небольших мастерских по переработке пластика, центров сбора бумаги и картона, подразделений по переработке упаковочных отходов и местных центров управления отходами.',
+            paragraph4: 'С технологией двухвального измельчителя CS-20 также обеспечивает эффективные результаты в применениях дробилки пластикового лома, измельчителя тюков и измельчителя резины. Несмотря на компактные размеры, эта система предлагает промышленную долговечность.',
+            paragraph5: 'Двухвальный измельчитель CS-20, предлагающий энергоэффективность, обеспечивает высокую отдачу от инвестиций за счет минимизации эксплуатационных расходов. Может интегрироваться с разгрузочными шнеками и конвейерными лентами. Поддерживается сертификатом CE и гарантией 1 год.',
+            paragraph6: 'Двухвальный измельчитель CS-20, обеспечивающий устойчивость в управлении отходами, предлагает высокую эффективность и экологические преимущества малому бизнесу. MT Makina, ведущий производитель измельчителей в Турции, предлагает ценовые предложения и технические консультации.'
         },
         ar: {
-            intro: 'آلة التمزيق ثنائية العمود CS-20 هي حل مدمج واقتصادي لمرافق إعادة التدوير صغيرة الحجم.',
-            paragraph1: 'يتميز طراز CS-20 بنظام محرك مزدوج 2×7.5 كيلووات مع طول دوار 400 مم وقطر دوار 200 مم. بسعة معالجة 300-500 كجم/ساعة، يلبي احتياجات معالجة النفايات اليومية للشركات الصغيرة والمتوسطة.',
-            paragraph2: 'مجهز بلوحة تحكم سهلة الاستخدام وأنظمة السلامة، يعمل CS-20 بكفاءة حتى في المساحات المحدودة. مع 32 شفرة قابلة للاستبدال ونظام شاشة قابل للتعديل (30-80 مم).',
-            paragraph3: 'MT Makina CS-20 مثالي لورش إعادة تدوير البلاستيك الصغيرة ومراكز جمع الورق والكرتون ووحدات معالجة نفايات التعبئة والتغليف.'
+            intro: 'آلة التمزيق ثنائية العمود CS-20 هي حل مدمج واقتصادي وموثوق مصمم خصيصاً لمرافق إعادة التدوير صغيرة الحجم والمشاريع التجريبية والشركات الناشئة.',
+            paragraph1: 'تتميز آلة التمزيق ثنائية العمود CS-20 بنظام محرك مزدوج 2×7.5 كيلووات مع طول دوار 400 مم وقطر دوار 200 مم. بسعة معالجة 300-500 كجم/ساعة، توفر أداءً موثوقاً في تطبيقات تمزيق البلاستيك والأقمشة والورق والمنصات.',
+            paragraph2: 'آلة التمزيق ثنائية العمود CS-20 المجهزة بلوحة تحكم سهلة الاستخدام وأنظمة السلامة تعمل بكفاءة حتى في المساحات المحدودة. مع 32 شفرة قابلة للاستبدال ونظام شاشة قابل للتعديل (30-80 مم)، تتكيف بسهولة مع أنواع المواد المختلفة.',
+            paragraph3: 'آلة تمزيق النفايات الصلبة MT Makina CS-20 مثالية لورش إعادة تدوير البلاستيك الصغيرة ومراكز جمع الورق والكرتون ووحدات معالجة نفايات التعبئة والتغليف ومراكز إدارة النفايات المحلية.',
+            paragraph4: 'مع تقنية التمزيق ثنائي العمود، توفر CS-20 أيضاً نتائج فعالة في تطبيقات كسارة خردة البلاستيك وتمزيق البالات وتمزيق المطاط. على الرغم من أبعادها المدمجة، توفر هذه الآلة متانة صناعية.',
+            paragraph5: 'آلة التمزيق ثنائية العمود CS-20 التي توفر كفاءة الطاقة تحقق عائداً مرتفعاً على الاستثمار من خلال تقليل تكاليف التشغيل. يمكن دمجها مع براغي التفريغ وأحزمة النقل. مدعومة بمعايير السلامة المعتمدة CE وضمان سنة واحدة.',
+            paragraph6: 'آلة التمزيق ثنائية العمود CS-20 التي توفر الاستدامة في إدارة النفايات تقدم كفاءة عالية وفوائد بيئية للشركات الصغيرة. MT Makina، الشركة الرائدة في تصنيع آلات التمزيق في تركيا، تقدم عروض أسعار وخدمات استشارية تقنية.'
         }
     },
     'CS-40': {
@@ -41,16 +50,22 @@ export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CS-40 çift şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik ve çevresel faydalar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı katı atık parçalama makinesi fiyat teklifi ve teknik danışmanlık hizmetleri sunmaktadır. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi ihtiyaçlarınız için bizimle iletişime geçin. CS-40, orta ölçekli tesisler için optimal maliyet-performans dengesi sunan profesyonel bir parçalama çözümüdür.'
         },
         en: {
-            intro: 'CS-40 dual shaft shredder is a reliable and efficient shredding solution for medium-sized businesses.',
-            paragraph1: 'CS-40 model provides balanced shredding performance with 2x11 kW dual motor power, 600 mm rotor length and 250 mm rotor diameter. With 500-800 kg/hour processing capacity, it shows superior efficiency.',
-            paragraph2: 'Equipped with semi-automatic control system, overload protection and emergency stop button, CS-40 offers safe working environment. Different output sizes can be obtained with 48 high-strength blades.',
-            paragraph3: 'CS-40 is optimized for plastic collection centers, packaging waste processing facilities, wood waste recycling and mixed waste pre-processing units.'
+            intro: 'CS-40 dual shaft shredder is a reliable, efficient and economical shredding solution offering professional performance for medium-sized businesses and recycling facilities.',
+            paragraph1: 'CS-40 model provides balanced shredding performance with 2x11 kW dual motor power, 600 mm rotor length and 250 mm rotor diameter. With 500-800 kg/hour processing capacity, it shows superior efficiency in plastic shredder, fabric shredder, paper shredder and pallet shredder applications.',
+            paragraph2: 'Equipped with semi-automatic control system, overload protection and emergency stop button, CS-40 dual shaft shredder offers safe working environment. Different output sizes can be obtained with 48 high-strength blades and adjustable screen system (30-100 mm). Automatic reverse function guarantees uninterrupted operation in case of jams.',
+            paragraph3: 'MT Makina CS-40 solid waste shredder is optimized for plastic collection centers, packaging waste processing facilities, wood waste recycling and mixed waste pre-processing units. Thanks to synchronized dual shaft structure, it can also be safely used in pallet shredder and fabric shredder applications.',
+            paragraph4: 'With dual shaft shredder technology, CS-40 provides effective results in plastic scrap crusher, bale shredder, rubber shredder and scrap tire shredder applications. Optimized for medium-sized facilities, this system offers long life guarantee with strong shaft structure and durable blade system.',
+            paragraph5: 'CS-40 dual shaft shredder offering energy efficiency provides high return on investment by minimizing operating costs. This system is an ideal investment for medium-scale recycling projects and expanding facilities. Supported by CE certified safety standards and 2-year warranty.',
+            paragraph6: 'CS-40 dual shaft shredder providing sustainability in waste management offers high efficiency and environmental benefits to businesses by optimizing recycling processes. MT Makina, the leading shredder manufacturer in Turkey, offers dual shaft solid waste shredder price quotes and technical consultancy services. CS-40 is a professional shredding solution offering optimal cost-performance balance for medium-sized facilities.'
         },
         ru: {
-            intro: 'Двухвальный измельчитель CS-40 - надежное и эффективное решение для предприятий среднего размера.',
-            paragraph1: 'Модель CS-40 обеспечивает сбалансированную производительность измельчения с мощностью двойного двигателя 2x11 кВт, длиной ротора 600 мм и диаметром ротора 250 мм.',
-            paragraph2: 'Оснащенный полуавтоматической системой управления, защитой от перегрузки и кнопкой аварийного останова, CS-40 обеспечивает безопасную рабочую среду.',
-            paragraph3: 'CS-40 оптимизирован для центров сбора пластика, предприятий по переработке упаковочных отходов, переработки древесных отходов.'
+            intro: 'Двухвальный измельчитель CS-40 - надежное, эффективное и экономичное решение для предприятий среднего размера и перерабатывающих предприятий.',
+            paragraph1: 'Модель CS-40 обеспечивает сбалансированную производительность измельчения с мощностью двойного двигателя 2x11 кВт, длиной ротора 600 мм и диаметром ротора 250 мм. С производительностью обработки 500-800 кг/час демонстрирует превосходную эффективность в применениях измельчителя пластика, ткани, бумаги и поддонов.',
+            paragraph2: 'Оснащенный полуавтоматической системой управления, защитой от перегрузки и кнопкой аварийного останова, двухвальный измельчитель CS-40 обеспечивает безопасную рабочую среду. Различные размеры выхода могут быть получены с 48 высокопрочными ножами и регулируемой системой сит (30-100 мм).',
+            paragraph3: 'Измельчитель твердых отходов MT Makina CS-40 оптимизирован для центров сбора пластика, предприятий по переработке упаковочных отходов, переработки древесных отходов и подразделений предварительной обработки смешанных отходов.',
+            paragraph4: 'С технологией двухвального измельчителя CS-40 обеспечивает эффективные результаты в применениях дробилки пластикового лома, измельчителя тюков, измельчителя резины и измельчителя изношенных шин. Эта система предлагает долгий срок службы с прочной конструкцией вала.',
+            paragraph5: 'Двухвальный измельчитель CS-40, предлагающий энергоэффективность, обеспечивает высокую отдачу от инвестиций за счет минимизации эксплуатационных расходов. Поддерживается сертификатом CE и гарантией 2 года.',
+            paragraph6: 'Двухвальный измельчитель CS-40, обеспечивающий устойчивость в управлении отходами, предлагает высокую эффективность и экологические преимущества предприятиям. MT Makina, ведущий производитель измельчителей в Турции, предлагает ценовые предложения и технические консультации.'
         },
         ar: {
             intro: 'آلة التمزيق ثنائية العمود CS-40 هي حل تمزيق موثوق وفعال للشركات متوسطة الحجم.',
@@ -70,22 +85,31 @@ export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CS-60 çift şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik ve çevresel faydalar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı katı atık parçalama makinesi fiyat teklifi ve teknik danışmanlık hizmetleri sunmaktadır. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi ihtiyaçlarınız için profesyonel danışmanlık ekibimizle iletişime geçin. CS-60, endüstriyel atık yönetimi ve geri dönüşüm tesisleri için güvenilir bir parçalama çözümüdür.'
         },
         en: {
-            intro: 'CS-60 dual shaft shredder is a compact and powerful solution offering high efficiency in industrial waste management.',
-            paragraph1: 'CS-60 model features 2x15 kW dual motor configuration with 800 mm rotor length and 300 mm rotor diameter. With 800-1500 kg/hour processing capacity, it ensures safe shredding of plastic, metal, tire, wood, glass and household waste.',
-            paragraph2: 'Equipped with advanced PLC control system, automatic reverse function and emergency safety systems, CS-60 guarantees uninterrupted production. Different output sizes can be obtained with 64 special alloy blades.',
-            paragraph3: 'MT Makina CS-60 dual shaft shredder is ideal for plastic recycling facilities, metal scrap processing centers, tire shredding units, wood waste processing and household waste management centers.'
+            intro: 'CS-60 dual shaft shredder is a compact, powerful and versatile shredding solution offering high efficiency in industrial waste management.',
+            paragraph1: 'CS-60 model features 2x15 kW dual motor configuration with 800 mm rotor length and 300 mm rotor diameter. With 800-1500 kg/hour processing capacity, it ensures safe shredding of plastic, metal, tire, wood, glass and household waste. Working with low speed-high torque principle, it easily processes even difficult materials.',
+            paragraph2: 'Equipped with advanced PLC control system, automatic reverse function and emergency safety systems, CS-60 guarantees uninterrupted production. Different output sizes can be obtained with 64 special alloy blades and replaceable screen system (40-120 mm). Synchronized dual shaft structure prevents material jams.',
+            paragraph3: 'MT Makina CS-60 dual shaft shredder is ideal for plastic recycling facilities, metal scrap processing centers, tire shredding units, wood waste processing and household waste management centers. Compact design offers easy assembly and quick installation.',
+            paragraph4: 'With dual shaft shredder technology, CS-60 provides excellent results in plastic scrap crusher, bale shredder, rubber shredder and scrap tire shredder applications. This system offers industrial durability with strong shaft structure and durable blade system, guaranteeing long life.',
+            paragraph5: 'CS-60 dual shaft shredder offering energy efficiency provides high return on investment by minimizing operating costs. Can be integrated with discharge screws, conveyor belts and metal separators. Supported by CE certified safety standards and 2-year warranty.',
+            paragraph6: 'CS-60 dual shaft shredder providing sustainability in waste management offers high efficiency and environmental benefits to businesses by optimizing recycling processes. MT Makina, the leading shredder manufacturer in Turkey, offers dual shaft solid waste shredder price quotes and technical consultancy services.'
         },
         ru: {
-            intro: 'Двухвальный измельчитель CS-60 - компактное и мощное решение, обеспечивающее высокую эффективность в управлении промышленными отходами.',
-            paragraph1: 'Модель CS-60 оснащена конфигурацией двойного двигателя 2x15 кВт с длиной ротора 800 мм и диаметром ротора 300 мм. С производительностью обработки 800-1500 кг/час.',
-            paragraph2: 'Оснащенный усовершенствованной системой управления ПЛК, функцией автоматического реверса и системами аварийной безопасности, CS-60 гарантирует бесперебойное производство.',
-            paragraph3: 'Двухвальный измельчитель MT Makina CS-60 идеально подходит для предприятий по переработке пластика, центров обработки металлолома.'
+            intro: 'Двухвальный измельчитель CS-60 - компактное, мощное и универсальное решение, обеспечивающее высокую эффективность в управлении промышленными отходами.',
+            paragraph1: 'Модель CS-60 оснащена конфигурацией двойного двигателя 2x15 кВт с длиной ротора 800 мм и диаметром ротора 300 мм. С производительностью обработки 800-1500 кг/час обеспечивает безопасное измельчение пластика, металла, шин, древесины, стекла и бытовых отходов.',
+            paragraph2: 'Оснащенный усовершенствованной системой управления ПЛК, функцией автоматического реверса и системами аварийной безопасности, CS-60 гарантирует бесперебойное производство. Различные размеры выхода могут быть получены с 64 ножами из специального сплава и заменяемой системой сит (40-120 мм).',
+            paragraph3: 'Двухвальный измельчитель MT Makina CS-60 идеально подходит для предприятий по переработке пластика, центров обработки металлолома, подразделений измельчения шин и центров управления бытовыми отходами.',
+            paragraph4: 'С технологией двухвального измельчителя CS-60 обеспечивает отличные результаты в применениях дробилки пластикового лома, измельчителя тюков и измельчителя резины. Эта система предлагает промышленную долговечность с прочной конструкцией вала.',
+            paragraph5: 'Двухвальный измельчитель CS-60, предлагающий энергоэффективность, обеспечивает высокую отдачу от инвестиций за счет минимизации эксплуатационных расходов. Поддерживается сертификатом CE и гарантией 2 года.',
+            paragraph6: 'Двухвальный измельчитель CS-60, обеспечивающий устойчивость в управлении отходами, предлагает высокую эффективность предприятиям. MT Makina, ведущий производитель измельчителей в Турции, предлагает ценовые предложения и технические консультации.'
         },
         ar: {
-            intro: 'آلة التمزيق ثنائية العمود CS-60 هي حل مدمج وقوي يوفر كفاءة عالية في إدارة النفايات الصناعية.',
-            paragraph1: 'يتميز طراز CS-60 بتكوين محرك مزدوج 2×15 كيلووات مع طول دوار 800 مم وقطر دوار 300 مم. بسعة معالجة 800-1500 كجم/ساعة.',
-            paragraph2: 'مجهز بنظام تحكم PLC متقدم ووظيفة عكسية تلقائية وأنظمة السلامة في حالات الطوارئ، يضمن CS-60 إنتاجًا متواصلاً.',
-            paragraph3: 'آلة التمزيق ثنائية العمود MT Makina CS-60 مثالية لمرافق إعادة تدوير البلاستيك ومراكز معالجة الخردة المعدنية.'
+            intro: 'آلة التمزيق ثنائية العمود CS-60 هي حل مدمج وقوي ومتعدد الاستخدامات يوفر كفاءة عالية في إدارة النفايات الصناعية.',
+            paragraph1: 'يتميز طراز CS-60 بتكوين محرك مزدوج 2×15 كيلووات مع طول دوار 800 مم وقطر دوار 300 مم. بسعة معالجة 800-1500 كجم/ساعة، يضمن التمزيق الآمن للبلاستيك والمعادن والإطارات والخشب والزجاج والنفايات المنزلية.',
+            paragraph2: 'مجهز بنظام تحكم PLC متقدم ووظيفة عكسية تلقائية وأنظمة السلامة في حالات الطوارئ، يضمن CS-60 إنتاجًا متواصلاً. يمكن الحصول على أحجام مخرجات مختلفة مع 64 شفرة من السبائك الخاصة ونظام شاشة قابل للاستبدال (40-120 مم).',
+            paragraph3: 'آلة التمزيق ثنائية العمود MT Makina CS-60 مثالية لمرافق إعادة تدوير البلاستيك ومراكز معالجة الخردة المعدنية ووحدات تمزيق الإطارات ومراكز إدارة النفايات المنزلية.',
+            paragraph4: 'مع تقنية التمزيق ثنائي العمود، توفر CS-60 نتائج ممتازة في تطبيقات كسارة خردة البلاستيك وتمزيق البالات وتمزيق المطاط. توفر هذه الآلة متانة صناعية مع هيكل عمود قوي.',
+            paragraph5: 'آلة التمزيق ثنائية العمود CS-60 التي توفر كفاءة الطاقة تحقق عائداً مرتفعاً على الاستثمار من خلال تقليل تكاليف التشغيل. مدعومة بمعايير السلامة المعتمدة CE وضمان سنتين.',
+            paragraph6: 'آلة التمزيق ثنائية العمود CS-60 توفر الاستدامة في إدارة النفايات وتقدم كفاءة عالية للشركات. MT Makina، الشركة الرائدة في تصنيع آلات التمزيق في تركيا، تقدم عروض أسعار وخدمات استشارية تقنية.'
         }
     },
     'CS-80': {
@@ -99,22 +123,31 @@ export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CS-80 çift şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik, çevresel faydalar ve ekonomik avantajlar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı katı atık parçalama makinesi fiyat teklifi, teknik danışmanlık ve turnkey proje çözümleri sunmaktadır. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi ihtiyaçlarınız için profesyonel danışmanlık ekibimizle iletişime geçin. CS-80, ağır hizmet tipi endüstriyel projeler için tercih edilen güvenilir parçalama çözümüdür.'
         },
         en: {
-            intro: 'CS-80 dual shaft shredder is a powerful and durable solution for facilities requiring high-volume waste processing.',
-            paragraph1: 'CS-80 model is designed for heavy-duty applications with 2x22 kW high-performance dual motor system. With 1500-2500 kg/hour processing capacity, it shows superior performance.',
-            paragraph2: 'Equipped with fully automatic PLC control panel, real-time load monitoring, automatic overload protection, CS-80 has 7/24 uninterrupted operation capacity.',
-            paragraph3: 'CS-80 is optimized for large plastic recycling facilities, automotive scrap processing centers, wooden pallet shredding units.'
+            intro: 'CS-80 dual shaft shredder is a powerful, durable and professional shredding solution for industrial facilities requiring high-volume waste processing.',
+            paragraph1: 'CS-80 model is designed for heavy-duty applications with 2x22 kW high-performance dual motor system, 1000 mm rotor length and 350 mm rotor diameter. With 1500-2500 kg/hour processing capacity, it shows superior performance in plastic shredder, fabric shredder, paper shredder and pallet shredder applications.',
+            paragraph2: 'Equipped with fully automatic PLC control panel, real-time load monitoring, automatic overload protection and bi-directional reverse function, CS-80 has 7/24 uninterrupted operation capacity. With 80 premium quality blades and dual screen system (50-150 mm), both coarse and medium shredding can be performed.',
+            paragraph3: 'MT Makina CS-80 solid waste shredder is optimized for large plastic recycling facilities, automotive scrap processing centers, wooden pallet shredding units and industrial waste management facilities. Modular structure allows easy integration with conveyor feeders and separator systems.',
+            paragraph4: 'With dual shaft shredder technology, CS-80 provides extraordinary results in plastic scrap crusher, bale shredder, rubber shredder and scrap tire shredder applications. This system offers long life and high performance guarantee with strong shaft structure and reinforced gearbox.',
+            paragraph5: 'CS-80 dual shaft shredder offering energy efficiency provides high return on investment by minimizing operating costs. Supported by CE and ISO certified safety standards with 2-year warranty. Requires minimum maintenance with automatic lubrication system.',
+            paragraph6: 'CS-80 dual shaft shredder providing sustainability in waste management offers high efficiency and environmental benefits to businesses. MT Makina, the leading shredder manufacturer in Turkey, offers dual shaft solid waste shredder price quotes and technical consultancy services.'
         },
         ru: {
-            intro: 'Двухвальный измельчитель CS-80 - мощное и долговечное решение для объектов, требующих обработки больших объемов отходов.',
-            paragraph1: 'Модель CS-80 разработана для тяжелых условий эксплуатации с высокопроизводительной системой двойного двигателя 2x22 кВт.',
-            paragraph2: 'Оснащенный полностью автоматической панелью управления ПЛК, мониторингом нагрузки в реальном времени, CS-80 имеет возможность непрерывной работы 7/24.',
-            paragraph3: 'CS-80 оптимизирован для крупных предприятий по переработке пластика, центров обработки автомобильного лома.'
+            intro: 'Двухвальный измельчитель CS-80 - мощное, долговечное и профессиональное решение для объектов, требующих обработки больших объемов отходов.',
+            paragraph1: 'Модель CS-80 разработана для тяжелых условий эксплуатации с высокопроизводительной системой двойного двигателя 2x22 кВт, длиной ротора 1000 мм и диаметром ротора 350 мм. С производительностью 1500-2500 кг/час демонстрирует превосходную эффективность.',
+            paragraph2: 'Оснащенный полностью автоматической панелью управления ПЛК, мониторингом нагрузки в реальном времени и автоматической защитой от перегрузки, CS-80 имеет возможность непрерывной работы 7/24. С 80 ножами премиум качества и двойной системой сит можно выполнять грубое и среднее измельчение.',
+            paragraph3: 'Измельчитель твердых отходов MT Makina CS-80 оптимизирован для крупных предприятий по переработке пластика, центров обработки автомобильного лома, подразделений измельчения деревянных поддонов и промышленных объектов управления отходами.',
+            paragraph4: 'С технологией двухвального измельчителя CS-80 обеспечивает выдающиеся результаты в применениях дробилки пластикового лома, измельчителя тюков и измельчителя резины. Эта система предлагает долгий срок службы с прочной конструкцией вала и усиленным редуктором.',
+            paragraph5: 'Двухвальный измельчитель CS-80, предлагающий энергоэффективность, обеспечивает высокую отдачу от инвестиций. Поддерживается сертификатами CE и ISO с гарантией 2 года. Требует минимального обслуживания с автоматической системой смазки.',
+            paragraph6: 'Двухвальный измельчитель CS-80, обеспечивающий устойчивость в управлении отходами, предлагает высокую эффективность предприятиям. MT Makina, ведущий производитель измельчителей в Турции, предлагает ценовые предложения и технические консультации.'
         },
         ar: {
-            intro: 'آلة التمزيق ثنائية العمود CS-80 هي حل قوي ومتين للمرافق التي تتطلب معالجة نفايات كبيرة الحجم.',
-            paragraph1: 'تم تصميم طراز CS-80 للتطبيقات الثقيلة بنظام محرك مزدوج عالي الأداء 2×22 كيلووات.',
-            paragraph2: 'مجهز بلوحة تحكم PLC أوتوماتيكية بالكامل ومراقبة الحمل في الوقت الفعلي، يتمتع CS-80 بقدرة تشغيل متواصل 7/24.',
-            paragraph3: 'تم تحسين CS-80 لمرافق إعادة تدوير البلاستيك الكبيرة ومراكز معالجة خردة السيارات.'
+            intro: 'آلة التمزيق ثنائية العمود CS-80 هي حل قوي ومتين ومهني للمرافق الصناعية التي تتطلب معالجة نفايات كبيرة الحجم.',
+            paragraph1: 'تم تصميم طراز CS-80 للتطبيقات الثقيلة بنظام محرك مزدوج عالي الأداء 2×22 كيلووات وطول دوار 1000 مم وقطر دوار 350 مم. بسعة معالجة 1500-2500 كجم/ساعة، يظهر أداءً فائقاً.',
+            paragraph2: 'مجهز بلوحة تحكم PLC أوتوماتيكية بالكامل ومراقبة الحمل في الوقت الفعلي وحماية تلقائية من الحمل الزائد، يتمتع CS-80 بقدرة تشغيل متواصل 7/24. مع 80 شفرة عالية الجودة ونظام شاشة مزدوج يمكن إجراء التمزيق الخشن والمتوسط.',
+            paragraph3: 'آلة تمزيق النفايات الصلبة MT Makina CS-80 محسنة لمرافق إعادة تدوير البلاستيك الكبيرة ومراكز معالجة خردة السيارات ووحدات تمزيق المنصات الخشبية ومنشآت إدارة النفايات الصناعية.',
+            paragraph4: 'مع تقنية التمزيق ثنائي العمود، توفر CS-80 نتائج استثنائية في تطبيقات كسارة خردة البلاستيك وتمزيق البالات وتمزيق المطاط. توفر هذه الآلة عمراً طويلاً مع هيكل عمود قوي وعلبة تروس معززة.',
+            paragraph5: 'آلة التمزيق ثنائية العمود CS-80 التي توفر كفاءة الطاقة تحقق عائداً مرتفعاً على الاستثمار. مدعومة بمعايير السلامة المعتمدة CE وISO مع ضمان سنتين. تتطلب الحد الأدنى من الصيانة مع نظام التشحيم التلقائي.',
+            paragraph6: 'آلة التمزيق ثنائية العمود CS-80 توفر الاستدامة في إدارة النفايات وتقدم كفاءة عالية للشركات. MT Makina، الشركة الرائدة في تصنيع آلات التمزيق في تركيا، تقدم عروض أسعار وخدمات استشارية تقنية.'
         }
     },
     'CS-100': {
@@ -128,22 +161,31 @@ export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CS-100 çift şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik, çevresel faydalar ve ekonomik avantajlar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı katı atık parçalama makinesi fiyat teklifi, turnkey proje çözümleri ve 7/24 teknik destek hizmetleri sunmaktadır. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi ihtiyaçlarınız için profesyonel danışmanlık ekibimizle iletişime geçin. CS-100, büyük ölçekli endüstriyel projeler için tercih edilen profesyonel sınıf parçalama çözümüdür.'
         },
         en: {
-            intro: 'CS-100 dual shaft shredder offers powerful torque and superior performance for high-capacity industrial applications.',
-            paragraph1: 'CS-100 model features industrial-grade dual motor structure with 2x30 kW. With 2500-4000 kg/hour high processing capacity, it provides maximum efficiency.',
-            paragraph2: 'Equipped with Siemens PLC-based advanced automation system, touchscreen operator panel, CS-100 complies with Industry 4.0 standards.',
-            paragraph3: 'CS-100 is designed for large capacity recycling complexes, municipal solid waste management facilities, automotive recovery centers.'
+            intro: 'CS-100 dual shaft shredder offers powerful torque, superior performance and Industry 4.0 compatible automation for high-capacity industrial applications.',
+            paragraph1: 'CS-100 model features industrial-grade double motor structure with 2x30 kW, 1200 mm wide rotor length and 400 mm rotor diameter. With 2500-4000 kg/hour high processing capacity, it provides maximum efficiency in plastic shredder, fabric shredder and pallet shredder applications.',
+            paragraph2: 'Equipped with Siemens PLC-based advanced automation system, touchscreen operator panel and remote monitoring infrastructure, CS-100 complies with Industry 4.0 standards. With 96 special hardened blades and dual-stage screen system (60-180 mm), homogeneous shredding is guaranteed.',
+            paragraph3: 'MT Makina CS-100 solid waste shredder is designed for large capacity recycling complexes, municipal solid waste management facilities, automotive recovery centers and industrial zone joint processing centers.',
+            paragraph4: 'With dual shaft shredder technology, CS-100 provides maximum results in largest projects for plastic scrap crusher, bale shredder, rubber shredder and scrap tire shredder applications. Offers long life with strong shaft structure, reinforced gearbox and durable blade system.',
+            paragraph5: 'CS-100 dual shaft shredder offering energy efficiency provides highest return on investment by minimizing operating costs. Supported by CE and ISO certified safety standards with 2-year warranty. Offers predictive maintenance and IoT connectivity infrastructure.',
+            paragraph6: 'CS-100 dual shaft shredder providing sustainability in waste management offers maximum efficiency and environmental benefits to businesses. MT Makina, the leading shredder manufacturer in Turkey, offers dual shaft solid waste shredder price quotes and turnkey project solutions.'
         },
         ru: {
-            intro: 'Двухвальный измельчитель CS-100 предлагает мощный крутящий момент и превосходную производительность.',
-            paragraph1: 'Модель CS-100 оснащена двухмоторной конструкцией промышленного класса 2x30 кВт.',
-            paragraph2: 'Оснащенный передовой системой автоматизации на базе ПЛК Siemens, CS-100 соответствует стандартам Индустрии 4.0.',
-            paragraph3: 'CS-100 разработан для крупных комплексов переработки, муниципальных объектов управления твердыми отходами.'
+            intro: 'Двухвальный измельчитель CS-100 предлагает мощный крутящий момент, превосходную производительность и автоматизацию, совместимую с Индустрией 4.0, для высокопроизводительных промышленных применений.',
+            paragraph1: 'Модель CS-100 оснащена двухмоторной конструкцией промышленного класса 2x30 кВт с широкой длиной ротора 1200 мм и диаметром ротора 400 мм. С высокой производительностью обработки 2500-4000 кг/час обеспечивает максимальную эффективность.',
+            paragraph2: 'Оснащенный передовой системой автоматизации на базе ПЛК Siemens, сенсорной панелью оператора и инфраструктурой удаленного мониторинга, CS-100 соответствует стандартам Индустрии 4.0. С 96 специальными закаленными ножами гарантирует однородное измельчение.',
+            paragraph3: 'Измельчитель твердых отходов MT Makina CS-100 разработан для крупных комплексов переработки, муниципальных объектов управления твердыми отходами и центров восстановления автомобилей.',
+            paragraph4: 'С технологией двухвального измельчителя CS-100 обеспечивает максимальные результаты в крупнейших проектах для применений дробилки пластикового лома и измельчителя тюков. Предлагает долгий срок службы с прочной конструкцией вала.',
+            paragraph5: 'Двухвальный измельчитель CS-100, предлагающий энергоэффективность, обеспечивает наивысшую отдачу от инвестиций. Поддерживается сертификатами CE и ISO с гарантией 2 года. Предлагает предиктивное обслуживание и IoT-подключение.',
+            paragraph6: 'Двухвальный измельчитель CS-100 предлагает максимальную эффективность и экологические преимущества. MT Makina, ведущий производитель измельчителей в Турции, предлагает ценовые предложения и решения под ключ.'
         },
         ar: {
-            intro: 'تقدم آلة التمزيق ثنائية العمود CS-100 عزم دوران قويًا وأداءً متفوقًا.',
-            paragraph1: 'يتميز طراز CS-100 بهيكل محرك مزدوج من الدرجة الصناعية 2×30 كيلووات.',
-            paragraph2: 'مجهز بنظام أتمتة متقدم قائم على PLC من Siemens، يتوافق CS-100 مع معايير الصناعة 4.0.',
-            paragraph3: 'تم تصميم CS-100 لمجمعات إعادة التدوير كبيرة السعة ومرافق إدارة النفايات الصلبة البلدية.'
+            intro: 'تقدم آلة التمزيق ثنائية العمود CS-100 عزم دوران قويًا وأداءً متفوقًا وأتمتة متوافقة مع الصناعة 4.0 للتطبيقات الصناعية عالية السعة.',
+            paragraph1: 'يتميز طراز CS-100 بهيكل محرك مزدوج من الدرجة الصناعية 2×30 كيلووات مع طول دوار عريض 1200 مم وقطر دوار 400 مم. بسعة معالجة عالية 2500-4000 كجم/ساعة، يوفر أقصى كفاءة.',
+            paragraph2: 'مجهز بنظام أتمتة متقدم قائم على PLC من Siemens ولوحة مشغل بشاشة تعمل باللمس وبنية تحتية للمراقبة عن بعد، يتوافق CS-100 مع معايير الصناعة 4.0. مع 96 شفرة مقواة خاصة يضمن التمزيق المتجانس.',
+            paragraph3: 'تم تصميم آلة تمزيق النفايات الصلبة MT Makina CS-100 لمجمعات إعادة التدوير كبيرة السعة ومرافق إدارة النفايات الصلبة البلدية ومراكز استعادة السيارات.',
+            paragraph4: 'مع تقنية التمزيق ثنائي العمود، توفر CS-100 أقصى النتائج في أكبر المشاريع لتطبيقات كسارة خردة البلاستيك وتمزيق البالات. توفر عمراً طويلاً مع هيكل عمود قوي.',
+            paragraph5: 'آلة التمزيق ثنائية العمود CS-100 التي توفر كفاءة الطاقة تحقق أعلى عائد على الاستثمار. مدعومة بمعايير السلامة المعتمدة CE وISO مع ضمان سنتين. توفر الصيانة التنبؤية واتصال IoT.',
+            paragraph6: 'آلة التمزيق ثنائية العمود CS-100 توفر أقصى كفاءة وفوائد بيئية. MT Makina، الشركة الرائدة في تصنيع آلات التمزيق في تركيا، تقدم عروض أسعار وحلول متكاملة.'
         }
     },
     'CS-120': {
@@ -157,22 +199,31 @@ export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CS-120 çift şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik, çevresel faydalar ve ekonomik avantajlar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı katı atık parçalama makinesi fiyat teklifi, turnkey proje çözümleri, mühendislik danışmanlığı ve kurulum sonrası destek hizmetleri sunmaktadır. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi ihtiyaçlarınız için profesyonel danışmanlık ekibimizle iletişime geçin. CS-120, mega ölçekli endüstriyel projeler için tercih edilen ultra güçlü parçalama çözümüdür.'
         },
         en: {
-            intro: 'CS-120 dual shaft shredder is a professional system offering maximum capacity in heavy industrial waste management.',
-            paragraph1: 'CS-120 model is designed for the toughest applications with 2x37 kW high-torque dual motor. With 4000-6000 kg/hour capacity.',
-            paragraph2: 'Equipped with industrial-grade Siemens S7 PLC automation, SCADA integration, real-time data analysis.',
-            paragraph3: 'CS-120 is optimized for mega-scale recycling complexes, municipal integrated solid waste facilities.'
+            intro: 'CS-120 dual shaft shredder is an industrial-grade professional system offering maximum capacity, superior performance and professional automation in heavy industrial waste management.',
+            paragraph1: 'CS-120 model is designed for the toughest applications with 2x37 kW high-torque dual motor structure, 1400 mm ultra-wide rotor length and 450 mm rotor diameter. With 4000-6000 kg/hour processing capacity, it provides exceptional performance in tire bales, large plastic tanks, heavy composite materials and large volume wood products shredding.',
+            paragraph2: 'Equipped with industrial-grade Siemens S7 PLC automation, SCADA integration, real-time data analysis and predictive maintenance modules, CS-120 is fully compatible with smart factory concept. With 112 special alloy blades and three-stage screen system (80-200 mm), maximum torque and precise shredding is ensured.',
+            paragraph3: 'MT Makina CS-120 solid waste shredder is optimized for mega-scale recycling complexes, municipal integrated solid waste facilities, heavy industry scrap processing and large-scale industrial projects.',
+            paragraph4: 'With dual shaft shredder technology, CS-120 provides exceptional results in largest industrial projects for plastic scrap crusher, bale shredder, rubber shredder and scrap tire shredder applications. Offers maximum performance with heavy-duty shaft structure, premium gearbox and industrial-grade blade system.',
+            paragraph5: 'CS-120 dual shaft shredder with frequency inverter controlled motor system minimizes operating costs while offering energy efficiency. Supported by CE, ISO 9001, ISO 14001 and ATEX certified standards with 3-year warranty. Provides 7/24 remote monitoring and proactive maintenance support.',
+            paragraph6: 'CS-120 dual shaft shredder providing sustainability in waste management offers high efficiency and environmental benefits. MT Makina, the leading shredder manufacturer in Turkey, offers dual shaft solid waste shredder price quotes, turnkey project solutions, engineering consultancy and post-installation support services.'
         },
         ru: {
-            intro: 'Двухвальный измельчитель CS-120 - профессиональная система, обеспечивающая максимальную производительность.',
-            paragraph1: 'Модель CS-120 разработана для самых сложных применений с высокомоментной конструкцией 2x37 кВт.',
-            paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, интеграцией SCADA.',
-            paragraph3: 'CS-120 оптимизирован для мегамасштабных комплексов переработки.'
+            intro: 'Двухвальный измельчитель CS-120 - профессиональная система промышленного класса, обеспечивающая максимальную производительность и профессиональную автоматизацию в управлении тяжелыми промышленными отходами.',
+            paragraph1: 'Модель CS-120 разработана для самых сложных применений с высокомоментной конструкцией двойного двигателя 2x37 кВт, ультраширокой длиной ротора 1400 мм и диаметром ротора 450 мм. С производительностью 4000-6000 кг/час обеспечивает исключительную производительность.',
+            paragraph2: 'Оснащенный промышленной автоматизацией Siemens S7 PLC, интеграцией SCADA, анализом данных в реальном времени и модулями предиктивного обслуживания, CS-120 полностью совместим с концепцией умной фабрики. С 112 ножами из специального сплава обеспечивает максимальный крутящий момент.',
+            paragraph3: 'Измельчитель твердых отходов MT Makina CS-120 оптимизирован для мегамасштабных комплексов переработки, муниципальных интегрированных объектов твердых отходов и крупномасштабных промышленных проектов.',
+            paragraph4: 'С технологией двухвального измельчителя CS-120 обеспечивает исключительные результаты в крупнейших промышленных проектах. Предлагает максимальную производительность с тяжелой конструкцией вала и редуктором премиум-класса.',
+            paragraph5: 'Двухвальный измельчитель CS-120 с частотным инверторным управлением двигателя минимизирует эксплуатационные расходы. Поддерживается сертификатами CE, ISO 9001, ISO 14001 и ATEX с гарантией 3 года.',
+            paragraph6: 'Двухвальный измельчитель CS-120 предлагает высокую эффективность и экологические преимущества. MT Makina предлагает ценовые предложения, решения под ключ и инженерные консультации.'
         },
         ar: {
-            intro: 'آلة التمزيق ثنائية العمود CS-120 هي نظام احترافي يوفر أقصى سعة.',
-            paragraph1: 'تم تصميم طراز CS-120 لأصعب التطبيقات بهيكل محرك مزدوج عالي عزم الدوران 2×37 كيلووات.',
-            paragraph2: 'مجهز بأتمتة Siemens S7 PLC من الدرجة الصناعية وتكامل SCADA.',
-            paragraph3: 'تم تحسين CS-120 لمجمعات إعادة التدوير على نطاق ضخم.'
+            intro: 'آلة التمزيق ثنائية العمود CS-120 هي نظام احترافي من الدرجة الصناعية يوفر أقصى سعة وأداء متفوق وأتمتة مهنية في إدارة النفايات الصناعية الثقيلة.',
+            paragraph1: 'تم تصميم طراز CS-120 لأصعب التطبيقات بهيكل محرك مزدوج عالي عزم الدوران 2×37 كيلووات وطول دوار فائق العرض 1400 مم وقطر دوار 450 مم. بسعة معالجة 4000-6000 كجم/ساعة، يوفر أداءً استثنائياً.',
+            paragraph2: 'مجهز بأتمتة Siemens S7 PLC من الدرجة الصناعية وتكامل SCADA وتحليل البيانات في الوقت الفعلي ووحدات الصيانة التنبؤية، يتوافق CS-120 تماماً مع مفهوم المصنع الذكي. مع 112 شفرة من السبائك الخاصة يضمن أقصى عزم دوران.',
+            paragraph3: 'آلة تمزيق النفايات الصلبة MT Makina CS-120 محسنة لمجمعات إعادة التدوير الضخمة ومرافق النفايات الصلبة البلدية المتكاملة والمشاريع الصناعية واسعة النطاق.',
+            paragraph4: 'مع تقنية التمزيق ثنائي العمود، توفر CS-120 نتائج استثنائية في أكبر المشاريع الصناعية. توفر أقصى أداء مع هيكل عمود للخدمة الشاقة وعلبة تروس متميزة.',
+            paragraph5: 'آلة التمزيق ثنائية العمود CS-120 مع نظام تحكم محرك بمحول تردد تقلل تكاليف التشغيل. مدعومة بمعايير CE وISO 9001 وISO 14001 وATEX مع ضمان 3 سنوات.',
+            paragraph6: 'آلة التمزيق ثنائية العمود CS-120 توفر كفاءة عالية وفوائد بيئية. MT Makina تقدم عروض أسعار وحلول متكاملة واستشارات هندسية ودعم ما بعد التركيب.'
         }
     },
     'CS-150': {
@@ -186,22 +237,31 @@ export const dualShaftDescriptions: { [modelName: string]: MultilingualModelDesc
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CS-150 çift şaftlı parçalama makinesi, geri dönüşüm süreçlerini optimize ederek işletmelere maksimum verimlilik, çevresel liderlik ve ekonomik avantajlar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı katı atık parçalama makinesi fiyat teklifi, turnkey mega proje çözümleri, uluslararası mühendislik danışmanlığı ve global teknik destek hizmetleri sunmaktadır. Plastik parçalama makinesi, kumaş parçalama makinesi, palet parçalama makinesi ve kağıt parçalama makinesi mega projeleriniz için global satış ekibimizle iletişime geçin. CS-150, mega ölçekli global projeler için tercih edilen ultra güçlü parçalama çözümüdür.'
         },
         en: {
-            intro: 'CS-150 dual shaft shredder is an ultra-powerful industrial system designed for mega-capacity recycling complexes.',
-            paragraph1: 'CS-150 model features 2x45 kW ultra-high torque with 1600 mm giant rotor length. 6000-8000 kg/hour capacity.',
-            paragraph2: 'Equipped with most advanced Siemens S7-1500 PLC automation, AI-assisted load optimization.',
-            paragraph3: 'CS-150 is specifically designed for mega-scale integrated recycling facilities.'
+            intro: 'CS-150 dual shaft shredder is an ultra-powerful industrial system designed for mega-capacity recycling complexes, offering AI-assisted optimization and cloud-based monitoring.',
+            paragraph1: 'CS-150 model features 2x45 kW ultra-high torque with 1600 mm giant rotor length and 500 mm rotor diameter. With 6000-8000 kg/hour processing capacity, it provides maximum performance in tire bales, large plastic tanks, heavy composite materials, industrial waste and highest volume wood products shredding.',
+            paragraph2: 'Equipped with most advanced Siemens S7-1500 PLC automation, AI-assisted load optimization, cloud-based monitoring and digital twin technology, CS-150 leads the smart industrial revolution. With 128 premium quality special alloy blades and four-stage screen system (100-250 mm), ultra precise shredding is guaranteed.',
+            paragraph3: 'MT Makina CS-150 solid waste shredder is specifically designed for mega-scale integrated recycling facilities, international waste processing projects, multi-site operations and smart factory applications.',
+            paragraph4: 'With dual shaft shredder technology, CS-150 provides ultimate results in largest global projects for plastic scrap crusher, bale shredder, rubber shredder and scrap tire shredder applications. Offers maximum durability with heavy-duty shaft structure, industrial gearbox and premium blade system.',
+            paragraph5: 'CS-150 dual shaft shredder with variable frequency drive (VFD) and regenerative braking system minimizes operating costs while offering maximum energy efficiency. Compliant with CE, ISO 9001, ISO 14001, ATEX and IEC standards with 3-year global warranty and lifetime support.',
+            paragraph6: 'CS-150 dual shaft shredder providing sustainability leadership in waste management offers maximum efficiency and environmental benefits. MT Makina, the leading shredder manufacturer in Turkey, offers dual shaft solid waste shredder price quotes, turnkey mega project solutions, international engineering consultancy and global technical support services.'
         },
         ru: {
-            intro: 'Двухвальный измельчитель CS-150 - сверхмощная промышленная система.',
-            paragraph1: 'Модель CS-150 оснащена сверхвысоким крутящим моментом 2x45 кВт. Производительность 6000-8000 кг/час.',
-            paragraph2: 'Оснащенный самой передовой автоматизацией Siemens S7-1500 PLC.',
-            paragraph3: 'CS-150 специально разработан для интегрированных предприятий переработки мегамасштаба.'
+            intro: 'Двухвальный измельчитель CS-150 - сверхмощная промышленная система для мегамасштабных комплексов переработки с ИИ-оптимизацией и облачным мониторингом.',
+            paragraph1: 'Модель CS-150 оснащена сверхвысоким крутящим моментом 2x45 кВт с гигантской длиной ротора 1600 мм и диаметром ротора 500 мм. С производительностью 6000-8000 кг/час обеспечивает максимальную производительность.',
+            paragraph2: 'Оснащенный самой передовой автоматизацией Siemens S7-1500 PLC, ИИ-оптимизацией нагрузки, облачным мониторингом и технологией цифрового двойника, CS-150 лидирует в умной промышленной революции. С 128 ножами премиум качества гарантирует ультраточное измельчение.',
+            paragraph3: 'Измельчитель твердых отходов MT Makina CS-150 специально разработан для интегрированных предприятий переработки мегамасштаба, международных проектов переработки отходов и приложений умной фабрики.',
+            paragraph4: 'С технологией двухвального измельчителя CS-150 обеспечивает окончательные результаты в крупнейших глобальных проектах. Предлагает максимальную долговечность с конструкцией вала для тяжелых условий и промышленным редуктором.',
+            paragraph5: 'Двухвальный измельчитель CS-150 с частотно-регулируемым приводом (VFD) и системой рекуперативного торможения минимизирует эксплуатационные расходы. Соответствует стандартам CE, ISO 9001, ISO 14001, ATEX и IEC с 3-летней глобальной гарантией.',
+            paragraph6: 'Двухвальный измельчитель CS-150 предлагает максимальную эффективность и экологические преимущества. MT Makina предлагает ценовые предложения, решения мегапроектов под ключ, международные инженерные консультации и глобальную техническую поддержку.'
         },
         ar: {
-            intro: 'آلة التمزيق ثنائية العمود CS-150 هي نظام صناعي فائق القوة.',
-            paragraph1: 'يتميز طراز CS-150 بعزم دوران فائق 2×45 كيلووات. سعة 6000-8000 كجم/ساعة.',
-            paragraph2: 'مجهز بأكثر أنظمة الأتمتة تقدمًا Siemens S7-1500 PLC.',
-            paragraph3: 'تم تصميم CS-150 خصيصًا لمجمعات إعادة التدوير المتكاملة على نطاق ضخم.'
+            intro: 'آلة التمزيق ثنائية العمود CS-150 هي نظام صناعي فائق القوة مصمم لمجمعات إعادة التدوير الضخمة مع تحسين الذكاء الاصطناعي والمراقبة السحابية.',
+            paragraph1: 'يتميز طراز CS-150 بعزم دوران فائق 2×45 كيلووات مع طول دوار ضخم 1600 مم وقطر دوار 500 مم. بسعة معالجة 6000-8000 كجم/ساعة، يوفر أقصى أداء.',
+            paragraph2: 'مجهز بأكثر أنظمة الأتمتة تقدمًا Siemens S7-1500 PLC وتحسين الحمل بالذكاء الاصطناعي والمراقبة السحابية وتقنية التوأم الرقمي، يقود CS-150 الثورة الصناعية الذكية. مع 128 شفرة متميزة يضمن التمزيق فائق الدقة.',
+            paragraph3: 'تم تصميم آلة تمزيق النفايات الصلبة MT Makina CS-150 خصيصًا لمجمعات إعادة التدوير المتكاملة الضخمة والمشاريع الدولية لمعالجة النفايات وتطبيقات المصنع الذكي.',
+            paragraph4: 'مع تقنية التمزيق ثنائي العمود، توفر CS-150 النتائج النهائية في أكبر المشاريع العالمية. توفر أقصى متانة مع هيكل عمود للخدمة الشاقة وعلبة تروس صناعية.',
+            paragraph5: 'آلة التمزيق ثنائية العمود CS-150 مع محرك تردد متغير (VFD) ونظام الفرملة التجددية تقلل تكاليف التشغيل. متوافقة مع معايير CE وISO 9001 وISO 14001 وATEX وIEC مع ضمان عالمي 3 سنوات.',
+            paragraph6: 'آلة التمزيق ثنائية العمود CS-150 توفر أقصى كفاءة وفوائد بيئية. MT Makina تقدم عروض أسعار وحلول مشاريع ضخمة متكاملة واستشارات هندسية دولية ودعم تقني عالمي.'
         }
     },
     'CS-180': {
