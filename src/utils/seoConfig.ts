@@ -941,24 +941,18 @@ export const generateProductStructuredData = (type: string, model: string) => {
       "name": "MT Makina"
     },
     "offers": {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       "url": modelSEO.canonical,
       "priceCurrency": "USD",
+      "lowPrice": "15000",
+      "highPrice": "150000",
+      "offerCount": "1",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition",
       "seller": {
         "@type": "Organization",
         "name": "MT Makina"
-      },
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "USD",
-        "valueAddedTaxIncluded": false,
-        "eligibleTransactionVolume": {
-          "@type": "PriceSpecification",
-          "minPrice": 1
-        }
       },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
