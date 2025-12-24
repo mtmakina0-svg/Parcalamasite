@@ -12,22 +12,31 @@ export const mobileDescriptions: { [modelName: string]: MultilingualModelDescrip
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan TSM-150 tek şaftlı mobil kırıcı, sahada geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik, lojistik tasarrufu ve çevresel faydalar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, mobil kırıcı fiyat teklifi, sahada parçalama tesisi kiralama ve 7/24 teknik destek hizmetleri sunmaktadır. Mobil shredder, mobil atık kırma makinesi ve inşaat şantiyesi parçalama projeleriniz için profesyonel danışmanlık ekibimizle iletişime geçin. CE sertifikası ve 2 yıl garanti ile desteklenir.'
         },
         en: {
-            intro: 'TSM-150 single shaft mobile crusher is a professional solution providing portable, compact and fast installation for construction site and field applications.',
-            paragraph1: 'TSM-150 model features 300 kW (400 HP) high-performance motor power with 1500 mm rotor width and compact design mounted on tracked mobile chassis. With 15-25 ton/hour processing capacity, it shreds construction waste, wood waste, municipal waste, organic waste, paper-cardboard and packaging waste on-site.',
-            paragraph2: 'Equipped with PLC controlled automation system, remote control operation, automatic overload protection and emergency stop function, TSM-150 meets construction site safety standards. With 36 high-durability cutting blades and hydraulic pusher system.',
-            paragraph3: 'MT Makina TSM-150 is optimized for construction sites, disaster areas, temporary recycling facilities, municipal mobile waste processing units.'
+            intro: 'TSM-150 single shaft mobile crusher is a professional, portable and compact solution for construction sites and field applications.',
+            paragraph1: 'TSM-150 model features 300 kW (400 HP) high-performance diesel engine power with 1500 mm rotor width and reinforced tracked mobile chassis. With 15-25 ton/hour processing capacity, it shows superior performance in construction waste, wood, pallets, tree roots and mixed waste shredding.',
+            paragraph2: 'Equipped with PLC automation system, remote control, automatic overload protection and bi-directional reverse function, TSM-150 meets construction site safety standards. With 32 ultra-durable cutting blades and replaceable screen system, different output sizes can be achieved.',
+            paragraph3: 'MT Makina TSM-150 mobile crusher is optimized for construction sites, disaster areas, temporary recycling facilities and field operations. Tracked system provides safe movement even on rough terrain.',
+            paragraph4: 'With mobile crusher technology, TSM-150 provides effective solutions in on-site waste processing. Compact design allows easy transport and quick setup. Dust suppression system ensures environmentally friendly operation.',
+            paragraph5: 'TSM-150 mobile crusher offering fuel efficiency minimizes operating costs with optimized diesel consumption. Low maintenance requirements and durable components provide high return on investment.',
+            paragraph6: 'TSM-150 mobile crusher providing sustainability in field waste management offers high efficiency to businesses. MT Makina offers mobile crusher price quotes and 7/24 technical support. Supported by CE certified safety standards.'
         },
         ru: {
-            intro: 'Мобильная дробилка TSM-150 с одним валом - профессиональное портативное компактное решение для строительных площадок.',
-            paragraph1: 'Модель TSM-150 оснащена высокопроизводительным двигателем 300 кВт (400 л.с.) с шириной ротора 1500 мм. Производительность 15-25 тонн/час.',
-            paragraph2: 'Оснащен системой автоматизации ПЛК, дистанционным управлением, автоматической защитой от перегрузки, TSM-150 соответствует стандартам безопасности.',
-            paragraph3: 'MT Makina TSM-150 оптимизирован для строительных площадок, зон бедствия, временных перерабатывающих объектов.'
+            intro: 'Мобильная дробилка TSM-150 с одним валом - профессиональное портативное компактное решение для строительных площадок и полевых применений.',
+            paragraph1: 'Модель TSM-150 оснащена высокопроизводительным двигателем 300 кВт (400 л.с.) с шириной ротора 1500 мм и усиленным гусеничным мобильным шасси. С производительностью 15-25 тонн/час демонстрирует превосходную эффективность.',
+            paragraph2: 'Оснащен системой автоматизации ПЛК, дистанционным управлением, автоматической защитой от перегрузки и функцией двунаправленного реверса, TSM-150 соответствует стандартам безопасности строительных площадок.',
+            paragraph3: 'MT Makina TSM-150 мобильная дробилка оптимизирована для строительных площадок, зон бедствий, временных перерабатывающих объектов и полевых операций.',
+            paragraph4: 'С технологией мобильной дробилки TSM-150 обеспечивает эффективные решения в обработке отходов на месте. Компактный дизайн позволяет легкую транспортировку и быструю установку.',
+            paragraph5: 'Мобильная дробилка TSM-150, предлагающая топливную эффективность, минимизирует эксплуатационные расходы. Низкие требования к обслуживанию и долговечные компоненты.',
+            paragraph6: 'Мобильная дробилка TSM-150 предлагает высокую эффективность предприятиям. MT Makina предлагает ценовые предложения и техническую поддержку 7/24. Поддерживается сертификатом CE.'
         },
         ar: {
-            intro: 'كسارة TSM-150 المتنقلة أحادية العمود حل احترافي محمول ومدمج للتطبيقات الميدانية.',
-            paragraph1: 'يتميز طراز TSM-150 بمحرك عالي الأداء 300 كيلووات (400 حصان) مع عرض دوار 1500 مم. سعة معالجة 15-25 طن/ساعة.',
-            paragraph2: 'مجهز بنظام أتمتة PLC وتحكم عن بعد وحماية تلقائية من الحمل الزائد، يلبي TSM-150 معايير سلامة مواقع البناء.',
-            paragraph3: 'تم تحسين MT Makina TSM-150 لمواقع البناء ومناطق الكوارث ومرافق إعادة التدوير المؤقتة.'
+            intro: 'كسارة TSM-150 المتنقلة أحادية العمود حل احترافي محمول ومدمج لمواقع البناء والتطبيقات الميدانية.',
+            paragraph1: 'يتميز طراز TSM-150 بمحرك عالي الأداء 300 كيلووات (400 حصان) مع عرض دوار 1500 مم وهيكل متنقل مجنزر معزز. بسعة معالجة 15-25 طن/ساعة، يظهر أداءً فائقاً.',
+            paragraph2: 'مجهز بنظام أتمتة PLC وتحكم عن بعد وحماية تلقائية من الحمل الزائد ووظيفة العكس ثنائية الاتجاه، يلبي TSM-150 معايير سلامة مواقع البناء.',
+            paragraph3: 'MT Makina TSM-150 كسارة متنقلة محسنة لمواقع البناء ومناطق الكوارث ومرافق إعادة التدوير المؤقتة والعمليات الميدانية.',
+            paragraph4: 'مع تقنية الكسارة المتنقلة، توفر TSM-150 حلولاً فعالة في معالجة النفايات في الموقع. التصميم المدمج يسمح بالنقل السهل والإعداد السريع.',
+            paragraph5: 'كسارة TSM-150 المتنقلة التي توفر كفاءة الوقود تقلل تكاليف التشغيل. متطلبات صيانة منخفضة ومكونات متينة.',
+            paragraph6: 'كسارة TSM-150 المتنقلة توفر كفاءة عالية للشركات. MT Makina تقدم عروض أسعار ودعم تقني 7/24. مدعومة بمعايير CE.'
         }
     },
     'TSM-300': {
@@ -42,21 +51,30 @@ export const mobileDescriptions: { [modelName: string]: MultilingualModelDescrip
         },
         en: {
             intro: 'TSM-300 single shaft mobile crusher is an industrial system offering high performance and superior mobility for large capacity field projects.',
-            paragraph1: 'TSM-300 model features 450 kW (600 HP) ultra-powerful motor structure with 3000 mm wide rotor length. With 30-50 ton/hour high processing capacity, it shows superior performance in shredding industrial construction waste, large wood pieces, mixed municipal waste.',
-            paragraph2: 'Equipped with Siemens PLC-based advanced automation, remote monitoring and control, real-time performance analysis, TSM-300 is designed for 24/7 field operations.',
-            paragraph3: 'TSM-300 is optimized for large construction projects, dam sites, mining fields, large-scale municipal waste management, post-disaster debris cleanup.'
+            paragraph1: 'TSM-300 model features 450 kW (600 HP) ultra-powerful diesel engine structure with 3000 mm wide rotor length and reinforced tracked mobile chassis. With 30-50 ton/hour high processing capacity, it shows superior performance in shredding industrial construction waste, large wood pieces, tree roots and mixed municipal waste.',
+            paragraph2: 'Equipped with Siemens PLC-based advanced automation, remote monitoring and control, real-time performance analysis and automatic overload detection, TSM-300 is designed for 7/24 field operations. With 48 ultra-durable cutting blades and dual hydraulic pusher system.',
+            paragraph3: 'MT Makina TSM-300 mobile crusher is optimized for large construction projects, dam sites, mining fields, large-scale municipal waste management and post-disaster debris cleanup. Can be integrated with GPS tracking and telematics modules.',
+            paragraph4: 'With mobile crusher technology, TSM-300 provides unique performance in forest waste shredding, tree root crushing, building demolition waste and mixed construction waste processing. Dust suppression system ensures environmentally friendly operation.',
+            paragraph5: 'TSM-300 mobile crusher offering energy efficiency minimizes operating costs with optimized fuel consumption. Durable tracked chassis and premium components offer 15+ years long service life.',
+            paragraph6: 'TSM-300 mobile crusher providing sustainability in waste management offers maximum efficiency and logistics savings. MT Makina offers mobile crusher price quotes, turnkey field projects and 7/24 technical support. Supported by ISO 9001, CE certifications with 2-year warranty.'
         },
         ru: {
-            intro: 'Мобильная дробилка TSM-300 с одним валом - промышленная система с высокой производительностью для крупных проектов.',
-            paragraph1: 'Модель TSM-300 оснащена сверхмощным двигателем 450 кВт (600 л.с.) с широкой длиной ротора 3000 мм. Производительность 30-50 тонн/час.',
-            paragraph2: 'Оснащен передовой автоматизацией Siemens PLC, удаленным мониторингом и управлением, TSM-300 разработан для круглосуточных полевых операций.',
-            paragraph3: 'TSM-300 оптимизирован для крупных строительных проектов, плотин, горнодобывающих площадок, крупномасштабного управления отходами.'
+            intro: 'Мобильная дробилка TSM-300 с одним валом - промышленная система с высокой производительностью и превосходной мобильностью для крупных полевых проектов.',
+            paragraph1: 'Модель TSM-300 оснащена сверхмощным двигателем 450 кВт (600 л.с.) с широкой длиной ротора 3000 мм и усиленным гусеничным мобильным шасси. С производительностью 30-50 тонн/час демонстрирует превосходную эффективность.',
+            paragraph2: 'Оснащен передовой автоматизацией Siemens PLC, удаленным мониторингом и управлением, анализом производительности в реальном времени, TSM-300 разработан для круглосуточных полевых операций.',
+            paragraph3: 'MT Makina TSM-300 мобильная дробилка оптимизирована для крупных строительных проектов, плотин, горнодобывающих площадок и крупномасштабного управления отходами.',
+            paragraph4: 'С технологией мобильной дробилки TSM-300 обеспечивает уникальную производительность в измельчении лесных отходов, корней деревьев и строительных отходов.',
+            paragraph5: 'Мобильная дробилка TSM-300, предлагающая энергоэффективность, минимизирует эксплуатационные расходы с оптимизированным расходом топлива. Срок службы 15+ лет.',
+            paragraph6: 'Мобильная дробилка TSM-300 предлагает максимальную эффективность и экономию логистики. MT Makina предлагает решения под ключ и техническую поддержку 7/24. Поддерживается сертификатами ISO 9001, CE с гарантией 2 года.'
         },
         ar: {
-            intro: 'كسارة TSM-300 المتنقلة أحادية العمود نظام صناعي يوفر أداءً عاليًا وحركية فائقة للمشاريع الميدانية الكبيرة.',
-            paragraph1: 'يتميز طراز TSM-300 بهيكل محرك فائق القوة 450 كيلووات (600 حصان) مع طول دوار واسع 3000 مم. سعة معالجة 30-50 طن/ساعة.',
-            paragraph2: 'مجهز بأتمتة Siemens PLC المتقدمة والمراقبة والتحكم عن بعد، تم تصميم TSM-300 للعمليات الميدانية على مدار الساعة طوال أيام الأسبوع.',
-            paragraph3: 'تم تحسين TSM-300 لمشاريع البناء الكبيرة ومواقع السدود وحقول التعدين وإدارة النفايات البلدية واسعة النطاق.'
+            intro: 'كسارة TSM-300 المتنقلة أحادية العمود نظام صناعي يوفر أداءً عالياً وحركية فائقة للمشاريع الميدانية كبيرة السعة.',
+            paragraph1: 'يتميز طراز TSM-300 بهيكل محرك فائق القوة 450 كيلووات (600 حصان) مع طول دوار واسع 3000 مم وهيكل متنقل مجنزر معزز. بسعة معالجة 30-50 طن/ساعة، يظهر أداءً فائقاً.',
+            paragraph2: 'مجهز بأتمتة Siemens PLC المتقدمة والمراقبة والتحكم عن بعد وتحليل الأداء في الوقت الفعلي، تم تصميم TSM-300 للعمليات الميدانية على مدار الساعة طوال أيام الأسبوع.',
+            paragraph3: 'MT Makina TSM-300 كسارة متنقلة محسنة لمشاريع البناء الكبيرة ومواقع السدود وحقول التعدين وإدارة النفايات البلدية واسعة النطاق.',
+            paragraph4: 'مع تقنية الكسارة المتنقلة، توفر TSM-300 أداءً فريداً في تمزيق نفايات الغابات وجذور الأشجار ونفايات البناء المختلطة.',
+            paragraph5: 'كسارة TSM-300 المتنقلة الموفرة للطاقة تقلل تكاليف التشغيل مع استهلاك وقود محسن. عمر خدمة 15+ سنة.',
+            paragraph6: 'كسارة TSM-300 المتنقلة توفر أقصى كفاءة ووفورات لوجستية. MT Makina تقدم حلول مشاريع متكاملة ودعم تقني 7/24. مدعومة بشهادات ISO 9001 وCE مع ضمان سنتين.'
         }
     },
     'CSM-150': {
@@ -70,22 +88,31 @@ export const mobileDescriptions: { [modelName: string]: MultilingualModelDescrip
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CSM-150 çift şaftlı mobil kırıcı, sahada geri dönüşüm süreçlerini optimize ederek işletmelere yüksek verimlilik, hassas boyutlandırma ve çevresel faydalar sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı mobil kırıcı fiyat teklifi, turnkey saha projeleri ve 7/24 teknik destek hizmetleri sunmaktadır. Mobil shredder, çift şaftlı mobil atık kırma makinesi ve elektronik atık parçalama projeleriniz için profesyonel danışmanlık ekibimizle iletişime geçin. CE ve ISO sertifikaları ile 2 yıl garanti ile desteklenir.'
         },
         en: {
-            intro: 'CSM-150 dual shaft mobile crusher is a versatile mobile system offering pre-shredding and precise sizing for medium capacity field applications.',
-            paragraph1: 'CSM-150 model features 2x132 kW (total 264 kW / 350 HP) dual motor structure with 1500 mm rotor length. With 20-35 ton/hour processing capacity, it shreds industrial plastic waste, wooden pallets, mixed packaging waste, construction waste.',
-            paragraph2: 'Equipped with PLC controlled synchronized dual shaft operation system, remote control, automatic jam prevention, CSM-150 provides safe and efficient field operations.',
-            paragraph3: 'MT Makina CSM-150 is optimized for medium-scale construction sites, plastic recycling fields, wood processing facilities, electronic waste collection centers.'
+            intro: 'CSM-150 dual shaft mobile crusher is a versatile mobile shredding system offering pre-shredding, precise sizing and homogeneous output for medium capacity field applications.',
+            paragraph1: 'CSM-150 model features 2x132 kW (total 264 kW / 350 HP) dual diesel motor structure with 1500 mm rotor length and tracked mobile chassis. With 20-35 ton/hour processing capacity, it shows superior performance in industrial plastic waste, wood pallets, mixed packaging waste and electronic waste shredding.',
+            paragraph2: 'Equipped with PLC-controlled synchronized dual shaft operating system, remote control, automatic anti-jamming system and auto-reverse function, CSM-150 ensures safe and efficient field operations. With 2x24 (total 48) special alloy cutting blades.',
+            paragraph3: 'MT Makina CSM-150 mobile crusher is optimized for medium construction sites, plastic recycling fields, wood processing facilities and field recycling centers. Dual shaft system guarantees homogeneous and controlled shredding.',
+            paragraph4: 'With dual shaft mobile crusher technology, CSM-150 provides controlled output size guarantee. Synchronized working shafts completely prevent material escape and ensure equal processing of all sizes.',
+            paragraph5: 'CSM-150 mobile crusher offering energy efficiency minimizes operating costs with frequency inverter controlled motor system. Premium components require minimum maintenance.',
+            paragraph6: 'CSM-150 mobile crusher offers environmental leadership with dust control system. MT Makina offers mobile crusher price quotes, turnkey projects and 7/24 technical support. Supported by CE, ISO 9001 certifications with 2-year warranty.'
         },
         ru: {
-            intro: 'Мобильная дробилка CSM-150 с двумя валами - универсальная система для предварительного измельчения средней производительности.',
-            paragraph1: 'Модель CSM-150 оснащена двойной моторной структурой 2x132 кВт (всего 264 кВт / 350 л.с.) с длиной ротора 1500 мм. Производительность 20-35 тонн/час.',
-            paragraph2: 'Оснащен системой синхронизированной работы двух валов с ПЛК-управлением, дистанционным управлением, автоматическим предотвращением заклинивания.',
-            paragraph3: 'MT Makina CSM-150 оптимизирован для средних строительных площадок, полей переработки пластика, деревообрабатывающих объектов.'
+            intro: 'Двухвальная мобильная дробилка CSM-150 - универсальная система измельчения для полевых применений средней мощности.',
+            paragraph1: 'Модель CSM-150 оснащена двойной моторной структурой 2x132 кВт (всего 264 кВт / 350 л.с.) с длиной ротора 1500 мм и гусеничным мобильным шасси. С производительностью 20-35 тонн/час демонстрирует превосходную эффективность.',
+            paragraph2: 'Оснащен системой синхронизированной работы двух валов с ПЛК-управлением, дистанционным управлением, автоматическим предотвращением заклинивания и функцией автореверса.',
+            paragraph3: 'MT Makina CSM-150 мобильная дробилка оптимизирована для средних строительных площадок, полей переработки пластика и деревообрабатывающих объектов.',
+            paragraph4: 'С технологией двухвальной мобильной дробилки CSM-150 обеспечивает гарантию контролируемого размера выхода. Синхронизированные валы предотвращают утечку материала.',
+            paragraph5: 'Мобильная дробилка CSM-150, предлагающая энергоэффективность, минимизирует эксплуатационные расходы. Компоненты премиум-класса требуют минимального обслуживания.',
+            paragraph6: 'Мобильная дробилка CSM-150 обеспечивает экологическое лидерство. MT Makina предлагает решения под ключ и техническую поддержку 7/24. Поддерживается сертификатами CE, ISO 9001 с гарантией 2 года.'
         },
         ar: {
             intro: 'كسارة CSM-150 المتنقلة ثنائية العمود نظام متعدد الاستخدامات للتطبيقات الميدانية متوسطة السعة.',
-            paragraph1: 'يتميز طراز CSM-150 بهيكل محرك مزدوج 2x132 كيلووات (إجمالي 264 كيلووات / 350 حصان) مع طول دوار 1500 مم. سعة معالجة 20-35 طن/ساعة.',
-            paragraph2: 'مجهز بنظام تشغيل عمود مزدوج متزامن بتحكم PLC وتحكم عن بعد ومنع الانسداد التلقائي.',
-            paragraph3: 'تم تحسين MT Makina CSM-150 لمواقع البناء متوسطة الحجم وحقول إعادة تدوير البلاستيك.'
+            paragraph1: 'يتميز طراز CSM-150 بهيكل محرك مزدوج 2x132 كيلووات (إجمالي 264 كيلووات / 350 حصان) مع طول دوار 1500 مم وهيكل متنقل مجنزر. بسعة معالجة 20-35 طن/ساعة، يظهر أداءً فائقاً.',
+            paragraph2: 'مجهز بنظام تشغيل عمود مزدوج متزامن بتحكم PLC وتحكم عن بعد ومنع الانسداد التلقائي ووظيفة العكس التلقائي.',
+            paragraph3: 'MT Makina CSM-150 كسارة متنقلة محسنة لمواقع البناء متوسطة الحجم وحقول إعادة تدوير البلاستيك ومرافق معالجة الخشب.',
+            paragraph4: 'مع تقنية الكسارة المتنقلة ثنائية العمود، توفر CSM-150 ضمان حجم الإخراج المتحكم فيه. الأعمدة المتزامنة تمنع تسرب المواد.',
+            paragraph5: 'كسارة CSM-150 المتنقلة الموفرة للطاقة تقلل تكاليف التشغيل. المكونات المتميزة تتطلب صيانة دنيا.',
+            paragraph6: 'كسارة CSM-150 المتنقلة توفر قيادة بيئية. MT Makina تقدم حلول متكاملة ودعم تقني 7/24. مدعومة بشهادات CE وISO 9001 مع ضمان سنتين.'
         }
     },
     'CSM-200': {
@@ -99,22 +126,31 @@ export const mobileDescriptions: { [modelName: string]: MultilingualModelDescrip
             paragraph6: 'Atık yönetiminde sürdürülebilirlik sağlayan CSM-200 çift şaftlı mobil kırıcı, sahada geri dönüşüm süreçlerini optimize ederek işletmelere maksimum verimlilik, hassas boyutlandırma, karbon nötrlük hedefleri ve çevresel liderlik sunar. Türkiye\'nin lider parçalama makinesi üreticisi MT Makina, çift şaftlı mobil kırıcı fiyat teklifi, global turnkey mega proje çözümleri ve 7/24 worldwide teknik destek hizmetleri sunmaktadır. Mobil shredder, çift şaftlı mobil atık kırma makinesi, mega saha projeleri ve entegre mobil geri dönüşüm hattı ihtiyaçlarınız için profesyonel danışmanlık ekibimizle iletişime geçin. Tüm uluslararası güvenlik standartları (CE, ISO 9001, ISO 14001) ve 3 yıl garanti+7/24 teknik destek ile desteklenir.'
         },
         en: {
-            intro: 'CSM-200 dual shaft mobile crusher is a professional mobile solution offering maximum power and precise control for large capacity field operations.',
-            paragraph1: 'CSM-200 model features 2x200 kW (total 400 kW / 530 HP) high-power dual motor system with 2000 mm ultra-wide rotor length. With 40-60 ton/hour ultra-high processing capacity, it shows extraordinary performance in industrial plastic blocks, large wood structures, metal-plastic mixed waste.',
-            paragraph2: 'Equipped with Siemens PLC-based advanced automation, SCADA integration, real-time remote monitoring, AI-assisted jam prevention, CSM-200 is designed for Industry 4.0 standard field operations.',
-            paragraph3: 'CSM-200 is designed as turnkey solution for large industrial construction projects, mega recycling fields, plastic processing facilities, wood waste processing centers. Supported by 3-year warranty+24/7 technical support.'
+            intro: 'CSM-200 dual shaft mobile crusher is a professional mobile solution offering maximum power, precise control and Industry 4.0 compatibility for large capacity field operations.',
+            paragraph1: 'CSM-200 model features 2x200 kW (total 400 kW / 530 HP) high-power dual diesel motor system with 2000 mm ultra-wide rotor length and reinforced tracked mobile chassis. With 40-60 ton/hour ultra-high processing capacity, it shows extraordinary performance in large construction waste and high-volume recycling projects.',
+            paragraph2: 'Equipped with Siemens PLC-based advanced automation, SCADA integration, real-time remote monitoring and AI-assisted jam prevention, CSM-200 is designed for Industry 4.0 standard field operations. With 2x36 (total 72) ultra-premium cutting blades.',
+            paragraph3: 'MT Makina CSM-200 dual shaft mobile crusher is designed as turnkey solution for large industrial construction projects, mega recycling fields, plastic processing facilities and wood waste processing centers.',
+            paragraph4: 'With dual shaft mobile crusher technology, CSM-200 provides world-standard homogeneous output size guarantee. Synchronized dual shaft structure completely prevents material escape and ensures equal processing.',
+            paragraph5: 'CSM-200 mobile crusher offering energy efficiency minimizes operating costs with frequency inverter controlled motor system and regenerative energy recovery. Reinforced tracked chassis offers 15+ years service life.',
+            paragraph6: 'CSM-200 mobile crusher offers maximum efficiency, precise sizing and environmental leadership. MT Makina offers dual shaft mobile crusher price quotes, global turnkey mega project solutions and 7/24 worldwide technical support. Supported by all international safety standards (CE, ISO 9001, ISO 14001) with 3-year warranty.'
         },
         ru: {
-            intro: 'Мобильная дробилка CSM-200 с двумя валами - профессиональное решение для крупных полевых операций.',
-            paragraph1: 'Модель CSM-200 оснащена мощной двойной моторной системой 2x200 кВт (всего 400 кВт / 530 л.с.) с ультра-широкой длиной ротора 2000 мм. Производительность 40-60 тонн/час.',
-            paragraph2: 'Оснащен передовой автоматизацией Siemens PLC, интеграцией SCADA, удаленным мониторингом в реальном времени, CSM-200 разработан для стандартов Индустрии 4.0.',
-            paragraph3: 'CSM-200 разработан как комплексное решение для крупных промышленных проектов, мега полей переработки.'
+            intro: 'Мобильная дробилка CSM-200 с двумя валами - профессиональное решение, предлагающее максимальную мощность, точный контроль и совместимость с Индустрией 4.0 для крупных полевых операций.',
+            paragraph1: 'Модель CSM-200 оснащена мощной двойной моторной системой 2x200 кВт (всего 400 кВт / 530 л.с.) с ультра-широкой длиной ротора 2000 мм и усиленным гусеничным шасси. С производительностью 40-60 тонн/час демонстрирует выдающуюся эффективность.',
+            paragraph2: 'Оснащен передовой автоматизацией Siemens PLC, интеграцией SCADA, удаленным мониторингом в реальном времени и предотвращением заклинивания с помощью ИИ, CSM-200 разработан для стандартов Индустрии 4.0.',
+            paragraph3: 'MT Makina CSM-200 двухвальная мобильная дробилка разработана как комплексное решение для крупных промышленных проектов, мега полей переработки и центров обработки древесных отходов.',
+            paragraph4: 'С технологией двухвальной мобильной дробилки CSM-200 обеспечивает гарантию однородного размера выхода мирового стандарта. Синхронизированная структура полностью предотвращает утечку материала.',
+            paragraph5: 'Мобильная дробилка CSM-200, предлагающая энергоэффективность, минимизирует эксплуатационные расходы с инверторным управлением и рекуперацией энергии. Срок службы 15+ лет.',
+            paragraph6: 'Мобильная дробилка CSM-200 предлагает максимальную эффективность и экологическое лидерство. MT Makina предлагает глобальные решения под ключ и техническую поддержку 7/24. Поддерживается сертификатами CE, ISO с гарантией 3 года.'
         },
         ar: {
-            intro: 'كسارة CSM-200 المتنقلة ثنائية العمود حل محمول احترافي يوفر أقصى قوة وتحكم دقيق للعمليات الميدانية الكبيرة.',
-            paragraph1: 'يتميز طراز CSM-200 بنظام محرك مزدوج عالي القوة 2×200 كيلووات (إجمالي 400 كيلووات / 530 حصان) مع طول دوار فائق الاتساع 2000 مم. سعة معالجة 40-60 طن/ساعة.',
-            paragraph2: 'مجهز بأتمتة Siemens PLC المتقدمة وتكامل SCADA ومراقبة عن بعد في الوقت الفعلي، تم تصميم CSM-200 لمعايير الصناعة 4.0.',
-            paragraph3: 'تم تصميم CSM-200 كحل تسليم مفتاح لمشاريع البناء الصناعية الكبيرة وحقول إعادة التدوير الضخمة.'
+            intro: 'كسارة CSM-200 المتنقلة ثنائية العمود حل محمول احترافي يوفر أقصى قوة وتحكم دقيق وتوافق الصناعة 4.0 للعمليات الميدانية الكبيرة.',
+            paragraph1: 'يتميز طراز CSM-200 بنظام محرك مزدوج عالي القوة 2×200 كيلووات (إجمالي 400 كيلووات / 530 حصان) مع طول دوار فائق الاتساع 2000 مم وهيكل مجنزر معزز. بسعة معالجة 40-60 طن/ساعة، يظهر أداءً استثنائياً.',
+            paragraph2: 'مجهز بأتمتة Siemens PLC المتقدمة وتكامل SCADA ومراقبة عن بعد في الوقت الفعلي ومنع الانسداد بمساعدة الذكاء الاصطناعي، تم تصميم CSM-200 لمعايير الصناعة 4.0.',
+            paragraph3: 'MT Makina CSM-200 كسارة متنقلة ثنائية العمود مصممة كحل متكامل لمشاريع البناء الصناعية الكبيرة وحقول إعادة التدوير الضخمة ومراكز معالجة نفايات الخشب.',
+            paragraph4: 'مع تقنية الكسارة المتنقلة ثنائية العمود، توفر CSM-200 ضمان حجم الإخراج المتجانس بمعايير عالمية. الهيكل المتزامن يمنع تسرب المواد تماماً.',
+            paragraph5: 'كسارة CSM-200 المتنقلة الموفرة للطاقة تقلل تكاليف التشغيل مع التحكم بالتردد واسترداد الطاقة. عمر خدمة 15+ سنة.',
+            paragraph6: 'كسارة CSM-200 المتنقلة توفر أقصى كفاءة وقيادة بيئية. MT Makina تقدم حلول عالمية متكاملة ودعم تقني 7/24. مدعومة بشهادات CE وISO مع ضمان 3 سنوات.'
         }
     }
 };
