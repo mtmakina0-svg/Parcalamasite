@@ -237,6 +237,16 @@
             "permanent": true
         },
         {
+            "source": "/ar/wastes/:waste",
+            "destination": "/ar/anwa-alnfayat/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/ar/wastes",
+            "destination": "/ar/anwa-alnfayat",
+            "permanent": true
+        },
+        {
             "source": "/:lang/wastes/:waste",
             "destination": "/:lang/waste-types/:waste",
             "permanent": true
@@ -274,6 +284,96 @@
         {
             "source": "/:lang/produkty/:rest*",
             "destination": "/:lang/:rest*",
+            "permanent": true
+        },
+        {
+            "source": "/en/products/single-saft/:model",
+            "destination": "/en/single-shaft-shredder/:model",
+            "permanent": true
+        },
+        {
+            "source": "/en/products/dual-saft/:model",
+            "destination": "/en/dual-shaft-shredder/:model",
+            "permanent": true
+        },
+        {
+            "source": "/en/products/quad-saft/:model",
+            "destination": "/en/quad-shaft-shredder/:model",
+            "permanent": true
+        },
+        {
+            "source": "/en/products/single-saft",
+            "destination": "/en/single-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/en/products/dual-saft",
+            "destination": "/en/dual-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/en/products/quad-saft",
+            "destination": "/en/quad-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/products/single-saft/:model",
+            "destination": "/ar/single-shaft-shredder/:model",
+            "permanent": true
+        },
+        {
+            "source": "/ar/products/dual-saft/:model",
+            "destination": "/ar/dual-shaft-shredder/:model",
+            "permanent": true
+        },
+        {
+            "source": "/ar/products/quad-saft/:model",
+            "destination": "/ar/quad-shaft-shredder/:model",
+            "permanent": true
+        },
+        {
+            "source": "/ar/products/single-saft",
+            "destination": "/ar/single-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/products/dual-saft",
+            "destination": "/ar/dual-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ar/products/quad-saft",
+            "destination": "/ar/quad-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/ru/products/single-saft/:model",
+            "destination": "/ru/odnovalnaya-drobilka/:model",
+            "permanent": true
+        },
+        {
+            "source": "/ru/products/dual-saft/:model",
+            "destination": "/ru/dvukhvalnaya-drobilka/:model",
+            "permanent": true
+        },
+        {
+            "source": "/ru/products/quad-saft/:model",
+            "destination": "/ru/chetyrekhvalnaya-drobilka/:model",
+            "permanent": true
+        },
+        {
+            "source": "/ru/products/single-saft",
+            "destination": "/ru/odnovalnaya-drobilka",
+            "permanent": true
+        },
+        {
+            "source": "/ru/products/dual-saft",
+            "destination": "/ru/dvukhvalnaya-drobilka",
+            "permanent": true
+        },
+        {
+            "source": "/ru/products/quad-saft",
+            "destination": "/ru/chetyrekhvalnaya-drobilka",
             "permanent": true
         },
         {
