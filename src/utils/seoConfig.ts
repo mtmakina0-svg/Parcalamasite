@@ -632,27 +632,136 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
     'single-shaft': {
       'TSH-60': {
         tr: {
-          title: 'TSH-60 Parçalama Makinesi | 15-30 kW | 500-800 kg/saat | Fiyat Teklifi',
+          title: 'TSH-60 Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder) | MT Makina',
           description: 'TSH-60 tek şaftlı parçalama makinesi - 15-30 kW motor, 600x1100mm parçalama alanı, 500-800 kg/saat. Plastik, ahşap, kağıt için. ✓ Stokta ✓ Hızlı Teslimat ✓ Fiyat Teklifi Al',
           keywords: ['TSH-60', 'parçalama makinesi fiyat', 'plastik kırma makinesi', 'ahşap kırıcı', '600mm shredder', 'küçük parçalama makinesi', 'tek şaftlı shredder'],
         },
         en: {
-          title: 'TSH-60 Single Shaft Shredder Manufacturer | 15-30 kW | MT Makina Turkey',
+          title: 'TSH-60 Single Shaft Shredder | MT Makina',
           description: 'Heavy duty TSH-60 single shaft shredder - 15-30 kW motor, 600x1100mm shredding area, 500-800 kg/h. High efficiency plastic, wood, paper shredder. Cost-effective solution. ✓ CE Certified ✓ Fast Delivery',
           keywords: ['TSH-60', 'shredder manufacturer', 'single shaft shredder Turkey', 'plastic shredder for sale', 'industrial shredder', 'heavy duty shredder'],
         },
         ru: {
-          title: 'Шредер TSH-60 | 15-30 кВт | 500-800 кг/ч | Запросить Цену',
+          title: 'TSH-60 Одновальный Шредер (Single Shaft Shredder) | MT Makina',
           description: 'Одновальный шредер TSH-60 - двигатель 15-30 кВт, зона измельчения 600x1100 мм, 500-800 кг/ч. Для пластика, дерева, бумаги. ✓ В Наличии ✓ Быстрая Доставка',
           keywords: ['TSH-60', 'цена шредера', 'дробилка пластика', 'дробилка дерева', 'шредер 600мм', 'малый шредер', 'одновальный шредер'],
         },
         ar: {
-          title: 'آلة تمزيق TSH-60 | 15-30 كيلوواط | 500-800 كجم/ساعة | احصل على عرض سعر',
+          title: 'TSH-60 آلة تمزيق عمود واحد (Single Shaft Shredder) | MT Makina',
           description: 'آلة تمزيق عمود واحد TSH-60 - محرك 15-30 كيلوواط، منطقة تمزيق 600x1100 مم، 500-800 كجم/ساعة. للبلاستيك، الخشب، الورق. ✓ متوفر ✓ توصيل سريع',
           keywords: ['TSH-60', 'سعر آلة التمزيق', 'كسارة بلاستيك', 'كسارة خشب', 'آلة تمزيق 600 مم', 'آلة تمزيق صغيرة', 'آلة تمزيق عمود واحد'],
         }
       },
-      // ... other models
+      'TSH-80': {
+        tr: {
+          title: 'TSH-80 Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder) | MT Makina',
+          description: 'TSH-80 tek şaftlı parçalama makinesi - 22-45 kW motor, 800x1100mm parçalama alanı, 800-1200 kg/saat. Plastik, ahşap, tekstil için. ✓ CE Belgeli ✓ 2 Yıl Garanti',
+          keywords: ['TSH-80', 'parçalama makinesi', 'plastik kırma makinesi', 'tek şaftlı shredder', '800mm shredder'],
+        },
+        en: {
+          title: 'TSH-80 Single Shaft Shredder | MT Makina',
+          description: 'Heavy duty TSH-80 single shaft shredder - 22-45 kW motor, 800x1100mm shredding area, 800-1200 kg/h. For plastic, wood, textile. ✓ CE Certified ✓ 2 Year Warranty',
+          keywords: ['TSH-80', 'single shaft shredder', 'plastic shredder', 'industrial shredder Turkey'],
+        },
+        ru: {
+          title: 'TSH-80 Одновальный Шредер (Single Shaft Shredder) | MT Makina',
+          description: 'Одновальный шредер TSH-80 - двигатель 22-45 кВт, зона измельчения 800x1100 мм, 800-1200 кг/ч. Для пластика, дерева, текстиля.',
+          keywords: ['TSH-80', 'одновальный шредер', 'дробилка пластика'],
+        },
+        ar: {
+          title: 'TSH-80 آلة تمزيق عمود واحد (Single Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود واحد TSH-80 - محرك 22-45 كيلوواط، منطقة تمزيق 800x1100 مم، 800-1200 كجم/ساعة.',
+          keywords: ['TSH-80', 'آلة تمزيق عمود واحد', 'كسارة بلاستيك'],
+        }
+      },
+      'TSH-100': {
+        tr: {
+          title: 'TSH-100 Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder) | MT Makina',
+          description: 'TSH-100 tek şaftlı parçalama makinesi - 30-75 kW motor, 1000x1300mm parçalama alanı, 1200-1800 kg/saat. Endüstriyel kapasite. ✓ CE Belgeli ✓ Profesyonel Çözüm',
+          keywords: ['TSH-100', 'parçalama makinesi', 'endüstriyel shredder', 'tek şaftlı parçalama'],
+        },
+        en: {
+          title: 'TSH-100 Single Shaft Shredder | MT Makina',
+          description: 'Industrial TSH-100 single shaft shredder - 30-75 kW motor, 1000x1300mm shredding area, 1200-1800 kg/h. Professional capacity. ✓ CE Certified',
+          keywords: ['TSH-100', 'single shaft shredder', 'industrial shredder', 'heavy duty shredder'],
+        },
+        ru: {
+          title: 'TSH-100 Одновальный Шредер (Single Shaft Shredder) | MT Makina',
+          description: 'Промышленный одновальный шредер TSH-100 - двигатель 30-75 кВт, 1200-1800 кг/ч. Профессиональная мощность.',
+          keywords: ['TSH-100', 'промышленный шредер', 'одновальный измельчитель'],
+        },
+        ar: {
+          title: 'TSH-100 آلة تمزيق عمود واحد (Single Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق صناعية TSH-100 - محرك 30-75 كيلوواط، 1200-1800 كجم/ساعة. سعة احترافية.',
+          keywords: ['TSH-100', 'آلة تمزيق صناعية', 'تمزيق عمود واحد'],
+        }
+      },
+      'TSH-130': {
+        tr: {
+          title: 'TSH-130 Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder) | MT Makina',
+          description: 'TSH-130 tek şaftlı parçalama makinesi - 45-110 kW motor, 1300x1600mm parçalama alanı, 1800-2500 kg/saat. Ağır hizmet tipi. ✓ CE Belgeli ✓ 7/24 Çalışma',
+          keywords: ['TSH-130', 'parçalama makinesi', 'ağır hizmet shredder', 'yüksek kapasiteli parçalama'],
+        },
+        en: {
+          title: 'TSH-130 Single Shaft Shredder | MT Makina',
+          description: 'Heavy duty TSH-130 single shaft shredder - 45-110 kW motor, 1300x1600mm shredding area, 1800-2500 kg/h. Industrial grade. ✓ CE Certified ✓ 24/7 Operation',
+          keywords: ['TSH-130', 'single shaft shredder', 'heavy duty shredder', 'high capacity shredder'],
+        },
+        ru: {
+          title: 'TSH-130 Одновальный Шредер (Single Shaft Shredder) | MT Makina',
+          description: 'Шредер тяжелого класса TSH-130 - двигатель 45-110 кВт, 1800-2500 кг/ч. Промышленный уровень.',
+          keywords: ['TSH-130', 'шредер тяжелого класса', 'высокая производительность'],
+        },
+        ar: {
+          title: 'TSH-130 آلة تمزيق عمود واحد (Single Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق ثقيلة TSH-130 - محرك 45-110 كيلوواط، 1800-2500 كجم/ساعة. درجة صناعية.',
+          keywords: ['TSH-130', 'آلة تمزيق ثقيلة', 'سعة عالية'],
+        }
+      },
+      'TSH-160': {
+        tr: {
+          title: 'TSH-160 Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder) | MT Makina',
+          description: 'TSH-160 tek şaftlı parçalama makinesi - 2x55-132 kW çift motor, 1600x1800mm parçalama alanı, 3500-4500 kg/saat. Mega kapasite. ✓ SCADA Entegrasyonu ✓ IoT',
+          keywords: ['TSH-160', 'parçalama makinesi', 'mega kapasite shredder', 'çift motor parçalama'],
+        },
+        en: {
+          title: 'TSH-160 Single Shaft Shredder | MT Makina',
+          description: 'Mega capacity TSH-160 single shaft shredder - 2x55-132 kW dual motor, 1600x1800mm shredding area, 3500-4500 kg/h. ✓ SCADA Integration ✓ IoT Ready',
+          keywords: ['TSH-160', 'single shaft shredder', 'mega capacity shredder', 'dual motor shredder'],
+        },
+        ru: {
+          title: 'TSH-160 Одновальный Шредер (Single Shaft Shredder) | MT Makina',
+          description: 'Шредер мега-мощности TSH-160 - двойной двигатель 2x55-132 кВт, 3500-4500 кг/ч. ✓ Интеграция SCADA ✓ IoT',
+          keywords: ['TSH-160', 'мега шредер', 'двойной двигатель'],
+        },
+        ar: {
+          title: 'TSH-160 آلة تمزيق عمود واحد (Single Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق ضخمة TSH-160 - محرك مزدوج 2x55-132 كيلوواط، 3500-4500 كجم/ساعة. ✓ تكامل SCADA ✓ IoT',
+          keywords: ['TSH-160', 'آلة تمزيق ضخمة', 'محرك مزدوج'],
+        }
+      },
+      'TSH-200': {
+        tr: {
+          title: 'TSH-200 Tek Şaftlı Parçalama Makinesi (Single Shaft Shredder) | MT Makina',
+          description: 'TSH-200 tek şaftlı parçalama makinesi - 2x75-160 kW çift motor, 2000x2300mm parçalama alanı, 4500-6000 kg/saat. Premium sınıf. ✓ AI Destekli ✓ 5 Yıl Garanti',
+          keywords: ['TSH-200', 'parçalama makinesi', 'premium shredder', 'en büyük tek şaftlı'],
+        },
+        en: {
+          title: 'TSH-200 Single Shaft Shredder | MT Makina',
+          description: 'Premium class TSH-200 single shaft shredder - 2x75-160 kW dual motor, 2000x2300mm shredding area, 4500-6000 kg/h. ✓ AI Assisted ✓ 5 Year Warranty',
+          keywords: ['TSH-200', 'single shaft shredder', 'premium shredder', 'largest single shaft'],
+        },
+        ru: {
+          title: 'TSH-200 Одновальный Шредер (Single Shaft Shredder) | MT Makina',
+          description: 'Премиум класс TSH-200 - двойной двигатель 2x75-160 кВт, 4500-6000 кг/ч. ✓ AI Ассистент ✓ 5 лет гарантии',
+          keywords: ['TSH-200', 'премиум шредер', 'крупнейший одновальный'],
+        },
+        ar: {
+          title: 'TSH-200 آلة تمزيق عمود واحد (Single Shaft Shredder) | MT Makina',
+          description: 'فئة متميزة TSH-200 - محرك مزدوج 2x75-160 كيلوواط، 4500-6000 كجم/ساعة. ✓ مساعد AI ✓ ضمان 5 سنوات',
+          keywords: ['TSH-200', 'آلة تمزيق متميزة', 'أكبر عمود واحد'],
+        }
+      }
     },
     'wood': {
       'TSY-100': {
