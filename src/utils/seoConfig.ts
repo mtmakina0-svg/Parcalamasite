@@ -763,69 +763,269 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
         }
       }
     },
+    'dual-shaft': {
+      'CS-20': {
+        tr: {
+          title: 'CS-20 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-20 çift şaftlı parçalama makinesi - 2x7.5 kW motor, 200x400mm parçalama alanı, 200-400 kg/saat. Kompakt tasarım. ✓ CE Belgeli ✓ 2 Yıl Garanti',
+          keywords: ['CS-20', 'çift şaftlı parçalama', 'dual shaft shredder', 'kompakt shredder'],
+        },
+        en: {
+          title: 'CS-20 Dual Shaft Shredder | MT Makina',
+          description: 'Compact CS-20 dual shaft shredder - 2x7.5 kW motor, 200x400mm shredding area, 200-400 kg/h. ✓ CE Certified ✓ 2 Year Warranty',
+          keywords: ['CS-20', 'dual shaft shredder', 'compact shredder', 'industrial shredder'],
+        },
+        ru: {
+          title: 'CS-20 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Компактный двухвальный шредер CS-20 - 2x7.5 кВт, 200-400 кг/ч. ✓ Сертификат CE ✓ 2 года гарантии',
+          keywords: ['CS-20', 'двухвальный шредер', 'компактный измельчитель'],
+        },
+        ar: {
+          title: 'CS-20 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج مدمجة CS-20 - محرك 2x7.5 كيلوواط، 200-400 كجم/ساعة. ✓ معتمد CE ✓ ضمان سنتين',
+          keywords: ['CS-20', 'آلة تمزيق عمود مزدوج', 'آلة مدمجة'],
+        }
+      },
+      'CS-40': {
+        tr: {
+          title: 'CS-40 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-40 çift şaftlı parçalama makinesi - 2x15 kW motor, 400x600mm parçalama alanı, 400-800 kg/saat. ✓ CE Belgeli ✓ Profesyonel Çözüm',
+          keywords: ['CS-40', 'çift şaftlı parçalama', 'dual shaft shredder', 'orta boy shredder'],
+        },
+        en: {
+          title: 'CS-40 Dual Shaft Shredder | MT Makina',
+          description: 'CS-40 dual shaft shredder - 2x15 kW motor, 400x600mm shredding area, 400-800 kg/h. ✓ CE Certified ✓ Professional Solution',
+          keywords: ['CS-40', 'dual shaft shredder', 'medium shredder', 'industrial shredder'],
+        },
+        ru: {
+          title: 'CS-40 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Двухвальный шредер CS-40 - 2x15 кВт, 400-800 кг/ч. ✓ Сертификат CE ✓ Профессиональное решение',
+          keywords: ['CS-40', 'двухвальный шредер', 'средний измельчитель'],
+        },
+        ar: {
+          title: 'CS-40 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج CS-40 - محرك 2x15 كيلوواط، 400-800 كجم/ساعة. ✓ معتمد CE ✓ حل احترافي',
+          keywords: ['CS-40', 'آلة تمزيق عمود مزدوج', 'آلة متوسطة'],
+        }
+      },
+      'CS-60': {
+        tr: {
+          title: 'CS-60 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-60 çift şaftlı parçalama makinesi - 2x22 kW motor, 600x800mm parçalama alanı, 800-1500 kg/saat. ✓ CE Belgeli ✓ Yüksek Verimlilik',
+          keywords: ['CS-60', 'çift şaftlı parçalama', 'dual shaft shredder', 'endüstriyel shredder'],
+        },
+        en: {
+          title: 'CS-60 Dual Shaft Shredder | MT Makina',
+          description: 'CS-60 dual shaft shredder - 2x22 kW motor, 600x800mm shredding area, 800-1500 kg/h. ✓ CE Certified ✓ High Efficiency',
+          keywords: ['CS-60', 'dual shaft shredder', 'industrial shredder', 'high capacity'],
+        },
+        ru: {
+          title: 'CS-60 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Двухвальный шредер CS-60 - 2x22 кВт, 800-1500 кг/ч. ✓ Сертификат CE ✓ Высокая эффективность',
+          keywords: ['CS-60', 'двухвальный шредер', 'промышленный измельчитель'],
+        },
+        ar: {
+          title: 'CS-60 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج CS-60 - محرك 2x22 كيلوواط، 800-1500 كجم/ساعة. ✓ معتمد CE ✓ كفاءة عالية',
+          keywords: ['CS-60', 'آلة تمزيق عمود مزدوج', 'آلة صناعية'],
+        }
+      },
+      'CS-80': {
+        tr: {
+          title: 'CS-80 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-80 çift şaftlı parçalama makinesi - 2x30 kW motor, 800x1000mm parçalama alanı, 1500-2500 kg/saat. ✓ CE Belgeli ✓ Ağır Hizmet',
+          keywords: ['CS-80', 'çift şaftlı parçalama', 'dual shaft shredder', 'ağır hizmet shredder'],
+        },
+        en: {
+          title: 'CS-80 Dual Shaft Shredder | MT Makina',
+          description: 'Heavy duty CS-80 dual shaft shredder - 2x30 kW motor, 800x1000mm shredding area, 1500-2500 kg/h. ✓ CE Certified ✓ Heavy Duty',
+          keywords: ['CS-80', 'dual shaft shredder', 'heavy duty shredder', 'industrial shredder'],
+        },
+        ru: {
+          title: 'CS-80 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Двухвальный шредер CS-80 тяжелого класса - 2x30 кВт, 1500-2500 кг/ч. ✓ Сертификат CE ✓ Тяжелый класс',
+          keywords: ['CS-80', 'двухвальный шредер', 'тяжелый класс'],
+        },
+        ar: {
+          title: 'CS-80 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج ثقيلة CS-80 - محرك 2x30 كيلوواط، 1500-2500 كجم/ساعة. ✓ معتمد CE ✓ خدمة شاقة',
+          keywords: ['CS-80', 'آلة تمزيق عمود مزدوج', 'آلة ثقيلة'],
+        }
+      },
+      'CS-100': {
+        tr: {
+          title: 'CS-100 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-100 çift şaftlı parçalama makinesi - 2x45 kW motor, 1000x1200mm parçalama alanı, 2500-4000 kg/saat. ✓ CE Belgeli ✓ Profesyonel Sınıf',
+          keywords: ['CS-100', 'çift şaftlı parçalama', 'dual shaft shredder', 'profesyonel shredder'],
+        },
+        en: {
+          title: 'CS-100 Dual Shaft Shredder | MT Makina',
+          description: 'Professional CS-100 dual shaft shredder - 2x45 kW motor, 1000x1200mm shredding area, 2500-4000 kg/h. ✓ CE Certified ✓ Professional Grade',
+          keywords: ['CS-100', 'dual shaft shredder', 'professional shredder', 'high capacity'],
+        },
+        ru: {
+          title: 'CS-100 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Профессиональный двухвальный шредер CS-100 - 2x45 кВт, 2500-4000 кг/ч. ✓ Сертификат CE ✓ Профессиональный класс',
+          keywords: ['CS-100', 'двухвальный шредер', 'профессиональный класс'],
+        },
+        ar: {
+          title: 'CS-100 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج احترافية CS-100 - محرك 2x45 كيلوواط، 2500-4000 كجم/ساعة. ✓ معتمد CE ✓ درجة احترافية',
+          keywords: ['CS-100', 'آلة تمزيق عمود مزدوج', 'آلة احترافية'],
+        }
+      },
+      'CS-120': {
+        tr: {
+          title: 'CS-120 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-120 çift şaftlı parçalama makinesi - 2x55 kW motor, 1200x1400mm parçalama alanı, 4000-6000 kg/saat. ✓ CE Belgeli ✓ Endüstriyel Kapasite',
+          keywords: ['CS-120', 'çift şaftlı parçalama', 'dual shaft shredder', 'endüstriyel kapasite'],
+        },
+        en: {
+          title: 'CS-120 Dual Shaft Shredder | MT Makina',
+          description: 'Industrial CS-120 dual shaft shredder - 2x55 kW motor, 1200x1400mm shredding area, 4000-6000 kg/h. ✓ CE Certified ✓ Industrial Capacity',
+          keywords: ['CS-120', 'dual shaft shredder', 'industrial shredder', 'large capacity'],
+        },
+        ru: {
+          title: 'CS-120 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Промышленный двухвальный шредер CS-120 - 2x55 кВт, 4000-6000 кг/ч. ✓ Сертификат CE ✓ Промышленная мощность',
+          keywords: ['CS-120', 'двухвальный шредер', 'промышленная мощность'],
+        },
+        ar: {
+          title: 'CS-120 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج صناعية CS-120 - محرك 2x55 كيلوواط، 4000-6000 كجم/ساعة. ✓ معتمد CE ✓ سعة صناعية',
+          keywords: ['CS-120', 'آلة تمزيق عمود مزدوج', 'آلة صناعية'],
+        }
+      },
+      'CS-150': {
+        tr: {
+          title: 'CS-150 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-150 çift şaftlı parçalama makinesi - 2x75 kW motor, 1500x1600mm parçalama alanı, 6000-8000 kg/saat. ✓ CE Belgeli ✓ Yüksek Kapasite',
+          keywords: ['CS-150', 'çift şaftlı parçalama', 'dual shaft shredder', 'yüksek kapasite'],
+        },
+        en: {
+          title: 'CS-150 Dual Shaft Shredder | MT Makina',
+          description: 'High capacity CS-150 dual shaft shredder - 2x75 kW motor, 1500x1600mm shredding area, 6000-8000 kg/h. ✓ CE Certified ✓ High Capacity',
+          keywords: ['CS-150', 'dual shaft shredder', 'high capacity shredder', 'industrial'],
+        },
+        ru: {
+          title: 'CS-150 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Двухвальный шредер высокой мощности CS-150 - 2x75 кВт, 6000-8000 кг/ч. ✓ Сертификат CE ✓ Высокая мощность',
+          keywords: ['CS-150', 'двухвальный шредер', 'высокая мощность'],
+        },
+        ar: {
+          title: 'CS-150 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج عالية السعة CS-150 - محرك 2x75 كيلوواط، 6000-8000 كجم/ساعة. ✓ معتمد CE ✓ سعة عالية',
+          keywords: ['CS-150', 'آلة تمزيق عمود مزدوج', 'سعة عالية'],
+        }
+      },
+      'CS-180': {
+        tr: {
+          title: 'CS-180 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-180 çift şaftlı parçalama makinesi - 2x90 kW motor, 1800x1800mm parçalama alanı, 8000-12000 kg/saat. ✓ CE Belgeli ✓ Mega Kapasite',
+          keywords: ['CS-180', 'çift şaftlı parçalama', 'dual shaft shredder', 'mega kapasite'],
+        },
+        en: {
+          title: 'CS-180 Dual Shaft Shredder | MT Makina',
+          description: 'Mega capacity CS-180 dual shaft shredder - 2x90 kW motor, 1800x1800mm shredding area, 8000-12000 kg/h. ✓ CE Certified ✓ Mega Capacity',
+          keywords: ['CS-180', 'dual shaft shredder', 'mega capacity', 'heavy industrial'],
+        },
+        ru: {
+          title: 'CS-180 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Двухвальный шредер мега-мощности CS-180 - 2x90 кВт, 8000-12000 кг/ч. ✓ Сертификат CE ✓ Мега мощность',
+          keywords: ['CS-180', 'двухвальный шредер', 'мега мощность'],
+        },
+        ar: {
+          title: 'CS-180 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج ضخمة CS-180 - محرك 2x90 كيلوواط، 8000-12000 كجم/ساعة. ✓ معتمد CE ✓ سعة ضخمة',
+          keywords: ['CS-180', 'آلة تمزيق عمود مزدوج', 'سعة ضخمة'],
+        }
+      },
+      'CS-200': {
+        tr: {
+          title: 'CS-200 Çift Şaftlı Parçalama Makinesi (Dual Shaft Shredder) | MT Makina',
+          description: 'CS-200 çift şaftlı parçalama makinesi - 2x110 kW motor, 2000x2000mm parçalama alanı, 12000-18000 kg/saat. ✓ CE Belgeli ✓ Premium Sınıf ✓ En Yüksek Kapasite',
+          keywords: ['CS-200', 'çift şaftlı parçalama', 'dual shaft shredder', 'premium shredder', 'en büyük'],
+        },
+        en: {
+          title: 'CS-200 Dual Shaft Shredder | MT Makina',
+          description: 'Premium class CS-200 dual shaft shredder - 2x110 kW motor, 2000x2000mm shredding area, 12000-18000 kg/h. ✓ CE Certified ✓ Premium Class ✓ Highest Capacity',
+          keywords: ['CS-200', 'dual shaft shredder', 'premium shredder', 'largest capacity'],
+        },
+        ru: {
+          title: 'CS-200 Двухвальный Шредер (Dual Shaft Shredder) | MT Makina',
+          description: 'Двухвальный шредер премиум-класса CS-200 - 2x110 кВт, 12000-18000 кг/ч. ✓ Сертификат CE ✓ Премиум класс ✓ Максимальная мощность',
+          keywords: ['CS-200', 'двухвальный шредер', 'премиум класс'],
+        },
+        ar: {
+          title: 'CS-200 آلة تمزيق عمود مزدوج (Dual Shaft Shredder) | MT Makina',
+          description: 'آلة تمزيق عمود مزدوج من الفئة الممتازة CS-200 - محرك 2x110 كيلوواط، 12000-18000 كجم/ساعة. ✓ معتمد CE ✓ فئة متميزة ✓ أعلى سعة',
+          keywords: ['CS-200', 'آلة تمزيق عمود مزدوج', 'فئة متميزة'],
+        }
+      }
+    },
     'wood': {
       'TSY-100': {
         tr: {
-          title: 'TSY-100 Ağaç Parçalama Makinesi | 45-55 kW | 2-4 Ton/Saat',
+          title: 'TSY-100 Ağaç Parçalama ve Öğütme Makinesi (Wood Grinder) | MT Makina',
           description: 'TSY-100 Yatay Ağaç Parçalama Makinesi - 45-55 kW motor, 1000mm rotor. Palet, dal ve marangoz atıkları için ideal. Kompakt tasarım, yüksek verimlilik.',
           keywords: ['TSY-100', 'ağaç parçalama makinesi fiyat', 'orta boy ağaç kırıcı', 'palet kırma makinesi', '55kw shredder']
         },
         en: {
-          title: 'TSY-100 Wood Shredder Manufacturer | 45-55 kW | MT Makina Turkey',
+          title: 'TSY-100 Wood Grinder | MT Makina',
           description: 'Heavy duty TSY-100 horizontal wood shredder - 45-55 kW motor, 1000mm rotor. High efficiency solution for pallets, branches and carpentry waste. Cost-effective, compact design.',
           keywords: ['TSY-100', 'wood shredder manufacturer', 'wood grinder Turkey', 'pallet crusher for sale', 'industrial wood shredder']
         },
         ru: {
-          title: 'Шредер Дерева TSY-100 | 45-55 кВт | 2-4 Тонн/Час',
+          title: 'TSY-100 Измельчитель Древесины (Wood Grinder) | MT Makina',
           description: 'Горизонтальный шредер дерева TSY-100 - двигатель 45-55 кВт, ротор 1000 мм. Идеально для поддонов, веток и столярных отходов. Компактный дизайн.',
           keywords: ['TSY-100', 'цена шредера дерева', 'дробилка для поддонов', 'шредер 55квт']
         },
         ar: {
-          title: 'آلة تمزيق الخشب TSY-100 | 45-55 كيلوواط | 2-4 طن/ساعة',
+          title: 'TSY-100 آلة طحن الخشب (Wood Grinder) | MT Makina',
           description: 'آلة تمزيق الخشب الأفقية TSY-100 - محرك 45-55 كيلوواط، دوار 1000 مم. مثالية للمنصات والفروع ونفايات النجارة. تصميم مدمج.',
           keywords: ['TSY-100', 'سعر كسارة الخشب', 'طاحونة خشب متوسطة', 'كسارة منصات']
         }
       },
       'TSY-150': {
         tr: {
-          title: 'TSY-150 Endüstriyel Ağaç Parçalama | 75-110 kW | 4-6 Ton/Saat',
+          title: 'TSY-150 Ağaç Parçalama ve Öğütme Makinesi (Wood Grinder) | MT Makina',
           description: 'TSY-150 Profesyonel Ağaç Parçalama - 75-110 kW çift motor, 1500mm rotor. Kütük, orman atığı ve biyokütle için. Yüksek kapasite, ağır hizmet tipi.',
           keywords: ['TSY-150', 'endüstriyel ağaç parçalama', 'kütük parçalama makinesi', 'biyokütle kırıcı', 'orman atığı parçalama']
         },
         en: {
-          title: 'TSY-150 Industrial Wood Shredder Manufacturer | 75-110 kW | MT Makina Turkey',
+          title: 'TSY-150 Wood Grinder | MT Makina',
           description: 'Heavy duty TSY-150 professional wood shredder - 75-110 kW dual motor, 1500mm rotor. High efficiency for logs, forestry waste and biomass. Turnkey project solutions.',
           keywords: ['TSY-150', 'industrial wood shredder manufacturer', 'log shredder Turkey', 'biomass grinder for sale', 'heavy duty wood shredder']
         },
         ru: {
-          title: 'Промышленный Шредер TSY-150 | 75-110 кВт | 4-6 Тонн/Час',
+          title: 'TSY-150 Измельчитель Древесины (Wood Grinder) | MT Makina',
           description: 'Профессиональный шредер дерева TSY-150 - два двигателя 75-110 кВт, ротор 1500 мм. Для бревен, лесных отходов и биомассы. Высокая производительность.',
           keywords: ['TSY-150', 'промышленный шредер', 'измельчитель бревен', 'биомасса']
         },
         ar: {
-          title: 'آلة تمزيق الخشب الصناعية TSY-150 | 75-110 كيلوواط | 4-6 طن/ساعة',
+          title: 'TSY-150 آلة طحن الخشب (Wood Grinder) | MT Makina',
           description: 'آلة تمزيق الخشب الاحترافية TSY-150 - محرك مزدوج 75-110 كيلوواط، دوار 1500 مم. للجذوع ونفايات الغابات والكتلة الحيوية. سعة عالية.',
           keywords: ['TSY-150', 'كسارة خشب صناعية', 'تمزيق جذوع', 'طاحونة كتلة حيوية']
         }
       },
       'TSY-200': {
         tr: {
-          title: 'TSY-200 Premium Ağaç Öğütme | 90-200 kW | 8-12 Ton/Saat',
+          title: 'TSY-200 Ağaç Parçalama ve Öğütme Makinesi (Wood Grinder) | MT Makina',
           description: 'TSY-200 Yüksek Kapasiteli Ağaç Öğütme - 90-200 kW ultra güçlü motorlar, 2000mm rotor. Enerji santralleri ve büyük tesisler için. Maksimum performans.',
           keywords: ['TSY-200', 'ağaç öğütme makinesi', 'biyokütle santrali kırıcı', 'dev ağaç parçalama', '200kw shredder']
         },
         en: {
-          title: 'TSY-200 Premium Wood Grinder Manufacturer | 90-200 kW | MT Makina Turkey',
+          title: 'TSY-200 Wood Grinder | MT Makina',
           description: 'Heavy duty TSY-200 high capacity wood grinder - 90-200 kW ultra powerful motors, 2000mm rotor. High efficiency for power plants and large facilities. Cost-effective turnkey projects.',
           keywords: ['TSY-200', 'wood grinder manufacturer', 'biomass plant shredder Turkey', 'industrial wood grinder for sale', 'heavy duty wood shredder']
         },
         ru: {
-          title: 'Премиум Шредер TSY-200 | 90-200 кВт | 8-12 Тонн/Час',
+          title: 'TSY-200 Измельчитель Древесины (Wood Grinder) | MT Makina',
           description: 'Высокопроизводительный шредер TSY-200 - двигатели 90-200 кВт, ротор 2000 мм. Для электростанций и крупных объектов. Максимальная производительность.',
           keywords: ['TSY-200', 'измельчитель дерева премиум', 'дробилка для электростанций', 'мощный шредер']
         },
         ar: {
-          title: 'طاحونة الخشب الممتازة TSY-200 | 90-200 كيلوواط | 8-12 طن/ساعة',
+          title: 'TSY-200 آلة طحن الخشب (Wood Grinder) | MT Makina',
           description: 'طاحونة خشب عالية السعة TSY-200 - محركات فائقة القوة 90-200 كيلوواط، دوار 2000 مم. لمحطات الطاقة والمرافق الكبيرة. أقصى أداء.',
           keywords: ['TSY-200', 'آلة طحن خشب', 'كسارة محطة كتلة حيوية', 'كسارة خشب ضخمة']
         }
@@ -834,68 +1034,542 @@ export const getProductModelSEO = (type: string, model: string, lang: Language =
     'glass': {
       'CK-200': {
         tr: {
-          title: 'CK-200 Cam Şişe Kırma Makinesi | Otel & Restoran Tipi',
+          title: 'CK-200 Cam Şişe Kırma Makinesi (Glass Crusher) | MT Makina',
           description: 'CK-200 Kompakt Cam Kırıcı - 100-200 kg/saat. Oteller ve restoranlar için sessiz, güvenli, sıvı ayrıştırmalı. %80 hacim tasarrufu.',
           keywords: ['CK-200', 'otel tipi cam kırıcı', 'şişe kırma makinesi', 'sessiz cam kırıcı', 'restoran geri dönüşüm']
         },
         en: {
-          title: 'CK-200 Glass Bottle Crusher | Hotel & Restaurant Type',
+          title: 'CK-200 Glass Bottle Crusher | MT Makina',
           description: 'CK-200 Compact Glass Crusher - 100-200 kg/h. Quiet, safe, with liquid separation for hotels and restaurants. 80% volume saving.',
           keywords: ['CK-200', 'hotel glass crusher', 'bottle crushing machine', 'quiet glass crusher', 'restaurant recycling']
         },
         ru: {
-          title: 'Дробилка Стеклянных Бутылок CK-200 | Для Отелей',
+          title: 'CK-200 Дробилка Стеклянных Бутылок (Glass Crusher) | MT Makina',
           description: 'Компактная дробилка CK-200 - 100-200 кг/ч. Тихая, безопасная, с отделением жидкости. Экономия объема 80%.',
           keywords: ['CK-200', 'дробилка для отелей', 'измельчитель бутылок', 'тихая дробилка']
         },
         ar: {
-          title: 'كسارة زجاجات CK-200 | نوع الفنادق والمطاعم',
+          title: 'CK-200 كسارة الزجاج (Glass Crusher) | MT Makina',
           description: 'كسارة زجاج مدمجة CK-200 - 100-200 كجم/ساعة. هادئة، آمنة، مع فصل السوائل. توفير 80٪ في الحجم.',
           keywords: ['CK-200', 'كسارة زجاج فنادق', 'آلة تكسير قوارير', 'كسارة زجاج هادئة']
         }
       },
       'CK-400': {
         tr: {
-          title: 'CK-400 Şişe ve Kavanoz Kırma Makinesi | 300-500 kg/saat',
+          title: 'CK-400 Cam Şişe Kırma Makinesi (Glass Crusher) | MT Makina',
           description: 'CK-400 Orta Boy Cam Kırıcı - 4-5.5 kW. 300-500 kg/saat kapasite. Büyük oteller, hastaneler ve AVM\'ler için güçlü çözüm.',
           keywords: ['CK-400', 'kavanoz kırma makinesi', 'cam atık makinesi', 'hastane atık kırıcı']
         },
         en: {
-          title: 'CK-400 Bottle & Jar Crusher | 300-500 kg/hour',
+          title: 'CK-400 Glass Bottle Crusher | MT Makina',
           description: 'CK-400 Medium Glass Crusher - 4-5.5 kW. 300-500 kg/h capacity. Powerful solution for large hotels, hospitals and malls.',
           keywords: ['CK-400', 'jar crusher', 'glass waste machine', 'hospital waste crusher']
         },
         ru: {
-          title: 'Дробилка Бутылок и Банок CK-400 | 300-500 кг/час',
+          title: 'CK-400 Дробилка Стеклянных Бутылок (Glass Crusher) | MT Makina',
           description: 'Средняя дробилка CK-400 - 4-5.5 кВт. 300-500 кг/ч. Мощное решение для крупных отелей, больниц и ТЦ.',
           keywords: ['CK-400', 'дробилка банок', 'машина для отходов стекла']
         },
         ar: {
-          title: 'كسارة الزجاجات والجرار CK-400 | 300-500 كجم/ساعة',
+          title: 'CK-400 كسارة الزجاج (Glass Crusher) | MT Makina',
           description: 'كسارة زجاج متوسطة CK-400 - قوة 4-5.5 كيلوواط. سعة 300-500 كجم/ساعة. حل قوي للفنادق الكبيرة والمستشفيات.',
           keywords: ['CK-400', 'كسارة جرار', 'آلة نفايات الزجاج']
         }
       },
       'CKS-400': {
         tr: {
-          title: 'CKS-400 Endüstriyel Cam Parçalama | 600-800 kg/saat',
+          title: 'CKS-400 Cam Şişe Kırma Makinesi (Glass Crusher) | MT Makina',
           description: 'CKS-400 Sanayi Tipi Cam Kırıcı - 5.5-7.5 kW. Konveyörlü besleme, yüksek kapasite. Geri dönüşüm tesisleri ve dolum fabrikaları için.',
           keywords: ['CKS-400', 'endüstriyel cam kırıcı', 'cam geri dönüşüm tesisi makinesi', 'otomatik cam kırma']
         },
         en: {
-          title: 'CKS-400 Industrial Glass Shredder | 600-800 kg/hour',
+          title: 'CKS-400 Industrial Glass Crusher | MT Makina',
           description: 'CKS-400 Industrial Glass Crusher - 5.5-7.5 kW. Conveyor feeding, high capacity. For recycling plants and bottling factories.',
           keywords: ['CKS-400', 'industrial glass crusher', 'glass recycling plant machine', 'automatic glass crushing']
         },
         ru: {
-          title: 'Промышленный Шредер Стекла CKS-400 | 600-800 кг/час',
+          title: 'CKS-400 Промышленная Дробилка Стекла (Glass Crusher) | MT Makina',
           description: 'Промышленная дробилка CKS-400 - 5.5-7.5 кВт. Конвейерная подача. Для перерабатывающих заводов.',
           keywords: ['CKS-400', 'промышленная дробилка стекла', 'завод по переработке стекла']
         },
         ar: {
-          title: 'تمزيق الزجاج الصناعي CKS-400 | 600-800 كجم/ساعة',
+          title: 'CKS-400 كسارة الزجاج الصناعية (Glass Crusher) | MT Makina',
           description: 'كسارة زجاج صناعية CKS-400 - قوة 5.5-7.5 كيلوواط. تغذية بالناقل. لمصانع إعادة التدوير ومصانع التعبئة.',
           keywords: ['CKS-400', 'كسارة زجاج صناعية', 'آلة مصنع إعادة تدوير الزجاج']
+        }
+      },
+      'pallet': {
+        'TSV-140': {
+          tr: {
+            title: 'TSV-140 Palet Parçalama Makinesi (Pallet Shredder) | MT Makina',
+            description: 'TSV-140 palet parçalama makinesi - 30-55 kW motor, 1400mm rotor. Ahşap palet, odun parçalama. ✓ CE Belgeli ✓ 2 Yıl Garanti',
+            keywords: ['TSV-140', 'palet parçalama', 'pallet shredder', 'odun parçalama'],
+          },
+          en: {
+            title: 'TSV-140 Pallet Shredder | MT Makina',
+            description: 'TSV-140 pallet shredder - 30-55 kW motor, 1400mm rotor. Wooden pallet, wood shredding. ✓ CE Certified ✓ 2 Year Warranty',
+            keywords: ['TSV-140', 'pallet shredder', 'wood shredder', 'chipper'],
+          },
+          ru: {
+            title: 'TSV-140 Шредер Поддонов (Pallet Shredder) | MT Makina',
+            description: 'Шредер поддонов TSV-140 - 30-55 кВт, ротор 1400 мм. Деревянные поддоны, измельчение древесины. ✓ Сертификат CE ✓ 2 года гарантии',
+            keywords: ['TSV-140', 'шредер поддонов', 'дробилка дерева'],
+          },
+          ar: {
+            title: 'TSV-140 آلة تمزيق المنصات (Pallet Shredder) | MT Makina',
+            description: 'آلة تمزيق المنصات TSV-140 - محرك 30-55 كيلوواط، دوار 1400 مم. منصات خشبية، تمزيق الخشب. ✓ معتمد CE ✓ ضمان سنتين',
+            keywords: ['TSV-140', 'آلة تمزيق المنصات', 'كسارة خشب'],
+          }
+        },
+        'TSV-200': {
+          tr: {
+            title: 'TSV-200 Palet Parçalama Makinesi (Pallet Shredder) | MT Makina',
+            description: 'TSV-200 palet parçalama makinesi - 45-90 kW motor, 2000mm rotor. Yüksek kapasite palet ve odun parçalama. ✓ CE Belgeli ✓ Profesyonel Sınıf',
+            keywords: ['TSV-200', 'palet parçalama', 'pallet shredder', 'yüksek kapasite'],
+          },
+          en: {
+            title: 'TSV-200 Pallet Shredder | MT Makina',
+            description: 'TSV-200 pallet shredder - 45-90 kW motor, 2000mm rotor. High capacity pallet and wood shredding. ✓ CE Certified ✓ Professional Grade',
+            keywords: ['TSV-200', 'pallet shredder', 'high capacity', 'wood chipper'],
+          },
+          ru: {
+            title: 'TSV-200 Шредер Поддонов (Pallet Shredder) | MT Makina',
+            description: 'Шредер поддонов TSV-200 - 45-90 кВт, ротор 2000 мм. Высокая производительность. ✓ Сертификат CE ✓ Профессиональный класс',
+            keywords: ['TSV-200', 'шредер поддонов', 'высокая производительность'],
+          },
+          ar: {
+            title: 'TSV-200 آلة تمزيق المنصات (Pallet Shredder) | MT Makina',
+            description: 'آلة تمزيق المنصات TSV-200 - محرك 45-90 كيلوواط، دوار 2000 مم. سعة عالية. ✓ معتمد CE ✓ درجة احترافية',
+            keywords: ['TSV-200', 'آلة تمزيق المنصات', 'سعة عالية'],
+          }
+        },
+        'TSVX-200': {
+          tr: {
+            title: 'TSVX-200 Palet Parçalama Makinesi (Pallet Shredder) | MT Makina',
+            description: 'TSVX-200 premium palet parçalama makinesi - 75-132 kW çift motor, 2000mm rotor. En yüksek kapasite. ✓ CE Belgeli ✓ Premium Sınıf',
+            keywords: ['TSVX-200', 'palet parçalama', 'pallet shredder', 'premium'],
+          },
+          en: {
+            title: 'TSVX-200 Pallet Shredder | MT Makina',
+            description: 'TSVX-200 premium pallet shredder - 75-132 kW dual motor, 2000mm rotor. Highest capacity. ✓ CE Certified ✓ Premium Class',
+            keywords: ['TSVX-200', 'pallet shredder', 'premium', 'highest capacity'],
+          },
+          ru: {
+            title: 'TSVX-200 Шредер Поддонов (Pallet Shredder) | MT Makina',
+            description: 'Премиум шредер поддонов TSVX-200 - двойной двигатель 75-132 кВт, ротор 2000 мм. Максимальная мощность. ✓ Сертификат CE ✓ Премиум класс',
+            keywords: ['TSVX-200', 'шредер поддонов премиум', 'максимальная мощность'],
+          },
+          ar: {
+            title: 'TSVX-200 آلة تمزيق المنصات (Pallet Shredder) | MT Makina',
+            description: 'آلة تمزيق المنصات الممتازة TSVX-200 - محرك مزدوج 75-132 كيلوواط، دوار 2000 مم. أعلى سعة. ✓ معتمد CE ✓ فئة متميزة',
+            keywords: ['TSVX-200', 'آلة تمزيق المنصات متميزة', 'أعلى سعة'],
+          }
+        }
+      },
+      'harddisk': {
+        'DATABER-S': {
+          tr: {
+            title: 'DATABER-S Harddisk İmha Makinesi (Hard Disk Destroyer) | MT Makina',
+            description: 'DATABER-S harddisk imha makinesi - Kompakt tasarım, GDPR uyumlu veri imhası. Ofis tipi güvenli veri yok etme. ✓ NSA Onaylı ✓ CE Belgeli',
+            keywords: ['DATABER-S', 'harddisk imha', 'hard disk destroyer', 'veri imha'],
+          },
+          en: {
+            title: 'DATABER-S Hard Disk Destroyer | MT Makina',
+            description: 'DATABER-S hard disk destroyer - Compact design, GDPR compliant data destruction. Office type secure data erasure. ✓ NSA Approved ✓ CE Certified',
+            keywords: ['DATABER-S', 'hard disk destroyer', 'data destruction', 'GDPR'],
+          },
+          ru: {
+            title: 'DATABER-S Уничтожитель Жестких Дисков (Hard Disk Destroyer) | MT Makina',
+            description: 'Уничтожитель жестких дисков DATABER-S - компактный дизайн, соответствие GDPR. Офисный тип. ✓ Одобрен NSA ✓ Сертификат CE',
+            keywords: ['DATABER-S', 'уничтожитель дисков', 'уничтожение данных'],
+          },
+          ar: {
+            title: 'DATABER-S آلة تدمير الأقراص الصلبة (Hard Disk Destroyer) | MT Makina',
+            description: 'آلة تدمير الأقراص الصلبة DATABER-S - تصميم مدمج، متوافق مع GDPR. نوع المكتب. ✓ معتمد NSA ✓ معتمد CE',
+            keywords: ['DATABER-S', 'تدمير القرص الصلب', 'تدمير البيانات'],
+          }
+        },
+        'DATABER-D': {
+          tr: {
+            title: 'DATABER-D Harddisk İmha Makinesi (Hard Disk Destroyer) | MT Makina',
+            description: 'DATABER-D harddisk imha makinesi - Orta kapasite, profesyonel veri imhası. Kurumsal kullanım için. ✓ NSA Onaylı ✓ CE Belgeli ✓ GDPR Uyumlu',
+            keywords: ['DATABER-D', 'harddisk imha', 'hard disk destroyer', 'kurumsal'],
+          },
+          en: {
+            title: 'DATABER-D Hard Disk Destroyer | MT Makina',
+            description: 'DATABER-D hard disk destroyer - Medium capacity, professional data destruction. For corporate use. ✓ NSA Approved ✓ CE Certified ✓ GDPR Compliant',
+            keywords: ['DATABER-D', 'hard disk destroyer', 'corporate', 'professional'],
+          },
+          ru: {
+            title: 'DATABER-D Уничтожитель Жестких Дисков (Hard Disk Destroyer) | MT Makina',
+            description: 'Уничтожитель жестких дисков DATABER-D - средняя мощность, профессиональное уничтожение данных. Для корпоративного использования. ✓ Одобрен NSA ✓ GDPR',
+            keywords: ['DATABER-D', 'уничтожитель дисков', 'корпоративный'],
+          },
+          ar: {
+            title: 'DATABER-D آلة تدمير الأقراص الصلبة (Hard Disk Destroyer) | MT Makina',
+            description: 'آلة تدمير الأقراص الصلبة DATABER-D - سعة متوسطة، تدمير بيانات احترافي. للاستخدام المؤسسي. ✓ معتمد NSA ✓ متوافق GDPR',
+            keywords: ['DATABER-D', 'تدمير القرص الصلب', 'مؤسسي'],
+          }
+        },
+        'DATABER-T': {
+          tr: {
+            title: 'DATABER-T Harddisk İmha Makinesi (Hard Disk Destroyer) | MT Makina',
+            description: 'DATABER-T harddisk imha makinesi - Yüksek kapasite, endüstriyel veri imhası. Veri merkezleri için. ✓ NSA Onaylı ✓ CE Belgeli ✓ Premium Sınıf',
+            keywords: ['DATABER-T', 'harddisk imha', 'hard disk destroyer', 'veri merkezi'],
+          },
+          en: {
+            title: 'DATABER-T Hard Disk Destroyer | MT Makina',
+            description: 'DATABER-T hard disk destroyer - High capacity, industrial data destruction. For data centers. ✓ NSA Approved ✓ CE Certified ✓ Premium Class',
+            keywords: ['DATABER-T', 'hard disk destroyer', 'data center', 'industrial'],
+          },
+          ru: {
+            title: 'DATABER-T Уничтожитель Жестких Дисков (Hard Disk Destroyer) | MT Makina',
+            description: 'Уничтожитель жестких дисков DATABER-T - высокая мощность, промышленное уничтожение данных. Для дата-центров. ✓ Одобрен NSA ✓ Премиум класс',
+            keywords: ['DATABER-T', 'уничтожитель дисков', 'дата-центр'],
+          },
+          ar: {
+            title: 'DATABER-T آلة تدمير الأقراص الصلبة (Hard Disk Destroyer) | MT Makina',
+            description: 'آلة تدمير الأقراص الصلبة DATABER-T - سعة عالية، تدمير بيانات صناعي. لمراكز البيانات. ✓ معتمد NSA ✓ فئة متميزة',
+            keywords: ['DATABER-T', 'تدمير القرص الصلب', 'مركز البيانات'],
+          }
+        }
+      },
+      'tree-root': {
+        'TW-100': {
+          tr: {
+            title: 'TW-100 Ağaç Kökü Parçalama Makinesi (Tree Root Shredder) | MT Makina',
+            description: 'TW-100 ağaç kökü parçalama makinesi - 45-75 kW motor, 1000mm rotor. Kök, kütük ve orman atığı parçalama. ✓ CE Belgeli ✓ 2 Yıl Garanti',
+            keywords: ['TW-100', 'ağaç kökü parçalama', 'tree root shredder', 'kütük parçalama'],
+          },
+          en: {
+            title: 'TW-100 Tree Root Shredder | MT Makina',
+            description: 'TW-100 tree root shredder - 45-75 kW motor, 1000mm rotor. Root, stump and forestry waste shredding. ✓ CE Certified ✓ 2 Year Warranty',
+            keywords: ['TW-100', 'tree root shredder', 'stump grinder', 'forestry shredder'],
+          },
+          ru: {
+            title: 'TW-100 Шредер Корней Деревьев (Tree Root Shredder) | MT Makina',
+            description: 'Шредер корней деревьев TW-100 - 45-75 кВт, ротор 1000 мм. Корни, пни и лесные отходы. ✓ Сертификат CE ✓ 2 года гарантии',
+            keywords: ['TW-100', 'шредер корней', 'дробилка пней'],
+          },
+          ar: {
+            title: 'TW-100 آلة تمزيق جذور الأشجار (Tree Root Shredder) | MT Makina',
+            description: 'آلة تمزيق جذور الأشجار TW-100 - محرك 45-75 كيلوواط، دوار 1000 مم. الجذور والجذوع ونفايات الغابات. ✓ معتمد CE ✓ ضمان سنتين',
+            keywords: ['TW-100', 'آلة تمزيق جذور الأشجار', 'طاحونة الجذوع'],
+          }
+        },
+        'TW-150': {
+          tr: {
+            title: 'TW-150 Ağaç Kökü Parçalama Makinesi (Tree Root Shredder) | MT Makina',
+            description: 'TW-150 ağaç kökü parçalama makinesi - 75-110 kW motor, 1500mm rotor. Ağır hizmet tipi kök parçalama. ✓ CE Belgeli ✓ Profesyonel Sınıf',
+            keywords: ['TW-150', 'ağaç kökü parçalama', 'tree root shredder', 'ağır hizmet'],
+          },
+          en: {
+            title: 'TW-150 Tree Root Shredder | MT Makina',
+            description: 'TW-150 tree root shredder - 75-110 kW motor, 1500mm rotor. Heavy duty root shredding. ✓ CE Certified ✓ Professional Grade',
+            keywords: ['TW-150', 'tree root shredder', 'heavy duty', 'professional'],
+          },
+          ru: {
+            title: 'TW-150 Шредер Корней Деревьев (Tree Root Shredder) | MT Makina',
+            description: 'Шредер корней деревьев TW-150 - 75-110 кВт, ротор 1500 мм. Тяжелый класс. ✓ Сертификат CE ✓ Профессиональный класс',
+            keywords: ['TW-150', 'шредер корней', 'тяжелый класс'],
+          },
+          ar: {
+            title: 'TW-150 آلة تمزيق جذور الأشجار (Tree Root Shredder) | MT Makina',
+            description: 'آلة تمزيق جذور الأشجار TW-150 - محرك 75-110 كيلوواط، دوار 1500 مم. خدمة شاقة. ✓ معتمد CE ✓ درجة احترافية',
+            keywords: ['TW-150', 'آلة تمزيق جذور الأشجار', 'خدمة شاقة'],
+          }
+        },
+        'TW-200': {
+          tr: {
+            title: 'TW-200 Ağaç Kökü Parçalama Makinesi (Tree Root Shredder) | MT Makina',
+            description: 'TW-200 ağaç kökü parçalama makinesi - 110-160 kW çift motor, 2000mm rotor. En yüksek kapasite kök parçalama. ✓ CE Belgeli ✓ Premium Sınıf',
+            keywords: ['TW-200', 'ağaç kökü parçalama', 'tree root shredder', 'premium'],
+          },
+          en: {
+            title: 'TW-200 Tree Root Shredder | MT Makina',
+            description: 'TW-200 tree root shredder - 110-160 kW dual motor, 2000mm rotor. Highest capacity root shredding. ✓ CE Certified ✓ Premium Class',
+            keywords: ['TW-200', 'tree root shredder', 'highest capacity', 'premium'],
+          },
+          ru: {
+            title: 'TW-200 Шредер Корней Деревьев (Tree Root Shredder) | MT Makina',
+            description: 'Шредер корней деревьев TW-200 - двойной двигатель 110-160 кВт, ротор 2000 мм. Максимальная мощность. ✓ Сертификат CE ✓ Премиум класс',
+            keywords: ['TW-200', 'шредер корней премиум', 'максимальная мощность'],
+          },
+          ar: {
+            title: 'TW-200 آلة تمزيق جذور الأشجار (Tree Root Shredder) | MT Makina',
+            description: 'آلة تمزيق جذور الأشجار TW-200 - محرك مزدوج 110-160 كيلوواط، دوار 2000 مم. أعلى سعة. ✓ معتمد CE ✓ فئة متميزة',
+            keywords: ['TW-200', 'آلة تمزيق جذور الأشجار متميزة', 'أعلى سعة'],
+          }
+        }
+      },
+      'quad-shaft': {
+        'DS-80': {
+          tr: {
+            title: 'DS-80 Dört Şaftlı Parçalama Makinesi (Quad Shaft Shredder) | MT Makina',
+            description: 'DS-80 dört şaftlı parçalama makinesi - 4x15 kW motor, 800x800mm parçalama alanı, 1000-1500 kg/saat. İnce parçalama. ✓ CE Belgeli ✓ 2 Yıl Garanti',
+            keywords: ['DS-80', 'dört şaftlı parçalama', 'quad shaft shredder', 'ince parçalama'],
+          },
+          en: {
+            title: 'DS-80 Quad Shaft Shredder | MT Makina',
+            description: 'DS-80 quad shaft shredder - 4x15 kW motor, 800x800mm shredding area, 1000-1500 kg/h. Fine shredding. ✓ CE Certified ✓ 2 Year Warranty',
+            keywords: ['DS-80', 'quad shaft shredder', 'fine shredder', 'industrial shredder'],
+          },
+          ru: {
+            title: 'DS-80 Четырехвальный Шредер (Quad Shaft Shredder) | MT Makina',
+            description: 'Четырехвальный шредер DS-80 - 4x15 кВт, 1000-1500 кг/ч. Мелкое измельчение. ✓ Сертификат CE ✓ 2 года гарантии',
+            keywords: ['DS-80', 'четырехвальный шредер', 'мелкое измельчение'],
+          },
+          ar: {
+            title: 'DS-80 آلة تمزيق أربعة أعمدة (Quad Shaft Shredder) | MT Makina',
+            description: 'آلة تمزيق أربعة أعمدة DS-80 - محرك 4x15 كيلوواط، 1000-1500 كجم/ساعة. تمزيق دقيق. ✓ معتمد CE ✓ ضمان سنتين',
+            keywords: ['DS-80', 'آلة تمزيق أربعة أعمدة', 'تمزيق دقيق'],
+          }
+        },
+        'DS-100': {
+          tr: {
+            title: 'DS-100 Dört Şaftlı Parçalama Makinesi (Quad Shaft Shredder) | MT Makina',
+            description: 'DS-100 dört şaftlı parçalama makinesi - 4x22 kW motor, 1000x1000mm parçalama alanı, 1500-2500 kg/saat. Homojen çıkış. ✓ CE Belgeli ✓ Yüksek Verimlilik',
+            keywords: ['DS-100', 'dört şaftlı parçalama', 'quad shaft shredder', 'homojen çıkış'],
+          },
+          en: {
+            title: 'DS-100 Quad Shaft Shredder | MT Makina',
+            description: 'DS-100 quad shaft shredder - 4x22 kW motor, 1000x1000mm shredding area, 1500-2500 kg/h. Uniform output. ✓ CE Certified ✓ High Efficiency',
+            keywords: ['DS-100', 'quad shaft shredder', 'uniform output', 'industrial shredder'],
+          },
+          ru: {
+            title: 'DS-100 Четырехвальный Шредер (Quad Shaft Shredder) | MT Makina',
+            description: 'Четырехвальный шредер DS-100 - 4x22 кВт, 1500-2500 кг/ч. Однородный выход. ✓ Сертификат CE ✓ Высокая эффективность',
+            keywords: ['DS-100', 'четырехвальный шредер', 'однородный выход'],
+          },
+          ar: {
+            title: 'DS-100 آلة تمزيق أربعة أعمدة (Quad Shaft Shredder) | MT Makina',
+            description: 'آلة تمزيق أربعة أعمدة DS-100 - محرك 4x22 كيلوواط، 1500-2500 كجم/ساعة. مخرج متجانس. ✓ معتمد CE ✓ كفاءة عالية',
+            keywords: ['DS-100', 'آلة تمزيق أربعة أعمدة', 'مخرج متجانس'],
+          }
+        },
+        'DS-150': {
+          tr: {
+            title: 'DS-150 Dört Şaftlı Parçalama Makinesi (Quad Shaft Shredder) | MT Makina',
+            description: 'DS-150 dört şaftlı parçalama makinesi - 4x30 kW motor, 1500x1500mm parçalama alanı, 2500-4000 kg/saat. Profesyonel sınıf. ✓ CE Belgeli ✓ Ağır Hizmet',
+            keywords: ['DS-150', 'dört şaftlı parçalama', 'quad shaft shredder', 'profesyonel'],
+          },
+          en: {
+            title: 'DS-150 Quad Shaft Shredder | MT Makina',
+            description: 'DS-150 quad shaft shredder - 4x30 kW motor, 1500x1500mm shredding area, 2500-4000 kg/h. Professional grade. ✓ CE Certified ✓ Heavy Duty',
+            keywords: ['DS-150', 'quad shaft shredder', 'professional grade', 'heavy duty shredder'],
+          },
+          ru: {
+            title: 'DS-150 Четырехвальный Шредер (Quad Shaft Shredder) | MT Makina',
+            description: 'Четырехвальный шредер DS-150 - 4x30 кВт, 2500-4000 кг/ч. Профессиональный класс. ✓ Сертификат CE ✓ Тяжелый класс',
+            keywords: ['DS-150', 'четырехвальный шредер', 'профессиональный класс'],
+          },
+          ar: {
+            title: 'DS-150 آلة تمزيق أربعة أعمدة (Quad Shaft Shredder) | MT Makina',
+            description: 'آلة تمزيق أربعة أعمدة DS-150 - محرك 4x30 كيلوواط، 2500-4000 كجم/ساعة. درجة احترافية. ✓ معتمد CE ✓ خدمة شاقة',
+            keywords: ['DS-150', 'آلة تمزيق أربعة أعمدة', 'درجة احترافية'],
+          }
+        },
+        'DS-200': {
+          tr: {
+            title: 'DS-200 Dört Şaftlı Parçalama Makinesi (Quad Shaft Shredder) | MT Makina',
+            description: 'DS-200 dört şaftlı parçalama makinesi - 4x45 kW motor, 2000x2000mm parçalama alanı, 4000-6000 kg/saat. Premium sınıf. ✓ CE Belgeli ✓ En Yüksek Kapasite',
+            keywords: ['DS-200', 'dört şaftlı parçalama', 'quad shaft shredder', 'premium', 'en büyük'],
+          },
+          en: {
+            title: 'DS-200 Quad Shaft Shredder | MT Makina',
+            description: 'DS-200 quad shaft shredder - 4x45 kW motor, 2000x2000mm shredding area, 4000-6000 kg/h. Premium class. ✓ CE Certified ✓ Highest Capacity',
+            keywords: ['DS-200', 'quad shaft shredder', 'premium shredder', 'highest capacity'],
+          },
+          ru: {
+            title: 'DS-200 Четырехвальный Шредер (Quad Shaft Shredder) | MT Makina',
+            description: 'Четырехвальный шредер DS-200 премиум-класса - 4x45 кВт, 4000-6000 кг/ч. ✓ Сертификат CE ✓ Максимальная мощность',
+            keywords: ['DS-200', 'четырехвальный шредер премиум', 'максимальная мощность'],
+          },
+          ar: {
+            title: 'DS-200 آلة تمزيق أربعة أعمدة (Quad Shaft Shredder) | MT Makina',
+            description: 'آلة تمزيق أربعة أعمدة DS-200 من الفئة الممتازة - محرك 4x45 كيلوواط، 4000-6000 كجم/ساعة. ✓ معتمد CE ✓ أعلى سعة',
+            keywords: ['DS-200', 'آلة تمزيق أربعة أعمدة متميزة', 'أعلى سعة'],
+          }
+        }
+      },
+      'metal': {
+        'RDM-100': {
+          tr: {
+            title: 'RDM-100 Metal Parçalama Makinesi (Metal Shredder) | Redmonster | MT Makina',
+            description: 'RDM-100 metal parçalama makinesi Redmonster - 2x55 kW motor, 100-150 ton/gün kapasite. Hurda metal, beyaz eşya parçalama. ✓ CE Belgeli ✓ Ağır Hizmet',
+            keywords: ['RDM-100', 'metal parçalama makinesi', 'redmonster', 'hurda parçalama'],
+          },
+          en: {
+            title: 'RDM-100 Metal Shredder | Redmonster | MT Makina',
+            description: 'RDM-100 metal shredder Redmonster - 2x55 kW motor, 100-150 ton/day capacity. Scrap metal, white goods shredding. ✓ CE Certified ✓ Heavy Duty',
+            keywords: ['RDM-100', 'metal shredder', 'redmonster', 'scrap shredder'],
+          },
+          ru: {
+            title: 'RDM-100 Шредер Металла (Metal Shredder) | Redmonster | MT Makina',
+            description: 'Шредер металла RDM-100 Redmonster - 2x55 кВт, 100-150 т/день. Металлолом, бытовая техника. ✓ Сертификат CE ✓ Тяжелый класс',
+            keywords: ['RDM-100', 'шредер металла', 'redmonster', 'измельчитель металлолома'],
+          },
+          ar: {
+            title: 'RDM-100 آلة تمزيق المعادن (Metal Shredder) | Redmonster | MT Makina',
+            description: 'آلة تمزيق المعادن RDM-100 Redmonster - محرك 2x55 كيلوواط، 100-150 طن/يوم. خردة المعادن، الأجهزة المنزلية. ✓ معتمد CE ✓ خدمة شاقة',
+            keywords: ['RDM-100', 'آلة تمزيق المعادن', 'redmonster', 'كسارة الخردة'],
+          }
+        },
+        'RDM-150': {
+          tr: {
+            title: 'RDM-150 Metal Parçalama Makinesi (Metal Shredder) | Redmonster | MT Makina',
+            description: 'RDM-150 metal parçalama makinesi Redmonster - 2x75 kW motor, 150-200 ton/gün kapasite. Otomobil hurda, ELV parçalama. ✓ CE Belgeli ✓ Yüksek Kapasite',
+            keywords: ['RDM-150', 'metal parçalama makinesi', 'redmonster', 'otomobil hurda'],
+          },
+          en: {
+            title: 'RDM-150 Metal Shredder | Redmonster | MT Makina',
+            description: 'RDM-150 metal shredder Redmonster - 2x75 kW motor, 150-200 ton/day capacity. Car scrap, ELV shredding. ✓ CE Certified ✓ High Capacity',
+            keywords: ['RDM-150', 'metal shredder', 'redmonster', 'car shredder', 'ELV'],
+          },
+          ru: {
+            title: 'RDM-150 Шредер Металла (Metal Shredder) | Redmonster | MT Makina',
+            description: 'Шредер металла RDM-150 Redmonster - 2x75 кВт, 150-200 т/день. Автомобильный лом, ELV. ✓ Сертификат CE ✓ Высокая мощность',
+            keywords: ['RDM-150', 'шредер металла', 'redmonster', 'автомобильный шредер'],
+          },
+          ar: {
+            title: 'RDM-150 آلة تمزيق المعادن (Metal Shredder) | Redmonster | MT Makina',
+            description: 'آلة تمزيق المعادن RDM-150 Redmonster - محرك 2x75 كيلوواط، 150-200 طن/يوم. خردة السيارات، ELV. ✓ معتمد CE ✓ سعة عالية',
+            keywords: ['RDM-150', 'آلة تمزيق المعادن', 'redmonster', 'كسارة سيارات'],
+          }
+        },
+        'RDM-180': {
+          tr: {
+            title: 'RDM-180 Metal Parçalama Makinesi (Metal Shredder) | Redmonster | MT Makina',
+            description: 'RDM-180 metal parçalama makinesi Redmonster - 2x90 kW motor, 200-300 ton/gün kapasite. Ağır sanayi hurda parçalama. ✓ CE Belgeli ✓ Profesyonel Sınıf',
+            keywords: ['RDM-180', 'metal parçalama makinesi', 'redmonster', 'ağır sanayi'],
+          },
+          en: {
+            title: 'RDM-180 Metal Shredder | Redmonster | MT Makina',
+            description: 'RDM-180 metal shredder Redmonster - 2x90 kW motor, 200-300 ton/day capacity. Heavy industry scrap shredding. ✓ CE Certified ✓ Professional Grade',
+            keywords: ['RDM-180', 'metal shredder', 'redmonster', 'heavy industry shredder'],
+          },
+          ru: {
+            title: 'RDM-180 Шредер Металла (Metal Shredder) | Redmonster | MT Makina',
+            description: 'Шредер металла RDM-180 Redmonster - 2x90 кВт, 200-300 т/день. Тяжелая промышленность. ✓ Сертификат CE ✓ Профессиональный класс',
+            keywords: ['RDM-180', 'шредер металла', 'redmonster', 'тяжелая промышленность'],
+          },
+          ar: {
+            title: 'RDM-180 آلة تمزيق المعادن (Metal Shredder) | Redmonster | MT Makina',
+            description: 'آلة تمزيق المعادن RDM-180 Redmonster - محرك 2x90 كيلوواط، 200-300 طن/يوم. صناعة ثقيلة. ✓ معتمد CE ✓ درجة احترافية',
+            keywords: ['RDM-180', 'آلة تمزيق المعادن', 'redmonster', 'صناعة ثقيلة'],
+          }
+        },
+        'RDM-200': {
+          tr: {
+            title: 'RDM-200 Metal Parçalama Makinesi (Metal Shredder) | Redmonster | MT Makina',
+            description: 'RDM-200 metal parçalama makinesi Redmonster - 2x110 kW motor, 300-500 ton/gün kapasite. Premium sınıf mega metal parçalama. ✓ CE Belgeli ✓ En Yüksek Kapasite',
+            keywords: ['RDM-200', 'metal parçalama makinesi', 'redmonster', 'mega kapasite', 'premium'],
+          },
+          en: {
+            title: 'RDM-200 Metal Shredder | Redmonster | MT Makina',
+            description: 'RDM-200 metal shredder Redmonster - 2x110 kW motor, 300-500 ton/day capacity. Premium class mega metal shredding. ✓ CE Certified ✓ Highest Capacity',
+            keywords: ['RDM-200', 'metal shredder', 'redmonster', 'mega capacity', 'premium'],
+          },
+          ru: {
+            title: 'RDM-200 Шредер Металла (Metal Shredder) | Redmonster | MT Makina',
+            description: 'Шредер металла RDM-200 Redmonster премиум-класса - 2x110 кВт, 300-500 т/день. ✓ Сертификат CE ✓ Максимальная мощность',
+            keywords: ['RDM-200', 'шредер металла', 'redmonster', 'максимальная мощность'],
+          },
+          ar: {
+            title: 'RDM-200 آلة تمزيق المعادن (Metal Shredder) | Redmonster | MT Makina',
+            description: 'آلة تمزيق المعادن RDM-200 Redmonster من الفئة الممتازة - محرك 2x110 كيلوواط، 300-500 طن/يوم. ✓ معتمد CE ✓ أعلى سعة',
+            keywords: ['RDM-200', 'آلة تمزيق المعادن', 'redmonster', 'أعلى سعة'],
+          }
+        }
+      },
+      'mobile': {
+        'TSM-150': {
+          tr: {
+            title: 'TSM-150 Mobil Parçalama Makinesi (Mobile Shredder) | MT Makina',
+            description: 'TSM-150 mobil tek şaftlı parçalama makinesi - Dizel motor, 1500 kg/saat kapasite. Saha içi parçalama, taşınabilir. ✓ Trailer Üstü ✓ Yüksek Mobilite',
+            keywords: ['TSM-150', 'mobil parçalama', 'mobile shredder', 'taşınabilir shredder'],
+          },
+          en: {
+            title: 'TSM-150 Mobile Shredder | MT Makina',
+            description: 'TSM-150 mobile single shaft shredder - Diesel engine, 1500 kg/h capacity. On-site shredding, portable. ✓ Trailer Mounted ✓ High Mobility',
+            keywords: ['TSM-150', 'mobile shredder', 'portable shredder', 'on-site shredder'],
+          },
+          ru: {
+            title: 'TSM-150 Мобильный Шредер (Mobile Shredder) | MT Makina',
+            description: 'Мобильный одновальный шредер TSM-150 - дизельный двигатель, 1500 кг/ч. Измельчение на месте. ✓ На прицепе ✓ Высокая мобильность',
+            keywords: ['TSM-150', 'мобильный шредер', 'передвижной измельчитель'],
+          },
+          ar: {
+            title: 'TSM-150 آلة تمزيق متنقلة (Mobile Shredder) | MT Makina',
+            description: 'آلة تمزيق متنقلة عمود واحد TSM-150 - محرك ديزل، 1500 كجم/ساعة. تمزيق في الموقع. ✓ على مقطورة ✓ تنقل عالي',
+            keywords: ['TSM-150', 'آلة تمزيق متنقلة', 'آلة محمولة'],
+          }
+        },
+        'TSM-300': {
+          tr: {
+            title: 'TSM-300 Mobil Parçalama Makinesi (Mobile Shredder) | MT Makina',
+            description: 'TSM-300 mobil tek şaftlı parçalama makinesi - Dizel motor, 3000 kg/saat kapasite. Büyük saha projeleri için. ✓ Trailer Üstü ✓ Yüksek Kapasite',
+            keywords: ['TSM-300', 'mobil parçalama', 'mobile shredder', 'büyük kapasite mobil'],
+          },
+          en: {
+            title: 'TSM-300 Mobile Shredder | MT Makina',
+            description: 'TSM-300 mobile single shaft shredder - Diesel engine, 3000 kg/h capacity. For large site projects. ✓ Trailer Mounted ✓ High Capacity',
+            keywords: ['TSM-300', 'mobile shredder', 'high capacity mobile', 'portable shredder'],
+          },
+          ru: {
+            title: 'TSM-300 Мобильный Шредер (Mobile Shredder) | MT Makina',
+            description: 'Мобильный одновальный шредер TSM-300 - дизельный двигатель, 3000 кг/ч. Для крупных объектов. ✓ На прицепе ✓ Высокая мощность',
+            keywords: ['TSM-300', 'мобильный шредер', 'высокая мощность'],
+          },
+          ar: {
+            title: 'TSM-300 آلة تمزيق متنقلة (Mobile Shredder) | MT Makina',
+            description: 'آلة تمزيق متنقلة عمود واحد TSM-300 - محرك ديزل، 3000 كجم/ساعة. للمشاريع الكبيرة. ✓ على مقطورة ✓ سعة عالية',
+            keywords: ['TSM-300', 'آلة تمزيق متنقلة', 'سعة عالية'],
+          }
+        },
+        'CSM-150': {
+          tr: {
+            title: 'CSM-150 Mobil Çift Şaftlı Parçalama Makinesi (Mobile Dual Shaft) | MT Makina',
+            description: 'CSM-150 mobil çift şaftlı parçalama makinesi - Dizel motor, 1500 kg/saat kapasite. Saha içi ağır parçalama. ✓ Trailer Üstü ✓ Çift Şaft Gücü',
+            keywords: ['CSM-150', 'mobil çift şaftlı', 'mobile dual shaft', 'ağır mobil parçalama'],
+          },
+          en: {
+            title: 'CSM-150 Mobile Dual Shaft Shredder | MT Makina',
+            description: 'CSM-150 mobile dual shaft shredder - Diesel engine, 1500 kg/h capacity. Heavy on-site shredding. ✓ Trailer Mounted ✓ Dual Shaft Power',
+            keywords: ['CSM-150', 'mobile dual shaft', 'heavy mobile shredder', 'portable shredder'],
+          },
+          ru: {
+            title: 'CSM-150 Мобильный Двухвальный Шредер (Mobile Dual Shaft) | MT Makina',
+            description: 'Мобильный двухвальный шредер CSM-150 - дизельный двигатель, 1500 кг/ч. Тяжелое измельчение на месте. ✓ На прицепе ✓ Мощность двух валов',
+            keywords: ['CSM-150', 'мобильный двухвальный', 'тяжелый мобильный'],
+          },
+          ar: {
+            title: 'CSM-150 آلة تمزيق متنقلة عمود مزدوج (Mobile Dual Shaft) | MT Makina',
+            description: 'آلة تمزيق متنقلة عمود مزدوج CSM-150 - محرك ديزل، 1500 كجم/ساعة. تمزيق ثقيل في الموقع. ✓ على مقطورة ✓ قوة العمود المزدوج',
+            keywords: ['CSM-150', 'متنقلة عمود مزدوج', 'تمزيق ثقيل متنقل'],
+          }
+        },
+        'CSM-200': {
+          tr: {
+            title: 'CSM-200 Mobil Çift Şaftlı Parçalama Makinesi (Mobile Dual Shaft) | MT Makina',
+            description: 'CSM-200 mobil çift şaftlı parçalama makinesi - Dizel motor, 2000 kg/saat kapasite. En güçlü mobil çözüm. ✓ Trailer Üstü ✓ Premium Sınıf',
+            keywords: ['CSM-200', 'mobil çift şaftlı', 'mobile dual shaft', 'premium mobil shredder'],
+          },
+          en: {
+            title: 'CSM-200 Mobile Dual Shaft Shredder | MT Makina',
+            description: 'CSM-200 mobile dual shaft shredder - Diesel engine, 2000 kg/h capacity. Most powerful mobile solution. ✓ Trailer Mounted ✓ Premium Class',
+            keywords: ['CSM-200', 'mobile dual shaft', 'premium mobile shredder', 'powerful portable'],
+          },
+          ru: {
+            title: 'CSM-200 Мобильный Двухвальный Шредер (Mobile Dual Shaft) | MT Makina',
+            description: 'Мобильный двухвальный шредер CSM-200 - дизельный двигатель, 2000 кг/ч. Самый мощный мобильный. ✓ На прицепе ✓ Премиум класс',
+            keywords: ['CSM-200', 'мобильный двухвальный премиум', 'самый мощный'],
+          },
+          ar: {
+            title: 'CSM-200 آلة تمزيق متنقلة عمود مزدوج (Mobile Dual Shaft) | MT Makina',
+            description: 'آلة تمزيق متنقلة عمود مزدوج CSM-200 - محرك ديزل، 2000 كجم/ساعة. أقوى حل متنقل. ✓ على مقطورة ✓ فئة متميزة',
+            keywords: ['CSM-200', 'متنقلة عمود مزدوج متميزة', 'أقوى متنقلة'],
+          }
         }
       }
     }
