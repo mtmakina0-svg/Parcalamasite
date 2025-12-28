@@ -7,6 +7,21 @@
             "permanent": true
         },
         {
+            "source": "/ru/kontakt",
+            "destination": "/ru/kontakty",
+            "permanent": true
+        },
+        {
+            "source": "/en/wastes",
+            "destination": "/en/waste-types",
+            "permanent": true
+        },
+        {
+            "source": "/ru/otkhody/:waste",
+            "destination": "/ru/tipy-otkhodov/:waste",
+            "permanent": true
+        },
+        {
             "source": "/tr/",
             "destination": "/",
             "permanent": true
