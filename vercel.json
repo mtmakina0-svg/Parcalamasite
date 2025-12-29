@@ -117,8 +117,133 @@
             "permanent": true
         },
         {
+            "source": "/tr/atik-turleri/organic-waste",
+            "destination": "/tr/atik-turleri/organik-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/plastic-waste",
+            "destination": "/tr/atik-turleri/plastik-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/metal-waste",
+            "destination": "/tr/atik-turleri/metal-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/paper-cardboard-waste",
+            "destination": "/tr/atik-turleri/kagit-karton-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/tire-waste",
+            "destination": "/tr/atik-turleri/lastik-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/electronic-waste",
+            "destination": "/tr/atik-turleri/elektronik-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/packaging-waste",
+            "destination": "/tr/atik-turleri/ambalaj-atiklari",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/glass-waste",
+            "destination": "/tr/atik-turleri/cam-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/pallet-waste",
+            "destination": "/tr/atik-turleri/palet-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/household-waste",
+            "destination": "/tr/atik-turleri/evsel-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/medical-waste",
+            "destination": "/tr/atik-turleri/tibbi-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atik-turleri/animal-waste",
+            "destination": "/tr/atik-turleri/hayvansal-atiklar",
+            "permanent": true
+        },
+        {
             "source": "/tr/atik-turleri/ambalaj",
             "destination": "/tr/atik-turleri/ambalaj-atiklari",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/organic-waste",
+            "destination": "/ru/tipy-otkhodov/organicheskie-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/plastic-waste",
+            "destination": "/ru/tipy-otkhodov/plastikovye-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/metal-waste",
+            "destination": "/ru/tipy-otkhodov/metallicheskie-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/paper-cardboard-waste",
+            "destination": "/ru/tipy-otkhodov/bumazhnye-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/tire-waste",
+            "destination": "/ru/tipy-otkhodov/shinnye-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/electronic-waste",
+            "destination": "/ru/tipy-otkhodov/elektronnye-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/glass-waste",
+            "destination": "/ru/tipy-otkhodov/steklyannye-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ru/tipy-otkhodov/medical-waste",
+            "destination": "/ru/tipy-otkhodov/meditsinskie-othody",
+            "permanent": true
+        },
+        {
+            "source": "/ar/anwa-alnfayat/organic-waste",
+            "destination": "/ar/anwa-alnfayat/nfayat-adwya",
+            "permanent": true
+        },
+        {
+            "source": "/ar/anwa-alnfayat/plastic-waste",
+            "destination": "/ar/anwa-alnfayat/nfayat-blastykya",
+            "permanent": true
+        },
+        {
+            "source": "/ar/anwa-alnfayat/metal-waste",
+            "destination": "/ar/anwa-alnfayat/nfayat-madnya",
+            "permanent": true
+        },
+        {
+            "source": "/ar/anwa-alnfayat/electronic-waste",
+            "destination": "/ar/anwa-alnfayat/nfayat-alktrwnya",
+            "permanent": true
+        },
+        {
+            "source": "/ar/anwa-alnfayat/medical-waste",
+            "destination": "/ar/anwa-alnfayat/nfayat-tbya",
             "permanent": true
         },
         {
