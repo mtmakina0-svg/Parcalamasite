@@ -22,6 +22,31 @@
             "permanent": true
         },
         {
+            "source": "/en/atiklar/:waste",
+            "destination": "/en/waste-types/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/en/atiklar",
+            "destination": "/en/waste-types",
+            "permanent": true
+        },
+        {
+            "source": "/en/home",
+            "destination": "/en",
+            "permanent": true
+        },
+        {
+            "source": "/home",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/aboutus",
+            "destination": "/tr/kurumsal",
+            "permanent": true
+        },
+        {
             "source": "/tr/",
             "destination": "/",
             "permanent": true
