@@ -17,8 +17,18 @@
             "permanent": true
         },
         {
+            "source": "/en/wastes/:waste",
+            "destination": "/en/waste-types/:waste",
+            "permanent": true
+        },
+        {
             "source": "/ru/otkhody/:waste",
             "destination": "/ru/tipy-otkhodov/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/ru/otkhody",
+            "destination": "/ru/tipy-otkhodov",
             "permanent": true
         },
         {
