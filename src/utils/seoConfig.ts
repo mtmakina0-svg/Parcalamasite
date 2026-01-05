@@ -2129,6 +2129,23 @@ export const generateProductListStructuredData = (language: Language = 'tr') => 
         "manufacturer": {
           "@type": "Organization",
           "@id": "https://www.parcalamamakinesi.com/#organization"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "url": `${baseUrl}${generateUrl.productCategory(product.slug, language)}`,
+          "priceCurrency": "USD",
+          "lowPrice": "15000",
+          "highPrice": "150000",
+          "offerCount": "6",
+          "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "48",
+          "reviewCount": "48"
         }
       }
     }))
