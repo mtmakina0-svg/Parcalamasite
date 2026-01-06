@@ -18,23 +18,32 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
 
     // Generate JSON-LD Schema for breadcrumbs
     // Google requires 'item' field for all ListItem elements
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+    // During SSR, window.location may not exist, so we build URL from baseUrl + href
     const baseUrl = 'https://www.parcalamamakinesi.com';
 
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": items.map((item, index) => {
-            // Last item should use current page URL if no href provided
-            const itemUrl = item.href
-                ? `${baseUrl}${item.href}`
-                : (index === items.length - 1 ? currentUrl || `${baseUrl}/${language}` : `${baseUrl}/${language}`);
+            // Build URL properly - ensure it's never empty
+            let itemUrl: string;
+            if (item.href) {
+                // Use provided href with baseUrl
+                itemUrl = item.href.startsWith('http') ? item.href : `${baseUrl}${item.href}`;
+            } else {
+                // Last item without href - use language homepage as fallback
+                itemUrl = `${baseUrl}/${language}`;
+            }
 
             return {
                 "@type": "ListItem",
                 "position": index + 1,
                 "name": item.label,
-                "item": itemUrl
+                "item": {
+                    "@type": "WebPage",
+                    "@id": itemUrl,
+                    "name": item.label
+                }
             };
         })
     };
