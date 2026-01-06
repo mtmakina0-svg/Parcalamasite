@@ -15,12 +15,12 @@ export const IntroSection = () => {
 
   return (
     <section
-      className="py-24 bg-gradient-to-b from-[#35373A] to-[#45474B] relative"
+      className="py-12 md:py-24 bg-gradient-to-b from-[#35373A] to-[#45474B] relative"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: 'linear-gradient(rgba(244,206,20,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(244,206,20,0.1) 1px, transparent 1px)',
@@ -38,7 +38,7 @@ export const IntroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-5xl mx-auto"
         >
-          <h2 
+          <h2
             className="text-3xl md:text-4xl text-[#F4CE14] mb-8"
             style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
           >

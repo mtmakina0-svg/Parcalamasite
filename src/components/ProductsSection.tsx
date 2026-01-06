@@ -163,7 +163,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 80 }}
-          className="text-center mb-8 md:mb-20"
+          className="text-center mb-6 md:mb-16"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -221,12 +221,12 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
         </motion.div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ transform: 'scale(0.8)', transformOrigin: 'center', minHeight: '400px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
@@ -244,7 +244,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                 onProductClick?.(product.id);
               }}
             >
-              <Card className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 h-full min-h-[350px] bg-[#F5F7F8] relative">
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 h-full min-h-[280px] md:min-h-[350px] bg-[#F5F7F8] relative">
                 {/* Background Image - Full Coverage */}
                 <div className="absolute inset-0 overflow-hidden">
                   {product.image ? (
