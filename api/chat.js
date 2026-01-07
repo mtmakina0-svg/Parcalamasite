@@ -1,11 +1,11 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+const fetch = require('node-fetch');
 
 // Environment variable - set in Vercel Dashboard, NOT in frontend
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 // Rate limiting: simple in-memory store (resets on cold start)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const rateLimitMap = new Map();
 const RATE_LIMIT = 20; // requests per minute
 const RATE_WINDOW = 60 * 1000; // 1 minute
 
@@ -55,17 +55,7 @@ const SYSTEM_PROMPT = `Sen MT Makina'nın resmi AI asistanısın. Adın "MT Asis
 6. Teknik soruları detaylı açıkla
 7. Bilinmeyen konularda WhatsApp'a yönlendir`;
 
-interface ChatMessage {
-    role: 'user' | 'assistant';
-    content: string;
-}
-
-interface GeminiContent {
-    role: string;
-    parts: { text: string }[];
-}
-
-function getClientIP(req: VercelRequest): string {
+function getClientIP(req) {
     const forwarded = req.headers['x-forwarded-for'];
     if (typeof forwarded === 'string') {
         return forwarded.split(',')[0].trim();
@@ -73,7 +63,7 @@ function getClientIP(req: VercelRequest): string {
     return req.socket?.remoteAddress || 'unknown';
 }
 
-function checkRateLimit(ip: string): boolean {
+function checkRateLimit(ip) {
     const now = Date.now();
     const record = rateLimitMap.get(ip);
 
@@ -90,7 +80,7 @@ function checkRateLimit(ip: string): boolean {
     return true;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+module.exports = async function handler(req, res) {
     // Only allow POST
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
@@ -109,18 +99,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-        const { message, history, language } = req.body as {
-            message: string;
-            history: ChatMessage[];
-            language: string;
-        };
+        const { message, history, language } = req.body;
 
         if (!message || typeof message !== 'string') {
             return res.status(400).json({ error: 'Message is required' });
         }
 
         // Build conversation for Gemini
-        const contents: GeminiContent[] = [];
+        const contents = [];
 
         // System prompt
         contents.push({
@@ -190,4 +176,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         console.error('Chat API error:', error);
         return res.status(500).json({ error: 'Internal server error' });
     }
-}
+};
