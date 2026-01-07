@@ -10,6 +10,9 @@
         "@react-three/fiber": "^8.15.19",
         "class-variance-authority": "^0.7.1",
         "clsx": "*",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1",
         "lucide-react": "^0.487.0",
         "motion": "*",
         "node-fetch": "^2.7.0",
@@ -37,6 +40,7 @@
     },
     "scripts": {
         "dev": "vite",
+        "dev:full": "start node server.js && vite",
         "build": "vite build && npm run sitemap-index",
         "sitemap": "tsx scripts/generate-sitemap.ts",
         "sitemap-index": "tsx scripts/generate-sitemap-index.ts",
