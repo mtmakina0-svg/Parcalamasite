@@ -2036,6 +2036,68 @@ export const generateFAQStructuredData = (faqs: { question: string; answer: stri
   };
 };
 
+// Generate HowTo structured data for process/tutorial content
+export const generateHowToStructuredData = (howTo: {
+  name: string;
+  description: string;
+  totalTime?: string;
+  estimatedCost?: { currency: string; value: string };
+  steps: { name: string; text: string; image?: string }[];
+}) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": howTo.name,
+    "description": howTo.description,
+    ...(howTo.totalTime && { "totalTime": howTo.totalTime }),
+    ...(howTo.estimatedCost && {
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": howTo.estimatedCost.currency,
+        "value": howTo.estimatedCost.value
+      }
+    }),
+    "step": howTo.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text,
+      ...(step.image && { "image": step.image })
+    }))
+  };
+};
+
+// Generate VideoObject structured data
+export const generateVideoStructuredData = (video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration?: string;
+  contentUrl?: string;
+  embedUrl?: string;
+}) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": video.name,
+    "description": video.description,
+    "thumbnailUrl": video.thumbnailUrl,
+    "uploadDate": video.uploadDate,
+    ...(video.duration && { "duration": video.duration }),
+    ...(video.contentUrl && { "contentUrl": video.contentUrl }),
+    ...(video.embedUrl && { "embedUrl": video.embedUrl }),
+    "publisher": {
+      "@type": "Organization",
+      "name": "MT Makina",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png"
+      }
+    }
+  };
+};
+
 // Generate Product List structured data for Google Rich Results (All Products)
 export const generateProductListStructuredData = (language: Language = 'tr') => {
   const baseUrl = 'https://www.parcalamamakinesi.com';

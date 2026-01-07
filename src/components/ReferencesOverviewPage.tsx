@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Award, Globe, ThumbsUp, Building2, Factory, Briefcase, Landmark } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useLanguage } from './LanguageContext';
+import { CustomerWorldMap } from './CustomerWorldMap';
 
 interface ReferencesOverviewPageProps {
   onBackToMain: () => void;
@@ -23,7 +24,7 @@ const partners: Partner[] = [
   { name: 'PepsiCo', logo: 'https://i.ibb.co/PGmvrMtt/Pepsi-Co-logo-svg.png', category: 'global', alt: 'PepsiCo Logo' },
   { name: 'Mercedes-Benz', logo: 'https://i.ibb.co/W4zzSD4P/1200px-Mercedes-Benz-Logo-11.jpg', category: 'global', alt: 'Mercedes-Benz Logo' },
   { name: 'Bosch', logo: 'https://i.ibb.co/JWsYZqCK/Bosch-logo-svg.png', category: 'global', alt: 'Bosch Logo' },
-  
+
   // Industry & Manufacturing
   { name: 'Golden Rose', logo: 'https://i.ibb.co/whyptjcT/golden-rose.png', category: 'industry', alt: 'Golden Rose Kozmetik Logo' },
   { name: 'Betek Boya', logo: 'https://i.ibb.co/FqcdPgpG/betek-boya-logo-brandlogos-net-slepl.png', category: 'industry', alt: 'Betek Boya Logo' },
@@ -54,40 +55,40 @@ const partners: Partner[] = [
 export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageProps) => {
   const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = React.useState<string>('all');
-  
+
   const categories = [
-    { 
-      id: 'global', 
-      titleKey: 'ref_cat_global', 
-      icon: Globe, 
+    {
+      id: 'global',
+      titleKey: 'ref_cat_global',
+      icon: Globe,
       descKey: 'ref_cat_global_desc',
       color: 'from-blue-500 to-blue-600'
     },
-    { 
-      id: 'industry', 
-      titleKey: 'ref_cat_industry', 
-      icon: Factory, 
+    {
+      id: 'industry',
+      titleKey: 'ref_cat_industry',
+      icon: Factory,
       descKey: 'ref_cat_industry_desc',
       color: 'from-orange-500 to-orange-600'
     },
-    { 
-      id: 'defense', 
-      titleKey: 'ref_cat_defense', 
-      icon: Briefcase, 
+    {
+      id: 'defense',
+      titleKey: 'ref_cat_defense',
+      icon: Briefcase,
       descKey: 'ref_cat_defense_desc',
       color: 'from-red-500 to-red-600'
     },
-    { 
-      id: 'government', 
-      titleKey: 'ref_cat_government', 
-      icon: Landmark, 
+    {
+      id: 'government',
+      titleKey: 'ref_cat_government',
+      icon: Landmark,
       descKey: 'ref_cat_government_desc',
       color: 'from-green-500 to-green-600'
     }
   ];
 
-  const filteredPartners = activeCategory === 'all' 
-    ? partners 
+  const filteredPartners = activeCategory === 'all'
+    ? partners
     : partners.filter(p => p.category === activeCategory);
 
   return (
@@ -105,7 +106,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             animation: 'float 20s ease-in-out infinite'
           }}></div>
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 lg:px-8 max-w-[1440px] text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -193,6 +194,21 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
         </div>
       </section>
 
+      {/* World Map Section */}
+      <section className="py-16 bg-[#F5F7F8]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+          <CustomerWorldMap
+            translations={{
+              title: t('ref_map_title') || 'Küresel İhracat Ağımız',
+              subtitle: t('ref_map_subtitle') || '50\'den fazla ülkeye parçalama makineleri ihraç ediyoruz',
+              countries: t('ref_map_countries') || 'Ülke',
+              headquarters: t('ref_map_hq') || 'Merkez - İstanbul',
+              customers: t('ref_map_customers') || 'Müşteri Bölgeleri',
+            }}
+          />
+        </div>
+      </section>
+
       {/* Category Filter */}
       <section className="py-12 bg-gradient-to-b from-white to-[#F5F7F8]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
@@ -215,11 +231,10 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory('all')}
-              className={`px-6 py-3 rounded-lg transition-all ${
-                activeCategory === 'all'
-                  ? 'bg-[#F4CE14] text-[#1E1E1E] shadow-lg'
-                  : 'bg-white text-[#45474B] hover:bg-[#F4CE14]/20'
-              }`}
+              className={`px-6 py-3 rounded-lg transition-all ${activeCategory === 'all'
+                ? 'bg-[#F4CE14] text-[#1E1E1E] shadow-lg'
+                : 'bg-white text-[#45474B] hover:bg-[#F4CE14]/20'
+                }`}
             >
               {t('ref_filter_all')} ({partners.length})
             </motion.button>
@@ -231,11 +246,10 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 rounded-lg transition-all flex items-center gap-2 ${
-                    activeCategory === category.id
-                      ? 'bg-[#F4CE14] text-[#1E1E1E] shadow-lg'
-                      : 'bg-white text-[#45474B] hover:bg-[#F4CE14]/20'
-                  }`}
+                  className={`px-6 py-3 rounded-lg transition-all flex items-center gap-2 ${activeCategory === category.id
+                    ? 'bg-[#F4CE14] text-[#1E1E1E] shadow-lg'
+                    : 'bg-white text-[#45474B] hover:bg-[#F4CE14]/20'
+                    }`}
                 >
                   <category.icon size={20} />
                   {t(category.titleKey)} ({count})
@@ -312,7 +326,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             className="max-w-4xl mx-auto text-center"
           >
             <svg width="60" height="60" viewBox="0 0 24 24" fill="#F4CE14" className="mx-auto mb-6 opacity-50">
-              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
             </svg>
             <p className="text-2xl md:text-3xl text-[#F5F7F8] mb-6 italic leading-relaxed">
               {t('ref_testimonial_text')}
@@ -353,7 +367,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
       <section className="py-20 bg-[#45474B]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
           <h2 className="text-3xl text-[#F4CE14] mb-12 text-center">{t('tech_contact_title')}</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Address */}
             <motion.div
@@ -365,7 +379,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             >
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="28" height="28" fill="#1E1E1E" viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
               </div>
               <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_address')}</h3>
@@ -384,7 +398,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             >
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="28" height="28" fill="#1E1E1E" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
               </div>
               <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_phone')}</h3>
@@ -401,7 +415,7 @@ export const ReferencesOverviewPage = ({ onBackToMain }: ReferencesOverviewPageP
             >
               <div className="w-16 h-16 bg-[#F4CE14] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="28" height="28" fill="#1E1E1E" viewBox="0 0 24 24">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </div>
               <h3 className="text-xl text-[#F5F7F8] mb-3">{t('tech_contact_email')}</h3>
