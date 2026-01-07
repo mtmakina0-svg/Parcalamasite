@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 // Environment variable - set in Vercel Dashboard, NOT in frontend
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite-preview-09-2025:generateContent';
 
 // Rate limiting: simple in-memory store (resets on cold start)
 const rateLimitMap = new Map();
