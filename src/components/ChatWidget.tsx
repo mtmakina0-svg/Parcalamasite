@@ -101,11 +101,11 @@ export const ChatWidget: React.FC = () => {
     }
   };
 
-  // Parse message content and render URLs as clickable links
+  // Parse message content and render URLs as clickable links with proper formatting
   const renderMessageContent = (content: string) => {
     // Clean up markdown formatting
     let cleanContent = content
-      // Remove markdown bold
+      // Remove markdown bold but keep the text
       .replace(/\*\*(.*?)\*\*/g, '$1')
       // Remove markdown italic
       .replace(/\*(.*?)\*/g, '$1')
@@ -114,33 +114,57 @@ export const ChatWidget: React.FC = () => {
       // Remove leftover brackets around URLs
       .replace(/\[?(https?:\/\/[^\s\]]+)\]?/g, '$1');
 
-    // Split content by URLs and render
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    const parts = cleanContent.split(urlRegex);
+    // Split by double newlines (paragraphs) or numbered lists
+    const paragraphs = cleanContent.split(/\n\n+|\n(?=\d+\.)/);
 
-    return parts.map((part, index) => {
-      if (urlRegex.test(part)) {
-        // Reset regex lastIndex
-        urlRegex.lastIndex = 0;
-        // Clean trailing punctuation from URL
-        const cleanUrl = part.replace(/[.,;:!?)]+$/, '');
-        const trailing = part.slice(cleanUrl.length);
-        return (
-          <span key={index}>
-            <a
-              href={cleanUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1170B5] hover:text-[#0a5a8f] underline"
-            >
-              🔗 Ziyaret Et
-            </a>
-            {trailing}
-          </span>
-        );
-      }
-      return <span key={index}>{part}</span>;
-    });
+    return (
+      <div className="space-y-3">
+        {paragraphs.map((paragraph, pIndex) => {
+          // Check if it's a numbered item
+          const isNumberedItem = /^\d+\./.test(paragraph.trim());
+
+          // Split content by URLs and render
+          const urlRegex = /(https?:\/\/[^\s]+)/g;
+          const parts = paragraph.split(urlRegex);
+
+          const renderedParts = parts.map((part, index) => {
+            if (urlRegex.test(part)) {
+              urlRegex.lastIndex = 0;
+              const cleanUrl = part.replace(/[.,;:!?)]+$/, '');
+              const trailing = part.slice(cleanUrl.length);
+              return (
+                <span key={index}>
+                  <a
+                    href={cleanUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-50 text-[#1170B5] hover:bg-blue-100 rounded-md text-xs font-medium transition-colors"
+                  >
+                    🔗 Sayfaya Git
+                  </a>
+                  {trailing}
+                </span>
+              );
+            }
+            return <span key={index}>{part}</span>;
+          });
+
+          if (isNumberedItem) {
+            return (
+              <div key={pIndex} className="pl-2 border-l-2 border-gray-200 py-1">
+                {renderedParts}
+              </div>
+            );
+          }
+
+          return (
+            <p key={pIndex} className="leading-relaxed">
+              {renderedParts}
+            </p>
+          );
+        })}
+      </div>
+    );
   };
 
   return (
