@@ -128,13 +128,40 @@ export default defineConfig({
     outDir: 'build',
     minify: 'esbuild',
     cssCodeSplit: true,
+    cssMinify: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-motion': ['motion/react'],
-          'vendor-ui': ['lucide-react'],
+        manualChunks: (id) => {
+          // Core React - loaded first
+          if (id.includes('react-dom') || id.includes('react/')) {
+            return 'vendor-react';
+          }
+          // Animation library - used across pages
+          if (id.includes('motion')) {
+            return 'vendor-motion';
+          }
+          // Icons - commonly used
+          if (id.includes('lucide-react')) {
+            return 'vendor-icons';
+          }
+          // Map library - only for references page
+          if (id.includes('react-simple-maps') || id.includes('d3-') || id.includes('topojson')) {
+            return 'vendor-maps';
+          }
+          // Radix UI components - loaded on demand
+          if (id.includes('@radix-ui')) {
+            return 'vendor-radix';
+          }
+          // Other node_modules
+          if (id.includes('node_modules')) {
+            return 'vendor-common';
+          }
         },
+        // Optimize chunk file names
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
   },

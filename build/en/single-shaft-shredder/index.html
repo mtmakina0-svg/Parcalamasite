@@ -223,11 +223,65 @@
     </script>
 
   <style>
+    /* Critical CSS - Above the fold styles for faster FCP/LCP */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
+      font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+      background-color: #45474B;
+      color: #F5F7F8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
+    /* Header critical styles */
+    header,
+    .header {
+      background-color: rgba(30, 30, 30, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 80px;
+    }
+
+    /* Hero section critical styles */
+    .hero,
+    [class*="hero"] {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #45474B 0%, #1E1E1E 100%);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Primary button */
+    .btn-primary,
+    [class*="btn-primary"] {
+      background-color: #F4CE14;
+      color: #1E1E1E;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    /* Loading state */
     #app-loading-wrapper {
       position: fixed;
       top: 0;
@@ -240,15 +294,13 @@
       justify-content: center;
       align-items: center;
       z-index: 99999;
-      font-family: 'Segoe UI', system-ui, sans-serif;
     }
 
     .spinner {
       width: 50px;
       height: 50px;
       border: 4px solid #f3f3f3;
-      border-top: 4px solid #e67e22;
-      /* Turuncu Marka Rengi */
+      border-top: 4px solid #F4CE14;
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin-bottom: 15px;
@@ -256,10 +308,8 @@
 
     .loading-text {
       color: #2c3e50;
-      /* Koyu Mavi Marka Rengi */
       font-weight: 600;
       font-size: 1.2rem;
-      letter-spacing: 0.5px;
     }
 
     @keyframes spin {
@@ -271,12 +321,26 @@
         transform: rotate(360deg);
       }
     }
+
+    /* Prevent layout shift */
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Hide content until React loads */
+    #root:not(:has(#app-loading-wrapper))>*:not(#app-loading-wrapper) {
+      opacity: 1;
+    }
   </style>
-  <script type="module" crossorigin="" src="/assets/index-DxfCzbsn.js"></script>
-  <link rel="modulepreload" crossorigin="" href="/assets/vendor-react-DDxydHEc.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/vendor-motion-DsMQ5AKC.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/vendor-ui-CoogbpIf.js">
-  <link rel="stylesheet" crossorigin="" href="/assets/index-fsT08JxH.css">
+  <script type="module" crossorigin="" src="/assets/index-Cvn2EvQG.js"></script>
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-common-6g6FwJfV.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-react-DcvfXweg.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-radix-CNsMD7RR.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-motion-BqQwhIky.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-maps-B8L7MA1i.js">
+  <link rel="stylesheet" crossorigin="" href="/assets/index-Dukd0YJm.css">
 </head>
 
 <body>

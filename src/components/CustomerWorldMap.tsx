@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps';
 import { motion } from 'motion/react';
 
 // World map topology
@@ -21,13 +21,9 @@ const exportCountries = [
 const markers = [
     { name: 'İstanbul', coordinates: [29.0, 41.0] as [number, number], type: 'hq' },
     { name: 'Berlin', coordinates: [13.4, 52.5] as [number, number], type: 'customer' },
-    { name: 'Paris', coordinates: [2.3, 48.9] as [number, number], type: 'customer' },
-    { name: 'London', coordinates: [-0.1, 51.5] as [number, number], type: 'customer' },
     { name: 'Dubai', coordinates: [55.3, 25.3] as [number, number], type: 'customer' },
     { name: 'Riyadh', coordinates: [46.7, 24.7] as [number, number], type: 'customer' },
     { name: 'Moscow', coordinates: [37.6, 55.8] as [number, number], type: 'customer' },
-    { name: 'Cairo', coordinates: [31.2, 30.0] as [number, number], type: 'customer' },
-    { name: 'Mumbai', coordinates: [72.9, 19.1] as [number, number], type: 'customer' },
 ];
 
 interface CustomerWorldMapProps {
@@ -42,121 +38,142 @@ interface CustomerWorldMapProps {
 
 export const CustomerWorldMap: React.FC<CustomerWorldMapProps> = ({ translations }) => {
     const [hoveredCountry, setHoveredCountry] = React.useState<string | null>(null);
+    const [selectedCountry, setSelectedCountry] = React.useState<string | null>(null);
+
+    const handleCountryClick = (countryName: string) => {
+        if (exportCountries.includes(countryName)) {
+            setSelectedCountry(selectedCountry === countryName ? null : countryName);
+        }
+    };
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="relative"
         >
-            {/* Header */}
-            <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl text-[#45474B] mb-4">
+            {/* Compact Header */}
+            <div className="text-center mb-4">
+                <h2 className="text-2xl md:text-3xl text-[#45474B] mb-2">
                     {translations.title}
                 </h2>
-                <p className="text-lg text-[#45474B]/70 max-w-2xl mx-auto">
+                <p className="text-sm text-[#45474B]/70 max-w-xl mx-auto">
                     {translations.subtitle}
                 </p>
             </div>
 
-            {/* Map Container */}
-            <div className="bg-gradient-to-br from-[#1E3A5F] to-[#0F2942] rounded-2xl overflow-hidden shadow-2xl p-4 md:p-8">
-                <ComposableMap
-                    projectionConfig={{
-                        scale: 147,
-                        center: [20, 20],
-                    }}
-                    style={{ width: '100%', height: 'auto' }}
-                >
-                    <Geographies geography={geoUrl}>
-                        {({ geographies }) =>
-                            geographies.map((geo) => {
-                                const isExportCountry = exportCountries.includes(geo.properties.name);
-                                const isHovered = hoveredCountry === geo.properties.name;
+            {/* Compact Map Container */}
+            <div className="bg-gradient-to-br from-[#1E3A5F] to-[#0F2942] rounded-xl overflow-hidden shadow-xl relative">
+                {/* Map - Smaller height */}
+                <div className="max-h-[350px] overflow-hidden">
+                    <ComposableMap
+                        projectionConfig={{
+                            scale: 220,
+                            center: [35, 35],
+                        }}
+                        style={{ width: '100%', height: '350px' }}
+                    >
+                        <ZoomableGroup center={[35, 35]} zoom={1}>
+                            <Geographies geography={geoUrl}>
+                                {({ geographies }) =>
+                                    geographies.map((geo: any) => {
+                                        const isExportCountry = exportCountries.includes(geo.properties.name);
+                                        const isSelected = selectedCountry === geo.properties.name;
 
-                                return (
-                                    <Geography
-                                        key={geo.rsmKey}
-                                        geography={geo}
-                                        onMouseEnter={() => setHoveredCountry(geo.properties.name)}
-                                        onMouseLeave={() => setHoveredCountry(null)}
-                                        style={{
-                                            default: {
-                                                fill: isExportCountry ? '#F4CE14' : '#3a4f61',
-                                                stroke: '#1E3A5F',
-                                                strokeWidth: 0.5,
-                                                outline: 'none',
-                                                transition: 'fill 0.3s',
-                                            },
-                                            hover: {
-                                                fill: isExportCountry ? '#FFD93D' : '#4a6478',
-                                                stroke: '#1E3A5F',
-                                                strokeWidth: 0.5,
-                                                outline: 'none',
-                                                cursor: isExportCountry ? 'pointer' : 'default',
-                                            },
-                                            pressed: {
-                                                fill: isExportCountry ? '#E6B800' : '#3a4f61',
-                                                stroke: '#1E3A5F',
-                                                strokeWidth: 0.5,
-                                                outline: 'none',
-                                            },
-                                        }}
+                                        return (
+                                            <Geography
+                                                key={geo.rsmKey}
+                                                geography={geo}
+                                                onMouseEnter={() => setHoveredCountry(geo.properties.name)}
+                                                onMouseLeave={() => setHoveredCountry(null)}
+                                                onClick={() => handleCountryClick(geo.properties.name)}
+                                                style={{
+                                                    default: {
+                                                        fill: isSelected ? '#22c55e' : isExportCountry ? '#F4CE14' : '#3a4f61',
+                                                        stroke: '#1E3A5F',
+                                                        strokeWidth: 0.3,
+                                                        outline: 'none',
+                                                        transition: 'all 0.2s',
+                                                    },
+                                                    hover: {
+                                                        fill: isExportCountry ? '#FFD93D' : '#4a6478',
+                                                        stroke: '#1E3A5F',
+                                                        strokeWidth: 0.5,
+                                                        outline: 'none',
+                                                        cursor: isExportCountry ? 'pointer' : 'default',
+                                                    },
+                                                    pressed: {
+                                                        fill: isExportCountry ? '#22c55e' : '#3a4f61',
+                                                        outline: 'none',
+                                                    },
+                                                }}
+                                            />
+                                        );
+                                    })
+                                }
+                            </Geographies>
+
+                            {/* Markers - Clickable */}
+                            {markers.map((marker) => (
+                                <Marker key={marker.name} coordinates={marker.coordinates}>
+                                    <motion.circle
+                                        r={marker.type === 'hq' ? 6 : 3}
+                                        fill={marker.type === 'hq' ? '#22c55e' : '#fff'}
+                                        stroke={marker.type === 'hq' ? '#fff' : '#F4CE14'}
+                                        strokeWidth={1.5}
+                                        style={{ cursor: 'pointer' }}
+                                        whileHover={{ scale: 1.5 }}
+                                        onClick={() => setSelectedCountry(marker.name)}
                                     />
-                                );
-                            })
-                        }
-                    </Geographies>
+                                    {marker.type === 'hq' && (
+                                        <circle
+                                            r={10}
+                                            fill="none"
+                                            stroke="#22c55e"
+                                            strokeWidth={1}
+                                            opacity={0.4}
+                                        />
+                                    )}
+                                </Marker>
+                            ))}
+                        </ZoomableGroup>
+                    </ComposableMap>
+                </div>
 
-                    {/* Markers */}
-                    {markers.map((marker) => (
-                        <Marker key={marker.name} coordinates={marker.coordinates}>
-                            <circle
-                                r={marker.type === 'hq' ? 8 : 4}
-                                fill={marker.type === 'hq' ? '#22c55e' : '#F4CE14'}
-                                stroke="#fff"
-                                strokeWidth={2}
-                                style={{ cursor: 'pointer' }}
-                            />
-                            {marker.type === 'hq' && (
-                                <circle
-                                    r={12}
-                                    fill="none"
-                                    stroke="#22c55e"
-                                    strokeWidth={2}
-                                    opacity={0.5}
-                                    className="animate-ping"
-                                />
-                            )}
-                        </Marker>
-                    ))}
-                </ComposableMap>
-
-                {/* Hovered Country Tooltip */}
-                {hoveredCountry && exportCountries.includes(hoveredCountry) && (
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
-                        <p className="text-[#45474B] font-medium">{hoveredCountry}</p>
-                    </div>
+                {/* Floating Tooltip */}
+                {(hoveredCountry || selectedCountry) && exportCountries.includes(hoveredCountry || selectedCountry || '') && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg"
+                    >
+                        <p className="text-[#45474B] font-medium text-sm">📍 {hoveredCountry || selectedCountry}</p>
+                    </motion.div>
                 )}
 
-                {/* Legend */}
-                <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-white/80 text-sm">
-                    <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded-full bg-[#22c55e] border-2 border-white"></div>
+                {/* Compact Legend */}
+                <div className="flex flex-wrap items-center justify-center gap-4 py-3 px-4 bg-[#0F2942]/50 text-white/90 text-xs">
+                    <div className="flex items-center gap-1.5">
+                        <div className="w-3 h-3 rounded-full bg-[#22c55e] border border-white"></div>
                         <span>{translations.headquarters}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded bg-[#F4CE14]"></div>
+                    <div className="flex items-center gap-1.5">
+                        <div className="w-3 h-3 rounded bg-[#F4CE14]"></div>
                         <span>{translations.customers}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <span className="text-[#F4CE14] font-bold text-lg">50+</span>
+                    <div className="flex items-center gap-1.5">
+                        <span className="text-[#F4CE14] font-bold">50+</span>
                         <span>{translations.countries}</span>
                     </div>
                 </div>
             </div>
+
+            {/* Click instruction */}
+            <p className="text-center text-xs text-[#45474B]/50 mt-2">
+                💡 Ülkelere tıklayarak detay görebilirsiniz
+            </p>
         </motion.div>
     );
 };
