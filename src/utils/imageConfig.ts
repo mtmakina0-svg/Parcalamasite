@@ -334,6 +334,9 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
     }
   },
   'glass': {
+    'CK-200': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CK-400': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
+    'CKS-400': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
     'GB-300': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
   },
   'harddisk': {

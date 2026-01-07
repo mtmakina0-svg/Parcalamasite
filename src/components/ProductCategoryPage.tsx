@@ -24,7 +24,7 @@ const availableModels: { [key: string]: string[] } = {
   'harddisk': ['DATABER-S', 'DATABER-D', 'DATABER-T'],
   'tree-root': ['TW-100', 'TW-150', 'TW-200'],
   'wood': ['TSY-100', 'TSY-150', 'TSY-200'],
-  'glass': ['GB-300'],
+  'glass': ['CK-200', 'CK-400', 'CKS-400', 'GB-300'],
   'granulator': ['GR-400', 'GR-600', 'GR-800'],
   'baler': ['BP-60', 'BP-100'],
   'conveyor': ['CV-3M', 'CV-5M', 'CV-10M'],
@@ -97,6 +97,9 @@ const modelCardInfo: { [key: string]: { [model: string]: ModelCardInfo } } = {
     'TSY-200': { capacity: 'Rotor: 2000 mm', power: '90–200 kW (2X)', rotorLength: '2000 mm' }
   },
   'glass': {
+    'CK-200': { capacity: '100-200 kg/saat', power: '1.5-3 kW', rotorLength: '200 mm' },
+    'CK-400': { capacity: '300-500 kg/saat', power: '4-5.5 kW', rotorLength: '400 mm' },
+    'CKS-400': { capacity: '400-600 kg/saat', power: '5.5-7.5 kW', rotorLength: '400 mm' },
     'GB-300': { capacity: '500-800 kg/saat', power: '11-15 kW', rotorLength: '300 mm' }
   }
 };
