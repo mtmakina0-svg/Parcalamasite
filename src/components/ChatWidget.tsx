@@ -6,14 +6,41 @@ import { sendMessageToGemini, getWelcomeMessage, ChatMessage } from '../services
 
 export const ChatWidget: React.FC = () => {
   const { language, isRTL } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [isOpen, setIsOpen] = useState(() => {
+    // Load saved open state from sessionStorage
+    const saved = sessionStorage.getItem('chatIsOpen');
+    return saved === 'true';
+  });
+  const [messages, setMessages] = useState<ChatMessage[]>(() => {
+    // Load saved messages from sessionStorage
+    const saved = sessionStorage.getItem('chatMessages');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  });
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [isWorkingHours, setIsWorkingHours] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Save messages to sessionStorage whenever they change
+  useEffect(() => {
+    if (messages.length > 0) {
+      sessionStorage.setItem('chatMessages', JSON.stringify(messages));
+    }
+  }, [messages]);
+
+  // Save isOpen state to sessionStorage
+  useEffect(() => {
+    sessionStorage.setItem('chatIsOpen', isOpen.toString());
+  }, [isOpen]);
 
   // Check if current time is within working hours (Mon-Sat 09:00-18:00 Turkey time)
   useEffect(() => {
@@ -61,15 +88,14 @@ export const ChatWidget: React.FC = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Focus input when chat opens
+  // Focus input when chat opens and add welcome message if needed
   useEffect(() => {
     if (isOpen) {
       inputRef.current?.focus();
       // Add welcome message if no messages
       if (messages.length === 0) {
-        setMessages([
-          { role: 'assistant', content: getWelcomeMessage(language) }
-        ]);
+        const welcomeMsg = [{ role: 'assistant' as const, content: getWelcomeMessage(language) }];
+        setMessages(welcomeMsg);
       }
     }
   }, [isOpen, language, messages.length]);
