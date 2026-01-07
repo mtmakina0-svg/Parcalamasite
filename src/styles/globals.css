@@ -3,7 +3,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /* Global Overflow Fix */
-html, body {
+html,
+body {
   overflow-x: hidden !important;
   max-width: 100vw;
 }
@@ -213,8 +214,13 @@ body {
   text-align: right;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Performance optimizations for smooth animations */
@@ -237,6 +243,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -248,9 +255,12 @@ html {
 
 /* Float animation for references page */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -261,6 +271,7 @@ html {
   0% {
     background-position: -1000px 0;
   }
+
   100% {
     background-position: 1000px 0;
   }
@@ -268,9 +279,12 @@ html {
 
 /* Glow pulse animation */
 @keyframes glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(244, 206, 20, 0.4);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(244, 206, 20, 0.8);
   }
@@ -282,6 +296,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -294,6 +309,7 @@ html {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -317,4 +333,109 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #FFD700;
+}
+
+/* ========================================
+   MOBILE-FIRST OPTIMIZATIONS
+   ======================================== */
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch targets - minimum 44x44px for accessibility */
+button,
+a,
+input[type="button"],
+input[type="submit"],
+.clickable,
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Prevent iOS zoom on input focus (16px minimum) */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+@media (min-width: 768px) {
+
+  input,
+  select,
+  textarea {
+    font-size: inherit !important;
+  }
+}
+
+/* Safe area insets for notched devices */
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Improve touch scrolling */
+.scroll-container,
+.overflow-auto,
+.overflow-scroll,
+.overflow-y-auto,
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection on interactive elements */
+button,
+[role="button"],
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Mobile-optimized animations - reduce motion on mobile for performance */
+@media (max-width: 768px) {
+  .motion-reduce-mobile {
+    transition-duration: 0.1s !important;
+  }
+}
+
+/* Improve readability on small screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Fix 100vh on mobile (accounts for browser chrome) */
+.min-h-screen,
+.h-screen {
+  min-height: 100dvh;
+}
+
+/* Prevent horizontal scroll on mobile */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Sticky header spacing helper */
+.header-offset {
+  scroll-margin-top: 80px;
 }
