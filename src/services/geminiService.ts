@@ -4,7 +4,7 @@
  */
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 // MT Makina system prompt - comprehensive company and product information
 const SYSTEM_PROMPT = `Sen MT Makina'nın resmi AI asistanısın. Adın "MT Asistan".
@@ -88,6 +88,9 @@ export async function sendMessageToGemini(
     }
 
     try {
+        // Debug: Check if API key is loaded
+        console.log('Gemini API Key loaded:', GEMINI_API_KEY ? 'Yes (length: ' + GEMINI_API_KEY.length + ')' : 'No');
+
         // Build conversation history for Gemini
         const contents: GeminiContent[] = [];
 
