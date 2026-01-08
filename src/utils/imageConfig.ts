@@ -70,9 +70,9 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: ''
     },
     'TSH-130': {
-      main: 'https://i.ibb.co/q3BqtbZH/1-1.png',
-      detail1: 'https://i.ibb.co/WNVQkSFF/1-13.png',
-      detail2: 'https://i.ibb.co/GfhWX536/1-15.png',
+      main: 'https://i.ibb.co/bMkpbL3B/tsh-130-1.jpg',
+      detail1: 'https://i.ibb.co/9H151n4j/tsh-130-2.jpg',
+      detail2: 'https://i.ibb.co/jPkPC1tG/tsh-130-3.jpg',
       detail3: 'https://i.ibb.co/jvG3NGbD/1-16.png',
       detail4: ''
     },
