@@ -49,23 +49,23 @@ export interface ModelImages {
 const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   'single-shaft': {
     'TSH-60': {
-      main: 'https://i.ibb.co/Hf47H3b1/1-1.png',
-      detail1: 'https://i.ibb.co/PvTXDqcZ/1-2.png',
-      detail2: 'https://i.ibb.co/F46XQM7W/1-3.png',
+      main: 'https://i.ibb.co/jkBZt1Y2/tsh-60-1.jpg',
+      detail1: 'https://i.ibb.co/v6x30VGW/tsh-60-2.jpg',
+      detail2: 'https://i.ibb.co/zTSFXY5c/tsh-60-4.jpg',
       detail3: 'https://i.ibb.co/C3WxQSSv/1-4.png',
       detail4: ''
     },
     'TSH-80': {
-      main: 'https://i.ibb.co/ZRS67nMB/1-3.png',
-      detail1: 'https://i.ibb.co/G3kFLdfs/1-4.png',
-      detail2: 'https://i.ibb.co/gbTbnNLv/1-1.png',
+      main: 'https://i.ibb.co/vvq5LB0n/tsh-80-1.jpg',
+      detail1: 'https://i.ibb.co/RpmFRV8K/tsh-80-2.jpg',
+      detail2: 'https://i.ibb.co/wZvsqz9k/tsh-80-3.jpg',
       detail3: 'https://i.ibb.co/7dyL6dKv/1-2.png',
       detail4: ''
     },
     'TSH-100': {
-      main: 'https://i.ibb.co/nsYnVHyD/1-12.png',
-      detail1: 'https://i.ibb.co/67YDMknp/1-2.png',
-      detail2: 'https://i.ibb.co/v4W0yBTc/1-8.png',
+      main: 'https://i.ibb.co/gLL56xLD/tsh-100-1.jpg',
+      detail1: 'https://i.ibb.co/Z16XRPY2/tsh100-2.jpg',
+      detail2: 'https://i.ibb.co/N654cpNw/tsh100-3.jpg',
       detail3: 'https://i.ibb.co/6RB2rvBc/1-9.png',
       detail4: ''
     },

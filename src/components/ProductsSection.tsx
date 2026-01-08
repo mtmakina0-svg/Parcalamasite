@@ -5,6 +5,8 @@ import { Card } from './ui/card';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
+import { getModelImages } from '../utils/imageConfig';
+
 const products = [
   {
     id: 'single-shaft',
@@ -12,7 +14,7 @@ const products = [
     titleEN: 'Single Shaft Shredder',
     titleRU: 'Одновальный измельчитель',
     titleAR: 'آلة تقطيع أحادية العمود',
-    image: 'https://i.ibb.co/gb3Bhj2R/1-1.png',
+    image: getModelImages('single-shaft', 'TSH-60').main,
   },
   {
     id: 'dual-shaft',
@@ -20,7 +22,7 @@ const products = [
     titleEN: 'Double Shaft Shredder',
     titleRU: 'Двухвальный измельчитель',
     titleAR: 'آلة تقطيع ثنائية العمود',
-    image: 'https://i.ibb.co/Y44y4KHc/cs-double-shaft-shredder-20.png',
+    image: getModelImages('dual-shaft', 'CS-20').main,
   },
   {
     id: 'quad-shaft',
@@ -28,7 +30,7 @@ const products = [
     titleEN: 'Quad Shaft Shredder',
     titleRU: 'Четырехвальный измельчитель',
     titleAR: 'آلة تقطيع رباعية العمود',
-    image: 'https://i.ibb.co/SDjBQ9cq/1-9.png',
+    image: getModelImages('quad-shaft', 'DS-80').main,
   },
   {
     id: 'metal',
@@ -36,7 +38,7 @@ const products = [
     titleEN: 'Metal Shredder',
     titleRU: 'Металлический измельчитель',
     titleAR: 'آلة تقطيع المعادن',
-    image: 'https://i.ibb.co/m5xLp46J/1-1.png',
+    image: getModelImages('metal', 'RDM-100').main,
   },
   {
     id: 'mobile',
@@ -44,7 +46,7 @@ const products = [
     titleEN: 'Mobile Crusher',
     titleRU: 'Мобильная дробилка',
     titleAR: 'كسارة متنقلة',
-    image: 'https://i.ibb.co/Ndfqm2fm/organic-waste-shredder-2.png',
+    image: getModelImages('mobile', 'TSM-150').main,
   },
   {
     id: 'pallet',
@@ -52,7 +54,7 @@ const products = [
     titleEN: 'Pallet Shredder',
     titleRU: 'Измельчитель поддонов',
     titleAR: 'آلة تقطيع المنصات',
-    image: 'https://i.ibb.co/svR9Kdq7/1-7.png',
+    image: getModelImages('pallet', 'TSV-140').main,
   },
   {
     id: 'harddisk',
@@ -60,7 +62,7 @@ const products = [
     titleEN: 'Hard Disk Destroyer',
     titleRU: 'Уничтожитель жестких дисков',
     titleAR: 'آلة تدمير الأقراص الصلبة',
-    image: 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
+    image: getModelImages('harddisk', 'DATABER-S').main,
   },
   {
     id: 'tree-root',
@@ -68,7 +70,7 @@ const products = [
     titleEN: 'Tree Root Shredder',
     titleRU: 'Измельчитель корней деревьев',
     titleAR: 'آلة تقطيع جذور الأشجار',
-    image: 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png',
+    image: getModelImages('tree-root', 'TW-100').main,
   },
   {
     id: 'wood',
@@ -76,7 +78,7 @@ const products = [
     titleEN: 'Wood Grinding Machine',
     titleRU: 'Измельчитель древесины',
     titleAR: 'آلة طحن الخشب',
-    image: 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
+    image: getModelImages('wood', 'TSY-100').main,
   },
   {
     id: 'glass',
@@ -84,7 +86,7 @@ const products = [
     titleEN: 'Glass Bottle Crusher',
     titleRU: 'Дробилка стеклянных бутылок',
     titleAR: 'آلة تكسير الزجاج',
-    image: 'https://i.ibb.co/4wtQRwBB/1-1.png',
+    image: getModelImages('glass', 'CK-200').main,
   },
 ];
 
