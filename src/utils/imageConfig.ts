@@ -77,16 +77,16 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: ''
     },
     'TSH-160': {
-      main: 'https://i.ibb.co/ZRwBZB21/1-1.png',
-      detail1: 'https://i.ibb.co/mrVnwgcX/1-6.png',
-      detail2: 'https://i.ibb.co/JRCdjhfZ/1-7.png',
+      main: 'https://i.ibb.co/dJsJ5wrG/tsh-160-1.jpg',
+      detail1: 'https://i.ibb.co/WNZScM9g/tsh-160-2.jpg',
+      detail2: 'https://i.ibb.co/5hcSZ7y3/tsh-160-3.jpg',
       detail3: 'https://i.ibb.co/Hf4Mt89K/1-9.png',
       detail4: ''
     },
     'TSH-200': {
-      main: 'https://i.ibb.co/tTKSpZyS/1-5.png',
-      detail1: 'https://i.ibb.co/cnnX46w/1-6.png',
-      detail2: 'https://i.ibb.co/058K5Nr/1-7.png',
+      main: 'https://i.ibb.co/RT9FBpHt/tsh-200-1.jpg',
+      detail1: 'https://i.ibb.co/9kymGVBV/tsh-200-2.jpg',
+      detail2: 'https://i.ibb.co/CKYBxg4F/tsh-200-3.jpg',
       detail3: 'https://i.ibb.co/Ng7Cjxz9/1-11.png',
       detail4: ''
     }
