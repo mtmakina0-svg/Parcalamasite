@@ -978,7 +978,7 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
           onBlogClick={() => {
-            window.history.pushState({}, '', '/blog');
+            window.history.pushState({}, '', `/${language}/blog`);
             setCurrentPage('blog');
             window.scrollTo(0, 0);
           }}
