@@ -135,9 +135,9 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: ''
     },
     'CS-150': {
-      main: 'https://i.ibb.co/B2yVNQF0/1-1.png',
-      detail1: 'https://i.ibb.co/FbDPTXxf/1-2.png',
-      detail2: 'https://i.ibb.co/1GTVKBRG/1-3.png',
+      main: 'https://i.ibb.co/F4GJfKtR/CS-150-1.jpg',
+      detail1: 'https://i.ibb.co/k2Xq5GQW/CS-150-2.jpg',
+      detail2: 'https://i.ibb.co/Xf5Pxdzh/CS-150-3.jpg',
       detail3: 'https://i.ibb.co/S4nqh63G/1-4.png',
       detail4: ''
     },
