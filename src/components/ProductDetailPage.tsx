@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from './ui/accordion';
-import { getModelImages, getFallbackImage } from '../utils/imageConfig';
+import { getModelImages, getFallbackImage, preloadImages } from '../utils/imageConfig';
 import { getModelDescriptionAsync, hasModelDescription } from '../utils/modelDescriptions';
 import { availableModels } from '../utils/modelConfig';
 import { ModelDescription } from '../types/descriptionTypes';
@@ -29,7 +29,6 @@ interface ProductDetailPageProps {
   onECatalogClick: () => void;
   onProductDetailClick?: (productType: string, modelName?: string) => void;
 }
-
 
 // Model technical specifications
 interface ModelSpecs {
@@ -50,7 +49,8 @@ const modelSpecifications: { [key: string]: { [modelName: string]: ModelSpecs } 
       rotorDiameter: '600 x 1100 mm',
       bladeCount: '24 adet',
       weight: '2500 kg',
-      capacity: '500-800 kg/saat'
+      capacity: '500-800 kg/saat' // Preload logic will be added in component body
+
     },
     'TSH-80': {
       motorPower: '22–45 kW',
@@ -542,6 +542,19 @@ export const ProductDetailPage = ({
       console.log('🔄 Fallback URL:', fallbackImage);
     }
   }, [defaultModelName]);
+
+  // Preload images when model changes
+  React.useEffect(() => {
+    const imagesToPreload = [
+      images.main,
+      images.detail1,
+      images.detail2,
+      images.detail3,
+      images.detail4
+    ].filter((url): url is string => !!url); // Type-safe filter
+
+    preloadImages(imagesToPreload);
+  }, [images]);
 
   // Get current model specs
   const currentSpecs = modelSpecifications[currentProductType]?.[defaultModelName];

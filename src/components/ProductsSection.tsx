@@ -259,7 +259,8 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                         src={product.image}
                         alt={`${getProductTitle(product)} - MT Makina`}
                         className="w-full h-full object-cover"
-                        loading="lazy"
+                        loading={index < 3 ? "eager" : "lazy"}
+                        fetchPriority={index < 3 ? "high" : "auto"}
                         fallbackSrc="https://images.unsplash.com/photo-1718512932005-197f55f2e186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
                       />
                     </motion.div>
