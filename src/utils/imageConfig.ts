@@ -93,16 +93,16 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   },
   'dual-shaft': {
     'CS-20': {
-      main: 'https://i.ibb.co/B2yVNQF0/1-1.png',
-      detail1: 'https://i.ibb.co/FbDPTXxf/1-2.png',
-      detail2: 'https://i.ibb.co/1GTVKBRG/1-3.png',
+      main: 'https://i.ibb.co/sdDwsXjf/CS-20-1.jpg',
+      detail1: 'https://i.ibb.co/Cjzp61b/CS-20-2.jpg',
+      detail2: 'https://i.ibb.co/R4TjjF0g/CS-20-3.jpg',
       detail3: 'https://i.ibb.co/S4nqh63G/1-4.png',
       detail4: ''
     },
     'CS-40': {
-      main: 'https://i.ibb.co/FbDPTXxf/1-2.png',
-      detail1: 'https://i.ibb.co/1GTVKBRG/1-3.png',
-      detail2: 'https://i.ibb.co/S4nqh63G/1-4.png',
+      main: 'https://i.ibb.co/vvksGBh4/CS-40-1.jpg',
+      detail1: 'https://i.ibb.co/S7nwHk2t/CS-40-2.jpg',
+      detail2: 'https://i.ibb.co/JR1WP547/CS-40-3.jpg',
       detail3: 'https://i.ibb.co/B2yVNQF0/1-1.png',
       detail4: ''
     },
