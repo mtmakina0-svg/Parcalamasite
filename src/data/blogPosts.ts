@@ -1640,7 +1640,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Neden Harddisk Shredder Kullanmalısınız?</h2>
       <ul>
         <li><strong>Kesin Sonuç:</strong> Diskler fiziksel olarak parçalanır, plaka üzerindeki manyetik alanlar bozulur.</li>
-        <li><strong>Hız:</strong> Yazılımla saatler süren silme işlemi, <a href="https://www.parcalamamakinesi.com/tr/urunler/harddisk" target="_blank">harddisk kırma makineleri</a> ile saniyeler sürer.</li>
+        <li><strong>Hız:</strong> Yazılımla saatler süren silme işlemi, <a href="https://www.parcalamamakinesi.com/tr/harddisk-imha-makinesi" target="_blank">harddisk kırma makineleri</a> ile saniyeler sürer.</li>
         <li><strong>Güvenlik Sertifikası:</strong> Fiziksel imha işlemi, denetimlerde kanıt olarak sunulabilir.</li>
       </ul>
 
@@ -1660,7 +1660,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Why Use a Hard Drive Shredder?</h2>
       <ul>
         <li><strong>Definite Result:</strong> Disks are physically shredded, magnetic fields on the platter are destroyed.</li>
-        <li><strong>Speed:</strong> Wiping via software takes hours, while <a href="https://www.parcalamamakinesi.com/en/products/harddisk" target="_blank">hard drive shredders</a> take seconds.</li>
+        <li><strong>Speed:</strong> Wiping via software takes hours, while <a href="https://www.parcalamamakinesi.com/en/harddisk-destroyer" target="_blank">hard drive shredders</a> take seconds.</li>
         <li><strong>Security Certificate:</strong> Physical destruction can be presented as evidence in audits.</li>
       </ul>
 
@@ -1680,7 +1680,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Зачем использовать шредер жестких дисков?</h2>
       <ul>
         <li><strong>Определенный результат:</strong> Диски физически измельчаются, магнитные поля на пластине разрушаются.</li>
-        <li><strong>Скорость:</strong> Стирание с помощью программного обеспечения занимает часы, в то время как <a href="https://www.parcalamamakinesi.com/ru/products/harddisk" target="_blank">шредеры жестких дисков</a> справляются за секунды.</li>
+        <li><strong>Скорость:</strong> Стирание с помощью программного обеспечения занимает часы, в то время как <a href="https://www.parcalamamakinesi.com/ru/unichtozhitel-zhestkikh-diskov" target="_blank">шредеры жестких дисков</a> справляются за секунды.</li>
         <li><strong>Сертификат безопасности:</strong> Физическое уничтожение может быть представлено в качестве доказательства при проверках.</li>
       </ul>
 
@@ -1700,7 +1700,7 @@ export const blogPosts: BlogPost[] = [
       <h2>لماذا تستخدم آلة تمزيق القرص الصلب؟</h2>
       <ul>
         <li><strong>نتيجة مؤكدة:</strong> يتم تمزيق الأقراص ماديًا، وتدمير المجالات المغناطيسية على اللوحة.</li>
-        <li><strong>السرعة:</strong> يستغرق المسح عبر البرنامج ساعات، بينما تستغرق <a href="https://www.parcalamamakinesi.com/ar/products/harddisk" target="_blank">آلات تمزيق الأقراص الصلبة</a> ثوانٍ.</li>
+        <li><strong>السرعة:</strong> يستغرق المسح عبر البرنامج ساعات، بينما تستغرق <a href="https://www.parcalamamakinesi.com/ar/harddisk-destroyer" target="_blank">آلات تمزيق الأقراص الصلبة</a> ثوانٍ.</li>
         <li><strong>شهادة الأمان:</strong> يمكن تقديم التدمير المادي كدليل في عمليات التدقيق.</li>
       </ul>
 
@@ -1852,7 +1852,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Parçalama Süreci Nasıl İşler?</h2>
       <ol>
-        <li><strong>Ön Kırma:</strong> Büyük plastik parçalar (variller, takozlar), <a href="https://www.parcalamamakinesi.com/tr/urunler/single-shaft" target="_blank">Tek Şaftlı Parçalayıcılar</a> ile kaba boyutlara (40-100mm) indirilir.</li>
+        <li><strong>Ön Kırma:</strong> Büyük plastik parçalar (variller, takozlar), <a href="https://www.parcalamamakinesi.com/tr/tek-saftli-parcalama-makinesi" target="_blank">Tek Şaftlı Parçalayıcılar</a> ile kaba boyutlara (40-100mm) indirilir.</li>
         <li><strong>Yıkama:</strong> Kirliliklerden arındırma işlemi yapılır.</li>
         <li><strong>İkinci Kırma (Granülatör):</strong> Temizlenen parçalar daha ufak boyutlara (8-12mm) getirilir.</li>
       </ol>
@@ -1873,7 +1873,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>How Does the Shredding Process Work?</h2>
       <ol>
-        <li><strong>Pre-Crushing:</strong> Large plastic pieces (barrels, lumps) are reduced to rough sizes (40-100mm) with <a href="https://www.parcalamamakinesi.com/en/products/single-shaft" target="_blank">Single Shaft Shredders</a>.</li>
+        <li><strong>Pre-Crushing:</strong> Large plastic pieces (barrels, lumps) are reduced to rough sizes (40-100mm) with <a href="https://www.parcalamamakinesi.com/en/single-shaft-shredder" target="_blank">Single Shaft Shredders</a>.</li>
         <li><strong>Washing:</strong> The process of purification from impurities is carried out.</li>
         <li><strong>Second Crushing (Granulator):</strong> Cleaned parts are brought to smaller sizes (8-12mm).</li>
       </ol>
@@ -1894,7 +1894,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Как работает процесс измельчения?</h2>
       <ol>
-        <li><strong>Предварительное дробление:</strong> Крупные куски пластика (бочки, глыбы) измельчаются до грубых размеров (40-100 мм) с помощью <a href="https://www.parcalamamakinesi.com/ru/products/single-shaft" target="_blank">одновальных шредеров</a>.</li>
+        <li><strong>Предварительное дробление:</strong> Крупные куски пластика (бочки, глыбы) измельчаются до грубых размеров (40-100 мм) с помощью <a href="https://www.parcalamamakinesi.com/ru/odnovalnaya-drobilka" target="_blank">одновальных шредеров</a>.</li>
         <li><strong>Мойка:</strong> Проводится процесс очистки от примесей.</li>
         <li><strong>Второе дробление (Гранулятор):</strong> Очищенные части доводятся до более мелких размеров (8-12 мм).</li>
       </ol>
@@ -1915,7 +1915,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>كيف تعمل عملية التمزيق؟</h2>
       <ol>
-        <li><strong>التكسير الأولي:</strong> يتم تقليل القطع البلاستيكية الكبيرة (البراميل، الكتل) إلى أحجام خشنة (40-100 مم) باستخدام <a href="https://www.parcalamamakinesi.com/ar/products/single-shaft" target="_blank">آلات التمزيق أحادية العمود</a>.</li>
+        <li><strong>التكسير الأولي:</strong> يتم تقليل القطع البلاستيكية الكبيرة (البراميل، الكتل) إلى أحجام خشنة (40-100 مم) باستخدام <a href="https://www.parcalamamakinesi.com/ar/single-shaft-shredder" target="_blank">آلات التمزيق أحادية العمود</a>.</li>
         <li><strong>الغسيل:</strong> يتم تنفيذ عملية التنقية من الشوائب.</li>
         <li><strong>التكسير الثاني (الحبيبات):</strong> يتم إحضار الأجزاء النظيفة إلى أحجام أصغر (8-12 مم).</li>
       </ol>
@@ -1967,7 +1967,7 @@ export const blogPosts: BlogPost[] = [
       <p>Tehlikeli atıklar, sadece çevre için değil, çalışan sağlığı için de büyük bir tehdittir. Özellikle kimyasal bulaşmış ambalajlar ve variller, depolama sırasında sızdırma ve patlama riski taşır.</p>
 
       <h2>Doğru İmha Yöntemi Nedir?</h2>
-      <p>Tehlikeli atıklar, kontrollü bir şekilde parçalanarak hacmi küçültülmeli ve ardından nihai bertaraf tesisine gönderilmelidir. <a href="https://www.parcalamamakinesi.com/tr/urunler/dual-shaft" target="_blank">Çift Şaftlı Parçalayıcılar</a>, metal ve plastik varilleri güvenle parçalayarak sıkıştırılabilir hale getirir.</p>
+      <p>Tehlikeli atıklar, kontrollü bir şekilde parçalanarak hacmi küçültülmeli ve ardından nihai bertaraf tesisine gönderilmelidir. <a href="https://www.parcalamamakinesi.com/tr/cift-saftli-parcalama-makinesi" target="_blank">Çift Şaftlı Parçalayıcılar</a>, metal ve plastik varilleri güvenle parçalayarak sıkıştırılabilir hale getirir.</p>>
 
       <h2>İş Güvenliği Önceliklidir</h2>
       <p>Shredder makinelerimizde:</p>
@@ -1985,7 +1985,7 @@ export const blogPosts: BlogPost[] = [
       <p>Hazardous waste is a major threat not only to the environment but also to employee health. Especially chemical-contaminated packaging and barrels carry the risk of leakage and explosion during storage.</p>
 
       <h2>What is the Right Disposal Method?</h2>
-      <p>Hazardous waste should be shredded in a controlled manner to reduce its volume and then sent to the final disposal facility. <a href="https://www.parcalamamakinesi.com/en/products/dual-shaft" target="_blank">Dual Shaft Shredders</a> safely shred metal and plastic barrels, making them compressible.</p>
+      <p>Hazardous waste should be shredded in a controlled manner to reduce its volume and then sent to the final disposal facility. <a href="https://www.parcalamamakinesi.com/en/dual-shaft-shredder" target="_blank">Dual Shaft Shredders</a> safely shred metal and plastic barrels, making them compressible.</p>
 
       <h2>Occupational Safety is Priority</h2>
       <p>In our shredder machines:</p>
@@ -2003,7 +2003,7 @@ export const blogPosts: BlogPost[] = [
       <p>Опасные отходы представляют собой серьезную угрозу не только для окружающей среды, но и для здоровья сотрудников. Особенно упаковка и бочки, загрязненные химикатами, несут риск утечки и взрыва при хранении.</p>
 
       <h2>Каков правильный метод утилизации?</h2>
-      <p>Опасные отходы должны быть измельчены контролируемым образом для уменьшения их объема, а затем отправлены на конечный объект утилизации. <a href="https://www.parcalamamakinesi.com/ru/products/dual-shaft" target="_blank">Двухвальные шредеры</a> безопасно измельчают металлические и пластиковые бочки, делая их сжимаемыми.</p>
+      <p>Опасные отходы должны быть измельчены контролируемым образом для уменьшения их объема, а затем отправлены на конечный объект утилизации. <a href="https://www.parcalamamakinesi.com/ru/dvukhvalnaya-drobilka" target="_blank">Двухвальные шредеры</a> безопасно измельчают металлические и пластиковые бочки, делая их сжимаемыми.</p>
 
       <h2>Охрана труда является приоритетом</h2>
       <p>В наших шредерах:</p>
@@ -2021,7 +2021,7 @@ export const blogPosts: BlogPost[] = [
       <p>تشكل النفايات الخطرة تهديدًا كبيرًا ليس فقط للبيئة ولكن أيضًا لصحة الموظفين. خاصة العبوات والبراميل الملوثة بالمواد الكيميائية تحمل مخاطر التسرب والانفجار أثناء التخزين.</p>
 
       <h2>ما هي طريقة التخلص الصحيحة؟</h2>
-      <p>يجب تقطيع النفايات الخطرة بطريقة محكومة لتقليل حجمها ثم إرسالها إلى منشأة التخلص النهائي. <a href="https://www.parcalamamakinesi.com/ar/products/dual-shaft" target="_blank">آلات التمزيق ثنائية العمود</a> تمزق البراميل المعدنية والبلاستيكية بأمان، مما يجعلها قابلة للضغط.</p>
+      <p>يجب تقطيع النفايات الخطرة بطريقة محكومة لتقليل حجمها ثم إرسالها إلى منشأة التخلص النهائي. <a href="https://www.parcalamamakinesi.com/ar/dual-shaft-shredder" target="_blank">آلات التمزيق ثنائية العمود</a> تمزق البراميل المعدنية والبلاستيكية بأمان، مما يجعلها قابلة للضغط.</p>
 
       <h2>السلامة المهنية هي الأولوية</h2>
       <p>في آلات التمزيق لدينا:</p>
