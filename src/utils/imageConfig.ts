@@ -142,16 +142,16 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: ''
     },
     'CS-180': {
-      main: 'https://i.ibb.co/FbDPTXxf/1-2.png',
-      detail1: 'https://i.ibb.co/1GTVKBRG/1-3.png',
-      detail2: 'https://i.ibb.co/S4nqh63G/1-4.png',
+      main: 'https://i.ibb.co/BHxH2bnG/CS-180-1.jpg',
+      detail1: 'https://i.ibb.co/8gnwYFk6/CS-180-2.jpg',
+      detail2: 'https://i.ibb.co/FqzS4vnF/CS-180-3.jpg',
       detail3: 'https://i.ibb.co/r2jnGRn6/1-5.png',
       detail4: ''
     },
     'CS-200': {
-      main: 'https://i.ibb.co/1GTVKBRG/1-3.png',
-      detail1: 'https://i.ibb.co/S4nqh63G/1-4.png',
-      detail2: 'https://i.ibb.co/r2jnGRn6/1-5.png',
+      main: 'https://i.ibb.co/99s8Xzr7/CS-200-1.jpg',
+      detail1: 'https://i.ibb.co/rfqxg6X6/CS-200-2.jpg',
+      detail2: 'https://i.ibb.co/Y762g1gN/CS-200-3.jpg',
       detail3: 'https://i.ibb.co/XrWHZG0L/1-6.png',
       detail4: ''
     }
