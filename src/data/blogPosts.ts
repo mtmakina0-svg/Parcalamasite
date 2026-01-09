@@ -1471,5 +1471,569 @@ export const blogPosts: BlogPost[] = [
       </ul>
     `
     }
+  },
+  {
+    id: '2',
+    slug: 'endustriyel-parcalama-makinesi-secim-rehberi',
+    title: {
+      tr: 'Endüstriyel Parçalama Makinesi Seçerken Nelere Dikkat Edilmeli?',
+      en: 'What to Consider When Choosing an Industrial Shredder?',
+      ru: 'На что обратить внимание при выборе промышленного шредера?',
+      ar: 'ما الذي يجب مراعاته عند اختيار آلة تمزيق صناعية؟'
+    },
+    summary: {
+      tr: 'İşletmeniz için en doğru shredder makinesini seçmek verimliliği artırır. Kapasite, malzeme türü ve bıçak kalitesi gibi kritik faktörleri inceliyoruz.',
+      en: 'Choosing the right shredder machine for your business increases efficiency. We examine critical factors such as capacity, material type, and blade quality.',
+      ru: 'Выбор правильного шредера для вашего бизнеса повышает эффективность. Мы рассматриваем важные факторы, такие как мощность, тип материала и качество ножей.',
+      ar: 'يؤدي اختيار آلة التمزيق المناسبة لعملك إلى زيادة الكفاءة. نقوم بفحص العوامل الحاسمة مثل السعة ونوع المادة وجودة الشفرة.'
+    },
+    date: '2026-01-05',
+    author: {
+      tr: 'MT Makina Uzman Ekibi',
+      en: 'MT Makina Expert Team',
+      ru: 'Экспертная группа MT Makina',
+      ar: 'فريق خبراء MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Parçalama Makinesi', en: 'Shredder Machine', ru: 'Шредер', ar: 'آلة تمزيق' },
+      { tr: 'Endüstriyel Atık', en: 'Industrial Waste', ru: 'Промышленные отходы', ar: 'النفايات الصناعية' },
+      { tr: 'Geri Dönüşüm', en: 'Recycling', ru: 'Переработка', ar: 'إعادة التدوير' },
+      { tr: 'Verimlilik', en: 'Efficiency', ru: 'Эффективность', ar: 'الكفاءة' }
+    ],
+    content: {
+      tr: `
+      <h1>Endüstriyel Parçalama Makinesi Seçim Rehberi</h1>
+      <p>Geri dönüşüm tesisleri ve üretim fabrikaları için doğru <strong>parçalama makinesi (shredder)</strong> seçimi, operasyonel maliyetleri düşürmek ve karlılığı artırmak için hayati öneme sahiptir. Yanlış makine seçimi, sık arızalara, düşük kapasiteye ve enerji israfına yol açabilir.</p>
+
+      <h2>1. Malzeme Türünü Belirleyin</h2>
+      <p>Parçalanacak malzemenin cinsi, makinenin bıçak yapısını ve motor gücünü belirler. Örneğin:</p>
+      <ul>
+        <li><strong>Plastik ve Pet Şişeler:</strong> Yüksek devirli ve keskin bıçaklı makineler gerektirir.</li>
+        <li><strong>Metal Hurda:</strong> Düşük devirli, yüksek torklu ve aşınmaya dayanıklı <strong>Hardox</strong> bıçaklar şarttır.</li>
+        <li><strong>Ahşap ve Palet:</strong> Geniş hazneli ve itici üniteli makineler tercih edilmelidir.</li>
+      </ul>
+
+      <h2>2. Kapasite İhtiyacı</h2>
+      <p>Saatlik işleme kapasiteniz nedir? 500 kg/saat mi yoksa 5 ton/saat mi? <a href="https://www.parcalamamakinesi.com/tr/urunler/single-shaft" target="_blank">Tek şaftlı parçalayıcılar</a> genellikle orta ölçekli kapasiteler için idealken, çift ve dört şaftlı makineler endüstriyel devler için tasarlanmıştır.</p>
+
+      <h2>3. Bıçak Teknolojisi ve Kalitesi</h2>
+      <p>Makinenin kalbi bıçaklardır. <strong>MT Makina</strong> olarak tüm makinelerimizde sertifikalı, ısıl işlem görmüş özel alaşımlı çelikler kullanıyoruz. Bu sayede bıçak ömrü uzar ve bakım maliyetleri azalır.</p>
+
+      <h2>4. Servis ve Yedek Parça Desteği</h2>
+      <p>Makine alırken sadece ürünü değil, satış sonrası hizmeti de satın alırsınız. Yerli üretim gücüyle <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a>, 7/24 teknik servis ve hızlı yedek parça temini sunarak işinizin durmasını engeller.</p>
+
+      <h3>Sonuç</h3>
+      <p>İhtiyacınıza en uygun makineyi belirlemek için uzman mühendislerimizle görüşebilir, numune denemeleri yapabilirsiniz. Unutmayın, doğru yatırım kazandırır.</p>
+      `,
+      en: `
+      <h1>Industrial Shredder Selection Guide</h1>
+      <p>Choosing the right <strong>shredder machine</strong> for recycling facilities and manufacturing plants is vital to reduce operational costs and increase profitability. Wrong machine selection can lead to frequent breakdowns, low capacity, and energy waste.</p>
+
+      <h2>1. Determine the Material Type</h2>
+      <p>The type of material to be shredded determines the blade structure and motor power of the machine. For example:</p>
+      <ul>
+        <li><strong>Plastic and PET Bottles:</strong> Require high-speed machines with sharp blades.</li>
+        <li><strong>Metal Scrap:</strong> Low-speed, high-torque, and wear-resistant <strong>Hardox</strong> blades are essential.</li>
+        <li><strong>Wood and Pallets:</strong> Machines with large hoppers and pusher units should be preferred.</li>
+      </ul>
+
+      <h2>2. Capacity Needs</h2>
+      <p>What is your hourly processing capacity? 500 kg/hour or 5 tons/hour? <a href="https://www.parcalamamakinesi.com/en/products/single-shaft" target="_blank">Single shaft shredders</a> are generally ideal for medium-scale capacities, while dual and quad shaft machines are designed for industrial giants.</p>
+
+      <h2>3. Blade Technology and Quality</h2>
+      <p>The heart of the machine is its blades. At <strong>MT Makina</strong>, we use certified, heat-treated special alloy steels in all our machines. This extends blade life and reduces maintenance costs.</p>
+
+      <h2>4. Service and Spare Parts Support</h2>
+      <p>When buying a machine, you are buying not just the product but also the after-sales service. With the power of domestic production, <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> prevents your business from stopping by offering 24/7 technical service and fast spare parts supply.</p>
+
+      <h3>Conclusion</h3>
+      <p>You can consult with our expert engineers to determine the most suitable machine for your needs and perform sample tests. Remember, the right investment pays off.</p>
+      `,
+      ru: `
+      <h1>Руководство по выбору промышленного шредера</h1>
+      <p>Выбор правильного <strong>шредера (измельчителя)</strong> для перерабатывающих предприятий и производственных заводов жизненно важен для снижения эксплуатационных расходов и повышения прибыльности. Неправильный выбор машины может привести к частым поломкам, низкой производительности и потере энергии.</p>
+
+      <h2>1. Определите тип материала</h2>
+      <p>Тип измельчаемого материала определяет структуру ножей и мощность двигателя машины. Например:</p>
+      <ul>
+        <li><strong>Пластик и ПЭТ-бутылки:</strong> Требуются высокоскоростные машины с острыми ножами.</li>
+        <li><strong>Металлический лом:</strong> Необходимы низкоскоростные, с высоким крутящим моментом и износостойкие ножи <strong>Hardox</strong>.</li>
+        <li><strong>Дерево и поддоны:</strong> Следует отдавать предпочтение машинам с большими бункерами и толкателями.</li>
+      </ul>
+
+      <h2>2. Потребности в мощности</h2>
+      <p>Какова ваша почасовая производительность? 500 кг/час или 5 тонн/час? <a href="https://www.parcalamamakinesi.com/ru/products/single-shaft" target="_blank">Одновальные шредеры</a>, как правило, идеально подходят для средних объемов, в то время как двухвальные и четырехвальные машины предназначены для промышленных гигантов.</p>
+
+      <h2>3. Технология и качество ножей</h2>
+      <p>Сердцем машины являются ее ножи. В <strong>MT Makina</strong> мы используем сертифицированные, термообработанные специальные легированные стали во всех наших машинах. Это продлевает срок службы ножей и снижает расходы на обслуживание.</p>
+
+      <h2>4. Сервис и поддержка запчастями</h2>
+      <p>Покупая машину, вы покупаете не только продукт, но и послепродажное обслуживание. Благодаря мощностям отечественного производства, <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> предотвращает остановку вашего бизнеса, предлагая круглосуточный технический сервис и быструю поставку запчастей.</p>
+
+      <h3>Заключение</h3>
+      <p>Вы можете проконсультироваться с нашими опытными инженерами, чтобы определить наиболее подходящую машину для ваших нужд, и провести пробные тесты. Помните, правильные инвестиции окупаются.</p>
+      `,
+      ar: `
+      <h1>دليل اختيار آلة التمزيق الصناعية</h1>
+      <p>يعد اختيار <strong>آلة التمزيق (Shredder)</strong> المناسبة لمرافق إعادة التدوير ومصانع الإنتاج أمرًا حيويًا لتقليل تكاليف التشغيل وزيادة الربحية. قد يؤدي اختيار الجهاز الخاطئ إلى أعطال متكررة وسعة منخفضة وهدر للطاقة.</p>
+
+      <h2>1. تحديد نوع المادة</h2>
+      <p>يحدد نوع المادة المراد تمزيقها هيكل الشفرة وقوة محرك الماكينة. على سبيل المثال:</p>
+      <ul>
+        <li><strong>البلاستيك وزجاجات PET:</strong> تتطلب آلات عالية السرعة بشفرات حادة.</li>
+        <li><strong>الخردة المعدنية:</strong> الآلات منخفضة السرعة وعالية العزم وشفرات <strong>Hardox</strong> المقاومة للتآكل ضرورية.</li>
+        <li><strong>الخشب والمنصات:</strong> يفضل الآلات ذات القادوس الكبير ووحدات الدفع.</li>
+      </ul>
+
+      <h2>2. احتياجات السعة</h2>
+      <p>ما هي قدرة المعالجة الخاصة بك في الساعة؟ 500 كجم / ساعة أم 5 طن / ساعة؟ <a href="https://www.parcalamamakinesi.com/ar/products/single-shaft" target="_blank">آلات التمزيق أحادية العمود</a> مثالية عمومًا للسعات المتوسطة، بينما تم تصميم الآلات ثنائية ورباعية العمود للعمالقة الصناعيين.</p>
+
+      <h2>3. تقنية وجودة الشفرة</h2>
+      <p>قلب الآلة هو شفراتها. في <strong>MT Makina</strong>، نستخدم سبائك الفولاذ الخاصة المعتمدة والمعالجة حرارياً في جميع أجهزتنا. هذا يطيل عمر الشفرة ويقلل من تكاليف الصيانة.</p>
+
+      <h2>4. الخدمة ودعم قطع الغيار</h2>
+      <p>عند شراء آلة، فأنت لا تشتري المنتج فحسب، بل تشتري أيضًا خدمة ما بعد البيع. بفضل قوة الإنتاج المحلي، تمنع <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> توقف عملك من خلال تقديم خدمة فنية على مدار الساعة طوال أيام الأسبوع وتوريد سريع لقطع الغيار.</p>
+
+      <h3>خاتمة</h3>
+      <p>يمكنك التشاور مع مهندسينا الخبراء لتحديد الماكينة الأنسب لاحتياجاتك وإجراء اختبارات العينات. تذكر أن الاستثمار الصحيح يؤتي ثماره.</p>
+      `
+    }
+  },
+  {
+    id: '3',
+    slug: 'kvkk-uyumlu-harddisk-imhahasi',
+    title: {
+      tr: 'KVKK ve GDPR Uyumlu Veri İmhası: Harddisk Kırıcılar',
+      en: 'GDPR Compliant Data Destruction: Hard Drive Shredders',
+      ru: 'Уничтожение данных в соответствии с GDPR: шредеры жестких дисков',
+      ar: 'إتلاف البيانات المتوافق مع اللائحة العامة لحماية البيانات: تمزيق القرص الصلب'
+    },
+    summary: {
+      tr: 'Dijital verilerin güvenliği fiziksel imha ile başlar. KVKK ve GDPR standartlarına uygun harddisk kırma işlemleri ve MT Makina çözümleri.',
+      en: 'Digital data security begins with physical destruction. Hard drive shredding processes compliant with KVKK and GDPR standards and MT Makina solutions.',
+      ru: 'Безопасность цифровых данных начинается с физического уничтожения. Процессы уничтожения жестких дисков в соответствии со стандартами KVKK и GDPR и решения MT Makina.',
+      ar: 'يبدأ أمان البيانات الرقمية بالتدمير المادي. عمليات تمزيق القرص الصلب المتوافقة مع معايير KVKK و GDPR وحلول MT Makina.'
+    },
+    date: '2026-01-06',
+    author: {
+      tr: 'MT Makina Güvenlik Ekibi',
+      en: 'MT Makina Security Team',
+      ru: 'Команда безопасности MT Makina',
+      ar: 'فريق أمن MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1563206767-5b1d972e8136?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Veri Güvenliği', en: 'Data Security', ru: 'Безопасность данных', ar: 'أمن البيانات' },
+      { tr: 'Harddisk İmha', en: 'Hard Drive Destruction', ru: 'Уничтожение жестких дисков', ar: 'تدمير القرص الصلب' },
+      { tr: 'KVKK', en: 'GDPR', ru: 'GDPR', ar: 'اللائحة العامة لحماية البيانات' },
+      { tr: 'Elektronik Atık', en: 'E-Waste', ru: 'Электронные отходы', ar: 'النفايات الإلكترونية' }
+    ],
+    content: {
+      tr: `
+      <h1>KVKK ve GDPR Uyumlu Veri İmhası</h1>
+      <p>Günümüzde veri güvenliği, şirketlerin en önemli önceliklerinden biridir. Sadece yazılımsal silme işlemleri (wipe), verilerin %100 yok edildiğini garanti etmez. <strong>Fiziksel imha</strong>, verilerin geri döndürülemez şekilde yok edilmesinin tek kesin yoludur.</p>
+
+      <h2>Yasal Zorunluluklar (KVKK & GDPR)</h2>
+      <p>Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Genel Veri Koruma Tüzüğü (GDPR), süresi dolan kişisel verilerin anonim hale getirilmesini veya imha edilmesini şart koşar. İhlal durumunda şirketler milyonlarca liralık cezalarla karşı karşıya kalabilir.</p>
+
+      <h2>Neden Harddisk Shredder Kullanmalısınız?</h2>
+      <ul>
+        <li><strong>Kesin Sonuç:</strong> Diskler fiziksel olarak parçalanır, plaka üzerindeki manyetik alanlar bozulur.</li>
+        <li><strong>Hız:</strong> Yazılımla saatler süren silme işlemi, <a href="https://www.parcalamamakinesi.com/tr/urunler/harddisk" target="_blank">harddisk kırma makineleri</a> ile saniyeler sürer.</li>
+        <li><strong>Güvenlik Sertifikası:</strong> Fiziksel imha işlemi, denetimlerde kanıt olarak sunulabilir.</li>
+      </ul>
+
+      <h2>MT Makina Çözümleri</h2>
+      <p>MT Makina olarak, ofis tipi küçük modellerden endüstriyel tesislere uygun yüksek kapasiteli sistemlere kadar geniş bir yelpaze sunuyoruz. Ayrıca, veri güvenliği konusunda uzmanlaşmış kardeş kuruluşumuz <a href="https://www.evrakimhamakinesi.com.tr" target="_blank" rel="noopener noreferrer">Evrak İmha Makinesi</a> üzerinden de profesyonel çözümlere ulaşabilirsiniz.</p>
+
+      <h3>Sonuç</h3>
+      <p>Eski bilgisayarlarınızı, sunucularınızı veya arşiv disklerinizi çöpe atmak büyük bir risktir. Profesyonel imha makineleri ile verilerinizi ve itibarınızı koruyun.</p>
+      `,
+      en: `
+      <h1>GDPR Compliant Data Destruction</h1>
+      <p>Today, data security is one of the top priorities for companies. Software wiping alone does not guarantee 100% data destruction. <strong>Physical destruction</strong> is the only certain way to destroy data irreversibly.</p>
+
+      <h2>Legal Requirements (GDPR)</h2>
+      <p>The General Data Protection Regulation (GDPR) requires that expired personal data be anonymized or destroyed. In case of violation, companies can face fines worth millions.</p>
+
+      <h2>Why Use a Hard Drive Shredder?</h2>
+      <ul>
+        <li><strong>Definite Result:</strong> Disks are physically shredded, magnetic fields on the platter are destroyed.</li>
+        <li><strong>Speed:</strong> Wiping via software takes hours, while <a href="https://www.parcalamamakinesi.com/en/products/harddisk" target="_blank">hard drive shredders</a> take seconds.</li>
+        <li><strong>Security Certificate:</strong> Physical destruction can be presented as evidence in audits.</li>
+      </ul>
+
+      <h2>MT Makina Solutions</h2>
+      <p>As MT Makina, we offer a wide range from small office models to high-capacity systems suitable for industrial facilities. You can also access professional solutions through our sister company <a href="https://www.evrakimhamakinesi.com.tr" target="_blank" rel="noopener noreferrer">Evrak İmha Makinesi</a>, specialized in data security.</p>
+
+      <h3>Conclusion</h3>
+      <p>Throwing away your old computers, servers, or archive disks is a huge risk. Protect your data and reputation with professional destruction machines.</p>
+      `,
+      ru: `
+      <h1>Уничтожение данных в соответствии с GDPR</h1>
+      <p>Сегодня безопасность данных является одним из главных приоритетов компаний. Одно лишь программное стирание не гарантирует 100% уничтожения данных. <strong>Физическое уничтожение</strong> — единственный верный способ необратимого уничтожения данных.</p>
+
+      <h2>Юридические требования (GDPR)</h2>
+      <p>Общий регламент по защите данных (GDPR) требует, чтобы устаревшие персональные данные были анонимизированы или уничтожены. В случае нарушения компаниям могут грозить штрафы в миллионы.</p>
+
+      <h2>Зачем использовать шредер жестких дисков?</h2>
+      <ul>
+        <li><strong>Определенный результат:</strong> Диски физически измельчаются, магнитные поля на пластине разрушаются.</li>
+        <li><strong>Скорость:</strong> Стирание с помощью программного обеспечения занимает часы, в то время как <a href="https://www.parcalamamakinesi.com/ru/products/harddisk" target="_blank">шредеры жестких дисков</a> справляются за секунды.</li>
+        <li><strong>Сертификат безопасности:</strong> Физическое уничтожение может быть представлено в качестве доказательства при проверках.</li>
+      </ul>
+
+      <h2>Решения MT Makina</h2>
+      <p>Как MT Makina, мы предлагаем широкий ассортимент от небольших офисных моделей до высокопроизводительных систем, подходящих для промышленных объектов. Вы также можете получить доступ к профессиональным решениям через нашу дочернюю компанию <a href="https://www.evrakimhamakinesi.com.tr" target="_blank" rel="noopener noreferrer">Evrak İmha Makinesi</a>, специализирующуюся на безопасности данных.</p>
+
+      <h3>Заключение</h3>
+      <p>Выбрасывать старые компьютеры, серверы или архивные диски — огромный риск. Защитите свои данные и репутацию с помощью профессиональных машин для уничтожения.</p>
+      `,
+      ar: `
+      <h1>إتلاف البيانات المتوافق مع اللائحة العامة لحماية البيانات</h1>
+      <p>يعد أمان البيانات اليوم أحد أهم أولويات الشركات. المسح الآلي وحده لا يضمن تدمير البيانات بنسبة 100٪. <strong>التدمير المادي</strong> هو الطريقة المؤكدة الوحيدة لتدمير البيانات بشكل لا رجعة فيه.</p>
+
+      <h2>المتطلبات القانونية (GDPR)</h2>
+      <p>تتطلب اللائحة العامة لحماية البيانات (GDPR) إخفاء هوية البيانات الشخصية منتهية الصلاحية أو تدميرها. في حالة الانتهاك، يمكن أن تواجه الشركات غرامات بالملايين.</p>
+
+      <h2>لماذا تستخدم آلة تمزيق القرص الصلب؟</h2>
+      <ul>
+        <li><strong>نتيجة مؤكدة:</strong> يتم تمزيق الأقراص ماديًا، وتدمير المجالات المغناطيسية على اللوحة.</li>
+        <li><strong>السرعة:</strong> يستغرق المسح عبر البرنامج ساعات، بينما تستغرق <a href="https://www.parcalamamakinesi.com/ar/products/harddisk" target="_blank">آلات تمزيق الأقراص الصلبة</a> ثوانٍ.</li>
+        <li><strong>شهادة الأمان:</strong> يمكن تقديم التدمير المادي كدليل في عمليات التدقيق.</li>
+      </ul>
+
+      <h2>حلول MT Makina</h2>
+      <p>بصفتنا MT Makina، نقدم مجموعة واسعة من موديلات المكاتب الصغيرة إلى الأنظمة عالية السعة المناسبة للمنشآت الصناعية. يمكنك أيضًا الوصول إلى الحلول الاحترافية من خلال شركتنا الشقيقة <a href="https://www.evrakimhamakinesi.com.tr" target="_blank" rel="noopener noreferrer">Evrak İmha Makinesi</a>، المتخصصة في أمن البيانات.</p>
+
+      <h3>خاتمة</h3>
+      <p>يعد التخلص من أجهزة الكمبيوتر أو الخوادم أو أقراص الأرشيف القديمة مخاطرة كبيرة. احمِ بياناتك وسمعتك باستخدام آلات الإتلاف الاحترافية.</p>
+      `
+    }
+  },
+  {
+    id: '4',
+    slug: 'uretimde-sifir-atik-yonetimi',
+    title: {
+      tr: 'Üretimde Sıfır Atık Yönetimi ve Shredder Kullanımı',
+      en: 'Zero Waste Management in Manufacturing and Shredder Usage',
+      ru: 'Управление нулевыми отходами в производстве и использование шредеров',
+      ar: 'إدارة النفايات الصفرية في التصنيع واستخدام آلات التمزيق'
+    },
+    summary: {
+      tr: 'Sürdürülebilir üretim için atık hacmini azaltmak şart. Fabrikanızda çıkan atıkları parçalayarak nasıl yeniden değere dönüştürebileceğinizi anlatıyoruz.',
+      en: 'Reducing waste volume is essential for sustainable production. We explain how you can transform waste generated in your factory into value by shredding it.',
+      ru: 'Сокращение объема отходов необходимо для устойчивого производства. Мы объясняем, как вы можете превратить отходы, образующиеся на вашем заводе, в ценность, измельчая их.',
+      ar: 'تقليل حجم النفايات ضروري للإنتاج المستدام. نوضح كيف يمكنك تحويل النفايات الناتجة في مصنعك إلى قيمة عن طريق تمزيقها.'
+    },
+    date: '2026-01-08',
+    author: {
+      tr: 'MT Makina Sürdürülebilirlik Ekibi',
+      en: 'MT Makina Sustainability Team',
+      ru: 'Команда устойчивого развития MT Makina',
+      ar: 'فريق استدامة MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1542601906990-24d4c16419d9?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Sıfır Atık', en: 'Zero Waste', ru: 'Нулевые отходы', ar: 'صفر نفايات' },
+      { tr: 'Sürdürülebilirlik', en: 'Sustainability', ru: 'Устойчивость', ar: 'الاستدامة' },
+      { tr: 'Geri Kazanım', en: 'Recovery', ru: 'Восстановление', ar: 'النقل' },
+      { tr: 'Yeşil Enerji', en: 'Green Energy', ru: 'Зеленая энергия', ar: 'الطاقة الخضراء' }
+    ],
+    content: {
+      tr: `
+      <h1>Üretimde Sıfır Atık Hedefi</h1>
+      <p>"Sıfır Atık" sadece bir slogan değil, modern endüstrinin geleceğidir. Fabrika ortamında çıkan üretim fireleri, hatalı ürünler ve ambalaj atıkları, doğru yönetilmediğinde büyük bir maliyet kalemidir.</p>
+
+      <h2>Atığı Değere Dönüştürmek</h2>
+      <p>Parçalama makineleri (shredderlar), hacimli atıkları işlenebilir boyutlara getirir. Bu sayede:</p>
+      <ul>
+        <li><strong>Nakliye Tasarrufu:</strong> Hacmi küçülen atıklar daha az yer kaplar, nakliye maliyeti %80'e kadar düşer.</li>
+        <li><strong>Enerji Geri Kazanımı:</strong> Özellikle ahşap ve kağıt atıkları parçalanarak yakıt (RDF) haline getirilebilir.</li>
+        <li><strong>Hammadde Geri Dönüşümü:</strong> Plastik enjeksiyon atıkları kırılıp tekrar üretime dahil edilebilir.</li>
+      </ul>
+
+      <h2>Hangi Sektörler İçin İdeal?</h2>
+      <p>Otomotiv, tekstil, mobilya ve gıda ambalajı sektörleri başta olmak üzere, her türlü üretim tesisinde <strong>MT Makina</strong> shredder çözümleri kullanılmaktadır.</p>
+
+      <h2>MT Makina ve Çevre Duyarlılığı</h2>
+      <p>Gelecek nesillere temiz bir dünya bırakmak için çalışıyoruz. Yüksek verimli motorlarımızla (IE3/IE4 sınıfı) minimum enerjiyle maksimum parçalama sağlıyoruz. Daha fazla bilgi için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">kurumsal web sitemizi</a> ziyaret edebilirsiniz.</p>
+      `,
+      en: `
+      <h1>Zero Waste Goal in Manufacturing</h1>
+      <p>"Zero Waste" is not just a slogan, it is the future of modern industry. Production scraps, defective products, and packaging waste generated in the factory environment are a major cost item if not managed correctly.</p>
+
+      <h2>Turning Waste into Value</h2>
+      <p>Shredder machines bring bulky waste to processable sizes. In this way:</p>
+      <ul>
+        <li><strong>Transportation Savings:</strong> Waste with reduced volume takes up less space, transportation costs decrease by up to 80%.</li>
+        <li><strong>Energy Recovery:</strong> Especially wood and paper waste can be shredded and turned into fuel (RDF).</li>
+        <li><strong>Raw Material Recycling:</strong> Plastic injection waste can be crushed and re-included in production.</li>
+      </ul>
+
+      <h2>Ideal for Which Sectors?</h2>
+      <p><strong>MT Makina</strong> shredder solutions are used in all kinds of production facilities, especially in automotive, textile, furniture, and food packaging sectors.</p>
+
+      <h2>MT Makina and Environmental Awareness</h2>
+      <p>We are working to leave a clean world to future generations. With our high-efficiency motors (IE3/IE4 class), we provide maximum shredding with minimum energy. You can visit our <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">corporate website</a> for more information.</p>
+      `,
+      ru: `
+      <h1>Цель "Нулевые отходы" в производстве</h1>
+      <p>"Нулевые отходы" — это не просто лозунг, это будущее современной промышленности. Производственные отходы, бракованная продукция и отходы упаковки, образующиеся в заводских условиях, являются серьезной статьей расходов, если ими не управлять правильно.</p>
+
+      <h2>Превращение отходов в ценность</h2>
+      <p>Шредеры измельчают объемные отходы до перерабатываемых размеров. Таким образом:</p>
+      <ul>
+        <li><strong>Экономия на перевозке:</strong> Отходы с уменьшенным объемом занимают меньше места, транспортные расходы снижаются до 80%.</li>
+        <li><strong>Рекуперация энергии:</strong> Особенно древесные и бумажные отходы могут быть измельчены и превращены в топливо (RDF).</li>
+        <li><strong>Переработка сырья:</strong> Отходы литья пластмасс могут быть измельчены и повторно включены в производство.</li>
+      </ul>
+
+      <h2>Идеально для каких секторов?</h2>
+      <p>Решения <strong>MT Makina</strong> для измельчения используются на всех видах производственных объектов, особенно в автомобильной, текстильной, мебельной и пищевой упаковочной промышленности.</p>
+
+      <h2>MT Makina и экологическая осведомленность</h2>
+      <p>Мы работаем, чтобы оставить чистый мир будущим поколениям. С нашими высокоэффективными двигателями (класса IE3/IE4) мы обеспечиваем максимальное измельчение при минимальных затратах энергии. Вы можете посетить наш <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">корпоративный веб-сайт</a> для получения дополнительной информации.</p>
+      `,
+      ar: `
+      <h1>هدف النفايات الصفرية في التصنيع</h1>
+      <p>"صفر نفايات" ليس مجرد شعار، بل هو مستقبل الصناعة الحديثة. تعتبر مخلفات الإنتاج والمنتجات المعيبة ومخلفات التغليف المتولدة في بيئة المصنع عنصر تكلفة رئيسي إذا لم تتم إدارتها بشكل صحيح.</p>
+
+      <h2>تحويل النفايات إلى قيمة</h2>
+      <p>تقوم آلات التمزيق بجلب النفايات الضخمة إلى أحجام يمكن معالجتها. وبهذه الطريقة:</p>
+      <ul>
+        <li><strong>توفير النقل:</strong> تشغل النفايات ذات الحجم المنخفض مساحة أقل، وتنخفض تكاليف النقل بنسبة تصل إلى 80٪.</li>
+        <li><strong>استعادة الطاقة:</strong> يمكن تقطيع نفايات الخشب والورق وتحويلها إلى وقود (RDF).</li>
+        <li><strong>إعادة تدوير المواد الخام:</strong> يمكن سحق نفايات حقن البلاستيك وإعادة إدراجها في الإنتاج.</li>
+      </ul>
+
+      <h2>مثالية لأي قطاعات؟</h2>
+      <p>تستخدم حلول التمزيق من <strong>MT Makina</strong> في جميع أنواع مرافق الإنتاج، وخاصة في قطاعات السيارات والمنسوجات والأثاث وتغليف المواد الغذائية.</p>
+
+      <h2>MT Makina والوعي البيئي</h2>
+      <p>نحن نعمل على ترك عالم نظيف للأجيال القادمة. بفضل محركاتنا عالية الكفاءة (فئة IE3 / IE4)، نوفر أقصى قدر من التمزيق بأقل قدر من الطاقة. يمكنك زيارة <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">موقعنا الإلكتروني للشركة</a> لمزيد من المعلومات.</p>
+      `
+    }
+  },
+  {
+    id: '5',
+    slug: 'plastik-geri-donusumu-atiktan-hammaddeye',
+    title: {
+      tr: 'Plastik Geri Dönüşümü: Atıktan Hammaddeye Yolculuk',
+      en: 'Plastic Recycling: The Journey from Waste to Raw Material',
+      ru: 'Переработка пластика: путь от отходов к сырью',
+      ar: 'إعادة تدوير البلاستيك: الرحلة من النفايات إلى المواد الخام'
+    },
+    summary: {
+      tr: 'Plastik atıkların kırma, yıkama ve granül haline getirilme sürecinde parçalama makinelerinin rolü. Tek şaftlı ve çift şaftlı shredder karşılaştırması.',
+      en: 'The role of shredder machines in the process of crushing, washing, and granulating plastic waste. Comparison of single-shaft and dual-shaft shredders.',
+      ru: 'Роль шредеров в процессе дробления, мойки и гранулирования пластиковых отходов. Сравнение одновальных и двухвальных шредеров.',
+      ar: 'دور آلات التمزيق في عملية تكسير وغسل وتحويل النفايات البلاستيكية إلى حبيبات. مقارنة بين آلات التمزيق أحادية العمود وثنائية العمود.'
+    },
+    date: '2026-01-09',
+    author: {
+      tr: 'MT Makina Geri Dönüşüm Uzmanları',
+      en: 'MT Makina Recycling Experts',
+      ru: 'Эксперты по переработке MT Makina',
+      ar: 'خبراء إعادة التدوير في MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Plastik Geri Dönüşüm', en: 'Plastic Recycling', ru: 'Переработка пластика', ar: 'إعادة تدوير البلاستيك' },
+      { tr: 'Granür', en: 'Granule', ru: 'Гранула', ar: 'حبيبة' },
+      { tr: 'Tek Şaftlı Shredder', en: 'Single Shaft Shredder', ru: 'Одновальный шредер', ar: 'آلة تمزيق أحادية العمود' },
+      { tr: 'Polimer', en: 'Polymer', ru: 'Полимер', ar: 'بوليمر' }
+    ],
+    content: {
+      tr: `
+      <h1>Plastiklerin İkinci Hayatı</h1>
+      <p>Doğada yüzlerce yıl yok olmayan plastikler, geri dönüşüm endüstrisinin en değerli hammaddelerinden biridir. Hurda plastiklerin (PET, PE, PP, PVC) ekonomiye kazandırılması, doğru parçalama teknolojisi ile başlar.</p>
+
+      <h2>Parçalama Süreci Nasıl İşler?</h2>
+      <ol>
+        <li><strong>Ön Kırma:</strong> Büyük plastik parçalar (variller, takozlar), <a href="https://www.parcalamamakinesi.com/tr/urunler/single-shaft" target="_blank">Tek Şaftlı Parçalayıcılar</a> ile kaba boyutlara (40-100mm) indirilir.</li>
+        <li><strong>Yıkama:</strong> Kirliliklerden arındırma işlemi yapılır.</li>
+        <li><strong>İkinci Kırma (Granülatör):</strong> Temizlenen parçalar daha ufak boyutlara (8-12mm) getirilir.</li>
+      </ol>
+
+      <h2>Tek Şaftlı mı, Çift Şaftlı mı?</h2>
+      <p>Bu sorunun cevabı malzemeye göre değişir:</p>
+      <ul>
+        <li><strong>Tek Şaftlı (Single Shaft):</strong> Takoz plastikler ve sert malzemeler için idealdir. Hassas boyutlandırma yapar.</li>
+        <li><strong>Çift Şaftlı (Dual Shaft):</strong> Hacimli ve içi boş malzemeler (varil, bidon) için yüksek torkla ön parçalama yapar.</li>
+      </ul>
+
+      <h2>MT Makina Farkı</h2>
+      <p>Plastik sektörünün ihtiyaçlarını biliyoruz. Rotor tasarımlarımız, malzemeyi sarmadan ve ısıtmadan (plastik erimesini önleyerek) parçalamak üzere optimize edilmiştir. Detaylı teknik bilgi için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> mühendislerine danışabilirsiniz.</p>
+      `,
+      en: `
+      <h1>The Second Life of Plastics</h1>
+      <p>Plastics, which do not disappear in nature for hundreds of years, are one of the most valuable raw materials of the recycling industry. Bringing scrap plastics (PET, PE, PP, PVC) into the economy begins with the right shredding technology.</p>
+
+      <h2>How Does the Shredding Process Work?</h2>
+      <ol>
+        <li><strong>Pre-Crushing:</strong> Large plastic pieces (barrels, lumps) are reduced to rough sizes (40-100mm) with <a href="https://www.parcalamamakinesi.com/en/products/single-shaft" target="_blank">Single Shaft Shredders</a>.</li>
+        <li><strong>Washing:</strong> The process of purification from impurities is carried out.</li>
+        <li><strong>Second Crushing (Granulator):</strong> Cleaned parts are brought to smaller sizes (8-12mm).</li>
+      </ol>
+
+      <h2>Single Shaft or Dual Shaft?</h2>
+      <p>The answer to this question depends on the material:</p>
+      <ul>
+        <li><strong>Single Shaft:</strong> Ideal for lump plastics and hard materials. Performs precise sizing.</li>
+        <li><strong>Dual Shaft:</strong> Performs pre-shredding with high torque for bulky and hollow materials (barrels, drums).</li>
+      </ul>
+
+      <h2>The MT Makina Difference</h2>
+      <p>We know the needs of the plastics industry. Our rotor designs are optimized to shred the material without wrapping and heating (preventing plastic melting). You can consult <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> engineers for detailed technical information.</p>
+      `,
+      ru: `
+      <h1>Вторая жизнь пластика</h1>
+      <p>Пластмассы, которые не исчезают в природе сотни лет, являются одним из самых ценных видов сырья для перерабатывающей промышленности. Возвращение лома пластмасс (ПЭТ, ПЭ, ПП, ПВХ) в экономику начинается с правильной технологии измельчения.</p>
+
+      <h2>Как работает процесс измельчения?</h2>
+      <ol>
+        <li><strong>Предварительное дробление:</strong> Крупные куски пластика (бочки, глыбы) измельчаются до грубых размеров (40-100 мм) с помощью <a href="https://www.parcalamamakinesi.com/ru/products/single-shaft" target="_blank">одновальных шредеров</a>.</li>
+        <li><strong>Мойка:</strong> Проводится процесс очистки от примесей.</li>
+        <li><strong>Второе дробление (Гранулятор):</strong> Очищенные части доводятся до более мелких размеров (8-12 мм).</li>
+      </ol>
+
+      <h2>Одновальный или двухвальный?</h2>
+      <p>Ответ на этот вопрос зависит от материала:</p>
+      <ul>
+        <li><strong>Одновальный (Single Shaft):</strong> Идеально подходит для глыб пластика и твердых материалов. Выполняет точную калибровку.</li>
+        <li><strong>Двухвальный (Dual Shaft):</strong> Выполняет предварительное измельчение с высоким крутящим моментом для объемных и полых материалов (бочки, барабаны).</li>
+      </ul>
+
+      <h2>Отличие MT Makina</h2>
+      <p>Мы знаем потребности индустрии пластмасс. Конструкции наших роторов оптимизированы для измельчения материала без наматывания и нагрева (предотвращая плавление пластика). Вы можете проконсультироваться с инженерами <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> для получения подробной технической информации.</p>
+      `,
+      ar: `
+      <h1>الحياة الثانية للبلاستيك</h1>
+      <p>البلاستيك، الذي لا يختفي في الطبيعة لمئات السنين، هو أحد أهم المواد الخام في صناعة إعادة التدوير. تبدأ إعادة خردة البلاستيك (PET، PE، PP، PVC) إلى الاقتصاد بتقنية التمزيق الصحيحة.</p>
+
+      <h2>كيف تعمل عملية التمزيق؟</h2>
+      <ol>
+        <li><strong>التكسير الأولي:</strong> يتم تقليل القطع البلاستيكية الكبيرة (البراميل، الكتل) إلى أحجام خشنة (40-100 مم) باستخدام <a href="https://www.parcalamamakinesi.com/ar/products/single-shaft" target="_blank">آلات التمزيق أحادية العمود</a>.</li>
+        <li><strong>الغسيل:</strong> يتم تنفيذ عملية التنقية من الشوائب.</li>
+        <li><strong>التكسير الثاني (الحبيبات):</strong> يتم إحضار الأجزاء النظيفة إلى أحجام أصغر (8-12 مم).</li>
+      </ol>
+
+      <h2>أحادي العمود أم ثنائي العمود؟</h2>
+      <p>تعتمد الإجابة على هذا السؤال على المادة:</p>
+      <ul>
+        <li><strong>أحادي العمود (Single Shaft):</strong> مثالي لكتل البلاستيك والمواد الصلبة. يؤدي تحجيم دقيق.</li>
+        <li><strong>ثنائي العمود (Dual Shaft):</strong> يقوم بالتمزيق المسبق بوعزم دوران مرتفع للمواد الضخمة والمفرغة (البراميل، الطبول).</li>
+      </ul>
+
+      <h2>اختلاف MT Makina</h2>
+      <p>نحن نعرف احتياجات صناعة البلاستيك. تم تحسين تصميمات الدوار لدينا لتمزيق المواد دون الالتفاف والتسخين (منع ذوبان البلاستيك). يمكنك استشارة مهندسي <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> للحصول على معلومات فنية مفصلة.</p>
+      `
+    }
+  },
+  {
+    id: '6',
+    slug: 'tehlikeli-atik-bertarafi-ve-is-guvenligi',
+    title: {
+      tr: 'Tehlikeli Atık Bertarafı ve İş Güvenliği',
+      en: 'Hazardous Waste Disposal and Occupational Safety',
+      ru: 'Утилизация опасных отходов и охрана труда',
+      ar: 'التخلص من النفايات الخطرة والسلامة المهنية'
+    },
+    summary: {
+      tr: 'Kimyasal variller, elektronik atıklar ve tıbbi malzemeler... Tehlikeli atıkların güvenli imhası için profesyonel parçalama çözümleri ve yasal prosedürler.',
+      en: 'Chemical barrels, e-waste, and medical supplies... Professional shredding solutions and legal procedures for the safe disposal of hazardous waste.',
+      ru: 'Химические бочки, электронные отходы и медицинские принадлежности... Профессиональные решения по измельчению и юридические процедуры для безопасной утилизации опасных отходов.',
+      ar: 'براميل كيميائية ونفايات إلكترونية ومستلزمات طبية... حلول تمزيق احترافية وإجراءات قانونية للتخلص الآمن من النفايات الخطرة.'
+    },
+    date: '2026-01-10',
+    author: {
+      tr: 'MT Makina İş Güvenliği Uzmanı',
+      en: 'MT Makina Occupational Safety Specialist',
+      ru: 'Специалист по охране труда MT Makina',
+      ar: 'أخصائي السلامة المهنية MT Makina'
+    },
+    image: 'https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&q=80&w=1000',
+    tags: [
+      { tr: 'Tehlikeli Atık', en: 'Hazardous Waste', ru: 'Опасные отходы', ar: 'النفايات الخطرة' },
+      { tr: 'İş Güvenliği', en: 'Occupational Safety', ru: 'Охрана труда', ar: 'السلامة المهنية' },
+      { tr: 'Varil Parçalama', en: 'Barrel Shredding', ru: 'Измельчение бочек', ar: 'تمزيق البراميل' },
+      { tr: 'Çevre Mevzuatı', en: 'Environmental Legislation', ru: 'Экологическое законодательство', ar: 'التشريعات البيئية' }
+    ],
+    content: {
+      tr: `
+      <h1>Riski Kaynağında Yok Edin</h1>
+      <p>Tehlikeli atıklar, sadece çevre için değil, çalışan sağlığı için de büyük bir tehdittir. Özellikle kimyasal bulaşmış ambalajlar ve variller, depolama sırasında sızdırma ve patlama riski taşır.</p>
+
+      <h2>Doğru İmha Yöntemi Nedir?</h2>
+      <p>Tehlikeli atıklar, kontrollü bir şekilde parçalanarak hacmi küçültülmeli ve ardından nihai bertaraf tesisine gönderilmelidir. <a href="https://www.parcalamamakinesi.com/tr/urunler/dual-shaft" target="_blank">Çift Şaftlı Parçalayıcılar</a>, metal ve plastik varilleri güvenle parçalayarak sıkıştırılabilir hale getirir.</p>
+
+      <h2>İş Güvenliği Önceliklidir</h2>
+      <p>Shredder makinelerimizde:</p>
+      <ul>
+        <li><strong>Otomatik Stop/Geri Dönüş:</strong> Sıkışma anında makine durur, operatörü korur.</li>
+        <li><strong>Gaz Tahliye Sistemleri:</strong> Kimyasal buharların birikmesini önleyen opsiyonel donanımlar.</li>
+        <li><strong>Uzaktan Kumanda:</strong> Operatörün tehlikeli bölgeden uzakta çalışmasını sağlar.</li>
+      </ul>
+
+      <h2>Uyumluluk ve Danışmanlık</h2>
+      <p>Çevre ve Şehircilik Bakanlığı mevzuatlarına uygun makine parkuru kurmak için <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> uzmanlığına güvenin.</p>
+      `,
+      en: `
+      <h1>Eliminate Risk at Source</h1>
+      <p>Hazardous waste is a major threat not only to the environment but also to employee health. Especially chemical-contaminated packaging and barrels carry the risk of leakage and explosion during storage.</p>
+
+      <h2>What is the Right Disposal Method?</h2>
+      <p>Hazardous waste should be shredded in a controlled manner to reduce its volume and then sent to the final disposal facility. <a href="https://www.parcalamamakinesi.com/en/products/dual-shaft" target="_blank">Dual Shaft Shredders</a> safely shred metal and plastic barrels, making them compressible.</p>
+
+      <h2>Occupational Safety is Priority</h2>
+      <p>In our shredder machines:</p>
+      <ul>
+        <li><strong>Automatic Stop/Reverse:</strong> The machine stops in case of jamming, protecting the operator.</li>
+        <li><strong>Gas Evacuation Systems:</strong> Optional equipment that prevents the accumulation of chemical vapors.</li>
+        <li><strong>Remote Control:</strong> Allows the operator to work away from the danger zone.</li>
+      </ul>
+
+      <h2>Compliance and Consultancy</h2>
+      <p>Trust <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> expertise to establish a machine park compliant with the regulations of the Ministry of Environment and Urbanization.</p>
+      `,
+      ru: `
+      <h1>Устраните риск в источнике</h1>
+      <p>Опасные отходы представляют собой серьезную угрозу не только для окружающей среды, но и для здоровья сотрудников. Особенно упаковка и бочки, загрязненные химикатами, несут риск утечки и взрыва при хранении.</p>
+
+      <h2>Каков правильный метод утилизации?</h2>
+      <p>Опасные отходы должны быть измельчены контролируемым образом для уменьшения их объема, а затем отправлены на конечный объект утилизации. <a href="https://www.parcalamamakinesi.com/ru/products/dual-shaft" target="_blank">Двухвальные шредеры</a> безопасно измельчают металлические и пластиковые бочки, делая их сжимаемыми.</p>
+
+      <h2>Охрана труда является приоритетом</h2>
+      <p>В наших шредерах:</p>
+      <ul>
+        <li><strong>Автоматическая остановка/Реверс:</strong> Машина останавливается в случае заклинивания, защищая оператора.</li>
+        <li><strong>Системы газоотвода:</strong> Дополнительное оборудование, предотвращающее скопление химических паров.</li>
+        <li><strong>Дистанционное управление:</strong> Позволяет оператору работать вдали от опасной зоны.</li>
+      </ul>
+
+      <h2>Соблюдение требований и консультации</h2>
+      <p>Доверьтесь опыту <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a>, чтобы создать парк машин, соответствующий нормам Министерства окружающей среды и градостроительства.</p>
+      `,
+      ar: `
+      <h1>تخلص من المخاطر في المصدر</h1>
+      <p>تشكل النفايات الخطرة تهديدًا كبيرًا ليس فقط للبيئة ولكن أيضًا لصحة الموظفين. خاصة العبوات والبراميل الملوثة بالمواد الكيميائية تحمل مخاطر التسرب والانفجار أثناء التخزين.</p>
+
+      <h2>ما هي طريقة التخلص الصحيحة؟</h2>
+      <p>يجب تقطيع النفايات الخطرة بطريقة محكومة لتقليل حجمها ثم إرسالها إلى منشأة التخلص النهائي. <a href="https://www.parcalamamakinesi.com/ar/products/dual-shaft" target="_blank">آلات التمزيق ثنائية العمود</a> تمزق البراميل المعدنية والبلاستيكية بأمان، مما يجعلها قابلة للضغط.</p>
+
+      <h2>السلامة المهنية هي الأولوية</h2>
+      <p>في آلات التمزيق لدينا:</p>
+      <ul>
+        <li><strong>الإيقاف التلقائي / العكس:</strong> تتوقف الماكينة في حالة الانحشار، مما يحمي المشغل.</li>
+        <li><strong>أنظمة تفريغ الغاز:</strong> معدات اختيارية تمنع تراكم الأبخرة الكيميائية.</li>
+        <li><strong>التحكم عن بعد:</strong> يسمح للمشغل بالعمل بعيدًا عن منطقة الخطر.</li>
+      </ul>
+
+      <h2>الامتثال والاستشارات</h2>
+      <p>ثق بخبرة <a href="https://www.mtmakina.com.tr" target="_blank" rel="noopener noreferrer">MT Makina</a> لإنشاء حديقة آلات متوافقة مع لوائح وزارة البيئة والتحضر.</p>
+      `
+    }
   }
 ];
