@@ -54,7 +54,7 @@ type ProductType = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'mob
 
 // Parse URL and determine current page (Multi-language support)
 // Parse URL and determine current page (Multi-language support)
-function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string } {
+function parseUrl(): { page: PageView; product?: ProductType; model?: string; wasteCategory?: string; blogSlug?: string } {
   const path = window.location.pathname;
 
   // Extract language prefix if present
@@ -131,12 +131,12 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     }
   }
 
-  // Check for Blog pages (using cleanPath for language-agnostic matching)
   if (cleanPath === 'blog') {
     return { page: 'blog' };
   }
   if (cleanPath.startsWith('blog/')) {
-    return { page: 'blog-post' };
+    const blogSlug = cleanPath.substring(5); // Remove 'blog/'
+    return { page: 'blog-post', blogSlug };
   }
 
   // Default to not found page for unknown routes
@@ -155,6 +155,7 @@ function AppContent() {
   const [selectedWasteCategory, setSelectedWasteCategory] = useState<string | null>(initialUrlState.wasteCategory || null);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>(initialUrlState.product || null);
   const [selectedModelName, setSelectedModelName] = useState<string>(initialUrlState.model || 'TSH-60');
+  const [selectedBlogSlug, setSelectedBlogSlug] = useState<string | null>(initialUrlState.blogSlug || null);
 
   // SEO Head data based on current page
   const getSEOData = () => {
@@ -275,6 +276,7 @@ function AppContent() {
     if (urlState.product) setSelectedProduct(urlState.product);
     if (urlState.model) setSelectedModelName(urlState.model);
     if (urlState.wasteCategory) setSelectedWasteCategory(urlState.wasteCategory);
+    if (urlState.blogSlug) setSelectedBlogSlug(urlState.blogSlug);
 
     // Update SEO based on initial page
     updatePageSEO(urlState.page, urlState.product, urlState.model);
@@ -306,6 +308,7 @@ function AppContent() {
       if (urlState.product) setSelectedProduct(urlState.product);
       if (urlState.model) setSelectedModelName(urlState.model);
       if (urlState.wasteCategory) setSelectedWasteCategory(urlState.wasteCategory);
+      if (urlState.blogSlug) setSelectedBlogSlug(urlState.blogSlug);
       updatePageSEO(urlState.page, urlState.product, urlState.model);
     };
 
@@ -987,10 +990,7 @@ function AppContent() {
     );
   }
 
-  if (currentPage === 'blog-post') {
-    const path = window.location.pathname;
-    const slug = path.split('/').pop() || '';
-
+  if (currentPage === 'blog-post' && selectedBlogSlug) {
     return (
       <>
         <Header
@@ -1007,12 +1007,13 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
           onBlogClick={() => {
-            window.history.pushState({}, '', '/blog');
+            window.history.pushState({}, '', `/${language}/blog`);
             setCurrentPage('blog');
+            setSelectedBlogSlug(null);
             window.scrollTo(0, 0);
           }}
         />
-        <BlogPostPage slug={slug} />
+        <BlogPostPage slug={selectedBlogSlug} />
         <ChatWidget />
         <Footer />
       </>
