@@ -73,8 +73,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       const firstPart = pathParts[0];
       let pageFound = false;
 
-      // Check static pages
+      // Check static pages (exclude blog - it has special handling below)
       for (const [pageKey, slugs] of Object.entries(slugsByLanguage)) {
+        if (pageKey === 'blog') continue; // Blog has special handling to preserve slug
         if (slugs[currentLang] === firstPart) {
           newPath = `/${newLang}/${slugs[newLang]}`;
           pageFound = true;
