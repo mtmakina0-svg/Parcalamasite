@@ -2204,15 +2204,10 @@ export const generateProductListStructuredData = (language: Language = 'tr') => 
           "highPrice": "150000",
           "offerCount": "6",
           "availability": "https://schema.org/InStock"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "bestRating": "5",
-          "worstRating": "1",
-          "ratingCount": "48",
-          "reviewCount": "48"
         }
+        // Note: aggregateRating removed from homepage product list
+        // Google requires only 1 aggregateRating per page
+        // Ratings are shown on individual product detail pages instead
       }
     }))
   };
