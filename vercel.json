@@ -97,6 +97,106 @@
             "permanent": true
         },
         {
+            "source": "/teknoloji",
+            "destination": "/tr/teknoloji",
+            "permanent": true
+        },
+        {
+            "source": "/atik-turleri",
+            "destination": "/tr/atik-turleri",
+            "permanent": true
+        },
+        {
+            "source": "/atik-turleri/:waste",
+            "destination": "/tr/atik-turleri/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar",
+            "destination": "/tr/atik-turleri",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/plastic-waste",
+            "destination": "/tr/atik-turleri/plastik-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/medical-waste",
+            "destination": "/tr/atik-turleri/tibbi-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/pallet-waste",
+            "destination": "/tr/atik-turleri/palet-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/organic-waste",
+            "destination": "/tr/atik-turleri/organik-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/textile-waste",
+            "destination": "/tr/atik-turleri/tekstil-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/animal-waste",
+            "destination": "/tr/atik-turleri/hayvansal-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/atiklar/:waste",
+            "destination": "/tr/atik-turleri/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/tek-shaftli-parcalama-makinesi/:model",
+            "destination": "/tr/tek-saftli-parcalama-makinesi/:model",
+            "permanent": true
+        },
+        {
+            "source": "/granulator-makinesi",
+            "destination": "/tr/urunler",
+            "permanent": true
+        },
+        {
+            "source": "/en/cift-saftli-parcalama-makinesi",
+            "destination": "/en/dual-shaft-shredder",
+            "permanent": true
+        },
+        {
+            "source": "/en/produkty/:path*",
+            "destination": "/en/products",
+            "permanent": true
+        },
+        {
+            "source": "/ru/urunler/:category/:model",
+            "destination": "/ru/produkty",
+            "permanent": true
+        },
+        {
+            "source": "/ru/urunler/:path*",
+            "destination": "/ru/produkty",
+            "permanent": true
+        },
+        {
+            "source": "/tr/atiklar/:waste",
+            "destination": "/tr/atik-turleri/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/ar/atiklar/:waste",
+            "destination": "/ar/anwa-alnfayat/:waste",
+            "permanent": true
+        },
+        {
+            "source": "/blog",
+            "destination": "/tr/blog",
+            "permanent": true
+        },
+        {
             "source": "/product/:path*",
             "destination": "/tr/urunler",
             "permanent": true
