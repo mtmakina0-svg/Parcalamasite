@@ -45,7 +45,7 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                 title={`${localizedTitle} | MT Makina Blog`}
                 description={localizedSummary}
                 keywords={post.tags.map(tag => getLocalizedValue(tag, lang))}
-                canonical={`https://www.parcalamamakinesi.com/blog/${post.slug}`}
+                canonical={`https://www.parcalamamakinesi.com/${language}/blog/${post.slug}`}
             />
 
             {/* Article Structured Data for SEO */}
@@ -74,7 +74,7 @@ export const BlogPostPage = ({ slug }: BlogPostPageProps) => {
                         },
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": `https://www.parcalamamakinesi.com/blog/${post.slug}`
+                            "@id": `https://www.parcalamamakinesi.com/${language}/blog/${post.slug}`
                         }
                     })
                 }}

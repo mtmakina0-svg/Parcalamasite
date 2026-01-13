@@ -102,11 +102,6 @@
             "permanent": true
         },
         {
-            "source": "/:lang/blog/:slug",
-            "destination": "/blog/:slug",
-            "permanent": true
-        },
-        {
             "source": "/:lang/atiklar/:waste",
             "destination": "/:lang/atik-turleri/:waste",
             "permanent": true
