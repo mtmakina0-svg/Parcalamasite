@@ -187,6 +187,31 @@
             "permanent": true
         },
         {
+            "source": "/tr/atik-turleri/hayvan",
+            "destination": "/tr/atik-turleri/hayvansal-atiklar",
+            "permanent": true
+        },
+        {
+            "source": "/en/waste-types/tekstil",
+            "destination": "/en/waste-types/textile-waste",
+            "permanent": true
+        },
+        {
+            "source": "/ar/waste-types/ambalaj",
+            "destination": "/ar/anwa-alnfayat/nfayat-altghlyf",
+            "permanent": true
+        },
+        {
+            "source": "/ar/waste-types/cam",
+            "destination": "/ar/anwa-alnfayat/nfayat-alzjaj",
+            "permanent": true
+        },
+        {
+            "source": "/ar/waste-types/:waste",
+            "destination": "/ar/anwa-alnfayat/:waste",
+            "permanent": true
+        },
+        {
             "source": "/ru/tipy-otkhodov/organic-waste",
             "destination": "/ru/tipy-otkhodov/organicheskie-othody",
             "permanent": true
