@@ -158,31 +158,31 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   },
   'quad-shaft': {
     'DS-80': {
-      main: 'https://i.ibb.co/Gf8mjXGm/1-1.png',
-      detail1: 'https://i.ibb.co/d00YBDL5/1-2.png',
-      detail2: 'https://i.ibb.co/67W76PsR/1-3.png',
-      detail3: 'https://i.ibb.co/LDs6TYHv/1-4.png',
+      main: 'https://i.ibb.co/Jhzq95f/c1f82948-14f5-4d96-8585-4acd216dd86a.png',
+      detail1: 'https://i.ibb.co/Hpb9JQH3/cfee1a74-b179-4cf8-b005-7381cfd1d5ff.png',
+      detail2: 'https://i.ibb.co/gbH7YySn/61f9ff40-e0e5-424b-b9bd-2f621f0f4337.png',
+      detail3: 'https://i.ibb.co/TqLXPKzr/2090c30f-d9b9-4d41-a512-89eaaafdd693.png',
       detail4: ''
     },
     'DS-100': {
-      main: 'https://i.ibb.co/d00YBDL5/1-2.png',
-      detail1: 'https://i.ibb.co/67W76PsR/1-3.png',
-      detail2: 'https://i.ibb.co/LDs6TYHv/1-4.png',
-      detail3: 'https://i.ibb.co/Gf8mjXGm/1-1.png',
+      main: 'https://i.ibb.co/Hpb9JQH3/cfee1a74-b179-4cf8-b005-7381cfd1d5ff.png',
+      detail1: 'https://i.ibb.co/Jhzq95f/c1f82948-14f5-4d96-8585-4acd216dd86a.png',
+      detail2: 'https://i.ibb.co/gbH7YySn/61f9ff40-e0e5-424b-b9bd-2f621f0f4337.png',
+      detail3: 'https://i.ibb.co/TqLXPKzr/2090c30f-d9b9-4d41-a512-89eaaafdd693.png',
       detail4: ''
     },
     'DS-150': {
-      main: 'https://i.ibb.co/67W76PsR/1-3.png',
-      detail1: 'https://i.ibb.co/LDs6TYHv/1-4.png',
-      detail2: 'https://i.ibb.co/Gf8mjXGm/1-1.png',
-      detail3: 'https://i.ibb.co/d00YBDL5/1-2.png',
+      main: 'https://i.ibb.co/gbH7YySn/61f9ff40-e0e5-424b-b9bd-2f621f0f4337.png',
+      detail1: 'https://i.ibb.co/Jhzq95f/c1f82948-14f5-4d96-8585-4acd216dd86a.png',
+      detail2: 'https://i.ibb.co/Hpb9JQH3/cfee1a74-b179-4cf8-b005-7381cfd1d5ff.png',
+      detail3: 'https://i.ibb.co/TqLXPKzr/2090c30f-d9b9-4d41-a512-89eaaafdd693.png',
       detail4: ''
     },
     'DS-200': {
-      main: 'https://i.ibb.co/LDs6TYHv/1-4.png',
-      detail1: 'https://i.ibb.co/Gf8mjXGm/1-1.png',
-      detail2: 'https://i.ibb.co/d00YBDL5/1-2.png',
-      detail3: 'https://i.ibb.co/67W76PsR/1-3.png',
+      main: 'https://i.ibb.co/TqLXPKzr/2090c30f-d9b9-4d41-a512-89eaaafdd693.png',
+      detail1: 'https://i.ibb.co/Jhzq95f/c1f82948-14f5-4d96-8585-4acd216dd86a.png',
+      detail2: 'https://i.ibb.co/Hpb9JQH3/cfee1a74-b179-4cf8-b005-7381cfd1d5ff.png',
+      detail3: 'https://i.ibb.co/gbH7YySn/61f9ff40-e0e5-424b-b9bd-2f621f0f4337.png',
       detail4: ''
     }
   },
