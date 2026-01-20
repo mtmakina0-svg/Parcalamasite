@@ -752,33 +752,13 @@
             "permanent": true
         },
         {
-            "source": "/ar/blog/:slug",
-            "destination": "/blog/:slug",
-            "permanent": true
-        },
-        {
-            "source": "/ru/blog/:slug",
-            "destination": "/blog/:slug",
-            "permanent": true
-        },
-        {
-            "source": "/en/blog/:slug",
-            "destination": "/blog/:slug",
-            "permanent": true
-        },
-        {
-            "source": "/tr/blog/:slug",
-            "destination": "/blog/:slug",
-            "permanent": true
-        },
-        {
             "source": "/:lang/tibbi-atik-imhasinda-dikkat-edilmesi-gerekenler",
-            "destination": "/blog/tibbi-atik-imhasinda-dikkat-edilmesi-gerekenler",
+            "destination": "/:lang/blog/tibbi-atik-imhasinda-dikkat-edilmesi-gerekenler",
             "permanent": true
         },
         {
             "source": "/:lang/endustriyel-parca-lama-makineleri",
-            "destination": "/blog/endustriyel-parcalama-makineleri",
+            "destination": "/:lang/blog/endustriyel-parcalama-makineleri",
             "permanent": true
         },
         {
