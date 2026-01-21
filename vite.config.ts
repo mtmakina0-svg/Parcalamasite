@@ -95,55 +95,6 @@ export default defineConfig({
     outDir: 'build',
     minify: 'esbuild',
     cssCodeSplit: true,
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          // Vendor chunks - external libraries
-          if (id.includes('node_modules')) {
-            if (id.includes('react-dom') || id.includes('react/')) {
-              return 'vendor-react';
-            }
-            if (id.includes('motion')) {
-              return 'vendor-motion';
-            }
-            if (id.includes('three') || id.includes('@react-three')) {
-              return 'vendor-three';
-            }
-            if (id.includes('lucide-react')) {
-              return 'vendor-ui';
-            }
-            if (id.includes('react-helmet-async')) {
-              return 'vendor-helmet';
-            }
-          }
-
-          // Large data files - separate chunks
-          if (id.includes('blogPosts.ts')) {
-            return 'data-blog';
-          }
-          if (id.includes('seoConfig.ts')) {
-            return 'data-seo';
-          }
-          if (id.includes('descriptions/')) {
-            return 'data-descriptions';
-          }
-          if (id.includes('imageConfig.ts')) {
-            return 'data-images';
-          }
-
-          // Page components - lazy loadable
-          if (id.includes('ProductDetailPage')) {
-            return 'page-product-detail';
-          }
-          if (id.includes('BlogPostPage') || id.includes('BlogPage')) {
-            return 'page-blog';
-          }
-          if (id.includes('WasteDetailPage') || id.includes('WasteCategoriesPage')) {
-            return 'page-waste';
-          }
-        },
-      },
-    },
   },
   server: {
     port: 3000,
