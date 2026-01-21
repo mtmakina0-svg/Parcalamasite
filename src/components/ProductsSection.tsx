@@ -241,10 +241,7 @@ export const ProductsSection = ({ onProductClick }: ProductsSectionProps) => {
                 transition: { duration: 0.3, type: 'spring', stiffness: 300 }
               }}
               className="group cursor-pointer"
-              onClick={() => {
-                console.log('🎯 ProductsSection Card clicked - product.id:', product.id);
-                onProductClick?.(product.id);
-              }}
+              onClick={() => onProductClick?.(product.id)}
             >
               <Card className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 h-full min-h-[280px] md:min-h-[350px] bg-[#F5F7F8] relative">
                 {/* Background Image - Full Coverage */}

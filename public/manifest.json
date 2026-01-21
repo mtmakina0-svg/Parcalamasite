@@ -1,0 +1,54 @@
+{
+    "name": "MT Makina - Parçalama Makinesi",
+    "short_name": "MT Makina",
+    "description": "Endüstriyel parçalama makineleri, shredder ve mobil atık yakma fırını üreticisi. 50+ ülkeye ihracat.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#45474B",
+    "theme_color": "#F4CE14",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "tr",
+    "icons": [
+        {
+            "src": "/favicon-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/favicon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "MT Makina Ana Sayfa"
+        }
+    ],
+    "categories": [
+        "business",
+        "industrial",
+        "productivity"
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false
+}
