@@ -63,11 +63,7 @@
   <meta name="msapplication-TileColor" content="#F4CE14">
   <meta name="theme-color" content="#45474B">
 
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="MT Makina">
+
 
   <!-- Google Model Viewer for 3D models - Defer loading -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
@@ -411,20 +407,7 @@
     </div>
   </noscript>
 
-  <!-- Service Worker Registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js')
-          .then(function (registration) {
-            console.log('[SW] Registration successful:', registration.scope);
-          })
-          .catch(function (err) {
-            console.log('[SW] Registration failed:', err);
-          });
-      });
-    }
-  </script>
+
 
   <script type="module" src="/src/main.tsx"></script>
 </body>

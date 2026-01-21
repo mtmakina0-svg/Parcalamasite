@@ -56,11 +56,7 @@
   <meta name="msapplication-TileColor" content="#F4CE14">
   <meta name="theme-color" content="#45474B">
 
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="MT Makina">
+
 
   <!-- Google Model Viewer for 3D models - Defer loading -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js" defer=""></script>
@@ -229,41 +225,13 @@
     </script>
 
   <style>
-    /* Critical CSS - Above the fold for faster FCP/LCP */
+    /* Minimal Critical CSS - Only body and loading state */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Mulish', system-ui, -apple-system, sans-serif;
       background-color: #45474B;
       -webkit-font-smoothing: antialiased;
-      color: #F5F7F8;
-    }
-
-    /* Header critical styles */
-    header,
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      background: rgba(69, 71, 75, 0.95);
-      backdrop-filter: blur(8px);
-    }
-
-    /* Hero section placeholder */
-    .hero,
-    [class*="hero"] {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Prevent layout shift */
-    img {
-      max-width: 100%;
-      height: auto;
     }
 
     #app-loading-wrapper {
@@ -306,18 +274,18 @@
       }
     }
   </style>
-  <script type="module" crossorigin="" src="/assets/index-Dr6CiSXL.js"></script>
-  <link rel="modulepreload" crossorigin="" href="/assets/vendor-helmet-d2FbzJp_.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/vendor-react-RS3aA7sY.js">
+  <script type="module" crossorigin="" src="/assets/index-CjPvnAZf.js"></script>
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-helmet-0U0rSapk.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-react-BZjILwvL.js">
   <link rel="modulepreload" crossorigin="" href="/assets/data-blog-BndV182X.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/vendor-motion-4S-1WNaJ.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-motion-B_mhpgax.js">
   <link rel="modulepreload" crossorigin="" href="/assets/data-seo-DxMsf6Zf.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/page-blog-DqqaE6Yu.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/page-blog-BDRdo7ny.js">
   <link rel="modulepreload" crossorigin="" href="/assets/data-images-C4vKMUSQ.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/vendor-three-DUVEZL2a.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/page-product-detail-BsuJKQFA.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/page-waste-BqYURD5V.js">
-  <link rel="stylesheet" crossorigin="" href="/assets/index-CUHA8Rt2.css">
+  <link rel="modulepreload" crossorigin="" href="/assets/vendor-three-DVMazcbf.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/page-product-detail-JkVsXfzF.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/page-waste-BzPT711x.js">
+  <link rel="stylesheet" crossorigin="" href="/assets/index-Y-MMn31p.css">
 </head>
 
 <body>
@@ -442,20 +410,7 @@
     </div>
   </noscript>
 
-  <!-- Service Worker Registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js')
-          .then(function (registration) {
-            console.log('[SW] Registration successful:', registration.scope);
-          })
-          .catch(function (err) {
-            console.log('[SW] Registration failed:', err);
-          });
-      });
-    }
-  </script>
+
 
 
 

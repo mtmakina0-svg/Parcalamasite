@@ -72,7 +72,6 @@ export const HeroSection = () => {
               variant="light"
               alt="MT Makina Logo"
               className="h-40 w-auto object-contain mx-[1px] my-[18px] p-[0px] drop-shadow-2xl"
-              style={{ maxHeight: '160px', height: '160px' }}
             />
           </motion.div>
         </motion.div>
