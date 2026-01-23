@@ -245,11 +245,11 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail5: 'https://i.ibb.co/993vWmkc/hf-20260123-080617-f22cc8a2-d8c7-4146-bd4b-e2f651bafab0.webp'
     },
     'TSM-300': {
-      main: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png',
-      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png',
-      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png'
+      main: 'https://i.ibb.co/6RKHzHdH/hf-20260123-082907-0ded08cf-728c-4901-9e76-0af1c786b9ef.webp',
+      detail1: 'https://i.ibb.co/hhZY93w/hf-20260123-082907-5513ea48-fee6-4459-9483-93372a6d5ec5.webp',
+      detail2: 'https://i.ibb.co/SXchbRnC/hf-20260123-082919-56b0df37-1e11-4e44-911f-6ebc408134f4.webp',
+      detail3: 'https://i.ibb.co/G35Mzz1c/hf-20260123-094720-416abcae-121b-48ac-a9f0-593020de86a5.webp',
+      detail4: 'https://i.ibb.co/DPwtMmbN/hf-20260123-080617-17bf5e81-4241-43bb-96b7-8d01acca656f.webp'
     },
     'CSM-150': {
       main: 'https://i.ibb.co/vyD7c7R/1-2.png',
