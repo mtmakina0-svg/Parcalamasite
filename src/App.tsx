@@ -776,7 +776,7 @@ function AppContent() {
         />
         <ProductsOverviewPage
           onBackToMain={handleNavigateToMain}
-          onProductClick={handleNavigateToProductDetail}
+          onProductClick={handleNavigateToProductCategory}
         />
         <ChatWidget />
       </>
