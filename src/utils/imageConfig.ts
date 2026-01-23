@@ -39,6 +39,7 @@ export interface ModelImages {
   detail2: string;
   detail3: string;
   detail4?: string;
+  detail5?: string;
 }
 
 /**
@@ -236,11 +237,12 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   },
   'mobile': {
     'TSM-150': {
-      main: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png',
-      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png',
-      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png'
+      main: 'https://i.ibb.co/XxwfKJNx/hf-20260123-080649-8aad1953-a1b9-4994-a315-9333b1bf73fa.webp',
+      detail1: 'https://i.ibb.co/pB3BTzzD/hf-20260123-080649-b1d71c52-7d39-48c9-b3d1-819ef5c08559.webp',
+      detail2: 'https://i.ibb.co/Kc13Vbdb/hf-20260123-080105-335b37e5-dc00-43fb-9ce1-e65f13d904f9.webp',
+      detail3: 'https://i.ibb.co/JMXzgrB/hf-20260123-080342-27a95d0e-0846-46ba-a2ee-fcffa91e0fee.webp',
+      detail4: 'https://i.ibb.co/DPwtMmbN/hf-20260123-080617-17bf5e81-4241-43bb-96b7-8d01acca656f.webp',
+      detail5: 'https://i.ibb.co/993vWmkc/hf-20260123-080617-f22cc8a2-d8c7-4146-bd4b-e2f651bafab0.webp'
     },
     'TSM-300': {
       main: 'https://i.ibb.co/vyD7c7R/1-2.png',
