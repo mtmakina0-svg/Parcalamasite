@@ -252,18 +252,18 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
       detail4: 'https://i.ibb.co/DPwtMmbN/hf-20260123-080617-17bf5e81-4241-43bb-96b7-8d01acca656f.webp'
     },
     'CSM-150': {
-      main: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png',
-      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png',
-      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png'
+      main: 'https://i.ibb.co/kVMGFpyt/Generated-mage-January-23-2026-1-09-PM.webp',
+      detail1: 'https://i.ibb.co/bRCm6Lnt/hf-20260123-100008-09976bf3-2e6a-4129-9b38-8fe13313da1e.webp',
+      detail2: 'https://i.ibb.co/0p6BS396/Generated-mage-January-23-2026-1-02-PM.webp',
+      detail3: 'https://i.ibb.co/WWQdZybJ/Generated-mage-January-23-2026-1-04-PM.webp',
+      detail4: 'https://i.ibb.co/8DR01Bq4/Generated-mage-January-23-2026-1-07-PM.webp'
     },
     'CSM-200': {
-      main: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail1: 'https://i.ibb.co/vyD7c7R/1-2.png',
-      detail2: 'https://i.ibb.co/23gJjf2z/1-3.png',
-      detail3: 'https://i.ibb.co/8pzcNvW/1-4.png',
-      detail4: 'https://i.ibb.co/mC599QZ5/1-5.png'
+      main: 'https://i.ibb.co/PZHT5500/Generated-mage-January-23-2026-2-07-PM.webp',
+      detail1: 'https://i.ibb.co/Q79M8QSK/Generated-mage-January-23-2026-2-27-PM.webp',
+      detail2: 'https://i.ibb.co/KcjMFJPX/Generated-mage-January-23-2026-2-31-PM.webp',
+      detail3: 'https://i.ibb.co/JRqMqY6d/Generated-mage-January-23-2026-2-32-PM.webp',
+      detail4: ''
     }
   },
   'pallet': {
