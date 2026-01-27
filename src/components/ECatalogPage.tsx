@@ -1,22 +1,129 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { FileDown, BookOpen, Mail, Phone } from 'lucide-react';
-import { useLanguage } from './LanguageContext';
+import { FileDown, BookOpen, Eye, ArrowRight, Filter, Grid3X3 } from 'lucide-react';
+import { useLanguage, Language } from './LanguageContext';
+import { catalogItems, getCatalogsByCategory, getAllCategories, getCategoryTranslation, CatalogItem } from '../data/catalogData';
 
 interface ECatalogPageProps {
   onBackToMain: () => void;
+  onNavigate?: (page: string, catalogId?: string) => void;
 }
 
-export const ECatalogPage = ({ onBackToMain }: ECatalogPageProps) => {
-  const { t } = useLanguage();
-  
+// Catalog Card Component
+const CatalogCard = ({
+  catalog,
+  language,
+  t,
+  onViewCatalog
+}: {
+  catalog: CatalogItem;
+  language: Language;
+  t: (key: string) => string;
+  onViewCatalog: (catalogId: string) => void;
+}) => {
+  const translation = catalog.translations[language] || catalog.translations.tr;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+    >
+      {/* Thumbnail */}
+      <div className="relative h-56 bg-gradient-to-br from-[#F5F7F8] to-[#E8EAEC] overflow-hidden">
+        <img
+          src={catalog.thumbnail}
+          alt={translation.title}
+          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+        <div className="absolute top-4 left-4">
+          <span className="bg-[#F4CE14] text-[#1E1E1E] px-3 py-1 rounded-full text-sm font-medium">
+            {getCategoryTranslation(catalog.category, language)}
+          </span>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-[#45474B] mb-2 group-hover:text-[#F4CE14] transition-colors">
+          {translation.title}
+        </h3>
+        <p className="text-[#6B7280] text-sm mb-4 line-clamp-2">
+          {translation.description}
+        </p>
+
+        {/* Specs */}
+        <div className="flex flex-wrap gap-2 mb-5">
+          {catalog.specs.capacity && (
+            <span className="bg-[#F5F7F8] text-[#45474B] px-3 py-1 rounded-lg text-xs">
+              {t('ecatalog_capacity')}: {catalog.specs.capacity}
+            </span>
+          )}
+          {catalog.specs.power && (
+            <span className="bg-[#F5F7F8] text-[#45474B] px-3 py-1 rounded-lg text-xs">
+              {t('ecatalog_power')}: {catalog.specs.power}
+            </span>
+          )}
+        </div>
+
+        {/* Actions */}
+        <div className="flex gap-3">
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => onViewCatalog(catalog.id)}
+            className="flex-1 flex items-center justify-center gap-2 bg-[#45474B] text-white py-3 px-4 rounded-lg hover:bg-[#35373A] transition-colors"
+          >
+            <Eye size={18} />
+            <span className="text-sm font-medium">{t('ecatalog_view_catalog')}</span>
+          </motion.button>
+
+          <motion.a
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            href={catalog.pdfPath}
+            download
+            className="flex items-center justify-center gap-2 bg-[#F4CE14] text-[#1E1E1E] py-3 px-4 rounded-lg hover:bg-[#E5BF12] transition-colors"
+          >
+            <FileDown size={18} />
+          </motion.a>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) => {
+  const { t, language } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+
+  // Get all categories
+  const categories = useMemo(() => getAllCategories(), []);
+
+  // Filter catalogs by category
+  const filteredCatalogs = useMemo(() => {
+    if (selectedCategory === 'all') {
+      return catalogItems;
+    }
+    return getCatalogsByCategory(selectedCategory);
+  }, [selectedCategory]);
+
+  const handleViewCatalog = (catalogId: string) => {
+    if (onNavigate) {
+      onNavigate('catalog-detail', catalogId);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: 'Mulish, sans-serif' }}>
       {/* Header Spacer */}
       <div className="h-20"></div>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-[#45474B] via-[#3A3C3F] to-[#2F3032]">
+      <section className="relative py-20 bg-gradient-to-br from-[#45474B] via-[#3A3C3F] to-[#2F3032]">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)',
@@ -30,129 +137,93 @@ export const ECatalogPage = ({ onBackToMain }: ECatalogPageProps) => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="flex items-center justify-center mb-6">
-              <BookOpen size={56} className="text-[#F4CE14]" />
+            <div className="flex items-center justify-center mb-5">
+              <BookOpen size={52} className="text-[#F4CE14]" />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-6">
-              {t('ecatalog_page_title')}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+              {t('ecatalog_grid_title')}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              {t('ecatalog_page_subtitle')}
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+              {t('ecatalog_grid_subtitle')}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-20 bg-white">
+      {/* Category Filter */}
+      <section className="py-8 bg-[#F5F7F8] border-b border-gray-200">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <div className="max-w-4xl mx-auto">
-            {/* Info Box */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-[#F4CE14] to-[#E5BF12] rounded-2xl p-10 shadow-2xl mb-12 text-center"
-            >
-              <FileDown size={64} className="mx-auto mb-6 text-[#1E1E1E]" />
-              <h2 className="text-3xl md:text-4xl text-[#1E1E1E] mb-6">
-                {t('ecatalog_hero_title')}
-              </h2>
-              <p className="text-xl text-[#1E1E1E]/90 mb-8">
-                {t('ecatalog_hero_description')}
-              </p>
-              <div className="inline-block bg-[#1E1E1E] text-[#F4CE14] px-6 py-3 rounded-lg">
-                {t('ecatalog_hero_cta')}
-              </div>
-            </motion.div>
+          <div className="flex items-center gap-4 overflow-x-auto pb-2">
+            <div className="flex items-center gap-2 text-[#45474B] shrink-0">
+              <Filter size={18} />
+              <span className="font-medium">{t('ecatalog_filter_category')}:</span>
+            </div>
 
-            {/* Katalog İçeriği Preview */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#F5F7F8] rounded-2xl p-8 mb-12"
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === 'all'
+                  ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                  : 'bg-white text-[#45474B] hover:bg-gray-100'
+                }`}
             >
-              <h3 className="text-2xl md:text-3xl text-[#45474B] mb-6 text-center">
-                {t('ecatalog_content_title')}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  t('ecatalog_item_1'),
-                  t('ecatalog_item_2'),
-                  t('ecatalog_item_3'),
-                  t('ecatalog_item_4'),
-                  t('ecatalog_item_5'),
-                  t('ecatalog_item_6'),
-                  t('ecatalog_item_7'),
-                  t('ecatalog_item_8')
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.1 * index }}
-                    className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm"
-                  >
-                    <span className="text-[#F4CE14] text-xl">✓</span>
-                    <span className="text-[#45474B]">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+              {t('ecatalog_all_categories')}
+            </button>
 
-            {/* Contact Options */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            >
-              {/* Email */}
-              <div className="bg-gradient-to-br from-[#45474B] to-[#35373A] rounded-xl p-8 text-center text-white">
-                <Mail size={48} className="mx-auto mb-4 text-[#F4CE14]" />
-                <h4 className="text-xl mb-3">{t('ecatalog_email_title')}</h4>
-                <p className="text-white/80 mb-4">
-                  {t('ecatalog_email_description')}
-                </p>
-                <a
-                  href="mailto:info@mtmakina.com.tr?subject=E-Katalog Talebi"
-                  className="inline-block bg-[#F4CE14] text-[#1E1E1E] px-6 py-3 rounded-lg hover:bg-[#E5BF12] transition-colors"
-                >
-                  info@mtmakina.com.tr
-                </a>
-              </div>
-
-              {/* WhatsApp */}
-              <div className="bg-gradient-to-br from-[#25D366] to-[#1DA851] rounded-xl p-8 text-center text-white">
-                <Phone size={48} className="mx-auto mb-4" />
-                <h4 className="text-xl mb-3">{t('ecatalog_whatsapp_title')}</h4>
-                <p className="text-white/90 mb-4">
-                  {t('ecatalog_whatsapp_description')}
-                </p>
-                <a
-                  href="https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20e-katalog%20talep%20ediyorum."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white text-[#25D366] px-6 py-3 rounded-lg hover:bg-white/90 transition-colors"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                  </svg>
-                  {t('ecatalog_whatsapp_button')}
-                </a>
-              </div>
-            </motion.div>
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category
+                    ? 'bg-[#F4CE14] text-[#1E1E1E]'
+                    : 'bg-white text-[#45474B] hover:bg-gray-100'
+                  }`}
+              >
+                {getCategoryTranslation(category, language)}
+              </button>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Catalog Grid */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
+          {filteredCatalogs.length > 0 ? (
+            <>
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2 text-[#6B7280]">
+                  <Grid3X3 size={18} />
+                  <span>{filteredCatalogs.length} {t('ecatalog_series')}</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredCatalogs.map((catalog, index) => (
+                  <CatalogCard
+                    key={catalog.id}
+                    catalog={catalog}
+                    language={language}
+                    t={t}
+                    onViewCatalog={handleViewCatalog}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-16"
+            >
+              <BookOpen size={64} className="mx-auto mb-4 text-[#D1D5DB]" />
+              <p className="text-[#6B7280] text-lg">{t('ecatalog_no_catalogs')}</p>
+            </motion.div>
+          )}
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-20 bg-[#F5F7F8]">
+      <section className="py-16 bg-gradient-to-br from-[#45474B] to-[#35373A]">
         <div className="container mx-auto px-4 lg:px-8 max-w-[1440px] text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -160,64 +231,26 @@ export const ECatalogPage = ({ onBackToMain }: ECatalogPageProps) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl text-[#45474B] mb-6">
+            <h2 className="text-2xl md:text-3xl text-white mb-4">
               {t('ecatalog_cta_title')}
             </h2>
-            <p className="text-xl text-[#45474B]/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-white/70 mb-8 max-w-xl mx-auto">
               {t('ecatalog_cta_description')}
             </p>
             <motion.a
               href="https://wa.me/905423109930?text=Merhaba%20MT%20Makina%2C%20özel%20bir%20çözüm%20için%20görüşmek%20istiyorum."
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(244,206,20,0.5)' }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 bg-[#F4CE14] text-[#1E1E1E] px-8 py-4 rounded-lg text-xl transition-all shadow-lg"
+              className="inline-flex items-center gap-3 bg-[#F4CE14] text-[#1E1E1E] px-8 py-4 rounded-lg text-lg font-medium transition-all shadow-lg hover:shadow-xl"
             >
               {t('ecatalog_cta_button')}
+              <ArrowRight size={20} />
             </motion.a>
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#1E1E1E] py-16">
-        <div className="container mx-auto px-4 lg:px-8 max-w-[1440px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">{t('ecatalog_footer_corporate')}</h3>
-              <ul className="space-y-2 text-white/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer" onClick={onBackToMain}>{t('ecatalog_footer_home')}</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('ecatalog_footer_about')}</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('ecatalog_footer_certificates')}</li>
-              </ul>
-            </div>
-
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">{t('ecatalog_footer_products')}</h3>
-              <ul className="space-y-2 text-white/80">
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('ecatalog_footer_single_shaft')}</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('ecatalog_footer_dual_shaft')}</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('ecatalog_footer_metal')}</li>
-                <li className="hover:text-[#F4CE14] transition-colors cursor-pointer">{t('ecatalog_footer_plastic')}</li>
-              </ul>
-            </div>
-
-            <div className="text-center md:text-left">
-              <h3 className="text-xl text-[#F4CE14] mb-4">{t('ecatalog_footer_contact')}</h3>
-              <ul className="space-y-2 text-white/80">
-                <li>E: info@mtmakina.com.tr</li>
-                <li>T: +90 212 613 31 82</li>
-                <li>M: +90 542 310 99 30</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-white/20 pt-8 text-center">
-            <p className="text-white/60">{t('ecatalog_footer_copyright')}</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { Language } from '../contexts/LanguageContext';
+import { Language } from '../components/LanguageContext';
 
 export type CatalogCategory = 'single-shaft' | 'dual-shaft' | 'quad-shaft' | 'metal' | 'mobile' | 'pallet' | 'tree-root' | 'wood' | 'glass' | 'harddisk';
 
@@ -6,6 +6,11 @@ export interface CatalogTranslation {
     title: string;
     description: string;
     keywords: string[];
+}
+
+export interface CatalogSpecs {
+    capacity?: string;
+    power?: string;
 }
 
 export interface CatalogItem {
@@ -16,8 +21,7 @@ export interface CatalogItem {
     htmlPath: string;
     pdfPath: string;
     thumbnail: string;
-    capacity: string;
-    power: string;
+    specs: CatalogSpecs;
     translations: Record<Language, CatalogTranslation>;
 }
 
@@ -29,9 +33,11 @@ export const catalogs: CatalogItem[] = [
         series: 'TSH',
         htmlPath: '/catalogs/tsh/tsh-60/catalog.html',
         pdfPath: '/catalogs/tsh/tsh-60/catalog.pdf',
-        thumbnail: '/images/products/single-shaft/tsh-60.webp',
-        capacity: '500-1000 kg/h',
-        power: '30-37 kW',
+        thumbnail: '/mt-logo-white.png',
+        specs: {
+            capacity: '500-1000 kg/h',
+            power: '30-37 kW'
+        },
         translations: {
             tr: {
                 title: 'TSH-60 Tek Şaftlı Parçalama Makinesi Kataloğu',
@@ -62,9 +68,11 @@ export const catalogs: CatalogItem[] = [
         series: 'TSH',
         htmlPath: '/catalogs/tsh/tsh-80/catalog.html',
         pdfPath: '/catalogs/tsh/tsh-80/catalog.pdf',
-        thumbnail: '/images/products/single-shaft/tsh-80.webp',
-        capacity: '1000-2000 kg/h',
-        power: '45-55 kW',
+        thumbnail: '/mt-logo-white.png',
+        specs: {
+            capacity: '1000-2000 kg/h',
+            power: '45-55 kW'
+        },
         translations: {
             tr: {
                 title: 'TSH-80 Tek Şaftlı Parçalama Makinesi Kataloğu',
@@ -95,9 +103,11 @@ export const catalogs: CatalogItem[] = [
         series: 'TSH',
         htmlPath: '/catalogs/tsh/tsh-100/catalog.html',
         pdfPath: '/catalogs/tsh/tsh-100/catalog.pdf',
-        thumbnail: '/images/products/single-shaft/tsh-100.webp',
-        capacity: '2000-3500 kg/h',
-        power: '75-90 kW',
+        thumbnail: '/mt-logo-white.png',
+        specs: {
+            capacity: '2000-3500 kg/h',
+            power: '75-90 kW'
+        },
         translations: {
             tr: {
                 title: 'TSH-100 Tek Şaftlı Parçalama Makinesi Kataloğu',
@@ -128,9 +138,11 @@ export const catalogs: CatalogItem[] = [
         series: 'TSH',
         htmlPath: '/catalogs/tsh/tsh-130/catalog.html',
         pdfPath: '/catalogs/tsh/tsh-130/catalog.pdf',
-        thumbnail: '/images/products/single-shaft/tsh-130.webp',
-        capacity: '3500-5000 kg/h',
-        power: '110-132 kW',
+        thumbnail: '/mt-logo-white.png',
+        specs: {
+            capacity: '3500-5000 kg/h',
+            power: '110-132 kW'
+        },
         translations: {
             tr: {
                 title: 'TSH-130 Tek Şaftlı Parçalama Makinesi Kataloğu',
@@ -161,9 +173,11 @@ export const catalogs: CatalogItem[] = [
         series: 'TSH',
         htmlPath: '/catalogs/tsh/tsh-160/catalog.html',
         pdfPath: '/catalogs/tsh/tsh-160/catalog.pdf',
-        thumbnail: '/images/products/single-shaft/tsh-160.webp',
-        capacity: '5000-8000 kg/h',
-        power: '160-200 kW',
+        thumbnail: '/mt-logo-white.png',
+        specs: {
+            capacity: '5000-8000 kg/h',
+            power: '160-200 kW'
+        },
         translations: {
             tr: {
                 title: 'TSH-160 Tek Şaftlı Parçalama Makinesi Kataloğu',
@@ -189,19 +203,29 @@ export const catalogs: CatalogItem[] = [
     }
 ];
 
+// Alias for ECatalogPage compatibility
+export const catalogItems = catalogs;
+
 // Helper function to get catalog by ID
 export const getCatalogById = (id: string): CatalogItem | undefined => {
     return catalogs.find(catalog => catalog.id === id);
 };
 
 // Helper function to get catalogs by category
-export const getCatalogsByCategory = (category: CatalogCategory): CatalogItem[] => {
+export const getCatalogsByCategory = (category: string): CatalogItem[] => {
     return catalogs.filter(catalog => catalog.category === category);
 };
 
 // Helper function to get all catalog IDs
 export const getAllCatalogIds = (): string[] => {
     return catalogs.map(catalog => catalog.id);
+};
+
+// Helper function to get all unique categories from catalogs
+export const getAllCategories = (): CatalogCategory[] => {
+    const categories = new Set<CatalogCategory>();
+    catalogs.forEach(catalog => categories.add(catalog.category));
+    return Array.from(categories);
 };
 
 // Category translations for UI
@@ -267,3 +291,13 @@ export const categoryTranslations: Record<CatalogCategory, Record<Language, stri
         ar: 'ماكينات تقطيع الأقراص الصلبة'
     }
 };
+
+// Helper function to get category translation by language
+export const getCategoryTranslation = (category: string, language: Language): string => {
+    const cat = category as CatalogCategory;
+    if (categoryTranslations[cat]) {
+        return categoryTranslations[cat][language] || categoryTranslations[cat].en;
+    }
+    return category;
+};
+
