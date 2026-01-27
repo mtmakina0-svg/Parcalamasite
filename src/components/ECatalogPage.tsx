@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { FileDown, BookOpen, ChevronRight, ArrowLeft, ExternalLink } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage, Language } from './LanguageContext';
 import { catalogs, getCatalogPaths, categoryTranslations, CatalogCategory, CatalogItem } from '../data/catalogData';
 import { getModelImages } from '../utils/imageConfig';
@@ -298,6 +299,12 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
 
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: 'Mulish, sans-serif' }}>
+      {/* SEO - Explicit robots meta for indexing */}
+      <Helmet>
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+      </Helmet>
+
       {/* Header Spacer */}
       <div className="h-20"></div>
 
