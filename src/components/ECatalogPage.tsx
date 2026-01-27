@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { FileDown, BookOpen, ChevronRight, ArrowLeft, Eye, ExternalLink } from 'lucide-react';
+import { FileDown, BookOpen, ChevronRight, ArrowLeft, ExternalLink } from 'lucide-react';
 import { useLanguage, Language } from './LanguageContext';
-import { catalogs, getCatalogById, categoryTranslations, CatalogCategory, CatalogItem } from '../data/catalogData';
+import { catalogs, getCatalogPaths, categoryTranslations, CatalogCategory, CatalogItem } from '../data/catalogData';
 import { getModelImages } from '../utils/imageConfig';
-import { generateUrl } from '../utils/seoConfig';
 
 interface ECatalogPageProps {
   onBackToMain: () => void;
@@ -268,9 +267,10 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
     const translation = catalog.translations[language as Language] || catalog.translations.tr;
     const machineName = translation.title.replace(' Kataloğu', '').replace(' Catalog', '');
     const filename = `MT Makina - ${catalog.model} ${machineName}.pdf`;
+    const catalogPaths = getCatalogPaths(catalog, language as Language);
 
     try {
-      const response = await fetch(catalog.pdfPath);
+      const response = await fetch(catalogPaths.pdf);
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -280,10 +280,10 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
       a.click();
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
-    } catch (error) {
+    } catch {
       // Fallback to direct link
       const a = document.createElement('a');
-      a.href = catalog.pdfPath;
+      a.href = catalogPaths.pdf;
       a.download = filename;
       a.click();
     }
@@ -292,7 +292,8 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
   // Handle catalog view - opens in new tab for proper asset loading
   const handleViewCatalog = (catalog: CatalogItem) => {
     // Open HTML catalog in new tab - assets will load correctly with relative paths
-    window.open(catalog.htmlPath, '_blank');
+    const catalogPaths = getCatalogPaths(catalog, language as Language);
+    window.open(catalogPaths.html, '_blank');
   };
 
   return (

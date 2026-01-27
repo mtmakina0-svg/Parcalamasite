@@ -13,17 +13,27 @@ export interface CatalogSpecs {
     power?: string;
 }
 
+export interface CatalogPaths {
+    html: string;
+    pdf: string;
+}
+
 export interface CatalogItem {
     id: string;
     model: string;
     category: CatalogCategory;
     series: string;
-    htmlPath: string;
-    pdfPath: string;
+    // Multi-language paths - falls back to 'tr' if language not available
+    paths: Partial<Record<Language, CatalogPaths>> & { tr: CatalogPaths };
     thumbnail: string;
     specs: CatalogSpecs;
     translations: Record<Language, CatalogTranslation>;
 }
+
+// Helper function to get catalog paths for a specific language
+export const getCatalogPaths = (catalog: CatalogItem, language: Language): CatalogPaths => {
+    return catalog.paths[language] || catalog.paths.tr;
+};
 
 export const catalogs: CatalogItem[] = [
     {
@@ -31,8 +41,14 @@ export const catalogs: CatalogItem[] = [
         model: 'TSH-60',
         category: 'single-shaft',
         series: 'TSH',
-        htmlPath: '/catalogs/tsh/tsh-60/catalog.html',
-        pdfPath: '/catalogs/tsh/tsh-60/catalog.pdf',
+        paths: {
+            tr: {
+                html: '/catalogs/tsh/tsh-60/catalog.html',
+                pdf: '/catalogs/tsh/tsh-60/catalog.pdf'
+            }
+            // Add other languages when available:
+            // en: { html: '/catalogs/tsh/tsh-60/catalog-en.html', pdf: '/catalogs/tsh/tsh-60/catalog-en.pdf' }
+        },
         thumbnail: '/mt-logo-white.png',
         specs: {
             capacity: '500-1000 kg/h',
@@ -66,8 +82,12 @@ export const catalogs: CatalogItem[] = [
         model: 'TSH-80',
         category: 'single-shaft',
         series: 'TSH',
-        htmlPath: '/catalogs/tsh/tsh-80/catalog.html',
-        pdfPath: '/catalogs/tsh/tsh-80/catalog.pdf',
+        paths: {
+            tr: {
+                html: '/catalogs/tsh/tsh-80/catalog.html',
+                pdf: '/catalogs/tsh/tsh-80/catalog.pdf'
+            }
+        },
         thumbnail: '/mt-logo-white.png',
         specs: {
             capacity: '1000-2000 kg/h',
@@ -101,8 +121,12 @@ export const catalogs: CatalogItem[] = [
         model: 'TSH-100',
         category: 'single-shaft',
         series: 'TSH',
-        htmlPath: '/catalogs/tsh/tsh-100/catalog.html',
-        pdfPath: '/catalogs/tsh/tsh-100/catalog.pdf',
+        paths: {
+            tr: {
+                html: '/catalogs/tsh/tsh-100/catalog.html',
+                pdf: '/catalogs/tsh/tsh-100/catalog.pdf'
+            }
+        },
         thumbnail: '/mt-logo-white.png',
         specs: {
             capacity: '2000-3500 kg/h',
@@ -136,8 +160,12 @@ export const catalogs: CatalogItem[] = [
         model: 'TSH-130',
         category: 'single-shaft',
         series: 'TSH',
-        htmlPath: '/catalogs/tsh/tsh-130/catalog.html',
-        pdfPath: '/catalogs/tsh/tsh-130/catalog.pdf',
+        paths: {
+            tr: {
+                html: '/catalogs/tsh/tsh-130/catalog.html',
+                pdf: '/catalogs/tsh/tsh-130/catalog.pdf'
+            }
+        },
         thumbnail: '/mt-logo-white.png',
         specs: {
             capacity: '3500-5000 kg/h',
@@ -171,8 +199,12 @@ export const catalogs: CatalogItem[] = [
         model: 'TSH-160',
         category: 'single-shaft',
         series: 'TSH',
-        htmlPath: '/catalogs/tsh/tsh-160/catalog.html',
-        pdfPath: '/catalogs/tsh/tsh-160/catalog.pdf',
+        paths: {
+            tr: {
+                html: '/catalogs/tsh/tsh-160/catalog.html',
+                pdf: '/catalogs/tsh/tsh-160/catalog.pdf'
+            }
+        },
         thumbnail: '/mt-logo-white.png',
         specs: {
             capacity: '5000-8000 kg/h',
@@ -203,30 +235,8 @@ export const catalogs: CatalogItem[] = [
     }
 ];
 
-// Alias for ECatalogPage compatibility
+// Backward compatibility alias
 export const catalogItems = catalogs;
-
-// Helper function to get catalog by ID
-export const getCatalogById = (id: string): CatalogItem | undefined => {
-    return catalogs.find(catalog => catalog.id === id);
-};
-
-// Helper function to get catalogs by category
-export const getCatalogsByCategory = (category: string): CatalogItem[] => {
-    return catalogs.filter(catalog => catalog.category === category);
-};
-
-// Helper function to get all catalog IDs
-export const getAllCatalogIds = (): string[] => {
-    return catalogs.map(catalog => catalog.id);
-};
-
-// Helper function to get all unique categories from catalogs
-export const getAllCategories = (): CatalogCategory[] => {
-    const categories = new Set<CatalogCategory>();
-    catalogs.forEach(catalog => categories.add(catalog.category));
-    return Array.from(categories);
-};
 
 // Category translations for UI
 export const categoryTranslations: Record<CatalogCategory, Record<Language, string>> = {
@@ -246,7 +256,7 @@ export const categoryTranslations: Record<CatalogCategory, Record<Language, stri
         tr: 'Dört Şaftlı Parçalama Makineleri',
         en: 'Quad Shaft Shredders',
         ru: 'Четырехвальные шредеры',
-        ar: 'ماكينات التقطيع ذات الأربعة أعمدة'
+        ar: 'ماكينات التقطيع ذات أربعة أعمدة'
     },
     'metal': {
         tr: 'Metal Parçalama Makineleri',
@@ -255,44 +265,66 @@ export const categoryTranslations: Record<CatalogCategory, Record<Language, stri
         ar: 'ماكينات تقطيع المعادن'
     },
     'mobile': {
-        tr: 'Mobil Parçalama Makineleri',
+        tr: 'Mobil Kırıcılar',
         en: 'Mobile Shredders',
         ru: 'Мобильные шредеры',
-        ar: 'ماكينات التقطيع المتنقلة'
+        ar: 'الكسارات المتنقلة'
     },
     'pallet': {
         tr: 'Palet Parçalama Makineleri',
         en: 'Pallet Shredders',
-        ru: 'Шредеры для поддонов',
+        ru: 'Шредеры для паллет',
         ar: 'ماكينات تقطيع المنصات'
     },
+    'harddisk': {
+        tr: 'Harddisk İmha Makineleri',
+        en: 'Hard Disk Destroyers',
+        ru: 'Уничтожители жестких дисков',
+        ar: 'ماكينات تدمير الأقراص الصلبة'
+    },
     'tree-root': {
-        tr: 'Ağaç Kök Parçalama Makineleri',
+        tr: 'Ağaç Kökü Parçalama Makineleri',
         en: 'Tree Root Shredders',
         ru: 'Шредеры для корней деревьев',
         ar: 'ماكينات تقطيع جذور الأشجار'
     },
     'wood': {
-        tr: 'Odun Parçalama Makineleri',
+        tr: 'Ağaç Parçalama Makineleri',
         en: 'Wood Shredders',
         ru: 'Шредеры для древесины',
         ar: 'ماكينات تقطيع الخشب'
     },
     'glass': {
-        tr: 'Cam Parçalama Makineleri',
-        en: 'Glass Shredders',
-        ru: 'Шредеры для стекла',
-        ar: 'ماكينات تقطيع الزجاج'
-    },
-    'harddisk': {
-        tr: 'Sabit Disk Parçalama Makineleri',
-        en: 'Hard Disk Shredders',
-        ru: 'Шредеры для жестких дисков',
-        ar: 'ماكينات تقطيع الأقراص الصلبة'
+        tr: 'Cam Şişe Kırma Makineleri',
+        en: 'Glass Bottle Crushers',
+        ru: 'Дробилки стеклянных бутылок',
+        ar: 'ماكينات سحق الزجاجات'
     }
 };
 
-// Helper function to get category translation by language
+// Get catalog by ID
+export const getCatalogById = (id: string): CatalogItem | undefined => {
+    return catalogs.find(c => c.id === id);
+};
+
+// Get catalogs by category
+export const getCatalogsByCategory = (category: CatalogCategory): CatalogItem[] => {
+    return catalogs.filter(c => c.category === category);
+};
+
+// Get all catalog IDs
+export const getAllCatalogIds = (): string[] => {
+    return catalogs.map(c => c.id);
+};
+
+// Get all unique categories that have catalogs
+export const getAllCategories = (): CatalogCategory[] => {
+    const categories = new Set<CatalogCategory>();
+    catalogs.forEach(catalog => categories.add(catalog.category));
+    return Array.from(categories);
+};
+
+// Get category translation
 export const getCategoryTranslation = (category: string, language: Language): string => {
     const cat = category as CatalogCategory;
     if (categoryTranslations[cat]) {
@@ -300,4 +332,3 @@ export const getCategoryTranslation = (category: string, language: Language): st
     }
     return category;
 };
-
