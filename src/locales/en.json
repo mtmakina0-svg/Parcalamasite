@@ -1064,5 +1064,21 @@
   "mobile_crusher_faq_q9": "IS INSTALLATION AND SUPPORT AVAILABLE?",
   "mobile_crusher_faq_a9": "Yes, on-site installation and training are provided by our expert team.",
   "mobile_crusher_faq_q10": "HOW IS SPARE PARTS AVAILABILITY?",
-  "mobile_crusher_faq_a10": "We provide fast delivery with our stocked spare parts system."
+  "mobile_crusher_faq_a10": "We provide fast delivery with our stocked spare parts system.",
+  "ecatalog_grid_title": "Product Catalogs",
+  "ecatalog_grid_subtitle": "Browse detailed technical catalogs of your desired products",
+  "ecatalog_view_catalog": "View Catalog",
+  "ecatalog_download_pdf": "Download PDF",
+  "ecatalog_back_to_list": "Back to Catalog List",
+  "ecatalog_all_categories": "All Categories",
+  "ecatalog_filter_category": "Filter by Category",
+  "ecatalog_capacity": "Capacity",
+  "ecatalog_power": "Power",
+  "ecatalog_series": "Series",
+  "ecatalog_no_catalogs": "No catalogs available in this category yet",
+  "ecatalog_loading": "Loading catalog...",
+  "ecatalog_fullscreen": "Fullscreen",
+  "ecatalog_exit_fullscreen": "Exit Fullscreen",
+  "ecatalog_related_catalogs": "Related Catalogs",
+  "ecatalog_view_product": "Go to Product Page"
 }

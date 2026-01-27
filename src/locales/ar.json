@@ -1042,5 +1042,21 @@
   "mobile_crusher_faq_q9": "IS INSTALLATION AND SUPPORT AVAILABLE?",
   "mobile_crusher_faq_a9": "Yes, on-site installation and training are provided by our expert team.",
   "mobile_crusher_faq_q10": "HOW IS SPARE PARTS AVAILABILITY?",
-  "mobile_crusher_faq_a10": "We provide fast delivery with our stocked spare parts system."
+  "mobile_crusher_faq_a10": "We provide fast delivery with our stocked spare parts system.",
+  "ecatalog_grid_title": "كتالوجات المنتجات",
+  "ecatalog_grid_subtitle": "تصفح الكتالوجات الفنية التفصيلية للمنتجات التي تهمك",
+  "ecatalog_view_catalog": "عرض الكتالوج",
+  "ecatalog_download_pdf": "تحميل PDF",
+  "ecatalog_back_to_list": "العودة إلى قائمة الكتالوجات",
+  "ecatalog_all_categories": "جميع الفئات",
+  "ecatalog_filter_category": "تصفية حسب الفئة",
+  "ecatalog_capacity": "السعة",
+  "ecatalog_power": "الطاقة",
+  "ecatalog_series": "السلسلة",
+  "ecatalog_no_catalogs": "لا توجد كتالوجات متاحة في هذه الفئة حتى الآن",
+  "ecatalog_loading": "جاري تحميل الكتالوج...",
+  "ecatalog_fullscreen": "ملء الشاشة",
+  "ecatalog_exit_fullscreen": "الخروج من ملء الشاشة",
+  "ecatalog_related_catalogs": "كتالوجات ذات صلة",
+  "ecatalog_view_product": "الذهاب إلى صفحة المنتج"
 }

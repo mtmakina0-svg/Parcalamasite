@@ -1044,5 +1044,21 @@
   "mobile_crusher_faq_q9": "IS INSTALLATION AND SUPPORT AVAILABLE?",
   "mobile_crusher_faq_a9": "Yes, on-site installation and training are provided by our expert team.",
   "mobile_crusher_faq_q10": "HOW IS SPARE PARTS AVAILABILITY?",
-  "mobile_crusher_faq_a10": "We provide fast delivery with our stocked spare parts system."
+  "mobile_crusher_faq_a10": "We provide fast delivery with our stocked spare parts system.",
+  "ecatalog_grid_title": "Каталоги продукции",
+  "ecatalog_grid_subtitle": "Просмотрите подробные технические каталоги интересующих вас продуктов",
+  "ecatalog_view_catalog": "Просмотреть каталог",
+  "ecatalog_download_pdf": "Скачать PDF",
+  "ecatalog_back_to_list": "Вернуться к списку каталогов",
+  "ecatalog_all_categories": "Все категории",
+  "ecatalog_filter_category": "Фильтр по категории",
+  "ecatalog_capacity": "Производительность",
+  "ecatalog_power": "Мощность",
+  "ecatalog_series": "Серия",
+  "ecatalog_no_catalogs": "В этой категории пока нет каталогов",
+  "ecatalog_loading": "Загрузка каталога...",
+  "ecatalog_fullscreen": "Полноэкранный режим",
+  "ecatalog_exit_fullscreen": "Выйти из полноэкранного режима",
+  "ecatalog_related_catalogs": "Связанные каталоги",
+  "ecatalog_view_product": "Перейти на страницу продукта"
 }
