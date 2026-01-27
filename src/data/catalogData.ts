@@ -45,9 +45,19 @@ export const catalogs: CatalogItem[] = [
             tr: {
                 html: '/catalogs/tsh/tsh-60/catalog.html',
                 pdf: '/catalogs/tsh/tsh-60/catalog.pdf'
+            },
+            en: {
+                html: '/catalogs/tsh/tsh-60/catalog-en.html',
+                pdf: '/catalogs/tsh/tsh-60/catalog.pdf'
+            },
+            ru: {
+                html: '/catalogs/tsh/tsh-60/catalog-ru.html',
+                pdf: '/catalogs/tsh/tsh-60/catalog.pdf'
+            },
+            ar: {
+                html: '/catalogs/tsh/tsh-60/catalog-ar.html',
+                pdf: '/catalogs/tsh/tsh-60/catalog.pdf'
             }
-            // Add other languages when available:
-            // en: { html: '/catalogs/tsh/tsh-60/catalog-en.html', pdf: '/catalogs/tsh/tsh-60/catalog-en.pdf' }
         },
         thumbnail: '/mt-logo-white.png',
         specs: {
@@ -85,6 +95,18 @@ export const catalogs: CatalogItem[] = [
         paths: {
             tr: {
                 html: '/catalogs/tsh/tsh-80/catalog.html',
+                pdf: '/catalogs/tsh/tsh-80/catalog.pdf'
+            },
+            en: {
+                html: '/catalogs/tsh/tsh-80/catalog-en.html',
+                pdf: '/catalogs/tsh/tsh-80/catalog.pdf'
+            },
+            ru: {
+                html: '/catalogs/tsh/tsh-80/catalog-ru.html',
+                pdf: '/catalogs/tsh/tsh-80/catalog.pdf'
+            },
+            ar: {
+                html: '/catalogs/tsh/tsh-80/catalog-ar.html',
                 pdf: '/catalogs/tsh/tsh-80/catalog.pdf'
             }
         },
@@ -125,6 +147,18 @@ export const catalogs: CatalogItem[] = [
             tr: {
                 html: '/catalogs/tsh/tsh-100/catalog.html',
                 pdf: '/catalogs/tsh/tsh-100/catalog.pdf'
+            },
+            en: {
+                html: '/catalogs/tsh/tsh-100/catalog-en.html',
+                pdf: '/catalogs/tsh/tsh-100/catalog.pdf'
+            },
+            ru: {
+                html: '/catalogs/tsh/tsh-100/catalog-ru.html',
+                pdf: '/catalogs/tsh/tsh-100/catalog.pdf'
+            },
+            ar: {
+                html: '/catalogs/tsh/tsh-100/catalog-ar.html',
+                pdf: '/catalogs/tsh/tsh-100/catalog.pdf'
             }
         },
         thumbnail: '/mt-logo-white.png',
@@ -164,6 +198,18 @@ export const catalogs: CatalogItem[] = [
             tr: {
                 html: '/catalogs/tsh/tsh-130/catalog.html',
                 pdf: '/catalogs/tsh/tsh-130/catalog.pdf'
+            },
+            en: {
+                html: '/catalogs/tsh/tsh-130/catalog-en.html',
+                pdf: '/catalogs/tsh/tsh-130/catalog.pdf'
+            },
+            ru: {
+                html: '/catalogs/tsh/tsh-130/catalog-ru.html',
+                pdf: '/catalogs/tsh/tsh-130/catalog.pdf'
+            },
+            ar: {
+                html: '/catalogs/tsh/tsh-130/catalog-ar.html',
+                pdf: '/catalogs/tsh/tsh-130/catalog.pdf'
             }
         },
         thumbnail: '/mt-logo-white.png',
@@ -202,6 +248,18 @@ export const catalogs: CatalogItem[] = [
         paths: {
             tr: {
                 html: '/catalogs/tsh/tsh-160/catalog.html',
+                pdf: '/catalogs/tsh/tsh-160/catalog.pdf'
+            },
+            en: {
+                html: '/catalogs/tsh/tsh-160/catalog-en.html',
+                pdf: '/catalogs/tsh/tsh-160/catalog.pdf'
+            },
+            ru: {
+                html: '/catalogs/tsh/tsh-160/catalog-ru.html',
+                pdf: '/catalogs/tsh/tsh-160/catalog.pdf'
+            },
+            ar: {
+                html: '/catalogs/tsh/tsh-160/catalog-ar.html',
                 pdf: '/catalogs/tsh/tsh-160/catalog.pdf'
             }
         },

@@ -1,0 +1,1361 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/catalogs/tsh/tsh-60/">
+    <title>TSH-60 Одновальный шредер | MT Makina Ürün Kataloğu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           RESET & BASE STYLES
+        ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #FFC000;
+            --dark-anthracite: #222222;
+            --light-gray: #F9F9F9;
+            --border-gray: #E0E0E0;
+            --text-dark: #333333;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: var(--text-dark);
+            background-color: #E5E5E5;
+        }
+
+        /* ========================================
+           PAGE STRUCTURE (A4 PRINT FORMAT)
+        ======================================== */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: var(--white);
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .page-content {
+            padding: 20mm 25mm 30mm 25mm;
+            min-height: calc(297mm - 50mm);
+        }
+
+        /* ========================================
+           PRINT STYLES
+        ======================================== */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+            }
+
+            .page {
+                width: 210mm !important;
+                height: 297mm !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                page-break-after: always !important;
+            }
+
+            .page:last-child {
+                page-break-after: auto !important;
+            }
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        /* ========================================
+           TYPOGRAPHY
+        ======================================== */
+        h1 {
+            font-size: 32pt;
+            font-weight: 900;
+            color: var(--dark-anthracite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: var(--dark-anthracite);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8mm;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4mm;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-yellow);
+        }
+
+        h3 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--dark-anthracite);
+            margin-bottom: 5mm;
+        }
+
+        p {
+            font-size: 11pt;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 4mm;
+        }
+
+        /* ========================================
+           COVER PAGE - DIAGONAL DESIGN
+        ======================================== */
+        .cover-page {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 297mm;
+            overflow: hidden;
+        }
+
+        /* Top diagonal block */
+        .cover-top-block {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            background: var(--primary-yellow);
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+        }
+
+        /* Bottom diagonal block */
+        .cover-bottom-block {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 35%;
+            background: var(--dark-anthracite);
+            clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* Cover Logo */
+        .cover-logo {
+            position: absolute;
+            top: 15mm;
+            left: 20mm;
+            z-index: 20;
+            width: 50mm;
+            height: auto;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 20mm;
+        }
+
+        .cover-img {
+            width: 155mm;
+            height: auto;
+            max-height: 105mm;
+            object-fit: contain;
+            margin-bottom: 6mm;
+            padding: 3mm;
+            background: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 4px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover-model {
+            font-size: 72pt;
+            font-weight: 900;
+            color: var(--dark-anthracite);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 3mm;
+            text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .cover-title {
+            font-size: 18pt;
+            font-weight: 700;
+            color: var(--dark-anthracite);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2mm;
+        }
+
+        .cover-subtitle {
+            font-size: 12pt;
+            font-weight: 500;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 25mm;
+        }
+
+        .cover-series {
+            display: inline-block;
+            background: var(--dark-anthracite);
+            color: var(--primary-yellow);
+            font-size: 14pt;
+            font-weight: 700;
+            padding: 3mm 10mm;
+            margin-top: 15mm;
+            letter-spacing: 2px;
+        }
+
+        .cover-tagline {
+            position: absolute;
+            bottom: 30mm;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            color: var(--white);
+            font-size: 16pt;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* ========================================
+           PAGE HEADER WITH ICON
+        ======================================== */
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8mm;
+            padding-bottom: 4mm;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .page-header-icon {
+            width: 12mm;
+            height: auto;
+            opacity: 0.8;
+        }
+
+        /* ========================================
+           SECTION HEADERS
+        ======================================== */
+        .section-header {
+            margin-bottom: 12mm;
+        }
+
+        .section-header h2 {
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           FEATURE BOXES
+        ======================================== */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6mm;
+            margin-top: 8mm;
+        }
+
+        .feature-box {
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary-yellow);
+            padding: 5mm;
+        }
+
+        .feature-box h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--dark-anthracite);
+            margin-bottom: 2mm;
+        }
+
+        .feature-box p {
+            font-size: 9pt;
+            margin-bottom: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           IMAGE STYLES
+        ======================================== */
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--light-gray) 0%, #E8E8E8 100%);
+            border: 2px dashed var(--border-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .product-image-container {
+            margin: 6mm 0;
+            text-align: center;
+        }
+
+        .image-large {
+            height: 70mm;
+            margin: 6mm 0;
+        }
+
+        .image-medium {
+            height: 50mm;
+            margin: 5mm 0;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 12mm;
+            background: var(--primary-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 25mm;
+        }
+
+        .page-footer span {
+            font-size: 9pt;
+            font-weight: 500;
+            color: var(--dark-anthracite);
+            margin-left: 8mm;
+        }
+
+        .page-footer span::before {
+            content: '•';
+            margin-right: 8mm;
+            opacity: 0.5;
+        }
+
+        .page-footer span:first-child::before {
+            display: none;
+        }
+
+        /* ========================================
+           HIGHLIGHT BOXES
+        ======================================== */
+        .highlight-box {
+            background: var(--dark-anthracite);
+            color: var(--white);
+            padding: 6mm;
+            margin: 8mm 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 3mm;
+        }
+
+        .highlight-box p {
+            color: var(--white);
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           SPECS LIST
+        ======================================== */
+        .specs-list {
+            list-style: none;
+            margin-top: 5mm;
+        }
+
+        .specs-list li {
+            padding: 3mm 0;
+            border-bottom: 1px solid var(--border-gray);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+
+        .specs-list .spec-label {
+            font-weight: 500;
+            color: #666;
+        }
+
+        .specs-list .spec-value {
+            font-weight: 700;
+            color: var(--dark-anthracite);
+        }
+
+        /* ========================================
+           TWO COLUMN LAYOUT
+        ======================================== */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10mm;
+        }
+
+        .column {
+            /* Placeholder for column content */
+        }
+
+        /* ========================================
+           PAGE NUMBER
+        ======================================== */
+        .page-number {
+            position: absolute;
+            bottom: 15mm;
+            left: 25mm;
+            font-size: 9pt;
+            color: var(--dark-anthracite);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           CALLOUT ANNOTATIONS
+        ======================================== */
+        .callout-box {
+            background: var(--white);
+            border: 2px solid var(--primary-yellow);
+            border-radius: 4px;
+            padding: 3mm 4mm;
+            font-size: 9pt;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 4mm;
+        }
+
+        .callout-box strong {
+            color: var(--dark-anthracite);
+            display: block;
+            margin-bottom: 1mm;
+            font-size: 10pt;
+        }
+
+        .callout-box span {
+            color: #555;
+            font-size: 9pt;
+            line-height: 1.4;
+        }
+
+        .callout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+            margin-top: 6mm;
+        }
+
+        /* ========================================
+           APPLICATION CARDS
+        ======================================== */
+        .app-card {
+            background: var(--light-gray);
+            padding: 4mm;
+            border-radius: 4px;
+        }
+
+        .app-card h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--dark-anthracite);
+            margin-bottom: 2mm;
+        }
+
+        .app-card p {
+            font-size: 9pt;
+            color: #555;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* Material list */
+        .material-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+            margin-top: 5mm;
+        }
+
+        .material-list li {
+            background: var(--light-gray);
+            padding: 3mm 4mm;
+            border-left: 3px solid var(--primary-yellow);
+            font-size: 10pt;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           CONTACT INFO (Enhanced)
+        ======================================== */
+        .contact-section {
+            margin-top: 6mm;
+        }
+
+        .contact-section h3 {
+            margin-bottom: 3mm;
+            padding-bottom: 2mm;
+            border-bottom: 2px solid var(--primary-yellow);
+        }
+
+        .contact-group {
+            margin-bottom: 5mm;
+        }
+
+        .contact-group-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--primary-yellow);
+            background: var(--dark-anthracite);
+            padding: 2mm 3mm;
+            margin-bottom: 2mm;
+            display: inline-block;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2mm;
+            font-size: 10pt;
+        }
+
+        .contact-item .label {
+            font-weight: 600;
+            color: #666;
+            min-width: 25mm;
+        }
+
+        .contact-item .value {
+            color: var(--text-dark);
+        }
+
+        .address-text {
+            font-size: 10pt;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .website-box {
+            background: var(--light-gray);
+            padding: 4mm;
+            text-align: center;
+            border-radius: 4px;
+            margin-top: 4mm;
+        }
+
+        .website-box p {
+            margin: 0;
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--dark-anthracite);
+        }
+
+        .website-box p.secondary {
+            font-size: 10pt;
+            font-weight: 500;
+            color: #666;
+            margin-top: 1mm;
+        }
+
+        /* ========================================
+           SPEC CARD (Product Datasheet)
+        ======================================== */
+        .spec-card {
+            background: var(--light-gray);
+            border: 2px solid var(--border-gray);
+            border-radius: 6px;
+            padding: 8mm;
+            margin: 6mm 0;
+        }
+
+        .spec-card-header {
+            background: var(--primary-yellow);
+            margin: -8mm -8mm 6mm -8mm;
+            padding: 4mm 8mm;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .spec-card-header h3 {
+            color: var(--dark-anthracite);
+            margin: 0;
+            font-size: 14pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4mm 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-row .label {
+            font-size: 11pt;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .spec-row .value {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--dark-anthracite);
+        }
+
+        .spec-row .value.highlight {
+            color: var(--primary-yellow);
+            background: var(--dark-anthracite);
+            padding: 2mm 4mm;
+            border-radius: 3px;
+        }
+
+        /* Big Spec Display */
+        .big-spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5mm;
+            margin: 8mm 0;
+        }
+
+        .big-spec-item {
+            background: var(--dark-anthracite);
+            color: var(--white);
+            padding: 6mm;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .big-spec-item .value {
+            font-size: 22pt;
+            font-weight: 900;
+            color: var(--primary-yellow);
+            display: block;
+            margin-bottom: 2mm;
+        }
+
+        .big-spec-item .unit {
+            font-size: 10pt;
+            font-weight: 400;
+            color: var(--primary-yellow);
+            opacity: 0.8;
+        }
+
+        .big-spec-item .label {
+            font-size: 9pt;
+            font-weight: 500;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Model Badge */
+        .model-badge {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: var(--dark-anthracite);
+            font-size: 24pt;
+            font-weight: 900;
+            padding: 3mm 8mm;
+            letter-spacing: 2px;
+            margin-bottom: 6mm;
+        }
+
+        /* ========================================
+           REFERENCES GRID
+        ======================================== */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4mm;
+            margin-top: 6mm;
+        }
+
+        .reference-logo {
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            padding: 3mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 22mm;
+            transition: all 0.2s ease;
+        }
+
+        .reference-logo:hover {
+            border-color: var(--primary-yellow);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .reference-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .references-intro {
+            text-align: center;
+            margin-bottom: 8mm;
+        }
+
+        .references-intro p {
+            font-size: 12pt;
+            color: #666;
+        }
+
+        .references-count {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: var(--dark-anthracite);
+            font-size: 11pt;
+            font-weight: 700;
+            padding: 2mm 5mm;
+            border-radius: 3px;
+            margin-top: 3mm;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =============================================
+         SAYFA 1: KAPAK - TSH-60
+    ============================================== -->
+    <div class="page">
+        <div class="cover-page">
+            <div class="cover-top-block"></div>
+            <div class="cover-bottom-block"></div>
+
+            <!-- Firma Logosu -->
+            <img src="../../assets/Mt Makina-Logo.png" alt="MT Makina Logo" class="cover-logo">
+
+            <div class="cover-content">
+                <img src="../../assets/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-beyaz.jpeg"
+                    alt="TSH-60 Одновальный шредер" class="cover-img">
+
+                <h1 class="cover-model">TSH-60</h1>
+                <p class="cover-title">Одновальный шредер</p>
+                <p class="cover-subtitle">Single Shaft Shredder</p>
+                <div class="cover-series">КАТАЛОГ ПРОДУКЦИИ</div>
+            </div>
+
+            <p class="cover-tagline">Компактная мощность, высокая эффективность</p>
+        </div>
+
+        <div class="page-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+    <!-- =============================================
+         SAYFA 2: ÜRÜN TANITIMI
+    ============================================== -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2>Описание продукта</h2>
+                </div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+
+            <div class="model-badge">TSH-60</div>
+
+            <p style="font-size: 12pt; line-height: 1.8;">TSH-60, serinin en kompakt ve seri modelidir. Özellikle küçük
+                ve orta ölçekli işletmelerde plastik takoz, üretim firesi ve kağıt atıkların yerinde imhası için
+                tasarlanmıştır. Enerji tasarrufu sağlayan hidrolik itici (Hydraulic Ram) sistemi ve dayanıklı rotor
+                yapısı ile kesintisiz çalışma performansı sunar.</p>
+
+            <div class="product-image-container">
+                <img src="../../assets/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-1.jpeg"
+                    alt="TSH-60 Detay Görsel" class="product-image" style="max-height: 60mm;">
+            </div>
+
+            <div class="highlight-box">
+                <h3>Neden TSH-60?</h3>
+                <p>Kompakt boyutları sayesinde sınırlı alanlara kolayca yerleşir. Düşük enerji tüketimi ile işletme
+                    maliyetlerini minimize eder. Tek operatör ile kullanılabilir, bakım ve temizliği kolaydır. Küçük
+                    tesisler için ideal başlangıç makinesidir.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h4>Компактный дизайн</h4>
+                    <p>Küçük alanlara sığan, taşınabilir boyutlarda endüstriyel parçalama çözümü.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Гидравлический толкатель</h4>
+                    <p>Otomatik besleme ile sürekli ve düzenli parçalama performansı.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Низкое энергопотребление</h4>
+                    <p>18.5 - 30 kW motor gücü ile ekonomik işletme maliyeti.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Простое обслуживание</h4>
+                    <p>Modüler bıçak sistemi ile hızlı değişim ve minimum duruş süresi.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 8mm;">TSH-60 ile Parçalanabilir Malzemeler</h3>
+            <ul class="material-list">
+                <li>Plastik Takoz & Blok</li>
+                <li>Üretim Fireleri</li>
+                <li>Kağıt Bobinleri</li>
+                <li>Karton Atıklar</li>
+                <li>İnce Kablolar</li>
+                <li>Tekstil Parçaları</li>
+                <li>Plastik Kasalar</li>
+                <li>Ambalaj Malzemeleri</li>
+            </ul>
+        </div>
+
+        <span class="page-number">02</span>
+        <div class="page-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+    <!-- =============================================
+         SAYFA 3: UYGULAMA ALANLARI
+    ============================================== -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2>Области применения</h2>
+                </div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+
+            <p>TSH-60, kompakt yapısı sayesinde özellikle küçük ve orta ölçekli işletmelerde tercih edilmektedir.
+                Aşağıda başlıca kullanım alanları yer almaktadır:</p>
+
+            <div class="two-columns" style="margin-top: 6mm;">
+                <div class="column">
+                    <div class="product-image-container" style="margin: 0 0 3mm 0;">
+                        <img src="../../assets/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-2.jpeg"
+                            alt="TSH-60 Uygulama" class="product-image" style="max-height: 45mm; border-radius: 4px;">
+                    </div>
+                    <div class="app-card">
+                        <h4>Plastik Üretim Tesisleri</h4>
+                        <p>Enjeksiyon ve ekstrüzyon üretim hatlarında oluşan firelerin yerinde imhası. Plastik takoz ve
+                            blokların granül boyutuna indirgenmesi.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="product-image-container" style="margin: 0 0 3mm 0;">
+                        <img src="../../assets/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-3.jpeg"
+                            alt="TSH-60 Detay" class="product-image" style="max-height: 45mm; border-radius: 4px;">
+                    </div>
+                    <div class="app-card">
+                        <h4>Matbaa & Ambalaj</h4>
+                        <p>Kağıt bobinleri, karton kutular ve baskı atıklarının parçalanarak geri dönüşüme hazır hale
+                            getirilmesi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="two-columns" style="margin-top: 6mm;">
+                <div class="column">
+                    <div class="app-card">
+                        <h4>Tekstil Atölyeleri</h4>
+                        <p>Kumaş parçaları, iplik atıkları ve tekstil firelerinin elyaf formuna dönüştürülmesi.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="app-card">
+                        <h4>Küçük Geri Dönüşüm Tesisleri</h4>
+                        <p>Sınırlı alanda çalışan geri dönüşüm tesisleri için ideal başlangıç makinesi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 6mm; text-align: center;">
+                <h3>TSH-60 Avantajları</h3>
+                <p>• Küçük alanlara kolay yerleşim &nbsp;&nbsp;• Tek operatör ile kullanım &nbsp;&nbsp;• Düşük işletme
+                    maliyeti<br>• Hızlı kurulum ve devreye alma &nbsp;&nbsp;• Minimum bakım gereksinimi</p>
+            </div>
+
+            <div class="product-image-container" style="margin-top: 6mm;">
+                <img src="../../assets/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-4.jpeg"
+                    alt="TSH-60 Genel Görünüm" class="product-image" style="max-height: 50mm;">
+            </div>
+        </div>
+
+        <span class="page-number">03</span>
+        <div class="page-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+    <!-- =============================================
+         SAYFA 4: TEKNİK DETAYLAR
+    ============================================== -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2>Технические детали</h2>
+                </div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+
+            <div class="product-image-container">
+                <img src="../../assets/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-1.jpeg"
+                    alt="TSH-60 Teknik Detay" class="product-image" style="max-height: 70mm;">
+            </div>
+
+            <div class="callout-grid">
+                <div class="callout-box">
+                    <strong>Гидравлический толкатель (Hydraulic Ram)</strong>
+                    <span>Malzemeyi rotora iterek sürekli ve düzenli besleme sağlar. Operatör müdahalesine gerek
+                        kalmadan otomatik çalışır.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Akıllı PLC & Otomatik Geri Dönüş (Auto-Reverse)</strong>
+                    <span>Aşırı yükte rotor otomatik olarak geri döner, bıçakları korur ve malzeme sıkışmasını
+                        önler.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Değiştirilebilir Elek (Screen)</strong>
+                    <span>İstenilen granül boyutuna göre kolayca değişen elek sistemi. 20mm - 80mm arası
+                        seçenekler.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Hardox Bıçaklar</strong>
+                    <span>40 adet yüksek aşınma dirençli Hardox 500 çelik kesici uç. Uzun ömürlü ve
+                        değiştirilebilir.</span>
+                </div>
+            </div>
+
+            <div class="two-columns" style="margin-top: 6mm;">
+                <div class="column">
+                    <h3>Стандартное оборудование</h3>
+                    <ul class="specs-list">
+                        <li>
+                            <span class="spec-label">Gövde Malzemesi</span>
+                            <span class="spec-value">St-52 Çelik</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Bıçak Malzemesi</span>
+                            <span class="spec-value">Hardox 500</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Tahrik Sistemi</span>
+                            <span class="spec-value">Redüktörlü Motor</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Hidrolik Ünite</span>
+                            <span class="spec-value">Dahili</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Дополнительные опции</h3>
+                    <ul class="specs-list">
+                        <li>
+                            <span class="spec-label">PLC Kontrol</span>
+                            <span class="spec-value">Siemens S7</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">HMI Panel</span>
+                            <span class="spec-value">7" Dokunmatik</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Uzaktan İzleme</span>
+                            <span class="spec-value">IoT Modülü</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Çıkış Konveyörü</span>
+                            <span class="spec-value">Opsiyonel</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <span class="page-number">04</span>
+        <div class="page-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+    <!-- =============================================
+         SAYFA 5: TEKNİK KİMLİK KARTI (SPEC SHEET)
+    ============================================== -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2>Техническая спецификация</h2>
+                </div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+
+            <div style="text-align: center; margin-bottom: 6mm;">
+                <div class="model-badge" style="font-size: 32pt; padding: 5mm 15mm;">TSH-60</div>
+                <p style="font-size: 12pt; color: #666; margin-top: 3mm;">Одновальный шредер | Single Shaft
+                    Shredder</p>
+            </div>
+
+            <!-- Big Spec Display -->
+            <div class="big-spec-grid">
+                <div class="big-spec-item">
+                    <span class="value">18.5-30 <span class="unit">kW</span></span>
+                    <span class="label">Мощность двигателя</span>
+                </div>
+                <div class="big-spec-item">
+                    <span class="value">300-500 <span class="unit">kg/saat</span></span>
+                    <span class="label">Производительность</span>
+                </div>
+                <div class="big-spec-item">
+                    <span class="value">~2.200 <span class="unit">kg</span></span>
+                    <span class="label">Вес</span>
+                </div>
+            </div>
+
+            <!-- Detailed Spec Card -->
+            <div class="spec-card">
+                <div class="spec-card-header">
+                    <h3>Подробные технические характеристики</h3>
+                </div>
+
+                <div class="spec-row">
+                    <span class="label">Model</span>
+                    <span class="value highlight">TSH-60</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Мощность двигателя</span>
+                    <span class="value">18.5 – 30 kW</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Диаметр ротора</span>
+                    <span class="value">250 mm</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Длина ротора</span>
+                    <span class="value">600 mm</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Производительность</span>
+                    <span class="value">300 – 500 kg/saat</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Количество ножей</span>
+                    <span class="value">40 Adet</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Загрузочное отверстие</span>
+                    <span class="value">600 x 800 mm</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Вес машины</span>
+                    <span class="value">~2.200 kg</span>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 4mm;">
+                <h3>Not</h3>
+                <p>Производительность değerleri malzeme türüne, boyutuna ve yoğunluğuna göre değişiklik gösterebilir. Projenize
+                    özel teknik detaylar için satış ekibimizle iletişime geçiniz.</p>
+            </div>
+        </div>
+
+        <span class="page-number">05</span>
+        <div class="page-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+    <!-- =============================================
+         SAYFA 6: REFERANSLARIMIZ
+    ============================================== -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2>Наши рекомендации</h2>
+                </div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+
+            <div class="references-intro">
+                <p>Türkiye'nin ve dünyanın önde gelen kurum ve kuruluşları MT Makina'yı tercih ediyor.</p>
+                <span class="references-count">40+ Referans</span>
+            </div>
+
+            <div class="references-grid">
+                <!-- Satır 1 -->
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/aselsan-logo.webp" alt="Aselsan">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/bosch-logo.webp" alt="Bosch">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/pepsico-logo.webp" alt="PepsiCo">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/castrol-logo.webp" alt="Castrol">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/bp-logo.webp" alt="BP">
+                </div>
+
+                <!-- Satır 2 -->
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/iga-logo.webp" alt="İGA">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/tav-havalimanlari-logo.webp" alt="TAV Havalimanları">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/remondis-logo.webp" alt="Remondis">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/tei-logo.webp" alt="TEI">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/mke-logo.webp" alt="MKE">
+                </div>
+
+                <!-- Satır 3 -->
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/tcmb-logo.webp" alt="TCMB">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/saglik-bakanligi-logo.webp" alt="Sağlık Bakanlığı">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/adalet-bakanligi-logo.webp" alt="Adalet Bakanlığı">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/disisleri-bakanligi-logo.webp" alt="Dışişleri Bakanlığı">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/genelkurmay-baskanligi-logo.webp" alt="Genelkurmay Başkanlığı">
+                </div>
+
+                <!-- Satır 4 -->
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/mit-logo.webp" alt="MİT">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/osym-logo.webp" alt="ÖSYM">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/golden-rose-logo.webp" alt="Golden Rose">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/betek-logo.webp" alt="Betek">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/orhan-holding-logo.webp" alt="Orhan Holding">
+                </div>
+
+                <!-- Satır 5 -->
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/hun-holding-logo.webp" alt="Hun Holding">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/max-royal-resort-logo.webp" alt="Max Royal Resort">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/ic-hotels-logo.webp" alt="IC Hotels">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/bolu-cimento-logo.webp" alt="Bolu Çimento">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/soke-un-logo.webp" alt="Söke Un">
+                </div>
+
+                <!-- Satır 6 -->
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/melodi-cikolata-logo.webp" alt="Melodi Çikolata">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/humana-logo.webp" alt="Humana">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/seha-logo.webp" alt="SEHA">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/malatya-buyuksehir-belediyesi-logo.webp"
+                        alt="Malatya Büyükşehir Belediyesi">
+                </div>
+                <div class="reference-logo">
+                    <img src="../../assets/referanslar/tuzla-belediyesi-logo.webp" alt="Tuzla Belediyesi">
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 8mm;">
+                <h3>Güvenilir Çözüm Ortağınız</h3>
+                <p>20 yılı aşkın tecrübemizle kamu kurumları, özel sektör ve uluslararası firmalar için endüstriyel
+                    parçalama çözümleri sunuyoruz.</p>
+            </div>
+        </div>
+
+        <span class="page-number">06</span>
+        <div class="page-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+    <!-- =============================================
+         SAYFA 7: BOYUTLAR & İLETİŞİM
+    ============================================== -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2>Размеры и контакты</h2>
+                </div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+
+            <div class="product-image-container" style="margin-top: 0;">
+                <img src="../../assets/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-beyaz.jpeg"
+                    alt="TSH-60 Boyut Görseli" class="product-image" style="max-height: 60mm;">
+            </div>
+
+            <!-- Dimension Table -->
+            <div class="spec-card" style="margin-top: 4mm;">
+                <div class="spec-card-header">
+                    <h3>TSH-60 Boyutları</h3>
+                </div>
+
+                <div class="spec-row">
+                    <span class="label">Toplam Uzunluk (A)</span>
+                    <span class="value">1.600 mm</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Toplam Genişlik (B)</span>
+                    <span class="value">1.100 mm</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Toplam Yükseklik (C)</span>
+                    <span class="value">1.400 mm</span>
+                </div>
+                <div class="spec-row">
+                    <span class="label">Загрузочное отверстие</span>
+                    <span class="value">600 x 800 mm</span>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="two-columns" style="margin-top: 6mm;">
+                <div class="column">
+                    <div class="contact-section">
+                        <h3>Свяжитесь с нами</h3>
+
+                        <div class="contact-group">
+                            <div class="contact-group-title">АДРЕС</div>
+                            <p class="address-text">Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2
+                                Kat: 7 D: 85 - 86, PK.: 34512 Esenyurt / İSTANBUL</p>
+                        </div>
+
+                        <div class="contact-group">
+                            <div class="contact-group-title">ГЛАВНЫЙ ОФИС</div>
+                            <p style="font-size: 10pt; margin-bottom: 1mm;">+90 850 259 01 66</p>
+                            <p style="font-size: 10pt; margin-bottom: 0;">+90 212 613 31 82</p>
+                        </div>
+
+                        <div class="contact-group">
+                            <div class="contact-group-title">ПРОДАЖИ</div>
+                            <p style="font-size: 10pt; margin-bottom: 1mm;">+90 212 671 74 55</p>
+                            <p style="font-size: 10pt; margin-bottom: 0;">+90 212 671 74 56</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="contact-section">
+                        <h3>&nbsp;</h3>
+
+                        <div class="contact-group">
+                            <div class="contact-group-title">WHATSAPP</div>
+                            <p style="font-size: 11pt; font-weight: 700; margin-bottom: 0;">+90 542 310 99 30</p>
+                        </div>
+
+                        <div class="contact-group">
+                            <div class="contact-group-title">ЭЛ. ПОЧТА</div>
+                            <p style="font-size: 10pt; margin-bottom: 0;">info@mtmakina.com.tr</p>
+                        </div>
+
+                        <div class="website-box">
+                            <p>www.mtmakina.com.tr</p>
+                            <p class="secondary">www.parcalamamakinesi.com</p>
+                        </div>
+
+                        <div class="highlight-box" style="margin-top: 4mm; padding: 4mm;">
+                            <h3 style="font-size: 11pt; margin-bottom: 2mm;">Ücretsiz Keşif</h3>
+                            <p style="font-size: 9pt;">İhtiyaçlarınıza uygun çözüm için ücretsiz keşif hizmetimizden
+                                yararlanın.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="page-number">07</span>
+        <div class="page-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
