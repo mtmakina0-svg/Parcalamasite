@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { FileDown, BookOpen, ChevronRight, ArrowLeft, Eye } from 'lucide-react';
+import { FileDown, BookOpen, ChevronRight, ArrowLeft, Eye, ExternalLink } from 'lucide-react';
 import { useLanguage, Language } from './LanguageContext';
 import { catalogs, getCatalogById, categoryTranslations, CatalogCategory, CatalogItem } from '../data/catalogData';
 import { getModelImages } from '../utils/imageConfig';
+import { generateUrl } from '../utils/seoConfig';
 
 interface ECatalogPageProps {
   onBackToMain: () => void;
@@ -16,6 +17,30 @@ interface CategoryInfo {
   catalogCount: number;
   thumbnail: string;
 }
+
+// Category slug mapping for URLs
+const categorySlugMap: Record<CatalogCategory, Record<Language, string>> = {
+  'single-shaft': { tr: 'tek-saftli', en: 'single-shaft', ru: 'odnosnatnyj', ar: 'single-shaft' },
+  'dual-shaft': { tr: 'cift-saftli', en: 'dual-shaft', ru: 'dvukhvalnyj', ar: 'dual-shaft' },
+  'quad-shaft': { tr: 'dort-saftli', en: 'quad-shaft', ru: 'chetyrekhvalnyj', ar: 'quad-shaft' },
+  'metal': { tr: 'metal', en: 'metal', ru: 'metall', ar: 'metal' },
+  'mobile': { tr: 'mobil', en: 'mobile', ru: 'mobilnyj', ar: 'mobile' },
+  'pallet': { tr: 'palet', en: 'pallet', ru: 'pallet', ar: 'pallet' },
+  'harddisk': { tr: 'harddisk', en: 'harddisk', ru: 'harddisk', ar: 'harddisk' },
+  'tree-root': { tr: 'agac-koku', en: 'tree-root', ru: 'tree-root', ar: 'tree-root' },
+  'wood': { tr: 'odun', en: 'wood', ru: 'wood', ar: 'wood' },
+  'glass': { tr: 'cam', en: 'glass', ru: 'glass', ar: 'glass' }
+};
+
+// Get category from URL slug
+const getCategoryFromSlug = (slug: string, language: Language): CatalogCategory | null => {
+  for (const [category, slugs] of Object.entries(categorySlugMap)) {
+    if (slugs[language] === slug) {
+      return category as CatalogCategory;
+    }
+  }
+  return null;
+};
 
 // Get available categories with catalog count
 const getAvailableCategories = (): CategoryInfo[] => {
@@ -71,12 +96,12 @@ const CategoryCard = ({
       onClick={onClick}
       className="group bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer border border-gray-100 transition-all duration-300"
     >
-      {/* Thumbnail */}
-      <div className="relative h-64 bg-gradient-to-br from-[#45474B] to-[#2F3032] overflow-hidden">
+      {/* Thumbnail - object-cover for full fill */}
+      <div className="relative h-64 overflow-hidden">
         <img
           src={category.thumbnail}
           alt={categoryName}
-          className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -111,7 +136,7 @@ const ModelCard = ({
   imageUrl: string;
   language: Language;
   t: (key: string) => string;
-  onViewCatalog: (catalogId: string) => void;
+  onViewCatalog: (catalog: CatalogItem) => void;
   onDownloadPDF: (catalog: CatalogItem) => void;
 }) => {
   const translation = catalog.translations[language] || catalog.translations.tr;
@@ -124,12 +149,12 @@ const ModelCard = ({
       transition={{ duration: 0.5 }}
       className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
     >
-      {/* Thumbnail */}
-      <div className="relative h-56 bg-gradient-to-br from-[#F5F7F8] to-[#E8EAEC] overflow-hidden">
+      {/* Thumbnail - object-cover for full fill */}
+      <div className="relative h-56 overflow-hidden bg-gradient-to-br from-[#F5F7F8] to-[#E8EAEC]">
         <img
           src={imageUrl}
           alt={catalog.model}
-          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
         <div className="absolute top-4 left-4">
@@ -167,10 +192,10 @@ const ModelCard = ({
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => onViewCatalog(catalog.id)}
+            onClick={() => onViewCatalog(catalog)}
             className="flex-1 flex items-center justify-center gap-2 bg-[#45474B] text-white py-3 px-4 rounded-lg hover:bg-[#35373A] transition-colors"
           >
-            <Eye size={18} />
+            <ExternalLink size={18} />
             <span className="text-sm font-medium">{t('ecatalog_view_catalog')}</span>
           </motion.button>
 
@@ -188,65 +213,59 @@ const ModelCard = ({
   );
 };
 
-// Catalog Viewer Modal
-const CatalogViewer = ({
-  catalog,
-  onClose
-}: {
-  catalog: CatalogItem;
-  onClose: () => void;
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-white rounded-2xl w-full max-w-6xl h-[90vh] overflow-hidden flex flex-col"
-        onClick={e => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b bg-[#45474B]">
-          <h3 className="text-xl font-bold text-white">{catalog.model} Katalog</h3>
-          <button
-            onClick={onClose}
-            className="text-white hover:text-[#F4CE14] transition-colors text-2xl font-bold"
-          >
-            ×
-          </button>
-        </div>
-
-        {/* Catalog Content */}
-        <div className="flex-1 overflow-hidden">
-          <iframe
-            src={catalog.htmlPath}
-            title={`${catalog.model} Katalog`}
-            className="w-full h-full border-0"
-            style={{ minHeight: '100%' }}
-          />
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
 export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) => {
   const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<CatalogCategory | null>(null);
-  const [viewingCatalog, setViewingCatalog] = useState<CatalogItem | null>(null);
 
   const categories = getAvailableCategories();
   const catalogsInCategory = selectedCategory ? getCatalogsWithImages(selectedCategory) : [];
 
+  // Parse URL to get initial category
+  useEffect(() => {
+    const path = window.location.pathname;
+    const pathParts = path.split('/').filter(Boolean);
+
+    // URL format: /tr/e-katalog/tek-saftli
+    if (pathParts.length >= 3 && (pathParts[1] === 'e-katalog' || pathParts[1] === 'e-catalog')) {
+      const categorySlug = pathParts[2];
+      const category = getCategoryFromSlug(categorySlug, language as Language);
+      if (category) {
+        setSelectedCategory(category);
+      }
+    }
+  }, [language]);
+
+  // Update URL when category changes
+  const updateUrl = (category: CatalogCategory | null) => {
+    const langPrefix = language === 'tr' ? '/tr' : `/${language}`;
+    const ecatalogSlug = language === 'tr' ? 'e-katalog' : 'e-catalog';
+
+    let newUrl: string;
+    if (category) {
+      const categorySlug = categorySlugMap[category]?.[language as Language] || category;
+      newUrl = `${langPrefix}/${ecatalogSlug}/${categorySlug}`;
+    } else {
+      newUrl = `${langPrefix}/${ecatalogSlug}`;
+    }
+
+    window.history.pushState({}, '', newUrl);
+  };
+
+  // Handle category selection with URL update
+  const handleCategorySelect = (category: CatalogCategory) => {
+    setSelectedCategory(category);
+    updateUrl(category);
+  };
+
+  // Handle back to categories with URL update
+  const handleBackToCategories = () => {
+    setSelectedCategory(null);
+    updateUrl(null);
+  };
+
   // Handle PDF download with custom filename
   const handleDownloadPDF = async (catalog: CatalogItem) => {
-    const translation = catalog.translations[language] || catalog.translations.tr;
+    const translation = catalog.translations[language as Language] || catalog.translations.tr;
     const machineName = translation.title.replace(' Kataloğu', '').replace(' Catalog', '');
     const filename = `MT Makina - ${catalog.model} ${machineName}.pdf`;
 
@@ -270,11 +289,10 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
     }
   };
 
-  const handleViewCatalog = (catalogId: string) => {
-    const catalog = getCatalogById(catalogId);
-    if (catalog) {
-      setViewingCatalog(catalog);
-    }
+  // Handle catalog view - opens in new tab for proper asset loading
+  const handleViewCatalog = (catalog: CatalogItem) => {
+    // Open HTML catalog in new tab - assets will load correctly with relative paths
+    window.open(catalog.htmlPath, '_blank');
   };
 
   return (
@@ -317,7 +335,7 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
             <motion.button
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              onClick={() => setSelectedCategory(null)}
+              onClick={handleBackToCategories}
               className="flex items-center gap-2 text-[#45474B] hover:text-[#F4CE14] transition-colors font-medium"
             >
               <ArrowLeft size={20} />
@@ -348,8 +366,8 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
                   <CategoryCard
                     key={category.id}
                     category={category}
-                    language={language}
-                    onClick={() => setSelectedCategory(category.id)}
+                    language={language as Language}
+                    onClick={() => handleCategorySelect(category.id)}
                   />
                 ))}
               </div>
@@ -362,7 +380,7 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
                 animate={{ opacity: 1, y: 0 }}
                 className="text-2xl md:text-3xl font-bold text-[#45474B] mb-2 text-center"
               >
-                {categoryTranslations[selectedCategory]?.[language] || selectedCategory}
+                {categoryTranslations[selectedCategory]?.[language as Language] || selectedCategory}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -381,7 +399,7 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
                     key={catalog.id}
                     catalog={catalog}
                     imageUrl={catalog.imageUrl}
-                    language={language}
+                    language={language as Language}
                     t={t}
                     onViewCatalog={handleViewCatalog}
                     onDownloadPDF={handleDownloadPDF}
@@ -422,14 +440,6 @@ export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) =>
           </motion.div>
         </div>
       </section>
-
-      {/* Catalog Viewer Modal */}
-      {viewingCatalog && (
-        <CatalogViewer
-          catalog={viewingCatalog}
-          onClose={() => setViewingCatalog(null)}
-        />
-      )}
     </div>
   );
 };
