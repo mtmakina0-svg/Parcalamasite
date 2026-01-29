@@ -47,8 +47,11 @@ const blogSlugs = [
     'atik-yonetimi-2024'
 ];
 
-// Katalog modelleri (TSH serisi)
-const catalogModels = ['tsh-60', 'tsh-80', 'tsh-100', 'tsh-130', 'tsh-160'];
+// Katalog modelleri (TSH serisi ve CS serisi)
+const catalogModels = {
+    tsh: ['tsh-60', 'tsh-80', 'tsh-100', 'tsh-130', 'tsh-160'],
+    cs: ['cs-20', 'cs-40', 'cs-60', 'cs-80', 'cs-150', 'cs-180', 'cs-200']
+};
 const catalogLanguages = { tr: '', en: '-en', ru: '-ru', ar: '-ar' };
 
 /**
@@ -304,23 +307,26 @@ function generateBlogSitemap(): SitemapUrl[] {
 function generateCatalogsSitemap(): SitemapUrl[] {
     const urls: SitemapUrl[] = [];
 
-    catalogModels.forEach(model => {
-        // Her model için dil alternatiflerini oluştur
-        const alternates = LANGUAGES.map(lang => ({
-            lang,
-            url: `${BASE_URL}/catalogs/tsh/${model}/catalog${catalogLanguages[lang]}.html`
-        }));
+    // Iterate over each series (tsh, cs, etc.)
+    Object.entries(catalogModels).forEach(([series, models]) => {
+        models.forEach((model: string) => {
+            // Her model için dil alternatiflerini oluştur
+            const alternates = LANGUAGES.map(lang => ({
+                lang,
+                url: `${BASE_URL}/catalogs/${series}/${model}/catalog${catalogLanguages[lang]}.html`
+            }));
 
-        LANGUAGES.forEach(lang => {
-            const suffix = catalogLanguages[lang];
-            const url = `${BASE_URL}/catalogs/tsh/${model}/catalog${suffix}.html`;
+            LANGUAGES.forEach(lang => {
+                const suffix = catalogLanguages[lang];
+                const url = `${BASE_URL}/catalogs/${series}/${model}/catalog${suffix}.html`;
 
-            urls.push({
-                loc: url,
-                lastmod: TODAY,
-                changefreq: 'monthly',
-                priority: 0.6,
-                alternates
+                urls.push({
+                    loc: url,
+                    lastmod: TODAY,
+                    changefreq: 'monthly',
+                    priority: 0.6,
+                    alternates
+                });
             });
         });
     });
