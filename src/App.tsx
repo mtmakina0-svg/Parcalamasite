@@ -617,10 +617,8 @@ function AppContent() {
           description={currentSEOData.description}
           keywords={currentSEOData.keywords}
           canonical={currentSEOData.canonical}
-          pageType={currentSEOData.pageType}
-          productType={currentSEOData.productType}
-          model={currentSEOData.model}
-          wasteCategory={currentSEOData.wasteCategory}
+          pageType="ecatalog"
+          noindex={false}
         />
         <Header
           onWasteClick={handleNavigateToWasteCategories}
