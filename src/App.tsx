@@ -131,6 +131,20 @@ function parseUrl(): { page: PageView; product?: ProductType; model?: string; wa
     }
   }
 
+  // Check E-Catalog Pages (Main & Subcategory)
+  const ecatalogSlugs = Object.values(slugsByLanguage.ecatalog);
+  for (const eSlug of ecatalogSlugs) {
+    // Exact match for main e-catalog page
+    if (cleanPath === eSlug) {
+      return { page: 'ecatalog' };
+    }
+    // Subcategory match (e.g., e-katalog/tek-saftli, e-catalog/single-shaft)
+    if (cleanPath.startsWith(eSlug + '/')) {
+      // Any subcategory is valid, ECatalogPage handles the category internally
+      return { page: 'ecatalog' };
+    }
+  }
+
   if (cleanPath === 'blog') {
     return { page: 'blog' };
   }
