@@ -17,6 +17,7 @@ Sitemap: https://www.parcalamamakinesi.com/sitemap-products.xml
 Sitemap: https://www.parcalamamakinesi.com/sitemap-models.xml
 Sitemap: https://www.parcalamamakinesi.com/sitemap-waste.xml
 Sitemap: https://www.parcalamamakinesi.com/sitemap-blog.xml
+Sitemap: https://www.parcalamamakinesi.com/sitemap-catalogs.xml
 
 # Crawl-delay
 Crawl-delay: 1

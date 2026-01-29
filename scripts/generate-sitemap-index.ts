@@ -47,6 +47,10 @@ const blogSlugs = [
     'atik-yonetimi-2024'
 ];
 
+// Katalog modelleri (TSH serisi)
+const catalogModels = ['tsh-60', 'tsh-80', 'tsh-100', 'tsh-130', 'tsh-160'];
+const catalogLanguages = { tr: '', en: '-en', ru: '-ru', ar: '-ar' };
+
 /**
  * XML header oluştur (XSL stylesheet referansı ile)
  */
@@ -295,6 +299,36 @@ function generateBlogSitemap(): SitemapUrl[] {
 }
 
 /**
+ * Katalog Sitemap'i (catalog HTML files)
+ */
+function generateCatalogsSitemap(): SitemapUrl[] {
+    const urls: SitemapUrl[] = [];
+
+    catalogModels.forEach(model => {
+        // Her model için dil alternatiflerini oluştur
+        const alternates = LANGUAGES.map(lang => ({
+            lang,
+            url: `${BASE_URL}/catalogs/tsh/${model}/catalog${catalogLanguages[lang]}.html`
+        }));
+
+        LANGUAGES.forEach(lang => {
+            const suffix = catalogLanguages[lang];
+            const url = `${BASE_URL}/catalogs/tsh/${model}/catalog${suffix}.html`;
+
+            urls.push({
+                loc: url,
+                lastmod: TODAY,
+                changefreq: 'monthly',
+                priority: 0.6,
+                alternates
+            });
+        });
+    });
+
+    return urls;
+}
+
+/**
  * Güncellenmiş robots.txt oluştur
  */
 function generateRobotsTxt(): string {
@@ -312,7 +346,8 @@ function generateRobotsTxt(): string {
     content += `Sitemap: ${BASE_URL}/sitemap-products.xml\n`;
     content += `Sitemap: ${BASE_URL}/sitemap-models.xml\n`;
     content += `Sitemap: ${BASE_URL}/sitemap-waste.xml\n`;
-    content += `Sitemap: ${BASE_URL}/sitemap-blog.xml\n\n`;
+    content += `Sitemap: ${BASE_URL}/sitemap-blog.xml\n`;
+    content += `Sitemap: ${BASE_URL}/sitemap-catalogs.xml\n\n`;
     content += '# Crawl-delay\n';
     content += 'Crawl-delay: 1\n';
 
@@ -365,7 +400,14 @@ function main() {
     fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap-blog.xml'), blogSitemap);
     console.log(`   ✅ ${blogUrls.length} blog URL'si eklendi`);
 
-    // 6. Sitemap Index
+    // 6. Catalogs Sitemap
+    console.log('📄 sitemap-catalogs.xml oluşturuluyor...');
+    const catalogsUrls = generateCatalogsSitemap();
+    const catalogsSitemap = createSitemap(catalogsUrls);
+    fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap-catalogs.xml'), catalogsSitemap);
+    console.log(`   ✅ ${catalogsUrls.length} katalog URL'si eklendi`);
+
+    // 7. Sitemap Index
     console.log('\n📍 sitemap-index.xml oluşturuluyor...');
     const sitemapIndex = createSitemapIndex([
         { name: 'sitemap-pages.xml', lastmod: TODAY },
@@ -373,16 +415,18 @@ function main() {
         { name: 'sitemap-models.xml', lastmod: TODAY },
         { name: 'sitemap-waste.xml', lastmod: TODAY },
         { name: 'sitemap-blog.xml', lastmod: TODAY },
+        { name: 'sitemap-catalogs.xml', lastmod: TODAY },
     ]);
     fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap-index.xml'), sitemapIndex);
     console.log('   ✅ Sitemap Index oluşturuldu');
 
-    // 7. Eski sitemap.xml'i de güncelle (backward compatibility)
+    // 8. Eski sitemap.xml'i de güncelle (backward compatibility)
     console.log('\n📄 sitemap.xml güncelleniyor (backward compatibility)...');
-    const allUrls = [...pagesUrls, ...productsUrls, ...modelsUrls, ...wasteUrls, ...blogUrls];
+    const allUrls = [...pagesUrls, ...productsUrls, ...modelsUrls, ...wasteUrls, ...blogUrls, ...catalogsUrls];
     const mainSitemap = createSitemap(allUrls);
     fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), mainSitemap);
     console.log(`   ✅ ${allUrls.length} toplam URL ile sitemap.xml güncellendi`);
+
 
     // 8. Robots.txt güncelle
     console.log('\n📄 robots.txt güncelleniyor...');
@@ -399,6 +443,7 @@ function main() {
     console.log(`📄 sitemap-models.xml   : ${modelsUrls.length} URL`);
     console.log(`📄 sitemap-waste.xml    : ${wasteUrls.length} URL`);
     console.log(`📄 sitemap-blog.xml     : ${blogUrls.length} URL`);
+    console.log(`📄 sitemap-catalogs.xml : ${catalogsUrls.length} URL`);
     console.log('-'.repeat(50));
     console.log(`📍 TOPLAM               : ${allUrls.length} URL`);
     console.log('='.repeat(50));
