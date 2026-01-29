@@ -290,6 +290,149 @@ export const catalogs: CatalogItem[] = [
                 keywords: ['TSH-160', 'ماكينة تقطيع عمود واحد', 'كتالوج ماكينة تقطيع', 'ماكينة تقطيع صناعية']
             }
         }
+    },
+    // ========================================
+    // CS SERIES - Dual Shaft Shredders
+    // ========================================
+    {
+        id: 'cs-20',
+        model: 'CS-20',
+        category: 'dual-shaft',
+        series: 'CS',
+        paths: {
+            tr: { html: '/catalogs/cs/cs-20/catalog.html', pdf: '/catalogs/cs/cs-20/catalog.pdf' },
+            en: { html: '/catalogs/cs/cs-20/catalog-en.html', pdf: '/catalogs/cs/cs-20/catalog.pdf' },
+            ru: { html: '/catalogs/cs/cs-20/catalog-ru.html', pdf: '/catalogs/cs/cs-20/catalog.pdf' },
+            ar: { html: '/catalogs/cs/cs-20/catalog-ar.html', pdf: '/catalogs/cs/cs-20/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/cs/cs-20/images/CS-20-1.jpeg',
+        specs: { capacity: '100-300 kg/h', power: '2.2-11 kW' },
+        translations: {
+            tr: { title: 'CS-20 Çift Şaftlı Parçalama Makinesi Kataloğu', description: 'CS-20 kompakt çift şaftlı parçalama makinesi. Küçük işletmeler için ideal.', keywords: ['CS-20', 'çift şaftlı', 'kompakt parçalayıcı'] },
+            en: { title: 'CS-20 Dual Shaft Shredder Catalog', description: 'CS-20 compact dual shaft shredder. Ideal for small businesses.', keywords: ['CS-20', 'dual shaft', 'compact shredder'] },
+            ru: { title: 'Каталог CS-20 двухвального шредера', description: 'CS-20 компактный двухвальный шредер. Идеально для малого бизнеса.', keywords: ['CS-20', 'двухвальный', 'шредер'] },
+            ar: { title: 'كتالوج CS-20 آلة التمزيق ثنائية العمود', description: 'CS-20 آلة تمزيق مدمجة ثنائية العمود. مثالية للشركات الصغيرة.', keywords: ['CS-20', 'ثنائي العمود', 'آلة تمزيق'] }
+        }
+    },
+    {
+        id: 'cs-40',
+        model: 'CS-40',
+        category: 'dual-shaft',
+        series: 'CS',
+        paths: {
+            tr: { html: '/catalogs/cs/cs-40/catalog.html', pdf: '/catalogs/cs/cs-40/catalog.pdf' },
+            en: { html: '/catalogs/cs/cs-40/catalog-en.html', pdf: '/catalogs/cs/cs-40/catalog.pdf' },
+            ru: { html: '/catalogs/cs/cs-40/catalog-ru.html', pdf: '/catalogs/cs/cs-40/catalog.pdf' },
+            ar: { html: '/catalogs/cs/cs-40/catalog-ar.html', pdf: '/catalogs/cs/cs-40/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/cs/cs-40/images/CS-40-1.jpeg',
+        specs: { capacity: '300-600 kg/h', power: '5.5-22 kW' },
+        translations: {
+            tr: { title: 'CS-40 Çift Şaftlı Parçalama Makinesi Kataloğu', description: 'CS-40 orta kapasiteli çift şaftlı parçalama makinesi.', keywords: ['CS-40', 'çift şaftlı', 'orta kapasite'] },
+            en: { title: 'CS-40 Dual Shaft Shredder Catalog', description: 'CS-40 medium capacity dual shaft shredder.', keywords: ['CS-40', 'dual shaft', 'medium capacity'] },
+            ru: { title: 'Каталог CS-40 двухвального шредера', description: 'CS-40 двухвальный шредер средней мощности.', keywords: ['CS-40', 'двухвальный', 'шредер'] },
+            ar: { title: 'كتالوج CS-40 آلة التمزيق ثنائية العمود', description: 'CS-40 آلة تمزيق ثنائية العمود متوسطة السعة.', keywords: ['CS-40', 'ثنائي العمود', 'آلة تمزيق'] }
+        }
+    },
+    {
+        id: 'cs-60',
+        model: 'CS-60',
+        category: 'dual-shaft',
+        series: 'CS',
+        paths: {
+            tr: { html: '/catalogs/cs/cs-60/catalog.html', pdf: '/catalogs/cs/cs-60/catalog.pdf' },
+            en: { html: '/catalogs/cs/cs-60/catalog-en.html', pdf: '/catalogs/cs/cs-60/catalog.pdf' },
+            ru: { html: '/catalogs/cs/cs-60/catalog-ru.html', pdf: '/catalogs/cs/cs-60/catalog.pdf' },
+            ar: { html: '/catalogs/cs/cs-60/catalog-ar.html', pdf: '/catalogs/cs/cs-60/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/cs/cs-60/images/CS-60-1.jpeg',
+        specs: { capacity: '500-1000 kg/h', power: '11-45 kW (2x)' },
+        translations: {
+            tr: { title: 'CS-60 Çift Şaftlı Parçalama Makinesi Kataloğu', description: 'CS-60 endüstriyel çift şaftlı parçalama makinesi. Yüksek tork kapasitesi.', keywords: ['CS-60', 'çift şaftlı', 'endüstriyel parçalayıcı'] },
+            en: { title: 'CS-60 Dual Shaft Shredder Catalog', description: 'CS-60 industrial dual shaft shredder. High torque capacity.', keywords: ['CS-60', 'dual shaft', 'industrial shredder'] },
+            ru: { title: 'Каталог CS-60 двухвального шредера', description: 'CS-60 промышленный двухвальный шредер. Высокий крутящий момент.', keywords: ['CS-60', 'двухвальный', 'промышленный шредер'] },
+            ar: { title: 'كتالوج CS-60 آلة التمزيق ثنائية العمود', description: 'CS-60 آلة تمزيق صناعية ثنائية العمود. عزم دوران عالي.', keywords: ['CS-60', 'ثنائي العمود', 'آلة تمزيق صناعية'] }
+        }
+    },
+    {
+        id: 'cs-80',
+        model: 'CS-80',
+        category: 'dual-shaft',
+        series: 'CS',
+        paths: {
+            tr: { html: '/catalogs/cs/cs-80/catalog.html', pdf: '/catalogs/cs/cs-80/catalog.pdf' },
+            en: { html: '/catalogs/cs/cs-80/catalog-en.html', pdf: '/catalogs/cs/cs-80/catalog.pdf' },
+            ru: { html: '/catalogs/cs/cs-80/catalog-ru.html', pdf: '/catalogs/cs/cs-80/catalog.pdf' },
+            ar: { html: '/catalogs/cs/cs-80/catalog-ar.html', pdf: '/catalogs/cs/cs-80/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/cs/cs-80/images/CS-80-1.jpeg',
+        specs: { capacity: '1000-2000 kg/h', power: '15-55 kW (2x)' },
+        translations: {
+            tr: { title: 'CS-80 Çift Şaftlı Parçalama Makinesi Kataloğu', description: 'CS-80 ağır hizmet çift şaftlı parçalama makinesi apply.', keywords: ['CS-80', 'çift şaftlı', 'ağır sanayi'] },
+            en: { title: 'CS-80 Dual Shaft Shredder Catalog', description: 'CS-80 heavy-duty dual shaft shredder.', keywords: ['CS-80', 'dual shaft', 'heavy duty'] },
+            ru: { title: 'Каталог CS-80 двухвального шредера', description: 'CS-80 двухвальный шредер для тяжелых условий.', keywords: ['CS-80', 'двухвальный', 'шредер'] },
+            ar: { title: 'كتالوج CS-80 آلة التمزيق ثنائية العمود', description: 'CS-80 آلة تمزيق ثنائية العمود للتطبيقات الشاقة.', keywords: ['CS-80', 'ثنائي العمود', 'آلة تمزيق'] }
+        }
+    },
+    {
+        id: 'cs-150',
+        model: 'CS-150',
+        category: 'dual-shaft',
+        series: 'CS',
+        paths: {
+            tr: { html: '/catalogs/cs/cs-150/catalog.html', pdf: '/catalogs/cs/cs-150/catalog.pdf' },
+            en: { html: '/catalogs/cs/cs-150/catalog-en.html', pdf: '/catalogs/cs/cs-150/catalog.pdf' },
+            ru: { html: '/catalogs/cs/cs-150/catalog-ru.html', pdf: '/catalogs/cs/cs-150/catalog.pdf' },
+            ar: { html: '/catalogs/cs/cs-150/catalog-ar.html', pdf: '/catalogs/cs/cs-150/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/cs/cs-150/images/CS-150-1.jpeg',
+        specs: { capacity: '3000-5000 kg/h', power: '45-132 kW (2x)' },
+        translations: {
+            tr: { title: 'CS-150 Çift Şaftlı Parçalama Makinesi Kataloğu', description: 'CS-150 yüksek kapasiteli çift şaftlı parçalama makinesi.', keywords: ['CS-150', 'çift şaftlı', 'yüksek kapasite'] },
+            en: { title: 'CS-150 Dual Shaft Shredder Catalog', description: 'CS-150 high capacity dual shaft shredder.', keywords: ['CS-150', 'dual shaft', 'high capacity'] },
+            ru: { title: 'Каталог CS-150 двухвального шредера', description: 'CS-150 высокопроизводительный двухвальный шредер.', keywords: ['CS-150', 'двухвальный', 'шредер'] },
+            ar: { title: 'كتالوج CS-150 آلة التمزيق ثنائية العمود', description: 'CS-150 آلة تمزيق ثنائية العمود عالية السعة.', keywords: ['CS-150', 'ثنائي العمود', 'آلة تمزيق'] }
+        }
+    },
+    {
+        id: 'cs-180',
+        model: 'CS-180',
+        category: 'dual-shaft',
+        series: 'CS',
+        paths: {
+            tr: { html: '/catalogs/cs/cs-180/catalog.html', pdf: '/catalogs/cs/cs-180/catalog.pdf' },
+            en: { html: '/catalogs/cs/cs-180/catalog-en.html', pdf: '/catalogs/cs/cs-180/catalog.pdf' },
+            ru: { html: '/catalogs/cs/cs-180/catalog-ru.html', pdf: '/catalogs/cs/cs-180/catalog.pdf' },
+            ar: { html: '/catalogs/cs/cs-180/catalog-ar.html', pdf: '/catalogs/cs/cs-180/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/cs/cs-180/images/CS-180-1.jpeg',
+        specs: { capacity: '5000-8000 kg/h', power: '55-132 kW (2x)' },
+        translations: {
+            tr: { title: 'CS-180 Çift Şaftlı Parçalama Makinesi Kataloğu', description: 'CS-180 ağır sanayi çift şaftlı parçalama makinesi.', keywords: ['CS-180', 'çift şaftlı', 'ağır sanayi'] },
+            en: { title: 'CS-180 Dual Shaft Shredder Catalog', description: 'CS-180 heavy industry dual shaft shredder.', keywords: ['CS-180', 'dual shaft', 'heavy industry'] },
+            ru: { title: 'Каталог CS-180 двухвального шредера', description: 'CS-180 двухвальный шредер для тяжелой промышленности.', keywords: ['CS-180', 'двухвальный', 'шредер'] },
+            ar: { title: 'كتالوج CS-180 آلة التمزيق ثنائية العمود', description: 'CS-180 آلة تمزيق ثنائية العمود للصناعة الثقيلة.', keywords: ['CS-180', 'ثنائي العمود', 'آلة تمزيق'] }
+        }
+    },
+    {
+        id: 'cs-200',
+        model: 'CS-200',
+        category: 'dual-shaft',
+        series: 'CS',
+        paths: {
+            tr: { html: '/catalogs/cs/cs-200/catalog.html', pdf: '/catalogs/cs/cs-200/catalog.pdf' },
+            en: { html: '/catalogs/cs/cs-200/catalog-en.html', pdf: '/catalogs/cs/cs-200/catalog.pdf' },
+            ru: { html: '/catalogs/cs/cs-200/catalog-ru.html', pdf: '/catalogs/cs/cs-200/catalog.pdf' },
+            ar: { html: '/catalogs/cs/cs-200/catalog-ar.html', pdf: '/catalogs/cs/cs-200/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/cs/cs-200/images/CS-200-1.jpeg',
+        specs: { capacity: '8000-15000 kg/h', power: '75-200 kW (2x)' },
+        translations: {
+            tr: { title: 'CS-200 Çift Şaftlı Parçalama Makinesi Kataloğu', description: 'CS-200 serinin en güçlü modeli. Maksimum kapasite ve güç.', keywords: ['CS-200', 'çift şaftlı', 'maksimum güç'] },
+            en: { title: 'CS-200 Dual Shaft Shredder Catalog', description: 'CS-200 the most powerful in the series. Maximum capacity and power.', keywords: ['CS-200', 'dual shaft', 'maximum power'] },
+            ru: { title: 'Каталог CS-200 двухвального шредера', description: 'CS-200 самый мощный в серии. Максимальная производительность.', keywords: ['CS-200', 'двухвальный', 'шредер'] },
+            ar: { title: 'كتالوج CS-200 آلة التمزيق ثنائية العمود', description: 'CS-200 الأقوى في السلسلة. أقصى سعة وقوة.', keywords: ['CS-200', 'ثنائي العمود', 'آلة تمزيق'] }
+        }
     }
 ];
 
