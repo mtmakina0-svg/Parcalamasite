@@ -433,6 +433,87 @@ export const catalogs: CatalogItem[] = [
             ru: { title: 'Каталог CS-200 двухвального шредера', description: 'CS-200 самый мощный в серии. Максимальная производительность.', keywords: ['CS-200', 'двухвальный', 'шредер'] },
             ar: { title: 'كتالوج CS-200 آلة التمزيق ثنائية العمود', description: 'CS-200 الأقوى في السلسلة. أقصى سعة وقوة.', keywords: ['CS-200', 'ثنائي العمود', 'آلة تمزيق'] }
         }
+    },
+    // DS Series - Quad Shaft Shredders
+    {
+        id: 'ds-80',
+        model: 'DS-80',
+        category: 'quad-shaft',
+        series: 'DS',
+        paths: {
+            tr: { html: '/catalogs/ds/ds-80/catalog.html', pdf: '/catalogs/ds/ds-80/catalog.pdf' },
+            en: { html: '/catalogs/ds/ds-80/catalog-en.html', pdf: '/catalogs/ds/ds-80/catalog.pdf' },
+            ru: { html: '/catalogs/ds/ds-80/catalog-ru.html', pdf: '/catalogs/ds/ds-80/catalog.pdf' },
+            ar: { html: '/catalogs/ds/ds-80/catalog-ar.html', pdf: '/catalogs/ds/ds-80/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/ds/ds-80/images/1.jpeg',
+        specs: { capacity: '500-1500 kg/h', power: '11-22 kW (4x)' },
+        translations: {
+            tr: { title: 'DS-80 Dört Şaftlı Parçalama Makinesi Kataloğu', description: 'DS-80 kompakt dört şaftlı parçalama makinesi. Hassas parçalama için ideal.', keywords: ['DS-80', 'dört şaftlı', 'parçalama makinesi'] },
+            en: { title: 'DS-80 Four Shaft Shredder Catalog', description: 'DS-80 compact four shaft shredder. Ideal for precise shredding.', keywords: ['DS-80', 'four shaft', 'shredder'] },
+            ru: { title: 'Каталог DS-80 четырехвального шредера', description: 'DS-80 компактный четырехвальный шредер для точного измельчения.', keywords: ['DS-80', 'четырехвальный', 'шредер'] },
+            ar: { title: 'كتالوج DS-80 آلة التمزيق رباعية العمود', description: 'DS-80 آلة تمزيق رباعية العمود للتمزيق الدقيق.', keywords: ['DS-80', 'رباعي العمود', 'آلة تمزيق'] }
+        }
+    },
+    {
+        id: 'ds-100',
+        model: 'DS-100',
+        category: 'quad-shaft',
+        series: 'DS',
+        paths: {
+            tr: { html: '/catalogs/ds/ds-100/catalog.html', pdf: '/catalogs/ds/ds-100/catalog.pdf' },
+            en: { html: '/catalogs/ds/ds-100/catalog-en.html', pdf: '/catalogs/ds/ds-100/catalog.pdf' },
+            ru: { html: '/catalogs/ds/ds-100/catalog-ru.html', pdf: '/catalogs/ds/ds-100/catalog.pdf' },
+            ar: { html: '/catalogs/ds/ds-100/catalog-ar.html', pdf: '/catalogs/ds/ds-100/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/ds/ds-100/images/1.jpeg',
+        specs: { capacity: '1000-3000 kg/h', power: '22-45 kW (4x)' },
+        translations: {
+            tr: { title: 'DS-100 Dört Şaftlı Parçalama Makinesi Kataloğu', description: 'DS-100 endüstriyel dört şaftlı parçalama makinesi.', keywords: ['DS-100', 'dört şaftlı', 'endüstriyel'] },
+            en: { title: 'DS-100 Four Shaft Shredder Catalog', description: 'DS-100 industrial four shaft shredder.', keywords: ['DS-100', 'four shaft', 'industrial'] },
+            ru: { title: 'Каталог DS-100 четырехвального шредера', description: 'DS-100 промышленный четырехвальный шредер.', keywords: ['DS-100', 'четырехвальный', 'промышленный'] },
+            ar: { title: 'كتالوج DS-100 آلة التمزيق رباعية العمود', description: 'DS-100 آلة تمزيق رباعية العمود صناعية.', keywords: ['DS-100', 'رباعي العمود', 'صناعي'] }
+        }
+    },
+    {
+        id: 'ds-150',
+        model: 'DS-150',
+        category: 'quad-shaft',
+        series: 'DS',
+        paths: {
+            tr: { html: '/catalogs/ds/ds-150/catalog.html', pdf: '/catalogs/ds/ds-150/catalog.pdf' },
+            en: { html: '/catalogs/ds/ds-150/catalog-en.html', pdf: '/catalogs/ds/ds-150/catalog.pdf' },
+            ru: { html: '/catalogs/ds/ds-150/catalog-ru.html', pdf: '/catalogs/ds/ds-150/catalog.pdf' },
+            ar: { html: '/catalogs/ds/ds-150/catalog-ar.html', pdf: '/catalogs/ds/ds-150/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/ds/ds-150/images/1.jpeg',
+        specs: { capacity: '3000-6000 kg/h', power: '45-132 kW (4x)' },
+        translations: {
+            tr: { title: 'DS-150 Dört Şaftlı Parçalama Makinesi Kataloğu', description: 'DS-150 yüksek kapasiteli dört şaftlı parçalama makinesi.', keywords: ['DS-150', 'dört şaftlı', 'yüksek kapasite'] },
+            en: { title: 'DS-150 Four Shaft Shredder Catalog', description: 'DS-150 high capacity four shaft shredder.', keywords: ['DS-150', 'four shaft', 'high capacity'] },
+            ru: { title: 'Каталог DS-150 четырехвального шредера', description: 'DS-150 высокопроизводительный четырехвальный шредер.', keywords: ['DS-150', 'четырехвальный', 'высокая производительность'] },
+            ar: { title: 'كتالوج DS-150 آلة التمزيق رباعية العمود', description: 'DS-150 آلة تمزيق رباعية العمود عالية السعة.', keywords: ['DS-150', 'رباعي العمود', 'سعة عالية'] }
+        }
+    },
+    {
+        id: 'ds-200',
+        model: 'DS-200',
+        category: 'quad-shaft',
+        series: 'DS',
+        paths: {
+            tr: { html: '/catalogs/ds/ds-200/catalog.html', pdf: '/catalogs/ds/ds-200/catalog.pdf' },
+            en: { html: '/catalogs/ds/ds-200/catalog-en.html', pdf: '/catalogs/ds/ds-200/catalog.pdf' },
+            ru: { html: '/catalogs/ds/ds-200/catalog-ru.html', pdf: '/catalogs/ds/ds-200/catalog.pdf' },
+            ar: { html: '/catalogs/ds/ds-200/catalog-ar.html', pdf: '/catalogs/ds/ds-200/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/ds/ds-200/images/1.jpeg',
+        specs: { capacity: '6000-12000 kg/h', power: '75-160 kW (4x)' },
+        translations: {
+            tr: { title: 'DS-200 Dört Şaftlı Parçalama Makinesi Kataloğu', description: 'DS-200 serinin amiral gemisi. Mega kapasiteli dört şaftlı parçalama makinesi.', keywords: ['DS-200', 'dört şaftlı', 'mega kapasite'] },
+            en: { title: 'DS-200 Four Shaft Shredder Catalog', description: 'DS-200 the flagship of the series. Mega capacity four shaft shredder.', keywords: ['DS-200', 'four shaft', 'mega capacity'] },
+            ru: { title: 'Каталог DS-200 четырехвального шредера', description: 'DS-200 флагман серии. Мегапроизводительный четырехвальный шредер.', keywords: ['DS-200', 'четырехвальный', 'мега производительность'] },
+            ar: { title: 'كتالوج DS-200 آلة التمزيق رباعية العمود', description: 'DS-200 الرائد في السلسلة. آلة تمزيق رباعية العمود بسعة ضخمة.', keywords: ['DS-200', 'رباعي العمود', 'سعة ضخمة'] }
+        }
     }
 ];
 
