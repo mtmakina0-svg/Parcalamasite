@@ -651,7 +651,7 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ECatalogPage onBackToMain={handleNavigateToMain} />
+        <ECatalogPage key={window.location.pathname} onBackToMain={handleNavigateToMain} />
         <ChatWidget />
       </>
     );
