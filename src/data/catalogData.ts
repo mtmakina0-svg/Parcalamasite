@@ -514,6 +514,87 @@ export const catalogs: CatalogItem[] = [
             ru: { title: 'Каталог DS-200 четырехвального шредера', description: 'DS-200 флагман серии. Мегапроизводительный четырехвальный шредер.', keywords: ['DS-200', 'четырехвальный', 'мега производительность'] },
             ar: { title: 'كتالوج DS-200 آلة التمزيق رباعية العمود', description: 'DS-200 الرائد في السلسلة. آلة تمزيق رباعية العمود بسعة ضخمة.', keywords: ['DS-200', 'رباعي العمود', 'سعة ضخمة'] }
         }
+    },
+    // Mobile Shredders
+    {
+        id: 'tsm-150',
+        model: 'TSM-150',
+        category: 'mobile',
+        series: 'TSM',
+        paths: {
+            tr: { html: '/catalogs/mobile/tsm-150/catalog.html', pdf: '/catalogs/mobile/tsm-150/catalog.pdf' },
+            en: { html: '/catalogs/mobile/tsm-150/catalog-en.html', pdf: '/catalogs/mobile/tsm-150/catalog.pdf' },
+            ru: { html: '/catalogs/mobile/tsm-150/catalog-ru.html', pdf: '/catalogs/mobile/tsm-150/catalog.pdf' },
+            ar: { html: '/catalogs/mobile/tsm-150/catalog-ar.html', pdf: '/catalogs/mobile/tsm-150/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/mobile/tsm-150/images/1.jpeg',
+        specs: { capacity: '1500 x 1800 mm', power: '400 HP' },
+        translations: {
+            tr: { title: 'TSM-150 Mobil Kırıcı Kataloğu', description: 'TSM-150 tek şaftlı mobil kırıcı. 1500mm rotor boyu.', keywords: ['TSM-150', 'mobil kırıcı', 'tek şaftlı', 'taşınabilir'] },
+            en: { title: 'TSM-150 Mobile Shredder Catalog', description: 'TSM-150 single-shaft mobile shredder. 1500mm rotor length.', keywords: ['TSM-150', 'mobile shredder', 'single-shaft', 'portable'] },
+            ru: { title: 'Каталог мобильного измельчителя TSM-150', description: 'TSM-150 одновальный мобильный измельчитель. Длина ротора 1500мм.', keywords: ['TSM-150', 'мобильный измельчитель', 'одновальный'] },
+            ar: { title: 'كتالوج الكسارة المتنقلة TSM-150', description: 'TSM-150 كسارة متنقلة أحادية العمود. طول الدوار 1500 مم.', keywords: ['TSM-150', 'كسارة متنقلة', 'أحادي العمود'] }
+        }
+    },
+    {
+        id: 'tsm-300',
+        model: 'TSM-300',
+        category: 'mobile',
+        series: 'TSM',
+        paths: {
+            tr: { html: '/catalogs/mobile/tsm-300/catalog.html', pdf: '/catalogs/mobile/tsm-300/catalog.pdf' },
+            en: { html: '/catalogs/mobile/tsm-300/catalog-en.html', pdf: '/catalogs/mobile/tsm-300/catalog.pdf' },
+            ru: { html: '/catalogs/mobile/tsm-300/catalog-ru.html', pdf: '/catalogs/mobile/tsm-300/catalog.pdf' },
+            ar: { html: '/catalogs/mobile/tsm-300/catalog-ar.html', pdf: '/catalogs/mobile/tsm-300/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/mobile/tsm-300/images/1.jpeg',
+        specs: { capacity: '3000 x 2000 mm', power: '600 HP' },
+        translations: {
+            tr: { title: 'TSM-300 Mobil Kırıcı Kataloğu', description: 'TSM-300 tek şaftlı mobil kırıcı. 3000mm rotor boyu ile yüksek kapasite.', keywords: ['TSM-300', 'mobil kırıcı', 'tek şaftlı', 'yüksek kapasite'] },
+            en: { title: 'TSM-300 Mobile Shredder Catalog', description: 'TSM-300 single-shaft mobile shredder. High capacity with 3000mm rotor.', keywords: ['TSM-300', 'mobile shredder', 'single-shaft', 'high capacity'] },
+            ru: { title: 'Каталог мобильного измельчителя TSM-300', description: 'TSM-300 одновальный мобильный измельчитель. Высокая производительность с ротором 3000мм.', keywords: ['TSM-300', 'мобильный измельчитель', 'высокая производительность'] },
+            ar: { title: 'كتالوج الكسارة المتنقلة TSM-300', description: 'TSM-300 كسارة متنقلة أحادية العمود. سعة عالية مع دوار 3000 مم.', keywords: ['TSM-300', 'كسارة متنقلة', 'سعة عالية'] }
+        }
+    },
+    {
+        id: 'csm-150',
+        model: 'CSM-150',
+        category: 'mobile',
+        series: 'CSM',
+        paths: {
+            tr: { html: '/catalogs/mobile/csm-150/catalog.html', pdf: '/catalogs/mobile/csm-150/catalog.pdf' },
+            en: { html: '/catalogs/mobile/csm-150/catalog-en.html', pdf: '/catalogs/mobile/csm-150/catalog.pdf' },
+            ru: { html: '/catalogs/mobile/csm-150/catalog-ru.html', pdf: '/catalogs/mobile/csm-150/catalog.pdf' },
+            ar: { html: '/catalogs/mobile/csm-150/catalog-ar.html', pdf: '/catalogs/mobile/csm-150/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/mobile/csm-150/images/1.jpeg',
+        specs: { capacity: '1500 x 1200 mm', power: '400 HP' },
+        translations: {
+            tr: { title: 'CSM-150 Mobil Kırıcı Kataloğu', description: 'CSM-150 çift şaftlı mobil kırıcı. 1500mm rotor boyu.', keywords: ['CSM-150', 'mobil kırıcı', 'çift şaftlı', 'taşınabilir'] },
+            en: { title: 'CSM-150 Mobile Shredder Catalog', description: 'CSM-150 dual-shaft mobile shredder. 1500mm rotor length.', keywords: ['CSM-150', 'mobile shredder', 'dual-shaft', 'portable'] },
+            ru: { title: 'Каталог мобильного измельчителя CSM-150', description: 'CSM-150 двухвальный мобильный измельчитель. Длина ротора 1500мм.', keywords: ['CSM-150', 'мобильный измельчитель', 'двухвальный'] },
+            ar: { title: 'كتالوج الكسارة المتنقلة CSM-150', description: 'CSM-150 كسارة متنقلة ثنائية العمود. طول الدوار 1500 مم.', keywords: ['CSM-150', 'كسارة متنقلة', 'ثنائي العمود'] }
+        }
+    },
+    {
+        id: 'csm-200',
+        model: 'CSM-200',
+        category: 'mobile',
+        series: 'CSM',
+        paths: {
+            tr: { html: '/catalogs/mobile/csm-200/catalog.html', pdf: '/catalogs/mobile/csm-200/catalog.pdf' },
+            en: { html: '/catalogs/mobile/csm-200/catalog-en.html', pdf: '/catalogs/mobile/csm-200/catalog.pdf' },
+            ru: { html: '/catalogs/mobile/csm-200/catalog-ru.html', pdf: '/catalogs/mobile/csm-200/catalog.pdf' },
+            ar: { html: '/catalogs/mobile/csm-200/catalog-ar.html', pdf: '/catalogs/mobile/csm-200/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/mobile/csm-200/images/1.jpeg',
+        specs: { capacity: '2000 x 1800 mm', power: '800 HP' },
+        translations: {
+            tr: { title: 'CSM-200 Mobil Kırıcı Kataloğu', description: 'CSM-200 çift şaftlı mobil kırıcı. 2000mm rotor boyu ile en yüksek kapasite.', keywords: ['CSM-200', 'mobil kırıcı', 'çift şaftlı', 'mega kapasite'] },
+            en: { title: 'CSM-200 Mobile Shredder Catalog', description: 'CSM-200 dual-shaft mobile shredder. Highest capacity with 2000mm rotor.', keywords: ['CSM-200', 'mobile shredder', 'dual-shaft', 'mega capacity'] },
+            ru: { title: 'Каталог мобильного измельчителя CSM-200', description: 'CSM-200 двухвальный мобильный измельчитель. Максимальная производительность с ротором 2000мм.', keywords: ['CSM-200', 'мобильный измельчитель', 'максимальная производительность'] },
+            ar: { title: 'كتالوج الكسارة المتنقلة CSM-200', description: 'CSM-200 كسارة متنقلة ثنائية العمود. أعلى سعة مع دوار 2000 مم.', keywords: ['CSM-200', 'كسارة متنقلة', 'سعة قصوى'] }
+        }
     }
 ];
 

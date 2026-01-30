@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSM-200 Mobile Shredder - MT Makina</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #F4CE14;
+    --dark: #1E1E1E;
+    --gray: #45474B;
+    --light: #F5F7F8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background: #f0f0f0;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.page {
+    width: 210mm;
+    height: 297mm;
+    margin: 10mm auto;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+    page-break-after: always;
+}
+
+@media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; }
+}
+
+.page-content {
+    padding: 12mm 15mm;
+    height: calc(297mm - 20mm);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8mm;
+    padding-bottom: 4mm;
+    border-bottom: 2px solid var(--primary);
+}
+
+.page-header-icon {
+    height: 12mm;
+}
+
+.section-header {
+    margin-bottom: 6mm;
+}
+
+.section-header h2 {
+    color: var(--gray);
+    font-size: 20pt;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2mm;
+    left: 0;
+    width: 15mm;
+    height: 1mm;
+    background: var(--primary);
+}
+
+/* Cover Page */
+.cover-page {
+    background: linear-gradient(135deg, var(--gray) 0%, var(--dark) 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cover-header {
+    padding: 10mm 15mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cover-logo {
+    height: 15mm;
+}
+
+.cover-badge {
+    background: var(--primary);
+    color: var(--dark);
+    padding: 2mm 5mm;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.cover-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15mm;
+}
+
+.cover-main img {
+    max-width: 85%;
+    max-height: 130mm;
+    object-fit: contain;
+    margin-bottom: 10mm;
+}
+
+.cover-title-section {
+    text-align: center;
+    color: white;
+}
+
+.cover-model {
+    font-size: 48pt;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 3px;
+    margin-bottom: 3mm;
+}
+
+.cover-category {
+    font-size: 18pt;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.cover-footer {
+    padding: 8mm 15mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.cover-footer span {
+    color: rgba(255,255,255,0.7);
+    font-size: 9pt;
+}
+
+.cover-catalog-badge {
+    background: var(--primary);
+    color: var(--dark);
+    padding: 2mm 6mm;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+/* Feature Cards */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5mm;
+    margin-bottom: 6mm;
+}
+
+.feature-card {
+    background: var(--light);
+    padding: 5mm;
+    border-radius: 2mm;
+    border-left: 3px solid var(--primary);
+}
+
+.feature-card h4 {
+    color: var(--gray);
+    font-size: 11pt;
+    margin-bottom: 2mm;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 9pt;
+    line-height: 1.4;
+}
+
+/* Materials Grid */
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+    margin-bottom: 6mm;
+}
+
+.material-item {
+    background: var(--light);
+    padding: 4mm;
+    text-align: center;
+    border-radius: 2mm;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+/* Applications List */
+.applications-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3mm;
+}
+
+.application-item {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    padding: 3mm;
+    background: var(--light);
+    border-radius: 2mm;
+}
+
+.application-item::before {
+    content: '✓';
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Spec Table */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6mm;
+}
+
+.spec-table th, .spec-table td {
+    padding: 3mm 4mm;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 10pt;
+}
+
+.spec-table th {
+    background: var(--gray);
+    color: white;
+    font-weight: 600;
+}
+
+.spec-table tr:nth-child(even) {
+    background: var(--light);
+}
+
+/* References Grid */
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4mm;
+}
+
+.reference-logo {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 2mm;
+    padding: 3mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 15mm;
+}
+
+.reference-logo img {
+    max-width: 100%;
+    max-height: 12mm;
+    object-fit: contain;
+}
+
+/* Optional Features */
+.optional-features ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2mm;
+}
+
+.optional-features li {
+    padding: 2mm 0;
+    padding-left: 5mm;
+    position: relative;
+    font-size: 10pt;
+    border-bottom: 1px solid #eee;
+}
+
+.optional-features li::before {
+    content: '●';
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Contact Box */
+.contact-box {
+    background: var(--gray);
+    color: white;
+    padding: 6mm;
+    border-radius: 3mm;
+    margin-top: auto;
+}
+
+.contact-box h3 {
+    color: var(--primary);
+    font-size: 14pt;
+    margin-bottom: 4mm;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4mm;
+}
+
+.contact-item {
+    font-size: 9pt;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 1mm;
+}
+
+/* Two Columns Layout */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8mm;
+}
+
+/* Product Image Container */
+.product-image-container {
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 70mm;
+    object-fit: contain;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: var(--light);
+    border-left: 4px solid var(--primary);
+    padding: 5mm;
+    margin: 5mm 0;
+}
+
+.highlight-box h3 {
+    color: var(--gray);
+    font-size: 12pt;
+    margin-bottom: 2mm;
+}
+
+.highlight-box p {
+    font-size: 10pt;
+    color: #555;
+}
+
+/* Page Footer */
+.page-footer {
+    position: absolute;
+    bottom: 5mm;
+    left: 15mm;
+    right: 15mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #999;
+    border-top: 1px solid #eee;
+    padding-top: 2mm;
+}
+
+.page-number {
+    position: absolute;
+    bottom: 5mm;
+    right: 15mm;
+    font-size: 9pt;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+/* RTL Support */
+[dir="rtl"] .section-header h2::after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .feature-card {
+    border-left: none;
+    border-right: 3px solid var(--primary);
+}
+
+[dir="rtl"] .highlight-box {
+    border-left: none;
+    border-right: 4px solid var(--primary);
+}
+
+[dir="rtl"] .optional-features li {
+    padding-left: 0;
+    padding-right: 5mm;
+}
+
+[dir="rtl"] .optional-features li::before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .application-item::before {
+    order: 2;
+}</style>
+</head>
+<body>
+    <!-- PAGE 1: COVER -->
+    <div class="page cover-page">
+        <div class="cover-header">
+            <img src="../../assets/mt-logo-white.png" alt="MT Makina" class="cover-logo">
+            <span class="cover-badge">Mobile Shredder</span>
+        </div>
+        <div class="cover-main">
+            <img src="images/1.jpeg" alt="CSM-200">
+            <div class="cover-title-section">
+                <div class="cover-model">CSM-200</div>
+                <div class="cover-category">Portable Shredding Machine</div>
+            </div>
+        </div>
+        <div class="cover-footer">
+            <span>www.mtmakina.com.tr</span>
+            <span class="cover-catalog-badge">PRODUCT CATALOG</span>
+            <span>www.parcalamamakinesi.com</span>
+        </div>
+    </div>
+
+    <!-- PAGE 2: PRODUCT INTRO -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Product Introduction</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="two-columns">
+                <div class="column">
+                    <h3 style="color:var(--gray);margin-bottom:4mm;font-size:14pt">CSM-200 Mobile Shredder</h3>
+                    <p style="font-size:10pt;color:#555;margin-bottom:5mm;line-height:1.7">TSM and CSM Series Mobile Shredders offer high efficiency and portability in recycling processes.</p>
+                    <p style="font-size:10pt;color:#555;margin-bottom:5mm;line-height:1.7">CSM-200 is a dual-shaft design mobile shredder offering high efficiency. With 2000 x 1800 mm shredding area and 800 HP motor power, it provides reliable performance in demanding waste processing operations.</p>
+                    <p style="font-size:10pt;color:#555;line-height:1.7">Mobile shredder quickly and effectively shreds materials with its high torque and low speed combination. Thanks to its portable structure, it can be easily transported to different sites and offers on-site shredding.</p>
+                </div>
+                <div class="column">
+                    <div class="product-image-container">
+                        <img src="images/2.jpeg" alt="CSM-200" class="product-image">
+                    </div>
+                </div>
+            </div>
+            <div class="features-grid" style="margin-top:6mm">
+                <div class="feature-card">
+                    <h4>High Efficiency</h4>
+                    <p>Processes wide range of materials quickly</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Portable Design</h4>
+                    <p>Easily transportable on-site design</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Wide Material Capacity</h4>
+                    <p>Suitable solutions for different industries</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Durable Structure</h4>
+                    <p>High-quality steel structure</p>
+                </div>
+            </div>
+        </div>
+        <span class="page-number">02</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 3: APPLICATION AREAS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Application Areas</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="two-columns">
+                <div class="column">
+                    <h4 style="color:var(--gray);margin-bottom:4mm">Processable Materials</h4>
+                    <div class="materials-grid" style="grid-template-columns: repeat(2, 1fr)">
+                        <div class="material-item">Plastic</div>
+                        <div class="material-item">Metal</div>
+                        <div class="material-item">Wood</div>
+                        <div class="material-item">Construction Waste</div>
+                        <div class="material-item">Municipal Waste</div>
+                        <div class="material-item">Agricultural Waste</div>
+                    </div>
+                    <h4 style="color:var(--gray);margin-bottom:4mm;margin-top:6mm">Usage Areas</h4>
+                    <div class="applications-list" style="grid-template-columns: 1fr">
+                        <div class="application-item">Recycling Facilities</div>
+                        <div class="application-item">Construction Sites</div>
+                        <div class="application-item">Municipal Waste Management</div>
+                        <div class="application-item">Agriculture and Forestry</div>
+                        <div class="application-item">Industrial Facilities</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="product-image-container">
+                        <img src="images/3.jpeg" alt="CSM-200" class="product-image" style="max-height:90mm">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="page-number">03</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 4: TECHNICAL DETAILS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Technical Details</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="two-columns">
+                <div class="column">
+                    <div class="product-image-container">
+                        <img src="images/4.jpeg" alt="CSM-200" class="product-image" style="max-height:100mm">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="highlight-box">
+                        <h3>CSM-200 Technical Specifications</h3>
+                        <table class="spec-table" style="margin-top:4mm">
+                            <tr><th>Feature</th><th>Value</th></tr>
+                            <tr><td>Shredding Area</td><td>2000 x 1800 mm</td></tr>
+                            <tr><td>Rotor Length</td><td>2000 mm</td></tr>
+                            <tr><td>Motor Power</td><td>800 HP</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="product-image-container" style="margin-top:8mm">
+                <img src="images/5.jpeg" alt="CSM-200" class="product-image" style="max-height:80mm">
+            </div>
+        </div>
+        <span class="page-number">04</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 5: SPEC SHEET -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Technical Specifications</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <h3 style="color:var(--gray);margin-bottom:5mm">All Model Comparison</h3>
+            <table class="spec-table">
+                <tr>
+                    <th>Model</th>
+                    <th>Shredding Area</th>
+                    <th>Rotor Length</th>
+                    <th>Motor Power</th>
+                </tr>
+                <tr>
+                    <td><strong>TSM-150</strong></td>
+                    <td>1500 x 1800 mm</td>
+                    <td>1500 mm</td>
+                    <td>400 HP</td>
+                </tr>
+                <tr>
+                    <td><strong>TSM-300</strong></td>
+                    <td>3000 x 2000 mm</td>
+                    <td>3000 mm</td>
+                    <td>600 HP</td>
+                </tr>
+                <tr>
+                    <td><strong>CSM-150</strong></td>
+                    <td>1500 x 1200 mm</td>
+                    <td>1500 mm</td>
+                    <td>400 HP</td>
+                </tr>
+                <tr style="background:var(--primary);color:var(--dark)">
+                    <td><strong>CSM-200</strong></td>
+                    <td>2000 x 1800 mm</td>
+                    <td>2000 mm</td>
+                    <td>800 HP</td>
+                </tr>
+            </table>
+            <div class="highlight-box" style="margin-top:8mm">
+                <h3>TSM and CSM Series Difference</h3>
+                <p>TSM series has single-shaft, CSM series has dual-shaft design. Single-shaft models offer more compact structure, while dual-shaft models provide higher processing capacity.</p>
+            </div>
+            <div class="product-image-container" style="margin-top:8mm">
+                <img src="images/6.jpeg" alt="CSM-200" class="product-image" style="max-height:65mm">
+            </div>
+        </div>
+        <span class="page-number">05</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 6: REFERENCES -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Our References</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div style="text-align:center;margin-bottom:6mm">
+                <span style="background:var(--primary);color:var(--dark);padding:2mm 6mm;font-weight:700;font-size:12pt">40+ References</span>
+            </div>
+            <div class="references-grid">
+                <div class="reference-logo"><img src="../../assets/referanslar/aselsan-logo.webp" alt="Aselsan"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/bosch-logo.webp" alt="Bosch"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/pepsico-logo.webp" alt="PepsiCo"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/castrol-logo.webp" alt="Castrol"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/bp-logo.webp" alt="BP"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/iga-logo.webp" alt="İGA"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tav-havalimanlari-logo.webp" alt="TAV"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/remondis-logo.webp" alt="Remondis"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tei-logo.webp" alt="TEI"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/mke-logo.webp" alt="MKE"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tcmb-logo.webp" alt="TCMB"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/saglik-bakanligi-logo.webp" alt="Sağlık Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/adalet-bakanligi-logo.webp" alt="Adalet Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/disisleri-bakanligi-logo.webp" alt="Dışişleri Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/genelkurmay-baskanligi-logo.webp" alt="Genelkurmay"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/mit-logo.webp" alt="MİT"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/osym-logo.webp" alt="ÖSYM"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/golden-rose-logo.webp" alt="Golden Rose"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/betek-logo.webp" alt="Betek"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/orhan-holding-logo.webp" alt="Orhan Holding"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/hun-holding-logo.webp" alt="Hun Holding"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/max-royal-resort-logo.webp" alt="Max Royal"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/ic-hotels-logo.webp" alt="IC Hotels"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/bolu-cimento-logo.webp" alt="Bolu Çimento"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/soke-un-logo.webp" alt="Söke Un"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/melodi-cikolata-logo.webp" alt="Melodi Çikolata"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/humana-logo.webp" alt="Humana"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/seha-logo.webp" alt="SEHA"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/malatya-buyuksehir-belediyesi-logo.webp" alt="Malatya BB"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tuzla-belediyesi-logo.webp" alt="Tuzla Belediyesi"></div>
+            </div>
+            <div class="highlight-box" style="margin-top:8mm">
+                <h3>Your Reliable Solution Partner</h3>
+                <p>With over 20 years of experience, we provide industrial shredding solutions for public institutions, private sector and international companies.</p>
+            </div>
+        </div>
+        <span class="page-number">06</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 7: OPTIONAL FEATURES & CONTACT -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Optional Features</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="two-columns">
+                <div class="column">
+                    <div class="optional-features">
+                        <ul>
+                        <li>Single-Shaft and Dual-Shaft Design</li>
+                        <li>Rotor Cooling System</li>
+                        <li>Automatic Lubrication Unit</li>
+                        <li>Various Screen Sizes</li>
+                        <li>Hydraulic Opening Screen System</li>
+                        <li>Foldable Exit Conveyor</li>
+                        <li>On-Vehicle or Towing Transport</li>
+                        <li>Diesel Engine or Generator</li>
+                        <li>Wheeled and Tracked System</li>
+                        <li>Remote Control System</li>
+                        </ul>
+                    </div>
+                    <div class="product-image-container" style="margin-top:6mm">
+                        <img src="images/1.jpeg" alt="CSM-200" class="product-image" style="max-height:55mm">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="contact-box">
+                        <h3>Contact</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <strong>Phone</strong>
+                                +90 216 307 62 22
+                            </div>
+                            <div class="contact-item">
+                                <strong>E-mail</strong>
+                                info@mtmakina.com.tr
+                            </div>
+                            <div class="contact-item" style="grid-column: span 2">
+                                <strong>Address</strong>
+                                Saray Mah. Dr. Adnan Büyükdeniz Cad. No:4/2 Cessas Plaza Floor:7 D:21 Ümraniye, Istanbul, TURKEY
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top:6mm">
+                        <h3>www.parcalamamakinesi.com</h3>
+                        <p>Visit our website for all products and catalogs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="page-number">07</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+</body>
+</html>
