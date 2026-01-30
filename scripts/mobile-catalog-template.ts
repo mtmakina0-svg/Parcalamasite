@@ -1,20 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+/**
+ * Mobile Catalog 7-Page HTML Template Generator
+ * Full template matching _SABLON design
+ */
+
+interface LanguageConfig {
+    code: string;
+    suffix: string;
+    locale: string;
+}
+
+// Sayfa metinleri
+const pageTexts = {
+    mobileShredder: { tr: 'Mobil Kırıcı', en: 'Mobile Shredder', ru: 'Мобильный Измельчитель', ar: 'الكسارة المتنقلة' },
+    productCatalog: { tr: 'ÜRÜN KATALOĞU', en: 'PRODUCT CATALOG', ru: 'КАТАЛОГ ПРОДУКЦИИ', ar: 'كتالوج المنتجات' },
+    productIntro: { tr: 'ÜRÜN TANITIMI', en: 'PRODUCT INTRODUCTION', ru: 'ОПИСАНИЕ ПРОДУКТА', ar: 'تقديم المنتج' },
+    applications: { tr: 'UYGULAMA ALANLARI', en: 'APPLICATION AREAS', ru: 'ОБЛАСТИ ПРИМЕНЕНИЯ', ar: 'مجالات التطبيق' },
+    technicalDetails: { tr: 'TEKNİK DETAYLAR', en: 'TECHNICAL DETAILS', ru: 'ТЕХНИЧЕСКИЕ ДЕТАЛИ', ar: 'التفاصيل الفنية' },
+    specSheet: { tr: 'TEKNİK KİMLİK KARTI', en: 'TECHNICAL SPECIFICATIONS', ru: 'ТЕХНИЧЕСКИЙ ПАСПОРТ', ar: 'بطاقة المواصفات الفنية' },
+    references: { tr: 'REFERANSLARIMIZ', en: 'OUR REFERENCES', ru: 'НАШИ РЕФЕРЕНЦИИ', ar: 'مراجعنا' },
+    dimensions: { tr: 'BOYUTLAR VE İLETİŞİM', en: 'DIMENSIONS & CONTACT', ru: 'РАЗМЕРЫ И КОНТАКТЫ', ar: 'الأبعاد والاتصال' },
+    whyModel: { tr: 'Neden', en: 'Why', ru: 'Почему', ar: 'لماذا' },
+    materials: { tr: 'Parçalanabilir Malzemeler', en: 'Processable Materials', ru: 'Перерабатываемые Материалы', ar: 'المواد القابلة للمعالجة' },
+    advantages: { tr: 'Avantajları', en: 'Advantages', ru: 'Преимущества', ar: 'المزايا' },
+    standardFeatures: { tr: 'Standart Donanım', en: 'Standard Equipment', ru: 'Стандартное Оснащение', ar: 'المعدات القياسية' },
+    optionalFeatures: { tr: 'Opsiyonel Özellikler', en: 'Optional Features', ru: 'Опциональные Функции', ar: 'الميزات الاختيارية' },
+    detailedSpecs: { tr: 'Detaylı Teknik Özellikler', en: 'Detailed Technical Specifications', ru: 'Подробные Технические Характеристики', ar: 'المواصفات الفنية التفصيلية' },
+    trustedPartner: { tr: 'Güvenilir Çözüm Ortağınız', en: 'Your Trusted Solution Partner', ru: 'Ваш Надёжный Партнёр', ar: 'شريكك الموثوق' },
+    contactUs: { tr: 'Bizimle İletişime Geçin', en: 'Contact Us', ru: 'Свяжитесь С Нами', ar: 'اتصل بنا' },
+    motorPower: { tr: 'Motor Gücü', en: 'Motor Power', ru: 'Мощность Двигателя', ar: 'قوة المحرك' },
+    capacity: { tr: 'Kapasite', en: 'Capacity', ru: 'Производительность', ar: 'السعة' },
+    weight: { tr: 'Ağırlık', en: 'Weight', ru: 'Вес', ar: 'الوزن' },
+    rotorLength: { tr: 'Rotor Boyu', en: 'Rotor Length', ru: 'Длина Ротора', ar: 'طول الدوار' },
+    shreddingArea: { tr: 'Parçalama Alanı', en: 'Shredding Area', ru: 'Зона Измельчения', ar: 'منطقة التمزيق' },
+    design: { tr: 'Tasarım', en: 'Design', ru: 'Конструкция', ar: 'التصميم' },
+    singleShaft: { tr: 'Tek Şaftlı', en: 'Single Shaft', ru: 'Одновальный', ar: 'أحادي العمود' },
+    dualShaft: { tr: 'Çift Şaftlı', en: 'Dual Shaft', ru: 'Двухвальный', ar: 'ثنائي العمود' },
+    address: { tr: 'ADRES', en: 'ADDRESS', ru: 'АДРЕС', ar: 'العنوان' },
+    phone: { tr: 'TELEFON', en: 'PHONE', ru: 'ТЕЛЕФОН', ar: 'الهاتف' },
+    headquarters: { tr: 'GENEL MERKEZ', en: 'HEADQUARTERS', ru: 'ГЛАВНЫЙ ОФИС', ar: 'المقر الرئيسي' },
+    sales: { tr: 'SATIŞ', en: 'SALES', ru: 'ПРОДАЖИ', ar: 'المبيعات' },
+    email: { tr: 'E-POSTA', en: 'E-MAIL', ru: 'ЭЛ. ПОЧТА', ar: 'البريد الإلكتروني' },
+    freeInspection: { tr: 'Ücretsiz Keşif', en: 'Free Inspection', ru: 'Бесплатный Осмотр', ar: 'فحص مجاني' },
+    freeInspectionDesc: { tr: 'İhtiyaçlarınıza uygun çözüm için ücretsiz keşif hizmetimizden yararlanın.', en: 'Take advantage of our free site inspection service for a solution tailored to your needs.', ru: 'Воспользуйтесь нашей бесплатной услугой осмотра для решения, адаптированного к вашим потребностям.', ar: 'استفد من خدمة الفحص المجاني للحصول على حل مناسب لاحتياجاتك.' },
+    referencesIntro: { tr: 'Türkiye\'nin ve dünyanın önde gelen kurum ve kuruluşları MT Makina\'yı tercih ediyor.', en: 'Leading institutions and organizations from Turkey and the world prefer MT Makina.', ru: 'Ведущие учреждения и организации Турции и мира выбирают MT Makina.', ar: 'المؤسسات والمنظمات الرائدة من تركيا والعالم تفضل MT Makina.' },
+    note: { tr: 'Not', en: 'Note', ru: 'Примечание', ar: 'ملاحظة' },
+    noteText: { tr: 'Kapasite değerleri malzeme türüne, boyutuna ve yoğunluğuna göre değişiklik gösterebilir. Projenize özel teknik detaylar için satış ekibimizle iletişime geçiniz.', en: 'Capacity values may vary depending on material type, size, and density. Contact our sales team for project-specific technical details.', ru: 'Значения производительности могут варьироваться в зависимости от типа материала, размера и плотности. Свяжитесь с нашим отделом продаж для получения технических деталей по вашему проекту.', ar: 'قد تختلف قيم السعة اعتمادًا على نوع المواد والحجم والكثافة. اتصل بفريق المبيعات لدينا للحصول على التفاصيل الفنية الخاصة بمشروعك.' }
+};
+
+export function generateFullHTML(modelId: string, lang: string, model: any, langConfig: LanguageConfig): string {
+    const modelName = modelId.toUpperCase();
+    const shaftType = model.type === 'single' ? pageTexts.singleShaft : pageTexts.dualShaft;
+
+    // Images
+    const img1 = '1.jpeg', img2 = '2.jpeg', img3 = '3.jpeg', img4 = '4.jpeg', img5 = '5.jpeg', img6 = '6.jpeg';
+
+    return `<!DOCTYPE html>
+<html lang="${langConfig.code}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/catalogs/mobile/csm-200/">
-    <title>CSM-200 Mobile Shredder | MT Makina</title>
-    <meta name="description" content="CSM-200 is the most powerful and highest capacity model in the dual-shaft mobile shredder series. With 2000mm rotor length, 800 HP motor power, and 25-40 tons per hour processing capacity, it delivers unparalleled performance in the heaviest industrial applications. Two counter-rotating rotors easily shred even the most challenging materials.">
-    <meta name="keywords" content="CSM-200, mobile shredder, mobil kırıcı, çift şaftlı, MT Makina, parçalama makinesi">
+    <base href="/catalogs/mobile/${modelId}/">
+    <title>${modelName} ${pageTexts.mobileShredder[lang as keyof typeof pageTexts.mobileShredder]} | MT Makina</title>
+    <meta name="description" content="${model.description[lang]}">
+    <meta name="keywords" content="${modelName}, mobile shredder, mobil kırıcı, ${model.type === 'single' ? 'tek şaftlı' : 'çift şaftlı'}, MT Makina, parçalama makinesi">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="MT Makina">
-    <link rel="canonical" href="https://www.parcalamamakinesi.com/catalogs/mobile/csm-200/catalog-en.html">
+    <link rel="canonical" href="https://www.parcalamamakinesi.com/catalogs/mobile/${modelId}/catalog${langConfig.suffix}.html">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.parcalamamakinesi.com/catalogs/mobile/csm-200/catalog-en.html">
-    <meta property="og:title" content="CSM-200 Mobile Shredder | MT Makina">
-    <meta property="og:description" content="CSM-200 is the most powerful and highest capacity model in the dual-shaft mobile shredder series. With 2000mm rotor length, 800 HP motor power, and 25-40 tons per hour processing capacity, it delivers unparalleled performance in the heaviest industrial applications. Two counter-rotating rotors easily shred even the most challenging materials.">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://www.parcalamamakinesi.com/catalogs/mobile/${modelId}/catalog${langConfig.suffix}.html">
+    <meta property="og:title" content="${modelName} ${pageTexts.mobileShredder[lang as keyof typeof pageTexts.mobileShredder]} | MT Makina">
+    <meta property="og:description" content="${model.description[lang]}">
+    <meta property="og:locale" content="${langConfig.locale}">
     <meta property="og:site_name" content="MT Makina">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,13 +170,13 @@
             <div class="cover-bottom-block"></div>
             <img src="../../assets/Mt Makina-Logo.png" alt="MT Makina Logo" class="cover-logo">
             <div class="cover-content">
-                <img src="images/1.jpeg" alt="CSM-200 Mobile Shredder" class="cover-img">
-                <h1 class="cover-model">CSM-200</h1>
-                <p class="cover-title">Mobile Shredder</p>
-                <p class="cover-subtitle">Dual Shaft Mobile Shredder</p>
-                <div class="cover-series">PRODUCT CATALOG</div>
+                <img src="images/${img1}" alt="${modelName} ${pageTexts.mobileShredder[lang as keyof typeof pageTexts.mobileShredder]}" class="cover-img">
+                <h1 class="cover-model">${modelName}</h1>
+                <p class="cover-title">${pageTexts.mobileShredder[lang as keyof typeof pageTexts.mobileShredder]}</p>
+                <p class="cover-subtitle">${shaftType[lang as keyof typeof shaftType]} Mobile Shredder</p>
+                <div class="cover-series">${pageTexts.productCatalog[lang as keyof typeof pageTexts.productCatalog]}</div>
             </div>
-            <p class="cover-tagline">Industrial Power, Unrivaled Performance</p>
+            <p class="cover-tagline">${model.tagline[lang]}</p>
         </div>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
@@ -129,40 +185,28 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>PRODUCT INTRODUCTION</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.productIntro[lang as keyof typeof pageTexts.productIntro]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
-            <div class="model-badge">CSM-200</div>
-            <p style="font-size:12pt;line-height:1.8">CSM-200 is the most powerful and highest capacity model in the dual-shaft mobile shredder series. With 2000mm rotor length, 800 HP motor power, and 25-40 tons per hour processing capacity, it delivers unparalleled performance in the heaviest industrial applications. Two counter-rotating rotors easily shred even the most challenging materials.</p>
+            <div class="model-badge">${modelName}</div>
+            <p style="font-size:12pt;line-height:1.8">${model.description[lang]}</p>
             <div class="product-image-container">
-                <img src="images/2.jpeg" alt="CSM-200" class="product-image" style="max-height:55mm">
+                <img src="images/${img2}" alt="${modelName}" class="product-image" style="max-height:55mm">
             </div>
             <div class="highlight-box">
-                <h3>Why CSM-200?</h3>
-                <p>CSM-200 is the most powerful dual-shaft mobile shredder on the market. With 800 HP motor power, it offers processing capacity up to 40 tons per hour. Preferred in large-scale scrap processing facilities, national recycling projects, and mega demolition projects. Thanks to dual rotor technology, it efficiently shreds even the most challenging waste mixtures of metal, concrete, and wood.</p>
+                <h3>${pageTexts.whyModel[lang as keyof typeof pageTexts.whyModel]} ${modelName}?</h3>
+                <p>${model.highlight[lang]}</p>
             </div>
             <div class="feature-grid">
-                
+                ${model.features[lang].slice(0, 4).map((f: any) => `
                 <div class="feature-box">
-                    <h4>800 HP Motor Power</h4>
-                    <p>Most powerful model in the series, processing capacity up to 40 tons per hour.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>Dual Rotor Technology</h4>
-                    <p>Maximum capture and shredding power with two counter-rotating rotors.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>Heavy-Duty Chassis</h4>
-                    <p>Reinforced tracked chassis resistant to the toughest site conditions.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>Smart Control System</h4>
-                    <p>PLC-based automatic control and remote monitoring capability.</p>
-                </div>
+                    <h4>${f.title}</h4>
+                    <p>${f.desc}</p>
+                </div>`).join('')}
             </div>
-            <h3 style="margin-top:6mm">CSM-200 Processable Materials</h3>
+            <h3 style="margin-top:6mm">${modelName} ${pageTexts.materials[lang as keyof typeof pageTexts.materials]}</h3>
             <ul class="material-list">
-                <li>Heavy Scrap Metal</li><li>Industrial Machine Scrap</li><li>Concrete & Iron Mixture</li><li>Giant Wooden Structures</li><li>Ship Dismantling Waste</li><li>Train Wagon Scrap</li>
+                ${model.materials[lang].map((m: string) => `<li>${m}</li>`).join('')}
             </ul>
         </div>
         <span class="page-number">02</span>
@@ -173,50 +217,50 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>APPLICATION AREAS</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.applications[lang as keyof typeof pageTexts.applications]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
-            <p>CSM-200, dual-shaft design is preferred in the following areas:</p>
+            <p>${modelName}, ${model.type === 'single' ? (lang === 'tr' ? 'tek şaftlı yapısı' : lang === 'en' ? 'single-shaft design' : lang === 'ru' ? 'одновальная конструкция' : 'تصميم أحادي العمود') : (lang === 'tr' ? 'çift şaftlı yapısı' : lang === 'en' ? 'dual-shaft design' : lang === 'ru' ? 'двухвальная конструкция' : 'تصميم ثنائي العمود')} ${lang === 'tr' ? 'sayesinde aşağıdaki alanlarda tercih edilmektedir:' : lang === 'en' ? 'is preferred in the following areas:' : lang === 'ru' ? 'предпочтителен в следующих областях:' : 'مفضل في المجالات التالية:'}</p>
             <div class="two-columns" style="margin-top:6mm">
                 <div class="column">
                     <div class="product-image-container" style="margin:0 0 3mm 0">
-                        <img src="images/3.jpeg" alt="CSM-200" class="product-image" style="max-height:45mm;border-radius:4px">
+                        <img src="images/${img3}" alt="${modelName}" class="product-image" style="max-height:45mm;border-radius:4px">
                     </div>
                     <div class="app-card">
-                        <h4>Heavy Scrap Processing</h4>
-                        <p>Pre-shredding of metal and mixed waste in large-scale scrap facilities.</p>
+                        <h4>${model.applications[lang][0].title}</h4>
+                        <p>${model.applications[lang][0].desc}</p>
                     </div>
                 </div>
                 <div class="column">
                     <div class="product-image-container" style="margin:0 0 3mm 0">
-                        <img src="images/4.jpeg" alt="CSM-200" class="product-image" style="max-height:45mm;border-radius:4px">
+                        <img src="images/${img4}" alt="${modelName}" class="product-image" style="max-height:45mm;border-radius:4px">
                     </div>
                     <div class="app-card">
-                        <h4>Ship Dismantling Facilities</h4>
-                        <p>Processing of massive metal and mixed waste from ship dismantling operations.</p>
+                        <h4>${model.applications[lang][1].title}</h4>
+                        <p>${model.applications[lang][1].desc}</p>
                     </div>
                 </div>
             </div>
             <div class="two-columns" style="margin-top:6mm">
                 <div class="column">
                     <div class="app-card">
-                        <h4>National Recycling Projects</h4>
-                        <p>Government-supported large-scale waste management and recycling projects.</p>
+                        <h4>${model.applications[lang][2].title}</h4>
+                        <p>${model.applications[lang][2].desc}</p>
                     </div>
                 </div>
                 <div class="column">
                     <div class="app-card">
-                        <h4>Mega Demolition Operations</h4>
-                        <p>On-site processing of heavy waste from stadium, factory, and industrial facility demolitions.</p>
+                        <h4>${model.applications[lang][3].title}</h4>
+                        <p>${model.applications[lang][3].desc}</p>
                     </div>
                 </div>
             </div>
             <div class="highlight-box" style="margin-top:6mm;text-align:center">
-                <h3>CSM-200 Advantages</h3>
-                <p>• Independent on-site operation &nbsp;&nbsp;• High processing capacity &nbsp;&nbsp;• Low operating cost<br>• Easy transport and setup &nbsp;&nbsp;• Minimum maintenance requirement</p>
+                <h3>${modelName} ${pageTexts.advantages[lang as keyof typeof pageTexts.advantages]}</h3>
+                <p>• ${lang === 'tr' ? 'Sahada bağımsız çalışma' : lang === 'en' ? 'Independent on-site operation' : lang === 'ru' ? 'Автономная работа на объекте' : 'تشغيل مستقل في الموقع'} &nbsp;&nbsp;• ${lang === 'tr' ? 'Yüksek işleme kapasitesi' : lang === 'en' ? 'High processing capacity' : lang === 'ru' ? 'Высокая производительность' : 'قدرة معالجة عالية'} &nbsp;&nbsp;• ${lang === 'tr' ? 'Düşük işletme maliyeti' : lang === 'en' ? 'Low operating cost' : lang === 'ru' ? 'Низкие эксплуатационные расходы' : 'تكلفة تشغيل منخفضة'}<br>• ${lang === 'tr' ? 'Kolay nakliye ve kurulum' : lang === 'en' ? 'Easy transport and setup' : lang === 'ru' ? 'Лёгкая транспортировка и установка' : 'نقل وإعداد سهل'} &nbsp;&nbsp;• ${lang === 'tr' ? 'Minimum bakım gereksinimi' : lang === 'en' ? 'Minimum maintenance requirement' : lang === 'ru' ? 'Минимальные требования к обслуживанию' : 'متطلبات صيانة دنيا'}</p>
             </div>
             <div class="product-image-container" style="margin-top:6mm">
-                <img src="images/5.jpeg" alt="CSM-200" class="product-image" style="max-height:45mm">
+                <img src="images/${img5}" alt="${modelName}" class="product-image" style="max-height:45mm">
             </div>
         </div>
         <span class="page-number">03</span>
@@ -227,45 +271,33 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>TECHNICAL DETAILS</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.technicalDetails[lang as keyof typeof pageTexts.technicalDetails]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div class="product-image-container">
-                <img src="images/2.jpeg" alt="CSM-200" class="product-image" style="max-height:65mm">
+                <img src="images/${img2}" alt="${modelName}" class="product-image" style="max-height:65mm">
             </div>
             <div class="callout-grid">
-                
+                ${model.features[lang].map((f: any) => `
                 <div class="callout-box">
-                    <strong>800 HP Motor Power</strong>
-                    <span>Most powerful model in the series, processing capacity up to 40 tons per hour.</span>
-                </div>
-                <div class="callout-box">
-                    <strong>Dual Rotor Technology</strong>
-                    <span>Maximum capture and shredding power with two counter-rotating rotors.</span>
-                </div>
-                <div class="callout-box">
-                    <strong>Heavy-Duty Chassis</strong>
-                    <span>Reinforced tracked chassis resistant to the toughest site conditions.</span>
-                </div>
-                <div class="callout-box">
-                    <strong>Smart Control System</strong>
-                    <span>PLC-based automatic control and remote monitoring capability.</span>
-                </div>
+                    <strong>${f.title}</strong>
+                    <span>${f.desc}</span>
+                </div>`).join('')}
             </div>
             <div class="two-columns" style="margin-top:6mm">
                 <div class="column">
-                    <h3>Standard Equipment</h3>
+                    <h3>${pageTexts.standardFeatures[lang as keyof typeof pageTexts.standardFeatures]}</h3>
                     <ul class="specs-list">
-                        <li><span class="spec-label">Body Material</span><span class="spec-value">St-52 Steel</span></li>
-                        <li><span class="spec-label">Blade Material</span><span class="spec-value">Hardox 500</span></li>
-                        <li><span class="spec-label">Drive System</span><span class="spec-value">Diesel Hydraulic</span></li>
-                        <li><span class="spec-label">Control System</span><span class="spec-value">PLC + HMI</span></li>
+                        <li><span class="spec-label">${lang === 'tr' ? 'Gövde Malzemesi' : lang === 'en' ? 'Body Material' : lang === 'ru' ? 'Материал корпуса' : 'مادة الجسم'}</span><span class="spec-value">St-52 ${lang === 'tr' ? 'Çelik' : lang === 'en' ? 'Steel' : lang === 'ru' ? 'Сталь' : 'فولاذ'}</span></li>
+                        <li><span class="spec-label">${lang === 'tr' ? 'Bıçak Malzemesi' : lang === 'en' ? 'Blade Material' : lang === 'ru' ? 'Материал ножей' : 'مادة الشفرات'}</span><span class="spec-value">Hardox 500</span></li>
+                        <li><span class="spec-label">${lang === 'tr' ? 'Tahrik Sistemi' : lang === 'en' ? 'Drive System' : lang === 'ru' ? 'Привод' : 'نظام القيادة'}</span><span class="spec-value">${lang === 'tr' ? 'Dizel Hidrolik' : lang === 'en' ? 'Diesel Hydraulic' : lang === 'ru' ? 'Дизель-гидравлический' : 'ديزل هيدروليكي'}</span></li>
+                        <li><span class="spec-label">${lang === 'tr' ? 'Kontrol Sistemi' : lang === 'en' ? 'Control System' : lang === 'ru' ? 'Система управления' : 'نظام التحكم'}</span><span class="spec-value">PLC + HMI</span></li>
                     </ul>
                 </div>
                 <div class="column">
-                    <h3>Optional Features</h3>
+                    <h3>${pageTexts.optionalFeatures[lang as keyof typeof pageTexts.optionalFeatures]}</h3>
                     <ul class="specs-list">
-                        <li><span class="spec-label">Double Overband Magnetic</span><span class="spec-value">✓</span></li><li><span class="spec-label">Eddy Current Separator</span><span class="spec-value">✓</span></li><li><span class="spec-label">Full Automation Package</span><span class="spec-value">✓</span></li><li><span class="spec-label">Remote Monitoring & Reporting</span><span class="spec-value">✓</span></li>
+                        ${model.optionalFeatures[lang].slice(0, 4).map((f: string) => `<li><span class="spec-label">${f}</span><span class="spec-value">✓</span></li>`).join('')}
                     </ul>
                 </div>
             </div>
@@ -278,40 +310,40 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>TECHNICAL SPECIFICATIONS</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.specSheet[lang as keyof typeof pageTexts.specSheet]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div style="text-align:center;margin-bottom:6mm">
-                <div class="model-badge" style="font-size:32pt;padding:5mm 15mm">CSM-200</div>
-                <p style="font-size:12pt;color:#666;margin-top:3mm">Mobile Shredder | Dual Shaft</p>
+                <div class="model-badge" style="font-size:32pt;padding:5mm 15mm">${modelName}</div>
+                <p style="font-size:12pt;color:#666;margin-top:3mm">${pageTexts.mobileShredder[lang as keyof typeof pageTexts.mobileShredder]} | ${shaftType[lang as keyof typeof shaftType]}</p>
             </div>
             <div class="big-spec-grid">
                 <div class="big-spec-item">
-                    <span class="value">800 HP (596 kW)</span>
-                    <span class="label">Motor Power</span>
+                    <span class="value">${model.motorPower}</span>
+                    <span class="label">${pageTexts.motorPower[lang as keyof typeof pageTexts.motorPower]}</span>
                 </div>
                 <div class="big-spec-item">
-                    <span class="value">25-40 ton/saat</span>
-                    <span class="label">Capacity</span>
+                    <span class="value">${model.capacity}</span>
+                    <span class="label">${pageTexts.capacity[lang as keyof typeof pageTexts.capacity]}</span>
                 </div>
                 <div class="big-spec-item">
-                    <span class="value">~38.000 kg</span>
-                    <span class="label">Weight</span>
+                    <span class="value">${model.weight}</span>
+                    <span class="label">${pageTexts.weight[lang as keyof typeof pageTexts.weight]}</span>
                 </div>
             </div>
             <div class="spec-card">
-                <div class="spec-card-header"><h3>Detailed Technical Specifications</h3></div>
-                <div class="spec-row"><span class="label">Model</span><span class="value highlight">CSM-200</span></div>
-                <div class="spec-row"><span class="label">Design</span><span class="value">Dual Shaft</span></div>
-                <div class="spec-row"><span class="label">Motor Power</span><span class="value">800 HP (596 kW)</span></div>
-                <div class="spec-row"><span class="label">Shredding Area</span><span class="value">2000 x 1800 mm</span></div>
-                <div class="spec-row"><span class="label">Rotor Length</span><span class="value">2000 mm</span></div>
-                <div class="spec-row"><span class="label">Capacity</span><span class="value">25-40 ton/saat</span></div>
-                <div class="spec-row"><span class="label">Weight</span><span class="value">~38.000 kg</span></div>
+                <div class="spec-card-header"><h3>${pageTexts.detailedSpecs[lang as keyof typeof pageTexts.detailedSpecs]}</h3></div>
+                <div class="spec-row"><span class="label">Model</span><span class="value highlight">${modelName}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.design[lang as keyof typeof pageTexts.design]}</span><span class="value">${shaftType[lang as keyof typeof shaftType]}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.motorPower[lang as keyof typeof pageTexts.motorPower]}</span><span class="value">${model.motorPower}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.shreddingArea[lang as keyof typeof pageTexts.shreddingArea]}</span><span class="value">${model.area}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.rotorLength[lang as keyof typeof pageTexts.rotorLength]}</span><span class="value">${model.rotorLength}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.capacity[lang as keyof typeof pageTexts.capacity]}</span><span class="value">${model.capacity}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.weight[lang as keyof typeof pageTexts.weight]}</span><span class="value">${model.weight}</span></div>
             </div>
             <div class="highlight-box" style="margin-top:4mm">
-                <h3>Note</h3>
-                <p>Capacity values may vary depending on material type, size, and density. Contact our sales team for project-specific technical details.</p>
+                <h3>${pageTexts.note[lang as keyof typeof pageTexts.note]}</h3>
+                <p>${pageTexts.noteText[lang as keyof typeof pageTexts.noteText]}</p>
             </div>
         </div>
         <span class="page-number">05</span>
@@ -322,12 +354,12 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>OUR REFERENCES</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.references[lang as keyof typeof pageTexts.references]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div class="references-intro">
-                <p>Leading institutions and organizations from Turkey and the world prefer MT Makina.</p>
-                <span class="references-count">40+ References</span>
+                <p>${pageTexts.referencesIntro[lang as keyof typeof pageTexts.referencesIntro]}</p>
+                <span class="references-count">40+ ${lang === 'tr' ? 'Referans' : lang === 'en' ? 'References' : lang === 'ru' ? 'Референций' : 'مرجع'}</span>
             </div>
             <div class="references-grid">
                 <div class="reference-logo"><img src="../../assets/referanslar/aselsan-logo.webp" alt="Aselsan"></div>
@@ -357,8 +389,8 @@
                 <div class="reference-logo"><img src="../../assets/referanslar/soke-un-logo.webp" alt="Söke Un"></div>
             </div>
             <div class="highlight-box" style="margin-top:8mm">
-                <h3>Your Trusted Solution Partner</h3>
-                <p>With over 20 years of experience, we provide industrial shredding solutions for government institutions, private sector, and international companies.</p>
+                <h3>${pageTexts.trustedPartner[lang as keyof typeof pageTexts.trustedPartner]}</h3>
+                <p>${lang === 'tr' ? '20 yılı aşkın tecrübemizle kamu kurumları, özel sektör ve uluslararası firmalar için endüstriyel parçalama çözümleri sunuyoruz.' : lang === 'en' ? 'With over 20 years of experience, we provide industrial shredding solutions for government institutions, private sector, and international companies.' : lang === 'ru' ? 'С более чем 20-летним опытом мы предоставляем промышленные решения для измельчения для государственных учреждений, частного сектора и международных компаний.' : 'مع أكثر من 20 عامًا من الخبرة، نقدم حلول التمزيق الصناعي للمؤسسات الحكومية والقطاع الخاص والشركات الدولية.'}</p>
             </div>
         </div>
         <span class="page-number">06</span>
@@ -369,33 +401,33 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>DIMENSIONS & CONTACT</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.dimensions[lang as keyof typeof pageTexts.dimensions]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div class="product-image-container" style="margin-top:0">
-                <img src="images/6.jpeg" alt="CSM-200" class="product-image" style="max-height:60mm">
+                <img src="images/${img6}" alt="${modelName}" class="product-image" style="max-height:60mm">
             </div>
             <div class="spec-card" style="margin-top:4mm">
-                <div class="spec-card-header"><h3>CSM-200 Dimensions</h3></div>
-                <div class="spec-row"><span class="label">Shredding Area</span><span class="value">2000 x 1800 mm</span></div>
-                <div class="spec-row"><span class="label">Rotor Length</span><span class="value">2000 mm</span></div>
-                <div class="spec-row"><span class="label">Weight</span><span class="value">~38.000 kg</span></div>
+                <div class="spec-card-header"><h3>${modelName} ${lang === 'tr' ? 'Boyutları' : lang === 'en' ? 'Dimensions' : lang === 'ru' ? 'Размеры' : 'الأبعاد'}</h3></div>
+                <div class="spec-row"><span class="label">${pageTexts.shreddingArea[lang as keyof typeof pageTexts.shreddingArea]}</span><span class="value">${model.area}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.rotorLength[lang as keyof typeof pageTexts.rotorLength]}</span><span class="value">${model.rotorLength}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.weight[lang as keyof typeof pageTexts.weight]}</span><span class="value">${model.weight}</span></div>
             </div>
             <div class="two-columns" style="margin-top:6mm">
                 <div class="column">
                     <div class="contact-section">
-                        <h3>Contact Us</h3>
+                        <h3>${pageTexts.contactUs[lang as keyof typeof pageTexts.contactUs]}</h3>
                         <div class="contact-group">
-                            <div class="contact-group-title">ADDRESS</div>
+                            <div class="contact-group-title">${pageTexts.address[lang as keyof typeof pageTexts.address]}</div>
                             <p class="address-text">Cumhuriyet Mahallesi, Nazım Hikmet Bulvarı, 1983 Sk. Kent Palas 2 Kat: 7 D: 85 - 86, PK.: 34512 Esenyurt / İSTANBUL</p>
                         </div>
                         <div class="contact-group">
-                            <div class="contact-group-title">HEADQUARTERS</div>
+                            <div class="contact-group-title">${pageTexts.headquarters[lang as keyof typeof pageTexts.headquarters]}</div>
                             <p style="font-size:10pt;margin-bottom:1mm">+90 850 259 01 66</p>
                             <p style="font-size:10pt;margin-bottom:0">+90 212 613 31 82</p>
                         </div>
                         <div class="contact-group">
-                            <div class="contact-group-title">SALES</div>
+                            <div class="contact-group-title">${pageTexts.sales[lang as keyof typeof pageTexts.sales]}</div>
                             <p style="font-size:10pt;margin-bottom:1mm">+90 212 671 74 55</p>
                             <p style="font-size:10pt;margin-bottom:0">+90 212 671 74 56</p>
                         </div>
@@ -409,7 +441,7 @@
                             <p style="font-size:11pt;font-weight:700;margin-bottom:0">+90 542 310 99 30</p>
                         </div>
                         <div class="contact-group">
-                            <div class="contact-group-title">E-MAIL</div>
+                            <div class="contact-group-title">${pageTexts.email[lang as keyof typeof pageTexts.email]}</div>
                             <p style="font-size:10pt;margin-bottom:0">info@mtmakina.com.tr</p>
                         </div>
                         <div class="website-box">
@@ -417,8 +449,8 @@
                             <p class="secondary">www.parcalamamakinesi.com</p>
                         </div>
                         <div class="highlight-box" style="margin-top:4mm;padding:4mm">
-                            <h3 style="font-size:11pt;margin-bottom:2mm">Free Inspection</h3>
-                            <p style="font-size:9pt">Take advantage of our free site inspection service for a solution tailored to your needs.</p>
+                            <h3 style="font-size:11pt;margin-bottom:2mm">${pageTexts.freeInspection[lang as keyof typeof pageTexts.freeInspection]}</h3>
+                            <p style="font-size:9pt">${pageTexts.freeInspectionDesc[lang as keyof typeof pageTexts.freeInspectionDesc]}</p>
                         </div>
                     </div>
                 </div>
@@ -428,4 +460,5 @@
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 </body>
-</html>
+</html>`;
+}
