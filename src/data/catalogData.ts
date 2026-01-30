@@ -595,6 +595,87 @@ export const catalogs: CatalogItem[] = [
             ru: { title: 'Каталог мобильного измельчителя CSM-200', description: 'CSM-200 двухвальный мобильный измельчитель. Максимальная производительность с ротором 2000мм.', keywords: ['CSM-200', 'мобильный измельчитель', 'максимальная производительность'] },
             ar: { title: 'كتالوج الكسارة المتنقلة CSM-200', description: 'CSM-200 كسارة متنقلة ثنائية العمود. أعلى سعة مع دوار 2000 مم.', keywords: ['CSM-200', 'كسارة متنقلة', 'سعة قصوى'] }
         }
+    },
+    // Metal Shredders (RDM Series)
+    {
+        id: 'rdm-100',
+        model: 'RDM-100',
+        category: 'metal',
+        series: 'RDM',
+        paths: {
+            tr: { html: '/catalogs/metal/rdm-100/catalog.html', pdf: '/catalogs/metal/rdm-100/catalog.pdf' },
+            en: { html: '/catalogs/metal/rdm-100/catalog-en.html', pdf: '/catalogs/metal/rdm-100/catalog.pdf' },
+            ru: { html: '/catalogs/metal/rdm-100/catalog-ru.html', pdf: '/catalogs/metal/rdm-100/catalog.pdf' },
+            ar: { html: '/catalogs/metal/rdm-100/catalog-ar.html', pdf: '/catalogs/metal/rdm-100/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/metal/rdm-100/images/1.jpeg',
+        specs: { capacity: '1-3 ton/saat', power: '45–75 kW (2–4X)' },
+        translations: {
+            tr: { title: 'RDM-100 Metal Parçalama Makinesi Kataloğu', description: 'RDM-100 kompakt çift şaftlı metal parçalama makinesi. 1000mm rotor boyu.', keywords: ['RDM-100', 'metal parçalama', 'çift şaftlı', 'hurda'] },
+            en: { title: 'RDM-100 Metal Shredder Catalog', description: 'RDM-100 compact dual-shaft metal shredder. 1000mm rotor length.', keywords: ['RDM-100', 'metal shredder', 'dual-shaft', 'scrap'] },
+            ru: { title: 'Каталог измельчителя металла RDM-100', description: 'RDM-100 компактный двухвальный измельчитель металла. Длина ротора 1000мм.', keywords: ['RDM-100', 'измельчитель металла', 'двухвальный'] },
+            ar: { title: 'كتالوج كسارة المعادن RDM-100', description: 'RDM-100 كسارة معادن مدمجة ثنائية العمود. طول الدوار 1000 مم.', keywords: ['RDM-100', 'كسارة معادن', 'ثنائي العمود'] }
+        }
+    },
+    {
+        id: 'rdm-150',
+        model: 'RDM-150',
+        category: 'metal',
+        series: 'RDM',
+        paths: {
+            tr: { html: '/catalogs/metal/rdm-150/catalog.html', pdf: '/catalogs/metal/rdm-150/catalog.pdf' },
+            en: { html: '/catalogs/metal/rdm-150/catalog-en.html', pdf: '/catalogs/metal/rdm-150/catalog.pdf' },
+            ru: { html: '/catalogs/metal/rdm-150/catalog-ru.html', pdf: '/catalogs/metal/rdm-150/catalog.pdf' },
+            ar: { html: '/catalogs/metal/rdm-150/catalog-ar.html', pdf: '/catalogs/metal/rdm-150/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/metal/rdm-150/images/1.jpeg',
+        specs: { capacity: '2-5 ton/saat', power: '55–90 kW (2–4X)' },
+        translations: {
+            tr: { title: 'RDM-150 Metal Parçalama Makinesi Kataloğu', description: 'RDM-150 profesyonel çift şaftlı metal parçalama makinesi. 1500mm rotor boyu.', keywords: ['RDM-150', 'metal parçalama', 'çift şaftlı', 'hurda'] },
+            en: { title: 'RDM-150 Metal Shredder Catalog', description: 'RDM-150 professional dual-shaft metal shredder. 1500mm rotor length.', keywords: ['RDM-150', 'metal shredder', 'dual-shaft', 'scrap'] },
+            ru: { title: 'Каталог измельчителя металла RDM-150', description: 'RDM-150 профессиональный двухвальный измельчитель металла. Длина ротора 1500мм.', keywords: ['RDM-150', 'измельчитель металла', 'двухвальный'] },
+            ar: { title: 'كتالوج كسارة المعادن RDM-150', description: 'RDM-150 كسارة معادن احترافية ثنائية العمود. طول الدوار 1500 مم.', keywords: ['RDM-150', 'كسارة معادن', 'ثنائي العمود'] }
+        }
+    },
+    {
+        id: 'rdm-180',
+        model: 'RDM-180',
+        category: 'metal',
+        series: 'RDM',
+        paths: {
+            tr: { html: '/catalogs/metal/rdm-180/catalog.html', pdf: '/catalogs/metal/rdm-180/catalog.pdf' },
+            en: { html: '/catalogs/metal/rdm-180/catalog-en.html', pdf: '/catalogs/metal/rdm-180/catalog.pdf' },
+            ru: { html: '/catalogs/metal/rdm-180/catalog-ru.html', pdf: '/catalogs/metal/rdm-180/catalog.pdf' },
+            ar: { html: '/catalogs/metal/rdm-180/catalog-ar.html', pdf: '/catalogs/metal/rdm-180/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/metal/rdm-180/images/1.jpeg',
+        specs: { capacity: '4-8 ton/saat', power: '75–90 kW (2–4X)' },
+        translations: {
+            tr: { title: 'RDM-180 Metal Parçalama Makinesi Kataloğu', description: 'RDM-180 yüksek kapasiteli çift şaftlı metal parçalama makinesi. 1800mm rotor boyu.', keywords: ['RDM-180', 'metal parçalama', 'yüksek kapasite', 'hurda'] },
+            en: { title: 'RDM-180 Metal Shredder Catalog', description: 'RDM-180 high-capacity dual-shaft metal shredder. 1800mm rotor length.', keywords: ['RDM-180', 'metal shredder', 'high capacity', 'scrap'] },
+            ru: { title: 'Каталог измельчителя металла RDM-180', description: 'RDM-180 высокопроизводительный двухвальный измельчитель металла. Длина ротора 1800мм.', keywords: ['RDM-180', 'измельчитель металла', 'высокая производительность'] },
+            ar: { title: 'كتالوج كسارة المعادن RDM-180', description: 'RDM-180 كسارة معادن عالية السعة ثنائية العمود. طول الدوار 1800 مم.', keywords: ['RDM-180', 'كسارة معادن', 'سعة عالية'] }
+        }
+    },
+    {
+        id: 'rdm-200',
+        model: 'RDM-200',
+        category: 'metal',
+        series: 'RDM',
+        paths: {
+            tr: { html: '/catalogs/metal/rdm-200/catalog.html', pdf: '/catalogs/metal/rdm-200/catalog.pdf' },
+            en: { html: '/catalogs/metal/rdm-200/catalog-en.html', pdf: '/catalogs/metal/rdm-200/catalog.pdf' },
+            ru: { html: '/catalogs/metal/rdm-200/catalog-ru.html', pdf: '/catalogs/metal/rdm-200/catalog.pdf' },
+            ar: { html: '/catalogs/metal/rdm-200/catalog-ar.html', pdf: '/catalogs/metal/rdm-200/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/metal/rdm-200/images/1.jpeg',
+        specs: { capacity: '6-12 ton/saat', power: '90–132 kW (2–4X)' },
+        translations: {
+            tr: { title: 'RDM-200 Metal Parçalama Makinesi Kataloğu', description: 'RDM-200 endüstriyel çift şaftlı metal parçalama makinesi. 2000mm rotor boyu ile maksimum kapasite.', keywords: ['RDM-200', 'metal parçalama', 'endüstriyel', 'mega kapasite'] },
+            en: { title: 'RDM-200 Metal Shredder Catalog', description: 'RDM-200 industrial dual-shaft metal shredder. Maximum capacity with 2000mm rotor.', keywords: ['RDM-200', 'metal shredder', 'industrial', 'mega capacity'] },
+            ru: { title: 'Каталог измельчителя металла RDM-200', description: 'RDM-200 промышленный двухвальный измельчитель металла. Максимальная производительность с ротором 2000мм.', keywords: ['RDM-200', 'измельчитель металла', 'промышленный'] },
+            ar: { title: 'كتالوج كسارة المعادن RDM-200', description: 'RDM-200 كسارة معادن صناعية ثنائية العمود. أقصى سعة مع دوار 2000 مم.', keywords: ['RDM-200', 'كسارة معادن', 'صناعي', 'سعة قصوى'] }
+        }
     }
 ];
 
