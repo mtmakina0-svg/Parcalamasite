@@ -170,6 +170,7 @@ function AppContent() {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>(initialUrlState.product || null);
   const [selectedModelName, setSelectedModelName] = useState<string>(initialUrlState.model || 'TSH-60');
   const [selectedBlogSlug, setSelectedBlogSlug] = useState<string | null>(initialUrlState.blogSlug || null);
+  const [ecatalogKey, setEcatalogKey] = useState(0); // Key to force ECatalogPage remount on navigation
 
   // SEO Head data based on current page
   const getSEOData = () => {
@@ -497,6 +498,7 @@ function AppContent() {
   };
 
   const handleNavigateToECatalog = () => {
+    setEcatalogKey(prev => prev + 1); // Force ECatalogPage remount
     navigateWithUrl('ecatalog', generateUrl.ecatalog(language as Language));
   };
 
@@ -651,7 +653,7 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ECatalogPage key={window.location.pathname} onBackToMain={handleNavigateToMain} />
+        <ECatalogPage key={ecatalogKey} onBackToMain={handleNavigateToMain} />
         <ChatWidget />
       </>
     );
