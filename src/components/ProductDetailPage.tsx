@@ -26,7 +26,7 @@ interface ProductDetailPageProps {
   productType: string;
   modelName?: string; // Yeni: Model adı (TSH-60, CS-80, vb.)
   onBackToMain: () => void;
-  onECatalogClick: () => void;
+  onECatalogClick: (category?: string) => void;
   onProductDetailClick?: (productType: string, modelName?: string) => void;
 }
 
@@ -436,6 +436,20 @@ const productTitleKeys: { [key: string]: { title: string; subtitle: string } } =
   'tree-root': { title: 'tree_root_main_title', subtitle: 'tree_root_subtitle' },
   'wood': { title: 'wood_main_title', subtitle: 'wood_subtitle' },
   'glass': { title: 'glass_main_title', subtitle: 'glass_subtitle' }
+};
+
+// Mapping from product type to e-catalog category slug
+const productToEcatalogCategory: { [key: string]: string } = {
+  'single-shaft': 'single-shaft',
+  'dual-shaft': 'dual-shaft',
+  'quad-shaft': 'quad-shaft',
+  'metal': 'metal',
+  'mobile': 'mobile',
+  'pallet': 'pallet',
+  'harddisk': 'harddisk',
+  'tree-root': 'tree-root',
+  'wood': 'wood',
+  'glass': 'glass'
 };
 
 // Description keys mapping for each product type
@@ -1242,7 +1256,7 @@ export const ProductDetailPage = ({
               className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <button
-                onClick={onECatalogClick}
+                onClick={() => onECatalogClick(productToEcatalogCategory[currentProductType])}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
                 style={{
                   padding: '16px 32px',
@@ -1986,7 +2000,7 @@ export const ProductDetailPage = ({
               className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <button
-                onClick={onECatalogClick}
+                onClick={() => onECatalogClick(productToEcatalogCategory[currentProductType])}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
                 style={{
                   padding: '16px 32px',
@@ -2566,7 +2580,7 @@ export const ProductDetailPage = ({
               className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <button
-                onClick={onECatalogClick}
+                onClick={() => onECatalogClick(productToEcatalogCategory[currentProductType])}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
                 style={{
                   padding: '16px 32px',
@@ -3114,7 +3128,7 @@ export const ProductDetailPage = ({
               className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <button
-                onClick={onECatalogClick}
+                onClick={() => onECatalogClick(productToEcatalogCategory[currentProductType])}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300"
                 style={{
                   padding: '16px 32px',

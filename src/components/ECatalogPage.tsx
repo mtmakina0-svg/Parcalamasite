@@ -34,6 +34,12 @@ const categorySlugMap: Record<CatalogCategory, Record<Language, string>> = {
 
 // Get category from URL slug
 const getCategoryFromSlug = (slug: string, language: Language): CatalogCategory | null => {
+  // First, check if the slug is a direct category ID
+  if (Object.keys(categorySlugMap).includes(slug as CatalogCategory)) {
+    return slug as CatalogCategory;
+  }
+
+  // Then check language-specific slugs
   for (const [category, slugs] of Object.entries(categorySlugMap)) {
     if (slugs[language] === slug) {
       return category as CatalogCategory;

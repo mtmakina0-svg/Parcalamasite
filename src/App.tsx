@@ -497,9 +497,9 @@ function AppContent() {
     navigateWithUrl('contact', generateUrl.contact(language as Language));
   };
 
-  const handleNavigateToECatalog = () => {
+  const handleNavigateToECatalog = (category?: string) => {
     setEcatalogKey(prev => prev + 1); // Force ECatalogPage remount
-    navigateWithUrl('ecatalog', generateUrl.ecatalog(language as Language));
+    navigateWithUrl('ecatalog', generateUrl.ecatalog(language as Language, category));
   };
 
   const handleNavigateToProductCategory = (productType: string) => {

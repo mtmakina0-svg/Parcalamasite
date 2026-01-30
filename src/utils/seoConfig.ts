@@ -137,7 +137,9 @@ export const generateUrl = {
   waste: (category: string | undefined, lang: Language = 'tr') =>
     category ? `/${lang}/${slugsByLanguage.waste[lang]}/${category}` : `/${lang}/${slugsByLanguage.waste[lang]}`,
   contact: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.contact[lang]}`,
-  ecatalog: (lang: Language = 'tr') => `/${lang}/${slugsByLanguage.ecatalog[lang]}`,
+  ecatalog: (lang: Language = 'tr', category?: string) => category
+    ? `/${lang}/${slugsByLanguage.ecatalog[lang]}/${category}`
+    : `/${lang}/${slugsByLanguage.ecatalog[lang]}`,
   blog: (lang: Language = 'tr') => `/blog`
 };
 
