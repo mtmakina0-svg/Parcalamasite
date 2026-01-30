@@ -47,8 +47,7 @@
         .cover-tagline{position:absolute;bottom:30mm;left:50%;transform:translateX(-50%);z-index:10;color:var(--white);font-size:16pt;font-weight:500;letter-spacing:3px;text-transform:uppercase}
         .page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8mm;padding-bottom:4mm;border-bottom:1px solid var(--border-gray)}
         .page-header-icon{width:12mm;height:auto;opacity:0.8}
-        .section-header{margin-bottom:12mm}
-        .section-header h2{margin-bottom:0}
+        .section-header{margin-bottom:12mm}.section-header h2{margin-bottom:0}
         .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6mm;margin-top:8mm}
         .feature-box{background:var(--light-gray);border-left:4px solid var(--primary-yellow);padding:5mm}
         .feature-box h4{font-size:11pt;font-weight:700;color:var(--dark-anthracite);margin-bottom:2mm}
@@ -74,7 +73,7 @@
         .spec-row .value.highlight{color:var(--primary-yellow);background:var(--dark-anthracite);padding:2mm 4mm;border-radius:3px}
         .big-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin:8mm 0}
         .big-spec-item{background:var(--dark-anthracite);color:var(--white);padding:6mm;text-align:center;border-radius:4px}
-        .big-spec-item .value{font-size:22pt;font-weight:900;color:var(--primary-yellow);display:block;margin-bottom:2mm}
+        .big-spec-item .value{font-size:20pt;font-weight:900;color:var(--primary-yellow);display:block;margin-bottom:2mm}
         .big-spec-item .unit{font-size:10pt;font-weight:400;color:var(--primary-yellow);opacity:0.8}
         .big-spec-item .label{font-size:9pt;font-weight:500;color:#aaa;text-transform:uppercase;letter-spacing:0.5px}
         .two-columns{display:grid;grid-template-columns:1fr 1fr;gap:10mm}
@@ -86,6 +85,26 @@
         .website-box{background:var(--light-gray);padding:4mm;text-align:center;border-radius:4px;margin-top:4mm}
         .website-box p{margin:0;font-size:12pt;font-weight:700;color:var(--dark-anthracite)}
         .website-box p.secondary{font-size:10pt;font-weight:500;color:#666;margin-top:1mm}
+        .app-card{background:var(--light-gray);padding:4mm;border-radius:4px;margin-bottom:4mm}
+        .app-card h4{font-size:11pt;font-weight:700;color:var(--dark-anthracite);margin-bottom:2mm}
+        .app-card p{font-size:9pt;color:#555;margin-bottom:0;line-height:1.5}
+        .material-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:5mm}
+        .material-list li{background:var(--light-gray);padding:3mm 4mm;border-left:3px solid var(--primary-yellow);font-size:10pt;font-weight:500}
+        .specs-list{list-style:none;margin-top:5mm}
+        .specs-list li{padding:3mm 0;border-bottom:1px solid var(--border-gray);display:flex;justify-content:space-between}
+        .specs-list li:last-child{border-bottom:none}
+        .specs-list .spec-label{font-weight:500;color:#666}
+        .specs-list .spec-value{font-weight:700;color:var(--dark-anthracite)}
+        .callout-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:6mm}
+        .callout-box{background:var(--white);border:2px solid var(--primary-yellow);border-radius:4px;padding:3mm 4mm;font-size:9pt;box-shadow:0 2px 8px rgba(0,0,0,0.15);margin-bottom:4mm}
+        .callout-box strong{color:var(--dark-anthracite);display:block;margin-bottom:1mm;font-size:10pt}
+        .callout-box span{color:#555;font-size:9pt;line-height:1.4}
+        .references-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;margin-top:6mm}
+        .reference-logo{background:var(--white);border:1px solid var(--border-gray);border-radius:4px;padding:3mm;display:flex;align-items:center;justify-content:center;height:22mm}
+        .reference-logo img{max-width:100%;max-height:100%;object-fit:contain}
+        .references-intro{text-align:center;margin-bottom:8mm}
+        .references-intro p{font-size:12pt;color:#666}
+        .references-count{display:inline-block;background:var(--primary-yellow);color:var(--dark-anthracite);font-size:11pt;font-weight:700;padding:2mm 5mm;border-radius:3px;margin-top:3mm}
         .optional-features ul{list-style:none;padding:0;margin:0}
         .optional-features li{padding:3mm 0 3mm 8mm;border-bottom:1px solid var(--border-gray);position:relative;font-size:10pt}
         .optional-features li::before{content:'✓';position:absolute;left:0;color:var(--primary-yellow);font-weight:700}
@@ -106,7 +125,7 @@
                 <p class="cover-subtitle">Four Shaft Shredder</p>
                 <div class="cover-series">КАТАЛОГ ПРОДУКЦИИ</div>
             </div>
-            <p class="cover-tagline">Мощь Четырех Валов, Компактный Дизайн</p>
+            <!-- Tagline removed to prevent overlap -->
         </div>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
@@ -121,18 +140,130 @@
             <div class="model-badge">DS-80</div>
             <p style="font-size:12pt;line-height:1.8">DS-80 — компактная модель серии четырехвальных шредеров, предлагающая идеальное решение для средних предприятий. С зоной измельчения 800x800мм и четырьмя независимыми двигателями обеспечивает максимальную эффективность измельчения.</p>
             <div class="product-image-container">
-                <img src="images/2.jpeg" alt="DS-80" class="product-image" style="max-height:60mm">
+                <img src="images/2.jpeg" alt="DS-80" class="product-image" style="max-height:55mm">
             </div>
             <div class="highlight-box">
                 <h3>Почему DS-80?</h3>
                 <p>Четырехвальная конструкция предотвращает обратную подачу материала и обеспечивает однородный размер частиц. Идеально подходит для уничтожения конфиденциальных документов, переработки пластика и резины.</p>
             </div>
+            <div class="feature-grid">
+                <div class="feature-box"><h4>Система Четырех Двигателей</h4></div>
+                <div class="feature-box"><h4>Автореверс</h4></div>
+                <div class="feature-box"><h4>ПЛК Управление</h4></div>
+                <div class="feature-box"><h4>Модульные Ножи</h4></div>
+            </div>
+            <h3 style="margin-top:8mm">Измельчаемые Материалы</h3>
+            <ul class="material-list">
+                <li>Пластиковые Пленки</li>
+                <li>ПЭТ Бутылки</li>
+                <li>Картон-Бумага</li>
+                <li>Текстиль</li>
+                <li>Электронные Отходы</li>
+                <li>Резина</li>
+                <li>Древесина</li>
+                <li>Кабельные Отходы</li>
+            </ul>
         </div>
         <span class="page-number">02</span>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 
-    <!-- PAGE 3: SPEC SHEET -->
+    <!-- PAGE 3: APPLICATION AREAS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Области Применения</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <p>DS-80 — компактная модель серии четырехвальных шредеров, предлагающая идеальное решение для средних предприятий. С зоной измельчения 800x800мм и четырьмя независимыми двигателями обеспечивает максимал...</p>
+            <div class="two-columns" style="margin-top:6mm">
+                <div class="column">
+                    <div class="product-image-container" style="margin:0 0 3mm 0">
+                        <img src="images/3.png" alt="DS-80" class="product-image" style="max-height:45mm;border-radius:4px">
+                    </div>
+                    <div class="app-card"><h4>Перерабатывающие Заводы</h4><p>Предварительное измельчение пластика, бумаги и картона.</p></div>
+                </div>
+                <div class="column">
+                    <div class="product-image-container" style="margin:0 0 3mm 0">
+                        <img src="images/4.png" alt="DS-80" class="product-image" style="max-height:45mm;border-radius:4px">
+                    </div>
+                    <div class="app-card"><h4>Центры Э-Отходов</h4><p>Безопасное уничтожение электронных плат и кабелей.</p></div>
+                </div>
+            </div>
+            <div class="two-columns" style="margin-top:6mm">
+                <div class="column">
+                    <div class="app-card"><h4>Уничтожение Документов</h4><p>Безопасное измельчение конфиденциальных документов.</p></div>
+                </div>
+                <div class="column">
+                    <div class="app-card"><h4>Переработка Текстиля</h4><p>Обработка тканевых и текстильных отходов.</p></div>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top:6mm;text-align:center">
+                <h3>DS-80 Преимущества</h3>
+                <p>• Система Четырех Двигателей • Автореверс • ПЛК Управление • Модульные Ножи</p>
+            </div>
+            <div class="product-image-container" style="margin-top:6mm">
+                <img src="images/5.png" alt="DS-80" class="product-image" style="max-height:45mm">
+            </div>
+        </div>
+        <span class="page-number">03</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 4: TECHNICAL DETAILS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Технические Детали</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="product-image-container">
+                <img src="images/6.png" alt="DS-80" class="product-image" style="max-height:65mm">
+            </div>
+            <div class="callout-grid">
+                <div class="callout-box">
+                    <strong>Четырехвальная Система</strong>
+                    <span>Четыре независимых ротора предотвращают обратную подачу материала.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Функция Автореверса</strong>
+                    <span>При обнаружении перегрузки реверс ротора предотвращает заклинивание.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Регулируемое Сито</strong>
+                    <span>Система сит, регулируемая по размеру выхода.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Ножи Hardox</strong>
+                    <span>Высокоизносостойкие стальные ножи Hardox 450/500.</span>
+                </div>
+            </div>
+            <div class="two-columns" style="margin-top:6mm">
+                <div class="column">
+                    <h3>Стандартное Оборудование</h3>
+                    <ul class="specs-list">
+                        <li><span class="spec-label">Материал Корпуса</span><span class="spec-value">St-52 Сталь</span></li>
+                        <li><span class="spec-label">Материал Ножей</span><span class="spec-value">Hardox 450/500</span></li>
+                        <li><span class="spec-label">Привод</span><span class="spec-value">Мотор-Редуктор (4x)</span></li>
+                        <li><span class="spec-label">Управление</span><span class="spec-value">PLC + HMI Panel</span></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Опции</h3>
+                    <ul class="specs-list">
+                        <li><span class="spec-label">Гидромуфта с Ременным Шкивом</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">Система Охлаждения Ротора</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">Автоматическая Смазка</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">Гидравлический Толкатель</span><span class="spec-value">✓</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <span class="page-number">04</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 5: SPEC SHEET -->
     <div class="page">
         <div class="page-content">
             <div class="page-header">
@@ -146,7 +277,7 @@
             <div class="big-spec-grid">
                 <div class="big-spec-item">
                     <span class="value">11 – 22 kW (4x)</span>
-                    <span class="label">Мощность</span>
+                    <span class="label">Мощность Двигателя</span>
                 </div>
                 <div class="big-spec-item">
                     <span class="value">800 x 800 mm</span>
@@ -158,45 +289,85 @@
                 </div>
             </div>
             <div class="spec-card">
-                <div class="spec-card-header"><h3>Подробные Технические Характеристики</h3></div>
+                <div class="spec-card-header"><h3>Подробные Характеристики</h3></div>
                 <div class="spec-row"><span class="label">Model</span><span class="value highlight">DS-80</span></div>
                 <div class="spec-row"><span class="label">Мощность Двигателя</span><span class="value">11 – 22 kW (4x)</span></div>
                 <div class="spec-row"><span class="label">Зона Измельчения</span><span class="value">800 x 800 mm</span></div>
                 <div class="spec-row"><span class="label">Длина Ротора</span><span class="value">800 mm</span></div>
                 <div class="spec-row"><span class="label">Количество Валов</span><span class="value">4</span></div>
+                <div class="spec-row"><span class="label">Производительность</span><span class="value">600 - 1000 kg/saat</span></div>
             </div>
-            <div class="product-image-container">
-                <img src="images/3.png" alt="DS-80" class="product-image" style="max-height:45mm">
+            <div class="highlight-box" style="margin-top:4mm">
+                <h3>Примечание</h3>
+                <p>Значения производительности могут варьироваться в зависимости от типа, размера и плотности материала. Свяжитесь с нами для уточнения деталей.</p>
             </div>
         </div>
-        <span class="page-number">03</span>
+        <span class="page-number">05</span>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 
-    <!-- PAGE 4: OPTIONAL FEATURES & CONTACT -->
+    <!-- PAGE 6: REFERENCES -->
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>Опциональные Функции</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>Наши Референсы</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="references-intro">
+                <p>Ведущие учреждения Турции и мира выбирают MT Makina.</p>
+                <span class="references-count">40+ Референсов</span>
+            </div>
+            <div class="references-grid">
+                <div class="reference-logo"><img src="../../assets/referanslar/aselsan-logo.webp" alt="Aselsan"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/bosch-logo.webp" alt="Bosch"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/pepsico-logo.webp" alt="PepsiCo"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/castrol-logo.webp" alt="Castrol"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/bp-logo.webp" alt="BP"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/iga-logo.webp" alt="İGA"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tav-havalimanlari-logo.webp" alt="TAV"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/remondis-logo.webp" alt="Remondis"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tei-logo.webp" alt="TEI"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/mke-logo.webp" alt="MKE"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tcmb-logo.webp" alt="TCMB"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/saglik-bakanligi-logo.webp" alt="Sağlık Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/adalet-bakanligi-logo.webp" alt="Adalet Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/disisleri-bakanligi-logo.webp" alt="Dışişleri Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/genelkurmay-baskanligi-logo.webp" alt="Genelkurmay"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/ibb-logo.webp" alt="İBB"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tusas-logo.webp" alt="TUSAŞ"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/havelsan-logo.webp" alt="Havelsan"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/roketsan-logo.webp" alt="Roketsan"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/turkiye-finans-logo.webp" alt="Türkiye Finans"></div>
+            </div>
+        </div>
+        <span class="page-number">06</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 7: OPTIONAL FEATURES & CONTACT -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Опции</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div class="two-columns">
                 <div class="column">
                     <div class="optional-features">
                         <ul>
-                        <li>Ременная гидравлическая муфта</li>
-                        <li>Система охлаждения ротора</li>
-                        <li>Автоматическая система смазки</li>
-                        <li>Гидравлический толкатель</li>
-                        <li>Сита разных размеров</li>
-                        <li>Съемные ножи на болтах</li>
-                        <li>Гидромоторный привод</li>
-                        <li>Офисное и промышленное шасси</li>
-                        <li>Конвейерные системы выгрузки</li>
+                        <li>Гидромуфта с Ременным Шкивом</li>
+                        <li>Система Охлаждения Ротора</li>
+                        <li>Автоматическая Смазка</li>
+                        <li>Гидравлический Толкатель</li>
+                        <li>Различные Размеры Сит</li>
+                        <li>Съемные Ножи на Болтах</li>
+                        <li>Гидромоторный Привод</li>
+                        <li>Офисное и Промышленное Шасси</li>
+                        <li>Конвейер для Выхода</li>
                         </ul>
                     </div>
                     <div class="product-image-container" style="margin-top:6mm">
-                        <img src="images/4.png" alt="DS-80" class="product-image" style="max-height:55mm">
+                        <img src="images/1.jpeg" alt="DS-80" class="product-image" style="max-height:55mm">
                     </div>
                 </div>
                 <div class="column">
@@ -227,7 +398,7 @@
                 </div>
             </div>
         </div>
-        <span class="page-number">04</span>
+        <span class="page-number">07</span>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 </body>

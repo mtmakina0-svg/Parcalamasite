@@ -1,21 +1,49 @@
-<!DOCTYPE html>
-<html lang="tr">
+// generate-ds-catalogs-v2.ts devamı - HTML Generator
+
+function generateCatalogHTML(modelId: string, lang: keyof typeof languages): string {
+    const model = models[modelId];
+    const langConfig = languages[lang];
+    const modelName = modelId.toUpperCase();
+    const opts = optionalFeatures[lang];
+
+    // Görsel dosyalarını listele
+    const imagesDir = path.join(BASE_DIR, modelId, 'images');
+    let images: string[] = [];
+    try {
+        images = fs.readdirSync(imagesDir).filter(f => f.endsWith('.jpeg') || f.endsWith('.jpg') || f.endsWith('.png'));
+    } catch (e) {
+        console.log(`No images found for ${modelId}`);
+    }
+
+    const img1 = images[0] || '1.jpeg';
+    const img2 = images[1] || images[0] || '2.jpeg';
+    const img3 = images[2] || images[0] || '3.png';
+    const img4 = images[3] || images[0] || '4.png';
+    const img5 = images[4] || images[0] || '5.png';
+    const img6 = images[5] || images[0] || '6.png';
+
+    const apps = model.applications[lang];
+    const mats = model.materials[lang];
+    const feats = model.features[lang];
+
+    return `<!DOCTYPE html>
+<html lang="${langConfig.code}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/catalogs/ds/ds-200/">
-    <title>DS-200 Dört Şaftlı Parçalama Makinesi | MT Makina</title>
-    <meta name="description" content="DS-200, dört şaftlı parçalama makinesi serisinin en büyük ve en güçlü modelidir. 2000x2000mm dev parçalama alanı ve 4x75-160kW motor gücü ile mega ölçekli projelerin tüm ihtiyaçlarını karşılar.">
+    <base href="/catalogs/ds/${modelId}/">
+    <title>${modelName} ${pageTexts.quadShaftShredder[lang]} | MT Makina</title>
+    <meta name="description" content="${model.description[lang]}">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="googlebot" content="index, follow">
     <meta name="author" content="MT Makina">
-    <link rel="canonical" href="https://www.parcalamamakinesi.com/catalogs/ds/ds-200/catalog.html">
+    <link rel="canonical" href="https://www.parcalamamakinesi.com/catalogs/ds/${modelId}/catalog${langConfig.suffix}.html">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.parcalamamakinesi.com/catalogs/ds/ds-200/catalog.html">
-    <meta property="og:title" content="DS-200 Dört Şaftlı Parçalama Makinesi | MT Makina">
-    <meta property="og:description" content="DS-200, dört şaftlı parçalama makinesi serisinin en büyük ve en güçlü modelidir. 2000x2000mm dev parçalama alanı ve 4x75-160kW motor gücü ile mega ölçekli projelerin tüm ihtiyaçlarını karşılar.">
+    <meta property="og:url" content="https://www.parcalamamakinesi.com/catalogs/ds/${modelId}/catalog${langConfig.suffix}.html">
+    <meta property="og:title" content="${modelName} ${pageTexts.quadShaftShredder[lang]} | MT Makina">
+    <meta property="og:description" content="${model.description[lang]}">
     <meta property="og:image" content="https://i.ibb.co/HLymGDrz/1-Mt-Makina-Logo.png">
-    <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale" content="${langConfig.locale}">
     <meta property="og:site_name" content="MT Makina">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,11 +147,11 @@
             <div class="cover-bottom-block"></div>
             <img src="../../assets/Mt Makina-Logo.png" alt="MT Makina Logo" class="cover-logo">
             <div class="cover-content">
-                <img src="images/1.jpeg" alt="DS-200 Dört Şaftlı Parçalama Makinesi" class="cover-img">
-                <h1 class="cover-model">DS-200</h1>
-                <p class="cover-title">Dört Şaftlı Parçalama Makinesi</p>
+                <img src="images/${img1}" alt="${modelName} ${pageTexts.quadShaftShredder[lang]}" class="cover-img">
+                <h1 class="cover-model">${modelName}</h1>
+                <p class="cover-title">${pageTexts.quadShaftShredder[lang]}</p>
                 <p class="cover-subtitle">Four Shaft Shredder</p>
-                <div class="cover-series">ÜRÜN KATALOĞU</div>
+                <div class="cover-series">${pageTexts.productCatalog[lang]}</div>
             </div>
             <!-- Tagline removed to prevent overlap -->
         </div>
@@ -134,34 +162,24 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>Ürün Tanıtımı</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.productIntro[lang]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
-            <div class="model-badge">DS-200</div>
-            <p style="font-size:12pt;line-height:1.8">DS-200, dört şaftlı parçalama makinesi serisinin en büyük ve en güçlü modelidir. 2000x2000mm dev parçalama alanı ve 4x75-160kW motor gücü ile mega ölçekli projelerin tüm ihtiyaçlarını karşılar.</p>
+            <div class="model-badge">${modelName}</div>
+            <p style="font-size:12pt;line-height:1.8">${model.description[lang]}</p>
             <div class="product-image-container">
-                <img src="images/2.jpeg" alt="DS-200" class="product-image" style="max-height:55mm">
+                <img src="images/${img2}" alt="${modelName}" class="product-image" style="max-height:55mm">
             </div>
             <div class="highlight-box">
-                <h3>Neden DS-200?</h3>
-                <p>Yapay zeka destekli otomasyon, dijital ikiz teknolojisi ve IoT sensör ağı ile Endüstri 5.0 standartlarının öncüsüdür. 5 yıl platinum garanti ile desteklenir.</p>
+                <h3>${pageTexts.whyModel[lang]} ${modelName}?</h3>
+                <p>${model.highlight[lang]}</p>
             </div>
             <div class="feature-grid">
-                <div class="feature-box"><h4>AI Destekli Otomasyon</h4></div>
-                <div class="feature-box"><h4>Digital Twin Teknolojisi</h4></div>
-                <div class="feature-box"><h4>IoT Sensör Ağı</h4></div>
-                <div class="feature-box"><h4>Regeneratif Enerji</h4></div>
+                ${feats.map(f => `<div class="feature-box"><h4>${f}</h4></div>`).join('\n                ')}
             </div>
-            <h3 style="margin-top:8mm">Parçalanabilir Malzemeler</h3>
+            <h3 style="margin-top:8mm">${pageTexts.materials[lang]}</h3>
             <ul class="material-list">
-                <li>Mega Ölçekli Atık</li>
-                <li>Komple Araçlar</li>
-                <li>Dev Lastikler</li>
-                <li>Endüstriyel Hurda</li>
-                <li>Konteynerler</li>
-                <li>Ağır Metal</li>
-                <li>Yoğun Plastik</li>
-                <li>Her Türlü Atık</li>
+                ${mats.map(m => `<li>${m}</li>`).join('\n                ')}
             </ul>
         </div>
         <span class="page-number">02</span>
@@ -172,38 +190,38 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>Uygulama Alanları</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.applicationAreas[lang]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
-            <p>DS-200, dört şaftlı parçalama makinesi serisinin en büyük ve en güçlü modelidir. 2000x2000mm dev parçalama alanı ve 4x75-160kW motor gücü ile mega ölçekli projelerin tüm ihtiyaçlarını karşılar....</p>
+            <p>${model.description[lang].substring(0, 200)}...</p>
             <div class="two-columns" style="margin-top:6mm">
                 <div class="column">
                     <div class="product-image-container" style="margin:0 0 3mm 0">
-                        <img src="images/3.png" alt="DS-200" class="product-image" style="max-height:45mm;border-radius:4px">
+                        <img src="images/${img3}" alt="${modelName}" class="product-image" style="max-height:45mm;border-radius:4px">
                     </div>
-                    <div class="app-card"><h4>Global Geri Dönüşüm Kompleksleri</h4><p>Uluslararası standartlarda entegre mega tesisler.</p></div>
+                    <div class="app-card"><h4>${apps[0].title}</h4><p>${apps[0].desc}</p></div>
                 </div>
                 <div class="column">
                     <div class="product-image-container" style="margin:0 0 3mm 0">
-                        <img src="images/4.png" alt="DS-200" class="product-image" style="max-height:45mm;border-radius:4px">
+                        <img src="images/${img4}" alt="${modelName}" class="product-image" style="max-height:45mm;border-radius:4px">
                     </div>
-                    <div class="app-card"><h4>Mega E-Atık Tesisleri</h4><p>Ülke çapında elektronik atık işleme merkezleri.</p></div>
+                    <div class="app-card"><h4>${apps[1].title}</h4><p>${apps[1].desc}</p></div>
                 </div>
             </div>
             <div class="two-columns" style="margin-top:6mm">
                 <div class="column">
-                    <div class="app-card"><h4>Endüstriyel Hurda İşleme</h4><p>Ağır sanayi hurda ve metal yönetimi.</p></div>
+                    <div class="app-card"><h4>${apps[2].title}</h4><p>${apps[2].desc}</p></div>
                 </div>
                 <div class="column">
-                    <div class="app-card"><h4>Turnkey Proje Çözümleri</h4><p>Komple atık yönetim sistemleri kurulumu.</p></div>
+                    <div class="app-card"><h4>${apps[3].title}</h4><p>${apps[3].desc}</p></div>
                 </div>
             </div>
             <div class="highlight-box" style="margin-top:6mm;text-align:center">
-                <h3>DS-200 Avantajları</h3>
-                <p>• AI Destekli Otomasyon • Digital Twin Teknolojisi • IoT Sensör Ağı • Regeneratif Enerji</p>
+                <h3>${modelName} ${pageTexts.advantages[lang]}</h3>
+                <p>• ${feats[0]} • ${feats[1]} • ${feats[2]} • ${feats[3]}</p>
             </div>
             <div class="product-image-container" style="margin-top:6mm">
-                <img src="images/5.png" alt="DS-200" class="product-image" style="max-height:45mm">
+                <img src="images/${img5}" alt="${modelName}" class="product-image" style="max-height:45mm">
             </div>
         </div>
         <span class="page-number">03</span>
@@ -214,47 +232,47 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>Teknik Detaylar</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.technicalDetails[lang]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div class="product-image-container">
-                <img src="images/6.png" alt="DS-200" class="product-image" style="max-height:65mm">
+                <img src="images/${img6}" alt="${modelName}" class="product-image" style="max-height:65mm">
             </div>
             <div class="callout-grid">
                 <div class="callout-box">
-                    <strong>Dört Şaft Sistemi</strong>
-                    <span>Dört bağımsız rotor ile malzeme geri beslenmesi önlenir ve homojen çıkış sağlanır.</span>
+                    <strong>${lang === 'tr' ? 'Dört Şaft Sistemi' : lang === 'en' ? 'Four Shaft System' : lang === 'ru' ? 'Четырехвальная Система' : 'نظام أربعة أعمدة'}</strong>
+                    <span>${lang === 'tr' ? 'Dört bağımsız rotor ile malzeme geri beslenmesi önlenir ve homojen çıkış sağlanır.' : lang === 'en' ? 'Four independent rotors prevent material feedback and ensure homogeneous output.' : lang === 'ru' ? 'Четыре независимых ротора предотвращают обратную подачу материала.' : 'أربعة دوارات مستقلة تمنع ارتداد المواد وتضمن مخرجات متجانسة.'}</span>
                 </div>
                 <div class="callout-box">
-                    <strong>Otomatik Geri Dönüş</strong>
-                    <span>Aşırı yük algılandığında rotorun ters dönmesi ile sıkışma önlenir.</span>
+                    <strong>${lang === 'tr' ? 'Otomatik Geri Dönüş' : lang === 'en' ? 'Auto-Reverse Function' : lang === 'ru' ? 'Функция Автореверса' : 'وظيفة الانعكاس التلقائي'}</strong>
+                    <span>${lang === 'tr' ? 'Aşırı yük algılandığında rotorun ters dönmesi ile sıkışma önlenir.' : lang === 'en' ? 'When overload is detected, rotor reversal prevents jamming.' : lang === 'ru' ? 'При обнаружении перегрузки реверс ротора предотвращает заклинивание.' : 'عند اكتشاف الحمل الزائد، يمنع انعكاس الدوار الانسداد.'}</span>
                 </div>
                 <div class="callout-box">
-                    <strong>Ayarlanabilir Elek</strong>
-                    <span>İstenilen çıkış boyutuna göre değiştirilebilir elek sistemi.</span>
+                    <strong>${lang === 'tr' ? 'Ayarlanabilir Elek' : lang === 'en' ? 'Adjustable Screen' : lang === 'ru' ? 'Регулируемое Сито' : 'غربال قابل للتعديل'}</strong>
+                    <span>${lang === 'tr' ? 'İstenilen çıkış boyutuna göre değiştirilebilir elek sistemi.' : lang === 'en' ? 'Screen system adjustable according to desired output size.' : lang === 'ru' ? 'Система сит, регулируемая по размеру выхода.' : 'نظام غربال قابل للتعديل حسب حجم المخرجات المطلوب.'}</span>
                 </div>
                 <div class="callout-box">
-                    <strong>Hardox Bıçaklar</strong>
-                    <span>Yüksek aşınma dirençli Hardox 450/500 çelik bıçaklar.</span>
+                    <strong>${lang === 'tr' ? 'Hardox Bıçaklar' : lang === 'en' ? 'Hardox Blades' : lang === 'ru' ? 'Ножи Hardox' : 'شفرات Hardox'}</strong>
+                    <span>${lang === 'tr' ? 'Yüksek aşınma dirençli Hardox 450/500 çelik bıçaklar.' : lang === 'en' ? 'High wear-resistant Hardox 450/500 steel blades.' : lang === 'ru' ? 'Высокоизносостойкие стальные ножи Hardox 450/500.' : 'شفرات فولاذية Hardox 450/500 عالية مقاومة التآكل.'}</span>
                 </div>
             </div>
             <div class="two-columns" style="margin-top:6mm">
                 <div class="column">
-                    <h3>Standart Donanım</h3>
+                    <h3>${pageTexts.standardEquipment[lang]}</h3>
                     <ul class="specs-list">
-                        <li><span class="spec-label">Gövde Malzemesi</span><span class="spec-value">St-52 Çelik</span></li>
-                        <li><span class="spec-label">Bıçak Malzemesi</span><span class="spec-value">Hardox 450/500</span></li>
-                        <li><span class="spec-label">Tahrik Sistemi</span><span class="spec-value">Redüktörlü Motor (4x)</span></li>
-                        <li><span class="spec-label">Kontrol Sistemi</span><span class="spec-value">PLC + HMI Panel</span></li>
+                        <li><span class="spec-label">${pageTexts.bodyMaterial[lang]}</span><span class="spec-value">St-52 ${lang === 'tr' ? 'Çelik' : lang === 'en' ? 'Steel' : lang === 'ru' ? 'Сталь' : 'فولاذ'}</span></li>
+                        <li><span class="spec-label">${pageTexts.bladeMaterial[lang]}</span><span class="spec-value">Hardox 450/500</span></li>
+                        <li><span class="spec-label">${pageTexts.driveSystem[lang]}</span><span class="spec-value">${lang === 'tr' ? 'Redüktörlü Motor (4x)' : lang === 'en' ? 'Geared Motor (4x)' : lang === 'ru' ? 'Мотор-Редуктор (4x)' : 'محرك مع علبة تروس (4x)'}</span></li>
+                        <li><span class="spec-label">${pageTexts.controlSystem[lang]}</span><span class="spec-value">PLC + HMI Panel</span></li>
                     </ul>
                 </div>
                 <div class="column">
-                    <h3>Opsiyonel Özellikler</h3>
+                    <h3>${pageTexts.optionalFeatures[lang]}</h3>
                     <ul class="specs-list">
-                        <li><span class="spec-label">Kayış Kasnaklı Hidrolik Kaplin</span><span class="spec-value">✓</span></li>
-                        <li><span class="spec-label">Rotor Soğutma Sistemi</span><span class="spec-value">✓</span></li>
-                        <li><span class="spec-label">Otomatik Yağlama Ünitesi</span><span class="spec-value">✓</span></li>
-                        <li><span class="spec-label">Hidrolik Baskı Ünitesi</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">${opts[0]}</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">${opts[1]}</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">${opts[2]}</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">${opts[3]}</span><span class="spec-value">✓</span></li>
                     </ul>
                 </div>
             </div>
@@ -267,39 +285,39 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>Teknik Kimlik Kartı</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.specSheet[lang]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div style="text-align:center;margin-bottom:6mm">
-                <div class="model-badge" style="font-size:32pt;padding:5mm 15mm">DS-200</div>
-                <p style="font-size:12pt;color:#666;margin-top:3mm">Dört Şaftlı Parçalama Makinesi</p>
+                <div class="model-badge" style="font-size:32pt;padding:5mm 15mm">${modelName}</div>
+                <p style="font-size:12pt;color:#666;margin-top:3mm">${pageTexts.quadShaftShredder[lang]}</p>
             </div>
             <div class="big-spec-grid">
                 <div class="big-spec-item">
-                    <span class="value">75 – 160 kW (4x)</span>
-                    <span class="label">Motor Gücü</span>
+                    <span class="value">${model.motorPower}</span>
+                    <span class="label">${pageTexts.motorPower[lang]}</span>
                 </div>
                 <div class="big-spec-item">
-                    <span class="value">2000 x 2000 mm</span>
-                    <span class="label">Parçalama Alanı</span>
+                    <span class="value">${model.area}</span>
+                    <span class="label">${pageTexts.shreddingArea[lang]}</span>
                 </div>
                 <div class="big-spec-item">
-                    <span class="value">2000 mm</span>
-                    <span class="label">Rotor Boyu</span>
+                    <span class="value">${model.rotorLength}</span>
+                    <span class="label">${pageTexts.rotorLength[lang]}</span>
                 </div>
             </div>
             <div class="spec-card">
-                <div class="spec-card-header"><h3>Detaylı Teknik Özellikler</h3></div>
-                <div class="spec-row"><span class="label">Model</span><span class="value highlight">DS-200</span></div>
-                <div class="spec-row"><span class="label">Motor Gücü</span><span class="value">75 – 160 kW (4x)</span></div>
-                <div class="spec-row"><span class="label">Parçalama Alanı</span><span class="value">2000 x 2000 mm</span></div>
-                <div class="spec-row"><span class="label">Rotor Boyu</span><span class="value">2000 mm</span></div>
-                <div class="spec-row"><span class="label">Şaft Sayısı</span><span class="value">4</span></div>
-                <div class="spec-row"><span class="label">Kapasite</span><span class="value">3500 - 6000 kg/saat</span></div>
+                <div class="spec-card-header"><h3>${pageTexts.detailedSpecs[lang]}</h3></div>
+                <div class="spec-row"><span class="label">Model</span><span class="value highlight">${modelName}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.motorPower[lang]}</span><span class="value">${model.motorPower}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.shreddingArea[lang]}</span><span class="value">${model.area}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.rotorLength[lang]}</span><span class="value">${model.rotorLength}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.shaftCount[lang]}</span><span class="value">${model.shaftCount}</span></div>
+                <div class="spec-row"><span class="label">${pageTexts.capacity[lang]}</span><span class="value">${model.capacity}</span></div>
             </div>
             <div class="highlight-box" style="margin-top:4mm">
-                <h3>Not</h3>
-                <p>Kapasite değerleri malzeme türüne, boyutuna ve yoğunluğuna göre değişiklik gösterebilir. Projenize özel teknik detaylar için satış ekibimizle iletişime geçiniz.</p>
+                <h3>${lang === 'tr' ? 'Not' : lang === 'en' ? 'Note' : lang === 'ru' ? 'Примечание' : 'ملاحظة'}</h3>
+                <p>${lang === 'tr' ? 'Kapasite değerleri malzeme türüne, boyutuna ve yoğunluğuna göre değişiklik gösterebilir. Projenize özel teknik detaylar için satış ekibimizle iletişime geçiniz.' : lang === 'en' ? 'Capacity values may vary depending on material type, size and density. Please contact our sales team for project-specific technical details.' : lang === 'ru' ? 'Значения производительности могут варьироваться в зависимости от типа, размера и плотности материала. Свяжитесь с нами для уточнения деталей.' : 'قد تختلف قيم السعة حسب نوع المادة وحجمها وكثافتها. يرجى الاتصال بفريق المبيعات لدينا للحصول على تفاصيل فنية خاصة بالمشروع.'}</p>
             </div>
         </div>
         <span class="page-number">05</span>
@@ -310,12 +328,12 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>Referanslarımız</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.references[lang]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div class="references-intro">
-                <p>Türkiye'nin ve dünyanın önde gelen kurum ve kuruluşları MT Makina'yı tercih ediyor.</p>
-                <span class="references-count">40+ Referans</span>
+                <p>${lang === 'tr' ? 'Türkiye\'nin ve dünyanın önde gelen kurum ve kuruluşları MT Makina\'yı tercih ediyor.' : lang === 'en' ? 'Leading institutions and organizations in Turkey and the world choose MT Makina.' : lang === 'ru' ? 'Ведущие учреждения Турции и мира выбирают MT Makina.' : 'المؤسسات الرائدة في تركيا والعالم تختار MT Makina.'}</p>
+                <span class="references-count">40+ ${lang === 'tr' ? 'Referans' : lang === 'en' ? 'References' : lang === 'ru' ? 'Референсов' : 'مرجع'}</span>
             </div>
             <div class="references-grid">
                 <div class="reference-logo"><img src="../../assets/referanslar/aselsan-logo.webp" alt="Aselsan"></div>
@@ -348,37 +366,29 @@
     <div class="page">
         <div class="page-content">
             <div class="page-header">
-                <div class="section-header" style="margin-bottom:0"><h2>Opsiyonel Özellikler</h2></div>
+                <div class="section-header" style="margin-bottom:0"><h2>${pageTexts.optionalFeatures[lang]}</h2></div>
                 <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
             </div>
             <div class="two-columns">
                 <div class="column">
                     <div class="optional-features">
                         <ul>
-                        <li>Kayış Kasnaklı Hidrolik Kaplin</li>
-                        <li>Rotor Soğutma Sistemi</li>
-                        <li>Otomatik Yağlama Ünitesi</li>
-                        <li>Hidrolik Baskı Ünitesi</li>
-                        <li>Farklı Ölçülerde Elek</li>
-                        <li>Cıvatalı sökülebilen bıçak tasarımı</li>
-                        <li>Hidromotor tahrik sistemi</li>
-                        <li>Ofis ve endüstriyel tip şase tasarımı</li>
-                        <li>Çıkış İçin Konveyör Uygulamaları</li>
+                        ${opts.map(o => `<li>${o}</li>`).join('\n                        ')}
                         </ul>
                     </div>
                     <div class="product-image-container" style="margin-top:6mm">
-                        <img src="images/1.jpeg" alt="DS-200" class="product-image" style="max-height:55mm">
+                        <img src="images/${img1}" alt="${modelName}" class="product-image" style="max-height:55mm">
                     </div>
                 </div>
                 <div class="column">
                     <div class="contact-section">
-                        <h3>Bizimle İletişime Geçin</h3>
+                        <h3>${pageTexts.contactUs[lang]}</h3>
                         <div class="contact-group">
-                            <div class="contact-group-title">ADRES</div>
+                            <div class="contact-group-title">${pageTexts.address[lang]}</div>
                             <p class="address-text">Cumhuriyet Mah., Nazım Hikmet Blv., 1983 Sk. Kent Palas 2 Kat:7 D:85-86, 34512 Esenyurt/İSTANBUL</p>
                         </div>
                         <div class="contact-group">
-                            <div class="contact-group-title">TELEFON</div>
+                            <div class="contact-group-title">${pageTexts.phone[lang]}</div>
                             <p style="font-size:10pt;margin-bottom:1mm">+90 850 259 01 66</p>
                             <p style="font-size:10pt;margin-bottom:0">+90 212 613 31 82</p>
                         </div>
@@ -402,4 +412,61 @@
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 </body>
-</html>
+</html>`;
+}
+
+// Dizin oluştur ve görselleri kopyala
+function setupModelDirectory(modelId: string) {
+    const modelDir = path.join(BASE_DIR, modelId);
+    const imagesDir = path.join(modelDir, 'images');
+
+    if (!fs.existsSync(modelDir)) {
+        fs.mkdirSync(modelDir, { recursive: true });
+    }
+    if (!fs.existsSync(imagesDir)) {
+        fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    // Kaynak görselleri kopyala
+    try {
+        const sourceImages = fs.readdirSync(SOURCE_IMAGES_DIR);
+        sourceImages.forEach(img => {
+            const srcPath = path.join(SOURCE_IMAGES_DIR, img);
+            const destPath = path.join(imagesDir, img);
+            if (!fs.existsSync(destPath)) {
+                fs.copyFileSync(srcPath, destPath);
+                console.log(`  ✓ Copied: ${img}`);
+            }
+        });
+    } catch (e) {
+        console.log(`  ⚠ Could not copy images for ${modelId}`);
+    }
+}
+
+// Ana işlem
+console.log('\\n🚀 DS Katalog V2 oluşturma başlatıldı...\\n');
+
+const modelIds = Object.keys(models);
+const langKeys = Object.keys(languages) as Array<keyof typeof languages>;
+
+modelIds.forEach(modelId => {
+    console.log(`📁 ${modelId.toUpperCase()} işleniyor...`);
+
+    // Dizin ve görselleri hazırla
+    setupModelDirectory(modelId);
+
+    // Her dil için katalog oluştur
+    langKeys.forEach(lang => {
+        const suffix = languages[lang].suffix;
+        const filename = `catalog${suffix}.html`;
+        const filepath = path.join(BASE_DIR, modelId, filename);
+
+        const html = generateCatalogHTML(modelId, lang);
+        fs.writeFileSync(filepath, html, 'utf8');
+        console.log(`  ✅ ${filename}`);
+    });
+    console.log('');
+});
+
+console.log('🎉 Tüm DS katalogları başarıyla oluşturuldu!');
+console.log(`   Toplam: ${modelIds.length} model x ${langKeys.length} dil = ${modelIds.length * langKeys.length} katalog`);

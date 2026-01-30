@@ -47,8 +47,7 @@
         .cover-tagline{position:absolute;bottom:30mm;left:50%;transform:translateX(-50%);z-index:10;color:var(--white);font-size:16pt;font-weight:500;letter-spacing:3px;text-transform:uppercase}
         .page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8mm;padding-bottom:4mm;border-bottom:1px solid var(--border-gray)}
         .page-header-icon{width:12mm;height:auto;opacity:0.8}
-        .section-header{margin-bottom:12mm}
-        .section-header h2{margin-bottom:0}
+        .section-header{margin-bottom:12mm}.section-header h2{margin-bottom:0}
         .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6mm;margin-top:8mm}
         .feature-box{background:var(--light-gray);border-left:4px solid var(--primary-yellow);padding:5mm}
         .feature-box h4{font-size:11pt;font-weight:700;color:var(--dark-anthracite);margin-bottom:2mm}
@@ -74,7 +73,7 @@
         .spec-row .value.highlight{color:var(--primary-yellow);background:var(--dark-anthracite);padding:2mm 4mm;border-radius:3px}
         .big-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin:8mm 0}
         .big-spec-item{background:var(--dark-anthracite);color:var(--white);padding:6mm;text-align:center;border-radius:4px}
-        .big-spec-item .value{font-size:22pt;font-weight:900;color:var(--primary-yellow);display:block;margin-bottom:2mm}
+        .big-spec-item .value{font-size:20pt;font-weight:900;color:var(--primary-yellow);display:block;margin-bottom:2mm}
         .big-spec-item .unit{font-size:10pt;font-weight:400;color:var(--primary-yellow);opacity:0.8}
         .big-spec-item .label{font-size:9pt;font-weight:500;color:#aaa;text-transform:uppercase;letter-spacing:0.5px}
         .two-columns{display:grid;grid-template-columns:1fr 1fr;gap:10mm}
@@ -86,6 +85,26 @@
         .website-box{background:var(--light-gray);padding:4mm;text-align:center;border-radius:4px;margin-top:4mm}
         .website-box p{margin:0;font-size:12pt;font-weight:700;color:var(--dark-anthracite)}
         .website-box p.secondary{font-size:10pt;font-weight:500;color:#666;margin-top:1mm}
+        .app-card{background:var(--light-gray);padding:4mm;border-radius:4px;margin-bottom:4mm}
+        .app-card h4{font-size:11pt;font-weight:700;color:var(--dark-anthracite);margin-bottom:2mm}
+        .app-card p{font-size:9pt;color:#555;margin-bottom:0;line-height:1.5}
+        .material-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:5mm}
+        .material-list li{background:var(--light-gray);padding:3mm 4mm;border-left:3px solid var(--primary-yellow);font-size:10pt;font-weight:500}
+        .specs-list{list-style:none;margin-top:5mm}
+        .specs-list li{padding:3mm 0;border-bottom:1px solid var(--border-gray);display:flex;justify-content:space-between}
+        .specs-list li:last-child{border-bottom:none}
+        .specs-list .spec-label{font-weight:500;color:#666}
+        .specs-list .spec-value{font-weight:700;color:var(--dark-anthracite)}
+        .callout-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:6mm}
+        .callout-box{background:var(--white);border:2px solid var(--primary-yellow);border-radius:4px;padding:3mm 4mm;font-size:9pt;box-shadow:0 2px 8px rgba(0,0,0,0.15);margin-bottom:4mm}
+        .callout-box strong{color:var(--dark-anthracite);display:block;margin-bottom:1mm;font-size:10pt}
+        .callout-box span{color:#555;font-size:9pt;line-height:1.4}
+        .references-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;margin-top:6mm}
+        .reference-logo{background:var(--white);border:1px solid var(--border-gray);border-radius:4px;padding:3mm;display:flex;align-items:center;justify-content:center;height:22mm}
+        .reference-logo img{max-width:100%;max-height:100%;object-fit:contain}
+        .references-intro{text-align:center;margin-bottom:8mm}
+        .references-intro p{font-size:12pt;color:#666}
+        .references-count{display:inline-block;background:var(--primary-yellow);color:var(--dark-anthracite);font-size:11pt;font-weight:700;padding:2mm 5mm;border-radius:3px;margin-top:3mm}
         .optional-features ul{list-style:none;padding:0;margin:0}
         .optional-features li{padding:3mm 0 3mm 8mm;border-bottom:1px solid var(--border-gray);position:relative;font-size:10pt}
         .optional-features li::before{content:'✓';position:absolute;left:0;color:var(--primary-yellow);font-weight:700}
@@ -106,7 +125,7 @@
                 <p class="cover-subtitle">Four Shaft Shredder</p>
                 <div class="cover-series">PRODUCT CATALOG</div>
             </div>
-            <p class="cover-tagline">Four Shaft Power, Compact Design</p>
+            <!-- Tagline removed to prevent overlap -->
         </div>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
@@ -121,18 +140,130 @@
             <div class="model-badge">DS-80</div>
             <p style="font-size:12pt;line-height:1.8">The DS-80 is the compact model of our four shaft shredder series, offering an ideal solution for medium-sized facilities. With its 800x800mm shredding area and four independent motors, it provides maximum shredding efficiency. It demonstrates superior performance in applications requiring safety and precision.</p>
             <div class="product-image-container">
-                <img src="images/2.jpeg" alt="DS-80" class="product-image" style="max-height:60mm">
+                <img src="images/2.jpeg" alt="DS-80" class="product-image" style="max-height:55mm">
             </div>
             <div class="highlight-box">
                 <h3>Why DS-80?</h3>
                 <p>Four shaft design prevents material feedback and achieves homogeneous particle size. Ideal for confidential document destruction, plastic and rubber recycling. Suitable for office environments with low noise levels.</p>
             </div>
+            <div class="feature-grid">
+                <div class="feature-box"><h4>Four Motor System</h4></div>
+                <div class="feature-box"><h4>Auto Reverse Function</h4></div>
+                <div class="feature-box"><h4>PLC Control Panel</h4></div>
+                <div class="feature-box"><h4>Modular Blade Design</h4></div>
+            </div>
+            <h3 style="margin-top:8mm">Shreddable Materials</h3>
+            <ul class="material-list">
+                <li>Plastic Films</li>
+                <li>PET Bottles</li>
+                <li>Cardboard-Paper</li>
+                <li>Textile Waste</li>
+                <li>E-Waste</li>
+                <li>Rubber</li>
+                <li>Wood</li>
+                <li>Cable Waste</li>
+            </ul>
         </div>
         <span class="page-number">02</span>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 
-    <!-- PAGE 3: SPEC SHEET -->
+    <!-- PAGE 3: APPLICATION AREAS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Application Areas</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <p>The DS-80 is the compact model of our four shaft shredder series, offering an ideal solution for medium-sized facilities. With its 800x800mm shredding area and four independent motors, it provides max...</p>
+            <div class="two-columns" style="margin-top:6mm">
+                <div class="column">
+                    <div class="product-image-container" style="margin:0 0 3mm 0">
+                        <img src="images/3.png" alt="DS-80" class="product-image" style="max-height:45mm;border-radius:4px">
+                    </div>
+                    <div class="app-card"><h4>Recycling Facilities</h4><p>Pre-shredding of plastic, paper and cardboard waste.</p></div>
+                </div>
+                <div class="column">
+                    <div class="product-image-container" style="margin:0 0 3mm 0">
+                        <img src="images/4.png" alt="DS-80" class="product-image" style="max-height:45mm;border-radius:4px">
+                    </div>
+                    <div class="app-card"><h4>E-Waste Centers</h4><p>Safe destruction of electronic boards, cables and small devices.</p></div>
+                </div>
+            </div>
+            <div class="two-columns" style="margin-top:6mm">
+                <div class="column">
+                    <div class="app-card"><h4>Document Destruction</h4><p>Secure shredding of confidential documents and archives.</p></div>
+                </div>
+                <div class="column">
+                    <div class="app-card"><h4>Textile Recycling</h4><p>Processing of fabric and textile waste.</p></div>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top:6mm;text-align:center">
+                <h3>DS-80 Advantages</h3>
+                <p>• Four Motor System • Auto Reverse Function • PLC Control Panel • Modular Blade Design</p>
+            </div>
+            <div class="product-image-container" style="margin-top:6mm">
+                <img src="images/5.png" alt="DS-80" class="product-image" style="max-height:45mm">
+            </div>
+        </div>
+        <span class="page-number">03</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 4: TECHNICAL DETAILS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Technical Details</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="product-image-container">
+                <img src="images/6.png" alt="DS-80" class="product-image" style="max-height:65mm">
+            </div>
+            <div class="callout-grid">
+                <div class="callout-box">
+                    <strong>Four Shaft System</strong>
+                    <span>Four independent rotors prevent material feedback and ensure homogeneous output.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Auto-Reverse Function</strong>
+                    <span>When overload is detected, rotor reversal prevents jamming.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Adjustable Screen</strong>
+                    <span>Screen system adjustable according to desired output size.</span>
+                </div>
+                <div class="callout-box">
+                    <strong>Hardox Blades</strong>
+                    <span>High wear-resistant Hardox 450/500 steel blades.</span>
+                </div>
+            </div>
+            <div class="two-columns" style="margin-top:6mm">
+                <div class="column">
+                    <h3>Standard Equipment</h3>
+                    <ul class="specs-list">
+                        <li><span class="spec-label">Body Material</span><span class="spec-value">St-52 Steel</span></li>
+                        <li><span class="spec-label">Blade Material</span><span class="spec-value">Hardox 450/500</span></li>
+                        <li><span class="spec-label">Drive System</span><span class="spec-value">Geared Motor (4x)</span></li>
+                        <li><span class="spec-label">Control System</span><span class="spec-value">PLC + HMI Panel</span></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Optional Features</h3>
+                    <ul class="specs-list">
+                        <li><span class="spec-label">Belt Pulley Hydraulic Coupling</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">Rotor Cooling System</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">Automatic Lubrication Unit</span><span class="spec-value">✓</span></li>
+                        <li><span class="spec-label">Hydraulic Pusher Unit</span><span class="spec-value">✓</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <span class="page-number">04</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 5: SPEC SHEET -->
     <div class="page">
         <div class="page-content">
             <div class="page-header">
@@ -164,16 +295,56 @@
                 <div class="spec-row"><span class="label">Shredding Area</span><span class="value">800 x 800 mm</span></div>
                 <div class="spec-row"><span class="label">Rotor Length</span><span class="value">800 mm</span></div>
                 <div class="spec-row"><span class="label">Number of Shafts</span><span class="value">4</span></div>
+                <div class="spec-row"><span class="label">Capacity</span><span class="value">600 - 1000 kg/saat</span></div>
             </div>
-            <div class="product-image-container">
-                <img src="images/3.png" alt="DS-80" class="product-image" style="max-height:45mm">
+            <div class="highlight-box" style="margin-top:4mm">
+                <h3>Note</h3>
+                <p>Capacity values may vary depending on material type, size and density. Please contact our sales team for project-specific technical details.</p>
             </div>
         </div>
-        <span class="page-number">03</span>
+        <span class="page-number">05</span>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 
-    <!-- PAGE 4: OPTIONAL FEATURES & CONTACT -->
+    <!-- PAGE 6: REFERENCES -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <div class="section-header" style="margin-bottom:0"><h2>Our References</h2></div>
+                <img src="../../assets/logoicon.png" alt="MT Makina" class="page-header-icon">
+            </div>
+            <div class="references-intro">
+                <p>Leading institutions and organizations in Turkey and the world choose MT Makina.</p>
+                <span class="references-count">40+ References</span>
+            </div>
+            <div class="references-grid">
+                <div class="reference-logo"><img src="../../assets/referanslar/aselsan-logo.webp" alt="Aselsan"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/bosch-logo.webp" alt="Bosch"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/pepsico-logo.webp" alt="PepsiCo"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/castrol-logo.webp" alt="Castrol"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/bp-logo.webp" alt="BP"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/iga-logo.webp" alt="İGA"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tav-havalimanlari-logo.webp" alt="TAV"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/remondis-logo.webp" alt="Remondis"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tei-logo.webp" alt="TEI"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/mke-logo.webp" alt="MKE"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tcmb-logo.webp" alt="TCMB"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/saglik-bakanligi-logo.webp" alt="Sağlık Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/adalet-bakanligi-logo.webp" alt="Adalet Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/disisleri-bakanligi-logo.webp" alt="Dışişleri Bakanlığı"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/genelkurmay-baskanligi-logo.webp" alt="Genelkurmay"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/ibb-logo.webp" alt="İBB"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/tusas-logo.webp" alt="TUSAŞ"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/havelsan-logo.webp" alt="Havelsan"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/roketsan-logo.webp" alt="Roketsan"></div>
+                <div class="reference-logo"><img src="../../assets/referanslar/turkiye-finans-logo.webp" alt="Türkiye Finans"></div>
+            </div>
+        </div>
+        <span class="page-number">06</span>
+        <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
+    </div>
+
+    <!-- PAGE 7: OPTIONAL FEATURES & CONTACT -->
     <div class="page">
         <div class="page-content">
             <div class="page-header">
@@ -196,7 +367,7 @@
                         </ul>
                     </div>
                     <div class="product-image-container" style="margin-top:6mm">
-                        <img src="images/4.png" alt="DS-80" class="product-image" style="max-height:55mm">
+                        <img src="images/1.jpeg" alt="DS-80" class="product-image" style="max-height:55mm">
                     </div>
                 </div>
                 <div class="column">
@@ -227,7 +398,7 @@
                 </div>
             </div>
         </div>
-        <span class="page-number">04</span>
+        <span class="page-number">07</span>
         <div class="page-footer"><span>www.mtmakina.com.tr</span><span>www.parcalamamakinesi.com</span></div>
     </div>
 </body>
