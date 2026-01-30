@@ -459,6 +459,9 @@ function AppContent() {
     window.history.pushState({ page, ...extraState }, '', url);
     updatePageSEO(page, extraState?.product, extraState?.model);
 
+    // Dispatch custom event for components listening to URL changes (e.g., ECatalogPage)
+    window.dispatchEvent(new Event('urlchange'));
+
     // Track page view in GA4
     trackPageView(url);
   };

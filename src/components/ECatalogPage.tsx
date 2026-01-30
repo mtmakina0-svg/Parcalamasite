@@ -213,27 +213,55 @@ const ModelCard = ({
   );
 };
 
-export const ECatalogPage = ({ onBackToMain, onNavigate }: ECatalogPageProps) => {
+export const ECatalogPage = ({ onBackToMain }: ECatalogPageProps) => {
   const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<CatalogCategory | null>(null);
 
   const categories = getAvailableCategories();
   const catalogsInCategory = selectedCategory ? getCatalogsWithImages(selectedCategory) : [];
 
-  // Parse URL to get initial category
-  useEffect(() => {
-    const path = window.location.pathname;
-    const pathParts = path.split('/').filter(Boolean);
+  // Track current pathname to detect changes
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
-    // URL format: /tr/e-katalog/tek-saftli
-    if (pathParts.length >= 3 && (pathParts[1] === 'e-katalog' || pathParts[1] === 'e-catalog')) {
-      const categorySlug = pathParts[2];
-      const category = getCategoryFromSlug(categorySlug, language as Language);
-      if (category) {
-        setSelectedCategory(category);
+  // Listen for URL changes (popstate for browser back/forward, and custom event for programmatic navigation)
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    // Listen for browser back/forward navigation
+    window.addEventListener('popstate', handleLocationChange);
+
+    // Also listen for custom navigation events (from header links)
+    window.addEventListener('urlchange', handleLocationChange);
+
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('urlchange', handleLocationChange);
+    };
+  }, []);
+
+  // Parse URL to get initial category - now depends on currentPath
+  useEffect(() => {
+    const pathParts = currentPath.split('/').filter(Boolean);
+
+    // URL format: /tr/e-katalog/tek-saftli or /tr/e-katalog
+    if (pathParts.length >= 2 && (pathParts[1] === 'e-katalog' || pathParts[1] === 'e-catalog')) {
+      if (pathParts.length >= 3) {
+        // Category is specified in URL
+        const categorySlug = pathParts[2];
+        const category = getCategoryFromSlug(categorySlug, language as Language);
+        if (category) {
+          setSelectedCategory(category);
+        } else {
+          setSelectedCategory(null);
+        }
+      } else {
+        // Just /tr/e-katalog - show category list
+        setSelectedCategory(null);
       }
     }
-  }, [language]);
+  }, [language, currentPath]);
 
   // Update URL when category changes
   const updateUrl = (category: CatalogCategory | null) => {
