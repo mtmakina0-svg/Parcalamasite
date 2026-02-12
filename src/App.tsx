@@ -1,5 +1,5 @@
 import { HelmetProvider } from 'react-helmet-async';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { initGA, trackPageView } from './utils/analytics';
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { Header } from './components/Header';
@@ -11,24 +11,25 @@ import { ReferencesSection } from './components/ReferencesSection';
 import { ContactSection } from './components/ContactSection';
 import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
-import { WasteCategoriesPage } from './components/WasteCategoriesPage';
-import { WasteDetailPage } from './components/WasteDetailPage';
+const WasteCategoriesPage = lazy(() => import('./components/WasteCategoriesPage').then(m => ({ default: m.WasteCategoriesPage })));
+const WasteDetailPage = lazy(() => import('./components/WasteDetailPage').then(m => ({ default: m.WasteDetailPage })));
 import { ChatWidget } from './components/ChatWidget';
-import { ProductsOverviewPage } from './components/ProductsOverviewPage';
-import { AboutPage } from './components/AboutPage';
-import { ReferencesOverviewPage } from './components/ReferencesOverviewPage';
-import { TechnologyPage } from './components/TechnologyPage';
-import { CertificatesPage } from './components/CertificatesPage';
-import { ProductDetailPage } from './components/ProductDetailPage';
-import { ProductCategoryPage } from './components/ProductCategoryPage';
-import { ECatalogPage } from './components/ECatalogPage';
-import { ContactPage } from './components/ContactPage';
-import { NotFoundPage } from './components/NotFoundPage';
-import { BlogPage } from './components/BlogPage';
-import { BlogPostPage } from './components/BlogPostPage';
+import { PageLoadingSpinner } from './components/PageLoadingSpinner';
+const ProductsOverviewPage = lazy(() => import('./components/ProductsOverviewPage').then(m => ({ default: m.ProductsOverviewPage })));
+const AboutPage = lazy(() => import('./components/AboutPage').then(m => ({ default: m.AboutPage })));
+const ReferencesOverviewPage = lazy(() => import('./components/ReferencesOverviewPage').then(m => ({ default: m.ReferencesOverviewPage })));
+const TechnologyPage = lazy(() => import('./components/TechnologyPage').then(m => ({ default: m.TechnologyPage })));
+const CertificatesPage = lazy(() => import('./components/CertificatesPage').then(m => ({ default: m.CertificatesPage })));
+const ProductDetailPage = lazy(() => import('./components/ProductDetailPage').then(m => ({ default: m.ProductDetailPage })));
+const ProductCategoryPage = lazy(() => import('./components/ProductCategoryPage').then(m => ({ default: m.ProductCategoryPage })));
+const ECatalogPage = lazy(() => import('./components/ECatalogPage').then(m => ({ default: m.ECatalogPage })));
+const ContactPage = lazy(() => import('./components/ContactPage').then(m => ({ default: m.ContactPage })));
+const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
+const BlogPage = lazy(() => import('./components/BlogPage').then(m => ({ default: m.BlogPage })));
+const BlogPostPage = lazy(() => import('./components/BlogPostPage').then(m => ({ default: m.BlogPostPage })));
 import { IntroLoader } from './components/IntroLoader';
 import { MobileStickyBar } from './components/MobileStickyBar';
-import { ROICalculator } from './components/ROICalculator';
+const ROICalculator = lazy(() => import('./components/ROICalculator').then(m => ({ default: m.ROICalculator })));
 import {
   generateUrl,
   seoMetadata,
@@ -181,7 +182,7 @@ function AppContent() {
     // Explicitly define the type to handle both Function and Object based metadata
     let seoDataSource: SEOMetadata | ((lang?: Language) => SEOMetadata) = seoMetadata.home;
 
-    let pageTypeForHreflang: any = 'home';
+    let pageTypeForHreflang: 'home' | 'about' | 'products' | 'technology' | 'references' | 'certificates' | 'contact' | 'ecatalog' | 'product-category' | 'product-detail' | 'waste-categories' | 'waste-detail' | undefined = 'home';
     let productTypeForHreflang: string | undefined = undefined;
     let modelForHreflang: string | undefined = undefined;
     let wasteCategoryForHreflang: string | undefined = undefined;
@@ -253,12 +254,12 @@ function AppContent() {
     // Initialize Google Analytics
     initGA();
 
-    console.log('App.tsx - Initializing, current pathname:', window.location.pathname);
+    if (import.meta.env.DEV) console.log('App.tsx - Initializing, current pathname:', window.location.pathname);
 
     // Check if there's a saved redirect path from 404 page
     const savedPath = sessionStorage.getItem('spa_redirect_path');
     if (savedPath) {
-      console.log('App.tsx - Found saved redirect path:', savedPath);
+      if (import.meta.env.DEV) console.log('App.tsx - Found saved redirect path:', savedPath);
       sessionStorage.removeItem('spa_redirect_path');
       // Use replaceState to update URL without reloading and without adding to history
       window.history.replaceState({}, '', savedPath);
@@ -270,7 +271,7 @@ function AppContent() {
     if (legacyHomeMatch) {
       const lang = legacyHomeMatch[1];
       const correctUrl = lang === 'tr' ? '/' : `/${lang}`;
-      console.log(`App.tsx - Redirecting legacy URL ${currentPath} to ${correctUrl}`);
+      if (import.meta.env.DEV) console.log(`App.tsx - Redirecting legacy URL ${currentPath} to ${correctUrl}`);
       window.location.replace(correctUrl);
       return;
     }
@@ -285,7 +286,7 @@ function AppContent() {
     }
 
     const urlState = parseUrl();
-    console.log('App.tsx - Parsed URL state:', urlState);
+    if (import.meta.env.DEV) console.log('App.tsx - Parsed URL state:', urlState);
 
     setCurrentPage(urlState.page);
     if (urlState.product) setSelectedProduct(urlState.product);
@@ -503,7 +504,7 @@ function AppContent() {
   };
 
   const handleNavigateToProductCategory = (productType: string) => {
-    console.log('🎯 handleNavigateToProductCategory called with:', productType);
+    if (import.meta.env.DEV) console.log('🎯 handleNavigateToProductCategory called with:', productType);
     const url = generateUrl.productCategory(productType, language as Language);
     navigateWithUrl('product-category', url, { product: productType as ProductType });
   };
@@ -585,11 +586,13 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ProductCategoryPage
-          productType={selectedProduct}
-          onBackToMain={handleBackFromCategory}
-          onModelSelect={(modelName) => handleNavigateToProductDetail(selectedProduct, modelName)}
-        />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <ProductCategoryPage
+            productType={selectedProduct}
+            onBackToMain={handleBackFromCategory}
+            onModelSelect={(modelName) => handleNavigateToProductDetail(selectedProduct, modelName)}
+          />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -622,7 +625,9 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ContactPage onBackToMain={handleNavigateToMain} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <ContactPage onBackToMain={handleNavigateToMain} />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -653,7 +658,9 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ECatalogPage key={ecatalogKey} onBackToMain={handleNavigateToMain} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <ECatalogPage key={ecatalogKey} onBackToMain={handleNavigateToMain} />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -686,13 +693,15 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ProductDetailPage
-          productType={selectedProduct}
-          modelName={selectedModelName}
-          onBackToMain={handleBackFromProductDetail}
-          onECatalogClick={handleNavigateToECatalog}
-          onProductDetailClick={handleNavigateToProductDetail}
-        />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <ProductDetailPage
+            productType={selectedProduct}
+            modelName={selectedModelName}
+            onBackToMain={handleBackFromProductDetail}
+            onECatalogClick={handleNavigateToECatalog}
+            onProductDetailClick={handleNavigateToProductDetail}
+          />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -725,7 +734,9 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <CertificatesPage onBackToMain={handleNavigateToMain} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <CertificatesPage onBackToMain={handleNavigateToMain} />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -758,7 +769,9 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <TechnologyPage onBackToMain={handleNavigateToMain} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <TechnologyPage onBackToMain={handleNavigateToMain} />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -791,10 +804,12 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ProductsOverviewPage
-          onBackToMain={handleNavigateToMain}
-          onProductClick={handleNavigateToProductCategory}
-        />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <ProductsOverviewPage
+            onBackToMain={handleNavigateToMain}
+            onProductClick={handleNavigateToProductCategory}
+          />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -827,7 +842,9 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <AboutPage onBackToMain={handleNavigateToMain} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <AboutPage onBackToMain={handleNavigateToMain} />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -860,7 +877,9 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <ReferencesOverviewPage onBackToMain={handleNavigateToMain} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <ReferencesOverviewPage onBackToMain={handleNavigateToMain} />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -893,10 +912,12 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <WasteCategoriesPage
-          onCategorySelect={handleWasteCategorySelect}
-          onBackToMain={handleNavigateToMain}
-        />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <WasteCategoriesPage
+            onCategorySelect={handleWasteCategorySelect}
+            onBackToMain={handleNavigateToMain}
+          />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -929,10 +950,12 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <WasteDetailPage
-          categoryId={selectedWasteCategory}
-          onBack={handleBackFromWasteDetail}
-        />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <WasteDetailPage
+            categoryId={selectedWasteCategory}
+            onBack={handleBackFromWasteDetail}
+          />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -962,7 +985,9 @@ function AppContent() {
           onProductDetailClick={handleNavigateToProductDetail}
           onContactClick={handleNavigateToContact}
         />
-        <NotFoundPage onBackToMain={handleNavigateToMain} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <NotFoundPage onBackToMain={handleNavigateToMain} />
+        </Suspense>
         <ChatWidget />
       </>
     );
@@ -1000,7 +1025,9 @@ function AppContent() {
             window.scrollTo(0, 0);
           }}
         />
-        <BlogPage />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <BlogPage />
+        </Suspense>
         <ChatWidget />
         <Footer />
       </>
@@ -1030,7 +1057,9 @@ function AppContent() {
             window.scrollTo(0, 0);
           }}
         />
-        <BlogPostPage slug={selectedBlogSlug} />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <BlogPostPage slug={selectedBlogSlug} />
+        </Suspense>
         <ChatWidget />
         <Footer />
       </>
@@ -1073,7 +1102,9 @@ function AppContent() {
             <HeroSection />
             <IntroSection />
             <ProductsSection onProductClick={handleNavigateToProductCategory} />
-            <ROICalculator />
+            <Suspense fallback={<PageLoadingSpinner />}>
+              <ROICalculator />
+            </Suspense>
             <TechnologySection />
             <ReferencesSection />
             <ContactSection />

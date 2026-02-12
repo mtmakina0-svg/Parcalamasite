@@ -15,7 +15,7 @@ interface SEOHeadProps {
   canonical: string;
   ogImage?: string;
   ogType?: string;
-  structuredData?: any;
+  structuredData?: Record<string, unknown>;
   noindex?: boolean;
   pageType?: 'home' | 'about' | 'products' | 'technology' | 'references' | 'certificates' | 'contact' | 'ecatalog' | 'product-category' | 'product-detail' | 'waste-categories' | 'waste-detail';
   productType?: string;

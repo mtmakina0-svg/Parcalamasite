@@ -8,6 +8,17 @@ const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/
 const rateLimitMap = new Map();
 const RATE_LIMIT = 20; // requests per minute
 const RATE_WINDOW = 60 * 1000; // 1 minute
+const MAX_MESSAGE_LENGTH = 2000;
+const MAX_HISTORY_LENGTH = 20;
+const ALLOWED_LANGUAGES = ['tr', 'en', 'ru', 'ar'];
+
+// CORS whitelist
+const ALLOWED_ORIGINS = [
+    'https://www.parcalamamakinesi.com',
+    'https://parcalamamakinesi.com',
+    'http://localhost:3000',
+    'http://localhost:5173'
+];
 
 // MT Makina system prompt
 const SYSTEM_PROMPT = `Sen MT Makina'nın resmi AI asistanısın. Adın "MT Asistan".
@@ -81,6 +92,20 @@ function checkRateLimit(ip) {
 }
 
 module.exports = async function handler(req, res) {
+    // CORS restriction
+    const origin = req.headers.origin;
+    if (origin && ALLOWED_ORIGINS.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+        res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        res.setHeader('Access-Control-Max-Age', '86400');
+    }
+
+    // Handle preflight
+    if (req.method === 'OPTIONS') {
+        return res.status(204).end();
+    }
+
     // Only allow POST
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
@@ -101,9 +126,23 @@ module.exports = async function handler(req, res) {
     try {
         const { message, history, language } = req.body;
 
-        if (!message || typeof message !== 'string') {
+        // Validate message
+        if (!message || typeof message !== 'string' || message.trim().length === 0) {
             return res.status(400).json({ error: 'Message is required' });
         }
+
+        // Sanitize and limit message length
+        const sanitizedMessage = message.trim().slice(0, MAX_MESSAGE_LENGTH);
+
+        // Validate and limit history
+        const limitedHistory = Array.isArray(history)
+            ? history.slice(-MAX_HISTORY_LENGTH).filter(
+                msg => msg && typeof msg.content === 'string' && typeof msg.role === 'string'
+            )
+            : [];
+
+        // Validate language
+        const validLanguage = ALLOWED_LANGUAGES.includes(language) ? language : 'tr';
 
         // Build conversation for Gemini
         const contents = [];
@@ -118,20 +157,21 @@ module.exports = async function handler(req, res) {
             parts: [{ text: 'Anladım. MT Makina AI asistanı olarak size yardımcı olmaya hazırım.' }]
         });
 
-        // Add chat history
-        if (history && Array.isArray(history)) {
-            for (const msg of history) {
+        // Add chat history (sanitized & limited)
+        for (const msg of limitedHistory) {
+            const text = String(msg.content).trim().slice(0, MAX_MESSAGE_LENGTH);
+            if (text.length > 0) {
                 contents.push({
                     role: msg.role === 'user' ? 'user' : 'model',
-                    parts: [{ text: msg.content }]
+                    parts: [{ text }]
                 });
             }
         }
 
-        // Add current message
+        // Add current message (sanitized)
         contents.push({
             role: 'user',
-            parts: [{ text: message }]
+            parts: [{ text: sanitizedMessage }]
         });
 
         // Call Gemini API

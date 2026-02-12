@@ -12,9 +12,13 @@ const chatHandler = require('./api/chat.js');
 const app = express();
 const PORT = 3001;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+// Middleware - restricted CORS and body size limit
+app.use(cors({
+    origin: ['http://localhost:3000', 'http://localhost:5173'],
+    methods: ['POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
+}));
+app.use(express.json({ limit: '10kb' }));
 
 // Routes
 // Wrap the handler to catch errors and ensure it works with Express

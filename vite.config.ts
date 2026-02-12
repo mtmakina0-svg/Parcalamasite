@@ -115,6 +115,19 @@ export default defineConfig({
     outDir: 'build',
     minify: 'esbuild',
     cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-helmet-async'],
+          'vendor-motion': ['motion'],
+          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
+          'vendor-ui': ['lucide-react', '@radix-ui/react-accordion', '@radix-ui/react-slot', 'class-variance-authority', 'clsx', 'tailwind-merge'],
+          'data-blog': ['./src/data/blogPosts'],
+          'data-catalog': ['./src/data/catalogData'],
+          'seo-config': ['./src/utils/seoConfig'],
+        },
+      },
+    },
   },
   server: {
     port: 3000,

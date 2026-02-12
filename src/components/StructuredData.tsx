@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 interface StructuredDataProps {
-    data: any;
+    data: Record<string, unknown>;
     id: string; // Unique key to identify this script tag
 }
 
