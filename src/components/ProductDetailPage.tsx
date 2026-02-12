@@ -850,11 +850,11 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
-        {/* Image Gallery — Only for product types with gallery images */}
-        {hasGalleryImages(productType) && (
+        {/* Image Gallery — Only on product main page (not sub-model) */}
+        {!modelName && hasGalleryImages(productType) && (
           <ImageGallery
             images={getGalleryImages(productType)}
-            title={`${defaultModelName} ${getProductTitle()}`}
+            title={getProductTitle()}
           />
         )}
 
@@ -1748,11 +1748,11 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
-        {/* Image Gallery — Only for product types with gallery images */}
-        {hasGalleryImages(productType) && (
+        {/* Image Gallery — Only on product main page (not sub-model) */}
+        {!modelName && hasGalleryImages(productType) && (
           <ImageGallery
             images={getGalleryImages(productType)}
-            title={`${defaultModelName} ${getProductTitle()}`}
+            title={getProductTitle()}
           />
         )}
 
@@ -2389,6 +2389,14 @@ export const ProductDetailPage = ({
           </div>
         </section>
 
+        {/* Image Gallery — Only on product main page (not sub-model) */}
+        {!modelName && hasGalleryImages(productType) && (
+          <ImageGallery
+            images={getGalleryImages(productType)}
+            title={getProductTitle()}
+          />
+        )}
+
         {/* Advantages Section */}
         <section className="py-20 bg-[#F4CE14] relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -2942,6 +2950,14 @@ export const ProductDetailPage = ({
             </motion.div>
           </div>
         </section>
+
+        {/* Image Gallery — Only on product main page (not sub-model) */}
+        {!modelName && hasGalleryImages(productType) && (
+          <ImageGallery
+            images={getGalleryImages(productType)}
+            title={getProductTitle()}
+          />
+        )}
 
         {/* Advantages Section */}
         <section className="py-20 bg-[#F4CE14] relative overflow-hidden">
