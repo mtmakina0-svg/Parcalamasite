@@ -21,6 +21,8 @@ import { StructuredData } from './StructuredData';
 import { generateFAQStructuredData, productCategorySlugs } from '../utils/seoConfig';
 import { Breadcrumbs } from './Breadcrumbs';
 import ThreeViewer, { hasGLBModel, getGLBModelPath, getGLBModelDimensions } from './ThreeViewer';
+import { ImageGallery } from './ImageGallery';
+import { getGalleryImages, hasGalleryImages } from '../utils/galleryConfig';
 
 interface ProductDetailPageProps {
   productType: string;
@@ -847,6 +849,14 @@ export const ProductDetailPage = ({
             </motion.div>
           </div>
         </section>
+
+        {/* Image Gallery — Only for product types with gallery images */}
+        {hasGalleryImages(productType) && (
+          <ImageGallery
+            images={getGalleryImages(productType)}
+            title={`${defaultModelName} ${getProductTitle()}`}
+          />
+        )}
 
         {/* Tree Root Application Areas Section */}
         {productType === 'tree-root' && (
@@ -1737,6 +1747,14 @@ export const ProductDetailPage = ({
             </motion.div>
           </div>
         </section>
+
+        {/* Image Gallery — Only for product types with gallery images */}
+        {hasGalleryImages(productType) && (
+          <ImageGallery
+            images={getGalleryImages(productType)}
+            title={`${defaultModelName} ${getProductTitle()}`}
+          />
+        )}
 
         {/* Advantages Section */}
         <section className="py-20 bg-[#F4CE14] relative overflow-hidden">

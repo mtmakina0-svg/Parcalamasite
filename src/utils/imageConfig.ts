@@ -268,25 +268,25 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
   },
   'pallet': {
     'TSV-140': {
-      main: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-      detail1: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-      detail2: '',
-      detail3: '',
-      detail4: ''
+      main: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-1.webp',
+      detail1: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-2.webp',
+      detail2: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-3.webp',
+      detail3: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-4.webp',
+      detail4: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-5.webp'
     },
     'TSV-200': {
-      main: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-      detail1: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-      detail2: '',
-      detail3: '',
-      detail4: ''
+      main: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-6.webp',
+      detail1: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-7.webp',
+      detail2: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-8.webp',
+      detail3: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-9.webp',
+      detail4: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-10.webp'
     },
     'TSVX-200': {
-      main: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-      detail1: 'https://i.ibb.co/svR9Kdq7/1-7.png',
-      detail2: '',
-      detail3: '',
-      detail4: ''
+      main: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-11.webp',
+      detail1: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-12.webp',
+      detail2: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-13.webp',
+      detail3: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-14.webp',
+      detail4: '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-1.webp'
     }
   },
   'tree-root': {
@@ -399,7 +399,7 @@ export const FALLBACK_IMAGES: { [key: string]: string } = {
   'quad-shaft': 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'metal': 'https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'mobile': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
-  'pallet': 'https://i.ibb.co/svR9Kdq7/1-7.png',
+  'pallet': '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi/palet-1.webp',
   'harddisk': 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
   'tree-root': 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png',
   'wood': 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
