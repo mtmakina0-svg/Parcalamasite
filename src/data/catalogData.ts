@@ -676,6 +676,67 @@ export const catalogs: CatalogItem[] = [
             ru: { title: 'Каталог измельчителя металла RDM-200', description: 'RDM-200 промышленный двухвальный измельчитель металла. Максимальная производительность с ротором 2000мм.', keywords: ['RDM-200', 'измельчитель металла', 'промышленный'] },
             ar: { title: 'كتالوج كسارة المعادن RDM-200', description: 'RDM-200 كسارة معادن صناعية ثنائية العمود. أقصى سعة مع دوار 2000 مم.', keywords: ['RDM-200', 'كسارة معادن', 'صناعي', 'سعة قصوى'] }
         }
+    },
+    // === PALLET SHREDDERS ===
+    {
+        id: 'tsv-140',
+        model: 'TSV-140',
+        category: 'pallet',
+        series: 'TSV',
+        paths: {
+            tr: { html: '/catalogs/pallet/tsv-140/catalog.html', pdf: '/catalogs/pallet/tsv-140/catalog.pdf' },
+            en: { html: '/catalogs/pallet/tsv-140/catalog-en.html', pdf: '/catalogs/pallet/tsv-140/catalog.pdf' },
+            ru: { html: '/catalogs/pallet/tsv-140/catalog-ru.html', pdf: '/catalogs/pallet/tsv-140/catalog.pdf' },
+            ar: { html: '/catalogs/pallet/tsv-140/catalog-ar.html', pdf: '/catalogs/pallet/tsv-140/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/pallet/tsv-140/images/palet-1.webp',
+        specs: { capacity: '1-3 ton/saat', power: '30 kW' },
+        translations: {
+            tr: { title: 'TSV-140 Palet Parçalama Makinesi Kataloğu', description: 'TSV-140 tek şaftlı palet parçalama makinesi. 1400mm rotor boyu ile kompakt ve verimli.', keywords: ['TSV-140', 'palet parçalama', 'tek şaftlı', 'ahşap palet'] },
+            en: { title: 'TSV-140 Pallet Shredder Catalog', description: 'TSV-140 single shaft pallet shredder. Compact and efficient with 1400mm rotor length.', keywords: ['TSV-140', 'pallet shredder', 'single shaft', 'wooden pallet'] },
+            ru: { title: 'Каталог измельчителя поддонов TSV-140', description: 'TSV-140 одновальный измельчитель поддонов. Компактный и эффективный с ротором 1400мм.', keywords: ['TSV-140', 'измельчитель поддонов', 'одновальный'] },
+            ar: { title: 'كتالوج آلة تمزيق المنصات TSV-140', description: 'TSV-140 آلة تمزيق منصات ذات عمود واحد. مدمجة وفعالة مع طول دوار 1400 مم.', keywords: ['TSV-140', 'تمزيق المنصات', 'عمود واحد'] }
+        }
+    },
+    {
+        id: 'tsv-200',
+        model: 'TSV-200',
+        category: 'pallet',
+        series: 'TSV',
+        paths: {
+            tr: { html: '/catalogs/pallet/tsv-200/catalog.html', pdf: '/catalogs/pallet/tsv-200/catalog.pdf' },
+            en: { html: '/catalogs/pallet/tsv-200/catalog-en.html', pdf: '/catalogs/pallet/tsv-200/catalog.pdf' },
+            ru: { html: '/catalogs/pallet/tsv-200/catalog-ru.html', pdf: '/catalogs/pallet/tsv-200/catalog.pdf' },
+            ar: { html: '/catalogs/pallet/tsv-200/catalog-ar.html', pdf: '/catalogs/pallet/tsv-200/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/pallet/tsv-200/images/palet-7.webp',
+        specs: { capacity: '3-6 ton/saat', power: '55 kW' },
+        translations: {
+            tr: { title: 'TSV-200 Palet Parçalama Makinesi Kataloğu', description: 'TSV-200 tek şaftlı palet parçalama makinesi. 2000mm rotor boyu ile yüksek kapasite.', keywords: ['TSV-200', 'palet parçalama', 'tek şaftlı', 'yüksek kapasite'] },
+            en: { title: 'TSV-200 Pallet Shredder Catalog', description: 'TSV-200 single shaft pallet shredder. High capacity with 2000mm rotor length.', keywords: ['TSV-200', 'pallet shredder', 'single shaft', 'high capacity'] },
+            ru: { title: 'Каталог измельчителя поддонов TSV-200', description: 'TSV-200 одновальный измельчитель поддонов. Высокая производительность с ротором 2000мм.', keywords: ['TSV-200', 'измельчитель поддонов', 'высокая производительность'] },
+            ar: { title: 'كتالوج آلة تمزيق المنصات TSV-200', description: 'TSV-200 آلة تمزيق منصات ذات عمود واحد. سعة عالية مع طول دوار 2000 مم.', keywords: ['TSV-200', 'تمزيق المنصات', 'سعة عالية'] }
+        }
+    },
+    {
+        id: 'tsvx-200',
+        model: 'TSVX-200',
+        category: 'pallet',
+        series: 'TSVX',
+        paths: {
+            tr: { html: '/catalogs/pallet/tsvx-200/catalog.html', pdf: '/catalogs/pallet/tsvx-200/catalog.pdf' },
+            en: { html: '/catalogs/pallet/tsvx-200/catalog-en.html', pdf: '/catalogs/pallet/tsvx-200/catalog.pdf' },
+            ru: { html: '/catalogs/pallet/tsvx-200/catalog-ru.html', pdf: '/catalogs/pallet/tsvx-200/catalog.pdf' },
+            ar: { html: '/catalogs/pallet/tsvx-200/catalog-ar.html', pdf: '/catalogs/pallet/tsvx-200/catalog.pdf' }
+        },
+        thumbnail: '/catalogs/pallet/tsvx-200/images/palet-1.webp',
+        specs: { capacity: '5-10 ton/saat', power: '75 kW' },
+        translations: {
+            tr: { title: 'TSVX-200 Palet Parçalama Makinesi Kataloğu', description: 'TSVX-200 çift şaftlı palet parçalama makinesi. 2000mm rotor boyu ile endüstriyel kapasite.', keywords: ['TSVX-200', 'palet parçalama', 'çift şaftlı', 'endüstriyel'] },
+            en: { title: 'TSVX-200 Pallet Shredder Catalog', description: 'TSVX-200 dual shaft pallet shredder. Industrial capacity with 2000mm rotor length.', keywords: ['TSVX-200', 'pallet shredder', 'dual shaft', 'industrial'] },
+            ru: { title: 'Каталог измельчителя поддонов TSVX-200', description: 'TSVX-200 двухвальный измельчитель поддонов. Промышленная мощность с ротором 2000мм.', keywords: ['TSVX-200', 'измельчитель поддонов', 'двухвальный', 'промышленный'] },
+            ar: { title: 'كتالوج آلة تمزيق المنصات TSVX-200', description: 'TSVX-200 آلة تمزيق منصات ثنائية العمود. سعة صناعية مع طول دوار 2000 مم.', keywords: ['TSVX-200', 'تمزيق المنصات', 'ثنائي العمود', 'صناعي'] }
+        }
     }
 ];
 

@@ -305,22 +305,30 @@ export const ECatalogPage = ({ onBackToMain }: ECatalogPageProps) => {
     const catalogPaths = getCatalogPaths(catalog, language as Language);
 
     try {
-      const response = await fetch(catalogPaths.pdf);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
+      // First check if a real PDF file exists
+      const headResponse = await fetch(catalogPaths.pdf, { method: 'HEAD' });
+      const contentType = headResponse.headers.get('content-type') || '';
+      const isPdf = headResponse.ok && contentType.includes('application/pdf');
+
+      if (isPdf) {
+        // Real PDF exists — download it
+        const response = await fetch(catalogPaths.pdf);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      } else {
+        // No PDF file — open HTML catalog for print-to-PDF
+        window.open(catalogPaths.html, '_blank');
+      }
     } catch {
-      // Fallback to direct link
-      const a = document.createElement('a');
-      a.href = catalogPaths.pdf;
-      a.download = filename;
-      a.click();
+      // Fallback: open HTML catalog in new tab
+      window.open(catalogPaths.html, '_blank');
     }
   };
 
