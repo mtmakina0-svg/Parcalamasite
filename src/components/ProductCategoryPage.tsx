@@ -6,6 +6,8 @@ import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { getModelImages, getFallbackImage } from '../utils/imageConfig';
 import { Breadcrumbs } from './Breadcrumbs';
+import { ImageGallery } from './ImageGallery';
+import { getGalleryImages, hasGalleryImages } from '../utils/galleryConfig';
 
 interface ProductCategoryPageProps {
   productType: string;
@@ -498,6 +500,14 @@ export const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Image Gallery */}
+      {hasGalleryImages(productType) && (
+        <ImageGallery
+          images={getGalleryImages(productType)}
+          title={t(contentKeys.title)}
+        />
+      )}
 
       {/* Models Grid */}
       <section className="py-20 bg-white">
