@@ -18,6 +18,7 @@ const PATHS = {
     'mobile': '/catalogs/assets/makineg%C3%B6rseller/mobil%20k%C4%B1r%C4%B1c%C4%B1',
     'pallet': '/catalogs/assets/makineg%C3%B6rseller/Palet%20Par%C3%A7alama%20Makinesi',
     'glass': '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi',
+    'harddisk': '/catalogs/assets/makineg%C3%B6rseller/Hard%20Disk%20k%C4%B1r%C4%B1c%C4%B1',
 } as const;
 
 // Alt text templates per product type (Turkish)
@@ -29,6 +30,7 @@ const ALT_TEXTS: Record<string, string> = {
     'mobile': 'Mobil Kırıcı',
     'pallet': 'Palet Parçalama Makinesi',
     'glass': 'Cam Şişe Kırma Makinesi',
+    'harddisk': 'Hard Disk İmha Makinesi',
 };
 
 // Image file definitions: [prefix, extension, count]
@@ -60,6 +62,24 @@ const GLASS_IMAGES: { name: string }[] = [
     { name: 'hf_20260218_131000_40893750-2621-4f22-ad80-f27592dec269.webp' },
 ];
 
+// Hard Disk Kırıcı has hash-based filenames
+const HARDDISK_IMAGES: { name: string }[] = [
+    { name: 'hf_20260219_095715_3d7e5aaf-e856-4a95-903e-5e950c6abad4.webp' },
+    { name: 'hf_20260219_095715_d75cc98e-d38a-4e4f-915d-9e3235fc3d8d.webp' },
+    { name: 'hf_20260219_103720_de9db49c-1784-4470-b451-a4bbcfd53ec7.webp' },
+    { name: 'hf_20260219_104303_08219711-65f2-4777-8b5c-da5587d378d7.webp' },
+    { name: 'hf_20260219_104303_929d55b0-1524-455a-be7f-cbbcb68bb7a0.webp' },
+    { name: 'hf_20260219_104303_ed558372-7e3e-4ca4-960f-d9f5c504dfdc.webp' },
+    { name: 'hf_20260219_104452_71588c6d-4fff-419d-9cf5-25e6527701c0.webp' },
+    { name: 'hf_20260219_104452_7a0673e7-d078-4d09-81e6-a8b325ffd4cd.webp' },
+    { name: 'hf_20260219_104656_1841e44a-9ba9-4991-b9f4-88909e231d4a.webp' },
+    { name: 'hf_20260219_104656_1ffe8b25-99af-4f47-a539-522aac01e69a.webp' },
+    { name: 'hf_20260219_105621_37dd195e-0acb-49be-977b-686802176c56.webp' },
+    { name: 'hf_20260219_112408_904418c7-2105-4ba4-ac8f-e8cd1299ad73.webp' },
+    { name: 'hf_20260219_112408_9c962685-8cdf-496f-8a91-06d5f6bf49b3.webp' },
+    { name: 'hf_20260219_112551_b1ae003a-0309-4ad5-8329-63a8d361dc76.webp' },
+];
+
 /**
  * Build gallery images for a given product type
  */
@@ -79,6 +99,14 @@ function buildGalleryImages(productType: string): GalleryImage[] {
     // Handle glass separately due to hash-based filenames
     if (productType === 'glass') {
         return GLASS_IMAGES.map((img, i) => ({
+            src: `${basePath}/${img.name}`,
+            alt: `${altText} - Görsel ${i + 1} - MT Makina`,
+        }));
+    }
+
+    // Handle harddisk separately due to hash-based filenames
+    if (productType === 'harddisk') {
+        return HARDDISK_IMAGES.map((img, i) => ({
             src: `${basePath}/${img.name}`,
             alt: `${altText} - Görsel ${i + 1} - MT Makina`,
         }));
@@ -104,6 +132,7 @@ export const productGalleryImages: Record<string, GalleryImage[]> = {
     'mobile': buildGalleryImages('mobile'),
     'pallet': buildGalleryImages('pallet'),
     'glass': buildGalleryImages('glass'),
+    'harddisk': buildGalleryImages('harddisk'),
 };
 
 /**
