@@ -336,10 +336,38 @@ const IMAGE_URLS: { [key: string]: { [model: string]: ModelImages } } = {
     }
   },
   'glass': {
-    'CK-200': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CK-400': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'CKS-400': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' },
-    'GB-300': { main: 'https://i.ibb.co/4wtQRwBB/1-1.png', detail1: '', detail2: '', detail3: '', detail4: '' }
+    'CK-200': {
+      main: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080251_94d67375-726f-4e12-a895-cba99037fc8e.webp',
+      detail1: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080650_4732c07a-fea2-4b5f-b75a-a53a7055b3c8.webp',
+      detail2: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_102434_da900f8f-6a44-4484-9100-0a339a837159.webp',
+      detail3: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_114122_28e1cac8-3352-46ff-acdb-8a64f8d065e3.webp',
+      detail4: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_114641_fd4f5431-d9e1-4dba-9571-4cdb941c7899.webp',
+      detail5: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_115214_940cde12-4596-43d3-ba84-abe45adf3593.webp'
+    },
+    'CK-400': {
+      main: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_102434_da900f8f-6a44-4484-9100-0a339a837159.webp',
+      detail1: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_115214_e9ea8eed-8bfb-4abf-81c8-bbddcabb8ccd.webp',
+      detail2: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_131000_40893750-2621-4f22-ad80-f27592dec269.webp',
+      detail3: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080251_94d67375-726f-4e12-a895-cba99037fc8e.webp',
+      detail4: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_114122_28e1cac8-3352-46ff-acdb-8a64f8d065e3.webp',
+      detail5: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080650_4732c07a-fea2-4b5f-b75a-a53a7055b3c8.webp'
+    },
+    'CKS-400': {
+      main: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_115214_940cde12-4596-43d3-ba84-abe45adf3593.webp',
+      detail1: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_114641_fd4f5431-d9e1-4dba-9571-4cdb941c7899.webp',
+      detail2: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080251_94d67375-726f-4e12-a895-cba99037fc8e.webp',
+      detail3: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_131000_40893750-2621-4f22-ad80-f27592dec269.webp',
+      detail4: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_115214_e9ea8eed-8bfb-4abf-81c8-bbddcabb8ccd.webp',
+      detail5: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_102434_da900f8f-6a44-4484-9100-0a339a837159.webp'
+    },
+    'GB-300': {
+      main: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_131000_40893750-2621-4f22-ad80-f27592dec269.webp',
+      detail1: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080650_4732c07a-fea2-4b5f-b75a-a53a7055b3c8.webp',
+      detail2: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_114641_fd4f5431-d9e1-4dba-9571-4cdb941c7899.webp',
+      detail3: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_115214_940cde12-4596-43d3-ba84-abe45adf3593.webp',
+      detail4: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080251_94d67375-726f-4e12-a895-cba99037fc8e.webp',
+      detail5: '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_102434_da900f8f-6a44-4484-9100-0a339a837159.webp'
+    }
   },
   'harddisk': {
     'DATABER-S': {
@@ -403,7 +431,7 @@ export const FALLBACK_IMAGES: { [key: string]: string } = {
   'harddisk': 'https://i.ibb.co/7JsNwKsS/hard-disk-devre-karti-imha-parcalama-makinesi-1.png',
   'tree-root': 'https://i.ibb.co/zHTgTRVC/agac-koku-parcalama-makinesi-sabit-1.png',
   'wood': 'https://i.ibb.co/JFxCGnpc/agac-parcalama-ogutme-makinesi-1.png',
-  'glass': 'https://i.ibb.co/4wtQRwBB/1-1.png',
+  'glass': '/catalogs/assets/makineg%C3%B6rseller/Cam%20%C5%9Ei%C5%9Fe%20K%C4%B1rma%20Makinesi/hf_20260218_080251_94d67375-726f-4e12-a895-cba99037fc8e.webp',
   'granulator': 'https://images.unsplash.com/photo-1581092160607-ee67e7d27f86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'baler': 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
   'conveyor': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',

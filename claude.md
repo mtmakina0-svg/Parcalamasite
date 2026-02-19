@@ -1,181 +1,333 @@
-# MT Makina - Parcalamasite Proje Talimatları
+# MT Makina — Parcalamasite Proje Talimatları
 
-> **DİKKAT:** Bu proje `skills/` klasöründe 620+ uzmanlaşmış beceri modülü barındırmaktadır. **HİÇBİR İŞLEM, skill kullanmadan yapılmamalıdır.** Her göreve başlarken ilgili skill'in `SKILL.md` dosyasını oku ve talimatlarına uy.
-
----
-
-## 🚨 ZORUNLU KURAL: Skill Olmadan İş Yapılmaz
-
-```
-HER İŞLEME BAŞLAMADAN ÖNCE İLGİLİ SKILL DOSYASINI OKU VE UYGULA
-```
-
-Bu proje kapsamında yapılan her iş, ilgili skill'in (beceri modülünün) talimatlarına uygun olarak yürütülmelidir. Skill kullanmadan yapılan iş **kabul edilmez**.
-
-### Skill Kullanım Akışı
-
-1. **Görevi analiz et** → Hangi alanla ilgili? (Frontend, SEO, debugging, i18n vb.)
-2. **İlgili skill'i belirle** → Aşağıdaki haritayı kullan
-3. **SKILL.md dosyasını oku** → `skills/<skill-adı>/SKILL.md`
-4. **Talimatları uygula** → Skill'deki adımları takip et
-5. **Tamamlama öncesi doğrula** → `verification-before-completion` skill'ini uygula
+> **🚨 ZORUNLU:** Bu proje `skills/` klasöründe 940+ uzmanlaşmış beceri modülü barındırmaktadır. **Hiçbir işlem skill okumadan yapılamaz.** Skill kullanmadan yapılan iş KABUL EDİLMEZ.
 
 ---
 
 ## 📋 Proje Teknoloji Yığını
 
-| Teknoloji | Versiyon/Detay |
-|-----------|---------------|
-| Framework | React + Vite |
-| Dil | TypeScript |
-| Animasyon | Framer Motion |
-| Hosting | Vercel |
-| i18n | Çoklu dil (TR, EN, RU, AR) |
-| Proje Tipi | Endüstriyel makine üreticisi web sitesi |
+| Teknoloji | Detay                                             |
+| --------- | ------------------------------------------------- |
+| Framework | React 18 + Vite 6                                 |
+| Dil       | TypeScript                                        |
+| CSS       | Tailwind CSS v4                                   |
+| Animasyon | Framer Motion (`motion`)                          |
+| 3D        | Three.js + React Three Fiber                      |
+| Hosting   | Vercel                                            |
+| i18n      | 4 dil: TR (varsayılan), EN, RU, AR (RTL)          |
+| Proje     | Endüstriyel parçalama makineleri web sitesi (B2B) |
+| Domain    | parcalamamakinesi.com / mtmakina.com.tr           |
 
 ---
 
-## 🗺️ Görev → Skill Eşleştirme Haritası
+## 🚨 ZORUNLU KURAL: Skill Olmadan İşlem Yapılmaz
 
-### Frontend Geliştirme
-
-| Görev | Kullanılacak Skill | Yol |
-|-------|-------------------|-----|
-| React bileşen yazma/düzenleme | `react-best-practices` | `skills/react-best-practices/SKILL.md` |
-| TypeScript hataları, tip sorunları | `typescript-expert` | `skills/typescript-expert/SKILL.md` |
-| UI/UX tasarımı, görsel iyileştirme | `frontend-design` | `skills/frontend-design/SKILL.md` |
-| Web performans optimizasyonu | `web-performance-optimization` | `skills/web-performance-optimization/SKILL.md` |
-| Erişilebilirlik (accessibility) | `accessibility-compliance-accessibility-audit` | `skills/accessibility-compliance-accessibility-audit/SKILL.md` |
-
-### SEO & İçerik
-
-| Görev | Kullanılacak Skill | Yol |
-|-------|-------------------|-----|
-| SEO denetimi/analizi | `seo-audit` | `skills/seo-audit/SKILL.md` |
-| SEO içerik yazımı | `seo-content-writer` | `skills/seo-content-writer/SKILL.md` |
-| Meta tag optimizasyonu | `seo-meta-optimizer` | `skills/seo-meta-optimizer/SKILL.md` |
-| İçerik yapısı, başlık hiyerarşisi | `seo-structure-architect` | `skills/seo-structure-architect/SKILL.md` |
-| Schema markup (JSON-LD) | `schema-markup` | `skills/schema-markup/SKILL.md` |
-
-### Çoklu Dil (i18n)
-
-| Görev | Kullanılacak Skill | Yol |
-|-------|-------------------|-----|
-| Çeviri, yerelleştirme, RTL desteği | `i18n-localization` | `skills/i18n-localization/SKILL.md` |
-
-### Hata Ayıklama & Kalite
-
-| Görev | Kullanılacak Skill | Yol |
-|-------|-------------------|-----|
-| Bug tespiti, hata ayıklama | `systematic-debugging` | `skills/systematic-debugging/SKILL.md` |
-| Kod incelemesi | `code-review-excellence` | `skills/code-review-excellence/SKILL.md` |
-| İşi tamamlamadan önce doğrulama | `verification-before-completion` | `skills/verification-before-completion/SKILL.md` |
-
-### Git & Dağıtım
-
-| Görev | Kullanılacak Skill | Yol |
-|-------|-------------------|-----|
-| Git commit & push | `git-pushing` | `skills/git-pushing/SKILL.md` |
-
----
-
-## ⚡ İşlem Başlatma Protokolü
-
-Her yeni görev için aşağıdaki kontrol listesini uygula:
-
-### 1. Ön Analiz
-- [ ] Görev hangi kategoriye giriyor? (Frontend / SEO / i18n / Debug / Git)
-- [ ] İlgili skill(ler) belirlendi mi?
-- [ ] Skill'in SKILL.md dosyası okundu mu?
-
-### 2. Uygulama
-- [ ] Skill'deki talimatlar ve en iyi pratikler uygulanıyor mu?
-- [ ] Projenin mevcut yapısına uyumlu mu?
-- [ ] TypeScript tip güvenliği sağlandı mı? (`typescript-expert`)
-- [ ] i18n: Tüm diller (TR, EN, RU, AR) dikkate alındı mı? (`i18n-localization`)
-
-### 3. Tamamlama Öncesi Doğrulama
-- [ ] `verification-before-completion` skill'i uygulandı mı?
-- [ ] Build çalışıyor mu? (`npm run build` başarılı mı?)
-- [ ] Değişiklikler diğer sayfaları/bileşenleri bozmuyor mu?
-- [ ] SEO etkisi değerlendirildi mi? (`seo-audit`)
-
----
-
-## 🔴 Kritik Kurallar
-
-### Asla Yapma
-- ❌ Skill okumadan kod yazma
-- ❌ Bug'ı anlamadan rastgele düzeltme deneme (`systematic-debugging` kullan)
-- ❌ Doğrulamadan "bitti" deme (`verification-before-completion` kullan)
-- ❌ Hardcoded string bırakma — çeviri anahtarları kullan (`i18n-localization`)
-- ❌ SEO etkisini düşünmeden sayfa yapısı değiştirme (`seo-audit` kullan)
-- ❌ Alt text, meta tag olmadan görsel ekleme (`seo-meta-optimizer` kullan)
-- ❌ any tipi kullanma — doğru tip tanımları yap (`typescript-expert`)
-
-### Her Zaman Yap
-- ✅ İlgili skill'i oku, sonra işe başla
-- ✅ Hata varsa sistematik debug uygula (`systematic-debugging`)
-- ✅ Her bileşen değişikliğinde React best practices kontrol et (`react-best-practices`)
-- ✅ Her yeni içerikte SEO kontrol listesini uygula (`seo-content-writer`)
-- ✅ Web performansını ölç ve iyileştir (`web-performance-optimization`)
-- ✅ Schema markup'ı doğrula ve Google uyumluluğunu kontrol et (`schema-markup`)
-- ✅ Build başarılı → Doğrula → Sonra tamamla
-
----
-
-## 📂 Skill Arama Kılavuzu
-
-620+ skill mevcut. Tüm listeyi görmek için:
-
-```bash
-ls skills/
+```
+HER İŞLEME BAŞLAMADAN ÖNCE → İLGİLİ SKILL DOSYASINI OKU → UYGULA → DOĞRULA
 ```
 
-Anahtar kelimeyle aramak için:
+### Skill Kullanım Akışı
+
+1. **Görevi analiz et** → Hangi alan? (SEO / Çeviri / Katalog / Frontend / Debug)
+2. **İlgili skill'i belirle** → Aşağıdaki haritaları kullan
+3. **`SKILL.md` dosyasını oku** → `skills/<skill-adı>/SKILL.md`
+4. **Talimatları uygula** → Skill'deki iş akışlarını ve kuralları takip et
+5. **Tamamlama öncesi doğrula** → Build, çeviri kontrolü, SEO kontrolü
+
+---
+
+## 🔍 SEO ODAKLI SKİLLER (ZORUNLU)
+
+> **⚠️ SEO bu proje için en kritik konudur. Aşağıdaki skill'lerin tamamı, SEO ile ilgili HER işlemde kullanılmalıdır.**
+
+| Skill                              | Yol                                                | Kullanım Alanı                                                                                     |
+| ---------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `google-search-console-automation` | `skills/google-search-console-automation/SKILL.md` | Search analytics, URL inspection, sitemap yönetimi, indeksleme durumu kontrolü                     |
+| `semrush-automation`               | `skills/semrush-automation/SKILL.md`               | Anahtar kelime araştırma, domain organik keyword analizi, backlink profili, keyword difficulty     |
+| `ahrefs-automation`                | `skills/ahrefs-automation/SKILL.md`                | Site explorer metrikleri, backlink analizi, keyword araştırma, rakip analizi, domain rating takibi |
+| `google-analytics-automation`      | `skills/google-analytics-automation/SKILL.md`      | GA4 raporlama, trafik analizi, funnel raporları, dönüşüm takibi                                    |
+| `neuronwriter-automation`          | `skills/neuronwriter-automation/SKILL.md`          | İçerik SEO optimizasyonu, NLP tabanlı içerik analizi                                               |
+| `ravenseotools-automation`         | `skills/ravenseotools-automation/SKILL.md`         | SEO denetim toolkit otomasyonu                                                                     |
+| `moz-automation`                   | `skills/moz-automation/SKILL.md`                   | Domain authority, link kalitesi analizi                                                            |
+
+### SEO Zorunlu Kontrol Listesi
+
+Her sayfa değişikliğinde şunları kontrol et:
+
+- [ ] `google-search-console-automation` ile URL inspection yapıldı mı?
+- [ ] `semrush-automation` ile hedef keyword'ler analiz edildi mi?
+- [ ] `ahrefs-automation` ile backlink durumu kontrol edildi mi?
+- [ ] `google-analytics-automation` ile trafik etkisi değerlendirildi mi?
+- [ ] Meta title ve description optimize edildi mi?
+- [ ] Alt text'ler SEO uyumlu mu?
+- [ ] Heading hiyerarşisi doğru mu? (tek `<h1>`, ardışık `<h2>`, `<h3>`)
+- [ ] Schema markup (JSON-LD) güncel mi?
+- [ ] Sitemap'e yeni sayfalar eklendi mi?
+- [ ] Canonical URL'ler doğru mu?
+
+---
+
+## 🌍 ÇEVİRİ VE LOKALİZASYON SKİLLERİ (ZORUNLU)
+
+> **⚠️ Bu projede 4 dilde içerik üretiliyor. Çeviri kalitesi kritik öneme sahiptir. Aşağıdaki skill'ler çeviri işlemlerinde MUTLAKA kullanılmalıdır.**
+
+| Skill                  | Yol                                    | Kullanım Alanı                                                        |
+| ---------------------- | -------------------------------------- | --------------------------------------------------------------------- |
+| `crowdin-automation`   | `skills/crowdin-automation/SKILL.md`   | Çeviri yönetim platformu, toplu çeviri otomasyonu, çeviri tutarlılığı |
+| `linguapop-automation` | `skills/linguapop-automation/SKILL.md` | Dil analizi, çeviri kalitesi doğrulama                                |
+| `tisane-automation`    | `skills/tisane-automation/SKILL.md`    | NLP tabanlı dil analizi, metin kalitesi kontrolü, dil algılama        |
+| `amara-automation`     | `skills/amara-automation/SKILL.md`     | Video içerik çevirisi, altyazı otomasyonu                             |
+
+### Çeviri Zorunlu Kuralları
+
+1. **4 DİL HER ZAMAN GÜNCELLENİR:**
+   - 🇹🇷 Türkçe (TR) — ana dil, varsayılan
+   - 🇬🇧 İngilizce (EN)
+   - 🇷🇺 Rusça (RU)
+   - 🇸🇦 Arapça (AR) — RTL desteği zorunlu
+
+2. **SADECE BAŞLIK DEĞİL, TÜM METİN ÇEVRİLİR:**
+   - ❌ Yalnızca `<h2>`, `<h3>` başlıkları çevirmek YASAKTIR
+   - ✅ Paragraflar, feature-box'lar, liste öğeleri, callout-box'lar, spec label'ları, contact bilgileri dahil TÜM metin çevrilmelidir
+
+3. **ARAPÇA (AR) İÇİN ÖZEL KURALLAR:**
+   - `<html lang="ar" dir="rtl">` olmalı
+   - CSS'de `direction: rtl` ve `text-align: right` uygulanmalı
+   - Sayfa numaraları (01, 02, ...) LTR kalabilir
+
+4. **ÇEVİRİ DOĞRULAMA KONTROL LİSTESİ:**
+   - [ ] Türkçe anahtar kelimelerin çevrilmiş dosyalarda kalıp kalmadığı kontrol edildi mi?
+   - [ ] `tisane-automation` ile dil algılama yapıldı mı?
+   - [ ] `crowdin-automation` ile çeviri tutarlılığı doğrulandı mı?
+   - [ ] AR dosyalarda RTL düzeni test edildi mi?
+   - [ ] Teknik terimler doğru çevrildi mi? (Motor Gücü ↔ Motor Power ↔ Мощность двигателя ↔ قدرة المحرك)
+
+---
+
+## 📝 İÇERİK VE TEST SKİLLERİ
+
+| Skill                     | Yol                                       | Kullanım Alanı                                                         |
+| ------------------------- | ----------------------------------------- | ---------------------------------------------------------------------- |
+| `content-research-writer` | `skills/content-research-writer/SKILL.md` | Blog yazımı, ürün açıklamaları, içerik araştırma, kaynak yönetimi      |
+| `webapp-testing`          | `skills/webapp-testing/SKILL.md`          | Playwright ile web app testleri, görsel doğrulama, tarayıcı otomasyonu |
+
+---
+
+## 📄 KATALOG HTML ŞABLON YAPISI
+
+> **⚠️ Bu bölüm, yeni katalog oluştururken veya mevcut katalogları çevirirken MUTLAKA okunmalıdır.**
+
+### Dosya Yapısı
+
+```
+public/catalogs/
+├── <kategori>/          # single-shaft, dual-shaft, quad-shaft, metal, harddisk,
+│   │                    # mobile, pallet, tree-root, wood, glass
+│   └── <model>/         # TSH-60, CS-20, DS-80, TSV-200 vb.
+│       ├── catalog.html      # 🇹🇷 Türkçe (varsayılan)
+│       ├── catalog-en.html   # 🇬🇧 İngilizce
+│       ├── catalog-ru.html   # 🇷🇺 Rusça
+│       ├── catalog-ar.html   # 🇸🇦 Arapça (RTL)
+│       └── images/           # Ürün görselleri (webp)
+└── assets/                   # Ortak kaynaklar
+    ├── Mt Makina-Logo.png
+    ├── logoicon.png
+    └── referanslar/          # Referans logo görselleri
+```
+
+### 7 Sayfalık Katalog Yapısı
+
+Her katalog HTML dosyası 7 sayfadan oluşur. **Bu yapı TÜM modeller için standarttır.**
+
+#### SAYFA 1: KAPAK (`<!-- PAGE 1: COVER -->`)
+
+```html
+<div class="page">
+  <div class="cover-page">
+    <div class="cover-top-block"></div>
+    <div class="cover-bottom-block"></div>
+    <img class="cover-logo" />
+    <!-- ../../assets/Mt Makina-Logo.png -->
+    <div class="cover-content">
+      <img class="cover-img" />
+      <!-- images/<model-gorsel>.webp -->
+      <h1 class="cover-model">MODEL</h1>
+      <p class="cover-title">Ürün Tipi Adı</p>
+      <!-- ÇEVRİLECEK -->
+      <p class="cover-subtitle">Product Type Name</p>
+      <!-- ÇEVRİLECEK -->
+      <div class="cover-series">ÜRÜN KATALOĞU</div>
+      <!-- ÇEVRİLECEK -->
+    </div>
+  </div>
+</div>
+```
+
+#### SAYFA 2: ÜRÜN TANITIMI (`<!-- PAGE 2: PRODUCT INTRO -->`)
+
+Çevrilecek alanlar:
+
+- `<h2>` — Bölüm başlığı (Ürün Tanıtımı / Product Introduction / ...)
+- `<p>` — Ana açıklama paragrafı (TÜM metin çevrilecek)
+- `.highlight-box h3` + `p` — Neden [MODEL]? kutusu
+- `.feature-box h4` + `p` — 4 özellik kutusu (başlık + açıklama)
+- `.material-list li` — Parçalanabilir malzeme listesi
+
+#### SAYFA 3: UYGULAMA ALANLARI (`<!-- PAGE 3: APPLICATION AREAS -->`)
+
+Çevrilecek alanlar:
+
+- Bölüm başlığı, açıklama paragrafı
+- `.app-card h4` + `p` — Uygulama kartları (4 adet)
+- `.highlight-box` — Avantajlar kutusu
+
+#### SAYFA 4: TEKNİK DETAYLAR (`<!-- PAGE 4: TECHNICAL DETAILS -->`)
+
+Çevrilecek alanlar:
+
+- Bölüm başlığı
+- `.callout-box strong` + `span` — Teknik özellik kutuları (4 adet)
+- `.spec-label` etiketleri — Gövde Malzemesi, Bıçak Malzemesi vb.
+- Standart/Opsiyonel donanım başlıkları ve etiketler
+
+#### SAYFA 5: TEKNİK KİMLİK KARTI (`<!-- PAGE 5: SPEC SHEET -->`)
+
+Çevrilecek alanlar:
+
+- Bölüm başlığı, model alt başlığı
+- `.big-spec-item .label` — Motor Gücü, Parçalama Alanı, Rotor Boyu
+- `.spec-card-header h3` — Detaylı Teknik Özellikler
+- `.spec-row .label` — Tüm teknik etiketler
+- `.highlight-box` — Not kutusu
+
+#### SAYFA 6: REFERANSLAR (`<!-- PAGE 6: REFERENCES -->`)
+
+Çevrilecek alanlar:
+
+- Bölüm başlığı
+- `.references-intro p` — Referans tanıtım metni
+- `.references-count` — "40+ Referans" sayısı
+- `.highlight-box` — "Güvenilir Çözüm Ortağınız" kutusu
+
+#### SAYFA 7: OPSİYONEL ÖZELLİKLER VE İLETİŞİM (`<!-- PAGE 7: OPTIONAL FEATURES & CONTACT -->`)
+
+Çevrilecek alanlar:
+
+- Bölüm başlığı
+- `.optional-features li` — Opsiyonel özellik listesi (7 madde)
+- `.contact-section h3` — "Bizimle İletişime Geçin"
+- `.contact-group-title` — ADRES, TELEFON, WHATSAPP, E-POSTA etiketleri
+
+### Önemli Teknik Kurallar
+
+1. **UTF-8 BOM'suz encoding** — `[System.Text.UTF8Encoding]($false)` kullan
+2. **CSS ilk 670 satır** — `<style>` bloğu tüm stillemedir, DOKUNMA
+3. **Model-spesifik veriler** — Motor gücü, rotor boyu, parçalama alanı her modelde farklıdır
+4. **Görsel yolları göreceli** — `images/`, `../../assets/`
+
+---
+
+## 🏭 ÜRÜN KATEGORİLERİ VE MODELLER
+
+| Kategori Slug  | Türkçe Ad             | Modeller                                                           |
+| -------------- | --------------------- | ------------------------------------------------------------------ |
+| `single-shaft` | Tek Şaftlı Parçalama  | TSH-60, TSH-80, TSH-100, TSH-130, TSH-160, TSH-200                 |
+| `dual-shaft`   | Çift Şaftlı Parçalama | CS-20, CS-40, CS-60, CS-80, CS-100, CS-120, CS-150, CS-180, CS-200 |
+| `quad-shaft`   | Dört Şaftlı Parçalama | DS-80, DS-100, DS-150, DS-200                                      |
+| `metal`        | Metal Parçalama       | RDM-100, RDM-150, RDM-180, RDM-200                                 |
+| `harddisk`     | Evrak İmha            | DATABER-S, DATABER-D, DATABER-T                                    |
+| `mobile`       | Mobil Parçalama       | TSM-150, TSM-300, CSM-150, CSM-200                                 |
+| `pallet`       | Palet Parçalama       | TSV-140, TSV-200, TSVX-200                                         |
+| `tree-root`    | Ağaç / Kök Parçalama  | TW-100, TW-150, TW-200                                             |
+| `wood`         | Ahşap Parçalama       | TSY-100, TSY-150, TSY-200                                          |
+| `glass`        | Cam Parçalama         | CK-200, CK-400, CKS-400, GB-300                                    |
+
+---
+
+## 🔴 KRİTİK KURALLAR
+
+### ❌ ASLA YAPMA
+
+- ❌ SKILL okumadan kod yazma veya içerik üretme
+- ❌ Çeviri yaparken sadece başlıkları çevirip gövde metnini Türkçe bırakma
+- ❌ SEO etkisini düşünmeden sayfa yapısı değiştirme
+- ❌ Alt text, meta tag olmadan görsel ekleme
+- ❌ Katalog şablonundaki CSS/stil bloğuna müdahale etme
+- ❌ Hardcoded Türkçe string bırakma — tüm dillerde güncellenecek
+- ❌ `any` TypeScript tipi kullanma
+- ❌ Doğrulamadan işi tamamlandı olarak bildirme
+- ❌ Var olmayan skill referansı kullanma
+
+### ✅ HER ZAMAN YAP
+
+- ✅ İlgili skill'in SKILL.md dosyasını oku, sonra başla
+- ✅ SEO işlemlerinde `semrush-automation`, `ahrefs-automation`, `google-search-console-automation` kullan
+- ✅ Çevirilerde `crowdin-automation`, `linguapop-automation`, `tisane-automation` ile doğrula
+- ✅ İçerik üretiminde `content-research-writer` skill'ini referans al
+- ✅ Test yaparken `webapp-testing` skill'ini uygula
+- ✅ Her yeni katalog oluşturulduğunda 4 dilde birden oluştur
+- ✅ Çeviri sonrası Türkçe anahtar kelime kontrolü yap
+- ✅ Build başarılı → Doğrula → Sonra tamamla
+- ✅ `google-analytics-automation` ile trafik etkisini izle
+- ✅ `neuronwriter-automation` ile içerik SEO skorunu kontrol et
+
+---
+
+## 📂 ÖNEMLİ DİZİNLER
+
+| Dizin                     | Açıklama                                                  |
+| ------------------------- | --------------------------------------------------------- |
+| `src/`                    | React bileşenleri ve uygulama kodu                        |
+| `src/data/`               | Ürün verileri, açıklamalar, katalog verileri              |
+| `src/utils/`              | SEO config, model config, image config, i18n yardımcıları |
+| `public/catalogs/`        | Ürün katalog HTML dosyaları (HTML → PDF)                  |
+| `public/catalogs/assets/` | Ortak görsel kaynaklar (logo, referans logoları)          |
+| `skills/`                 | 940+ AI beceri modülü                                     |
+| `vercel.json`             | Dağıtım, yönlendirme ve redirect yapılandırması           |
+
+---
+
+## 📌 SKILL ARAMA REHBERİ
+
+940+ skill mevcut. Anahtar kelimeyle arama:
 
 ```bash
 ls skills/ | grep "anahtar-kelime"
 ```
 
-### Sık Kullanılan Ek Skill'ler
+### Proje İçin Kritik Skill Grupları
 
-| Skill | Ne Zaman |
-|-------|----------|
-| `brainstorming` | Yeni özellik tasarımı öncesi |
-| `writing-plans` | Karmaşık implementasyon planlaması |
-| `clean-code` | Kod kalitesi iyileştirme |
-| `seo-keyword-strategist` | Anahtar kelime stratejisi |
-| `seo-content-refresher` | Mevcut içeriği güncelleme |
-| `seo-cannibalization-detector` | İçerik çakışması tespiti |
-| `programmatic-seo` | Ölçeklenebilir sayfa oluşturma |
-| `analytics-tracking` | Analitik kurulumu |
-| `deployment-procedures` | Dağıtım prosedürleri |
+**SEO (7 skill — TÜM SEO İŞLEMLERİNDE ZORUNLU):**
 
----
+- `google-search-console-automation` — Arama performansı, sitemap, URL inspection
+- `semrush-automation` — Keyword araştırma, domain analiz, backlink
+- `ahrefs-automation` — Backlink, keyword, domain rating, rakip
+- `google-analytics-automation` — GA4 trafik, dönüşüm, funnel
+- `neuronwriter-automation` — İçerik SEO optimizasyonu
+- `ravenseotools-automation` — SEO denetim araçları
+- `moz-automation` — Domain authority, link analiz
 
-## 🏭 Proje Bağlamı
+**ÇEVİRİ (4 skill — TÜM ÇEVİRİ İŞLEMLERİNDE ZORUNLU):**
 
-**MT Makina** — Endüstriyel parçalama makineleri üreticisi. Web sitesi ürün tanıtımı, katalog sunumu ve çoklu dil desteği ile B2B müşterilere hizmet verir.
+- `crowdin-automation` — Çeviri yönetimi
+- `linguapop-automation` — Dil analizi
+- `tisane-automation` — NLP dil analiz
+- `amara-automation` — Video çeviri
 
-### Desteklenen Diller
-- 🇹🇷 Türkçe (varsayılan)
-- 🇬🇧 İngilizce
-- 🇷🇺 Rusça
-- 🇸🇦 Arapça (RTL)
+**İÇERİK:**
 
-### Önemli Dizinler
-- `src/` — React bileşenleri ve uygulama kodu
-- `public/catalogs/` — Ürün katalog dosyaları (HTML → PDF)
-- `skills/` — 620+ AI beceri modülü
-- `vercel.json` — Dağıtım ve yönlendirme yapılandırması
+- `content-research-writer` — Araştırma ve içerik yazım
+
+**TEST:**
+
+- `webapp-testing` — Playwright ile test
 
 ---
 
-## 📌 Sonuç
+## 📌 SONUÇ
 
 **Bu dosya, her yeni oturumda ve her görev başlangıcında okunmalıdır.**
 
-Skill kullanmak opsiyonel değil, **zorunludur**. Her görev, ilgili skill'in rehberliğinde profesyonel standartlarda tamamlanmalıdır.
+Skill kullanmak opsiyonel değil, **ZORUNLUDUR**. Her görev, ilgili skill'in rehberliğinde profesyonel standartlarda tamamlanmalıdır.
 
 > "Skill okumadan yapılan iş, temelsiz yapılan bina gibidir."

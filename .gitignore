@@ -13,3 +13,6 @@ build
 # IDE
 .vscode
 .idea
+
+# Skills (940+ AI skill modules - too large for git)
+skills/

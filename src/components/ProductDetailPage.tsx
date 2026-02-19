@@ -566,7 +566,8 @@ export const ProductDetailPage = ({
       images.detail1,
       images.detail2,
       images.detail3,
-      images.detail4
+      images.detail4,
+      images.detail5
     ].filter((url): url is string => !!url); // Type-safe filter
 
     preloadImages(imagesToPreload);
