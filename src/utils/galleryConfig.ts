@@ -35,19 +35,16 @@ const ALT_TEXTS: Record<string, string> = {
 
 // Image file definitions: [prefix, extension, count]
 const IMAGE_DEFS: Record<string, { prefix: string; ext: string; count: number }> = {
-    'single-shaft': { prefix: 'tek-saft', ext: 'jpeg', count: 24 },
-    'dual-shaft': { prefix: 'cift-saft', ext: 'jpeg', count: 22 },
-    'quad-shaft': { prefix: 'dort-saft', ext: 'png', count: 4 },
-    'metal': { prefix: 'metal', ext: 'png', count: 4 },
+    'single-shaft': { prefix: 'tek-saft', ext: 'webp', count: 24 },
+    'dual-shaft': { prefix: 'cift-saft', ext: 'webp', count: 22 },
+    'quad-shaft': { prefix: 'dort-saft', ext: 'webp', count: 4 },
+    'metal': { prefix: 'metal', ext: 'webp', count: 4 },
     'pallet': { prefix: 'palet', ext: 'webp', count: 14 },
 };
 
-// Mobil kırıcı has mixed extensions
+// Mobil kırıcı — all converted to webp
 const MOBILE_IMAGES: { name: string }[] = [
-    // jpeg files
-    ...([1, 2, 3, 4, 5, 7, 8, 9, 10].map(n => ({ name: `mobil-${n}.jpeg` }))),
-    // png files
-    ...([6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24].map(n => ({ name: `mobil-${n}.png` }))),
+    ...([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24].map(n => ({ name: `mobil-${n}.webp` }))),
 ];
 
 // Cam Şişe Kırma Makinesi has hash-based filenames
@@ -88,11 +85,24 @@ function buildGalleryImages(productType: string): GalleryImage[] {
     const altText = ALT_TEXTS[productType];
     if (!basePath || !altText) return [];
 
-    // Handle mobile separately due to mixed extensions
+    // SEO-optimized alt text suffixes for variety
+    const seoSuffixes = [
+        'Endüstriyel Parçalama Çözümü',
+        'Yüksek Kapasiteli Model',
+        'Teknik Detay Görünümü',
+        'Üretim Tesisi Çekimi',
+        'Profesyonel Geri Dönüşüm Ekipmanı',
+        'Ağır Hizmet Tipi Makine',
+        'CE Belgeli Endüstriyel Sistem',
+        'Fabrika Çıkışı Ürün',
+    ];
+    const getSeoAlt = (i: number) => `${altText} ${seoSuffixes[i % seoSuffixes.length]} - MT Makina`;
+
+    // Handle mobile separately
     if (productType === 'mobile') {
         return MOBILE_IMAGES.map((img, i) => ({
             src: `${basePath}/${img.name}`,
-            alt: `${altText} - Görsel ${i + 1} - MT Makina`,
+            alt: getSeoAlt(i),
         }));
     }
 
@@ -100,7 +110,7 @@ function buildGalleryImages(productType: string): GalleryImage[] {
     if (productType === 'glass') {
         return GLASS_IMAGES.map((img, i) => ({
             src: `${basePath}/${img.name}`,
-            alt: `${altText} - Görsel ${i + 1} - MT Makina`,
+            alt: getSeoAlt(i),
         }));
     }
 
@@ -108,7 +118,7 @@ function buildGalleryImages(productType: string): GalleryImage[] {
     if (productType === 'harddisk') {
         return HARDDISK_IMAGES.map((img, i) => ({
             src: `${basePath}/${img.name}`,
-            alt: `${altText} - Görsel ${i + 1} - MT Makina`,
+            alt: getSeoAlt(i),
         }));
     }
 
@@ -117,7 +127,7 @@ function buildGalleryImages(productType: string): GalleryImage[] {
 
     return Array.from({ length: def.count }, (_, i) => ({
         src: `${basePath}/${def.prefix}-${i + 1}.${def.ext}`,
-        alt: `${altText} - Görsel ${i + 1} - MT Makina`,
+        alt: getSeoAlt(i),
     }));
 }
 
